@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini Maze Game</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Maze Game Levels</title>
 
     <style>
         body {
@@ -12,14 +12,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            font-family: Arial, sans-serif;
+            font-family: Arial;
             color: white;
-            overflow: hidden;
             touch-action: manipulation;
-        }
-
-        h2 {
-            margin: 10px;
         }
 
         #game {
@@ -31,20 +26,12 @@
             margin-top: 10px;
         }
 
-        .wall {
-            position: absolute;
-            background: #888;
-        }
-
         #player {
             position: absolute;
             width: 28px;
             height: 28px;
             background: red;
             border-radius: 6px;
-            left: 5px;
-            top: 5px;
-            transition: 0.05s;
         }
 
         #goal {
@@ -52,9 +39,12 @@
             width: 30px;
             height: 30px;
             background: limegreen;
-            right: 5px;
-            bottom: 5px;
             border-radius: 6px;
+        }
+
+        .wall {
+            position: absolute;
+            background: #888;
         }
 
         .controls {
@@ -63,8 +53,6 @@
             grid-template-columns: 80px 80px 80px;
             grid-template-rows: 80px 80px;
             gap: 10px;
-            justify-content: center;
-            align-items: center;
         }
 
         button {
@@ -73,49 +61,28 @@
             border-radius: 16px;
             background: #444;
             color: white;
-            cursor: pointer;
             user-select: none;
+            touch-action: none;
         }
 
         button:active {
             background: #777;
         }
 
-        #up {
-            grid-column: 2;
-        }
-
-        #left {
-            grid-column: 1;
-            grid-row: 2;
-        }
-
-        #down {
-            grid-column: 2;
-            grid-row: 2;
-        }
-
-        #right {
-            grid-column: 3;
-            grid-row: 2;
-        }
+        #up { grid-column: 2; }
+        #left { grid-column: 1; grid-row: 2; }
+        #down { grid-column: 2; grid-row: 2; }
+        #right { grid-column: 3; grid-row: 2; }
     </style>
 </head>
+
 <body>
 
-<h2>Mini Maze Game</h2>
+<h2 id="levelTitle">Level 1</h2>
 
 <div id="game">
-
     <div id="player"></div>
     <div id="goal"></div>
-
-    <!-- Walls -->
-    <div class="wall" style="left:60px; top:0; width:20px; height:220px;"></div>
-    <div class="wall" style="left:120px; top:80px; width:20px; height:220px;"></div>
-    <div class="wall" style="left:180px; top:0; width:20px; height:220px;"></div>
-    <div class="wall" style="left:240px; top:80px; width:20px; height:220px;"></div>
-
 </div>
 
 <div class="controls">
@@ -126,68 +93,81 @@
 </div>
 
 <script>
+    const game = document.getElementById("game");
     const player = document.getElementById("player");
     const goal = document.getElementById("goal");
-    const walls = document.querySelectorAll(".wall");
+    const levelTitle = document.getElementById("levelTitle");
 
-    let x = 5;
-    let y = 5;
-    const speed = 10;
+    let x = 5, y = 5;
+    const speed = 2;
 
-    function isColliding(newX, newY) {
+    let keys = {};
+    let level = 0;
 
-        const playerRect = {
-            left: newX,
-            top: newY,
-            right: newX + 28,
-            bottom: newY + 28
-        };
+    const levels = [
+        // Level 1 walls
+        [
+            {left:60, top:0, width:20, height:220},
+            {left:120, top:80, width:20, height:220},
+        ],
+        // Level 2 walls (harder)
+        [
+            {left:40, top:0, width:20, height:200},
+            {left:100, top:100, width:20, height:200},
+            {left:160, top:0, width:20, height:200},
+            {left:220, top:100, width:20, height:200},
+        ]
+    ];
 
-        for (let wall of walls) {
+    function loadLevel(lvl) {
+        game.querySelectorAll(".wall").forEach(w => w.remove());
 
-            const wallRect = {
-                left: wall.offsetLeft,
-                top: wall.offsetTop,
-                right: wall.offsetLeft + wall.offsetWidth,
-                bottom: wall.offsetTop + wall.offsetHeight
+        levels[lvl].forEach(w => {
+            const div = document.createElement("div");
+            div.className = "wall";
+            div.style.left = w.left + "px";
+            div.style.top = w.top + "px";
+            div.style.width = w.width + "px";
+            div.style.height = w.height + "px";
+            game.appendChild(div);
+        });
+
+        x = 5; y = 5;
+        goal.style.left = "260px";
+        goal.style.top = "260px";
+
+        levelTitle.innerText = "Level " + (lvl + 1);
+    }
+
+    function collides(nx, ny) {
+        const playerRect = { left:nx, top:ny, right:nx+28, bottom:ny+28 };
+
+        for (let w of document.querySelectorAll(".wall")) {
+            const wr = {
+                left: w.offsetLeft,
+                top: w.offsetTop,
+                right: w.offsetLeft + w.offsetWidth,
+                bottom: w.offsetTop + w.offsetHeight
             };
 
             if (
-                playerRect.left < wallRect.right &&
-                playerRect.right > wallRect.left &&
-                playerRect.top < wallRect.bottom &&
-                playerRect.bottom > wallRect.top
-            ) {
-                return true;
-            }
+                playerRect.left < wr.right &&
+                playerRect.right > wr.left &&
+                playerRect.top < wr.bottom &&
+                playerRect.bottom > wr.top
+            ) return true;
         }
-
         return false;
     }
 
     function move(dx, dy) {
+        let nx = x + dx;
+        let ny = y + dy;
 
-        const newX = x + dx;
-        const newY = y + dy;
+        if (nx < 0 || ny < 0 || nx > 272 || ny > 272) return;
+        if (collides(nx, ny)) return;
 
-        // Borders
-        if (
-            newX < 0 ||
-            newY < 0 ||
-            newX > 270 ||
-            newY > 270
-        ) {
-            return;
-        }
-
-        // Wall collision
-        if (isColliding(newX, newY)) {
-            return;
-        }
-
-        x = newX;
-        y = newY;
-
+        x = nx; y = ny;
         player.style.left = x + "px";
         player.style.top = y + "px";
 
@@ -195,34 +175,60 @@
     }
 
     function checkWin() {
+        if (Math.abs(x - goal.offsetLeft) < 20 &&
+            Math.abs(y - goal.offsetTop) < 20) {
 
-        const goalX = goal.offsetLeft;
-        const goalY = goal.offsetTop;
-
-        if (
-            Math.abs(x - goalX) < 20 &&
-            Math.abs(y - goalY) < 20
-        ) {
             setTimeout(() => {
-                alert("You Win!");
+                level++;
+
+                if (level >= levels.length) {
+                    alert("You finished all levels!");
+                    level = 0;
+                } else {
+                    alert("Level complete!");
+                }
+
+                loadLevel(level);
             }, 100);
         }
     }
 
-    // Keyboard controls
-    document.addEventListener("keydown", (e) => {
+    /* HOLD CONTROLS */
+    function holdButton(btn, dx, dy) {
+        let interval;
 
-        if (e.key === "ArrowUp") move(0, -speed);
-        if (e.key === "ArrowDown") move(0, speed);
-        if (e.key === "ArrowLeft") move(-speed, 0);
-        if (e.key === "ArrowRight") move(speed, 0);
-    });
+        const start = () => interval = setInterval(() => move(dx, dy), 10);
+        const stop = () => clearInterval(interval);
 
-    // Mobile buttons
-    document.getElementById("up").onclick = () => move(0, -speed);
-    document.getElementById("down").onclick = () => move(0, speed);
-    document.getElementById("left").onclick = () => move(-speed, 0);
-    document.getElementById("right").onclick = () => move(speed, 0);
+        btn.addEventListener("mousedown", start);
+        btn.addEventListener("touchstart", start);
+
+        btn.addEventListener("mouseup", stop);
+        btn.addEventListener("mouseleave", stop);
+        btn.addEventListener("touchend", stop);
+    }
+
+    /* Mobile buttons */
+    holdButton(document.getElementById("up"), 0, -speed);
+    holdButton(document.getElementById("down"), 0, speed);
+    holdButton(document.getElementById("left"), -speed, 0);
+    holdButton(document.getElementById("right"), speed, 0);
+
+    /* Keyboard hold */
+    document.addEventListener("keydown", e => keys[e.key] = true);
+    document.addEventListener("keyup", e => keys[e.key] = false);
+
+    function gameLoop() {
+        if (keys["ArrowUp"]) move(0, -speed);
+        if (keys["ArrowDown"]) move(0, speed);
+        if (keys["ArrowLeft"]) move(-speed, 0);
+        if (keys["ArrowRight"]) move(speed, 0);
+
+        requestAnimationFrame(gameLoop);
+    }
+
+    loadLevel(level);
+    gameLoop();
 
 </script>
 
