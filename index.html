@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Maze Game Levels</title>
+    <title>Maze Game</title>
 
     <style>
         body {
@@ -17,6 +17,17 @@
             touch-action: manipulation;
         }
 
+        #hud {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        #message {
+            height: 20px;
+            color: lime;
+            margin-top: 5px;
+        }
+
         #game {
             position: relative;
             width: 300px;
@@ -28,18 +39,17 @@
 
         #player {
             position: absolute;
-            width: 28px;
-            height: 28px;
+            width: 16px;
+            height: 16px;
             background: red;
-            border-radius: 6px;
+            border-radius: 4px;
         }
 
         #goal {
             position: absolute;
-            width: 30px;
-            height: 30px;
+            width: 16px;
+            height: 16px;
             background: limegreen;
-            border-radius: 6px;
         }
 
         .wall {
@@ -78,7 +88,11 @@
 
 <body>
 
-<h2 id="levelTitle">Level 1</h2>
+<div id="hud">
+    <div>Time: <span id="time">0</span>s</div>
+    <div>Best Time: <span id="bestTime">-</span>s</div>
+    <div id="message"></div>
+</div>
 
 <div id="game">
     <div id="player"></div>
@@ -96,140 +110,218 @@
     const game = document.getElementById("game");
     const player = document.getElementById("player");
     const goal = document.getElementById("goal");
-    const levelTitle = document.getElementById("levelTitle");
+    const timeEl = document.getElementById("time");
+    const bestTimeEl = document.getElementById("bestTime");
+    const message = document.getElementById("message");
 
-    let x = 5, y = 5;
-    const speed = 2;
+    const size = 10;
+    const cellSize = 30;
 
-    let keys = {};
-    let level = 0;
+    let grid = [];
+    let x = 0, y = 0;
+    let locked = false;
+    let startTime;
+    let timer;
+    let keys = [];
 
-    const levels = [
-        // Level 1 walls
-        [
-            {left:60, top:0, width:20, height:220},
-            {left:120, top:80, width:20, height:220},
-        ],
-        // Level 2 walls (harder)
-        [
-            {left:40, top:0, width:20, height:200},
-            {left:100, top:100, width:20, height:200},
-            {left:160, top:0, width:20, height:200},
-            {left:220, top:100, width:20, height:200},
-        ]
-    ];
+    /* BEST TIME (session) */
+    let bestTime = sessionStorage.getItem("bestTime");
+    if (bestTime !== null) bestTimeEl.textContent = bestTime;
 
-    function loadLevel(lvl) {
-        game.querySelectorAll(".wall").forEach(w => w.remove());
-
-        levels[lvl].forEach(w => {
-            const div = document.createElement("div");
-            div.className = "wall";
-            div.style.left = w.left + "px";
-            div.style.top = w.top + "px";
-            div.style.width = w.width + "px";
-            div.style.height = w.height + "px";
-            game.appendChild(div);
-        });
-
-        x = 5; y = 5;
-        goal.style.left = "260px";
-        goal.style.top = "260px";
-
-        levelTitle.innerText = "Level " + (lvl + 1);
-    }
-
-    function collides(nx, ny) {
-        const playerRect = { left:nx, top:ny, right:nx+28, bottom:ny+28 };
-
-        for (let w of document.querySelectorAll(".wall")) {
-            const wr = {
-                left: w.offsetLeft,
-                top: w.offsetTop,
-                right: w.offsetLeft + w.offsetWidth,
-                bottom: w.offsetTop + w.offsetHeight
-            };
-
-            if (
-                playerRect.left < wr.right &&
-                playerRect.right > wr.left &&
-                playerRect.top < wr.bottom &&
-                playerRect.bottom > wr.top
-            ) return true;
-        }
-        return false;
-    }
-
-    function move(dx, dy) {
-        let nx = x + dx;
-        let ny = y + dy;
-
-        if (nx < 0 || ny < 0 || nx > 272 || ny > 272) return;
-        if (collides(nx, ny)) return;
-
-        x = nx; y = ny;
-        player.style.left = x + "px";
-        player.style.top = y + "px";
-
-        checkWin();
-    }
-
-    function checkWin() {
-        if (Math.abs(x - goal.offsetLeft) < 20 &&
-            Math.abs(y - goal.offsetTop) < 20) {
-
-            setTimeout(() => {
-                level++;
-
-                if (level >= levels.length) {
-                    alert("You finished all levels!");
-                    level = 0;
-                } else {
-                    alert("Level complete!");
-                }
-
-                loadLevel(level);
-            }, 100);
+    /* GRID */
+    function createGrid() {
+        grid = [];
+        for (let y = 0; y < size; y++) {
+            let row = [];
+            for (let x = 0; x < size; x++) {
+                row.push({
+                    x, y,
+                    visited: false,
+                    walls: { top:true, right:true, bottom:true, left:true }
+                });
+            }
+            grid.push(row);
         }
     }
 
-    /* HOLD CONTROLS */
-    function holdButton(btn, dx, dy) {
-        let interval;
-
-        const start = () => interval = setInterval(() => move(dx, dy), 10);
-        const stop = () => clearInterval(interval);
-
-        btn.addEventListener("mousedown", start);
-        btn.addEventListener("touchstart", start);
-
-        btn.addEventListener("mouseup", stop);
-        btn.addEventListener("mouseleave", stop);
-        btn.addEventListener("touchend", stop);
+    /* MAZE (DFS) */
+    function neighbors(c) {
+        let n = [];
+        if (c.y > 0) n.push(grid[c.y-1][c.x]);
+        if (c.y < size-1) n.push(grid[c.y+1][c.x]);
+        if (c.x > 0) n.push(grid[c.y][c.x-1]);
+        if (c.x < size-1) n.push(grid[c.y][c.x+1]);
+        return n.filter(n => !n.visited);
     }
 
-    /* Mobile buttons */
-    holdButton(document.getElementById("up"), 0, -speed);
-    holdButton(document.getElementById("down"), 0, speed);
-    holdButton(document.getElementById("left"), -speed, 0);
-    holdButton(document.getElementById("right"), speed, 0);
+    function remove(a,b){
+        let dx=a.x-b.x;
+        let dy=a.y-b.y;
 
-    /* Keyboard hold */
-    document.addEventListener("keydown", e => keys[e.key] = true);
-    document.addEventListener("keyup", e => keys[e.key] = false);
-
-    function gameLoop() {
-        if (keys["ArrowUp"]) move(0, -speed);
-        if (keys["ArrowDown"]) move(0, speed);
-        if (keys["ArrowLeft"]) move(-speed, 0);
-        if (keys["ArrowRight"]) move(speed, 0);
-
-        requestAnimationFrame(gameLoop);
+        if(dx===1){a.walls.left=false;b.walls.right=false;}
+        if(dx===-1){a.walls.right=false;b.walls.left=false;}
+        if(dy===1){a.walls.top=false;b.walls.bottom=false;}
+        if(dy===-1){a.walls.bottom=false;b.walls.top=false;}
     }
 
-    loadLevel(level);
-    gameLoop();
+    function generate(){
+        createGrid();
 
+        let stack=[];
+        let cur=grid[0][0];
+        cur.visited=true;
+
+        while(true){
+            let n=neighbors(cur);
+
+            if(n.length){
+                let next=n[Math.floor(Math.random()*n.length)];
+                next.visited=true;
+                stack.push(cur);
+                remove(cur,next);
+                cur=next;
+            } else {
+                cur=stack.pop();
+                if(!cur) break;
+            }
+        }
+    }
+
+    /* DRAW */
+    function draw(){
+        game.querySelectorAll(".wall").forEach(w=>w.remove());
+
+        for(let y=0;y<size;y++){
+            for(let x=0;x<size;x++){
+                let c=grid[y][x];
+                let px=x*cellSize;
+                let py=y*cellSize;
+
+                if(c.walls.top) wall(px,py,cellSize,2);
+                if(c.walls.left) wall(px,py,2,cellSize);
+            }
+        }
+
+        wall(0,size*cellSize,size*cellSize,2);
+        wall(size*cellSize,0,2,size*cellSize);
+    }
+
+    function wall(x,y,w,h){
+        let d=document.createElement("div");
+        d.className="wall";
+        d.style.left=x+"px";
+        d.style.top=y+"px";
+        d.style.width=w+"px";
+        d.style.height=h+"px";
+        game.appendChild(d);
+    }
+
+    /* GAME */
+    function load(){
+        generate();
+        draw();
+
+        x=0;y=0;
+        locked=false;
+
+        player.style.left="2px";
+        player.style.top="2px";
+
+        goal.style.left=(size-1)*cellSize+"px";
+        goal.style.top=(size-1)*cellSize+"px";
+
+        message.textContent="";
+
+        startTimer();
+    }
+
+    /* TIMER */
+    function startTimer(){
+        clearInterval(timer);
+        startTime=Date.now();
+
+        timer=setInterval(()=>{
+            if(!locked){
+                timeEl.textContent=Math.floor((Date.now()-startTime)/1000);
+            }
+        },200);
+    }
+
+    /* MOVE (GRID) */
+    function can(nx,ny){
+        if(nx<0||ny<0||nx>=size||ny>=size) return false;
+
+        let c=grid[y][x];
+
+        if(nx===x+1 && c.walls.right) return false;
+        if(nx===x-1 && c.walls.left) return false;
+        if(ny===y+1 && c.walls.bottom) return false;
+        if(ny===y-1 && c.walls.top) return false;
+
+        return true;
+    }
+
+    function move(dx,dy){
+        if(locked) return;
+
+        let nx=x+dx;
+        let ny=y+dy;
+
+        if(!can(nx,ny)) return;
+
+        x=nx;y=ny;
+
+        player.style.left=(x*cellSize+2)+"px";
+        player.style.top=(y*cellSize+2)+"px";
+
+        win();
+    }
+
+    /* WIN + BEST TIME */
+    function win(){
+        if(x===size-1 && y===size-1){
+            locked=true;
+
+            let t=Math.floor((Date.now()-startTime)/1000);
+            message.textContent="Finished in "+t+"s";
+
+            if(bestTime===null || t<bestTime){
+                bestTime=t;
+                sessionStorage.setItem("bestTime",bestTime);
+                bestTimeEl.textContent=bestTime;
+            }
+
+            setTimeout(load,1200);
+        }
+    }
+
+    /* CONTROLS */
+    function hold(btn,dx,dy){
+        let i;
+
+        const s=()=>i=setInterval(()=>move(dx,dy),120);
+        const e=()=>clearInterval(i);
+
+        btn.addEventListener("mousedown",s);
+        btn.addEventListener("touchstart",s);
+        btn.addEventListener("mouseup",e);
+        btn.addEventListener("touchend",e);
+    }
+
+    hold(up,0,-1);
+    hold(down,0,1);
+    hold(left,-1,0);
+    hold(right,1,0);
+
+    /* KEYBOARD */
+    document.addEventListener("keydown",e=>{
+        if(e.key==="ArrowUp")move(0,-1);
+        if(e.key==="ArrowDown")move(0,1);
+        if(e.key==="ArrowLeft")move(-1,0);
+        if(e.key==="ArrowRight")move(1,0);
+    });
+
+    load();
 </script>
 
 </body>
