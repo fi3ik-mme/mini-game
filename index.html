@@ -1,47 +1,229 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Mini Game</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Maze Game</title>
 
     <style>
         body {
             margin: 0;
+            background: #1e1e1e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: white;
             overflow: hidden;
-            background: #222;
+            touch-action: manipulation;
+        }
+
+        h2 {
+            margin: 10px;
+        }
+
+        #game {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            background: #333;
+            border: 4px solid white;
+            margin-top: 10px;
+        }
+
+        .wall {
+            position: absolute;
+            background: #888;
         }
 
         #player {
-            width: 50px;
-            height: 50px;
-            background: red;
             position: absolute;
-            left: 100px;
-            top: 100px;
+            width: 28px;
+            height: 28px;
+            background: red;
+            border-radius: 6px;
+            left: 5px;
+            top: 5px;
+            transition: 0.05s;
+        }
+
+        #goal {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: limegreen;
+            right: 5px;
+            bottom: 5px;
+            border-radius: 6px;
+        }
+
+        .controls {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: 80px 80px 80px;
+            grid-template-rows: 80px 80px;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            font-size: 28px;
+            border: none;
+            border-radius: 16px;
+            background: #444;
+            color: white;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        button:active {
+            background: #777;
+        }
+
+        #up {
+            grid-column: 2;
+        }
+
+        #left {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        #down {
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+        #right {
+            grid-column: 3;
+            grid-row: 2;
         }
     </style>
 </head>
-
 <body>
 
-<div id="player"></div>
+<h2>Mini Maze Game</h2>
+
+<div id="game">
+
+    <div id="player"></div>
+    <div id="goal"></div>
+
+    <!-- Walls -->
+    <div class="wall" style="left:60px; top:0; width:20px; height:220px;"></div>
+    <div class="wall" style="left:120px; top:80px; width:20px; height:220px;"></div>
+    <div class="wall" style="left:180px; top:0; width:20px; height:220px;"></div>
+    <div class="wall" style="left:240px; top:80px; width:20px; height:220px;"></div>
+
+</div>
+
+<div class="controls">
+    <button id="up">⬆️</button>
+    <button id="left">⬅️</button>
+    <button id="down">⬇️</button>
+    <button id="right">➡️</button>
+</div>
 
 <script>
     const player = document.getElementById("player");
+    const goal = document.getElementById("goal");
+    const walls = document.querySelectorAll(".wall");
 
-    let x = 100;
-    let y = 100;
+    let x = 5;
+    let y = 5;
     const speed = 10;
 
-    document.addEventListener("keydown", (e) => {
+    function isColliding(newX, newY) {
 
-        if (e.key === "ArrowRight") x += speed;
-        if (e.key === "ArrowLeft") x -= speed;
-        if (e.key === "ArrowUp") y -= speed;
-        if (e.key === "ArrowDown") y += speed;
+        const playerRect = {
+            left: newX,
+            top: newY,
+            right: newX + 28,
+            bottom: newY + 28
+        };
+
+        for (let wall of walls) {
+
+            const wallRect = {
+                left: wall.offsetLeft,
+                top: wall.offsetTop,
+                right: wall.offsetLeft + wall.offsetWidth,
+                bottom: wall.offsetTop + wall.offsetHeight
+            };
+
+            if (
+                playerRect.left < wallRect.right &&
+                playerRect.right > wallRect.left &&
+                playerRect.top < wallRect.bottom &&
+                playerRect.bottom > wallRect.top
+            ) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    function move(dx, dy) {
+
+        const newX = x + dx;
+        const newY = y + dy;
+
+        // Borders
+        if (
+            newX < 0 ||
+            newY < 0 ||
+            newX > 270 ||
+            newY > 270
+        ) {
+            return;
+        }
+
+        // Wall collision
+        if (isColliding(newX, newY)) {
+            return;
+        }
+
+        x = newX;
+        y = newY;
 
         player.style.left = x + "px";
         player.style.top = y + "px";
+
+        checkWin();
+    }
+
+    function checkWin() {
+
+        const goalX = goal.offsetLeft;
+        const goalY = goal.offsetTop;
+
+        if (
+            Math.abs(x - goalX) < 20 &&
+            Math.abs(y - goalY) < 20
+        ) {
+            setTimeout(() => {
+                alert("You Win!");
+            }, 100);
+        }
+    }
+
+    // Keyboard controls
+    document.addEventListener("keydown", (e) => {
+
+        if (e.key === "ArrowUp") move(0, -speed);
+        if (e.key === "ArrowDown") move(0, speed);
+        if (e.key === "ArrowLeft") move(-speed, 0);
+        if (e.key === "ArrowRight") move(speed, 0);
     });
+
+    // Mobile buttons
+    document.getElementById("up").onclick = () => move(0, -speed);
+    document.getElementById("down").onclick = () => move(0, speed);
+    document.getElementById("left").onclick = () => move(-speed, 0);
+    document.getElementById("right").onclick = () => move(speed, 0);
+
 </script>
 
 </body>
