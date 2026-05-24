@@ -280,6 +280,15 @@
     let locked = false;
     let guaranteedPrize = 0;
 
+    const gameBase = (() => {
+        const match = location.pathname.match(/^(.*\/games\/[^/]+)/);
+        return (match ? match[1] : location.pathname.replace(/\/[^/]*$/, "")) + "/";
+    })();
+
+    function gameUrl(path) {
+        return gameBase + path.replace(/^\//, "");
+    }
+
     function showScreen(name) {
         subjectScreen.classList.toggle("active", name === "subject");
         gameScreen.classList.toggle("active", name === "game");
@@ -318,7 +327,7 @@
 
     async function loadSubjects() {
         try {
-            const res = await fetch("data/subjects.json");
+            const res = await fetch(gameUrl("data/subjects.json"));
             if (!res.ok) throw new Error("Не вдалося завантажити список предметів");
             const subjects = await res.json();
 
@@ -339,7 +348,7 @@
     async function startGame(file) {
         loadError.textContent = "";
         try {
-            const res = await fetch(file);
+            const res = await fetch(gameUrl(file));
             if (!res.ok) throw new Error("Не вдалося завантажити питання");
             const data = await res.json();
 

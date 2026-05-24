@@ -1,0 +1,11 @@
+{
+  "name": "mini-game",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:live": "BASE_URL=https://fi3ik-mme.github.io/mini-game playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.52.0"
+  }
+}

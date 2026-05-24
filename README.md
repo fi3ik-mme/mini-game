@@ -42,3 +42,16 @@ Then open `http://localhost:3000`.
 ## Deploy
 
 Push to `main` — GitHub Pages publishes automatically from the repo root.
+
+```bash
+git push origin main
+```
+
+## Tests
+
+```bash
+npm install
+npx playwright install chromium
+npm test              # local (starts serve on :3456)
+npm run test:live     # against GitHub Pages after deploy
+```
