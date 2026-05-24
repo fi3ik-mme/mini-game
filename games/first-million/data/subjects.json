@@ -1,0 +1,14 @@
+[
+  {
+    "id": "matematyka",
+    "title": "Математика",
+    "description": "2 півріччя, 4 клас",
+    "file": "data/matematyka-2-yads-4-klas.json"
+  },
+  {
+    "id": "ukrayinska-mova",
+    "title": "Українська мова",
+    "description": "2 півріччя, 4 клас",
+    "file": "data/ukrayinska-mova-2-yads-4-klas.json"
+  }
+]

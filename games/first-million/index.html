@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Перший мільйон</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: radial-gradient(ellipse at top, #1a237e 0%, #0d1117 70%);
+            font-family: Arial, sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 16px;
+        }
+
+        .back-link {
+            align-self: flex-start;
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .back-link:hover { color: white; }
+
+        h1 {
+            margin: 0 0 4px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .screen { display: none; width: 100%; max-width: 640px; }
+        .screen.active { display: block; }
+
+        .subtitle {
+            text-align: center;
+            color: #bbb;
+            margin-bottom: 24px;
+        }
+
+        .subject-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .subject-btn {
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 12px;
+            color: white;
+            text-align: left;
+            cursor: pointer;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .subject-btn:hover {
+            background: rgba(255, 215, 0, 0.12);
+            border-color: rgba(255, 215, 0, 0.6);
+        }
+
+        .subject-btn strong {
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .subject-btn span { color: #ccc; font-size: 0.9rem; }
+
+        .game-layout {
+            display: grid;
+            grid-template-columns: 1fr 140px;
+            gap: 16px;
+            align-items: start;
+        }
+
+        @media (max-width: 560px) {
+            .game-layout { grid-template-columns: 1fr; }
+            .prize-ladder { order: -1; }
+        }
+
+        .question-box {
+            background: rgba(0, 0, 80, 0.6);
+            border: 2px solid #ffd700;
+            border-radius: 16px;
+            padding: 20px;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+
+        .answers {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        @media (max-width: 480px) {
+            .answers { grid-template-columns: 1fr; }
+        }
+
+        .answer-btn {
+            padding: 14px 16px;
+            background: linear-gradient(180deg, #1e3a8a 0%, #1e40af 100%);
+            border: 2px solid #3b82f6;
+            border-radius: 999px;
+            color: white;
+            font-size: 0.95rem;
+            text-align: left;
+            cursor: pointer;
+            transition: background 0.15s, transform 0.1s;
+        }
+
+        .answer-btn:hover:not(:disabled) {
+            background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%);
+            transform: scale(1.02);
+        }
+
+        .answer-btn:disabled { cursor: default; opacity: 0.7; }
+
+        .answer-btn.correct {
+            background: linear-gradient(180deg, #15803d 0%, #166534 100%);
+            border-color: #4ade80;
+        }
+
+        .answer-btn.wrong {
+            background: linear-gradient(180deg, #991b1b 0%, #7f1d1d 100%);
+            border-color: #f87171;
+        }
+
+        .answer-btn.hidden { visibility: hidden; }
+
+        .prize-ladder {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            font-size: 0.8rem;
+        }
+
+        .prize-ladder li {
+            padding: 4px 8px;
+            border-radius: 6px;
+            text-align: right;
+            color: #aaa;
+        }
+
+        .prize-ladder li.milestone { color: #ffd700; font-weight: bold; }
+        .prize-ladder li.current {
+            background: rgba(255, 215, 0, 0.25);
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .prize-ladder li.passed { color: #666; }
+
+        .game-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .walk-away {
+            margin-top: 16px;
+            padding: 10px 20px;
+            background: transparent;
+            border: 2px solid #888;
+            border-radius: 8px;
+            color: #ccc;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .walk-away:hover { border-color: #ffd700; color: #ffd700; }
+
+        .result-box {
+            text-align: center;
+            padding: 32px 20px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            border: 2px solid rgba(255, 215, 0, 0.4);
+        }
+
+        .result-box h2 { font-size: 1.6rem; margin: 0 0 12px; }
+        .result-box p { color: #ccc; margin: 0 0 24px; line-height: 1.5; }
+
+        .primary-btn {
+            padding: 12px 28px;
+            background: #ffd700;
+            border: none;
+            border-radius: 8px;
+            color: #1a1a2e;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .primary-btn:hover { background: #ffe44d; }
+
+        .error-msg { color: #f87171; text-align: center; margin-top: 16px; }
+    </style>
+</head>
+<body>
+
+<a class="back-link" href="../../index.html">← Меню</a>
+
+<div id="subject-screen" class="screen active">
+    <h1>💰 Перший мільйон</h1>
+    <p class="subtitle">Обери предмет для гри</p>
+    <div id="subject-list" class="subject-list"></div>
+    <p id="load-error" class="error-msg"></p>
+</div>
+
+<div id="game-screen" class="screen">
+    <h1 id="game-title">Перший мільйон</h1>
+    <div class="game-info">
+        <span id="question-counter">Питання 1 з 15</span>
+        <span id="current-prize">100 ₴</span>
+    </div>
+
+    <div class="game-layout">
+        <div>
+            <div id="question-text" class="question-box">Завантаження...</div>
+            <div id="answers" class="answers"></div>
+            <button id="walk-away" class="walk-away" type="button">Забрати виграш і вийти</button>
+        </div>
+        <ol id="prize-ladder" class="prize-ladder" reversed></ol>
+    </div>
+</div>
+
+<div id="result-screen" class="screen">
+    <div class="result-box">
+        <h2 id="result-title">Гра завершена</h2>
+        <p id="result-message"></p>
+        <button id="play-again" class="primary-btn" type="button">Грати знову</button>
+    </div>
+</div>
+
+<script>
+    const PRIZES = [
+        100, 200, 300, 500, 1000,
+        2000, 4000, 8000, 16000, 32000,
+        64000, 125000, 250000, 500000, 1000000
+    ];
+
+    const MILESTONES = new Set([4, 9, 14]);
+
+    const subjectScreen = document.getElementById("subject-screen");
+    const gameScreen = document.getElementById("game-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const subjectList = document.getElementById("subject-list");
+    const loadError = document.getElementById("load-error");
+    const questionText = document.getElementById("question-text");
+    const answersEl = document.getElementById("answers");
+    const prizeLadder = document.getElementById("prize-ladder");
+    const questionCounter = document.getElementById("question-counter");
+    const currentPrizeEl = document.getElementById("current-prize");
+    const gameTitle = document.getElementById("game-title");
+    const walkAwayBtn = document.getElementById("walk-away");
+    const resultTitle = document.getElementById("result-title");
+    const resultMessage = document.getElementById("result-message");
+    const playAgainBtn = document.getElementById("play-again");
+
+    let questions = [];
+    let currentIndex = 0;
+    let locked = false;
+    let guaranteedPrize = 0;
+
+    function showScreen(name) {
+        subjectScreen.classList.toggle("active", name === "subject");
+        gameScreen.classList.toggle("active", name === "game");
+        resultScreen.classList.toggle("active", name === "result");
+    }
+
+    function formatPrize(amount) {
+        return amount.toLocaleString("uk-UA") + " ₴";
+    }
+
+    function buildPrizeLadder() {
+        prizeLadder.innerHTML = "";
+        for (let i = PRIZES.length - 1; i >= 0; i--) {
+            const li = document.createElement("li");
+            li.textContent = (i + 1) + ". " + formatPrize(PRIZES[i]);
+            li.dataset.index = i;
+            if (MILESTONES.has(i)) li.classList.add("milestone");
+            prizeLadder.appendChild(li);
+        }
+    }
+
+    function updatePrizeLadder() {
+        prizeLadder.querySelectorAll("li").forEach(li => {
+            const idx = Number(li.dataset.index);
+            li.classList.remove("current", "passed");
+            if (idx === currentIndex) li.classList.add("current");
+            else if (idx < currentIndex) li.classList.add("passed");
+        });
+    }
+
+    function getGuaranteedPrize() {
+        if (currentIndex >= 10) return PRIZES[9];
+        if (currentIndex >= 5) return PRIZES[4];
+        return 0;
+    }
+
+    async function loadSubjects() {
+        try {
+            const res = await fetch("data/subjects.json");
+            if (!res.ok) throw new Error("Не вдалося завантажити список предметів");
+            const subjects = await res.json();
+
+            subjectList.innerHTML = "";
+            subjects.forEach(subject => {
+                const btn = document.createElement("button");
+                btn.type = "button";
+                btn.className = "subject-btn";
+                btn.innerHTML = "<strong>" + subject.title + "</strong><span>" + subject.description + "</span>";
+                btn.addEventListener("click", () => startGame(subject.file));
+                subjectList.appendChild(btn);
+            });
+        } catch (err) {
+            loadError.textContent = err.message + ". Запустіть локальний сервер (наприклад: npx serve).";
+        }
+    }
+
+    async function startGame(file) {
+        loadError.textContent = "";
+        try {
+            const res = await fetch(file);
+            if (!res.ok) throw new Error("Не вдалося завантажити питання");
+            const data = await res.json();
+
+            if (!data.questions || data.questions.length < 15) {
+                throw new Error("У наборі має бути щонайменше 15 питань");
+            }
+
+            questions = data.questions.slice(0, 15);
+            currentIndex = 0;
+            locked = false;
+            guaranteedPrize = 0;
+
+            gameTitle.textContent = "💰 " + data.title;
+            buildPrizeLadder();
+            showScreen("game");
+            renderQuestion();
+        } catch (err) {
+            loadError.textContent = err.message;
+        }
+    }
+
+    function renderQuestion() {
+        locked = false;
+        const q = questions[currentIndex];
+        guaranteedPrize = getGuaranteedPrize();
+
+        questionCounter.textContent = "Питання " + (currentIndex + 1) + " з " + questions.length;
+        currentPrizeEl.textContent = formatPrize(PRIZES[currentIndex]);
+        questionText.textContent = q.text;
+
+        answersEl.innerHTML = "";
+        const labels = ["A", "B", "C", "D"];
+
+        q.answers.forEach((answer, i) => {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "answer-btn";
+            btn.textContent = labels[i] + ": " + answer;
+            btn.addEventListener("click", () => selectAnswer(i));
+            answersEl.appendChild(btn);
+        });
+
+        walkAwayBtn.disabled = currentIndex === 0;
+        updatePrizeLadder();
+    }
+
+    function selectAnswer(index) {
+        if (locked) return;
+        locked = true;
+
+        const q = questions[currentIndex];
+        const buttons = answersEl.querySelectorAll(".answer-btn");
+
+        buttons.forEach((btn, i) => {
+            btn.disabled = true;
+            if (i === q.correct) btn.classList.add("correct");
+            else if (i === index) btn.classList.add("wrong");
+        });
+
+        if (index === q.correct) {
+            setTimeout(() => {
+                if (currentIndex === questions.length - 1) {
+                    endGame(true, PRIZES[currentIndex]);
+                } else {
+                    currentIndex++;
+                    renderQuestion();
+                }
+            }, 1200);
+        } else {
+            setTimeout(() => endGame(false, guaranteedPrize), 1200);
+        }
+    }
+
+    function endGame(won, prize) {
+        if (won) {
+            resultTitle.textContent = "🎉 Вітаємо!";
+            resultMessage.textContent = "Ти відповів на всі 15 питань і виграв " + formatPrize(prize) + "!";
+        } else if (prize > 0) {
+            resultTitle.textContent = "Невірна відповідь";
+            resultMessage.textContent = "На жаль, відповідь неправильна. Але ти забираєш гарантований виграш: " + formatPrize(prize) + ".";
+        } else {
+            resultTitle.textContent = "Невірна відповідь";
+            resultMessage.textContent = "На жаль, відповідь неправильна. Спробуй ще раз!";
+        }
+        showScreen("result");
+    }
+
+    walkAwayBtn.addEventListener("click", () => {
+        if (locked || currentIndex === 0) return;
+        endGame(false, PRIZES[currentIndex - 1]);
+    });
+
+    playAgainBtn.addEventListener("click", () => showScreen("subject"));
+
+    loadSubjects();
+</script>
+
+</body>
+</html>

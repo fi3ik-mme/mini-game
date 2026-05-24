@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Maze Game</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #1e1e1e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial;
+            color: white;
+            touch-action: manipulation;
+        }
+
+        .back-link {
+            align-self: flex-start;
+            margin: 12px 0 0 16px;
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .back-link:hover { color: white; }
+
+        #hud {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        #message {
+            height: 20px;
+            color: lime;
+            margin-top: 5px;
+        }
+
+        #game {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            background: #333;
+            border: 4px solid white;
+            margin-top: 10px;
+        }
+
+        #player {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: red;
+            border-radius: 4px;
+        }
+
+        #goal {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: limegreen;
+        }
+
+        .wall {
+            position: absolute;
+            background: #888;
+        }
+
+        .controls {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: 80px 80px 80px;
+            grid-template-rows: 80px 80px;
+            gap: 10px;
+        }
+
+        button {
+            font-size: 28px;
+            border: none;
+            border-radius: 16px;
+            background: #444;
+            color: white;
+            user-select: none;
+            touch-action: none;
+        }
+
+        button:active {
+            background: #777;
+        }
+
+        #up { grid-column: 2; }
+        #left { grid-column: 1; grid-row: 2; }
+        #down { grid-column: 2; grid-row: 2; }
+        #right { grid-column: 3; grid-row: 2; }
+    </style>
+</head>
+
+<body>
+
+<a class="back-link" href="../../index.html">← Меню</a>
+
+<div id="hud">
+    <div>Time: <span id="time">0</span>s</div>
+    <div>Best Time: <span id="bestTime">-</span>s</div>
+    <div id="message"></div>
+</div>
+
+<div id="game">
+    <div id="player"></div>
+    <div id="goal"></div>
+</div>
+
+<div class="controls">
+    <button id="up">⬆️</button>
+    <button id="left">⬅️</button>
+    <button id="down">⬇️</button>
+    <button id="right">➡️</button>
+</div>
+
+<script>
+    const game = document.getElementById("game");
+    const player = document.getElementById("player");
+    const goal = document.getElementById("goal");
+    const timeEl = document.getElementById("time");
+    const bestTimeEl = document.getElementById("bestTime");
+    const message = document.getElementById("message");
+
+    const size = 10;
+    const cellSize = 30;
+
+    let grid = [];
+    let x = 0, y = 0;
+    let locked = false;
+    let startTime;
+    let timer;
+    let keys = [];
+
+    let bestTime = sessionStorage.getItem("bestTime");
+    if (bestTime !== null) bestTimeEl.textContent = bestTime;
+
+    function createGrid() {
+        grid = [];
+        for (let y = 0; y < size; y++) {
+            let row = [];
+            for (let x = 0; x < size; x++) {
+                row.push({
+                    x, y,
+                    visited: false,
+                    walls: { top:true, right:true, bottom:true, left:true }
+                });
+            }
+            grid.push(row);
+        }
+    }
+
+    function neighbors(c) {
+        let n = [];
+        if (c.y > 0) n.push(grid[c.y-1][c.x]);
+        if (c.y < size-1) n.push(grid[c.y+1][c.x]);
+        if (c.x > 0) n.push(grid[c.y][c.x-1]);
+        if (c.x < size-1) n.push(grid[c.y][c.x+1]);
+        return n.filter(n => !n.visited);
+    }
+
+    function remove(a,b){
+        let dx=a.x-b.x;
+        let dy=a.y-b.y;
+
+        if(dx===1){a.walls.left=false;b.walls.right=false;}
+        if(dx===-1){a.walls.right=false;b.walls.left=false;}
+        if(dy===1){a.walls.top=false;b.walls.bottom=false;}
+        if(dy===-1){a.walls.bottom=false;b.walls.top=false;}
+    }
+
+    function generate(){
+        createGrid();
+
+        let stack=[];
+        let cur=grid[0][0];
+        cur.visited=true;
+
+        while(true){
+            let n=neighbors(cur);
+
+            if(n.length){
+                let next=n[Math.floor(Math.random()*n.length)];
+                next.visited=true;
+                stack.push(cur);
+                remove(cur,next);
+                cur=next;
+            } else {
+                cur=stack.pop();
+                if(!cur) break;
+            }
+        }
+    }
+
+    function draw(){
+        game.querySelectorAll(".wall").forEach(w=>w.remove());
+
+        for(let y=0;y<size;y++){
+            for(let x=0;x<size;x++){
+                let c=grid[y][x];
+                let px=x*cellSize;
+                let py=y*cellSize;
+
+                if(c.walls.top) wall(px,py,cellSize,2);
+                if(c.walls.left) wall(px,py,2,cellSize);
+            }
+        }
+
+        wall(0,size*cellSize,size*cellSize,2);
+        wall(size*cellSize,0,2,size*cellSize);
+    }
+
+    function wall(x,y,w,h){
+        let d=document.createElement("div");
+        d.className="wall";
+        d.style.left=x+"px";
+        d.style.top=y+"px";
+        d.style.width=w+"px";
+        d.style.height=h+"px";
+        game.appendChild(d);
+    }
+
+    function load(){
+        generate();
+        draw();
+
+        x=0;y=0;
+        locked=false;
+
+        player.style.left="2px";
+        player.style.top="2px";
+
+        goal.style.left=(size-1)*cellSize+"px";
+        goal.style.top=(size-1)*cellSize+"px";
+
+        message.textContent="";
+
+        startTimer();
+    }
+
+    function startTimer(){
+        clearInterval(timer);
+        startTime=Date.now();
+
+        timer=setInterval(()=>{
+            if(!locked){
+                timeEl.textContent=Math.floor((Date.now()-startTime)/1000);
+            }
+        },200);
+    }
+
+    function can(nx,ny){
+        if(nx<0||ny<0||nx>=size||ny>=size) return false;
+
+        let c=grid[y][x];
+
+        if(nx===x+1 && c.walls.right) return false;
+        if(nx===x-1 && c.walls.left) return false;
+        if(ny===y+1 && c.walls.bottom) return false;
+        if(ny===y-1 && c.walls.top) return false;
+
+        return true;
+    }
+
+    function move(dx,dy){
+        if(locked) return;
+
+        let nx=x+dx;
+        let ny=y+dy;
+
+        if(!can(nx,ny)) return;
+
+        x=nx;y=ny;
+
+        player.style.left=(x*cellSize+2)+"px";
+        player.style.top=(y*cellSize+2)+"px";
+
+        win();
+    }
+
+    function win(){
+        if(x===size-1 && y===size-1){
+            locked=true;
+
+            let t=Math.floor((Date.now()-startTime)/1000);
+            message.textContent="Finished in "+t+"s";
+
+            if(bestTime===null || t<bestTime){
+                bestTime=t;
+                sessionStorage.setItem("bestTime",bestTime);
+                bestTimeEl.textContent=bestTime;
+            }
+
+            setTimeout(load,1200);
+        }
+    }
+
+    function hold(btn,dx,dy){
+        let i;
+
+        const s=()=>i=setInterval(()=>move(dx,dy),120);
+        const e=()=>clearInterval(i);
+
+        btn.addEventListener("mousedown",s);
+        btn.addEventListener("touchstart",s);
+        btn.addEventListener("mouseup",e);
+        btn.addEventListener("touchend",e);
+    }
+
+  const up = document.getElementById("up");
+  const down = document.getElementById("down");
+  const left = document.getElementById("left");
+  const right = document.getElementById("right");
+
+    hold(up,0,-1);
+    hold(down,0,1);
+    hold(left,-1,0);
+    hold(right,1,0);
+
+    document.addEventListener("keydown",e=>{
+        if(e.key==="ArrowUp")move(0,-1);
+        if(e.key==="ArrowDown")move(0,1);
+        if(e.key==="ArrowLeft")move(-1,0);
+        if(e.key==="ArrowRight")move(1,0);
+    });
+
+    load();
+</script>
+
+</body>
+</html>
