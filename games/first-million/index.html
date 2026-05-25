@@ -942,7 +942,7 @@
     async function loadSubjects() {
         try {
             const res = await fetch(gameUrl("data/subjects.json"));
-            if (!res.ok) throw new Error("Не вдалося завантажити список предметів");
+            if (!res.ok) throw new Error("subjects.json HTTP " + res.status);
             const subjects = await res.json();
 
             subjectList.innerHTML = "";
@@ -955,15 +955,36 @@
                 subjectList.appendChild(btn);
             });
         } catch (err) {
-            loadError.textContent = err.message + ". Запустіть локальний сервер (наприклад: npx serve).";
+            if (!navigator.onLine) {
+                loadError.textContent =
+                    "Список предметів ще не збережено для офлайну. Підключи інтернет і відкрий додаток — він довантажить дані сам.";
+            } else {
+                loadError.textContent =
+                    "Не вдалося завантажити список предметів. Запустіть локальний сервер (наприклад: npx serve).";
+            }
         }
     }
 
     async function startGame(file, title) {
         loadError.textContent = "";
         try {
-            const res = await fetch(gameUrl(file));
-            if (!res.ok) throw new Error("Не вдалося завантажити питання");
+            let res;
+            try {
+                res = await fetch(gameUrl(file));
+            } catch (_) {
+                throw new Error(
+                    navigator.onLine
+                        ? "Не вдалося завантажити питання. Спробуй пізніше."
+                        : "Цей предмет ще не збережено для офлайну. Підключи інтернет і відкрий додаток — він довантажить дані сам."
+                );
+            }
+            if (!res.ok) {
+                throw new Error(
+                    navigator.onLine
+                        ? "Не вдалося завантажити питання"
+                        : "Цей предмет ще не збережено для офлайну. Підключи інтернет і відкрий додаток — він довантажить дані сам."
+                );
+            }
             const data = await res.json();
 
             if (!data.questions || data.questions.length < 15) {
@@ -1183,8 +1204,21 @@
     loadSubjects();
 
     if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-            navigator.serviceWorker.register("../../sw.js").catch(() => {});
+        window.addEventListener("load", async () => {
+            try {
+                await navigator.serviceWorker.register("../../sw.js");
+                const reg = await navigator.serviceWorker.ready;
+                const sw  = reg.active || navigator.serviceWorker.controller;
+                if (sw) sw.postMessage({ type: "ensure-cache" });
+            } catch (_) {}
+        });
+        // If the user comes back online while inside this page, retry top-up.
+        window.addEventListener("online", async () => {
+            try {
+                const reg = await navigator.serviceWorker.ready;
+                const sw  = reg.active || navigator.serviceWorker.controller;
+                if (sw) sw.postMessage({ type: "ensure-cache" });
+            } catch (_) {}
         });
     }
 </script>

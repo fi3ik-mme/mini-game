@@ -1,0 +1,40 @@
+{
+  "name": "Міні-Ігри · Українською",
+  "short_name": "Міні-Ігри",
+  "description": "Колекція міні-ігор українською мовою. Працює офлайн на телефоні після першого відкриття.",
+  "lang": "uk",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "id": "/mini-game/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait",
+  "background_color": "#1a1a2e",
+  "theme_color": "#1a1a2e",
+  "categories": ["games", "education", "kids"],
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Лабіринт",
+      "short_name": "Лабіринт",
+      "description": "Знайди вихід зі стін",
+      "url": "./games/maze/",
+      "icons": [{ "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+    },
+    {
+      "name": "Перший мільйон",
+      "short_name": "Мільйон",
+      "description": "Вікторина в стилі «Хто хоче стати мільйонером?»",
+      "url": "./games/first-million/",
+      "icons": [{ "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+    }
+  ]
+}

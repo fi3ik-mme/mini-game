@@ -103,6 +103,20 @@
 
         .icon-btn:active { background: rgba(255, 255, 255, 0.18); }
 
+        .icon-btn.lang {
+            width: auto;
+            padding: 0 12px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            color: #fde68a;
+        }
+
+        .top-right-group {
+            display: inline-flex;
+            gap: 6px;
+        }
+
         #hud {
             width: 100%;
             max-width: 480px;
@@ -454,26 +468,29 @@
 <body>
 
 <div class="top-bar">
-    <a class="back-link" href="../../index.html">← Меню</a>
+    <a class="back-link" href="../../index.html" data-i18n="backMenu">← Меню</a>
     <div class="difficulty" id="difficulty">
-        <button class="diff-btn" data-size="8" type="button">Легко</button>
-        <button class="diff-btn active" data-size="12" type="button">Середньо</button>
-        <button class="diff-btn" data-size="16" type="button">Складно</button>
+        <button class="diff-btn" data-size="8" data-i18n="diffEasy" type="button">Легко</button>
+        <button class="diff-btn active" data-size="12" data-i18n="diffMedium" type="button">Середньо</button>
+        <button class="diff-btn" data-size="16" data-i18n="diffHard" type="button">Складно</button>
     </div>
-    <button id="sound-toggle" class="icon-btn" aria-label="Звук" type="button">🔊</button>
+    <div class="top-right-group">
+        <button id="lang-toggle" class="icon-btn lang" type="button" aria-label="Мова">UA</button>
+        <button id="sound-toggle" class="icon-btn" aria-label="Звук" type="button">🔊</button>
+    </div>
 </div>
 
 <div id="hud">
     <div class="stat">
-        <span class="stat-label">Час</span>
+        <span class="stat-label" data-i18n="statTime">Час</span>
         <span class="stat-value" id="time">0с</span>
     </div>
     <div class="stat">
-        <span class="stat-label">Кроки</span>
+        <span class="stat-label" data-i18n="statSteps">Кроки</span>
         <span class="stat-value" id="steps">0</span>
     </div>
     <div class="stat best">
-        <span class="stat-label">Рекорд</span>
+        <span class="stat-label" data-i18n="statBest">Рекорд</span>
         <span class="stat-value" id="bestTime">—</span>
     </div>
 </div>
@@ -493,28 +510,28 @@
 </div>
 
 <div class="actions">
-    <button id="restart" class="action-btn" type="button">↻ Новий лабіринт</button>
+    <button id="restart" class="action-btn" data-i18n="restartBtn" type="button">↻ Новий лабіринт</button>
 </div>
 
 <div id="flash" class="flash"></div>
 
 <div id="winOverlay" class="overlay" role="dialog" aria-modal="true" aria-labelledby="winTitle">
     <div class="modal">
-        <h2 id="winTitle">🎉 Перемога!</h2>
+        <h2 id="winTitle" data-i18n="winTitle">🎉 Перемога!</h2>
         <p class="sub" id="winMessage">Лабіринт пройдено.</p>
         <div id="newBestRow"></div>
         <div class="modal-stats">
             <div class="modal-stat">
-                <div class="l">Час</div>
+                <div class="l" data-i18n="statTime">Час</div>
                 <div class="v" id="winTime">0с</div>
             </div>
             <div class="modal-stat">
-                <div class="l">Кроки</div>
+                <div class="l" data-i18n="statSteps">Кроки</div>
                 <div class="v" id="winSteps">0</div>
             </div>
         </div>
         <div class="modal-actions">
-            <button class="btn-primary" id="winNext" type="button">Грати знову →</button>
+            <button class="btn-primary" id="winNext" data-i18n="winPlayAgain" type="button">Грати знову →</button>
         </div>
     </div>
 </div>
@@ -537,6 +554,90 @@
     const newBestRow = document.getElementById("newBestRow");
     const flashEl = document.getElementById("flash");
     const soundToggle = document.getElementById("sound-toggle");
+    const langToggle  = document.getElementById("lang-toggle");
+
+    /* -------------------- i18n -------------------- */
+    const I18N = {
+        uk: {
+            title:        "Лабіринт",
+            backMenu:     "← Меню",
+            diffEasy:     "Легко",
+            diffMedium:   "Середньо",
+            diffHard:     "Складно",
+            statTime:     "Час",
+            statSteps:    "Кроки",
+            statBest:     "Рекорд",
+            secSuffix:    "с",
+            restartBtn:   "↻ Новий лабіринт",
+            winTitle:     "🎉 Перемога!",
+            winMessage:   "Лабіринт пройдено!",
+            winNewBest:   "★ Новий рекорд!",
+            winPlayAgain: "Грати знову →",
+            ariaSound:    "Звук",
+            ariaLang:     "Мова"
+        },
+        en: {
+            title:        "Maze",
+            backMenu:     "← Menu",
+            diffEasy:     "Easy",
+            diffMedium:   "Medium",
+            diffHard:     "Hard",
+            statTime:     "Time",
+            statSteps:    "Steps",
+            statBest:     "Best",
+            secSuffix:    "s",
+            restartBtn:   "↻ New maze",
+            winTitle:     "🎉 You made it!",
+            winMessage:   "Maze solved!",
+            winNewBest:   "★ New best time!",
+            winPlayAgain: "Play again →",
+            ariaSound:    "Sound",
+            ariaLang:     "Language"
+        }
+    };
+
+    let lang = localStorage.getItem("maze.lang");
+    if (lang !== "uk" && lang !== "en") lang = "uk";
+    const tr = (key) => (I18N[lang] && I18N[lang][key]) || I18N.uk[key] || key;
+
+    let lastWinState = null;
+
+    function applyLang() {
+        document.documentElement.lang = lang;
+        document.title = tr("title");
+
+        document.querySelectorAll("[data-i18n]").forEach(el => {
+            const key = el.getAttribute("data-i18n");
+            const val = tr(key);
+            if (val) el.textContent = val;
+        });
+
+        soundToggle.setAttribute("aria-label", tr("ariaSound"));
+        langToggle.setAttribute("aria-label", tr("ariaLang"));
+        langToggle.textContent = lang === "uk" ? "UA" : "EN";
+
+        // Time / best labels depend on suffix.
+        bestTimeEl.textContent = bestTime === null ? "—" : bestTime + tr("secSuffix");
+        if (startTime) timeEl.textContent = elapsed + tr("secSuffix");
+        else timeEl.textContent = "0" + tr("secSuffix");
+
+        // If the win modal is currently shown, refresh its dynamic strings too.
+        if (lastWinState) {
+            winTime.textContent  = lastWinState.seconds + tr("secSuffix");
+            winSteps.textContent = String(lastWinState.steps);
+            winMessage.textContent = tr("winMessage");
+            newBestRow.innerHTML = lastWinState.isBest
+                ? '<span class="new-best">' + tr("winNewBest") + "</span>"
+                : "";
+        }
+    }
+
+    langToggle.addEventListener("click", () => {
+        lang = lang === "uk" ? "en" : "uk";
+        localStorage.setItem("maze.lang", lang);
+        audio.tick();
+        applyLang();
+    });
 
     /* -------------------- AUDIO (Web Audio synth) -------------------- */
     const audio = (() => {
@@ -692,14 +793,14 @@
     function loadBest() {
         const raw = localStorage.getItem(bestKey());
         bestTime = raw === null ? null : Number(raw);
-        bestTimeEl.textContent = bestTime === null ? "—" : bestTime + "с";
+        bestTimeEl.textContent = bestTime === null ? "—" : bestTime + tr("secSuffix");
     }
 
     function saveBest(t) {
         if (bestTime === null || t < bestTime) {
             bestTime = t;
             localStorage.setItem(bestKey(), String(t));
-            bestTimeEl.textContent = t + "с";
+            bestTimeEl.textContent = t + tr("secSuffix");
             return true;
         }
         return false;
@@ -827,11 +928,11 @@
         clearInterval(timer);
         startTime = Date.now();
         elapsed = 0;
-        timeEl.textContent = "0с";
+        timeEl.textContent = "0" + tr("secSuffix");
         timer = setInterval(() => {
             if (locked) return;
             elapsed = formatElapsed();
-            timeEl.textContent = elapsed + "с";
+            timeEl.textContent = elapsed + tr("secSuffix");
         }, 250);
     }
 
@@ -844,7 +945,8 @@
         visited = new Set(["0,0"]);
         stepsEl.textContent = "0";
         locked = false;
-        timeEl.textContent = "0с";
+        lastWinState = null;
+        timeEl.textContent = "0" + tr("secSuffix");
 
         goal.classList.remove("burst");
         goal.style.opacity = "";
@@ -910,12 +1012,13 @@
         if (x === size - 1 && y === size - 1) {
             locked = true;
             clearInterval(timer);
-            const t = formatElapsed();
-            elapsed = t;
-            timeEl.textContent = t + "с";
+            const seconds = formatElapsed();
+            elapsed = seconds;
+            timeEl.textContent = seconds + tr("secSuffix");
             vibrate([15, 60, 15, 60, 25]);
 
-            const isBest = saveBest(t);
+            const isBest = saveBest(seconds);
+            lastWinState = { seconds, steps, isBest };
 
             // Visual: goal explodes, board glows gold, screen flashes, confetti rains.
             goal.classList.add("burst");
@@ -930,10 +1033,12 @@
                 vibrate([30, 80, 30, 80, 30, 80, 80]);
             }
 
-            winTime.textContent = t + "с";
+            winTime.textContent  = seconds + tr("secSuffix");
             winSteps.textContent = String(steps);
-            winMessage.textContent = "Лабіринт пройдено!";
-            newBestRow.innerHTML = isBest ? '<span class="new-best">★ Новий рекорд!</span>' : "";
+            winMessage.textContent = tr("winMessage");
+            newBestRow.innerHTML = isBest
+                ? '<span class="new-best">' + tr("winNewBest") + "</span>"
+                : "";
 
             setTimeout(() => winOverlay.classList.add("active"), 850);
         }
@@ -1041,11 +1146,17 @@
     });
 
     loadBest();
+    applyLang();
     reset();
 
     if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-            navigator.serviceWorker.register("../../sw.js").catch(() => {});
+        window.addEventListener("load", async () => {
+            try {
+                await navigator.serviceWorker.register("../../sw.js");
+                const reg = await navigator.serviceWorker.ready;
+                const sw  = reg.active || navigator.serviceWorker.controller;
+                if (sw) sw.postMessage({ type: "ensure-cache" });
+            } catch (_) {}
         });
     }
 </script>

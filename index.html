@@ -165,6 +165,29 @@
 
         .btn-share:active { background: rgba(255, 255, 255, 0.16); }
 
+        .btn-apk {
+            background: linear-gradient(180deg, #34d399, #059669);
+            color: #052e1c;
+            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+            text-decoration: none;
+        }
+
+        .btn-apk small {
+            opacity: 0.75;
+            font-weight: 500;
+            margin-left: 4px;
+        }
+
+        .apk-hint {
+            font-size: 0.78rem;
+            color: #94a3b8;
+            text-align: center;
+            margin-top: -2px;
+            line-height: 1.4;
+        }
+
+        .apk-hint a { color: #86efac; }
+
         [hidden] { display: none !important; }
 
         .modal-backdrop {
@@ -406,6 +429,10 @@
 
 <div class="footer-actions">
     <button id="install-btn" class="action-btn btn-install" type="button" hidden>📲 Встановити додаток</button>
+    <a id="apk-btn" class="action-btn btn-apk" href="./download/mini-games.apk" download="mini-games.apk">
+        🤖 Завантажити для Android <small>(APK)</small>
+    </a>
+    <p class="apk-hint">Окремий .apk-файл для Android. Працює без Google Play. <a href="#" id="apk-help-link">Як встановити?</a></p>
     <button id="share-btn" class="action-btn btn-share" type="button">📤 Запросити друзів</button>
 </div>
 
@@ -426,12 +453,13 @@
             <a id="share-sms" class="share-btn-row" href="#">💌 SMS</a>
         </div>
 
-        <details>
+        <details id="install-details">
             <summary>Як встановити додаток на телефон?</summary>
             <div class="install-help">
+                <p><strong>🤖 Android — окремий APK-файл:</strong> натисни <em>«Завантажити для Android»</em>. Після завантаження відкрий файл → дозволь «Встановлення з невідомих джерел» (Settings → Security) → встанови. Працює без Google Play та без інтернету після першого запуску.</p>
+                <p><strong>🤖 Android — через браузер (PWA):</strong> Відкрий посилання у <em>Chrome</em>. Зʼявиться банер «Встановити додаток». Або: меню (⋮) → «Встановити додаток» / «Додати на головний екран».</p>
                 <p><strong>📱 iPhone / iPad:</strong> Відкрий посилання у <em>Safari</em> → натисни «Поділитися» <span style="font-family:monospace">⬆️</span> → «Додати на головний екран» (<em>Add to Home Screen</em>).</p>
-                <p><strong>🤖 Android:</strong> Відкрий посилання у <em>Chrome</em>. Зʼявиться банер «Встановити додаток». Або: меню (⋮) → «Встановити додаток» / «Додати на головний екран».</p>
-                <p><strong>💻 Komputer:</strong> Chrome / Edge — у адресному рядку буде значок «Встановити» (⊕).</p>
+                <p><strong>💻 Комп'ютер:</strong> Chrome / Edge — у адресному рядку буде значок «Встановити» (⊕).</p>
                 <p style="margin-top:10px;color:#86efac;"><strong>✓ Після встановлення</strong> можна грати без інтернету — усі ігри та питання зберігаються на пристрої.</p>
             </div>
         </details>
@@ -615,6 +643,14 @@
         shareModal.classList.add("active");
     });
 
+    document.getElementById("apk-help-link")?.addEventListener("click", (e) => {
+        e.preventDefault();
+        shareModal.classList.add("active");
+        const details = document.getElementById("install-details");
+        if (details) details.open = true;
+        details?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
+
     shareNative.addEventListener("click", async () => {
         try {
             await navigator.share({ title: SHARE_TITLE, text: SHARE_TEXT, url: installUrl });
@@ -652,23 +688,70 @@
         toastTimer = setTimeout(() => t.classList.remove("show"), 2200);
     }
 
-    // --- Update offline badge based on current cache / connection state ---
+    // --- Offline badge: reflects cache completeness + connection state ---
     const offlineBadge = document.getElementById("offline-badge");
+    let cacheState = null; // { done, total, missing }
+
+    function setBadgeStyle(color, border, bg) {
+        offlineBadge.style.color = color;
+        offlineBadge.style.borderColor = border;
+        offlineBadge.style.background = bg;
+    }
+
     function refreshOfflineBadge() {
         if (!("serviceWorker" in navigator)) {
             offlineBadge.textContent = "Офлайн недоступний";
-            offlineBadge.style.color = "#94a3b8";
-            offlineBadge.style.borderColor = "rgba(148,163,184,0.3)";
-            offlineBadge.style.background = "rgba(148,163,184,0.1)";
+            setBadgeStyle("#94a3b8", "rgba(148,163,184,0.3)", "rgba(148,163,184,0.1)");
             return;
         }
+
+        if (cacheState && cacheState.done < cacheState.total) {
+            offlineBadge.textContent =
+                "⏬ Завантаження для офлайн… " + cacheState.done + "/" + cacheState.total;
+            setBadgeStyle("#fde68a", "rgba(251,191,36,0.4)", "rgba(251,191,36,0.12)");
+            return;
+        }
+
+        if (cacheState && cacheState.missing && cacheState.missing.length > 0) {
+            const got = cacheState.total - cacheState.missing.length;
+            offlineBadge.textContent = "⚠ Офлайн частково: " + got + "/" + cacheState.total;
+            setBadgeStyle("#fde68a", "rgba(251,191,36,0.4)", "rgba(251,191,36,0.12)");
+            return;
+        }
+
         offlineBadge.textContent = navigator.onLine
-            ? "✓ Працює офлайн"
-            : "📴 Зараз без інтернету — все ще працює";
+            ? "✓ Готово до офлайн"
+            : "📴 Зараз без інтернету — все працює";
+        setBadgeStyle("", "", "");
     }
-    window.addEventListener("online", refreshOfflineBadge);
+
+    async function pingSWToEnsureCache() {
+        if (!("serviceWorker" in navigator)) return;
+        try {
+            const reg = await navigator.serviceWorker.ready;
+            const sw  = reg.active || navigator.serviceWorker.controller;
+            if (sw) sw.postMessage({ type: "ensure-cache" });
+        } catch (_) {}
+    }
+
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.addEventListener("message", (event) => {
+            const d = event.data || {};
+            if (d.type === "cache-progress" || d.type === "cache-complete") {
+                cacheState = { done: d.done, total: d.total, missing: d.missing || [] };
+                refreshOfflineBadge();
+            }
+        });
+    }
+
+    window.addEventListener("online", () => {
+        refreshOfflineBadge();
+        pingSWToEnsureCache();
+    });
     window.addEventListener("offline", refreshOfflineBadge);
+
     refreshOfflineBadge();
+    pingSWToEnsureCache();
 </script>
 
 </body>

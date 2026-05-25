@@ -33,6 +33,51 @@ test.describe("Mini Games smoke tests", () => {
     expect(installBody, "install must not auto-skipWaiting").not.toMatch(/skipWaiting\s*\(/);
   });
 
+  test("offline ensure-cache: SW caches all subject JSONs after first online visit", async ({ page }) => {
+    await page.goto("/");
+
+    // Wait for the service worker to be ready and a controller to exist.
+    await page.waitForFunction(async () => {
+      if (!("serviceWorker" in navigator)) return false;
+      await navigator.serviceWorker.ready;
+      return !!navigator.serviceWorker.controller;
+    }, null, { timeout: 15000 });
+
+    // Trigger ensure-cache from the page (the production code also does this
+    // automatically on load and on `online` events). Wait for cache-complete.
+    const result = await page.evaluate(() => new Promise((resolve) => {
+      const onMsg = (e) => {
+        const d = e.data || {};
+        if (d.type === "cache-complete") {
+          navigator.serviceWorker.removeEventListener("message", onMsg);
+          resolve({ done: d.done, total: d.total, missing: d.missing || [] });
+        }
+      };
+      navigator.serviceWorker.addEventListener("message", onMsg);
+      const sw = navigator.serviceWorker.controller;
+      sw.postMessage({ type: "ensure-cache" });
+      setTimeout(() => resolve({ done: 0, total: 0, timeout: true }), 20000);
+    }));
+
+    expect(result.timeout).toBeFalsy();
+    expect(result.total).toBeGreaterThan(8); // 9 JSONs + 3 HTMLs + manifest + icon = ~15+
+    expect(result.missing).toEqual([]);
+
+    // Verify a sample of the cached subject JSONs is actually in the cache
+    // and matches what the page fetches.
+    const cached = await page.evaluate(async () => {
+      const cache = await caches.open("mini-games-v3");
+      const urls = [
+        "./games/first-million/data/subjects.json",
+        "./games/first-million/data/ya-doslidzhuyu-svit-4-klas.json",
+        "./games/first-million/data/steam-4-klas.json",
+      ];
+      const results = await Promise.all(urls.map(u => cache.match(u).then(r => !!r)));
+      return results;
+    });
+    expect(cached).toEqual([true, true, true]);
+  });
+
   test("PWA assets are reachable and manifest is valid", async ({ page, request }) => {
     const manifestRes = await request.get("/manifest.webmanifest");
     expect(manifestRes.ok()).toBeTruthy();
@@ -59,9 +104,35 @@ test.describe("Mini Games smoke tests", () => {
     await expect(page.locator("#share-btn")).toBeVisible();
   });
 
+  test("maze language switcher toggles UA / EN labels", async ({ page }) => {
+    await page.goto("/games/maze/index.html");
+
+    // Default is Ukrainian.
+    await expect(page).toHaveTitle("Лабіринт");
+    await expect(page.locator("#restart")).toContainText("Новий лабіринт");
+    await expect(page.locator(".diff-btn[data-size='12']")).toHaveText("Середньо");
+    const langBtn = page.locator("#lang-toggle");
+    await expect(langBtn).toHaveText("UA");
+
+    // Switch to English.
+    await langBtn.click();
+    await expect(langBtn).toHaveText("EN");
+    await expect(page).toHaveTitle("Maze");
+    await expect(page.locator("#restart")).toContainText("New maze");
+    await expect(page.locator(".diff-btn[data-size='12']")).toHaveText("Medium");
+    await expect(page.locator(".stat-label").first()).toHaveText("Time");
+
+    // Switch back to Ukrainian and verify it sticks across reload.
+    await langBtn.click();
+    await expect(langBtn).toHaveText("UA");
+    await page.reload();
+    await expect(page.locator("#lang-toggle")).toHaveText("UA");
+    await expect(page.locator("#restart")).toContainText("Новий лабіринт");
+  });
+
   test("maze game loads and player moves", async ({ page }) => {
     await page.goto("/games/maze/index.html");
-    await expect(page).toHaveTitle(/Maze Game/i);
+    await expect(page).toHaveTitle(/Maze|Лабіринт/i);
     await expect(page.locator("#player")).toBeVisible();
     await expect(page.locator("#goal")).toBeVisible();
 

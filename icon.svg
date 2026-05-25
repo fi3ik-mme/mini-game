@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Mini Games">
+    <defs>
+        <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#1a1a2e"/>
+            <stop offset="0.5" stop-color="#16213e"/>
+            <stop offset="1" stop-color="#0f3460"/>
+        </linearGradient>
+        <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#fde68a"/>
+            <stop offset="0.5" stop-color="#fbbf24"/>
+            <stop offset="1" stop-color="#d97706"/>
+        </linearGradient>
+        <radialGradient id="glow" cx="0.5" cy="0.55" r="0.55">
+            <stop offset="0" stop-color="#fbbf24" stop-opacity="0.25"/>
+            <stop offset="1" stop-color="#fbbf24" stop-opacity="0"/>
+        </radialGradient>
+    </defs>
+
+    <rect width="512" height="512" fill="url(#bg)"/>
+
+    <circle cx="256" cy="280" r="170" fill="url(#glow)"/>
+
+    <text x="256" y="362"
+          text-anchor="middle"
+          font-family="-apple-system, 'Helvetica Neue', Arial, sans-serif"
+          font-size="280"
+          font-weight="900"
+          fill="url(#gold)">&#x041C;</text>
+
+    <g transform="translate(388 132)" fill="#fde68a">
+        <path d="M0 -22 L7 -7 L22 0 L7 7 L0 22 L-7 7 L-22 0 L-7 -7 Z"/>
+    </g>
+    <g transform="translate(132 380)" fill="#fde68a" opacity="0.7">
+        <path d="M0 -12 L4 -4 L12 0 L4 4 L0 12 L-4 4 L-12 0 L-4 -4 Z"/>
+    </g>
+</svg>
