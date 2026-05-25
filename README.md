@@ -42,7 +42,7 @@ There is also a **«📲 Встановити додаток»** button that use
 
 ## Android binary (.apk)
 
-A pre-built signed Android APK is committed at [`download/mini-games.apk`](./download/mini-games.apk). It targets a **wide range of devices** (`minSdkVersion=21`, i.e. Android 5.0 Lollipop and up) and the **latest Android versions** (`targetSdkVersion=35`, Android 15).
+A pre-built signed Android APK is committed at [`download/mini-games.apk`](./download/mini-games.apk). It targets a **wide range of devices** (`minSdkVersion=21`, i.e. Android 5.0 Lollipop and up) and the **latest Android versions** (`targetSdkVersion=35`, Android 15). The current published version is tracked in [`release.json`](./release.json).
 
 Under the hood it is a Trusted Web Activity (TWA) generated with [Bubblewrap](https://github.com/GoogleChromeLabs/bubblewrap). The APK is a thin shell that opens the same live PWA at `https://fi3ik-mme.github.io/mini-game/` in a full-screen WebView — so once installed, every subsequent push to GitHub Pages auto-updates the app the next time the user opens it.
 
@@ -90,6 +90,29 @@ This single command:
 2. Open the downloaded file.
 3. If Android blocks "unknown sources", allow this one-time install in *Settings → Security* (or use the per-app toggle Android offers on the install dialog).
 4. Done — the icon **Міні-Ігри** appears in the launcher.
+
+### How the app updates itself
+
+The Mini-Games app has **two independent update layers**, and you almost never need to think about either of them:
+
+1. **Web content (instant, automatic).** Because the APK is a TWA shell that loads the live PWA, every push to `main` ships immediately to every installed app the next time it goes online. The service worker downloads the new bundle in the background and shows the "✨ Доступна нова версія / Оновити" banner at the bottom of the screen. A single tap reloads the page on the new version. Everything keeps working offline either way.
+
+2. **The APK itself (semi-automatic).** Some changes can only ship by reinstalling the APK — e.g. new Android permissions, a bumped `targetSdkVersion`, a new icon, or a new launcher name. For these the build script bakes the version into the start URL (`?src=apk&av=N`) and publishes a `release.json` at the site root. The installed app polls `release.json` on launch / when the network comes back / when the tab is refocused, and if the published `versionCode` is greater than the installed one it shows a green **«🚀 Доступна нова версія додатка»** card on the main menu. Tapping **«Завантажити та оновити»** downloads the signed APK; Android opens the package installer and — because the new APK uses the same `packageId` and signature — offers a one-tap *Update* (the user does not have to uninstall first, and all `localStorage` progress is kept).
+
+> Fully silent install (true OS-level auto-update) is only possible via the Play Store or a Device Owner / MDM. Side-loaded APKs always require one explicit user tap to confirm the install, which is what the green update card streamlines.
+
+### Releasing a new APK
+
+1. Open `scripts/build-android.mjs` and bump the two constants at the top:
+
+   ```js
+   const APP_VERSION_CODE = 3;        // monotonic integer
+   const APP_VERSION_NAME = "1.2.0";  // any semver-like string
+   const RELEASE_NOTES    = "Що нового у цій версії…";
+   ```
+
+2. Run `npm run build:android`. This rebuilds `download/mini-games.apk` and overwrites `release.json` with the new version metadata.
+3. Commit both files (`download/mini-games.apk`, `release.json`) and push to `main`. Every installed APK that has the older `versionCode` will see the update card on its next online launch.
 
 ## Local development
 

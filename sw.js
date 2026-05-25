@@ -1,4 +1,4 @@
-const CACHE_NAME = "mini-games-v3";
+const CACHE_NAME = "mini-games-v5";
 
 const PRECACHE = [
     "./",
@@ -17,7 +17,13 @@ const PRECACHE = [
     "./games/first-million/data/mystetstvo-4-klas.json",
     "./games/first-million/data/steam-4-klas.json",
     "./games/first-million/data/ukrayinska-mova-2-yads-4-klas.json",
-    "./games/first-million/data/ya-doslidzhuyu-svit-4-klas.json"
+    "./games/first-million/data/ya-doslidzhuyu-svit-4-klas.json",
+    "./games/adventure-academy/",
+    "./games/adventure-academy/index.html",
+    "./games/adventure-academy/data/themes.json",
+    "./games/adventure-academy/data/space.json",
+    "./games/adventure-academy/data/human-body.json",
+    "./games/adventure-academy/data/ancient-egypt.json"
 ];
 
 self.addEventListener("install", (event) => {
@@ -86,6 +92,22 @@ self.addEventListener("fetch", (event) => {
 
     const url = new URL(req.url);
     if (url.origin !== self.location.origin) return;
+
+    // release.json publishes the latest native APK version. It must always be
+    // fresh — never cached — so installed APKs reliably learn about updates.
+    if (url.pathname.endsWith("/release.json")) {
+        event.respondWith(fetch(req).catch(() => new Response("{}", {
+            status: 200,
+            headers: { "Content-Type": "application/json" }
+        })));
+        return;
+    }
+
+    // The signed APK itself is bulky and changes every release; don't cache it.
+    if (url.pathname.endsWith(".apk")) {
+        event.respondWith(fetch(req));
+        return;
+    }
 
     // Network-first for navigations to let updates flow through.
     if (req.mode === "navigate") {

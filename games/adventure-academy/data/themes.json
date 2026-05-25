@@ -1,0 +1,26 @@
+[
+  {
+    "id": "space",
+    "title": "Космос",
+    "subtitle": "Подорож зорями",
+    "emoji": "🚀",
+    "color": "#5b21b6",
+    "file": "data/space.json"
+  },
+  {
+    "id": "human-body",
+    "title": "Тіло людини",
+    "subtitle": "Як ми влаштовані",
+    "emoji": "🫀",
+    "color": "#be123c",
+    "file": "data/human-body.json"
+  },
+  {
+    "id": "ancient-egypt",
+    "title": "Давній Єгипет",
+    "subtitle": "Земля фараонів",
+    "emoji": "🏺",
+    "color": "#b45309",
+    "file": "data/ancient-egypt.json"
+  }
+]

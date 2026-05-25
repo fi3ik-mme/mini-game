@@ -1,12 +1,13 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("Mini Games smoke tests", () => {
-  test("menu lists both games", async ({ page }) => {
+  test("menu lists all three games", async ({ page }) => {
     await page.goto("/");
     await expect(page).toHaveTitle(/Міні-Ігри/);
     await expect(page.getByRole("heading", { name: "Міні-Ігри" })).toBeVisible();
     await expect(page.getByRole("link", { name: /Лабіринт/ })).toBeVisible();
     await expect(page.getByRole("link", { name: /Перший мільйон/ })).toBeVisible();
+    await expect(page.getByRole("link", { name: /Академія пригод/ })).toBeVisible();
   });
 
   test("auto-update banner exists, is hidden by default, and SW supports skip-waiting", async ({ page, request }) => {
@@ -60,22 +61,24 @@ test.describe("Mini Games smoke tests", () => {
     }));
 
     expect(result.timeout).toBeFalsy();
-    expect(result.total).toBeGreaterThan(8); // 9 JSONs + 3 HTMLs + manifest + icon = ~15+
+    expect(result.total).toBeGreaterThan(8); // 9 first-million JSONs + 4 adventure JSONs + HTMLs + manifest + icon
     expect(result.missing).toEqual([]);
 
     // Verify a sample of the cached subject JSONs is actually in the cache
     // and matches what the page fetches.
     const cached = await page.evaluate(async () => {
-      const cache = await caches.open("mini-games-v3");
+      const cache = await caches.open("mini-games-v5");
       const urls = [
         "./games/first-million/data/subjects.json",
         "./games/first-million/data/ya-doslidzhuyu-svit-4-klas.json",
         "./games/first-million/data/steam-4-klas.json",
+        "./games/adventure-academy/data/themes.json",
+        "./games/adventure-academy/data/space.json",
       ];
       const results = await Promise.all(urls.map(u => cache.match(u).then(r => !!r)));
       return results;
     });
-    expect(cached).toEqual([true, true, true]);
+    expect(cached).toEqual([true, true, true, true, true]);
   });
 
   test("PWA assets are reachable and manifest is valid", async ({ page, request }) => {
@@ -152,6 +155,107 @@ test.describe("Mini Games smoke tests", () => {
     }
 
     expect(moved).toBe(true);
+  });
+
+  test("APK update banner is hidden for web users and shown when installed APK is older than release.json", async ({ page, request }) => {
+    // 1) Plain web visitor (no src=apk URL) → banner stays hidden.
+    await page.addInitScript(() => {
+      try {
+        localStorage.removeItem("apk:installedAppVersionCode");
+        localStorage.removeItem("apk:dismissedVersionCode");
+      } catch (_) {}
+    });
+    await page.goto("/");
+    await expect(page.locator("#apk-update")).toBeHidden();
+
+    // 2) release.json is reachable and looks well-formed.
+    const releaseRes = await request.get("/release.json");
+    expect(releaseRes.ok()).toBeTruthy();
+    const release = await releaseRes.json();
+    expect(typeof release.versionCode).toBe("number");
+    expect(release.versionCode).toBeGreaterThan(0);
+
+    // 3) Simulate an APK install with an older versionCode → banner appears.
+    await page.addInitScript((current) => {
+      try {
+        localStorage.setItem("apk:installedAppVersionCode", String(current - 1));
+        localStorage.removeItem("apk:dismissedVersionCode");
+      } catch (_) {}
+    }, release.versionCode);
+    await page.goto("/");
+    const card = page.locator("#apk-update");
+    await expect(card).toBeVisible({ timeout: 5000 });
+    await expect(page.locator("#apk-update-download")).toHaveAttribute("href", /\.apk$/);
+  });
+
+  test("adventure-academy picker shows 3 themes and theme map shows 4 locations", async ({ page }) => {
+    await page.goto("/games/adventure-academy/index.html");
+    await expect(page).toHaveTitle("Академія пригод");
+
+    const grid = page.locator("#theme-grid");
+    await expect(grid).toBeVisible();
+    await expect(grid.getByRole("button").filter({ hasText: "Космос" })).toBeVisible({ timeout: 10000 });
+    await expect(grid.getByRole("button").filter({ hasText: "Тіло людини" })).toBeVisible();
+    await expect(grid.getByRole("button").filter({ hasText: "Давній Єгипет" })).toBeVisible();
+
+    await grid.getByRole("button").filter({ hasText: "Космос" }).click();
+
+    await expect(page.locator("#theme-title")).toHaveText("Космос", { timeout: 10000 });
+    const nodes = page.locator(".location-node");
+    await expect(nodes).toHaveCount(4);
+    // Only the first location is unlocked initially.
+    await expect(nodes.nth(0)).not.toHaveClass(/locked/);
+    await expect(nodes.nth(1)).toHaveClass(/locked/);
+    await expect(nodes.nth(2)).toHaveClass(/locked/);
+    await expect(nodes.nth(3)).toHaveClass(/locked/);
+  });
+
+  test("adventure-academy: answering the first location advances progress and unlocks next", async ({ page, request }) => {
+    // Load the space data server-side once; this bypasses the service worker
+    // and avoids the ".html → no-extension" redirect that `serve` performs.
+    const spaceRes = await request.get("/games/adventure-academy/data/space.json");
+    expect(spaceRes.ok()).toBeTruthy();
+    const space = await spaceRes.json();
+    const questionToAnswer = {};
+    for (const loc of space.locations) {
+      for (const q of loc.questions) {
+        questionToAnswer[q.text] = q.answers[q.correct];
+      }
+    }
+
+    await page.addInitScript(() => {
+      try { localStorage.removeItem("aa:v1"); } catch (_) {}
+    });
+    await page.goto("/games/adventure-academy/index.html");
+
+    const grid = page.locator("#theme-grid");
+    await grid.getByRole("button").filter({ hasText: "Космос" }).click({ timeout: 10000 });
+
+    const firstNode = page.locator(".location-node").nth(0);
+    await expect(firstNode).toHaveClass(/current/);
+    await firstNode.click();
+
+    await expect(page.locator("#question-screen")).toHaveClass(/active/, { timeout: 5000 });
+    const dots = page.locator(".progress-dots .dot");
+    await expect(dots).toHaveCount(5);
+    await expect(dots.nth(0)).toHaveClass(/current/);
+
+    for (let i = 0; i < 5; i++) {
+      const qText = (await page.locator("#question-text").textContent())?.trim();
+      const correctAnswer = questionToAnswer[qText];
+      expect(correctAnswer, `no mapping for question "${qText}"`).toBeTruthy();
+      await page.locator(".answer-btn").filter({ hasText: correctAnswer }).first().click();
+      await page.locator("#question-continue").click();
+    }
+
+    await expect(page.locator("#location-result-screen")).toHaveClass(/active/, { timeout: 5000 });
+    await expect(page.locator("#lr-stars")).toHaveText("5/5");
+
+    await page.locator("#lr-next").click();
+    await expect(page.locator("#map-screen")).toHaveClass(/active/);
+    const nodes = page.locator(".location-node");
+    await expect(nodes.nth(0)).toHaveClass(/done/);
+    await expect(nodes.nth(1)).not.toHaveClass(/locked/);
   });
 
   test("first million loads subjects and starts quiz", async ({ page }) => {

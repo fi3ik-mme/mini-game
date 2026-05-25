@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, viewport-fit=cover"/>
+    <title>Академія пригод</title>
+
+    <link rel="manifest" href="../../manifest.webmanifest" />
+    <meta name="theme-color" content="#1a1a2e" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Академія пригод" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="icon" type="image/svg+xml" href="../../icon.svg" />
+    <link rel="apple-touch-icon" href="../../icon.svg" />
+
+    <style>
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        html, body { overscroll-behavior: none; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            min-height: 100dvh;
+            background: radial-gradient(ellipse at top, #1e1b4b 0%, #0f0a24 70%);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            color: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 12px;
+            padding-bottom: max(16px, env(safe-area-inset-bottom));
+            touch-action: manipulation;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        /* ---------- Top bar ---------- */
+        .top-bar {
+            width: 100%;
+            max-width: 720px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .back-link {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 8px 12px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .back-link:active { background: rgba(255, 255, 255, 0.14); }
+
+        .icon-btn {
+            background: rgba(255, 255, 255, 0.06);
+            color: #f8fafc;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            font-size: 1.1rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+        .icon-btn:active { transform: scale(0.94); }
+
+        .top-controls {
+            display: flex;
+            gap: 6px;
+        }
+
+        /* ---------- HUD: stars + coins ---------- */
+        .hud {
+            width: 100%;
+            max-width: 720px;
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+        .hud-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 99px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: transform 0.25s;
+        }
+        .hud-chip.pop { animation: pop 0.45s ease; }
+        @keyframes pop {
+            0% { transform: scale(1); }
+            40% { transform: scale(1.25); }
+            100% { transform: scale(1); }
+        }
+        .hud-chip .v { font-variant-numeric: tabular-nums; }
+        .hud-chip.stars { color: #fde047; border-color: rgba(253, 224, 71, 0.4); }
+        .hud-chip.coins { color: #fbbf24; border-color: rgba(251, 191, 36, 0.4); }
+        .hud-chip.badges { color: #c4b5fd; border-color: rgba(196, 181, 253, 0.4); }
+
+        /* ---------- Screens ---------- */
+        .screen {
+            display: none;
+            width: 100%;
+            max-width: 720px;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            animation: screen-in 0.4s ease;
+        }
+        .screen.active { display: flex; }
+        @keyframes screen-in {
+            from { opacity: 0; transform: translateY(8px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        h1.page-title {
+            margin: 0;
+            font-size: 1.6rem;
+            text-align: center;
+            background: linear-gradient(180deg, #fde68a 0%, #fbbf24 60%, #d97706 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .page-sub {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin: -8px 0 4px;
+            text-align: center;
+        }
+
+        /* ---------- Theme picker cards ---------- */
+        .theme-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            width: 100%;
+        }
+        @media (min-width: 560px) {
+            .theme-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (min-width: 820px) {
+            .theme-grid { grid-template-columns: 1fr 1fr 1fr; }
+        }
+
+        .theme-card {
+            position: relative;
+            overflow: hidden;
+            border: 0;
+            font-family: inherit;
+            cursor: pointer;
+            padding: 18px 16px;
+            border-radius: 18px;
+            background: linear-gradient(160deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #f8fafc;
+            text-align: left;
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            transition: transform 0.18s, border-color 0.2s, box-shadow 0.2s;
+        }
+        .theme-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: var(--accent, #5b21b6);
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        .theme-card:active { transform: scale(0.98); }
+        .theme-card .emoji {
+            font-size: 2.4rem;
+            line-height: 1;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+        }
+        .theme-card .titles { flex: 1; min-width: 0; }
+        .theme-card .titles strong {
+            display: block;
+            font-size: 1.15rem;
+            margin-bottom: 4px;
+        }
+        .theme-card .titles span {
+            color: #cbd5e1;
+            font-size: 0.85rem;
+            display: block;
+        }
+        .theme-card .progress {
+            display: block;
+            margin-top: 8px;
+            height: 6px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 99px;
+            overflow: hidden;
+        }
+        .theme-card .progress span {
+            display: block;
+            height: 100%;
+            background: linear-gradient(90deg, #fbbf24, #fde047);
+            transition: width 0.5s;
+        }
+        .theme-card.done {
+            border-color: rgba(253, 224, 71, 0.5);
+            box-shadow: 0 0 0 1px rgba(253, 224, 71, 0.25), 0 6px 24px rgba(245, 158, 11, 0.18);
+        }
+        .theme-card.done::after {
+            content: "🏅";
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            font-size: 1.4rem;
+        }
+
+        /* ---------- Map view ---------- */
+        .map-header {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+        .map-header .big-emoji {
+            font-size: 3rem;
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+            margin-bottom: 4px;
+        }
+
+        .map-path {
+            position: relative;
+            width: 100%;
+            min-height: 360px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px 24px;
+            padding: 12px 8px;
+        }
+        .map-path::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 50% 12%, rgba(251,191,36,0.08) 0, transparent 60%),
+                radial-gradient(circle at 50% 50%, rgba(91,33,182,0.10) 0, transparent 60%),
+                radial-gradient(circle at 50% 88%, rgba(190,18,60,0.07) 0, transparent 60%);
+            pointer-events: none;
+            border-radius: 24px;
+        }
+
+        .location-node {
+            position: relative;
+            cursor: pointer;
+            background: rgba(255,255,255,0.06);
+            border: 2px solid rgba(255,255,255,0.18);
+            border-radius: 18px;
+            padding: 16px 12px;
+            color: #f8fafc;
+            text-align: center;
+            font-family: inherit;
+            transition: transform 0.18s, border-color 0.2s, background 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            min-height: 130px;
+        }
+        .location-node .emoji {
+            font-size: 2.4rem;
+            line-height: 1;
+            filter: drop-shadow(0 3px 8px rgba(0,0,0,0.4));
+        }
+        .location-node .title {
+            font-weight: 700;
+            font-size: 1.02rem;
+        }
+        .location-node .stars-earned {
+            display: flex;
+            gap: 2px;
+            margin-top: 4px;
+        }
+        .location-node .stars-earned span {
+            font-size: 0.85rem;
+            opacity: 0.4;
+        }
+        .location-node .stars-earned span.lit { opacity: 1; color: #fde047; }
+        .location-node:active { transform: scale(0.96); }
+
+        .location-node.current {
+            border-color: rgba(253, 224, 71, 0.7);
+            background: rgba(253, 224, 71, 0.12);
+            box-shadow: 0 0 0 4px rgba(253, 224, 71, 0.15);
+            animation: pulse 1.6s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 4px rgba(253, 224, 71, 0.15); }
+            50% { box-shadow: 0 0 0 10px rgba(253, 224, 71, 0.02); }
+        }
+
+        .location-node.done {
+            border-color: rgba(34, 197, 94, 0.6);
+            background: rgba(34, 197, 94, 0.08);
+        }
+        .location-node.done::after {
+            content: "✓";
+            position: absolute;
+            top: 6px;
+            right: 10px;
+            color: #4ade80;
+            font-weight: 800;
+        }
+
+        .location-node.locked {
+            opacity: 0.45;
+            cursor: not-allowed;
+        }
+        .location-node.locked::after {
+            content: "🔒";
+            position: absolute;
+            top: 6px;
+            right: 8px;
+            font-size: 1rem;
+        }
+
+        .map-tip {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+
+        /* ---------- Question view ---------- */
+        .progress-dots {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin: 4px 0;
+        }
+        .progress-dots .dot {
+            width: 30px;
+            height: 8px;
+            border-radius: 99px;
+            background: rgba(255,255,255,0.14);
+            transition: background 0.3s, transform 0.3s;
+        }
+        .progress-dots .dot.current {
+            background: #fbbf24;
+            transform: scaleY(1.4);
+        }
+        .progress-dots .dot.done {
+            background: #4ade80;
+        }
+        .progress-dots .dot.boss {
+            background: linear-gradient(90deg, #f87171, #fbbf24);
+            box-shadow: 0 0 6px rgba(251,191,36,0.6);
+        }
+
+        .mentor {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            width: 100%;
+            margin-top: 4px;
+        }
+        .mentor .avatar {
+            width: 56px;
+            height: 56px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background: radial-gradient(circle, #5b21b6, #1e1b4b);
+            display: grid;
+            place-items: center;
+            font-size: 1.8rem;
+            border: 2px solid rgba(196, 181, 253, 0.5);
+            box-shadow: 0 4px 16px rgba(91, 33, 182, 0.4);
+        }
+        .mentor .bubble {
+            flex: 1;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.14);
+            padding: 10px 14px;
+            border-radius: 14px;
+            position: relative;
+            color: #e0e7ff;
+            font-size: 0.92rem;
+            line-height: 1.4;
+        }
+        .mentor .bubble::before {
+            content: "";
+            position: absolute;
+            left: -8px;
+            top: 14px;
+            border: 8px solid transparent;
+            border-right-color: rgba(255,255,255,0.07);
+        }
+
+        .question-text {
+            width: 100%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+            border: 1px solid rgba(255,255,255,0.10);
+            border-radius: 16px;
+            padding: 18px 18px;
+            font-size: 1.18rem;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.4;
+        }
+        .question-text.boss {
+            border-color: rgba(248, 113, 113, 0.4);
+            box-shadow: 0 0 18px rgba(248, 113, 113, 0.15);
+        }
+
+        .answers {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            width: 100%;
+        }
+        @media (min-width: 560px) {
+            .answers { grid-template-columns: 1fr 1fr; }
+        }
+
+        .answer-btn {
+            border: 0;
+            font-family: inherit;
+            cursor: pointer;
+            font-size: 1.02rem;
+            padding: 16px 14px;
+            border-radius: 14px;
+            background: rgba(255,255,255,0.07);
+            border: 1.5px solid rgba(255,255,255,0.14);
+            color: #f8fafc;
+            text-align: left;
+            line-height: 1.35;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            min-height: 60px;
+            transition: transform 0.12s, background 0.2s, border-color 0.2s;
+        }
+        .answer-btn .letter {
+            flex-shrink: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: grid;
+            place-items: center;
+            font-weight: 700;
+            color: #c4b5fd;
+            font-size: 0.95rem;
+        }
+        .answer-btn:not(:disabled):active { transform: scale(0.98); }
+        .answer-btn:not(:disabled):hover { background: rgba(255,255,255,0.12); }
+
+        .answer-btn.correct {
+            background: rgba(34, 197, 94, 0.22);
+            border-color: rgba(34, 197, 94, 0.6);
+            animation: bounce 0.5s ease;
+        }
+        .answer-btn.correct .letter { background: rgba(34, 197, 94, 0.5); color: #fff; }
+        .answer-btn.wrong {
+            background: rgba(239, 68, 68, 0.22);
+            border-color: rgba(239, 68, 68, 0.6);
+            animation: shake 0.45s ease;
+        }
+        .answer-btn.wrong .letter { background: rgba(239, 68, 68, 0.5); color: #fff; }
+        .answer-btn:disabled { cursor: default; }
+
+        @keyframes bounce {
+            0%, 100% { transform: scale(1); }
+            40% { transform: scale(1.05); }
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-6px); }
+            40% { transform: translateX(6px); }
+            60% { transform: translateX(-4px); }
+            80% { transform: translateX(4px); }
+        }
+
+        body.shake .screen.active { animation: shake 0.45s ease; }
+
+        /* ---------- Big celebratory buttons ---------- */
+        .big-btn {
+            padding: 14px 22px;
+            border-radius: 14px;
+            border: 0;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            background: linear-gradient(180deg, #fbbf24, #d97706);
+            color: #1a1a2e;
+            box-shadow: 0 6px 18px rgba(245, 158, 11, 0.35);
+            transition: transform 0.12s;
+        }
+        .big-btn:active { transform: scale(0.97); }
+        .big-btn.secondary {
+            background: rgba(255, 255, 255, 0.08);
+            color: #f8fafc;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: none;
+        }
+
+        /* ---------- Reward screens ---------- */
+        .reward-card {
+            width: 100%;
+            max-width: 500px;
+            background: linear-gradient(180deg, rgba(91,33,182,0.4), rgba(30,27,75,0.7));
+            border: 2px solid rgba(196, 181, 253, 0.4);
+            border-radius: 22px;
+            padding: 28px 22px;
+            text-align: center;
+            box-shadow: 0 18px 60px rgba(0,0,0,0.5);
+        }
+        .reward-card h2 {
+            margin: 0 0 14px;
+            font-size: 1.6rem;
+            color: #fde68a;
+        }
+        .reward-card .big-emoji {
+            font-size: 4rem;
+            line-height: 1;
+            animation: float 2.4s ease-in-out infinite;
+            display: inline-block;
+            filter: drop-shadow(0 6px 18px rgba(0,0,0,0.5));
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+        .reward-stats {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .reward-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            min-width: 80px;
+        }
+        .reward-stat .icon {
+            font-size: 2rem;
+        }
+        .reward-stat .val {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #fde68a;
+        }
+        .reward-stat .label {
+            font-size: 0.78rem;
+            color: #cbd5e1;
+        }
+        .reward-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 6px;
+        }
+
+        /* ---------- Explanation card (slides up after wrong answer) ---------- */
+        .explain-card {
+            width: 100%;
+            background: linear-gradient(180deg, rgba(239,68,68,0.10), rgba(239,68,68,0.04));
+            border: 1px solid rgba(239,68,68,0.35);
+            border-radius: 14px;
+            padding: 14px 16px;
+            font-size: 0.95rem;
+            color: #fee2e2;
+            line-height: 1.45;
+            animation: slide-up 0.35s ease;
+            display: none;
+        }
+        .explain-card.active { display: block; }
+        .explain-card.correct {
+            background: linear-gradient(180deg, rgba(34,197,94,0.10), rgba(34,197,94,0.04));
+            border-color: rgba(34,197,94,0.35);
+            color: #d1fae5;
+        }
+        @keyframes slide-up {
+            from { opacity: 0; transform: translateY(10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ---------- Flying star + coin ---------- */
+        .fx-burst {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            font-size: 2.5rem;
+            pointer-events: none;
+            z-index: 80;
+            animation: fly-to-hud 0.9s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+            will-change: transform, opacity;
+        }
+        @keyframes fly-to-hud {
+            0% {
+                transform: translate(-50%, -50%) scale(0.4);
+                opacity: 0;
+            }
+            25% {
+                transform: translate(-50%, -50%) scale(1.4);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(calc(var(--target-x) - 50%), calc(var(--target-y) - 50%)) scale(0.4);
+                opacity: 0;
+            }
+        }
+
+        .streak-banner {
+            position: fixed;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, #fbbf24, #f97316);
+            color: #1a1a2e;
+            padding: 8px 18px;
+            border-radius: 99px;
+            font-weight: 700;
+            z-index: 70;
+            box-shadow: 0 8px 24px rgba(245,158,11,0.5);
+            animation: streak-pop 1.4s ease forwards;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+        @keyframes streak-pop {
+            0%   { opacity: 0; transform: translate(-50%, -10px) scale(0.7); }
+            20%  { opacity: 1; transform: translate(-50%, 0) scale(1.1); }
+            70%  { opacity: 1; transform: translate(-50%, 0) scale(1); }
+            100% { opacity: 0; transform: translate(-50%, -6px) scale(0.9); }
+        }
+
+        /* ---------- Confetti ---------- */
+        .confetti {
+            position: fixed;
+            top: -40px;
+            pointer-events: none;
+            z-index: 50;
+            animation: fall linear forwards;
+            will-change: transform, opacity;
+        }
+        @keyframes fall {
+            to { transform: translateY(115vh) rotate(720deg); opacity: 0.15; }
+        }
+
+        /* ---------- Flash overlay ---------- */
+        .flash {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background: transparent;
+            z-index: 40;
+            transition: background 0.25s ease;
+        }
+        .flash.correct { background: rgba(34, 197, 94, 0.18); }
+        .flash.wrong   { background: rgba(239, 68, 68, 0.22); }
+        .flash.win     { background: rgba(251, 191, 36, 0.28); }
+
+        /* ---------- Badge reveal ---------- */
+        .badge-medal {
+            width: 140px;
+            height: 140px;
+            margin: 6px auto 8px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, #fde047, #fbbf24, #d97706, #fbbf24, #fde047);
+            box-shadow: 0 0 50px rgba(251,191,36,0.6);
+            font-size: 4rem;
+            animation: badge-spin 1.4s ease;
+        }
+        @keyframes badge-spin {
+            0% { transform: rotate(-180deg) scale(0.2); opacity: 0; }
+            60% { transform: rotate(20deg) scale(1.15); opacity: 1; }
+            100% { transform: rotate(0deg) scale(1); opacity: 1; }
+        }
+
+        /* ---------- Accessibility helpers ---------- */
+        [hidden] { display: none !important; }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <a class="back-link" href="../../index.html">← Меню</a>
+    <div class="top-controls">
+        <button id="voice-toggle" class="icon-btn" type="button" aria-label="Озвучка">🔇</button>
+        <button id="sound-toggle" class="icon-btn" type="button" aria-label="Звук">🔊</button>
+    </div>
+</div>
+
+<div class="hud">
+    <span class="hud-chip stars">⭐ <span class="v" id="stars-count">0</span></span>
+    <span class="hud-chip coins">🪙 <span class="v" id="coins-count">0</span></span>
+    <span class="hud-chip badges">🏅 <span class="v" id="badges-count">0</span>/3</span>
+</div>
+
+<!-- ============ SCREEN: PICKER ============ -->
+<section id="picker-screen" class="screen active">
+    <h1 class="page-title">🎒 Академія пригод</h1>
+    <p class="page-sub">Обери тему й розпочни подорож</p>
+    <div id="theme-grid" class="theme-grid"></div>
+    <p class="map-tip" id="picker-tip">Кожна тема — 4 локації, 5 запитань у кожній.</p>
+</section>
+
+<!-- ============ SCREEN: MAP ============ -->
+<section id="map-screen" class="screen">
+    <div class="map-header">
+        <span class="big-emoji" id="theme-emoji">🚀</span>
+        <h1 class="page-title" id="theme-title">Тема</h1>
+        <p class="page-sub" id="theme-intro"></p>
+    </div>
+    <div class="map-path" id="map-path"></div>
+    <p class="map-tip" id="map-tip">Тапни на локацію, щоб почати.</p>
+    <button id="map-back" class="big-btn secondary" type="button">← До тем</button>
+</section>
+
+<!-- ============ SCREEN: QUESTION ============ -->
+<section id="question-screen" class="screen">
+    <div class="progress-dots" id="progress-dots"></div>
+    <div class="mentor">
+        <div class="avatar">🦉</div>
+        <div class="bubble" id="mentor-bubble">Готова мудра порада…</div>
+    </div>
+    <div class="question-text" id="question-text">Завантаження…</div>
+    <div class="answers" id="answers"></div>
+    <div class="explain-card" id="explain-card"></div>
+    <button id="question-continue" class="big-btn" type="button" hidden>Далі →</button>
+</section>
+
+<!-- ============ SCREEN: LOCATION RESULT ============ -->
+<section id="location-result-screen" class="screen">
+    <div class="reward-card">
+        <span class="big-emoji" id="lr-emoji">🌙</span>
+        <h2 id="lr-title">Локацію пройдено!</h2>
+        <p id="lr-subtitle" style="color:#cbd5e1;margin:0;">Молодець!</p>
+        <div class="reward-stats">
+            <div class="reward-stat"><span class="icon">⭐</span><span class="val" id="lr-stars">0/5</span><span class="label">зірки</span></div>
+            <div class="reward-stat"><span class="icon">🪙</span><span class="val" id="lr-coins">+0</span><span class="label">монети</span></div>
+            <div class="reward-stat" id="lr-streak-stat" hidden><span class="icon">🔥</span><span class="val" id="lr-streak">0</span><span class="label">серія</span></div>
+        </div>
+        <div class="reward-actions">
+            <button id="lr-next" class="big-btn" type="button">Далі →</button>
+            <button id="lr-retry" class="big-btn secondary" type="button" hidden>Спробувати ще</button>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SCREEN: THEME RESULT ============ -->
+<section id="theme-result-screen" class="screen">
+    <div class="reward-card">
+        <h2 style="margin-top:0;">Тему пройдено!</h2>
+        <div class="badge-medal" id="tr-medal">🏅</div>
+        <h2 id="tr-title">Бейдж отримано</h2>
+        <p id="tr-subtitle" style="color:#cbd5e1;">Ти відкрив(-ла) усі локації цієї теми</p>
+        <div class="reward-stats">
+            <div class="reward-stat"><span class="icon">⭐</span><span class="val" id="tr-stars">0/20</span><span class="label">всього зірок</span></div>
+            <div class="reward-stat"><span class="icon">🪙</span><span class="val" id="tr-coins">0</span><span class="label">монет</span></div>
+        </div>
+        <div class="reward-actions">
+            <button id="tr-home" class="big-btn" type="button">До тем</button>
+        </div>
+    </div>
+</section>
+
+<div id="flash" class="flash"></div>
+
+<script>
+    /* ===================================================================
+       Adventure Academy — single-file game.
+       Screens: picker → map → question → location-result → theme-result.
+       Persistence: localStorage 'aa:v1' (stars, coins, badges, per-theme progress).
+       Effects: Web Audio synth, confetti, flash, screen shake, flying stars,
+       streak banners, optional Ukrainian voice-over via speechSynthesis.
+       =================================================================== */
+
+    /* -------------------- DOM refs -------------------- */
+    const pickerScreen        = document.getElementById("picker-screen");
+    const mapScreen           = document.getElementById("map-screen");
+    const questionScreen      = document.getElementById("question-screen");
+    const locationResultScreen = document.getElementById("location-result-screen");
+    const themeResultScreen   = document.getElementById("theme-result-screen");
+    const screens = [pickerScreen, mapScreen, questionScreen, locationResultScreen, themeResultScreen];
+
+    const themeGrid    = document.getElementById("theme-grid");
+    const themeEmojiEl = document.getElementById("theme-emoji");
+    const themeTitleEl = document.getElementById("theme-title");
+    const themeIntroEl = document.getElementById("theme-intro");
+    const mapPathEl    = document.getElementById("map-path");
+    const mapBackBtn   = document.getElementById("map-back");
+
+    const progressDots  = document.getElementById("progress-dots");
+    const mentorBubble  = document.getElementById("mentor-bubble");
+    const questionText  = document.getElementById("question-text");
+    const answersEl     = document.getElementById("answers");
+    const explainCard   = document.getElementById("explain-card");
+    const continueBtn   = document.getElementById("question-continue");
+
+    const lrEmoji   = document.getElementById("lr-emoji");
+    const lrTitle   = document.getElementById("lr-title");
+    const lrSubtitle = document.getElementById("lr-subtitle");
+    const lrStars   = document.getElementById("lr-stars");
+    const lrCoins   = document.getElementById("lr-coins");
+    const lrStreakStat = document.getElementById("lr-streak-stat");
+    const lrStreak  = document.getElementById("lr-streak");
+    const lrNext    = document.getElementById("lr-next");
+    const lrRetry   = document.getElementById("lr-retry");
+
+    const trMedal    = document.getElementById("tr-medal");
+    const trTitle    = document.getElementById("tr-title");
+    const trSubtitle = document.getElementById("tr-subtitle");
+    const trStars    = document.getElementById("tr-stars");
+    const trCoins    = document.getElementById("tr-coins");
+    const trHome     = document.getElementById("tr-home");
+
+    const starsCountEl  = document.getElementById("stars-count");
+    const coinsCountEl  = document.getElementById("coins-count");
+    const badgesCountEl = document.getElementById("badges-count");
+
+    const soundToggle = document.getElementById("sound-toggle");
+    const voiceToggle = document.getElementById("voice-toggle");
+    const flashEl     = document.getElementById("flash");
+
+    /* -------------------- Persistent state -------------------- */
+    const STATE_KEY = "aa:v1";
+    const DEFAULT_STATE = {
+        stars: 0,
+        coins: 0,
+        badges: [],
+        themes: {},
+        soundOn: true,
+        voiceOn: false
+    };
+    function loadState() {
+        try {
+            const raw = localStorage.getItem(STATE_KEY);
+            if (!raw) return { ...DEFAULT_STATE };
+            const parsed = JSON.parse(raw);
+            return { ...DEFAULT_STATE, ...parsed };
+        } catch (_) {
+            return { ...DEFAULT_STATE };
+        }
+    }
+    function saveState() {
+        try { localStorage.setItem(STATE_KEY, JSON.stringify(state)); } catch (_) {}
+    }
+    const state = loadState();
+
+    function themeState(themeId) {
+        if (!state.themes[themeId]) state.themes[themeId] = { unlocked: [], completed: [], starsByLocation: {} };
+        return state.themes[themeId];
+    }
+
+    /* -------------------- Resolve asset base URL -------------------- */
+    const gameBase = (() => {
+        const m = location.pathname.match(/^(.*\/games\/[^/]+)/);
+        return (m ? m[1] : location.pathname.replace(/\/[^/]*$/, "")) + "/";
+    })();
+    const url = (p) => gameBase + p.replace(/^\//, "");
+
+    /* -------------------- Audio (Web Audio synth) -------------------- */
+    const audio = (() => {
+        let ctx = null;
+        function ensure() {
+            if (!ctx) {
+                const C = window.AudioContext || window.webkitAudioContext;
+                if (!C) return null;
+                ctx = new C();
+            }
+            if (ctx.state === "suspended") ctx.resume();
+            return ctx;
+        }
+        function tone(freq, dur, type = "sine", gain = 0.12, when = 0) {
+            if (!state.soundOn) return;
+            const c = ensure();
+            if (!c) return;
+            const t0 = c.currentTime + when;
+            const osc = c.createOscillator();
+            const g = c.createGain();
+            osc.type = type;
+            osc.frequency.setValueAtTime(freq, t0);
+            g.gain.setValueAtTime(0, t0);
+            g.gain.linearRampToValueAtTime(gain, t0 + 0.01);
+            g.gain.exponentialRampToValueAtTime(0.001, t0 + dur);
+            osc.connect(g).connect(c.destination);
+            osc.start(t0);
+            osc.stop(t0 + dur + 0.05);
+        }
+        function noise(dur, gain = 0.04, when = 0) {
+            if (!state.soundOn) return;
+            const c = ensure();
+            if (!c) return;
+            const t0 = c.currentTime + when;
+            const buf = c.createBuffer(1, c.sampleRate * dur, c.sampleRate);
+            const data = buf.getChannelData(0);
+            for (let i = 0; i < data.length; i++) data[i] = (Math.random() * 2 - 1) * 0.5;
+            const src = c.createBufferSource();
+            src.buffer = buf;
+            const g = c.createGain();
+            g.gain.setValueAtTime(gain, t0);
+            g.gain.exponentialRampToValueAtTime(0.001, t0 + dur);
+            src.connect(g).connect(c.destination);
+            src.start(t0);
+        }
+        return {
+            tap: () => tone(660, 0.05, "triangle", 0.08),
+            select: () => { tone(523, 0.08, "triangle", 0.1); tone(784, 0.10, "triangle", 0.1, 0.05); },
+            correct: () => { [659, 880, 1175].forEach((f, i) => tone(f, 0.18, "triangle", 0.12, i * 0.07)); },
+            wrong:   () => { tone(220, 0.22, "sawtooth", 0.10); tone(165, 0.34, "sawtooth", 0.09, 0.08); noise(0.2, 0.03, 0); },
+            star:    () => { tone(1175, 0.10, "sine", 0.10); tone(1760, 0.14, "sine", 0.10, 0.06); },
+            coin:    () => { tone(880, 0.08, "square", 0.08); tone(1320, 0.12, "square", 0.08, 0.05); },
+            streak:  () => { [523, 659, 880, 1175].forEach((f, i) => tone(f, 0.12, "square", 0.10, i * 0.05)); },
+            locationDone: () => { [523, 659, 784, 1047, 1319].forEach((f, i) => tone(f, 0.22, "triangle", 0.13, i * 0.1)); },
+            themeDone: () => {
+                const seq = [523, 659, 784, 1047, 880, 1047, 1319, 1568, 2093];
+                seq.forEach((f, i) => tone(f, 0.24, "triangle", 0.14, i * 0.13));
+            },
+            click: () => tone(440, 0.04, "triangle", 0.06)
+        };
+    })();
+
+    /* -------------------- Voice-over (uk-UA) -------------------- */
+    const voice = (() => {
+        const supported = "speechSynthesis" in window;
+        let ukVoice = null;
+        function pickVoice() {
+            if (!supported) return;
+            const voices = speechSynthesis.getVoices();
+            ukVoice = voices.find(v => /^uk(-|_)/i.test(v.lang)) || null;
+        }
+        if (supported) {
+            pickVoice();
+            speechSynthesis.onvoiceschanged = pickVoice;
+        }
+        return {
+            supported,
+            speak(text) {
+                if (!supported || !state.voiceOn || !text) return;
+                try {
+                    speechSynthesis.cancel();
+                    const u = new SpeechSynthesisUtterance(text);
+                    u.lang = "uk-UA";
+                    if (ukVoice) u.voice = ukVoice;
+                    u.rate = 0.95;
+                    u.pitch = 1.05;
+                    speechSynthesis.speak(u);
+                } catch (_) {}
+            },
+            stop() {
+                if (!supported) return;
+                try { speechSynthesis.cancel(); } catch (_) {}
+            },
+            available: () => supported && (!!ukVoice || speechSynthesis.getVoices().length === 0)
+        };
+    })();
+
+    /* -------------------- Haptics + visual FX -------------------- */
+    function vibrate(p) { if (navigator.vibrate) navigator.vibrate(p); }
+    function flash(kind, ms = 280) {
+        flashEl.classList.remove("correct", "wrong", "win");
+        void flashEl.offsetWidth;
+        flashEl.classList.add(kind);
+        setTimeout(() => flashEl.classList.remove(kind), ms);
+    }
+    function shakeScreen() {
+        document.body.classList.remove("shake");
+        void document.body.offsetWidth;
+        document.body.classList.add("shake");
+        setTimeout(() => document.body.classList.remove("shake"), 450);
+    }
+    const CONFETTI_EMOJIS = ["🎉", "🎊", "✨", "⭐", "🪙", "🏅"];
+    function confetti(count = 24) {
+        for (let i = 0; i < count; i++) {
+            const el = document.createElement("span");
+            el.className = "confetti";
+            el.textContent = CONFETTI_EMOJIS[Math.floor(Math.random() * CONFETTI_EMOJIS.length)];
+            el.style.left = (Math.random() * 100) + "vw";
+            el.style.fontSize = (16 + Math.random() * 18) + "px";
+            el.style.animationDelay = (Math.random() * 0.4) + "s";
+            el.style.animationDuration = (1.6 + Math.random() * 1.8) + "s";
+            document.body.appendChild(el);
+            setTimeout(() => el.remove(), 4000);
+        }
+    }
+    function flyTo(targetEl, emoji) {
+        if (!targetEl) return;
+        const rect = targetEl.getBoundingClientRect();
+        const tx = rect.left + rect.width / 2;
+        const ty = rect.top + rect.height / 2;
+        const el = document.createElement("span");
+        el.className = "fx-burst";
+        el.textContent = emoji;
+        el.style.setProperty("--target-x", tx + "px");
+        el.style.setProperty("--target-y", ty + "px");
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 1000);
+    }
+    function streakBanner(text) {
+        const el = document.createElement("div");
+        el.className = "streak-banner";
+        el.textContent = text;
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 1500);
+    }
+
+    /* -------------------- HUD -------------------- */
+    function popChip(el) {
+        el.classList.remove("pop");
+        void el.offsetWidth;
+        el.classList.add("pop");
+    }
+    function updateHud(animateWhich = null) {
+        starsCountEl.textContent  = state.stars;
+        coinsCountEl.textContent  = state.coins;
+        badgesCountEl.textContent = state.badges.length;
+        if (animateWhich === "stars")  popChip(starsCountEl.parentElement);
+        if (animateWhich === "coins")  popChip(coinsCountEl.parentElement);
+        if (animateWhich === "badges") popChip(badgesCountEl.parentElement);
+    }
+
+    /* -------------------- Sound + voice toggle -------------------- */
+    function updateSoundIcon() { soundToggle.textContent = state.soundOn ? "🔊" : "🔇"; }
+    function updateVoiceIcon() { voiceToggle.textContent = state.voiceOn ? "🗣️" : "🔇"; }
+    updateSoundIcon();
+    updateVoiceIcon();
+    soundToggle.addEventListener("click", () => {
+        state.soundOn = !state.soundOn;
+        saveState();
+        updateSoundIcon();
+        if (state.soundOn) audio.tap();
+    });
+    voiceToggle.addEventListener("click", () => {
+        state.voiceOn = !state.voiceOn;
+        saveState();
+        updateVoiceIcon();
+        if (state.voiceOn) {
+            voice.speak("Голос увімкнено");
+        } else {
+            voice.stop();
+        }
+    });
+
+    /* -------------------- Screen routing -------------------- */
+    function showScreen(el) {
+        voice.stop();
+        screens.forEach(s => s.classList.toggle("active", s === el));
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    /* -------------------- Data loading -------------------- */
+    let themes = [];
+    const themeDataCache = {};
+    async function loadThemes() {
+        const res = await fetch(url("data/themes.json"));
+        if (!res.ok) throw new Error("themes.json HTTP " + res.status);
+        themes = await res.json();
+    }
+    async function loadThemeData(themeMeta) {
+        if (themeDataCache[themeMeta.id]) return themeDataCache[themeMeta.id];
+        const res = await fetch(url(themeMeta.file));
+        if (!res.ok) throw new Error(themeMeta.file + " HTTP " + res.status);
+        const data = await res.json();
+        themeDataCache[themeMeta.id] = data;
+        return data;
+    }
+
+    /* -------------------- Picker -------------------- */
+    function renderPicker() {
+        themeGrid.innerHTML = "";
+        themes.forEach(t => {
+            const ts = themeState(t.id);
+            const isDone = state.badges.includes(t.id);
+            const totalLocs = 4;
+            const completedLocs = ts.completed.length;
+            const pct = Math.round((completedLocs / totalLocs) * 100);
+
+            const card = document.createElement("button");
+            card.type = "button";
+            card.className = "theme-card" + (isDone ? " done" : "");
+            card.style.setProperty("--accent", t.color);
+            card.innerHTML =
+                `<span class="emoji">${t.emoji}</span>
+                 <span class="titles">
+                    <strong>${t.title}</strong>
+                    <span>${t.subtitle}</span>
+                    <span class="progress"><span style="width:${pct}%"></span></span>
+                 </span>`;
+            card.addEventListener("click", () => { audio.select(); openTheme(t); });
+            themeGrid.appendChild(card);
+        });
+    }
+
+    /* -------------------- Map -------------------- */
+    let currentTheme = null;
+    let currentThemeData = null;
+    let currentLocation = null;
+
+    async function openTheme(themeMeta) {
+        try {
+            const data = await loadThemeData(themeMeta);
+            currentTheme = themeMeta;
+            currentThemeData = data;
+            const ts = themeState(themeMeta.id);
+            if (ts.unlocked.length === 0) {
+                ts.unlocked.push(data.locations[0].id);
+                saveState();
+            }
+            renderMap();
+            showScreen(mapScreen);
+        } catch (err) {
+            console.error(err);
+            alert("Не вдалося завантажити тему. Перевір з'єднання та спробуй ще.");
+        }
+    }
+
+    function renderMap() {
+        themeEmojiEl.textContent = currentThemeData.emoji;
+        themeTitleEl.textContent = currentThemeData.title;
+        themeIntroEl.textContent = currentThemeData.intro || "";
+
+        const ts = themeState(currentTheme.id);
+        mapPathEl.innerHTML = "";
+
+        currentThemeData.locations.forEach((loc, idx) => {
+            const isUnlocked = ts.unlocked.includes(loc.id);
+            const isDone     = ts.completed.includes(loc.id);
+            const starsHere  = ts.starsByLocation[loc.id] || 0;
+            const isCurrent  = isUnlocked && !isDone;
+
+            const node = document.createElement("button");
+            node.type = "button";
+            node.className = "location-node" +
+                (isUnlocked ? "" : " locked") +
+                (isDone ? " done" : "") +
+                (isCurrent ? " current" : "");
+            const stars = [];
+            for (let i = 0; i < 5; i++) {
+                stars.push(`<span class="${i < starsHere ? "lit" : ""}">⭐</span>`);
+            }
+            node.innerHTML =
+                `<span class="emoji">${loc.emoji}</span>
+                 <span class="title">${loc.title}</span>
+                 <span class="stars-earned">${stars.join("")}</span>`;
+            if (idx % 2 === 1) node.style.marginTop = "16px";
+            node.addEventListener("click", () => {
+                if (!isUnlocked) {
+                    audio.wrong();
+                    shakeScreen();
+                    return;
+                }
+                audio.select();
+                startLocation(loc);
+            });
+            mapPathEl.appendChild(node);
+        });
+    }
+
+    /* -------------------- Question runner -------------------- */
+    let runner = null;
+
+    function startLocation(loc) {
+        currentLocation = loc;
+        const questions = loc.questions.map((q, idx) => ({ ...q, idx }));
+        runner = {
+            questions,
+            current: 0,
+            correctCount: 0,
+            streak: 0,
+            maxStreak: 0,
+            attempts: [],
+            coinsEarned: 0
+        };
+        renderProgressDots();
+        renderQuestion();
+        showScreen(questionScreen);
+    }
+
+    const PRAISE = [
+        "Чудово!", "Так тримати!", "Браво!", "Молодець!", "Супер!",
+        "Розумничка!", "У точку!", "Так-так-так!"
+    ];
+    const HINTS = [
+        "Не страшно — спробуй разом зі мною.",
+        "Майже! Прочитай уважніше.",
+        "Ось чому правильна відповідь інша:",
+        "Не біда, тепер ти точно знаєш."
+    ];
+    const INTROS = [
+        "Готовий(-а)? Уважно читай!",
+        "Поглянь на питання — і обери відповідь.",
+        "Думаю, тобі сподобається це питання.",
+        "Гайда! Ось наступне завдання."
+    ];
+
+    function randomPick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+    function renderProgressDots() {
+        progressDots.innerHTML = "";
+        runner.questions.forEach((q, i) => {
+            const dot = document.createElement("div");
+            dot.className = "dot";
+            if (q.boss) dot.classList.add("boss");
+            if (i < runner.current) dot.classList.add("done");
+            else if (i === runner.current) dot.classList.add("current");
+            progressDots.appendChild(dot);
+        });
+    }
+
+    function renderQuestion() {
+        explainCard.classList.remove("active", "correct");
+        explainCard.innerHTML = "";
+        continueBtn.hidden = true;
+        renderProgressDots();
+
+        const q = runner.questions[runner.current];
+        questionText.textContent = q.text;
+        questionText.classList.toggle("boss", !!q.boss);
+        mentorBubble.textContent = q.boss
+            ? "Це БОС-питання! +2 монети, якщо вгадаєш."
+            : randomPick(INTROS);
+
+        // Shuffle answers but track the correct index in the shuffled order.
+        const original = q.answers.map((text, idx) => ({ text, isCorrect: idx === q.correct }));
+        const shuffled = original
+            .map(v => ({ v, k: Math.random() }))
+            .sort((a, b) => a.k - b.k)
+            .map(o => o.v);
+
+        const letters = ["А", "Б", "В", "Г"];
+        answersEl.innerHTML = "";
+        shuffled.forEach((opt, i) => {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "answer-btn";
+            btn.innerHTML = `<span class="letter">${letters[i] || String.fromCharCode(65 + i)}</span><span>${opt.text}</span>`;
+            btn.addEventListener("click", () => onAnswer(btn, opt.isCorrect, q, shuffled));
+            answersEl.appendChild(btn);
+        });
+
+        if (state.voiceOn) voice.speak(q.text);
+    }
+
+    function onAnswer(btn, isCorrect, q, shuffled) {
+        // Disable all answer buttons
+        [...answersEl.querySelectorAll(".answer-btn")].forEach(b => b.disabled = true);
+
+        if (isCorrect) {
+            btn.classList.add("correct");
+            audio.correct();
+            vibrate(20);
+            flash("correct");
+            confetti(q.boss ? 28 : 16);
+
+            // Stars: 1 per correct, plus 1 extra for boss
+            const starsGained = q.boss ? 2 : 1;
+            for (let i = 0; i < starsGained; i++) {
+                setTimeout(() => flyTo(starsCountEl.parentElement, "⭐"), 60 + i * 120);
+            }
+            state.stars += starsGained;
+            runner.correctCount += 1;
+            runner.streak += 1;
+            runner.maxStreak = Math.max(runner.maxStreak, runner.streak);
+
+            // Streak rewards: every 3-in-a-row gives a coin
+            if (runner.streak > 0 && runner.streak % 3 === 0) {
+                runner.coinsEarned += 1;
+                state.coins += 1;
+                setTimeout(() => {
+                    flyTo(coinsCountEl.parentElement, "🪙");
+                    audio.coin();
+                    streakBanner(`🔥 ${runner.streak} підряд! +1 🪙`);
+                }, 400);
+            }
+            // Boss bonus: extra coin
+            if (q.boss) {
+                runner.coinsEarned += 1;
+                state.coins += 1;
+                setTimeout(() => { flyTo(coinsCountEl.parentElement, "🪙"); audio.coin(); }, 500);
+            }
+
+            setTimeout(() => { updateHud("stars"); audio.star(); }, 300);
+            saveState();
+
+            mentorBubble.textContent = randomPick(PRAISE);
+            explainCard.classList.add("active", "correct");
+            explainCard.innerHTML = "<strong>Правильно!</strong> " + (q.explanation || "");
+            continueBtn.textContent = isLastQuestion() ? "Закінчити локацію 🎉" : "Далі →";
+            continueBtn.hidden = false;
+            runner.attempts.push(true);
+        } else {
+            btn.classList.add("wrong");
+            audio.wrong();
+            vibrate([20, 40, 20]);
+            flash("wrong");
+            shakeScreen();
+            runner.streak = 0;
+            runner.attempts.push(false);
+
+            // Mark the correct answer
+            const correctIdx = shuffled.findIndex(o => o.isCorrect);
+            const correctBtn = answersEl.children[correctIdx];
+            if (correctBtn) correctBtn.classList.add("correct");
+
+            mentorBubble.textContent = randomPick(HINTS);
+            explainCard.classList.add("active");
+            explainCard.innerHTML = "<strong>Правильна відповідь:</strong> «" +
+                shuffled[correctIdx].text + "». " + (q.explanation || "");
+            continueBtn.textContent = isLastQuestion() ? "Закінчити локацію →" : "Продовжити →";
+            continueBtn.hidden = false;
+        }
+    }
+
+    function isLastQuestion() { return runner.current === runner.questions.length - 1; }
+
+    continueBtn.addEventListener("click", () => {
+        audio.tap();
+        if (runner.current < runner.questions.length - 1) {
+            runner.current += 1;
+            renderQuestion();
+        } else {
+            finishLocation();
+        }
+    });
+
+    /* -------------------- Location finish -------------------- */
+    function finishLocation() {
+        const ts = themeState(currentTheme.id);
+        const stars = runner.correctCount + (runner.questions.some(q => q.boss && runner.attempts[runner.questions.indexOf(q)] === true) ? 1 : 0);
+        // simpler: stars per location = correctCount + bonus star if boss correct? We already gave +2 stars for boss to global.
+        // For per-location display, we'll just use correctCount as 0..5.
+        const displayStars = Math.min(5, runner.correctCount);
+        ts.starsByLocation[currentLocation.id] = Math.max(ts.starsByLocation[currentLocation.id] || 0, displayStars);
+
+        if (!ts.completed.includes(currentLocation.id)) ts.completed.push(currentLocation.id);
+
+        // Unlock next location
+        const locs = currentThemeData.locations;
+        const idx = locs.findIndex(l => l.id === currentLocation.id);
+        const next = locs[idx + 1];
+        if (next && !ts.unlocked.includes(next.id)) ts.unlocked.push(next.id);
+
+        saveState();
+
+        // Build result UI
+        lrEmoji.textContent = currentLocation.emoji;
+        lrTitle.textContent = displayStars === 5 ? "Ідеально! ✨" : (displayStars >= 3 ? "Локацію пройдено!" : "Локацію пройдено");
+        lrSubtitle.textContent = displayStars === 5
+            ? "Усі відповіді правильні!"
+            : (displayStars >= 3 ? "Гарна робота, ти молодець!" : "Не страшно — спробуй пройти знову, щоб набрати більше зірок.");
+        lrStars.textContent = displayStars + "/5";
+        lrCoins.textContent = "+" + runner.coinsEarned;
+        if (runner.maxStreak >= 2) {
+            lrStreakStat.hidden = false;
+            lrStreak.textContent = runner.maxStreak;
+        } else {
+            lrStreakStat.hidden = true;
+        }
+        lrRetry.hidden = displayStars === 5;
+
+        // Did this complete the whole theme?
+        const themeComplete = currentThemeData.locations.every(l => ts.completed.includes(l.id));
+        const justGotBadge = themeComplete && !state.badges.includes(currentTheme.id);
+        if (justGotBadge) {
+            state.badges.push(currentTheme.id);
+            saveState();
+        }
+
+        showScreen(locationResultScreen);
+        audio.locationDone();
+        confetti(36);
+        flash("win", 320);
+        updateHud("coins");
+
+        // If theme complete → after a short pause show theme result
+        if (justGotBadge) {
+            setTimeout(() => showThemeResult(), 1600);
+        }
+    }
+
+    lrNext.addEventListener("click", () => {
+        audio.tap();
+        // After completing → return to map (unless theme just completed)
+        if (state.badges.includes(currentTheme.id) && currentThemeData.locations.every(l => themeState(currentTheme.id).completed.includes(l.id))) {
+            // already shown theme result automatically
+            showScreen(mapScreen);
+            renderMap();
+        } else {
+            renderMap();
+            showScreen(mapScreen);
+        }
+    });
+    lrRetry.addEventListener("click", () => {
+        audio.select();
+        startLocation(currentLocation);
+    });
+
+    /* -------------------- Theme finish -------------------- */
+    function showThemeResult() {
+        const ts = themeState(currentTheme.id);
+        const totalStars = Object.values(ts.starsByLocation).reduce((s, v) => s + v, 0);
+        trMedal.textContent = currentTheme.emoji;
+        trTitle.textContent = "Бейдж «" + currentTheme.title + "» отримано!";
+        trSubtitle.textContent = "Ти пройшов(-ла) усі локації. Ось підсумок:";
+        trStars.textContent = totalStars + "/20";
+        trCoins.textContent = state.coins;
+        showScreen(themeResultScreen);
+        audio.themeDone();
+        confetti(60);
+        flash("win", 500);
+        updateHud("badges");
+    }
+
+    trHome.addEventListener("click", () => {
+        audio.tap();
+        renderPicker();
+        showScreen(pickerScreen);
+    });
+
+    mapBackBtn.addEventListener("click", () => {
+        audio.tap();
+        renderPicker();
+        showScreen(pickerScreen);
+    });
+
+    /* -------------------- Boot -------------------- */
+    (async function init() {
+        updateHud();
+        try {
+            await loadThemes();
+            renderPicker();
+        } catch (err) {
+            console.error(err);
+            themeGrid.innerHTML =
+                '<p style="color:#fda4af;text-align:center;padding:20px;">' +
+                'Не вдалося завантажити теми. Перевір з\'єднання і перезавантаж сторінку.</p>';
+        }
+    })();
+
+    /* -------------------- Service worker (PWA) -------------------- */
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+            navigator.serviceWorker.register("../../sw.js").then(reg => {
+                if (navigator.serviceWorker.controller) {
+                    navigator.serviceWorker.controller.postMessage({ type: "ensure-cache" });
+                }
+            }).catch(() => {});
+        });
+        window.addEventListener("online", () => {
+            navigator.serviceWorker.controller?.postMessage({ type: "ensure-cache" });
+        });
+    }
+</script>
+
+</body>
+</html>

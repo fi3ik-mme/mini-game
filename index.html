@@ -401,6 +401,76 @@
 
         .update-banner button:active { transform: scale(0.96); }
         .update-banner button:disabled { opacity: 0.7; cursor: default; }
+
+        /* ---------- APK update card (shown only when running from APK and a newer release.json is available) ---------- */
+        .apk-update {
+            width: 100%;
+            max-width: 360px;
+            margin: -10px 0 20px;
+            background: linear-gradient(160deg, rgba(34, 197, 94, 0.22) 0%, rgba(34, 197, 94, 0.08) 100%);
+            border: 1px solid rgba(74, 222, 128, 0.55);
+            border-radius: 16px;
+            padding: 14px 16px;
+            color: #ecfccb;
+            position: relative;
+            box-shadow: 0 8px 24px rgba(16, 185, 129, 0.18);
+            animation: apk-pop 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+        }
+        @keyframes apk-pop {
+            from { opacity: 0; transform: translateY(-8px) scale(0.97); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .apk-update h3 {
+            margin: 0 0 4px;
+            font-size: 1rem;
+            color: #d9f99d;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .apk-update p {
+            margin: 0 0 10px;
+            font-size: 0.85rem;
+            color: #d1fae5;
+            line-height: 1.4;
+        }
+        .apk-update .meta {
+            color: #86efac;
+            font-size: 0.75rem;
+            margin-bottom: 8px;
+        }
+        .apk-update-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .apk-update-actions a,
+        .apk-update-actions button {
+            border: 0;
+            font-family: inherit;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 0.88rem;
+            padding: 9px 14px;
+            border-radius: 99px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: transform 0.1s, background 0.2s;
+        }
+        .apk-update-actions .download {
+            background: linear-gradient(180deg, #34d399, #059669);
+            color: #052e1c;
+            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+        }
+        .apk-update-actions .dismiss {
+            background: rgba(255, 255, 255, 0.08);
+            color: #d9f99d;
+            border: 1px solid rgba(217, 249, 157, 0.3);
+        }
+        .apk-update-actions a:active,
+        .apk-update-actions button:active { transform: scale(0.96); }
     </style>
 </head>
 <body>
@@ -409,6 +479,16 @@
     <span class="badge offline" id="offline-badge">✓ Працює офлайн</span>
     <span class="badge">🇺🇦 Українською</span>
 </div>
+
+<aside id="apk-update" class="apk-update" hidden>
+    <h3>🚀 <span>Доступна нова версія додатка</span></h3>
+    <p id="apk-update-notes"></p>
+    <div class="meta"><span id="apk-update-version">v?.?.?</span> · <span id="apk-update-size">— КБ</span></div>
+    <div class="apk-update-actions">
+        <a id="apk-update-download" class="download" href="./download/mini-games.apk" download="mini-games.apk">⬇️ Завантажити та оновити</a>
+        <button id="apk-update-dismiss" class="dismiss" type="button">Пізніше</button>
+    </div>
+</aside>
 
 <h1>Міні-Ігри</h1>
 <p class="subtitle">Колекція ігор українською мовою. Встанови на телефон — і грай без інтернету.</p>
@@ -424,6 +504,12 @@
         <div class="icon">💰</div>
         <h2>Перший мільйон</h2>
         <p>Вікторина на зразок «Хто хоче стати мільйонером?»</p>
+    </a>
+
+    <a class="game-card" href="games/adventure-academy/index.html">
+        <div class="icon">🎒</div>
+        <h2>Академія пригод</h2>
+        <p>Подорожуй темами — Космос, Тіло, Єгипет. Збирай зірки й бейджі.</p>
     </a>
 </nav>
 
@@ -547,6 +633,119 @@
 
     window.addEventListener("load", setupAutoUpdate);
 
+    /* ---------------------------------------------------------------
+     * APK update detection.
+     *
+     * On launch the installed APK opens the live URL with `?src=apk&av=N`
+     * (baked in at build time, see scripts/build-android.mjs). We capture
+     * that version into localStorage and poll release.json. When the
+     * remote `versionCode` is greater than the installed one, we show an
+     * unobtrusive card with release notes + a one-tap download.
+     *
+     * Tapping «Завантажити та оновити» downloads the signed APK. Android
+     * shows the standard package installer; because the new APK is signed
+     * with the same keystore and uses the same packageId, the OS treats
+     * it as an in-place update (one tap = "Update"). True silent install
+     * is not possible for side-loaded apps without root, but this is the
+     * smoothest flow available outside of the Play Store.
+     * --------------------------------------------------------------- */
+    const apkUpdateCard      = document.getElementById("apk-update");
+    const apkUpdateNotes     = document.getElementById("apk-update-notes");
+    const apkUpdateVersion   = document.getElementById("apk-update-version");
+    const apkUpdateSize      = document.getElementById("apk-update-size");
+    const apkUpdateDownload  = document.getElementById("apk-update-download");
+    const apkUpdateDismiss   = document.getElementById("apk-update-dismiss");
+
+    const APK_LS_INSTALLED   = "apk:installedAppVersionCode";
+    const APK_LS_DISMISSED   = "apk:dismissedVersionCode";
+
+    // Capture the installed version that the APK passes via the URL.
+    (function captureInstalledAppVersion() {
+        try {
+            const params = new URLSearchParams(location.search);
+            if (params.get("src") === "apk") {
+                const av = parseInt(params.get("av") || "1", 10);
+                if (av > 0) localStorage.setItem(APK_LS_INSTALLED, String(av));
+            }
+        } catch (_) {}
+    })();
+
+    function installedAppVersion() {
+        const v = parseInt(localStorage.getItem(APK_LS_INSTALLED) || "0", 10);
+        return Number.isFinite(v) ? v : 0;
+    }
+
+    function formatBytes(n) {
+        if (!Number.isFinite(n) || n <= 0) return "—";
+        const kb = n / 1024;
+        if (kb < 1024) return kb.toFixed(0) + " КБ";
+        return (kb / 1024).toFixed(1) + " МБ";
+    }
+
+    async function checkApkUpdate() {
+        // Only relevant for users who actually run the APK.
+        const installed = installedAppVersion();
+        if (installed <= 0) return;
+
+        let release;
+        try {
+            const url = "./release.json?_=" + Date.now(); // bypass any HTTP cache
+            const res = await fetch(url, { cache: "no-store" });
+            if (!res.ok) return;
+            release = await res.json();
+        } catch (_) { return; }
+
+        if (!release || typeof release.versionCode !== "number") return;
+        if (release.versionCode <= installed) {
+            apkUpdateCard.hidden = true;
+            return;
+        }
+
+        // Respect a previous "Пізніше" tap for this exact version.
+        const dismissed = parseInt(localStorage.getItem(APK_LS_DISMISSED) || "0", 10);
+        if (dismissed >= release.versionCode) return;
+
+        apkUpdateNotes.textContent = release.notes || "Натисни «Завантажити», щоб оновити додаток.";
+        apkUpdateVersion.textContent = release.versionName
+            ? "v" + release.versionName
+            : "build " + release.versionCode;
+        apkUpdateSize.textContent = formatBytes(release.sizeBytes);
+        if (release.downloadUrl) apkUpdateDownload.href = release.downloadUrl;
+        apkUpdateCard.hidden = false;
+    }
+
+    apkUpdateDismiss?.addEventListener("click", () => {
+        try {
+            const v = apkUpdateVersion.textContent.replace(/^v/, "").trim();
+            // Persist the *current shown version* so we silence it until the
+            // next bump. We re-read release.json to get its versionCode.
+            fetch("./release.json", { cache: "no-store" })
+                .then(r => r.ok ? r.json() : null)
+                .then(rel => {
+                    if (rel && typeof rel.versionCode === "number") {
+                        localStorage.setItem(APK_LS_DISMISSED, String(rel.versionCode));
+                    }
+                })
+                .catch(() => {});
+        } catch (_) {}
+        apkUpdateCard.hidden = true;
+    });
+
+    apkUpdateDownload?.addEventListener("click", () => {
+        // After the user starts the download we still want to surface the
+        // card next launch in case the install was skipped, so we do NOT
+        // mark this version as dismissed here.
+    });
+
+    // Run on load, when the network comes back, when the tab is refocused,
+    // and once an hour while the app is open.
+    window.addEventListener("load", checkApkUpdate);
+    window.addEventListener("online", checkApkUpdate);
+    document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "visible") checkApkUpdate();
+    });
+    setInterval(checkApkUpdate, 60 * 60 * 1000);
+
     // --- Install prompt (Android Chrome / desktop Chrome / Edge) ---
     let deferredInstall = null;
     const installBtn = document.getElementById("install-btn");
@@ -632,14 +831,10 @@
         shareNative.hidden = false;
     }
 
-    shareBtn.addEventListener("click", async () => {
-        // If native share is available, prefer it directly.
-        if (navigator.share) {
-            try {
-                await navigator.share({ title: SHARE_TITLE, text: SHARE_TEXT, url: installUrl });
-                return;
-            } catch (_) { /* user cancelled — fall through to modal */ }
-        }
+    shareBtn.addEventListener("click", () => {
+        // Always open the modal so the user sees all sharing options + the
+        // install instructions. They can still tap «Поділитися…» inside the
+        // modal to invoke the device's native share sheet explicitly.
         shareModal.classList.add("active");
     });
 

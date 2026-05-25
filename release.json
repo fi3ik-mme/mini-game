@@ -1,0 +1,10 @@
+{
+  "versionCode": 2,
+  "versionName": "1.1.0",
+  "downloadUrl": "./download/mini-games.apk",
+  "sizeBytes": 1250068,
+  "notes": "Додано «Академію пригод» з 3 темами та 60 запитаннями, виправлено вікно «Запросити друзів».",
+  "publishedAt": "2026-05-25T12:23:29.098Z",
+  "packageId": "io.github.fi3ikmme.minigames",
+  "minSdkVersion": 21
+}
