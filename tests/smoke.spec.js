@@ -76,6 +76,53 @@ test.describe("Mini Games smoke tests", () => {
     }
   });
 
+  test("Я досліджую світ: every question has explanation; modal opens after answer", async ({ page }) => {
+    await page.goto("/games/first-million/index.html");
+
+    const res = await page.request.get("/games/first-million/data/ya-doslidzhuyu-svit-4-klas.json");
+    expect(res.ok()).toBeTruthy();
+    const data = await res.json();
+    expect(Array.isArray(data.questions)).toBe(true);
+    expect(data.questions.length).toBeGreaterThanOrEqual(100);
+
+    for (const q of data.questions) {
+      expect(typeof q.text).toBe("string");
+      expect(q.text.length).toBeGreaterThan(0);
+      expect(Array.isArray(q.answers)).toBe(true);
+      expect(q.answers.length).toBe(4);
+      expect(new Set(q.answers).size).toBe(4);
+      expect(Number.isInteger(q.correct)).toBe(true);
+      expect(q.correct).toBeGreaterThanOrEqual(0);
+      expect(q.correct).toBeLessThan(4);
+      expect(typeof q.explanation).toBe("string");
+      expect(q.explanation.length).toBeGreaterThan(0);
+      expect(typeof q.media).toBe("string");
+      expect(q.media.length).toBeGreaterThan(0);
+    }
+
+    const base64Images = data.questions.filter(q =>
+      typeof q.media === "string" && q.media.includes('data:image/svg+xml;base64,')
+    );
+    expect(base64Images.length).toBeGreaterThanOrEqual(20);
+
+    const subjBtn = page.locator(".subject-btn").filter({ hasText: "Я досліджую світ" });
+    await expect(subjBtn).toBeVisible({ timeout: 10000 });
+    await subjBtn.click();
+
+    await expect(page.locator("#question-text")).not.toHaveText("Завантаження...");
+    await expect(page.locator(".answer-btn")).toHaveCount(4);
+
+    await page.locator(".answer-btn").first().click();
+
+    await expect(page.locator("#explanation-modal")).toHaveClass(/active/);
+    await expect(page.locator("#modal-title")).toBeVisible();
+    await expect(page.locator("#modal-explanation")).not.toBeEmpty();
+    await expect(page.locator("#modal-continue")).toBeVisible();
+
+    await page.locator("#modal-continue").click();
+    await expect(page.locator("#explanation-modal")).not.toHaveClass(/active/);
+  });
+
   const allSubjects = [
     { title: "Інформатика", file: "informatyka-4-klas.json", min: 200 },
     { title: "Мистецтво", file: "mystetstvo-4-klas.json", min: 100 },

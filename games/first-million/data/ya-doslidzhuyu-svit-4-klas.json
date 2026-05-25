@@ -5,723 +5,1731 @@
   "questions": [
     {
       "text": "Скільки основних сторін горизонту?",
-      "answers": ["2", "4", "6", "8"],
-      "correct": 1
+      "answers": [
+        "2",
+        "4",
+        "6",
+        "8"
+      ],
+      "correct": 1,
+      "explanation": "Основних сторін горизонту 4: північ, південь, схід, захід. Між ними ще є проміжні (північний схід, південний захід тощо).",
+      "media": "<img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMjAgMjIwIj4KPGNpcmNsZSBjeD0iMTEwIiBjeT0iMTEwIiByPSI5NSIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjMWUyOTNiIiBzdHJva2Utd2lkdGg9IjMiLz4KPGNpcmNsZSBjeD0iMTEwIiBjeT0iMTEwIiByPSI4MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjY2JkNWUxIiBzdHJva2Utd2lkdGg9IjEiLz4KPHBvbHlnb24gcG9pbnRzPSIxMTAsMzAgOTUsMTEwIDExMCwxMDAgMTI1LDExMCIgZmlsbD0iI2RjMjYyNiIvPgo8cG9seWdvbiBwb2ludHM9IjExMCwxOTAgOTUsMTEwIDExMCwxMjAgMTI1LDExMCIgZmlsbD0iIzFlMjkzYiIvPgo8dGV4dCB4PSIxMTAiIHk9IjIyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjIiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjZGMyNjI2Ij7Qn9C9PC90ZXh0Pgo8dGV4dCB4PSIxMTAiIHk9IjIxMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjIyIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzFlMjkzYiI+0J/QtDwvdGV4dD4KPHRleHQgeD0iMjAwIiB5PSIxMTgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMxZTI5M2IiPtCh0YU8L3RleHQ+Cjx0ZXh0IHg9IjIwIiB5PSIxMTgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMxZTI5M2IiPtCX0YU8L3RleHQ+Cjwvc3ZnPg==\" alt=\"Сторони горизонту\" style=\"width:200px;max-width:100%;height:auto;border-radius:8px;background:#0d1117;padding:6px;\"/>"
     },
     {
       "text": "На що вказує блакитна стрілка компаса?",
-      "answers": ["На південь", "На північ", "На схід", "На захід"],
-      "correct": 1
+      "answers": [
+        "На південь",
+        "На північ",
+        "На схід",
+        "На захід"
+      ],
+      "correct": 1,
+      "explanation": "Блакитна (синя) стрілка компаса завжди вказує на північ — це орієнтир для всіх інших напрямків.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><circle cx=\"100\" cy=\"100\" r=\"85\" fill=\"#f5f5f4\" stroke=\"#1e293b\" stroke-width=\"3\"/><polygon points=\"100,30 88,100 100,90 112,100\" fill=\"#1d4ed8\"/><polygon points=\"100,170 88,100 100,110 112,100\" fill=\"#dc2626\"/><circle cx=\"100\" cy=\"100\" r=\"5\" fill=\"#1e293b\"/><text x=\"100\" y=\"22\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" fill=\"#1d4ed8\">Пн</text><text x=\"100\" y=\"190\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" fill=\"#dc2626\">Пд</text></svg>"
     },
     {
       "text": "У південь у наших широтах тінь від предметів падає на:",
-      "answers": ["Південь", "Північ", "Схід", "Захід"],
-      "correct": 1
+      "answers": [
+        "Південь",
+        "Північ",
+        "Схід",
+        "Захід"
+      ],
+      "correct": 1,
+      "explanation": "Опівдні Сонце на півдні (для Північної півкулі), тому тінь від предметів падає у протилежний бік — на північ.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><text x=\"200\" y=\"20\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ccc\">Пн</text><text x=\"200\" y=\"190\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ccc\">Пд</text><circle cx=\"200\" cy=\"50\" r=\"22\" fill=\"#fbbf24\"/><g stroke=\"#fbbf24\" stroke-width=\"2\"><line x1=\"200\" y1=\"20\" x2=\"200\" y2=\"30\"/><line x1=\"200\" y1=\"70\" x2=\"200\" y2=\"80\"/><line x1=\"170\" y1=\"50\" x2=\"180\" y2=\"50\"/><line x1=\"220\" y1=\"50\" x2=\"230\" y2=\"50\"/></g><rect x=\"190\" y=\"120\" width=\"20\" height=\"60\" fill=\"#16a34a\"/><polygon points=\"190,120 100,80 100,90 190,130\" fill=\"#1e293b\" opacity=\"0.55\"/><text x=\"130\" y=\"100\" font-size=\"11\" fill=\"#fde68a\">тінь</text></svg>"
     },
     {
       "text": "Прилад для визначення сторін горизонту — це:",
-      "answers": ["термометр", "компас", "лінійка", "ваги"],
-      "correct": 1
+      "answers": [
+        "термометр",
+        "компас",
+        "лінійка",
+        "ваги"
+      ],
+      "correct": 1,
+      "explanation": "Компас має магнітну стрілку, яка завжди показує на північ і таким чином допомагає визначити інші сторони горизонту.",
+      "media": "<img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMjAgMjIwIj4KPGNpcmNsZSBjeD0iMTEwIiBjeT0iMTEwIiByPSIxMDAiIGZpbGw9IiMxZTI5M2IiLz4KPGNpcmNsZSBjeD0iMTEwIiBjeT0iMTEwIiByPSI5MCIgZmlsbD0iI2Y1ZjVmNCIvPgo8Y2lyY2xlIGN4PSIxMTAiIGN5PSIxMTAiIHI9IjYiIGZpbGw9IiMxZTI5M2IiLz4KPHBvbHlnb24gcG9pbnRzPSIxMTAsMjUgMTAwLDExMCAxMTAsMTAwIDEyMCwxMTAiIGZpbGw9IiNkYzI2MjYiLz4KPHBvbHlnb24gcG9pbnRzPSIxMTAsMTk1IDEwMCwxMTAgMTEwLDEyMCAxMjAsMTEwIiBmaWxsPSIjMWUyOTNiIi8+Cjx0ZXh0IHg9IjExMCIgeT0iMjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNkYzI2MjYiPk48L3RleHQ+Cjx0ZXh0IHg9IjExMCIgeT0iMjA4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMWUyOTNiIj5TPC90ZXh0Pgo8dGV4dCB4PSIyMDYiIHk9IjExNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE2IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzFlMjkzYiI+RTwvdGV4dD4KPHRleHQgeD0iMTQiIHk9IjExNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE2IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzFlMjkzYiI+VzwvdGV4dD4KPC9zdmc+\" alt=\"Компас\" style=\"width:180px;max-width:100%;height:auto;border-radius:8px;background:#0d1117;padding:6px;\"/>"
     },
     {
       "text": "Скільки на Землі материків?",
-      "answers": ["4", "5", "6", "7"],
-      "correct": 2
+      "answers": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "correct": 2,
+      "explanation": "На Землі 6 материків: Євразія, Африка, Північна Америка, Південна Америка, Австралія та Антарктида.",
+      "media": "<img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAgMjQwIj4KPHJlY3Qgd2lkdGg9IjI0MCIgaGVpZ2h0PSIyNDAiIGZpbGw9IiMwYjEwMjQiLz4KPGNpcmNsZSBjeD0iMTIwIiBjeT0iMTIwIiByPSIxMDAiIGZpbGw9IiMzYjgyZjYiLz4KPHBhdGggZD0iTTQwIDEwMCBRNTUgODUgNzggOTIgTDk1IDg4IEwxMTAgMTAwIEwxMjUgOTIgTDE0MiAxMDIgTDE1NSAxMTAgTDE1MCAxMjUgTDEzOCAxMzIgTDEyMCAxMzAgTDEwNSAxMzggTDg4IDEzMCBMNzAgMTI0IEw1MiAxMTYgWiIgZmlsbD0iIzE2YTM0YSIvPgo8cGF0aCBkPSJNNzUgMTQ1IFE5NSAxNDIgMTE1IDE1MiBMMTMwIDE2MiBMMTUwIDE1OCBMMTY4IDE2OCBMMTU1IDE3OCBMMTM1IDE3NSBMMTE1IDE3OCBMOTUgMTc1IEw4MCAxNjggWiIgZmlsbD0iIzE1ODAzZCIvPgo8cGF0aCBkPSJNMTcwIDkwIFExODUgODUgMjAwIDk1IEwxOTUgMTEwIEwxODAgMTA4IFoiIGZpbGw9IiMxNmEzNGEiLz4KPGVsbGlwc2UgY3g9IjEyMCIgY3k9IjIwMCIgcng9IjU1IiByeT0iOSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC43Ii8+CjxlbGxpcHNlIGN4PSI4MCIgY3k9IjUwIiByeD0iMzAiIHJ5PSI4IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjUiLz4KPC9zdmc+\" alt=\"Глобус (материки)\" style=\"width:200px;max-width:100%;height:auto;border-radius:8px;background:#0d1117;padding:6px;\"/>"
     },
     {
       "text": "Який материк найбільший?",
-      "answers": ["Африка", "Євразія", "Антарктида", "Австралія"],
-      "correct": 1
+      "answers": [
+        "Африка",
+        "Євразія",
+        "Антарктида",
+        "Австралія"
+      ],
+      "correct": 1,
+      "explanation": "Євразія — найбільший материк. Він об'єднує Європу й Азію (приблизно 54 млн км²).",
+      "media": "<table class=\"scheme-table\"><thead><tr><th>Материк</th><th>Площа (млн км²)</th></tr></thead><tbody><tr><td>Євразія</td><td>≈ 54</td></tr><tr><td>Африка</td><td>≈ 30</td></tr><tr><td>Пн. Америка</td><td>≈ 24</td></tr><tr><td>Пд. Америка</td><td>≈ 18</td></tr><tr><td>Антарктида</td><td>≈ 14</td></tr><tr><td>Австралія</td><td>≈ 8</td></tr></tbody></table>"
     },
     {
       "text": "Який материк найменший?",
-      "answers": ["Австралія", "Антарктида", "Європа", "Африка"],
-      "correct": 0
+      "answers": [
+        "Австралія",
+        "Антарктида",
+        "Європа",
+        "Африка"
+      ],
+      "correct": 0,
+      "explanation": "Австралія — найменший материк (близько 8 млн км²) і єдина країна-материк водночас.",
+      "media": "<table class=\"scheme-table\"><thead><tr><th>Материк</th><th>Площа (млн км²)</th></tr></thead><tbody><tr><td>Австралія</td><td>≈ 8</td></tr><tr><td>Антарктида</td><td>≈ 14</td></tr><tr><td>Пд. Америка</td><td>≈ 18</td></tr><tr><td>Пн. Америка</td><td>≈ 24</td></tr><tr><td>Африка</td><td>≈ 30</td></tr><tr><td>Євразія</td><td>≈ 54</td></tr></tbody></table>"
     },
     {
       "text": "Скільки океанів на Землі?",
-      "answers": ["3", "4", "5", "6"],
-      "correct": 2
+      "answers": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct": 2,
+      "explanation": "На Землі 5 океанів: Тихий, Атлантичний, Індійський, Північний Льодовитий і Південний.",
+      "media": "<div class=\"info-card\">5 океанів:<br>Тихий · Атлантичний · Індійський · Пн.&nbsp;Льодовитий · Південний</div>"
     },
     {
       "text": "Який океан найбільший за площею?",
-      "answers": ["Атлантичний", "Тихий", "Індійський", "Північний Льодовитий"],
-      "correct": 1
+      "answers": [
+        "Атлантичний",
+        "Тихий",
+        "Індійський",
+        "Північний Льодовитий"
+      ],
+      "correct": 1,
+      "explanation": "Тихий океан — найбільший: він займає близько третини поверхні Землі і більший за всю сушу разом.",
+      "media": "<table class=\"scheme-table\"><thead><tr><th>Океан</th><th>Площа (млн км²)</th></tr></thead><tbody><tr><td>Тихий</td><td>≈ 165</td></tr><tr><td>Атлантичний</td><td>≈ 92</td></tr><tr><td>Індійський</td><td>≈ 73</td></tr><tr><td>Південний</td><td>≈ 20</td></tr><tr><td>Пн. Льодовитий</td><td>≈ 14</td></tr></tbody></table>"
     },
     {
       "text": "На якому материку розташована Україна?",
-      "answers": ["Африка", "Євразія", "Австралія", "Південна Америка"],
-      "correct": 1
+      "answers": [
+        "Африка",
+        "Євразія",
+        "Австралія",
+        "Південна Америка"
+      ],
+      "correct": 1,
+      "explanation": "Україна знаходиться у східній частині Європи, що є частиною материка Євразія.",
+      "media": "<div class=\"info-card\">🇺🇦 Україна → Європа → материк <b>Євразія</b></div>"
     },
     {
       "text": "Столиця України — це:",
-      "answers": ["Львів", "Харків", "Київ", "Одеса"],
-      "correct": 2
+      "answers": [
+        "Львів",
+        "Харків",
+        "Київ",
+        "Одеса"
+      ],
+      "correct": 2,
+      "explanation": "Київ — столиця і найбільше місто України, розташоване на берегах Дніпра.",
+      "media": "<div class=\"info-card\">🏛️ <b>Київ</b><br><span style=\"opacity:0.8\">розташований на берегах Дніпра</span></div>"
     },
     {
       "text": "Найдовша річка України — це:",
-      "answers": ["Дніпро", "Дунай", "Дністер", "Південний Буг"],
-      "correct": 0
+      "answers": [
+        "Дніпро",
+        "Дунай",
+        "Дністер",
+        "Південний Буг"
+      ],
+      "correct": 0,
+      "explanation": "Дніпро — найдовша річка України (понад 2200 км), вона тече з півночі на південь і впадає в Чорне море.",
+      "media": "<div class=\"info-card\">🌊 <b>Дніпро</b><br>довжина ≈ 2 200 км · впадає в Чорне море</div>"
     },
     {
       "text": "Кольори Державного Прапора України:",
-      "answers": ["синій і жовтий", "червоний і чорний", "білий і червоний", "зелений і синій"],
-      "correct": 0
+      "answers": [
+        "синій і жовтий",
+        "червоний і чорний",
+        "білий і червоний",
+        "зелений і синій"
+      ],
+      "correct": 0,
+      "explanation": "Синій колір символізує небо, жовтий — пшеничне поле. Це офіційні кольори Державного Прапора України.",
+      "media": "<img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMjAwIj4KPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiMwMDU3YjciLz4KPHJlY3QgeT0iMTAwIiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2ZmZDcwMCIvPgo8cmVjdCB4PSIyIiB5PSIyIiB3aWR0aD0iMjk2IiBoZWlnaHQ9IjE5NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+\" alt=\"Прапор України\" style=\"width:220px;max-width:100%;height:auto;border-radius:8px;background:#0d1117;padding:6px;\"/>"
     },
     {
       "text": "Хто є главою держави Україна?",
-      "answers": ["Прем'єр-міністр", "Президент", "Король", "Спікер"],
-      "correct": 1
+      "answers": [
+        "Прем'єр-міністр",
+        "Президент",
+        "Король",
+        "Спікер"
+      ],
+      "correct": 1,
+      "explanation": "Главою держави в Україні є Президент. Його обирає народ на 5 років.",
+      "media": "<div class=\"info-card\">🇺🇦 <b>Президент України</b><br>обирається народом на 5 років</div>"
     },
     {
       "text": "Скільки областей в Україні?",
-      "answers": ["21", "22", "24", "27"],
-      "correct": 2
+      "answers": [
+        "21",
+        "22",
+        "24",
+        "27"
+      ],
+      "correct": 2,
+      "explanation": "В Україні 24 області, а також Автономна Республіка Крим і два міста зі спеціальним статусом — Київ і Севастополь.",
+      "media": "<div class=\"info-card\"><b>24 області</b> + АР&nbsp;Крим<br>+ міста спецстатусу: Київ, Севастополь</div>"
     },
     {
       "text": "Найвища вершина України — це:",
-      "answers": ["Говерла", "Роман-Кош", "Піп Іван", "Близниця"],
-      "correct": 0
+      "answers": [
+        "Говерла",
+        "Роман-Кош",
+        "Піп Іван",
+        "Близниця"
+      ],
+      "correct": 0,
+      "explanation": "Говерла — найвища вершина України (2061 м), розташована в Карпатах на межі Закарпатської та Івано-Франківської областей.",
+      "media": "<div class=\"info-card\">⛰️ <b>Говерла</b> — 2 061 м<br>Карпати, на межі Закарпаття та Івано-Франківщини</div>"
     },
     {
       "text": "Грошова одиниця України — це:",
-      "answers": ["гривня", "долар", "євро", "карбованець"],
-      "correct": 0
+      "answers": [
+        "гривня",
+        "долар",
+        "євро",
+        "карбованець"
+      ],
+      "correct": 0,
+      "explanation": "Гривня (₴) — національна валюта України, введена у 1996 році.",
+      "media": "<div class=\"info-card\">💵 <b>Гривня</b> (₴)<br>введена в обіг у 1996 році</div>"
     },
     {
       "text": "Державна мова в Україні:",
-      "answers": ["українська", "російська", "польська", "англійська"],
-      "correct": 0
+      "answers": [
+        "українська",
+        "російська",
+        "польська",
+        "англійська"
+      ],
+      "correct": 0,
+      "explanation": "Українська мова — єдина державна мова в Україні згідно з Конституцією (стаття 10).",
+      "media": "<div class=\"info-card\">🇺🇦 <b>Українська мова</b><br>(Конституція України, ст. 10)</div>"
     },
     {
       "text": "День Незалежності України відзначають:",
-      "answers": ["28 червня", "24 серпня", "22 січня", "14 жовтня"],
-      "correct": 1
+      "answers": [
+        "28 червня",
+        "24 серпня",
+        "22 січня",
+        "14 жовтня"
+      ],
+      "correct": 1,
+      "explanation": "24 серпня 1991 року Верховна Рада ухвалила Акт проголошення незалежності України. Тому це головне державне свято.",
+      "media": "<div class=\"info-card\">🎉 <b>24 серпня</b><br>з 1991 року — Акт проголошення незалежності</div>"
     },
     {
       "text": "Які два моря омивають Україну?",
-      "answers": ["Чорне і Азовське", "Балтійське і Чорне", "Червоне і Чорне", "Каспійське і Азовське"],
-      "correct": 0
+      "answers": [
+        "Чорне і Азовське",
+        "Балтійське і Чорне",
+        "Червоне і Чорне",
+        "Каспійське і Азовське"
+      ],
+      "correct": 0,
+      "explanation": "З півдня Україну омивають Чорне і Азовське моря, які з'єднані Керченською протокою.",
+      "media": "<div class=\"info-card\">🌊 <b>Чорне</b> і <b>Азовське</b><br>з'єднані Керченською протокою</div>"
     },
     {
       "text": "Що належить до неживої природи?",
-      "answers": ["дерево", "метелик", "камінь", "ромашка"],
-      "correct": 2
+      "answers": [
+        "дерево",
+        "метелик",
+        "камінь",
+        "ромашка"
+      ],
+      "correct": 2,
+      "explanation": "Камінь — об'єкт неживої природи: він не росте, не розмножується і не дихає.",
+      "media": "<table class=\"scheme-table\"><thead><tr><th>Жива природа</th><th>Нежива природа</th></tr></thead><tbody><tr><td>рослини · тварини · гриби · людина</td><td>камінь · вода · повітря · сонце</td></tr></tbody></table>"
     },
     {
       "text": "Що належить до живої природи?",
-      "answers": ["метелик", "річка", "хмара", "скеля"],
-      "correct": 0
+      "answers": [
+        "метелик",
+        "річка",
+        "хмара",
+        "скеля"
+      ],
+      "correct": 0,
+      "explanation": "Метелик — жива істота: він рухається, живиться, розмножується. Хмара, скеля і річка — нежива природа.",
+      "media": "<table class=\"scheme-table\"><thead><tr><th>Жива природа</th><th>Нежива природа</th></tr></thead><tbody><tr><td>метелик · дерево · людина · риба</td><td>хмара · скеля · річка · вітер</td></tr></tbody></table>"
     },
     {
       "text": "Яка ознака властива всім живим організмам?",
-      "answers": ["живляться", "дихають", "розмножуються", "усі перелічені"],
-      "correct": 3
+      "answers": [
+        "живляться",
+        "дихають",
+        "розмножуються",
+        "усі перелічені"
+      ],
+      "correct": 3,
+      "explanation": "Усі живі організми живляться, дихають і розмножуються — це їхні спільні ознаки.",
+      "media": "<div class=\"scheme\">Усі живі організми:\n• народжуються\n• живляться\n• дихають\n• ростуть\n• розмножуються\n• помирають</div>"
     },
     {
       "text": "До якої групи рослин належить дуб?",
-      "answers": ["трави", "кущі", "дерева", "мохи"],
-      "correct": 2
+      "answers": [
+        "трави",
+        "кущі",
+        "дерева",
+        "мохи"
+      ],
+      "correct": 2,
+      "explanation": "Дуб має один великий здерев'янілий стовбур, тому належить до дерев. Може жити сотні років.",
+      "media": "<img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMjAgMjIwIj4KPHJlY3QgeT0iMTgwIiB3aWR0aD0iMjIwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjNjVhMzBkIiBvcGFjaXR5PSIwLjQiLz4KPHJlY3QgeD0iMTAwIiB5PSIxMjAiIHdpZHRoPSIyMCIgaGVpZ2h0PSI4MCIgZmlsbD0iIzdjNGEyNiIvPgo8cGF0aCBkPSJNMTAwIDEzMCBMMTAwIDIwMCBNMTIwIDE0MCBMMTIwIDIwMCIgc3Ryb2tlPSIjNWEzMzE4IiBzdHJva2Utd2lkdGg9IjEiLz4KPGNpcmNsZSBjeD0iMTEwIiBjeT0iODAiIHI9IjU1IiBmaWxsPSIjMTZhMzRhIi8+CjxjaXJjbGUgY3g9Ijc1IiBjeT0iMTAwIiByPSIzOCIgZmlsbD0iIzE1ODAzZCIvPgo8Y2lyY2xlIGN4PSIxNDUiIGN5PSIxMDAiIHI9IjM4IiBmaWxsPSIjMTU4MDNkIi8+CjxjaXJjbGUgY3g9IjExMCIgY3k9IjU1IiByPSI0MiIgZmlsbD0iIzIyYzU1ZSIvPgo8Y2lyY2xlIGN4PSI4NSIgY3k9IjcwIiByPSI2IiBmaWxsPSIjYTE2MjA3Ii8+CjxjaXJjbGUgY3g9IjEzNSIgY3k9Ijg1IiByPSI2IiBmaWxsPSIjYTE2MjA3Ii8+CjxjaXJjbGUgY3g9IjEyMCIgY3k9IjYwIiByPSI2IiBmaWxsPSIjYTE2MjA3Ii8+Cjwvc3ZnPg==\" alt=\"Дерево (дуб)\" style=\"width:180px;max-width:100%;height:auto;border-radius:8px;background:#0d1117;padding:6px;\"/>"
     },
     {
       "text": "До якої групи рослин належить смородина?",
-      "answers": ["трави", "кущі", "дерева", "лишайники"],
-      "correct": 1
+      "answers": [
+        "трави",
+        "кущі",
+        "дерева",
+        "лишайники"
+      ],
+      "correct": 1,
+      "explanation": "Смородина має кілька тонких здерев'янілих стебел, що ростуть з одного куреня — це кущ.",
+      "media": "<table class=\"scheme-table\"><thead><tr><th>Група</th><th>Приклади</th></tr></thead><tbody><tr><td>Дерева</td><td>дуб, береза, яблуня</td></tr><tr><td>Кущі</td><td><b>смородина</b>, малина, бузок</td></tr><tr><td>Трави</td><td>ромашка, кропива</td></tr></tbody></table>"
     },
     {
       "text": "Через який орган рослина отримує воду й поживні речовини з ґрунту?",
-      "answers": ["корінь", "стебло", "листок", "квітка"],
-      "correct": 0
+      "answers": [
+        "корінь",
+        "стебло",
+        "листок",
+        "квітка"
+      ],
+      "correct": 0,
+      "explanation": "Корінь рослини всмоктує воду з мінеральними речовинами з ґрунту і утримує рослину в землі.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect y=\"120\" width=\"200\" height=\"80\" fill=\"#7c4a26\" opacity=\"0.45\"/><rect x=\"95\" y=\"60\" width=\"10\" height=\"65\" fill=\"#15803d\"/><ellipse cx=\"80\" cy=\"55\" rx=\"22\" ry=\"10\" fill=\"#22c55e\"/><ellipse cx=\"120\" cy=\"55\" rx=\"22\" ry=\"10\" fill=\"#22c55e\"/><g stroke=\"#a16207\" stroke-width=\"3\" fill=\"none\"><line x1=\"100\" y1=\"125\" x2=\"100\" y2=\"180\"/><line x1=\"100\" y1=\"135\" x2=\"60\" y2=\"170\"/><line x1=\"100\" y1=\"135\" x2=\"140\" y2=\"170\"/><line x1=\"100\" y1=\"155\" x2=\"40\" y2=\"180\"/><line x1=\"100\" y1=\"155\" x2=\"160\" y2=\"180\"/></g><text x=\"100\" y=\"195\" text-anchor=\"middle\" font-size=\"12\" fill=\"#fde68a\" font-weight=\"bold\">КОРІНЬ</text></svg>"
     },
     {
       "text": "У якому органі рослини утворюється кисень на світлі?",
-      "answers": ["корінь", "листок", "плід", "насінина"],
-      "correct": 1
+      "answers": [
+        "корінь",
+        "листок",
+        "плід",
+        "насінина"
+      ],
+      "correct": 1,
+      "explanation": "У зеленому листку завдяки фотосинтезу: рослина поглинає вуглекислий газ і виділяє кисень.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 190\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><g><circle cx=\"40\" cy=\"40\" r=\"14\" fill=\"#fbbf24\"/><line x1=\"40\" y1=\"40\" x2=\"80\" y2=\"80\" stroke=\"#fbbf24\" stroke-width=\"2\"/></g><path d=\"M100 100 Q120 40 180 70 Q170 130 110 130 Z\" fill=\"#16a34a\" stroke=\"#15803d\" stroke-width=\"2\"/><line x1=\"110\" y1=\"130\" x2=\"140\" y2=\"100\" stroke=\"#15803d\" stroke-width=\"1.5\"/><line x1=\"120\" y1=\"130\" x2=\"155\" y2=\"105\" stroke=\"#15803d\" stroke-width=\"1.5\"/><text x=\"150\" y=\"170\" font-size=\"14\" fill=\"#fde68a\">O₂ ↑</text><text x=\"20\" y=\"170\" font-size=\"14\" fill=\"#fde68a\">CO₂ ↓</text></svg>"
     },
     {
       "text": "Тварини, які живляться лише рослинами, називаються:",
-      "answers": ["хижаки", "травоїдні", "всеїдні", "паразити"],
-      "correct": 1
+      "answers": [
+        "хижаки",
+        "травоїдні",
+        "всеїдні",
+        "паразити"
+      ],
+      "correct": 1,
+      "explanation": "Травоїдні тварини (наприклад, корова, заєць, олень) їдять лише рослинну їжу — траву, листя, кору.",
+      "media": "<div class=\"scheme-row\"><span class=\"node\">🌿 рослини</span><span class=\"arrow\">→</span><span class=\"node\">🐄 травоїдні</span></div>"
     },
     {
       "text": "Тварини, які полюють на інших тварин, — це:",
-      "answers": ["травоїдні", "хижаки", "комахоїдні рослини", "всеїдні"],
-      "correct": 1
+      "answers": [
+        "травоїдні",
+        "хижаки",
+        "комахоїдні рослини",
+        "всеїдні"
+      ],
+      "correct": 1,
+      "explanation": "Хижаки полюють на інших тварин і живляться їхнім м'ясом. Приклад: лев, вовк, лисиця.",
+      "media": "<div class=\"scheme-row\"><span class=\"node\">🐰 здобич</span><span class=\"arrow\">→</span><span class=\"node\">🦊 хижак</span></div>"
     },
     {
       "text": "До якої групи тварин належить ластівка?",
-      "answers": ["плазуни", "риби", "птахи", "ссавці"],
-      "correct": 2
+      "answers": [
+        "плазуни",
+        "риби",
+        "птахи",
+        "ссавці"
+      ],
+      "correct": 2,
+      "explanation": "Ластівка має крила, дзьоб, тіло вкрите пір'ям — це ознаки птахів.",
+      "media": "<div class=\"emoji-big\">🐦 ластівка</div>"
     },
     {
       "text": "До якої групи тварин належить жаба?",
-      "answers": ["плазуни", "земноводні", "риби", "ссавці"],
-      "correct": 1
+      "answers": [
+        "плазуни",
+        "земноводні",
+        "риби",
+        "ссавці"
+      ],
+      "correct": 1,
+      "explanation": "Жаба може жити і у воді, і на суші: пуголовок дихає зябрами у воді, а доросла жаба — легенями. Це земноводні (амфібії).",
+      "media": "<div class=\"emoji-big\">🐸 жаба</div>"
     },
     {
       "text": "До якої групи тварин належить дельфін?",
-      "answers": ["риби", "земноводні", "ссавці", "плазуни"],
-      "correct": 2
+      "answers": [
+        "риби",
+        "земноводні",
+        "ссавці",
+        "плазуни"
+      ],
+      "correct": 2,
+      "explanation": "Дельфін — ссавець: він тепло­кровний, дихає легенями, народжує живих малят і вигодовує їх молоком, хоча живе у воді.",
+      "media": "<div class=\"emoji-big\">🐬 дельфін</div>"
     },
     {
       "text": "До якої групи тварин належить ящірка?",
-      "answers": ["плазуни", "ссавці", "земноводні", "риби"],
-      "correct": 0
+      "answers": [
+        "плазуни",
+        "ссавці",
+        "земноводні",
+        "риби"
+      ],
+      "correct": 0,
+      "explanation": "Ящірка — холоднокровна, дихає легенями, тіло вкрите лусочками. Це ознаки плазунів (рептилій).",
+      "media": "<div class=\"emoji-big\">🦎 ящірка</div>"
     },
     {
       "text": "Скільки ніг у комах?",
-      "answers": ["4", "6", "8", "10"],
-      "correct": 1
+      "answers": [
+        "4",
+        "6",
+        "8",
+        "10"
+      ],
+      "correct": 1,
+      "explanation": "У всіх комах рівно 6 ніг, поділених на 3 пари. Якщо більше — це не комаха.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><ellipse cx=\"100\" cy=\"100\" rx=\"22\" ry=\"40\" fill=\"#444\"/><circle cx=\"100\" cy=\"55\" r=\"14\" fill=\"#222\"/><g stroke=\"#444\" stroke-width=\"3\" fill=\"none\"><path d=\"M85 90 L40 70\"/><path d=\"M85 100 L30 100\"/><path d=\"M85 110 L40 130\"/><path d=\"M115 90 L160 70\"/><path d=\"M115 100 L170 100\"/><path d=\"M115 110 L160 130\"/></g><text x=\"100\" y=\"190\" text-anchor=\"middle\" font-size=\"14\" fill=\"#fde68a\" font-weight=\"bold\">6 ніг</text></svg>"
     },
     {
       "text": "Скільки ніг у павуків?",
-      "answers": ["6", "8", "4", "10"],
-      "correct": 1
+      "answers": [
+        "6",
+        "8",
+        "4",
+        "10"
+      ],
+      "correct": 1,
+      "explanation": "У павуків 8 ніг (4 пари). Тому павуки — не комахи, а належать до окремого класу — павукоподібних.",
+      "media": "<img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAgMjAwIj4KPGcgc3Ryb2tlPSIjMWYyOTM3IiBzdHJva2Utd2lkdGg9IjUiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+CjxwYXRoIGQ9Ik04NSAxMDAgUTUwIDc1IDI1IDYwIi8+CjxwYXRoIGQ9Ik04NSAxMDUgUTQwIDEwMCAyMCA5NSIvPgo8cGF0aCBkPSJNODUgMTE1IFE0MCAxMzAgMjAgMTQ1Ii8+CjxwYXRoIGQ9Ik04NSAxMjAgUTUwIDE0NSAzMCAxNzUiLz4KPHBhdGggZD0iTTE1NSAxMDAgUTE5MCA3NSAyMTUgNjAiLz4KPHBhdGggZD0iTTE1NSAxMDUgUTIwMCAxMDAgMjIwIDk1Ii8+CjxwYXRoIGQ9Ik0xNTUgMTE1IFEyMDAgMTMwIDIyMCAxNDUiLz4KPHBhdGggZD0iTTE1NSAxMjAgUTE5MCAxNDUgMjEwIDE3NSIvPgo8L2c+CjxlbGxpcHNlIGN4PSIxMjAiIGN5PSIxMTUiIHJ4PSI0MCIgcnk9IjMyIiBmaWxsPSIjMWYyOTM3Ii8+CjxlbGxpcHNlIGN4PSIxMjAiIGN5PSI4MCIgcng9IjIyIiByeT0iMjAiIGZpbGw9IiMzNzQxNTEiLz4KPGNpcmNsZSBjeD0iMTEzIiBjeT0iNzYiIHI9IjMiIGZpbGw9IiNmYmJmMjQiLz4KPGNpcmNsZSBjeD0iMTI3IiBjeT0iNzYiIHI9IjMiIGZpbGw9IiNmYmJmMjQiLz4KPGNpcmNsZSBjeD0iMTEzIiBjeT0iNzYiIHI9IjEiIGZpbGw9IiMwMDAiLz4KPGNpcmNsZSBjeD0iMTI3IiBjeT0iNzYiIHI9IjEiIGZpbGw9IiMwMDAiLz4KPC9zdmc+\" alt=\"Павук (8 ніг)\" style=\"width:220px;max-width:100%;height:auto;border-radius:8px;background:#0d1117;padding:6px;\"/>"
     },
     {
       "text": "Чим вкрите тіло птахів?",
-      "answers": ["шерстю", "лускою", "пір'ям", "голою шкірою"],
-      "correct": 2
+      "answers": [
+        "шерстю",
+        "лускою",
+        "пір'ям",
+        "голою шкірою"
+      ],
+      "correct": 2,
+      "explanation": "Тіло птахів вкрите пір'ям. Воно зігріває, захищає й допомагає літати.",
+      "media": "<div class=\"emoji-big\">🪶 пір'я</div>"
     },
     {
       "text": "Чим вкрите тіло риб?",
-      "answers": ["пір'ям", "лускою", "шерстю", "голою шкірою"],
-      "correct": 1
+      "answers": [
+        "пір'ям",
+        "лускою",
+        "шерстю",
+        "голою шкірою"
+      ],
+      "correct": 1,
+      "explanation": "Тіло більшості риб вкрите дрібними кістковими лусочками, що захищають їх і зменшують опір води.",
+      "media": "<div class=\"emoji-big\">🐟 луска</div>"
     },
     {
       "text": "Який ланцюг живлення складено правильно?",
-      "answers": ["трава → заєць → лисиця", "лисиця → заєць → трава", "заєць → трава → лисиця", "трава → лисиця → заєць"],
-      "correct": 0
+      "answers": [
+        "трава → заєць → лисиця",
+        "лисиця → заєць → трава",
+        "заєць → трава → лисиця",
+        "трава → лисиця → заєць"
+      ],
+      "correct": 0,
+      "explanation": "Правильний ланцюг починається з рослини (виробника), яку їсть травоїдна тварина, а її — хижак: трава → заєць → лисиця.",
+      "media": "<div class=\"scheme-row\"><span class=\"node\">🌱 трава</span><span class=\"arrow\">→</span><span class=\"node\">🐰 заєць</span><span class=\"arrow\">→</span><span class=\"node\">🦊 лисиця</span></div>"
     },
     {
       "text": "Що таке Червона книга?",
-      "answers": ["перелік улюблених тварин", "список рідкісних і зникаючих видів", "збірка казок про природу", "довідник кольорів"],
-      "correct": 1
+      "answers": [
+        "перелік улюблених тварин",
+        "список рідкісних і зникаючих видів",
+        "збірка казок про природу",
+        "довідник кольорів"
+      ],
+      "correct": 1,
+      "explanation": "Червона книга — список рослин і тварин, що зникають або потребують охорони. Знищувати їх заборонено.",
+      "media": "<div class=\"info-card\">📕 <b>Червона книга</b><br>перелік рідкісних і зникаючих<br>видів рослин і тварин</div>"
     },
     {
       "text": "Який птах занесений до Червоної книги України?",
-      "answers": ["горобець", "чорний лелека", "голуб", "синиця"],
-      "correct": 1
+      "answers": [
+        "горобець",
+        "чорний лелека",
+        "голуб",
+        "синиця"
+      ],
+      "correct": 1,
+      "explanation": "Чорний лелека — рідкісний птах, що гніздиться у глухих лісах, він під особливою охороною.",
+      "media": "<div class=\"emoji-big\">🪶 чорний лелека</div>"
     },
     {
       "text": "Орган, який качає кров по тілу людини, — це:",
-      "answers": ["нирки", "серце", "печінка", "легені"],
-      "correct": 1
+      "answers": [
+        "нирки",
+        "серце",
+        "печінка",
+        "легені"
+      ],
+      "correct": 1,
+      "explanation": "Серце — м'язовий орган, що скорочується і безперервно качає кров по судинах усього тіла.",
+      "media": "<img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMjAgMjIwIj4KPHBhdGggZD0iTTExMCAyMDAgQyA1MCAxNjAsIDE4IDEwNSwgMTggNzAgQyAxOCAzOCwgNTIgMTgsIDgwIDM4IEMgOTIgNDcsIDExMCA2OCwgMTEwIDY4IEMgMTEwIDY4LCAxMjggNDcsIDE0MCAzOCBDIDE2OCAxOCwgMjAyIDM4LCAyMDIgNzAgQyAyMDIgMTA1LCAxNzAgMTYwLCAxMTAgMjAwIFoiIGZpbGw9IiNkYzI2MjYiIHN0cm9rZT0iIzdmMWQxZCIgc3Ryb2tlLXdpZHRoPSIzIi8+CjxwYXRoIGQ9Ik01NSA4MCBRNjUgOTUgODAgMTAwIFE5NSAxMDUgMTEwIDEwMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmNhNWE1IiBzdHJva2Utd2lkdGg9IjMiLz4KPGVsbGlwc2UgY3g9IjY1IiBjeT0iNjUiIHJ4PSIxMiIgcnk9IjYiIGZpbGw9IiNmY2E1YTUiIG9wYWNpdHk9IjAuNiIvPgo8L3N2Zz4=\" alt=\"Серце\" style=\"width:180px;max-width:100%;height:auto;border-radius:8px;background:#0d1117;padding:6px;\"/>"
     },
     {
       "text": "Орган дихання людини — це:",
-      "answers": ["серце", "шлунок", "легені", "нирки"],
-      "correct": 2
+      "answers": [
+        "серце",
+        "шлунок",
+        "легені",
+        "нирки"
+      ],
+      "correct": 2,
+      "explanation": "Легені — парний орган, що вбирає з повітря кисень і виділяє вуглекислий газ.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><path d=\"M100 30 L100 130\" stroke=\"#888\" stroke-width=\"3\" fill=\"none\"/><path d=\"M100 50 Q60 65 50 110 Q45 140 70 165 Q105 170 95 130 L95 50 Z\" fill=\"#fca5a5\" stroke=\"#dc2626\" stroke-width=\"2\"/><path d=\"M100 50 Q140 65 150 110 Q155 140 130 165 Q95 170 105 130 L105 50 Z\" fill=\"#fca5a5\" stroke=\"#dc2626\" stroke-width=\"2\"/><rect x=\"96\" y=\"20\" width=\"8\" height=\"22\" fill=\"#888\"/><text x=\"100\" y=\"195\" text-anchor=\"middle\" font-size=\"13\" fill=\"#fde68a\" font-weight=\"bold\">ЛЕГЕНІ</text></svg>"
     },
     {
       "text": "Що захищає головний мозок?",
-      "answers": ["грудна клітка", "череп", "хребет", "м'язи"],
-      "correct": 1
+      "answers": [
+        "грудна клітка",
+        "череп",
+        "хребет",
+        "м'язи"
+      ],
+      "correct": 1,
+      "explanation": "Череп — міцні кістки голови, що оберігають головний мозок від ударів і пошкоджень.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><ellipse cx=\"100\" cy=\"105\" rx=\"68\" ry=\"60\" fill=\"#f1f5f9\" stroke=\"#1e293b\" stroke-width=\"3\"/><path d=\"M50 130 L40 145 L60 150 L65 165 L80 160 L90 175 L110 170 L130 175 L140 160 L155 165 L160 150 L155 130\" fill=\"#f1f5f9\" stroke=\"#1e293b\" stroke-width=\"3\"/><circle cx=\"80\" cy=\"100\" r=\"8\" fill=\"#1e293b\"/><circle cx=\"120\" cy=\"100\" r=\"8\" fill=\"#1e293b\"/><path d=\"M85 130 Q100 138 115 130\" stroke=\"#1e293b\" stroke-width=\"2\" fill=\"none\"/><text x=\"100\" y=\"190\" text-anchor=\"middle\" font-size=\"13\" fill=\"#fde68a\" font-weight=\"bold\">ЧЕРЕП</text></svg>"
     },
     {
       "text": "Що захищає спинний мозок?",
-      "answers": ["череп", "хребет", "ребра", "тазові кістки"],
-      "correct": 1
+      "answers": [
+        "череп",
+        "хребет",
+        "ребра",
+        "тазові кістки"
+      ],
+      "correct": 1,
+      "explanation": "Хребет (хребетний стовп) — кістковий канал з хребців, всередині якого проходить спинний мозок.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><g fill=\"#cbd5e1\" stroke=\"#1e293b\" stroke-width=\"2\"><rect x=\"80\" y=\"20\" width=\"40\" height=\"20\" rx=\"4\"/><rect x=\"80\" y=\"44\" width=\"40\" height=\"20\" rx=\"4\"/><rect x=\"80\" y=\"68\" width=\"40\" height=\"20\" rx=\"4\"/><rect x=\"80\" y=\"92\" width=\"40\" height=\"20\" rx=\"4\"/><rect x=\"80\" y=\"116\" width=\"40\" height=\"20\" rx=\"4\"/><rect x=\"80\" y=\"140\" width=\"40\" height=\"20\" rx=\"4\"/></g><line x1=\"100\" y1=\"20\" x2=\"100\" y2=\"160\" stroke=\"#fbbf24\" stroke-width=\"3\" opacity=\"0.7\"/><text x=\"100\" y=\"185\" text-anchor=\"middle\" font-size=\"13\" fill=\"#fde68a\" font-weight=\"bold\">ХРЕБЕТ</text></svg>"
     },
     {
       "text": "Грудна клітка захищає насамперед:",
-      "answers": ["серце і легені", "мозок", "печінку", "нирки"],
-      "correct": 0
+      "answers": [
+        "серце і легені",
+        "мозок",
+        "печінку",
+        "нирки"
+      ],
+      "correct": 0,
+      "explanation": "Ребра і груднина утворюють грудну клітку, яка захищає серце і легені від пошкоджень.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><g fill=\"none\" stroke=\"#f5f5f4\" stroke-width=\"3\"><path d=\"M40 50 Q100 70 160 50\"/><path d=\"M40 75 Q100 95 160 75\"/><path d=\"M40 100 Q100 120 160 100\"/><path d=\"M40 125 Q100 145 160 125\"/></g><line x1=\"100\" y1=\"40\" x2=\"100\" y2=\"160\" stroke=\"#f5f5f4\" stroke-width=\"3\"/><path d=\"M100 90 C 80 75, 65 90, 70 105 Q80 120 100 130 Q120 120 130 105 C 135 90, 120 75, 100 90 Z\" fill=\"#dc2626\" opacity=\"0.85\"/><text x=\"100\" y=\"185\" text-anchor=\"middle\" font-size=\"12\" fill=\"#fde68a\" font-weight=\"bold\">СЕРЦЕ + ЛЕГЕНІ</text></svg>"
     },
     {
       "text": "Найбільший орган тіла людини — це:",
-      "answers": ["серце", "печінка", "шкіра", "легені"],
-      "correct": 2
+      "answers": [
+        "серце",
+        "печінка",
+        "шкіра",
+        "легені"
+      ],
+      "correct": 2,
+      "explanation": "Шкіра — найбільший орган людини. Вона захищає тіло, бере участь у диханні й регулюванні температури.",
+      "media": "<div class=\"info-card\">🧴 <b>Шкіра</b> — найбільший орган<br>покриває все тіло, захищає й охолоджує</div>"
     },
     {
       "text": "Скільки органів чуття у людини?",
-      "answers": ["3", "4", "5", "6"],
-      "correct": 2
+      "answers": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct": 2,
+      "explanation": "У людини 5 основних органів чуття: зір (очі), слух (вуха), нюх (ніс), смак (язик), дотик (шкіра).",
+      "media": "<table class=\"scheme-table\"><thead><tr><th>Орган</th><th>Чуття</th></tr></thead><tbody><tr><td>👁️ Очі</td><td>Зір</td></tr><tr><td>👂 Вуха</td><td>Слух</td></tr><tr><td>👃 Ніс</td><td>Нюх</td></tr><tr><td>👅 Язик</td><td>Смак</td></tr><tr><td>✋ Шкіра</td><td>Дотик</td></tr></tbody></table>"
     },
     {
       "text": "Який орган чуття допомагає відрізнити солодке від солоного?",
-      "answers": ["око", "язик", "вухо", "ніс"],
-      "correct": 1
+      "answers": [
+        "око",
+        "язик",
+        "вухо",
+        "ніс"
+      ],
+      "correct": 1,
+      "explanation": "Язик має смакові сосочки, які розрізняють солодке, солоне, кисле, гірке (і умамі).",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><ellipse cx=\"100\" cy=\"100\" rx=\"80\" ry=\"55\" fill=\"#fda4af\" stroke=\"#be123c\" stroke-width=\"3\"/><g fill=\"#be123c\" opacity=\"0.5\"><circle cx=\"60\" cy=\"85\" r=\"3\"/><circle cx=\"80\" cy=\"80\" r=\"3\"/><circle cx=\"100\" cy=\"78\" r=\"3\"/><circle cx=\"120\" cy=\"80\" r=\"3\"/><circle cx=\"140\" cy=\"85\" r=\"3\"/><circle cx=\"60\" cy=\"115\" r=\"3\"/><circle cx=\"80\" cy=\"120\" r=\"3\"/><circle cx=\"100\" cy=\"122\" r=\"3\"/><circle cx=\"120\" cy=\"120\" r=\"3\"/><circle cx=\"140\" cy=\"115\" r=\"3\"/></g><text x=\"100\" y=\"180\" text-anchor=\"middle\" font-size=\"13\" fill=\"#fde68a\" font-weight=\"bold\">ЯЗИК — смак</text></svg>"
     },
     {
       "text": "Скільки годин на добу варто спати дитині 9–10 років?",
-      "answers": ["5–6", "7–8", "9–10", "12–14"],
-      "correct": 2
+      "answers": [
+        "5–6",
+        "7–8",
+        "9–10",
+        "12–14"
+      ],
+      "correct": 2,
+      "explanation": "Дитині 9–10 років радять спати 9–10 годин на добу — це потрібно для росту, відновлення й уваги в школі.",
+      "media": "<div class=\"info-card\">😴 <b>9–10 годин на добу</b><br>важливо для росту та уваги</div>"
     },
     {
       "text": "Які зуби у дітей з часом змінюються?",
-      "answers": ["корінні", "молочні", "зуби мудрості", "не змінюються"],
-      "correct": 1
+      "answers": [
+        "корінні",
+        "молочні",
+        "зуби мудрості",
+        "не змінюються"
+      ],
+      "correct": 1,
+      "explanation": "Молочні зуби у дітей випадають і на їх місці виростають постійні (корінні).",
+      "media": "<div class=\"scheme-row\"><span class=\"node\">🦷 молочні</span><span class=\"arrow\">→</span><span class=\"node\">🦷 постійні</span></div>"
     },
     {
       "text": "Скільки разів на день рекомендується чистити зуби?",
-      "answers": ["1", "2", "5", "не обов'язково"],
-      "correct": 1
+      "answers": [
+        "1",
+        "2",
+        "5",
+        "не обов'язково"
+      ],
+      "correct": 1,
+      "explanation": "Стоматологи радять чистити зуби 2 рази на день — вранці й увечері — щоб запобігти карієсу.",
+      "media": "<div class=\"info-card\">🪥 <b>2 рази</b> на день<br>вранці та ввечері</div>"
     },
     {
       "text": "Що корисно вживати щодня для здоров'я?",
-      "answers": ["овочі та фрукти", "лише чіпси", "лише солодощі", "лише газовану воду"],
-      "correct": 0
+      "answers": [
+        "овочі та фрукти",
+        "лише чіпси",
+        "лише солодощі",
+        "лише газовану воду"
+      ],
+      "correct": 0,
+      "explanation": "Овочі та фрукти містять вітаміни, мінерали й клітковину — їх потрібно їсти кожного дня.",
+      "media": "<div class=\"emoji-big\">🥦🍎🥕🍇 овочі та фрукти</div>"
     },
     {
       "text": "Скільки склянок води радять випивати дитині щодня?",
-      "answers": ["1", "3–4", "6–8", "більше 15"],
-      "correct": 2
+      "answers": [
+        "1",
+        "3–4",
+        "6–8",
+        "більше 15"
+      ],
+      "correct": 2,
+      "explanation": "Дитині радять пити приблизно 6–8 склянок чистої води на день — це залежить від ваги, активності і погоди.",
+      "media": "<div class=\"info-card\">💧 <b>6–8 склянок</b> чистої води на день</div>"
     },
     {
       "text": "Що допоможе очам відпочити після роботи за комп'ютером?",
-      "answers": ["дивитися ще довше", "подивитися вдалечінь", "не моргати", "читати з телефона"],
-      "correct": 1
+      "answers": [
+        "дивитися ще довше",
+        "подивитися вдалечінь",
+        "не моргати",
+        "читати з телефона"
+      ],
+      "correct": 1,
+      "explanation": "Правило «20-20-20»: кожні 20 хвилин 20 секунд дивися на щось за 6 метрів від тебе. Це розслаблює очні м'язи.",
+      "media": "<div class=\"info-card\">👁️ Правило <b>20-20-20</b><br>кожні 20 хв · 20 секунд · дивитися ≥ 6&nbsp;м у далечінь</div>"
     },
     {
       "text": "Скільки місяців у році?",
-      "answers": ["10", "11", "12", "13"],
-      "correct": 2
+      "answers": [
+        "10",
+        "11",
+        "12",
+        "13"
+      ],
+      "correct": 2,
+      "explanation": "У році 12 місяців — від січня до грудня.",
+      "media": "<div class=\"scheme\">12 місяців у році:\n01 Січень   02 Лютий    03 Березень\n04 Квітень  05 Травень  06 Червень\n07 Липень   08 Серпень  09 Вересень\n10 Жовтень  11 Листопад 12 Грудень</div>"
     },
     {
       "text": "Скільки пір року?",
-      "answers": ["2", "3", "4", "5"],
-      "correct": 2
+      "answers": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct": 2,
+      "explanation": "Чотири пори року: весна, літо, осінь, зима. Кожна триває близько 3 місяців.",
+      "media": "<table class=\"scheme-table\"><thead><tr><th>Пора року</th><th>Місяці</th></tr></thead><tbody><tr><td>🌸 Весна</td><td>березень · квітень · травень</td></tr><tr><td>☀️ Літо</td><td>червень · липень · серпень</td></tr><tr><td>🍂 Осінь</td><td>вересень · жовтень · листопад</td></tr><tr><td>❄️ Зима</td><td>грудень · січень · лютий</td></tr></tbody></table>"
     },
     {
       "text": "Які місяці належать до зими?",
-      "answers": ["грудень, січень, лютий", "листопад, грудень, січень", "січень, лютий, березень", "грудень, січень, березень"],
-      "correct": 0
+      "answers": [
+        "грудень, січень, лютий",
+        "листопад, грудень, січень",
+        "січень, лютий, березень",
+        "грудень, січень, березень"
+      ],
+      "correct": 0,
+      "explanation": "Зимові місяці: грудень, січень, лютий. У цей час найхолодніше і випадає сніг.",
+      "media": "<div class=\"info-card\">❄️ <b>Грудень · Січень · Лютий</b></div>"
     },
     {
       "text": "Природне явище, характерне для осені, — це:",
-      "answers": ["льодохід", "листопад", "цвітіння садів", "сильна спека"],
-      "correct": 1
+      "answers": [
+        "льодохід",
+        "листопад",
+        "цвітіння садів",
+        "сильна спека"
+      ],
+      "correct": 1,
+      "explanation": "Восени листя на деревах змінює колір і опадає — це явище називається листопадом.",
+      "media": "<div class=\"emoji-big\">🍂🍁 листопад</div>"
     },
     {
       "text": "У якому стані перебуває вода у вигляді льоду?",
-      "answers": ["твердому", "рідкому", "газоподібному", "сипкому"],
-      "correct": 0
+      "answers": [
+        "твердому",
+        "рідкому",
+        "газоподібному",
+        "сипкому"
+      ],
+      "correct": 0,
+      "explanation": "У вигляді льоду вода перебуває у твердому стані. Це стається при температурі 0 °C і нижче.",
+      "media": "<table class=\"scheme-table\"><thead><tr><th>Стан</th><th>Приклад</th></tr></thead><tbody><tr><td>Твердий</td><td>🧊 лід, сніг</td></tr><tr><td>Рідкий</td><td>💧 вода у річці</td></tr><tr><td>Газоподібний</td><td>💨 водяна пара</td></tr></tbody></table>"
     },
     {
       "text": "Що утворюється під час випаровування води?",
-      "answers": ["лід", "сніг", "водяна пара", "град"],
-      "correct": 2
+      "answers": [
+        "лід",
+        "сніг",
+        "водяна пара",
+        "град"
+      ],
+      "correct": 2,
+      "explanation": "Випаровування — перехід води в газоподібний стан, тобто на водяну пару.",
+      "media": "<div class=\"scheme-row\"><span class=\"node\">💧 вода</span><span class=\"arrow\">→</span><span class=\"node\">☀️ нагрівання</span><span class=\"arrow\">→</span><span class=\"node\">💨 водяна пара</span></div>"
     },
     {
       "text": "Опади у вигляді льодяних кульок — це:",
-      "answers": ["роса", "град", "іній", "туман"],
-      "correct": 1
+      "answers": [
+        "роса",
+        "град",
+        "іній",
+        "туман"
+      ],
+      "correct": 1,
+      "explanation": "Град — опади у вигляді льодяних кульок. Утворюється у грозових хмарах за певних умов.",
+      "media": "<div class=\"emoji-big\">🧊 град</div>"
     },
     {
       "text": "Прилад для вимірювання температури — це:",
-      "answers": ["барометр", "термометр", "компас", "флюгер"],
-      "correct": 1
+      "answers": [
+        "барометр",
+        "термометр",
+        "компас",
+        "флюгер"
+      ],
+      "correct": 1,
+      "explanation": "Термометр — прилад зі шкалою і рідиною (або електронним сенсором), що показує температуру.",
+      "media": "<img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MCAyNDAiPgo8cmVjdCB4PSIzMiIgeT0iMjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNzAiIHJ4PSI4IiBmaWxsPSIjZmZmIiBzdHJva2U9IiMxZTI5M2IiIHN0cm9rZS13aWR0aD0iMiIvPgo8cmVjdCB4PSIzNiIgeT0iODAiIHdpZHRoPSI4IiBoZWlnaHQ9IjExMCIgZmlsbD0iI2RjMjYyNiIvPgo8Y2lyY2xlIGN4PSI0MCIgY3k9IjIwMCIgcj0iMjIiIGZpbGw9IiNkYzI2MjYiIHN0cm9rZT0iIzdmMWQxZCIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxnIHN0cm9rZT0iIzFlMjkzYiIgc3Ryb2tlLXdpZHRoPSIxLjUiPgo8bGluZSB4MT0iNTAiIHkxPSI0MCIgeDI9IjU4IiB5Mj0iNDAiLz4KPGxpbmUgeDE9IjUwIiB5MT0iNjAiIHgyPSI1OCIgeTI9IjYwIi8+CjxsaW5lIHgxPSI1MCIgeTE9IjgwIiB4Mj0iNTgiIHkyPSI4MCIvPgo8bGluZSB4MT0iNTAiIHkxPSIxMDAiIHgyPSI1OCIgeTI9IjEwMCIvPgo8bGluZSB4MT0iNTAiIHkxPSIxMjAiIHgyPSI1OCIgeTI9IjEyMCIvPgo8bGluZSB4MT0iNTAiIHkxPSIxNDAiIHgyPSI1OCIgeTI9IjE0MCIvPgo8bGluZSB4MT0iNTAiIHkxPSIxNjAiIHgyPSI1OCIgeTI9IjE2MCIvPgo8bGluZSB4MT0iNTAiIHkxPSIxODAiIHgyPSI1OCIgeTI9IjE4MCIvPgo8L2c+Cjx0ZXh0IHg9IjY4IiB5PSI0NCIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzFlMjkzYiI+NDA8L3RleHQ+Cjx0ZXh0IHg9IjY4IiB5PSIxMjQiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9IiMxZTI5M2IiPjIwPC90ZXh0Pgo8dGV4dCB4PSI2OCIgeT0iMTg0IiBmb250LXNpemU9IjEwIiBmaWxsPSIjMWUyOTNiIj4wPC90ZXh0Pgo8L3N2Zz4=\" alt=\"Термометр\" style=\"width:100px;max-width:100%;height:auto;border-radius:8px;background:#0d1117;padding:6px;\"/>"
     },
     {
       "text": "Прилад для вимірювання атмосферного тиску — це:",
-      "answers": ["термометр", "барометр", "флюгер", "спідометр"],
-      "correct": 1
+      "answers": [
+        "термометр",
+        "барометр",
+        "флюгер",
+        "спідометр"
+      ],
+      "correct": 1,
+      "explanation": "Барометр вимірює атмосферний тиск і допомагає прогнозувати погоду: його зміни передбачають дощ або ясно.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><circle cx=\"100\" cy=\"100\" r=\"80\" fill=\"#f5f5f4\" stroke=\"#1e293b\" stroke-width=\"3\"/><circle cx=\"100\" cy=\"100\" r=\"6\" fill=\"#1e293b\"/><g stroke=\"#1e293b\" stroke-width=\"2\"><line x1=\"100\" y1=\"30\" x2=\"100\" y2=\"40\"/><line x1=\"100\" y1=\"160\" x2=\"100\" y2=\"170\"/><line x1=\"30\" y1=\"100\" x2=\"40\" y2=\"100\"/><line x1=\"160\" y1=\"100\" x2=\"170\" y2=\"100\"/></g><line x1=\"100\" y1=\"100\" x2=\"140\" y2=\"60\" stroke=\"#dc2626\" stroke-width=\"3\" stroke-linecap=\"round\"/><text x=\"60\" y=\"60\" font-size=\"11\" fill=\"#1e293b\">дощ</text><text x=\"125\" y=\"60\" font-size=\"11\" fill=\"#1e293b\">ясно</text><text x=\"100\" y=\"195\" text-anchor=\"middle\" font-size=\"12\" fill=\"#fde68a\" font-weight=\"bold\">БАРОМЕТР</text></svg>"
     },
     {
       "text": "Прилад для визначення напряму вітру — це:",
-      "answers": ["барометр", "термометр", "флюгер", "компас"],
-      "correct": 2
+      "answers": [
+        "барометр",
+        "термометр",
+        "флюгер",
+        "компас"
+      ],
+      "correct": 2,
+      "explanation": "Флюгер — стрілка, що повертається за вітром і показує, з якого боку він дме.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 230\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><line x1=\"100\" y1=\"20\" x2=\"100\" y2=\"180\" stroke=\"#888\" stroke-width=\"3\"/><polygon points=\"40,80 30,90 30,70\" fill=\"#dc2626\"/><line x1=\"40\" y1=\"80\" x2=\"160\" y2=\"80\" stroke=\"#dc2626\" stroke-width=\"4\"/><rect x=\"160\" y=\"65\" width=\"20\" height=\"30\" fill=\"#dc2626\"/><text x=\"55\" y=\"60\" font-size=\"11\" fill=\"#fde68a\">→ вітер</text><g stroke=\"#888\" stroke-width=\"2\"><line x1=\"100\" y1=\"180\" x2=\"80\" y2=\"195\"/><line x1=\"100\" y1=\"180\" x2=\"120\" y2=\"195\"/></g><text x=\"100\" y=\"220\" text-anchor=\"middle\" font-size=\"13\" fill=\"#fde68a\" font-weight=\"bold\">ФЛЮГЕР</text></svg>"
     },
     {
       "text": "Меридіани — це лінії, що з'єднують:",
-      "answers": ["схід і захід", "північ і південь", "північ і схід", "південь і захід"],
-      "correct": 1
+      "answers": [
+        "схід і захід",
+        "північ і південь",
+        "північ і схід",
+        "південь і захід"
+      ],
+      "correct": 1,
+      "explanation": "Меридіани — уявні лінії на глобусі/карті, що з'єднують Північний і Південний полюси.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><circle cx=\"100\" cy=\"100\" r=\"80\" fill=\"#3b82f6\"/><g fill=\"none\" stroke=\"#fff\" stroke-width=\"1.5\"><ellipse cx=\"100\" cy=\"100\" rx=\"20\" ry=\"80\"/><ellipse cx=\"100\" cy=\"100\" rx=\"40\" ry=\"80\"/><ellipse cx=\"100\" cy=\"100\" rx=\"60\" ry=\"80\"/><line x1=\"100\" y1=\"20\" x2=\"100\" y2=\"180\"/></g><circle cx=\"100\" cy=\"20\" r=\"4\" fill=\"#dc2626\"/><circle cx=\"100\" cy=\"180\" r=\"4\" fill=\"#dc2626\"/><text x=\"100\" y=\"14\" text-anchor=\"middle\" font-size=\"11\" fill=\"#fde68a\">Пн</text><text x=\"100\" y=\"195\" text-anchor=\"middle\" font-size=\"11\" fill=\"#fde68a\">Пд</text></svg>"
     },
     {
       "text": "Паралелі — це лінії, що йдуть:",
-      "answers": ["зі сходу на захід", "з півночі на південь", "по діагоналі", "лише з півночі"],
-      "correct": 0
+      "answers": [
+        "зі сходу на захід",
+        "з півночі на південь",
+        "по діагоналі",
+        "лише з півночі"
+      ],
+      "correct": 0,
+      "explanation": "Паралелі — уявні лінії, паралельні екватору; вони йдуть зі сходу на захід.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><circle cx=\"100\" cy=\"100\" r=\"80\" fill=\"#3b82f6\"/><g fill=\"none\" stroke=\"#fff\" stroke-width=\"1.5\"><ellipse cx=\"100\" cy=\"60\" rx=\"78\" ry=\"10\"/><ellipse cx=\"100\" cy=\"80\" rx=\"79\" ry=\"6\"/><ellipse cx=\"100\" cy=\"100\" rx=\"80\" ry=\"3\"/><ellipse cx=\"100\" cy=\"120\" rx=\"79\" ry=\"6\"/><ellipse cx=\"100\" cy=\"140\" rx=\"78\" ry=\"10\"/></g><text x=\"186\" y=\"103\" font-size=\"10\" fill=\"#fde68a\">Сх</text><text x=\"2\" y=\"103\" font-size=\"10\" fill=\"#fde68a\">Зх</text></svg>"
     },
     {
       "text": "Яким кольором на карті позначають гори?",
-      "answers": ["синім", "зеленим", "коричневим", "жовтим"],
-      "correct": 2
+      "answers": [
+        "синім",
+        "зеленим",
+        "коричневим",
+        "жовтим"
+      ],
+      "correct": 2,
+      "explanation": "Гори і височини зазвичай зображають коричневим кольором — що темніший відтінок, то вище.",
+      "media": "<div class=\"swatch\"><div class=\"chip\" style=\"background:#7c4a26\"></div><div>коричневий — гори</div></div>"
     },
     {
       "text": "Яким кольором на карті позначають водойми?",
-      "answers": ["коричневим", "синім", "зеленим", "червоним"],
-      "correct": 1
+      "answers": [
+        "коричневим",
+        "синім",
+        "зеленим",
+        "червоним"
+      ],
+      "correct": 1,
+      "explanation": "Моря, річки й озера на картах позначають синім (блакитним) кольором.",
+      "media": "<div class=\"swatch\"><div class=\"chip\" style=\"background:#3b82f6\"></div><div>синій — водойми</div></div>"
     },
     {
       "text": "Яким кольором на карті позначають рівнини?",
-      "answers": ["синім", "коричневим", "зеленим", "чорним"],
-      "correct": 2
+      "answers": [
+        "синім",
+        "коричневим",
+        "зеленим",
+        "чорним"
+      ],
+      "correct": 2,
+      "explanation": "Низовини й рівнини зазвичай позначають зеленим кольором, височини — жовтим.",
+      "media": "<div class=\"swatch\"><div class=\"chip\" style=\"background:#16a34a\"></div><div>зелений — рівнини</div></div>"
     },
     {
       "text": "Що таке план місцевості?",
-      "answers": ["карта світу", "креслення невеликої ділянки згори", "фотографія з висоти", "малюнок з натури"],
-      "correct": 1
+      "answers": [
+        "карта світу",
+        "креслення невеликої ділянки згори",
+        "фотографія з висоти",
+        "малюнок з натури"
+      ],
+      "correct": 1,
+      "explanation": "План місцевості — креслення невеликої ділянки землі згори в зменшеному масштабі з умовними знаками.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"200\" height=\"200\" fill=\"#16a34a\" opacity=\"0.4\"/><rect x=\"30\" y=\"40\" width=\"50\" height=\"40\" fill=\"#a16207\"/><rect x=\"120\" y=\"60\" width=\"40\" height=\"30\" fill=\"#a16207\"/><line x1=\"0\" y1=\"120\" x2=\"200\" y2=\"130\" stroke=\"#3b82f6\" stroke-width=\"6\"/><line x1=\"80\" y1=\"0\" x2=\"100\" y2=\"200\" stroke=\"#1e293b\" stroke-width=\"3\" stroke-dasharray=\"8 4\"/><circle cx=\"160\" cy=\"160\" r=\"8\" fill=\"#15803d\"/><circle cx=\"170\" cy=\"170\" r=\"6\" fill=\"#15803d\"/><text x=\"100\" y=\"22\" text-anchor=\"middle\" font-size=\"12\" fill=\"#fff\" font-weight=\"bold\">ПЛАН (вид згори)</text></svg>"
     },
     {
       "text": "Що таке корисні копалини?",
-      "answers": ["рослини", "природні речовини, що залягають у надрах Землі", "тварини", "штучні матеріали"],
-      "correct": 1
+      "answers": [
+        "рослини",
+        "природні речовини, що залягають у надрах Землі",
+        "тварини",
+        "штучні матеріали"
+      ],
+      "correct": 1,
+      "explanation": "Корисні копалини — це природні речовини, що залягають у надрах Землі і потрібні людям (наприклад, вугілля, нафта, залізна руда).",
+      "media": "<table class=\"scheme-table\"><thead><tr><th>Група</th><th>Приклади</th></tr></thead><tbody><tr><td>Горючі</td><td>вугілля, нафта, газ</td></tr><tr><td>Рудні</td><td>залізна руда, мідь</td></tr><tr><td>Будівельні</td><td>пісок, глина, граніт</td></tr></tbody></table>"
     },
     {
       "text": "До якої групи корисних копалин належить вугілля?",
-      "answers": ["горючі", "рудні", "будівельні", "рідкі"],
-      "correct": 0
+      "answers": [
+        "горючі",
+        "рудні",
+        "будівельні",
+        "рідкі"
+      ],
+      "correct": 0,
+      "explanation": "Вугілля горить і дає тепло — воно належить до групи горючих (паливних) корисних копалин.",
+      "media": "<div class=\"info-card\">🪨 <b>Горючі</b> корисні копалини:<br>вугілля · нафта · природний газ · торф</div>"
     },
     {
       "text": "До якої групи корисних копалин належить пісок?",
-      "answers": ["горючі", "рудні", "будівельні", "газоподібні"],
-      "correct": 2
+      "answers": [
+        "горючі",
+        "рудні",
+        "будівельні",
+        "газоподібні"
+      ],
+      "correct": 2,
+      "explanation": "Пісок використовують у будівництві (бетон, скло) — це будівельна корисна копалина.",
+      "media": "<div class=\"info-card\">🏗️ <b>Будівельні</b> копалини:<br>пісок · глина · граніт · вапняк</div>"
     },
     {
       "text": "Що отримують із залізної руди?",
-      "answers": ["срібло", "залізо", "вугілля", "цукор"],
-      "correct": 1
+      "answers": [
+        "срібло",
+        "залізо",
+        "вугілля",
+        "цукор"
+      ],
+      "correct": 1,
+      "explanation": "Із залізної руди шляхом плавлення в домнах добувають залізо й сталь, з яких роблять машини, мости, інструменти.",
+      "media": "<div class=\"scheme-row\"><span class=\"node\">⛏️ залізна руда</span><span class=\"arrow\">→</span><span class=\"node\">🔥 плавлення</span><span class=\"arrow\">→</span><span class=\"node\">🔩 залізо · сталь</span></div>"
     },
     {
       "text": "Ґрунт — це:",
-      "answers": ["камінь", "верхній родючий шар землі", "пісок з пляжу", "вода у криниці"],
-      "correct": 1
+      "answers": [
+        "камінь",
+        "верхній родючий шар землі",
+        "пісок з пляжу",
+        "вода у криниці"
+      ],
+      "correct": 1,
+      "explanation": "Ґрунт — це верхній родючий шар землі, у якому ростуть рослини. Він утворюється сотні й тисячі років.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 180\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect y=\"0\" width=\"200\" height=\"20\" fill=\"#16a34a\"/><rect y=\"20\" width=\"200\" height=\"40\" fill=\"#3f2a1a\"/><rect y=\"60\" width=\"200\" height=\"40\" fill=\"#7c4a26\"/><rect y=\"100\" width=\"200\" height=\"40\" fill=\"#a16207\"/><rect y=\"140\" width=\"200\" height=\"40\" fill=\"#6b7280\"/><text x=\"6\" y=\"44\" font-size=\"11\" fill=\"#fff\">верхній родючий шар</text><text x=\"6\" y=\"84\" font-size=\"11\" fill=\"#fff\">мінеральні речовини</text><text x=\"6\" y=\"124\" font-size=\"11\" fill=\"#fff\">материнська порода</text><text x=\"6\" y=\"164\" font-size=\"11\" fill=\"#fff\">камінь</text></svg>"
     },
     {
       "text": "Найголовніша властивість ґрунту — це:",
-      "answers": ["колір", "родючість", "твердість", "форма"],
-      "correct": 1
+      "answers": [
+        "колір",
+        "родючість",
+        "твердість",
+        "форма"
+      ],
+      "correct": 1,
+      "explanation": "Родючість — здатність ґрунту забезпечувати рослини водою й поживними речовинами. Без неї нічого не виросте.",
+      "media": "<div class=\"info-card\">🌱 <b>Родючість</b> — здатність ґрунту<br>забезпечувати рослини водою й поживними речовинами</div>"
     },
     {
       "text": "Що таке експеримент?",
-      "answers": ["перерва на уроці", "дослід, який перевіряє припущення", "звичайна бесіда", "гра у дворі"],
-      "correct": 1
+      "answers": [
+        "перерва на уроці",
+        "дослід, який перевіряє припущення",
+        "звичайна бесіда",
+        "гра у дворі"
+      ],
+      "correct": 1,
+      "explanation": "Експеримент — це спеціально поставлений дослід, у якому перевіряють припущення (гіпотезу) на практиці.",
+      "media": "<div class=\"emoji-big\">🧪🔬 дослід</div>"
     },
     {
       "text": "Хто такий винахідник?",
-      "answers": ["людина, яка купує товар", "людина, яка створює щось нове", "людина, яка ремонтує речі", "людина, яка продає товар"],
-      "correct": 1
+      "answers": [
+        "людина, яка купує товар",
+        "людина, яка створює щось нове",
+        "людина, яка ремонтує речі",
+        "людина, яка продає товар"
+      ],
+      "correct": 1,
+      "explanation": "Винахідник — людина, яка створює щось нове: пристрій, машину чи спосіб розв'язання задачі.",
+      "media": "<div class=\"emoji-big\">💡 винахідник</div>"
     },
     {
       "text": "Що з переліченого є джерелом інформації?",
-      "answers": ["книга", "інтернет", "телебачення", "усе перелічене"],
-      "correct": 3
+      "answers": [
+        "книга",
+        "інтернет",
+        "телебачення",
+        "усе перелічене"
+      ],
+      "correct": 3,
+      "explanation": "Книги, інтернет, телебачення, газети, люди — усе це джерела інформації, з яких ми дізнаємося нове.",
+      "media": "<div class=\"info-card\">📚 книги · 🌐 інтернет · 📺 ТБ · 📰 газети · 👥 люди</div>"
     },
     {
       "text": "Хто винайшов телефон?",
-      "answers": ["А. Ейнштейн", "А. Ґ. Белл", "С. Корольов", "В. Ломоносов"],
-      "correct": 1
+      "answers": [
+        "А. Ейнштейн",
+        "А. Ґ. Белл",
+        "С. Корольов",
+        "В. Ломоносов"
+      ],
+      "correct": 1,
+      "explanation": "Олександр Ґрейам Белл запатентував перший телефон у 1876 році і назавжди змінив спосіб спілкування.",
+      "media": "<div class=\"info-card\">📞 <b>Олександр Ґрейам Белл</b><br>1876 р. — перший практичний телефон</div>"
     },
     {
       "text": "Кого вважають винахідником електричної лампи розжарювання?",
-      "answers": ["Ісаак Ньютон", "Томас Едісон", "Архімед", "Леонардо да Вінчі"],
-      "correct": 1
+      "answers": [
+        "Ісаак Ньютон",
+        "Томас Едісон",
+        "Архімед",
+        "Леонардо да Вінчі"
+      ],
+      "correct": 1,
+      "explanation": "Томас Едісон у 1879 році створив надійну електричну лампу розжарювання, яку можна було масово виробляти.",
+      "media": "<div class=\"info-card\">💡 <b>Томас Едісон</b><br>1879 р. — лампа розжарювання</div>"
     },
     {
       "text": "Перший космонавт незалежної України — це:",
-      "answers": ["Леонід Каденюк", "Юрій Кондратюк", "Сергій Корольов", "Олександр Волков"],
-      "correct": 0
+      "answers": [
+        "Леонід Каденюк",
+        "Юрій Кондратюк",
+        "Сергій Корольов",
+        "Олександр Волков"
+      ],
+      "correct": 0,
+      "explanation": "Леонід Каденюк здійснив політ у космос на американському шатлі «Колумбія» у 1997 році, ставши першим космонавтом незалежної України.",
+      "media": "<div class=\"info-card\">🇺🇦 <b>Леонід Каденюк</b><br>1997 р. — шатл «Колумбія»</div>"
     },
     {
       "text": "На якій планеті ми живемо?",
-      "answers": ["Марс", "Венера", "Земля", "Юпітер"],
-      "correct": 2
+      "answers": [
+        "Марс",
+        "Венера",
+        "Земля",
+        "Юпітер"
+      ],
+      "correct": 2,
+      "explanation": "Ми живемо на Землі — третій планеті від Сонця і єдиній відомій нам планеті, де є життя.",
+      "media": "<img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMjAgMjIwIj4KPHJlY3Qgd2lkdGg9IjIyMCIgaGVpZ2h0PSIyMjAiIGZpbGw9IiMwYjEwMjQiLz4KPGcgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC42Ij48Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIwLjgiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIyNSIgcj0iMC44Ii8+PGNpcmNsZSBjeD0iMTgwIiBjeT0iMTk1IiByPSIwLjgiLz48L2c+CjxjaXJjbGUgY3g9IjExMCIgY3k9IjExMCIgcj0iODUiIGZpbGw9IiMzYjgyZjYiLz4KPHBhdGggZD0iTTQwIDkwIFE1NSA4MCA3NSA5MCBMOTAgODAgTDEwMCA5NSBMMTIwIDkwIEwxMzUgMTA1IEwxMjAgMTE1IEwxMDUgMTEwIEw5MCAxMjAgTDcwIDExNSBMNTAgMTA1IFoiIGZpbGw9IiMxNmEzNGEiLz4KPHBhdGggZD0iTTUwIDE0MCBRNzAgMTM1IDk1IDE0NSBMMTEwIDE1NSBMMTMwIDE1MCBMMTQ1IDE2MCBMMTMwIDE3MCBMMTEwIDE2NSBMOTAgMTcwIEw3MCAxNjUgWiIgZmlsbD0iIzE2YTM0YSIvPgo8ZWxsaXBzZSBjeD0iODAiIGN5PSI1NSIgcng9IjIyIiByeT0iNiIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC42Ii8+CjxlbGxpcHNlIGN4PSIxNTAiIGN5PSIxNjAiIHJ4PSIxOCIgcnk9IjUiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuNSIvPgo8L3N2Zz4=\" alt=\"Земля\" style=\"width:200px;max-width:100%;height:auto;border-radius:8px;background:#0d1117;padding:6px;\"/>"
     },
     {
       "text": "Скільки планет у Сонячній системі?",
-      "answers": ["7", "8", "9", "10"],
-      "correct": 1
+      "answers": [
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "correct": 1,
+      "explanation": "У Сонячній системі 8 планет: Меркурій, Венера, Земля, Марс, Юпітер, Сатурн, Уран, Нептун.",
+      "media": "<img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0ODAgOTAiPgo8cmVjdCB3aWR0aD0iNDgwIiBoZWlnaHQ9IjkwIiBmaWxsPSIjMGIxMDI0Ii8+CjxjaXJjbGUgY3g9IjIwIiBjeT0iNDUiIHI9IjE4IiBmaWxsPSIjZmJiZjI0Ii8+CjxjaXJjbGUgY3g9IjIwIiBjeT0iNDUiIHI9IjEwIiBmaWxsPSIjZmRlNjhhIi8+CjxjaXJjbGUgY3g9IjYwIiBjeT0iNDUiIHI9IjMiIGZpbGw9IiM5Y2EzYWYiLz4KPGNpcmNsZSBjeD0iODUiIGN5PSI0NSIgcj0iNSIgZmlsbD0iI2Y1OWUwYiIvPgo8Y2lyY2xlIGN4PSIxMTUiIGN5PSI0NSIgcj0iNiIgZmlsbD0iIzNiODJmNiIvPgo8Y2lyY2xlIGN4PSIxNDUiIGN5PSI0NSIgcj0iNSIgZmlsbD0iI2RjMjYyNiIvPgo8Y2lyY2xlIGN4PSIyMDAiIGN5PSI0NSIgcj0iMjAiIGZpbGw9IiNkNGEzNzMiLz4KPGVsbGlwc2UgY3g9IjIwMCIgY3k9IjQ1IiByeD0iMjAiIHJ5PSIzIiBmaWxsPSIjYTg3NjUxIi8+CjxnPjxjaXJjbGUgY3g9IjI4NSIgY3k9IjQ1IiByPSIxNCIgZmlsbD0iI2U4YzA3NCIvPjxlbGxpcHNlIGN4PSIyODUiIGN5PSI0NSIgcng9IjI2IiByeT0iNiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmRlNjhhIiBzdHJva2Utd2lkdGg9IjIiLz48L2c+CjxjaXJjbGUgY3g9IjM1NSIgY3k9IjQ1IiByPSI5IiBmaWxsPSIjN2RkM2ZjIi8+CjxjaXJjbGUgY3g9IjM5NSIgY3k9IjQ1IiByPSI5IiBmaWxsPSIjMWU0MGFmIi8+Cjx0ZXh0IHg9IjYwIiB5PSI3MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSI4IiBmaWxsPSIjOWNhM2FmIj7QnNC10YDQui48L3RleHQ+Cjx0ZXh0IHg9Ijg1IiB5PSI3MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSI4IiBmaWxsPSIjOWNhM2FmIj7QktC10L3QtdGA0LA8L3RleHQ+Cjx0ZXh0IHg9IjExNSIgeT0iNzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iOCIgZmlsbD0iIzljYTNhZiI+0JfQtdC80LvRjzwvdGV4dD4KPHRleHQgeD0iMTQ1IiB5PSI3MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSI4IiBmaWxsPSIjOWNhM2FmIj7QnNCw0YDRgTwvdGV4dD4KPHRleHQgeD0iMjAwIiB5PSI4MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSI4IiBmaWxsPSIjOWNhM2FmIj7QrtC/0ZbRgtC10YA8L3RleHQ+Cjx0ZXh0IHg9IjI4NSIgeT0iODIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iOCIgZmlsbD0iIzljYTNhZiI+0KHQsNGC0YPRgNC9PC90ZXh0Pgo8dGV4dCB4PSIzNTUiIHk9IjY4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjgiIGZpbGw9IiM5Y2EzYWYiPtCj0YDQsNC9PC90ZXh0Pgo8dGV4dCB4PSIzOTUiIHk9IjY4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjgiIGZpbGw9IiM5Y2EzYWYiPtCd0LXQv9GC0YPQvTwvdGV4dD4KPGcgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC41Ij48Y2lyY2xlIGN4PSI1MCIgY3k9IjE1IiByPSIwLjgiLz48Y2lyY2xlIGN4PSIxNzAiIGN5PSIyMCIgcj0iMC44Ii8+PGNpcmNsZSBjeD0iMjQwIiBjeT0iMTIiIHI9IjAuOCIvPjxjaXJjbGUgY3g9IjMzMCIgY3k9IjIyIiByPSIwLjgiLz48Y2lyY2xlIGN4PSI0NTAiIGN5PSIxNSIgcj0iMC44Ii8+PC9nPgo8L3N2Zz4=\" alt=\"Сонячна система\" style=\"width:360px;max-width:100%;height:auto;border-radius:8px;background:#0d1117;padding:6px;\"/>"
     },
     {
       "text": "Природний супутник Землі — це:",
-      "answers": ["Сонце", "Місяць", "Венера", "Марс"],
-      "correct": 1
+      "answers": [
+        "Сонце",
+        "Місяць",
+        "Венера",
+        "Марс"
+      ],
+      "correct": 1,
+      "explanation": "Місяць — єдиний природний супутник Землі. Він обертається навколо нашої планети.",
+      "media": "<img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAgMTIwIj4KPHJlY3Qgd2lkdGg9IjI0MCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiMwYjEwMjQiLz4KPGcgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC42Ij48Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIwLjgiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIyNSIgcj0iMC44Ii8+PGNpcmNsZSBjeD0iMTIwIiBjeT0iMTAiIHI9IjAuOCIvPjxjaXJjbGUgY3g9IjE4MCIgY3k9IjEwMCIgcj0iMC44Ii8+PGNpcmNsZSBjeD0iNDAiIGN5PSIxMDUiIHI9IjAuOCIvPjwvZz4KPGNpcmNsZSBjeD0iNjAiIGN5PSI2MCIgcj0iNDAiIGZpbGw9IiMzYjgyZjYiLz4KPHBhdGggZD0iTTMwIDUwIFE0MCA0NSA1NSA1NSBMNjUgNTAgTDc1IDY1IEw2MCA3NSBMNDUgNzAgWiIgZmlsbD0iIzE2YTM0YSIvPgo8cGF0aCBkPSJNNzAgODAgUTg1IDc4IDk1IDkwIEw4MCA5NSBaIiBmaWxsPSIjMTZhMzRhIi8+CjxlbGxpcHNlIGN4PSI1MCIgY3k9IjQwIiByeD0iMTIiIHJ5PSI1IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjUiLz4KPGNpcmNsZSBjeD0iMTcwIiBjeT0iNjAiIHI9IjIwIiBmaWxsPSIjZTVlN2ViIi8+CjxjaXJjbGUgY3g9IjE2MyIgY3k9IjU1IiByPSIzIiBmaWxsPSIjOWNhM2FmIi8+CjxjaXJjbGUgY3g9IjE3OCIgY3k9IjYyIiByPSIyIiBmaWxsPSIjOWNhM2FmIi8+CjxjaXJjbGUgY3g9IjE3MCIgY3k9IjcyIiByPSIyLjUiIGZpbGw9IiM5Y2EzYWYiLz4KPHRleHQgeD0iNjAiIHk9IjExNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iI2ZmZiI+0JfQtdC80LvRjzwvdGV4dD4KPHRleHQgeD0iMTcwIiB5PSIxMTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9IiNmZmYiPtCc0ZbRgdGP0YbRjDwvdGV4dD4KPC9zdmc+\" alt=\"Земля і Місяць\" style=\"width:240px;max-width:100%;height:auto;border-radius:8px;background:#0d1117;padding:6px;\"/>"
     },
     {
       "text": "Що таке ліс?",
-      "answers": ["один вид дерев", "природне співтовариство рослин і тварин", "штучний парк у місті", "ділянка поля"],
-      "correct": 1
+      "answers": [
+        "один вид дерев",
+        "природне співтовариство рослин і тварин",
+        "штучний парк у місті",
+        "ділянка поля"
+      ],
+      "correct": 1,
+      "explanation": "Ліс — природне співтовариство, де разом живуть і взаємодіють дерева, кущі, трави, гриби, тварини, комахи, птахи.",
+      "media": "<div class=\"scheme-row\"><span class=\"node\">🌳 дерева</span><span class=\"arrow\">→</span><span class=\"node\">🌿 кущі</span><span class=\"arrow\">→</span><span class=\"node\">🐦 птахи</span><span class=\"arrow\">→</span><span class=\"node\">🦌 звірі</span></div>"
     },
     {
       "text": "Де гніздиться лелека?",
-      "answers": ["у норі під землею", "на високих стовпах і дахах", "на дні річки", "у мурашнику"],
-      "correct": 1
+      "answers": [
+        "у норі під землею",
+        "на високих стовпах і дахах",
+        "на дні річки",
+        "у мурашнику"
+      ],
+      "correct": 1,
+      "explanation": "Білий лелека часто будує гнізда на високих стовпах, дахах будинків чи дзвіницях. У народі вважається символом дому.",
+      "media": "<div class=\"emoji-big\">🪺 гніздо на даху чи стовпі</div>"
     },
     {
       "text": "Як перейти проїжджу частину безпечно?",
-      "answers": ["вибігти між машинами", "по пішохідному переходу на зелене світло", "переходити будь-де", "переповзти"],
-      "correct": 1
+      "answers": [
+        "вибігти між машинами",
+        "по пішохідному переходу на зелене світло",
+        "переходити будь-де",
+        "переповзти"
+      ],
+      "correct": 1,
+      "explanation": "Дорогу переходять лише по пішохідному переходу на зелене світло, перед цим уважно дивляться ліворуч і праворуч.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"200\" height=\"200\" fill=\"#1f2937\"/><rect y=\"60\" width=\"200\" height=\"80\" fill=\"#374151\"/><g fill=\"#f5f5f4\"><rect x=\"20\" y=\"80\" width=\"20\" height=\"14\"/><rect x=\"20\" y=\"106\" width=\"20\" height=\"14\"/><rect x=\"20\" y=\"132\" width=\"20\" height=\"14\"/><rect x=\"60\" y=\"80\" width=\"20\" height=\"14\"/><rect x=\"60\" y=\"106\" width=\"20\" height=\"14\"/><rect x=\"60\" y=\"132\" width=\"20\" height=\"14\"/><rect x=\"100\" y=\"80\" width=\"20\" height=\"14\"/><rect x=\"100\" y=\"106\" width=\"20\" height=\"14\"/><rect x=\"100\" y=\"132\" width=\"20\" height=\"14\"/><rect x=\"140\" y=\"80\" width=\"20\" height=\"14\"/><rect x=\"140\" y=\"106\" width=\"20\" height=\"14\"/><rect x=\"140\" y=\"132\" width=\"20\" height=\"14\"/></g><text x=\"100\" y=\"185\" text-anchor=\"middle\" font-size=\"13\" fill=\"#fde68a\" font-weight=\"bold\">пішохідний перехід · 🟢</text></svg>"
     },
     {
       "text": "Що означає червоний сигнал світлофора?",
-      "answers": ["іди", "увага", "стій", "повертай праворуч"],
-      "correct": 2
+      "answers": [
+        "іди",
+        "увага",
+        "стій",
+        "повертай праворуч"
+      ],
+      "correct": 2,
+      "explanation": "Червоний — стій. Не можна переходити дорогу і ні в якому разі не можна вибігати на проїжджу частину.",
+      "media": "<img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MCAyMDAiPgo8cmVjdCB4PSI1IiB5PSI1IiB3aWR0aD0iNzAiIGhlaWdodD0iMTkwIiByeD0iMTQiIGZpbGw9IiMxZjI5MzciIHN0cm9rZT0iIzBmMTcyYSIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxjaXJjbGUgY3g9IjQwIiBjeT0iNDUiIHI9IjIyIiBmaWxsPSIjZGMyNjI2Ii8+CjxjaXJjbGUgY3g9IjQwIiBjeT0iNDUiIHI9IjIyIiBmaWxsPSIjZmNhNWE1IiBvcGFjaXR5PSIwLjQiLz4KPGNpcmNsZSBjeD0iNDAiIGN5PSIxMDAiIHI9IjIyIiBmaWxsPSIjM2YzZjQ2Ii8+CjxjaXJjbGUgY3g9IjQwIiBjeT0iMTU1IiByPSIyMiIgZmlsbD0iIzNmM2Y0NiIvPgo8L3N2Zz4=\" alt=\"Червоний сигнал світлофора\" style=\"width:110px;max-width:100%;height:auto;border-radius:8px;background:#0d1117;padding:6px;\"/>"
     },
     {
       "text": "Що означає зелений сигнал світлофора для пішохода?",
-      "answers": ["стій", "увага", "можна переходити", "повертай"],
-      "correct": 2
+      "answers": [
+        "стій",
+        "увага",
+        "можна переходити",
+        "повертай"
+      ],
+      "correct": 2,
+      "explanation": "Зелений сигнал дозволяє переходити дорогу, але все одно треба переконатися, що машини зупинилися.",
+      "media": "<img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MCAyMDAiPgo8cmVjdCB4PSI1IiB5PSI1IiB3aWR0aD0iNzAiIGhlaWdodD0iMTkwIiByeD0iMTQiIGZpbGw9IiMxZjI5MzciIHN0cm9rZT0iIzBmMTcyYSIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxjaXJjbGUgY3g9IjQwIiBjeT0iNDUiIHI9IjIyIiBmaWxsPSIjM2YzZjQ2Ii8+CjxjaXJjbGUgY3g9IjQwIiBjeT0iMTAwIiByPSIyMiIgZmlsbD0iIzNmM2Y0NiIvPgo8Y2lyY2xlIGN4PSI0MCIgY3k9IjE1NSIgcj0iMjIiIGZpbGw9IiMxNmEzNGEiLz4KPGNpcmNsZSBjeD0iNDAiIGN5PSIxNTUiIHI9IjIyIiBmaWxsPSIjODZlZmFjIiBvcGFjaXR5PSIwLjQiLz4KPC9zdmc+\" alt=\"Зелений сигнал світлофора\" style=\"width:110px;max-width:100%;height:auto;border-radius:8px;background:#0d1117;padding:6px;\"/>"
     },
     {
       "text": "Куди телефонувати у разі пожежі в Україні?",
-      "answers": ["102", "103", "101", "104"],
-      "correct": 2
+      "answers": [
+        "102",
+        "103",
+        "101",
+        "104"
+      ],
+      "correct": 2,
+      "explanation": "У разі пожежі дзвонять 101 — це служба ДСНС (рятувальники).",
+      "media": "<table class=\"scheme-table\"><thead><tr><th>Номер</th><th>Служба</th></tr></thead><tbody><tr><td><b>101</b></td><td>🚒 Пожежна (ДСНС)</td></tr><tr><td>102</td><td>🚓 Поліція</td></tr><tr><td>103</td><td>🚑 Швидка</td></tr></tbody></table>"
     },
     {
       "text": "Куди телефонувати, щоб викликати швидку допомогу?",
-      "answers": ["101", "102", "103", "104"],
-      "correct": 2
+      "answers": [
+        "101",
+        "102",
+        "103",
+        "104"
+      ],
+      "correct": 2,
+      "explanation": "Швидку медичну допомогу викликають за номером 103.",
+      "media": "<table class=\"scheme-table\"><thead><tr><th>Номер</th><th>Служба</th></tr></thead><tbody><tr><td>101</td><td>🚒 Пожежна</td></tr><tr><td>102</td><td>🚓 Поліція</td></tr><tr><td><b>103</b></td><td>🚑 Швидка</td></tr></tbody></table>"
     },
     {
       "text": "Куди телефонувати, щоб викликати поліцію?",
-      "answers": ["101", "102", "103", "104"],
-      "correct": 1
+      "answers": [
+        "101",
+        "102",
+        "103",
+        "104"
+      ],
+      "correct": 1,
+      "explanation": "Поліцію викликають за номером 102.",
+      "media": "<table class=\"scheme-table\"><thead><tr><th>Номер</th><th>Служба</th></tr></thead><tbody><tr><td>101</td><td>🚒 Пожежна</td></tr><tr><td><b>102</b></td><td>🚓 Поліція</td></tr><tr><td>103</td><td>🚑 Швидка</td></tr></tbody></table>"
     },
     {
       "text": "Що таке евакуація?",
-      "answers": ["вид відпочинку", "організоване переміщення людей у безпечне місце", "перерва між уроками", "командна гра"],
-      "correct": 1
+      "answers": [
+        "вид відпочинку",
+        "організоване переміщення людей у безпечне місце",
+        "перерва між уроками",
+        "командна гра"
+      ],
+      "correct": 1,
+      "explanation": "Евакуація — організоване й безпечне виведення людей із небезпечного місця (пожежа, вибух, повітряна тривога) у безпечне.",
+      "media": "<div class=\"scheme-row\"><span class=\"node\">⚠️ небезпека</span><span class=\"arrow\">→</span><span class=\"node\">🚪 евакуація</span><span class=\"arrow\">→</span><span class=\"node\">✅ безпечне місце</span></div>"
     },
     {
       "text": "Що небезпечно робити в інтернеті?",
-      "answers": ["читати дитячі книги", "повідомляти незнайомцям свою адресу й телефон", "робити домашнє завдання", "дивитися навчальні відео"],
-      "correct": 1
+      "answers": [
+        "читати дитячі книги",
+        "повідомляти незнайомцям свою адресу й телефон",
+        "робити домашнє завдання",
+        "дивитися навчальні відео"
+      ],
+      "correct": 1,
+      "explanation": "Не можна повідомляти незнайомцям свою адресу, телефон, пароль чи пересилати свої фото — це може загрожувати твоїй безпеці.",
+      "media": "<div class=\"info-card\">⚠️ <b>НЕ повідомляй незнайомцям</b>:<br>адресу · телефон · школу · паролі · фото</div>"
     },
     {
       "text": "Спільнота — це люди, об'єднані:",
-      "answers": ["випадково на вулиці", "спільними інтересами або метою", "лише за віком", "лише за зростом"],
-      "correct": 1
+      "answers": [
+        "випадково на вулиці",
+        "спільними інтересами або метою",
+        "лише за віком",
+        "лише за зростом"
+      ],
+      "correct": 1,
+      "explanation": "Спільнота — це група людей, об'єднаних спільними інтересами, метою чи місцем (родина, клас, громада, нація).",
+      "media": "<div class=\"scheme-row\"><span class=\"node\">👥 люди</span><span class=\"arrow\">→</span><span class=\"node\">🎯 спільні інтереси/мета</span></div>"
     },
     {
       "text": "Найперша спільнота, у якій опиняється дитина після народження, — це:",
-      "answers": ["школа", "сім'я", "гурток", "спортивна команда"],
-      "correct": 1
+      "answers": [
+        "школа",
+        "сім'я",
+        "гурток",
+        "спортивна команда"
+      ],
+      "correct": 1,
+      "explanation": "Сім'я — перша і найважливіша спільнота, у якій дитина зростає, отримує турботу і вчиться спілкуватися.",
+      "media": "<div class=\"emoji-big\">👨‍👩‍👧‍👦 сім'я</div>"
     },
     {
       "text": "Право на освіту в Україні мають:",
-      "answers": ["лише хлопці", "лише дівчата", "усі діти", "лише дорослі"],
-      "correct": 2
+      "answers": [
+        "лише хлопці",
+        "лише дівчата",
+        "усі діти",
+        "лише дорослі"
+      ],
+      "correct": 2,
+      "explanation": "За Конституцією України кожна дитина — і хлопчики, і дівчатка — має право на безоплатну освіту.",
+      "media": "<div class=\"emoji-big\">🎒📚 усі діти</div>"
     },
     {
       "text": "ООН ухвалила Конвенцію про права дитини у:",
-      "answers": ["1989 році", "1991 році", "2000 році", "1945 році"],
-      "correct": 0
+      "answers": [
+        "1989 році",
+        "1991 році",
+        "2000 році",
+        "1945 році"
+      ],
+      "correct": 0,
+      "explanation": "Конвенцію ООН про права дитини було ухвалено 20 листопада 1989 року. Вона захищає права кожної дитини у світі.",
+      "media": "<div class=\"info-card\">🌍 <b>1989 рік</b><br>20 листопада — Конвенція ООН про права дитини</div>"
     },
     {
       "text": "Що з переліченого є обов'язком учня?",
-      "answers": ["прогулювати уроки", "відвідувати школу й вчитися", "не виконувати домашні завдання", "заважати іншим"],
-      "correct": 1
+      "answers": [
+        "прогулювати уроки",
+        "відвідувати школу й вчитися",
+        "не виконувати домашні завдання",
+        "заважати іншим"
+      ],
+      "correct": 1,
+      "explanation": "Серед обов'язків учня — відвідувати школу, вчитися, виконувати домашні завдання, поважати вчителів і однокласників.",
+      "media": "<div class=\"info-card\">📖 відвідувати школу · вчитися<br>🤝 поважати вчителів і однокласників</div>"
     },
     {
       "text": "Благодійність — це:",
-      "answers": ["продаж речей з прибутком", "безкорислива допомога іншим", "обов'язкова робота", "вид спорту"],
-      "correct": 1
+      "answers": [
+        "продаж речей з прибутком",
+        "безкорислива допомога іншим",
+        "обов'язкова робота",
+        "вид спорту"
+      ],
+      "correct": 1,
+      "explanation": "Благодійність — добровільна безкорислива допомога іншим: коштами, речами, часом, без очікування винагороди.",
+      "media": "<div class=\"scheme-row\"><span class=\"node\">❤️</span><span class=\"arrow\">→</span><span class=\"node\">🤝</span><span class=\"arrow\">→</span><span class=\"node\">🎁 безкорислива допомога</span></div>"
     },
     {
       "text": "Що таке бюджет сім'ї?",
-      "answers": ["лише гроші батька", "сукупність доходів і витрат сім'ї", "лише витрати на їжу", "гроші, відкладені на свято"],
-      "correct": 1
+      "answers": [
+        "лише гроші батька",
+        "сукупність доходів і витрат сім'ї",
+        "лише витрати на їжу",
+        "гроші, відкладені на свято"
+      ],
+      "correct": 1,
+      "explanation": "Бюджет сім'ї — це план доходів і витрат: скільки грошей надходить (зарплата, пенсія) і на що вони витрачаються.",
+      "media": "<table class=\"scheme-table\"><thead><tr><th>Доходи</th><th>Витрати</th></tr></thead><tbody><tr><td>💵 зарплата · 💰 пенсія · 🎓 стипендія</td><td>🏠 комуналка · 🛒 продукти · 👕 одяг · 🚌 транспорт</td></tr></tbody></table>"
     },
     {
       "text": "Що з переліченого належить до доходів сім'ї?",
-      "answers": ["заробітна плата батьків", "оплата за світло", "купівля продуктів", "оренда житла"],
-      "correct": 0
+      "answers": [
+        "заробітна плата батьків",
+        "оплата за світло",
+        "купівля продуктів",
+        "оренда житла"
+      ],
+      "correct": 0,
+      "explanation": "Доходи — це гроші, які сім'я отримує: зарплата, пенсія, стипендія, премія тощо.",
+      "media": "<div class=\"info-card\">💵 <b>Доходи</b>:<br>зарплата · пенсія · стипендія · премія</div>"
     },
     {
       "text": "Що з переліченого належить до витрат сім'ї?",
-      "answers": ["пенсія бабусі", "стипендія сестри", "оплата комунальних послуг", "заробітна плата мами"],
-      "correct": 2
+      "answers": [
+        "пенсія бабусі",
+        "стипендія сестри",
+        "оплата комунальних послуг",
+        "заробітна плата мами"
+      ],
+      "correct": 2,
+      "explanation": "Витрати — це гроші, які сім'я платить за послуги й товари: комуналка, продукти, одяг, транспорт.",
+      "media": "<div class=\"info-card\">💸 <b>Витрати</b>:<br>комуналка · продукти · одяг · транспорт · ліки</div>"
     },
     {
       "text": "Сонце — це:",
-      "answers": ["планета", "природний супутник", "зоря", "комета"],
-      "correct": 2
+      "answers": [
+        "планета",
+        "природний супутник",
+        "зоря",
+        "комета"
+      ],
+      "correct": 2,
+      "explanation": "Сонце — найближча до нас зоря. Це розжарена куля з газу, що випромінює світло і тепло. Без Сонця життя на Землі неможливе.",
+      "media": "<img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMjAgMjIwIj4KPHJlY3Qgd2lkdGg9IjIyMCIgaGVpZ2h0PSIyMjAiIGZpbGw9IiMwYjEwMjQiLz4KPGcgc3Ryb2tlPSIjZmJiZjI0IiBzdHJva2Utd2lkdGg9IjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+CjxsaW5lIHgxPSIxMTAiIHkxPSIyMCIgeDI9IjExMCIgeTI9IjUwIi8+CjxsaW5lIHgxPSIxMTAiIHkxPSIxNzAiIHgyPSIxMTAiIHkyPSIyMDAiLz4KPGxpbmUgeDE9IjIwIiB5MT0iMTEwIiB4Mj0iNTAiIHkyPSIxMTAiLz4KPGxpbmUgeDE9IjE3MCIgeTE9IjExMCIgeDI9IjIwMCIgeTI9IjExMCIvPgo8bGluZSB4MT0iNDAiIHkxPSI0MCIgeDI9IjYwIiB5Mj0iNjAiLz4KPGxpbmUgeDE9IjE2MCIgeTE9IjE2MCIgeDI9IjE4MCIgeTI9IjE4MCIvPgo8bGluZSB4MT0iNDAiIHkxPSIxODAiIHgyPSI2MCIgeTI9IjE2MCIvPgo8bGluZSB4MT0iMTYwIiB5MT0iNjAiIHgyPSIxODAiIHkyPSI0MCIvPgo8L2c+CjxjaXJjbGUgY3g9IjExMCIgY3k9IjExMCIgcj0iNDUiIGZpbGw9IiNmYmJmMjQiLz4KPGNpcmNsZSBjeD0iMTEwIiBjeT0iMTEwIiByPSIzNSIgZmlsbD0iI2ZkZTA0NyIvPgo8Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9IjYiIGZpbGw9IiNmNTllMGIiIG9wYWNpdHk9IjAuNiIvPgo8Y2lyY2xlIGN4PSIxMjAiIGN5PSIxMTUiIHI9IjQiIGZpbGw9IiNmNTllMGIiIG9wYWNpdHk9IjAuNiIvPgo8L3N2Zz4=\" alt=\"Сонце\" style=\"width:200px;max-width:100%;height:auto;border-radius:8px;background:#0d1117;padding:6px;\"/>"
     },
     {
       "text": "Найближча до Сонця планета — це:",
-      "answers": ["Меркурій", "Венера", "Земля", "Марс"],
-      "correct": 0
+      "answers": [
+        "Меркурій",
+        "Венера",
+        "Земля",
+        "Марс"
+      ],
+      "correct": 0,
+      "explanation": "Меркурій — перша планета від Сонця, найменша і найшвидша в Сонячній системі.",
+      "media": "<div class=\"scheme-row\"><span class=\"node\">☀️</span><span class=\"arrow\">→</span><span class=\"node\">Меркурій</span><span class=\"arrow\">→</span><span class=\"node\">Венера</span><span class=\"arrow\">→</span><span class=\"node\">Земля</span></div>"
     },
     {
       "text": "Найбільша планета Сонячної системи — це:",
-      "answers": ["Сатурн", "Юпітер", "Земля", "Нептун"],
-      "correct": 1
+      "answers": [
+        "Сатурн",
+        "Юпітер",
+        "Земля",
+        "Нептун"
+      ],
+      "correct": 1,
+      "explanation": "Юпітер — газовий гігант, найбільша планета. У ньому помістилося б понад 1300 таких планет, як Земля.",
+      "media": "<img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMjAgMjIwIj4KPHJlY3Qgd2lkdGg9IjIyMCIgaGVpZ2h0PSIyMjAiIGZpbGw9IiMwYjEwMjQiLz4KPGNpcmNsZSBjeD0iMTEwIiBjeT0iMTEwIiByPSI5MCIgZmlsbD0iI2Q0YTM3MyIvPgo8ZWxsaXBzZSBjeD0iMTEwIiBjeT0iNzAiIHJ4PSI4NSIgcnk9IjYiIGZpbGw9IiNhODc2NTEiLz4KPGVsbGlwc2UgY3g9IjExMCIgY3k9IjkwIiByeD0iODgiIHJ5PSI0IiBmaWxsPSIjZTljNDZhIi8+CjxlbGxpcHNlIGN4PSIxMTAiIGN5PSIxMTAiIHJ4PSI4OCIgcnk9IjUiIGZpbGw9IiNhODc2NTEiLz4KPGVsbGlwc2UgY3g9IjExMCIgY3k9IjEzMCIgcng9Ijg2IiByeT0iNCIgZmlsbD0iI2U5YzQ2YSIvPgo8ZWxsaXBzZSBjeD0iMTEwIiBjeT0iMTUwIiByeD0iODAiIHJ5PSI2IiBmaWxsPSIjYTg3NjUxIi8+CjxlbGxpcHNlIGN4PSIxMzUiIGN5PSIxMzAiIHJ4PSIxNCIgcnk9IjkiIGZpbGw9IiNkYzI2MjYiLz4KPGVsbGlwc2UgY3g9IjEzNSIgY3k9IjEzMCIgcng9IjEwIiByeT0iNiIgZmlsbD0iIzdmMWQxZCIvPgo8L3N2Zz4=\" alt=\"Юпітер\" style=\"width:200px;max-width:100%;height:auto;border-radius:8px;background:#0d1117;padding:6px;\"/>"
     },
     {
       "text": "Червоною планетою називають:",
-      "answers": ["Венеру", "Марс", "Юпітер", "Уран"],
-      "correct": 1
+      "answers": [
+        "Венеру",
+        "Марс",
+        "Юпітер",
+        "Уран"
+      ],
+      "correct": 1,
+      "explanation": "Марс називають «червоною планетою» через його червонувато-помаранчевий колір, спричинений оксидом заліза (іржею) у ґрунті.",
+      "media": "<img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMjAgMjIwIj4KPHJlY3Qgd2lkdGg9IjIyMCIgaGVpZ2h0PSIyMjAiIGZpbGw9IiMwYjEwMjQiLz4KPGcgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC41Ij48Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIwLjgiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIyNSIgcj0iMC44Ii8+PGNpcmNsZSBjeD0iMTgwIiBjeT0iMTkwIiByPSIwLjgiLz48L2c+CjxjaXJjbGUgY3g9IjExMCIgY3k9IjExMCIgcj0iODUiIGZpbGw9IiNjZDVjMmIiLz4KPGVsbGlwc2UgY3g9IjgwIiBjeT0iODAiIHJ4PSIyMCIgcnk9IjEyIiBmaWxsPSIjYTA0NTIyIi8+CjxlbGxpcHNlIGN4PSIxNDAiIGN5PSIxMTUiIHJ4PSIxNSIgcnk9IjEwIiBmaWxsPSIjYTA0NTIyIi8+CjxlbGxpcHNlIGN4PSIxMDAiIGN5PSIxNTUiIHJ4PSIyNSIgcnk9IjgiIGZpbGw9IiNhMDQ1MjIiLz4KPGVsbGlwc2UgY3g9IjExMCIgY3k9IjQwIiByeD0iMjUiIHJ5PSI2IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjYiLz4KPC9zdmc+\" alt=\"Марс\" style=\"width:200px;max-width:100%;height:auto;border-radius:8px;background:#0d1117;padding:6px;\"/>"
     },
     {
       "text": "Планета з найвідомішими кільцями — це:",
-      "answers": ["Юпітер", "Сатурн", "Уран", "Нептун"],
-      "correct": 1
+      "answers": [
+        "Юпітер",
+        "Сатурн",
+        "Уран",
+        "Нептун"
+      ],
+      "correct": 1,
+      "explanation": "Сатурн знаменитий своїми великими і яскравими кільцями зі шматочків льоду й каменю.",
+      "media": "<img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyODAgMTgwIj4KPHJlY3Qgd2lkdGg9IjI4MCIgaGVpZ2h0PSIxODAiIGZpbGw9IiMwYjEwMjQiLz4KPGcgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC41Ij48Y2lyY2xlIGN4PSIyMCIgY3k9IjMwIiByPSIwLjgiLz48Y2lyY2xlIGN4PSIyNTAiIGN5PSI0MCIgcj0iMC44Ii8+PGNpcmNsZSBjeD0iMjAwIiBjeT0iMTYwIiByPSIwLjgiLz48L2c+CjxlbGxpcHNlIGN4PSIxNDAiIGN5PSI5MCIgcng9IjEyNSIgcnk9IjIyIiBmaWxsPSJub25lIiBzdHJva2U9IiNkNGEzNzMiIHN0cm9rZS13aWR0aD0iMyIvPgo8ZWxsaXBzZSBjeD0iMTQwIiBjeT0iOTAiIHJ4PSIxMTUiIHJ5PSIxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmRlNjhhIiBzdHJva2Utd2lkdGg9IjIiIG9wYWNpdHk9IjAuNyIvPgo8ZWxsaXBzZSBjeD0iMTQwIiBjeT0iOTAiIHJ4PSIxMDUiIHJ5PSI2IiBmaWxsPSJub25lIiBzdHJva2U9IiNhODc2NTEiIHN0cm9rZS13aWR0aD0iMSIvPgo8Y2lyY2xlIGN4PSIxNDAiIGN5PSI5MCIgcj0iNTAiIGZpbGw9IiNlOGMwNzQiLz4KPGVsbGlwc2UgY3g9IjE0MCIgY3k9IjgwIiByeD0iNDgiIHJ5PSIzIiBmaWxsPSIjYzg5YzVhIi8+CjxlbGxpcHNlIGN4PSIxNDAiIGN5PSIxMDAiIHJ4PSI0OCIgcnk9IjMiIGZpbGw9IiNjODljNWEiLz4KPGVsbGlwc2UgY3g9IjE0MCIgY3k9IjkwIiByeD0iMTI1IiByeT0iMjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIwLjUiIG9wYWNpdHk9IjAuNSIvPgo8L3N2Zz4=\" alt=\"Сатурн з кільцями\" style=\"width:240px;max-width:100%;height:auto;border-radius:8px;background:#0d1117;padding:6px;\"/>"
     },
     {
       "text": "Найдальша від Сонця планета Сонячної системи — це:",
-      "answers": ["Уран", "Нептун", "Сатурн", "Плутон"],
-      "correct": 1
+      "answers": [
+        "Уран",
+        "Нептун",
+        "Сатурн",
+        "Плутон"
+      ],
+      "correct": 1,
+      "explanation": "Нептун — восьма й найдальша від Сонця планета. Це холодний газовий гігант синього кольору.",
+      "media": "<div class=\"scheme-row\"><span class=\"node\">Уран</span><span class=\"arrow\">→</span><span class=\"node\">🔵 Нептун</span></div>"
     },
     {
       "text": "На якому місці від Сонця розташована Земля?",
-      "answers": ["на 1-му", "на 2-му", "на 3-му", "на 4-му"],
-      "correct": 2
+      "answers": [
+        "на 1-му",
+        "на 2-му",
+        "на 3-му",
+        "на 4-му"
+      ],
+      "correct": 2,
+      "explanation": "Земля — третя планета від Сонця: Меркурій, Венера, Земля, Марс і далі.",
+      "media": "<div class=\"scheme\">1. ☿ Меркурій\n2. ♀ Венера\n3. 🌍 ЗЕМЛЯ ←\n4. ♂ Марс\n5. ♃ Юпітер\n6. ♄ Сатурн\n7. ♅ Уран\n8. ♆ Нептун</div>"
     },
     {
       "text": "Скільки природних супутників має Земля?",
-      "answers": ["0", "1", "2", "багато"],
-      "correct": 1
+      "answers": [
+        "0",
+        "1",
+        "2",
+        "багато"
+      ],
+      "correct": 1,
+      "explanation": "У Землі один природний супутник — Місяць. Хоча штучних супутників (запущених людиною) тисячі.",
+      "media": "<div class=\"info-card\">🌍 Земля → <b>1 супутник</b> = 🌕 Місяць</div>"
     },
     {
       "text": "Як називається наша галактика?",
-      "answers": ["Велика Ведмедиця", "Чумацький Шлях", "Андромеда", "Сонячна система"],
-      "correct": 1
+      "answers": [
+        "Велика Ведмедиця",
+        "Чумацький Шлях",
+        "Андромеда",
+        "Сонячна система"
+      ],
+      "correct": 1,
+      "explanation": "Наша галактика називається Чумацький Шлях (англ. Milky Way). У ній сотні мільярдів зірок.",
+      "media": "<div class=\"info-card\">🌌 <b>Чумацький Шлях</b><br>(Milky Way) — сотні мільярдів зірок</div>"
     },
     {
       "text": "Що таке сузір'я?",
-      "answers": ["одна яскрава зоря", "група зірок, яку бачимо на нічному небі як певну фігуру", "інша назва Місяця", "скупчення планет"],
-      "correct": 1
+      "answers": [
+        "одна яскрава зоря",
+        "група зірок, яку бачимо на нічному небі як певну фігуру",
+        "інша назва Місяця",
+        "скупчення планет"
+      ],
+      "correct": 1,
+      "explanation": "Сузір'я — група яскравих зірок на нічному небі, які люди подумки з'єднали в певну фігуру (Великий Віз, Оріон тощо).",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"200\" height=\"200\" fill=\"#000\"/><g fill=\"#fde68a\"><circle cx=\"50\" cy=\"60\" r=\"3\"/><circle cx=\"80\" cy=\"50\" r=\"2.5\"/><circle cx=\"110\" cy=\"70\" r=\"3\"/><circle cx=\"140\" cy=\"55\" r=\"2.5\"/><circle cx=\"60\" cy=\"100\" r=\"2.5\"/><circle cx=\"95\" cy=\"115\" r=\"3\"/><circle cx=\"130\" cy=\"120\" r=\"2.5\"/><circle cx=\"155\" cy=\"105\" r=\"3\"/></g><g stroke=\"#fde68a\" stroke-width=\"1\" opacity=\"0.6\"><line x1=\"50\" y1=\"60\" x2=\"80\" y2=\"50\"/><line x1=\"80\" y1=\"50\" x2=\"110\" y2=\"70\"/><line x1=\"110\" y1=\"70\" x2=\"140\" y2=\"55\"/><line x1=\"110\" y1=\"70\" x2=\"95\" y2=\"115\"/><line x1=\"95\" y1=\"115\" x2=\"130\" y2=\"120\"/><line x1=\"130\" y1=\"120\" x2=\"155\" y2=\"105\"/><line x1=\"60\" y1=\"100\" x2=\"95\" y2=\"115\"/></g><text x=\"100\" y=\"180\" text-anchor=\"middle\" font-size=\"12\" fill=\"#fde68a\">сузір'я = група зірок</text></svg>"
     },
     {
       "text": "Скільки часу триває один оберт Землі навколо Сонця?",
-      "answers": ["1 доба", "1 місяць", "1 рік", "100 років"],
-      "correct": 2
+      "answers": [
+        "1 доба",
+        "1 місяць",
+        "1 рік",
+        "100 років"
+      ],
+      "correct": 2,
+      "explanation": "Один повний оберт Землі навколо Сонця триває 1 рік (≈365 діб). Через це чергуються пори року.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"200\" height=\"200\" fill=\"#0b1024\"/><circle cx=\"100\" cy=\"100\" r=\"22\" fill=\"#fbbf24\"/><ellipse cx=\"100\" cy=\"100\" rx=\"75\" ry=\"50\" fill=\"none\" stroke=\"#fde68a\" stroke-width=\"1.5\" stroke-dasharray=\"4 4\"/><circle cx=\"175\" cy=\"100\" r=\"9\" fill=\"#3b82f6\"/><text x=\"100\" y=\"190\" text-anchor=\"middle\" font-size=\"14\" fill=\"#fde68a\" font-weight=\"bold\">1 рік ≈ 365 днів</text></svg>"
     },
     {
       "text": "Скільки часу триває один оберт Землі навколо своєї осі?",
-      "answers": ["1 година", "1 доба", "1 тиждень", "1 рік"],
-      "correct": 1
+      "answers": [
+        "1 година",
+        "1 доба",
+        "1 тиждень",
+        "1 рік"
+      ],
+      "correct": 1,
+      "explanation": "Один оберт навколо своєї осі Земля робить за добу — 24 години. Через це чергуються день і ніч.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"200\" height=\"200\" fill=\"#0b1024\"/><circle cx=\"100\" cy=\"100\" r=\"55\" fill=\"#3b82f6\"/><line x1=\"100\" y1=\"30\" x2=\"100\" y2=\"170\" stroke=\"#fde68a\" stroke-width=\"2\" stroke-dasharray=\"4 4\"/><path d=\"M 70 50 A 60 30 0 1 1 130 50\" fill=\"none\" stroke=\"#fde68a\" stroke-width=\"2\"/><polygon points=\"130,50 122,46 124,56\" fill=\"#fde68a\"/><text x=\"100\" y=\"190\" text-anchor=\"middle\" font-size=\"14\" fill=\"#fde68a\" font-weight=\"bold\">1 доба = 24 години</text></svg>"
     },
     {
       "text": "Що відбувається через обертання Землі навколо своєї осі?",
-      "answers": ["зміна пір року", "зміна дня і ночі", "припливи й відпливи", "затемнення Сонця"],
-      "correct": 1
+      "answers": [
+        "зміна пір року",
+        "зміна дня і ночі",
+        "припливи й відпливи",
+        "затемнення Сонця"
+      ],
+      "correct": 1,
+      "explanation": "Сторона Землі, повернута до Сонця, освітлюється — там день; протилежна — у тіні, там ніч. Через обертання вони чергуються.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 220 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"220\" height=\"200\" fill=\"#0b1024\"/><circle cx=\"40\" cy=\"100\" r=\"22\" fill=\"#fbbf24\"/><g stroke=\"#fbbf24\" stroke-width=\"1.5\"><line x1=\"40\" y1=\"70\" x2=\"40\" y2=\"78\"/><line x1=\"40\" y1=\"122\" x2=\"40\" y2=\"130\"/><line x1=\"62\" y1=\"100\" x2=\"70\" y2=\"100\"/></g><circle cx=\"150\" cy=\"100\" r=\"40\" fill=\"#3b82f6\"/><path d=\"M150 60 A 40 40 0 0 1 150 140 Z\" fill=\"#fde68a\" opacity=\"0.85\"/><text x=\"118\" y=\"100\" font-size=\"11\" fill=\"#fff\" font-weight=\"bold\">ніч</text><text x=\"160\" y=\"100\" font-size=\"11\" fill=\"#1e293b\" font-weight=\"bold\">день</text><text x=\"110\" y=\"190\" text-anchor=\"middle\" font-size=\"12\" fill=\"#fde68a\" font-weight=\"bold\">зміна дня і ночі</text></svg>"
     },
     {
       "text": "Чому на Землі змінюються пори року?",
-      "answers": ["через нахил земної осі і рух Землі навколо Сонця", "через швидкі вітри", "через рух Місяця", "через сонячні плями"],
-      "correct": 0
+      "answers": [
+        "через нахил земної осі і рух Землі навколо Сонця",
+        "через швидкі вітри",
+        "через рух Місяця",
+        "через сонячні плями"
+      ],
+      "correct": 0,
+      "explanation": "Земля обертається навколо Сонця і має нахилену вісь. Через цей нахил різні півкулі по черзі отримують більше тепла й світла.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 280 180\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"280\" height=\"180\" fill=\"#0b1024\"/><circle cx=\"140\" cy=\"90\" r=\"20\" fill=\"#fbbf24\"/><ellipse cx=\"140\" cy=\"90\" rx=\"120\" ry=\"40\" fill=\"none\" stroke=\"#fde68a\" stroke-width=\"1\" stroke-dasharray=\"4 4\"/><g transform=\"translate(30 90) rotate(-23)\"><circle r=\"14\" fill=\"#3b82f6\"/><line x1=\"0\" y1=\"-18\" x2=\"0\" y2=\"18\" stroke=\"#f59e0b\" stroke-width=\"1.5\"/></g><g transform=\"translate(250 90) rotate(-23)\"><circle r=\"14\" fill=\"#3b82f6\"/><line x1=\"0\" y1=\"-18\" x2=\"0\" y2=\"18\" stroke=\"#f59e0b\" stroke-width=\"1.5\"/></g><text x=\"140\" y=\"160\" text-anchor=\"middle\" font-size=\"11\" fill=\"#fde68a\">нахил осі Землі ≈ 23.5° + рух навколо Сонця</text></svg>"
     },
     {
       "text": "Сонячне затемнення відбувається, коли:",
-      "answers": ["Земля закриває Місяць", "Місяць закриває Сонце", "Сонце ховається за хмари", "Юпітер заступає Сонце"],
-      "correct": 1
+      "answers": [
+        "Земля закриває Місяць",
+        "Місяць закриває Сонце",
+        "Сонце ховається за хмари",
+        "Юпітер заступає Сонце"
+      ],
+      "correct": 1,
+      "explanation": "Місяць проходить між Сонцем і Землею і закриває собою диск Сонця. Це й називають сонячним затемненням.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 120\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"320\" height=\"120\" fill=\"#0b1024\"/><circle cx=\"40\" cy=\"60\" r=\"22\" fill=\"#fbbf24\"/><text x=\"40\" y=\"100\" text-anchor=\"middle\" font-size=\"11\" fill=\"#fde68a\">Сонце</text><circle cx=\"160\" cy=\"60\" r=\"14\" fill=\"#9ca3af\"/><text x=\"160\" y=\"100\" text-anchor=\"middle\" font-size=\"11\" fill=\"#fde68a\">Місяць</text><circle cx=\"270\" cy=\"60\" r=\"20\" fill=\"#3b82f6\"/><text x=\"270\" y=\"100\" text-anchor=\"middle\" font-size=\"11\" fill=\"#fde68a\">Земля</text><polygon points=\"160,60 270,52 270,68\" fill=\"#1e293b\" opacity=\"0.7\"/></svg>"
     },
     {
       "text": "Місячне затемнення відбувається, коли:",
-      "answers": ["Місяць закриває Сонце", "Земля кидає тінь на Місяць", "Сонце світить на Місяць яскравіше", "Місяць ховається за хмари"],
-      "correct": 1
+      "answers": [
+        "Місяць закриває Сонце",
+        "Земля кидає тінь на Місяць",
+        "Сонце світить на Місяць яскравіше",
+        "Місяць ховається за хмари"
+      ],
+      "correct": 1,
+      "explanation": "Земля опиняється між Сонцем і Місяцем і кидає свою тінь на Місяць — Місяць стає темним або червонуватим.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 120\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"320\" height=\"120\" fill=\"#0b1024\"/><circle cx=\"40\" cy=\"60\" r=\"22\" fill=\"#fbbf24\"/><text x=\"40\" y=\"100\" text-anchor=\"middle\" font-size=\"11\" fill=\"#fde68a\">Сонце</text><circle cx=\"170\" cy=\"60\" r=\"20\" fill=\"#3b82f6\"/><text x=\"170\" y=\"100\" text-anchor=\"middle\" font-size=\"11\" fill=\"#fde68a\">Земля</text><circle cx=\"280\" cy=\"60\" r=\"14\" fill=\"#7f1d1d\"/><text x=\"280\" y=\"100\" text-anchor=\"middle\" font-size=\"11\" fill=\"#fde68a\">Місяць</text><polygon points=\"170,60 280,52 280,68\" fill=\"#1e293b\" opacity=\"0.7\"/></svg>"
     },
     {
       "text": "Як називається фаза, коли Місяць повністю освітлений?",
-      "answers": ["молодик", "повня", "перша чверть", "остання чверть"],
-      "correct": 1
+      "answers": [
+        "молодик",
+        "повня",
+        "перша чверть",
+        "остання чверть"
+      ],
+      "correct": 1,
+      "explanation": "Повня — фаза, коли вся видима з Землі сторона Місяця освітлена Сонцем і ми бачимо повний круг.",
+      "media": "<img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMjAgMjIwIj4KPHJlY3Qgd2lkdGg9IjIyMCIgaGVpZ2h0PSIyMjAiIGZpbGw9IiMwMDAiLz4KPGcgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC43Ij48Y2lyY2xlIGN4PSIyMCIgY3k9IjMwIiByPSIxIi8+PGNpcmNsZSBjeD0iMjAwIiBjeT0iNDAiIHI9IjEiLz48Y2lyY2xlIGN4PSIxOTAiIGN5PSIxODAiIHI9IjEiLz48Y2lyY2xlIGN4PSIzMCIgY3k9IjE5MCIgcj0iMC44Ii8+PC9nPgo8Y2lyY2xlIGN4PSIxMTAiIGN5PSIxMTAiIHI9Ijg1IiBmaWxsPSIjZjFmNWY5Ii8+CjxjaXJjbGUgY3g9IjgwIiBjeT0iODAiIHI9IjE0IiBmaWxsPSIjY2JkNWUxIiBvcGFjaXR5PSIwLjciLz4KPGNpcmNsZSBjeD0iMTM1IiBjeT0iOTUiIHI9IjEwIiBmaWxsPSIjY2JkNWUxIiBvcGFjaXR5PSIwLjciLz4KPGNpcmNsZSBjeD0iMTIwIiBjeT0iMTQwIiByPSIxNiIgZmlsbD0iI2NiZDVlMSIgb3BhY2l0eT0iMC43Ii8+CjxjaXJjbGUgY3g9Ijc1IiBjeT0iMTMwIiByPSI4IiBmaWxsPSIjY2JkNWUxIiBvcGFjaXR5PSIwLjciLz4KPGNpcmNsZSBjeD0iMTYwIiBjeT0iMTM1IiByPSI2IiBmaWxsPSIjY2JkNWUxIiBvcGFjaXR5PSIwLjciLz4KPC9zdmc+\" alt=\"Повний місяць\" style=\"width:200px;max-width:100%;height:auto;border-radius:8px;background:#0d1117;padding:6px;\"/>"
     },
     {
       "text": "Як називається фаза, коли на небі видно тонкий серпик молодого Місяця?",
-      "answers": ["повня", "молодик", "остання чверть", "затемнення"],
-      "correct": 1
+      "answers": [
+        "повня",
+        "молодик",
+        "остання чверть",
+        "затемнення"
+      ],
+      "correct": 1,
+      "explanation": "Молодик — початок місячного циклу: ми бачимо лише тонкий серпик, бо більша частина Місяця у тіні.",
+      "media": "<img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMjAgMjIwIj4KPHJlY3Qgd2lkdGg9IjIyMCIgaGVpZ2h0PSIyMjAiIGZpbGw9IiMwMDAiLz4KPGcgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC43Ij48Y2lyY2xlIGN4PSIyMCIgY3k9IjMwIiByPSIxIi8+PGNpcmNsZSBjeD0iMjAwIiBjeT0iNDAiIHI9IjEiLz48Y2lyY2xlIGN4PSIxOTAiIGN5PSIxODAiIHI9IjEiLz48Y2lyY2xlIGN4PSIzMCIgY3k9IjE5MCIgcj0iMC44Ii8+PC9nPgo8Y2lyY2xlIGN4PSIxMTAiIGN5PSIxMTAiIHI9Ijg1IiBmaWxsPSIjZjFmNWY5Ii8+CjxjaXJjbGUgY3g9IjEzNSIgY3k9IjEwNSIgcj0iODAiIGZpbGw9IiMwMDAiLz4KPC9zdmc+\" alt=\"Молодик\" style=\"width:200px;max-width:100%;height:auto;border-radius:8px;background:#0d1117;padding:6px;\"/>"
     },
     {
       "text": "Хто першим ступив на поверхню Місяця?",
-      "answers": ["Юрій Гагарін", "Леонід Каденюк", "Ніл Армстронг", "Сергій Корольов"],
-      "correct": 2
+      "answers": [
+        "Юрій Гагарін",
+        "Леонід Каденюк",
+        "Ніл Армстронг",
+        "Сергій Корольов"
+      ],
+      "correct": 2,
+      "explanation": "Ніл Армстронг — американський астронавт, перший ступив на Місяць 20 липня 1969 року в межах місії «Аполлон-11».",
+      "media": "<div class=\"info-card\">👨‍🚀 <b>Ніл Армстронг</b><br>20 липня 1969 р. · «Аполлон-11»</div>"
     },
     {
       "text": "У якому році людина вперше висадилася на Місяці?",
-      "answers": ["1957", "1961", "1969", "1991"],
-      "correct": 2
+      "answers": [
+        "1957",
+        "1961",
+        "1969",
+        "1991"
+      ],
+      "correct": 2,
+      "explanation": "20 липня 1969 року. Це сталося під час місії «Аполлон-11».",
+      "media": "<div class=\"info-card\">🌕 <b>1969 рік</b><br>20 липня — місія «Аполлон-11»</div>"
     },
     {
       "text": "Як називається спеціальний костюм космонавта для виходу у відкритий космос?",
-      "answers": ["плащ", "скафандр", "мантія", "комбінезон"],
-      "correct": 1
+      "answers": [
+        "плащ",
+        "скафандр",
+        "мантія",
+        "комбінезон"
+      ],
+      "correct": 1,
+      "explanation": "Скафандр — герметичний костюм, що захищає космонавта від вакууму, забезпечує киснем і регулює температуру.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 210\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><g fill=\"#f5f5f4\" stroke=\"#9ca3af\" stroke-width=\"2\"><circle cx=\"100\" cy=\"55\" r=\"28\"/><rect x=\"62\" y=\"80\" width=\"76\" height=\"80\" rx=\"12\"/><rect x=\"32\" y=\"92\" width=\"32\" height=\"50\" rx=\"10\"/><rect x=\"136\" y=\"92\" width=\"32\" height=\"50\" rx=\"10\"/><rect x=\"74\" y=\"160\" width=\"20\" height=\"32\" rx=\"5\"/><rect x=\"106\" y=\"160\" width=\"20\" height=\"32\" rx=\"5\"/></g><ellipse cx=\"100\" cy=\"55\" rx=\"20\" ry=\"14\" fill=\"#1e3a8a\" opacity=\"0.85\"/><rect x=\"84\" y=\"100\" width=\"32\" height=\"20\" fill=\"#fbbf24\" opacity=\"0.7\"/><text x=\"100\" y=\"200\" text-anchor=\"middle\" font-size=\"12\" fill=\"#fde68a\" font-weight=\"bold\">СКАФАНДР</text></svg>"
     },
     {
       "text": "На чому космонавти злітають у космос?",
-      "answers": ["на літаку", "на ракеті", "на повітряній кулі", "на дирижаблі"],
-      "correct": 1
+      "answers": [
+        "на літаку",
+        "на ракеті",
+        "на повітряній кулі",
+        "на дирижаблі"
+      ],
+      "correct": 1,
+      "explanation": "У космос виводять кораблі за допомогою ракет — потужних апаратів, що використовують реактивну тягу.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 120 240\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"120\" height=\"240\" fill=\"#0b1024\"/><polygon points=\"60,10 75,50 45,50\" fill=\"#dc2626\"/><rect x=\"45\" y=\"50\" width=\"30\" height=\"120\" fill=\"#f5f5f4\"/><circle cx=\"60\" cy=\"80\" r=\"6\" fill=\"#3b82f6\"/><circle cx=\"60\" cy=\"100\" r=\"6\" fill=\"#3b82f6\"/><rect x=\"40\" y=\"170\" width=\"40\" height=\"20\" fill=\"#9ca3af\"/><polygon points=\"40,170 30,200 50,200\" fill=\"#9ca3af\"/><polygon points=\"80,170 90,200 70,200\" fill=\"#9ca3af\"/><polygon points=\"50,200 70,200 65,230 55,230\" fill=\"#fbbf24\"/><polygon points=\"55,230 65,230 60,250\" fill=\"#dc2626\"/></svg>"
     },
     {
       "text": "Як скорочено називають Міжнародну космічну станцію?",
-      "answers": ["МКС", "ООН", "НАТО", "СНД"],
-      "correct": 0
+      "answers": [
+        "МКС",
+        "ООН",
+        "НАТО",
+        "СНД"
+      ],
+      "correct": 0,
+      "explanation": "МКС (англ. ISS) — Міжнародна космічна станція, де живуть і працюють космонавти різних країн на висоті ~400 км над Землею.",
+      "media": "<div class=\"info-card\">🛰️ <b>МКС</b><br>(англ. <b>ISS</b> — International Space Station)<br>висота орбіти ≈ 400 км</div>"
     },
     {
       "text": "Що таке комета?",
-      "answers": ["природний супутник", "велика планета", "небесне тіло, що залишає світний хвіст", "тверда зоря"],
-      "correct": 2
+      "answers": [
+        "природний супутник",
+        "велика планета",
+        "небесне тіло, що залишає світний хвіст",
+        "тверда зоря"
+      ],
+      "correct": 2,
+      "explanation": "Комета — невелике крижане тіло, яке наближаючись до Сонця, утворює яскравий світлий хвіст із газу й пилу.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 120\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"240\" height=\"120\" fill=\"#0b1024\"/><g fill=\"#fff\" opacity=\"0.6\"><circle cx=\"220\" cy=\"20\" r=\"0.8\"/><circle cx=\"20\" cy=\"100\" r=\"0.8\"/><circle cx=\"180\" cy=\"80\" r=\"0.8\"/></g><circle cx=\"60\" cy=\"60\" r=\"14\" fill=\"#7dd3fc\"/><circle cx=\"60\" cy=\"60\" r=\"8\" fill=\"#fff\"/><path d=\"M70 55 Q140 40 230 30 Q160 60 70 65 Z\" fill=\"#7dd3fc\" opacity=\"0.6\"/><path d=\"M70 65 Q150 75 230 90 Q150 75 70 70 Z\" fill=\"#a5f3fc\" opacity=\"0.5\"/></svg>"
     },
     {
       "text": "Що таке астероїд?",
-      "answers": ["гора на Землі", "невелике кам'яне тіло, що рухається навколо Сонця", "різновид зорі", "водойма в космосі"],
-      "correct": 1
+      "answers": [
+        "гора на Землі",
+        "невелике кам'яне тіло, що рухається навколо Сонця",
+        "різновид зорі",
+        "водойма в космосі"
+      ],
+      "correct": 1,
+      "explanation": "Астероїди — невеликі кам'янисті тіла, що рухаються навколо Сонця. Їх багато між Марсом і Юпітером (астероїдний пояс).",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 120\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"200\" height=\"120\" fill=\"#0b1024\"/><g fill=\"#fff\" opacity=\"0.6\"><circle cx=\"20\" cy=\"20\" r=\"0.8\"/><circle cx=\"180\" cy=\"100\" r=\"0.8\"/></g><polygon points=\"70,40 110,30 145,55 150,90 120,100 80,95 60,70\" fill=\"#9ca3af\"/><g fill=\"#6b7280\"><circle cx=\"100\" cy=\"60\" r=\"6\"/><circle cx=\"125\" cy=\"80\" r=\"4\"/><circle cx=\"80\" cy=\"80\" r=\"3\"/></g><text x=\"100\" y=\"115\" text-anchor=\"middle\" font-size=\"11\" fill=\"#fde68a\">кам'яне небесне тіло</text></svg>"
     },
     {
       "text": "Що таке метеорит?",
-      "answers": ["космічне тіло, яке впало на поверхню Землі", "частина Місяця", "новий вид комети", "штучний супутник"],
-      "correct": 0
+      "answers": [
+        "космічне тіло, яке впало на поверхню Землі",
+        "частина Місяця",
+        "новий вид комети",
+        "штучний супутник"
+      ],
+      "correct": 0,
+      "explanation": "Метеорит — космічне тіло (уламок астероїда чи комети), що пролетіло крізь атмосферу і впало на поверхню Землі.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 160\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"200\" height=\"160\" fill=\"#0b1024\"/><rect y=\"130\" width=\"200\" height=\"30\" fill=\"#7c4a26\"/><polygon points=\"100,130 80,100 60,40 110,80\" fill=\"#fbbf24\" opacity=\"0.6\"/><polygon points=\"95,135 110,110\" fill=\"none\" stroke=\"#dc2626\" stroke-width=\"2\"/><ellipse cx=\"100\" cy=\"135\" rx=\"14\" ry=\"6\" fill=\"#1e293b\"/><text x=\"100\" y=\"155\" text-anchor=\"middle\" font-size=\"11\" fill=\"#fde68a\">впав на Землю</text></svg>"
     },
     {
       "text": "Що ми зазвичай називаємо «падаючою зіркою»?",
-      "answers": ["молоду зорю", "метеор, який згоряє в атмосфері Землі", "штучний супутник", "ракету"],
-      "correct": 1
+      "answers": [
+        "молоду зорю",
+        "метеор, який згоряє в атмосфері Землі",
+        "штучний супутник",
+        "ракету"
+      ],
+      "correct": 1,
+      "explanation": "Це не зоря, а метеор — невелике космічне тіло, яке згоряє в атмосфері Землі і світиться на нічному небі.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 120\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"200\" height=\"120\" fill=\"#0b1024\"/><g fill=\"#fff\" opacity=\"0.6\"><circle cx=\"20\" cy=\"20\" r=\"0.8\"/><circle cx=\"180\" cy=\"20\" r=\"0.8\"/><circle cx=\"160\" cy=\"100\" r=\"0.8\"/></g><line x1=\"30\" y1=\"30\" x2=\"160\" y2=\"90\" stroke=\"#fde68a\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"40\" y1=\"30\" x2=\"150\" y2=\"80\" stroke=\"#fff\" stroke-width=\"1\" opacity=\"0.6\"/><circle cx=\"160\" cy=\"90\" r=\"5\" fill=\"#fff\"/><text x=\"100\" y=\"110\" text-anchor=\"middle\" font-size=\"11\" fill=\"#fde68a\">метеор у атмосфері</text></svg>"
     },
     {
       "text": "Чому в космосі не чути звуків?",
-      "answers": ["бо там дуже холодно", "бо немає повітря (вакуум)", "бо темно", "бо швидко рухаються тіла"],
-      "correct": 1
+      "answers": [
+        "бо там дуже холодно",
+        "бо немає повітря (вакуум)",
+        "бо темно",
+        "бо швидко рухаються тіла"
+      ],
+      "correct": 1,
+      "explanation": "Звук поширюється завдяки коливанням повітря (чи іншого середовища). У космосі вакуум — там немає повітря, тому звук передаватися не може.",
+      "media": "<div class=\"scheme-row\"><span class=\"node\">🚀 космос = вакуум</span><span class=\"arrow\">→</span><span class=\"node\">❌ немає повітря</span><span class=\"arrow\">→</span><span class=\"node\">🔇 немає звуку</span></div>"
     },
     {
       "text": "Що таке невагомість?",
-      "answers": ["коли предмети стають дуже легкими через вагу", "стан, у якому тіла не тиснуть на опору", "вид костюма космонавта", "явище лише на Місяці"],
-      "correct": 1
+      "answers": [
+        "коли предмети стають дуже легкими через вагу",
+        "стан, у якому тіла не тиснуть на опору",
+        "вид костюма космонавта",
+        "явище лише на Місяці"
+      ],
+      "correct": 1,
+      "explanation": "Невагомість — стан, у якому тіла не тиснуть на опору. На МКС космонавти і предмети «плавають», бо станція безперервно «падає» по орбіті разом з ними.",
+      "media": "<div class=\"scheme-row\"><span class=\"node\">🚀 орбіта</span><span class=\"arrow\">→</span><span class=\"node\">👨‍🚀 космонавт «плаває»</span></div>"
     },
     {
       "text": "Якого кольору наша Земля з космосу переважно?",
-      "answers": ["червоного", "зеленого", "блакитного", "жовтого"],
-      "correct": 2
+      "answers": [
+        "червоного",
+        "зеленого",
+        "блакитного",
+        "жовтого"
+      ],
+      "correct": 2,
+      "explanation": "Земля з космосу здається переважно блакитною — це колір океанів, що покривають близько 70% поверхні.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"200\" height=\"200\" fill=\"#000\"/><circle cx=\"100\" cy=\"100\" r=\"80\" fill=\"#3b82f6\"/><path d=\"M40 90 Q60 80 80 95 L95 90 L110 100 L130 95 L150 105 L140 115 L120 115 L105 110 L85 115 L65 110 L50 100 Z\" fill=\"#16a34a\"/><ellipse cx=\"100\" cy=\"50\" rx=\"30\" ry=\"6\" fill=\"#fff\" opacity=\"0.5\"/><text x=\"100\" y=\"195\" text-anchor=\"middle\" font-size=\"12\" fill=\"#7dd3fc\">🔵 блакитна</text></svg>"
     },
     {
       "text": "Чому Землю називають «блакитною планетою»?",
-      "answers": ["бо переважно вкрита водою", "бо вкрита лісами", "бо її бачать лише вночі", "так назвали випадково"],
-      "correct": 0
+      "answers": [
+        "бо переважно вкрита водою",
+        "бо вкрита лісами",
+        "бо її бачать лише вночі",
+        "так назвали випадково"
+      ],
+      "correct": 0,
+      "explanation": "Більшу частину поверхні Землі (близько 70%) займає вода — океани. Тому з космосу вона виглядає блакитною.",
+      "media": "<table class=\"scheme-table\"><thead><tr><th>Поверхня Землі</th><th>Частка</th></tr></thead><tbody><tr><td>💧 вода (океани)</td><td>≈ 70%</td></tr><tr><td>🌍 суша</td><td>≈ 30%</td></tr></tbody></table>"
     },
     {
       "text": "Як називається повітряна оболонка Землі?",
-      "answers": ["гідросфера", "атмосфера", "літосфера", "біосфера"],
-      "correct": 1
+      "answers": [
+        "гідросфера",
+        "атмосфера",
+        "літосфера",
+        "біосфера"
+      ],
+      "correct": 1,
+      "explanation": "Атмосфера — повітряна оболонка Землі. Вона захищає від космічного випромінювання, постачає кисень для дихання.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"200\" height=\"200\" fill=\"#0b1024\"/><circle cx=\"100\" cy=\"120\" r=\"60\" fill=\"#3b82f6\"/><circle cx=\"100\" cy=\"120\" r=\"74\" fill=\"none\" stroke=\"#7dd3fc\" stroke-width=\"6\" opacity=\"0.7\"/><circle cx=\"100\" cy=\"120\" r=\"84\" fill=\"none\" stroke=\"#7dd3fc\" stroke-width=\"3\" opacity=\"0.4\"/><text x=\"100\" y=\"20\" text-anchor=\"middle\" font-size=\"13\" fill=\"#fde68a\" font-weight=\"bold\">АТМОСФЕРА</text><text x=\"100\" y=\"195\" text-anchor=\"middle\" font-size=\"11\" fill=\"#fde68a\">повітряна оболонка</text></svg>"
     },
     {
       "text": "Прилад для спостереження за зірками і планетами — це:",
-      "answers": ["мікроскоп", "телескоп", "барометр", "термометр"],
-      "correct": 1
+      "answers": [
+        "мікроскоп",
+        "телескоп",
+        "барометр",
+        "термометр"
+      ],
+      "correct": 1,
+      "explanation": "Телескоп збільшує далекі об'єкти. Великі телескопи дозволяють бачити галактики, планети та їхні супутники.",
+      "media": "<img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAgMjQwIj4KPHJlY3Qgd2lkdGg9IjI0MCIgaGVpZ2h0PSIyNDAiIGZpbGw9IiMwYjEwMjQiLz4KPGcgZmlsbD0iI2ZmZiI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMS4yIi8+PGNpcmNsZSBjeD0iMjAwIiBjeT0iNDAiIHI9IjEiLz48Y2lyY2xlIGN4PSIxODAiIGN5PSI4MCIgcj0iMS40Ii8+PGNpcmNsZSBjeD0iNjAiIGN5PSI2MCIgcj0iMSIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iMTAwIiByPSIxLjIiLz48Y2lyY2xlIGN4PSIyMTAiIGN5PSIxNjAiIHI9IjEiLz48L2c+CjxnIHRyYW5zZm9ybT0icm90YXRlKC0zMCAxMjAgMTIwKSI+CjxyZWN0IHg9IjYwIiB5PSIxMDAiIHdpZHRoPSIxNjAiIGhlaWdodD0iMzQiIHJ4PSI2IiBmaWxsPSIjNDc1NTY5IiBzdHJva2U9IiMxZTI5M2IiIHN0cm9rZS13aWR0aD0iMiIvPgo8Y2lyY2xlIGN4PSIyMjAiIGN5PSIxMTciIHI9IjIyIiBmaWxsPSIjMWUyOTNiIiBzdHJva2U9IiM5NGEzYjgiIHN0cm9rZS13aWR0aD0iMiIvPgo8Y2lyY2xlIGN4PSIyMjAiIGN5PSIxMTciIHI9IjE0IiBmaWxsPSIjMGIxMDI0Ii8+CjxyZWN0IHg9IjU1IiB5PSIxMDUiIHdpZHRoPSIxNCIgaGVpZ2h0PSIyNCIgZmlsbD0iIzk0YTNiOCIvPgo8L2c+Cjxwb2x5Z29uIHBvaW50cz0iMTIwLDIwMCAxMDAsMjQwIDE0MCwyNDAiIGZpbGw9IiM0NzU1NjkiLz4KPHJlY3QgeD0iMTE1IiB5PSIyMDAiIHdpZHRoPSIxMCIgaGVpZ2h0PSI0MCIgZmlsbD0iIzFlMjkzYiIvPgo8L3N2Zz4=\" alt=\"Телескоп\" style=\"width:200px;max-width:100%;height:auto;border-radius:8px;background:#0d1117;padding:6px;\"/>"
     },
     {
       "text": "Найближча до Землі зоря — це:",
-      "answers": ["Сіріус", "Сонце", "Полярна зоря", "Альфа Центавра"],
-      "correct": 1
+      "answers": [
+        "Сіріус",
+        "Сонце",
+        "Полярна зоря",
+        "Альфа Центавра"
+      ],
+      "correct": 1,
+      "explanation": "Найближча зоря до нас — Сонце. Друга за віддаленістю — Альфа Центавра, але вона у мільйони разів далі.",
+      "media": "<div class=\"scheme-row\"><span class=\"node\">Земля</span><span class=\"arrow\">→</span><span class=\"node\">147–152 млн км</span><span class=\"arrow\">→</span><span class=\"node\">☀️ Сонце</span></div>"
     },
     {
       "text": "Чому ми не падаємо із Землі?",
-      "answers": ["завдяки магніту", "завдяки силі тяжіння (гравітації)", "завдяки повітрю", "завдяки океанам"],
-      "correct": 1
+      "answers": [
+        "завдяки магніту",
+        "завдяки силі тяжіння (гравітації)",
+        "завдяки повітрю",
+        "завдяки океанам"
+      ],
+      "correct": 1,
+      "explanation": "Земля велика і притягує всі тіла до себе. Ця сила називається силою тяжіння (гравітацією).",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"200\" height=\"200\" fill=\"#0b1024\"/><circle cx=\"100\" cy=\"100\" r=\"50\" fill=\"#3b82f6\"/><g stroke=\"#fde68a\" stroke-width=\"2.5\" fill=\"none\"><line x1=\"100\" y1=\"20\" x2=\"100\" y2=\"50\"/><polygon points=\"100,50 95,42 105,42\" fill=\"#fde68a\" stroke=\"none\"/><line x1=\"100\" y1=\"180\" x2=\"100\" y2=\"150\"/><polygon points=\"100,150 95,158 105,158\" fill=\"#fde68a\" stroke=\"none\"/><line x1=\"20\" y1=\"100\" x2=\"50\" y2=\"100\"/><polygon points=\"50,100 42,95 42,105\" fill=\"#fde68a\" stroke=\"none\"/><line x1=\"180\" y1=\"100\" x2=\"150\" y2=\"100\"/><polygon points=\"150,100 158,95 158,105\" fill=\"#fde68a\" stroke=\"none\"/></g><text x=\"100\" y=\"195\" text-anchor=\"middle\" font-size=\"12\" fill=\"#fde68a\" font-weight=\"bold\">сила тяжіння (гравітація)</text></svg>"
     },
     {
       "text": "Чого немає на Місяці порівняно із Землею?",
-      "answers": ["гір", "кратерів", "повітря й рідкої води", "темряви"],
-      "correct": 2
+      "answers": [
+        "гір",
+        "кратерів",
+        "повітря й рідкої води",
+        "темряви"
+      ],
+      "correct": 2,
+      "explanation": "На Місяці немає атмосфери (повітря) і рідкої води, тому там не можна дихати без скафандра.",
+      "media": "<table class=\"scheme-table\"><thead><tr><th></th><th>🌍 Земля</th><th>🌕 Місяць</th></tr></thead><tbody><tr><td>Атмосфера (повітря)</td><td>✅</td><td>❌</td></tr><tr><td>Рідка вода</td><td>✅</td><td>❌</td></tr><tr><td>Життя</td><td>✅</td><td>❌</td></tr><tr><td>Гори, кратери</td><td>✅</td><td>✅</td></tr></tbody></table>"
     },
     {
       "text": "Хто був першою людиною, яка полетіла в космос?",
-      "answers": ["Ніл Армстронг", "Юрій Гагарін", "Леонід Каденюк", "Едвін Олдрін"],
-      "correct": 1
+      "answers": [
+        "Ніл Армстронг",
+        "Юрій Гагарін",
+        "Леонід Каденюк",
+        "Едвін Олдрін"
+      ],
+      "correct": 1,
+      "explanation": "Юрій Гагарін — перша людина в космосі. 12 квітня 1961 року на кораблі «Восток-1» він зробив один оберт навколо Землі.",
+      "media": "<div class=\"info-card\">🚀 <b>Юрій Гагарін</b><br>12 квітня 1961 р. · корабель «Восток-1»<br>108 хвилин польоту</div>"
     },
     {
       "text": "Як називається штучне тіло, яке людина запускає на орбіту Землі?",
-      "answers": ["метеорит", "штучний супутник", "комета", "астероїд"],
-      "correct": 1
+      "answers": [
+        "метеорит",
+        "штучний супутник",
+        "комета",
+        "астероїд"
+      ],
+      "correct": 1,
+      "explanation": "Штучний супутник — апарат, що людина виводить на орбіту. Вони передають телебачення, інтернет, GPS-сигнали, спостерігають за погодою.",
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 160\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"200\" height=\"160\" fill=\"#0b1024\"/><circle cx=\"100\" cy=\"120\" r=\"40\" fill=\"#3b82f6\" opacity=\"0.8\"/><g transform=\"translate(100 50)\"><rect x=\"-12\" y=\"-12\" width=\"24\" height=\"24\" fill=\"#9ca3af\" stroke=\"#1e293b\"/><rect x=\"-40\" y=\"-6\" width=\"24\" height=\"12\" fill=\"#1e3a8a\"/><rect x=\"16\" y=\"-6\" width=\"24\" height=\"12\" fill=\"#1e3a8a\"/><line x1=\"0\" y1=\"-12\" x2=\"0\" y2=\"-22\" stroke=\"#9ca3af\" stroke-width=\"2\"/><circle cx=\"0\" cy=\"-26\" r=\"3\" fill=\"#fbbf24\"/></g><ellipse cx=\"100\" cy=\"50\" rx=\"60\" ry=\"30\" fill=\"none\" stroke=\"#fde68a\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"100\" y=\"155\" text-anchor=\"middle\" font-size=\"12\" fill=\"#fde68a\" font-weight=\"bold\">🛰️ супутник</text></svg>"
     },
     {
       "text": "Скільки планет у Сонячній системі мають кільця?",
-      "answers": ["лише Сатурн", "Сатурн і Юпітер", "усі планети-гіганти (Юпітер, Сатурн, Уран, Нептун)", "жодна"],
-      "correct": 2
+      "answers": [
+        "лише Сатурн",
+        "Сатурн і Юпітер",
+        "усі планети-гіганти (Юпітер, Сатурн, Уран, Нептун)",
+        "жодна"
+      ],
+      "correct": 2,
+      "explanation": "Кільця мають усі чотири планети-гіганти: Юпітер, Сатурн (найвиразніші), Уран і Нептун. У внутрішніх кам'янистих планет кілець немає.",
+      "media": "<table class=\"scheme-table\"><thead><tr><th>Планета</th><th>Кільця</th></tr></thead><tbody><tr><td>Юпітер</td><td>✅ (тонкі)</td></tr><tr><td>Сатурн</td><td>✅ (найвиразніші)</td></tr><tr><td>Уран</td><td>✅</td></tr><tr><td>Нептун</td><td>✅</td></tr></tbody></table>"
     },
     {
       "text": "Як називається людина, що працює у космосі?",
-      "answers": ["пілот", "космонавт (астронавт)", "інженер", "штурман"],
-      "correct": 1
+      "answers": [
+        "пілот",
+        "космонавт (астронавт)",
+        "інженер",
+        "штурман"
+      ],
+      "correct": 1,
+      "explanation": "Космонавт (у США кажуть астронавт, у Китаї — тайконавт). Це людина, яка спеціально готується до польотів у космос.",
+      "media": "<div class=\"scheme-row\"><span class=\"node\">👨‍🚀 космонавт</span><span class=\"arrow\">→</span><span class=\"node\">(астронавт / тайконавт)</span></div>"
     }
   ]
 }

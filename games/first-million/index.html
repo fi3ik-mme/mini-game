@@ -212,6 +212,175 @@
         .primary-btn:hover { background: #ffe44d; }
 
         .error-msg { color: #f87171; text-align: center; margin-top: 16px; }
+
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            padding: 16px;
+        }
+
+        .modal-backdrop.active { display: flex; }
+
+        .modal {
+            background: linear-gradient(180deg, #1e3a8a 0%, #1a1a2e 100%);
+            border: 2px solid #ffd700;
+            border-radius: 16px;
+            padding: 24px;
+            max-width: 520px;
+            width: 100%;
+            color: white;
+            text-align: center;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+        }
+
+        .modal h3 {
+            margin: 0 0 12px;
+            font-size: 1.3rem;
+        }
+
+        .modal h3.correct { color: #4ade80; }
+        .modal h3.wrong { color: #f87171; }
+
+        .modal .explanation {
+            text-align: left;
+            line-height: 1.55;
+            margin-bottom: 16px;
+            color: #e5e7eb;
+            font-size: 0.95rem;
+        }
+
+        .modal .explanation p { margin: 6px 0; }
+        .modal .explanation .answer-line { color: #fde68a; margin-bottom: 10px; }
+
+        .modal .media {
+            margin: 12px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 0;
+        }
+
+        .modal .media:empty { margin: 0; }
+
+        .modal .media .emoji-big {
+            font-size: 3rem;
+            line-height: 1;
+        }
+
+        .modal .media .info-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            border-radius: 10px;
+            padding: 10px 14px;
+            display: inline-block;
+            color: #fde68a;
+            font-size: 0.95rem;
+        }
+
+        .modal .media svg { max-width: 100%; height: auto; }
+
+        .modal .media .scheme {
+            font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+            padding: 10px 14px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 10px;
+            color: #fde68a;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            white-space: pre-line;
+            text-align: left;
+        }
+
+        .modal .media .scheme-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+            color: #fde68a;
+            font-size: 1rem;
+            padding: 8px 14px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 10px;
+        }
+
+        .modal .media .scheme-row .node {
+            background: rgba(255, 215, 0, 0.18);
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        .modal .media .scheme-row .arrow { color: #fde68a; opacity: 0.8; }
+
+        .modal .media .compare {
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 4px 16px;
+            padding: 10px 14px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+
+        .modal .media .compare .label { color: #cbd5e1; text-align: right; }
+        .modal .media .compare .val { color: #fde68a; font-weight: bold; text-align: left; }
+
+        .modal .media .scheme-table {
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            color: #fde68a;
+        }
+
+        .modal .media .scheme-table td,
+        .modal .media .scheme-table th {
+            padding: 6px 10px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .modal .media .scheme-table th {
+            background: rgba(255, 215, 0, 0.15);
+            font-weight: bold;
+        }
+
+        .modal .media .swatch {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            color: #fde68a;
+        }
+
+        .modal .media .swatch .chip {
+            width: 80px;
+            height: 60px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .modal-btn {
+            padding: 12px 28px;
+            background: #ffd700;
+            border: none;
+            border-radius: 8px;
+            color: #1a1a2e;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .modal-btn:hover { background: #ffe44d; }
     </style>
 </head>
 <body>
@@ -239,6 +408,15 @@
             <button id="walk-away" class="walk-away" type="button">Забрати виграш і вийти</button>
         </div>
         <ol id="prize-ladder" class="prize-ladder" reversed></ol>
+    </div>
+</div>
+
+<div id="explanation-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+        <h3 id="modal-title"></h3>
+        <div id="modal-media" class="media"></div>
+        <div id="modal-explanation" class="explanation"></div>
+        <button id="modal-continue" class="modal-btn" type="button">Далі →</button>
     </div>
 </div>
 
@@ -274,6 +452,11 @@
     const resultTitle = document.getElementById("result-title");
     const resultMessage = document.getElementById("result-message");
     const playAgainBtn = document.getElementById("play-again");
+    const explanationModal = document.getElementById("explanation-modal");
+    const modalTitle = document.getElementById("modal-title");
+    const modalMedia = document.getElementById("modal-media");
+    const modalExplanation = document.getElementById("modal-explanation");
+    const modalContinue = document.getElementById("modal-continue");
 
     let questions = [];
     let currentIndex = 0;
@@ -400,6 +583,46 @@
         updatePrizeLadder();
     }
 
+    function escapeHtml(s) {
+        return String(s).replace(/[&<>"']/g, ch => ({
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            "\"": "&quot;",
+            "'": "&#39;"
+        }[ch]));
+    }
+
+    function showExplanation(isCorrect, q, onContinue) {
+        const hasExtra = q && (q.explanation || q.media);
+        if (!hasExtra) {
+            setTimeout(onContinue, 1200);
+            return;
+        }
+
+        modalTitle.textContent = isCorrect ? "✓ Правильно!" : "✗ Неправильно";
+        modalTitle.className = isCorrect ? "correct" : "wrong";
+
+        modalMedia.innerHTML = q.media ? q.media : "";
+
+        const correctAnswer = q.answers[q.correct];
+        let html = "<p class=\"answer-line\"><strong>Правильна відповідь:</strong> " +
+            escapeHtml(correctAnswer) + "</p>";
+        if (q.explanation) {
+            html += "<p>" + escapeHtml(q.explanation) + "</p>";
+        }
+        modalExplanation.innerHTML = html;
+
+        explanationModal.classList.add("active");
+
+        const handler = () => {
+            explanationModal.classList.remove("active");
+            modalContinue.removeEventListener("click", handler);
+            onContinue();
+        };
+        modalContinue.addEventListener("click", handler);
+    }
+
     function selectAnswer(index) {
         if (locked) return;
         locked = true;
@@ -413,18 +636,20 @@
             else if (i === index) btn.classList.add("wrong");
         });
 
-        if (index === q.correct) {
-            setTimeout(() => {
+        const isCorrect = index === q.correct;
+
+        showExplanation(isCorrect, q, () => {
+            if (isCorrect) {
                 if (currentIndex === questions.length - 1) {
                     endGame(true, PRIZES[currentIndex]);
                 } else {
                     currentIndex++;
                     renderQuestion();
                 }
-            }, 1200);
-        } else {
-            setTimeout(() => endGame(false, guaranteedPrize), 1200);
-        }
+            } else {
+                endGame(false, guaranteedPrize);
+            }
+        });
     }
 
     function endGame(won, prize) {
