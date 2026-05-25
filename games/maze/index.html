@@ -128,6 +128,8 @@
 
     const size = 10;
     const cellSize = 30;
+    const pieceSize = 16;
+    const pieceOffset = (cellSize - pieceSize) / 2;
 
     let grid = [];
     let x = 0, y = 0;
@@ -231,11 +233,11 @@
         x=0;y=0;
         locked=false;
 
-        player.style.left="2px";
-        player.style.top="2px";
+        player.style.left=pieceOffset+"px";
+        player.style.top=pieceOffset+"px";
 
-        goal.style.left=(size-1)*cellSize+"px";
-        goal.style.top=(size-1)*cellSize+"px";
+        goal.style.left=((size-1)*cellSize+pieceOffset)+"px";
+        goal.style.top=((size-1)*cellSize+pieceOffset)+"px";
 
         message.textContent="";
 
@@ -276,8 +278,8 @@
 
         x=nx;y=ny;
 
-        player.style.left=(x*cellSize+2)+"px";
-        player.style.top=(y*cellSize+2)+"px";
+        player.style.left=(x*cellSize+pieceOffset)+"px";
+        player.style.top=(y*cellSize+pieceOffset)+"px";
 
         win();
     }

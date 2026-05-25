@@ -6,10 +6,6 @@ A small collection of browser mini-games — plain HTML, CSS, and JavaScript, no
 
 **https://fi3ik-mme.github.io/mini-game/**
 
-## Repository
-
-**https://github.com/fi3ik-mme/mini-game**
-
 ## Games
 
 | Game | Description | URL |
@@ -17,17 +13,6 @@ A small collection of browser mini-games — plain HTML, CSS, and JavaScript, no
 | Menu | Choose a game | [mini-game/](https://fi3ik-mme.github.io/mini-game/) |
 | Лабіринт (Maze) | Find the exit as fast as you can | [games/maze/](https://fi3ik-mme.github.io/mini-game/games/maze/) |
 | Перший мільйон (First Million) | Quiz in the style of “Who Wants to Be a Millionaire?” | [games/first-million/](https://fi3ik-mme.github.io/mini-game/games/first-million/) |
-
-## Project structure
-
-```
-index.html              # main menu
-games/
-  maze/index.html       # maze game
-  first-million/
-    index.html          # quiz game
-    data/*.json         # question sets
-```
 
 ## Local development
 

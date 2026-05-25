@@ -356,7 +356,12 @@
                 throw new Error("У наборі має бути щонайменше 15 питань");
             }
 
-            questions = data.questions.slice(0, 15);
+            const pool = data.questions.slice();
+            for (let i = pool.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [pool[i], pool[j]] = [pool[j], pool[i]];
+            }
+            questions = pool.slice(0, 15);
             currentIndex = 0;
             locked = false;
             guaranteedPrize = 0;
