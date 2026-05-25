@@ -9,6 +9,30 @@ test.describe("Mini Games smoke tests", () => {
     await expect(page.getByRole("link", { name: /Перший мільйон/ })).toBeVisible();
   });
 
+  test("auto-update banner exists, is hidden by default, and SW supports skip-waiting", async ({ page, request }) => {
+    await page.goto("/");
+
+    const banner = page.locator("#update-banner");
+    await expect(banner).toBeAttached();
+    await expect(banner).toBeHidden();
+    await expect(page.locator("#update-apply")).toBeAttached();
+
+    const swText = await (await request.get("/sw.js")).text();
+    // skipWaiting must be reachable via message (user-controlled apply),
+    // and must NOT run automatically during install (so updates wait for
+    // user confirmation rather than reload mid-game).
+    expect(swText).toMatch(/skip-waiting/);
+    expect(swText).toMatch(/skipWaiting\s*\(/);
+    const installIdx  = swText.indexOf('addEventListener("install"');
+    const activateIdx = swText.indexOf('addEventListener("activate"');
+    expect(installIdx).toBeGreaterThan(-1);
+    expect(activateIdx).toBeGreaterThan(installIdx);
+    const installBody = swText.slice(installIdx, activateIdx)
+      .replace(/\/\/.*$/gm, "")           // strip line comments
+      .replace(/\/\*[\s\S]*?\*\//g, "");  // strip block comments
+    expect(installBody, "install must not auto-skipWaiting").not.toMatch(/skipWaiting\s*\(/);
+  });
+
   test("PWA assets are reachable and manifest is valid", async ({ page, request }) => {
     const manifestRes = await request.get("/manifest.webmanifest");
     expect(manifestRes.ok()).toBeTruthy();

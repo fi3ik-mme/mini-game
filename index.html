@@ -331,6 +331,53 @@
         }
 
         .toast.show { transform: translateX(-50%) translateY(0); }
+
+        .update-banner {
+            position: fixed;
+            bottom: calc(20px + env(safe-area-inset-bottom));
+            left: 50%;
+            transform: translateX(-50%) translateY(160%);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 10px 10px 18px;
+            background: linear-gradient(180deg, #fbbf24 0%, #d97706 100%);
+            color: #1a1a2e;
+            border-radius: 99px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45),
+                        0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+            z-index: 250;
+            font-size: 0.92rem;
+            font-weight: 600;
+            transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+            max-width: calc(100vw - 24px);
+        }
+
+        .update-banner.show {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .update-banner .label {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .update-banner button {
+            border: 0;
+            background: #1a1a2e;
+            color: #fde68a;
+            padding: 8px 16px;
+            border-radius: 99px;
+            font-weight: 700;
+            font-family: inherit;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: transform 0.1s, background 0.2s;
+        }
+
+        .update-banner button:active { transform: scale(0.96); }
+        .update-banner button:disabled { opacity: 0.7; cursor: default; }
     </style>
 </head>
 <body>
@@ -395,13 +442,82 @@
 
 <div id="toast" class="toast"></div>
 
+<div id="update-banner" class="update-banner" role="status" hidden>
+    <span class="label">✨ Доступна нова версія</span>
+    <button id="update-apply" type="button">Оновити</button>
+</div>
+
 <script>
-    // --- PWA: service worker registration ---
-    if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-            navigator.serviceWorker.register("./sw.js").catch(() => {});
+    // --- PWA: service worker registration + auto-update flow ---
+    const updateBanner = document.getElementById("update-banner");
+    const updateBtn    = document.getElementById("update-apply");
+
+    // Only reload after the user explicitly opts in. Otherwise the very first
+    // claim (on a brand-new install) would trigger a reload loop.
+    let userTriggeredUpdate = false;
+
+    function showUpdateBanner(waitingSW) {
+        if (!updateBanner || !updateBtn || !waitingSW) return;
+        updateBanner.hidden = false;
+        requestAnimationFrame(() => updateBanner.classList.add("show"));
+
+        updateBtn.disabled = false;
+        updateBtn.textContent = "Оновити";
+        updateBtn.onclick = () => {
+            userTriggeredUpdate = true;
+            updateBtn.disabled = true;
+            updateBtn.textContent = "Оновлюю…";
+            try { waitingSW.postMessage("skip-waiting"); } catch (_) {}
+        };
+    }
+
+    function watchInstallingWorker(reg) {
+        const sw = reg.installing;
+        if (!sw) return;
+        sw.addEventListener("statechange", () => {
+            if (sw.state === "installed" && navigator.serviceWorker.controller) {
+                // A new version was installed and is now waiting because we
+                // removed skipWaiting() from install. Prompt the user.
+                showUpdateBanner(sw);
+            }
         });
     }
+
+    async function setupAutoUpdate() {
+        if (!("serviceWorker" in navigator)) return;
+
+        let reg;
+        try {
+            reg = await navigator.serviceWorker.register("./sw.js");
+        } catch (_) { return; }
+
+        // If a waiting worker already exists at load time, surface it.
+        if (reg.waiting && navigator.serviceWorker.controller) {
+            showUpdateBanner(reg.waiting);
+        }
+
+        // Catch updates discovered later (while the page is open).
+        reg.addEventListener("updatefound", () => watchInstallingWorker(reg));
+
+        // Active triggers: check for an update whenever it actually matters.
+        const checkForUpdate = () => reg.update().catch(() => {});
+        window.addEventListener("online", checkForUpdate);
+        document.addEventListener("visibilitychange", () => {
+            if (document.visibilityState === "visible") checkForUpdate();
+        });
+        // Periodic safety net while the app stays open (every 30 minutes).
+        setInterval(checkForUpdate, 30 * 60 * 1000);
+
+        // Reload the page once the user-confirmed update has actually taken
+        // control. We ignore the first-ever claim where there was no previous
+        // controller.
+        navigator.serviceWorker.addEventListener("controllerchange", () => {
+            if (!userTriggeredUpdate) return;
+            location.reload();
+        });
+    }
+
+    window.addEventListener("load", setupAutoUpdate);
 
     // --- Install prompt (Android Chrome / desktop Chrome / Edge) ---
     let deferredInstall = null;

@@ -85,6 +85,24 @@
             font-weight: 600;
         }
 
+        .icon-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1.05rem;
+            cursor: pointer;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.15s;
+        }
+
+        .icon-btn:active { background: rgba(255, 255, 255, 0.18); }
+
         #hud {
             width: 100%;
             max-width: 480px;
@@ -130,6 +148,30 @@
             padding: 8px;
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+            transition: box-shadow 0.3s;
+        }
+
+        #board.shake { animation: board-shake 0.32s; }
+
+        @keyframes board-shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-7px); }
+            40% { transform: translateX(7px); }
+            60% { transform: translateX(-4px); }
+            80% { transform: translateX(4px); }
+        }
+
+        #board.glow {
+            box-shadow: 0 12px 50px rgba(34, 197, 94, 0.45),
+                        0 0 0 2px rgba(74, 222, 128, 0.6) inset,
+                        0 0 60px rgba(34, 197, 94, 0.35);
+        }
+
+        #game.fade-in { animation: fade-in 0.45s ease-out; }
+
+        @keyframes fade-in {
+            from { opacity: 0; transform: scale(0.94); }
+            to   { opacity: 1; transform: scale(1); }
         }
 
         #game {
@@ -172,6 +214,12 @@
             position: absolute;
             background: rgba(226, 232, 240, 0.85);
             border-radius: 1px;
+            transition: background 0.25s, box-shadow 0.25s;
+        }
+
+        .wall.hit {
+            background: #f87171;
+            box-shadow: 0 0 12px rgba(248, 113, 113, 0.9);
         }
 
         .trail {
@@ -180,6 +228,23 @@
             background: rgba(239, 68, 68, 0.22);
             pointer-events: none;
             z-index: 1;
+            animation: trail-pop 0.28s ease-out;
+        }
+
+        @keyframes trail-pop {
+            0%   { transform: scale(0); opacity: 0; }
+            60%  { transform: scale(1.4); opacity: 0.5; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        #goal.burst {
+            animation: goal-burst 0.9s ease-out forwards;
+        }
+
+        @keyframes goal-burst {
+            0%   { transform: scale(1); box-shadow: 0 0 14px rgba(34, 197, 94, 0.7); }
+            40%  { transform: scale(2.4); box-shadow: 0 0 60px rgba(74, 222, 128, 1); }
+            100% { transform: scale(0); opacity: 0; box-shadow: 0 0 100px rgba(74, 222, 128, 0); }
         }
 
         .controls {
@@ -358,6 +423,31 @@
             }
             .ctrl { font-size: 1.4rem; border-radius: 14px; }
         }
+
+        .flash {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background: transparent;
+            z-index: 40;
+            transition: background 0.25s ease;
+        }
+
+        .flash.win  { background: rgba(251, 191, 36, 0.28); }
+        .flash.bump { background: rgba(239, 68, 68, 0.18); }
+
+        .confetti {
+            position: fixed;
+            top: -40px;
+            pointer-events: none;
+            z-index: 110;
+            animation: fall linear forwards;
+            will-change: transform, opacity;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(115vh) rotate(720deg); opacity: 0.15; }
+        }
     </style>
 </head>
 
@@ -366,23 +456,24 @@
 <div class="top-bar">
     <a class="back-link" href="../../index.html">← Меню</a>
     <div class="difficulty" id="difficulty">
-        <button class="diff-btn" data-size="8" type="button">Easy</button>
-        <button class="diff-btn active" data-size="12" type="button">Medium</button>
-        <button class="diff-btn" data-size="16" type="button">Hard</button>
+        <button class="diff-btn" data-size="8" type="button">Легко</button>
+        <button class="diff-btn active" data-size="12" type="button">Середньо</button>
+        <button class="diff-btn" data-size="16" type="button">Складно</button>
     </div>
+    <button id="sound-toggle" class="icon-btn" aria-label="Звук" type="button">🔊</button>
 </div>
 
 <div id="hud">
     <div class="stat">
-        <span class="stat-label">Time</span>
-        <span class="stat-value" id="time">0s</span>
+        <span class="stat-label">Час</span>
+        <span class="stat-value" id="time">0с</span>
     </div>
     <div class="stat">
-        <span class="stat-label">Steps</span>
+        <span class="stat-label">Кроки</span>
         <span class="stat-value" id="steps">0</span>
     </div>
     <div class="stat best">
-        <span class="stat-label">Best</span>
+        <span class="stat-label">Рекорд</span>
         <span class="stat-value" id="bestTime">—</span>
     </div>
 </div>
@@ -402,26 +493,28 @@
 </div>
 
 <div class="actions">
-    <button id="restart" class="action-btn" type="button">↻ New maze</button>
+    <button id="restart" class="action-btn" type="button">↻ Новий лабіринт</button>
 </div>
+
+<div id="flash" class="flash"></div>
 
 <div id="winOverlay" class="overlay" role="dialog" aria-modal="true" aria-labelledby="winTitle">
     <div class="modal">
-        <h2 id="winTitle">🎉 You made it!</h2>
-        <p class="sub" id="winMessage">Maze solved.</p>
+        <h2 id="winTitle">🎉 Перемога!</h2>
+        <p class="sub" id="winMessage">Лабіринт пройдено.</p>
         <div id="newBestRow"></div>
         <div class="modal-stats">
             <div class="modal-stat">
-                <div class="l">Time</div>
-                <div class="v" id="winTime">0s</div>
+                <div class="l">Час</div>
+                <div class="v" id="winTime">0с</div>
             </div>
             <div class="modal-stat">
-                <div class="l">Steps</div>
+                <div class="l">Кроки</div>
                 <div class="v" id="winSteps">0</div>
             </div>
         </div>
         <div class="modal-actions">
-            <button class="btn-primary" id="winNext" type="button">Play again →</button>
+            <button class="btn-primary" id="winNext" type="button">Грати знову →</button>
         </div>
     </div>
 </div>
@@ -442,6 +535,142 @@
     const winMessage = document.getElementById("winMessage");
     const winNext = document.getElementById("winNext");
     const newBestRow = document.getElementById("newBestRow");
+    const flashEl = document.getElementById("flash");
+    const soundToggle = document.getElementById("sound-toggle");
+
+    /* -------------------- AUDIO (Web Audio synth) -------------------- */
+    const audio = (() => {
+        let ctx = null;
+        let muted = localStorage.getItem("maze.muted") === "1";
+
+        function ensure() {
+            if (!ctx) {
+                const C = window.AudioContext || window.webkitAudioContext;
+                if (!C) return null;
+                ctx = new C();
+            }
+            if (ctx.state === "suspended") ctx.resume();
+            return ctx;
+        }
+
+        function tone(freq, dur, type = "sine", gain = 0.1, when = 0) {
+            if (muted) return;
+            const c = ensure();
+            if (!c) return;
+            const t0 = c.currentTime + when;
+            const osc = c.createOscillator();
+            const g = c.createGain();
+            osc.type = type;
+            osc.frequency.setValueAtTime(freq, t0);
+            g.gain.setValueAtTime(0, t0);
+            g.gain.linearRampToValueAtTime(gain, t0 + 0.008);
+            g.gain.exponentialRampToValueAtTime(0.001, t0 + dur);
+            osc.connect(g).connect(c.destination);
+            osc.start(t0);
+            osc.stop(t0 + dur + 0.05);
+        }
+
+        function noise(dur, gain = 0.04, when = 0, freq = 800) {
+            if (muted) return;
+            const c = ensure();
+            if (!c) return;
+            const t0 = c.currentTime + when;
+            const buf = c.createBuffer(1, c.sampleRate * dur, c.sampleRate);
+            const data = buf.getChannelData(0);
+            for (let i = 0; i < data.length; i++) data[i] = (Math.random() * 2 - 1) * 0.5;
+            const src = c.createBufferSource();
+            src.buffer = buf;
+            const filter = c.createBiquadFilter();
+            filter.type = "bandpass";
+            filter.frequency.value = freq;
+            const g = c.createGain();
+            g.gain.setValueAtTime(gain, t0);
+            g.gain.exponentialRampToValueAtTime(0.001, t0 + dur);
+            src.connect(filter).connect(g).connect(c.destination);
+            src.start(t0);
+        }
+
+        return {
+            step:      () => tone(580 + Math.random() * 80, 0.04, "triangle", 0.04),
+            discover:  () => { tone(880, 0.08, "sine", 0.08); tone(1320, 0.1, "sine", 0.06, 0.03); },
+            bump:      () => { tone(110, 0.18, "sawtooth", 0.1); noise(0.12, 0.05, 0, 400); },
+            regenerate: () => noise(0.35, 0.06, 0, 1200),
+            win: () => {
+                [523.25, 659.25, 783.99, 1046.5, 1318.5, 1567.98].forEach((f, i) =>
+                    tone(f, 0.28, "triangle", 0.13, i * 0.1));
+            },
+            newBest: () => {
+                [2093, 2637, 3136].forEach((f, i) => tone(f, 0.32, "sine", 0.08, 0.7 + i * 0.12));
+            },
+            tick:      () => tone(880, 0.04, "square", 0.05),
+            isMuted:   () => muted,
+            toggle:    () => {
+                muted = !muted;
+                localStorage.setItem("maze.muted", muted ? "1" : "0");
+                if (!muted) { ensure(); tone(880, 0.05, "triangle", 0.07); }
+                return muted;
+            }
+        };
+    })();
+
+    function updateSoundIcon() {
+        soundToggle.textContent = audio.isMuted() ? "🔇" : "🔊";
+    }
+    updateSoundIcon();
+    soundToggle.addEventListener("click", () => { audio.toggle(); updateSoundIcon(); });
+
+    /* -------------------- Visual fx helpers -------------------- */
+    function flash(kind, ms = 280) {
+        flashEl.classList.remove("win", "bump");
+        void flashEl.offsetWidth;
+        flashEl.classList.add(kind);
+        setTimeout(() => flashEl.classList.remove(kind), ms);
+    }
+
+    function shakeBoard() {
+        board.classList.remove("shake");
+        void board.offsetWidth;
+        board.classList.add("shake");
+        setTimeout(() => board.classList.remove("shake"), 350);
+    }
+
+    const CONFETTI_EMOJIS = ["🎉", "🎊", "✨", "⭐", "🏆", "🌟"];
+    function confetti(count) {
+        for (let i = 0; i < count; i++) {
+            const el = document.createElement("span");
+            el.className = "confetti";
+            el.textContent = CONFETTI_EMOJIS[Math.floor(Math.random() * CONFETTI_EMOJIS.length)];
+            el.style.left = (Math.random() * 100) + "vw";
+            el.style.fontSize = (16 + Math.random() * 20) + "px";
+            el.style.animationDelay = (Math.random() * 0.4) + "s";
+            el.style.animationDuration = (1.6 + Math.random() * 1.6) + "s";
+            document.body.appendChild(el);
+            setTimeout(() => el.remove(), 3800);
+        }
+    }
+
+    /* The wall edge that the player tried to cross (briefly highlighted red). */
+    function flashWall(fromX, fromY, dirX, dirY) {
+        const thick = Math.max(2, Math.round(cellSize * 0.08));
+        const px = fromX * cellSize;
+        const py = fromY * cellSize;
+        let x1, y1, w, h;
+        if (dirX === 1)       { x1 = px + cellSize - thick; y1 = py;                 w = thick;    h = cellSize; }
+        else if (dirX === -1) { x1 = px;                    y1 = py;                 w = thick;    h = cellSize; }
+        else if (dirY === 1)  { x1 = px;                    y1 = py + cellSize - thick; w = cellSize; h = thick;    }
+        else                  { x1 = px;                    y1 = py;                 w = cellSize; h = thick;    }
+
+        const walls = game.querySelectorAll(".wall");
+        let hit = null;
+        for (const w0 of walls) {
+            const wx = parseFloat(w0.style.left);
+            const wy = parseFloat(w0.style.top);
+            if (Math.abs(wx - x1) < 1.5 && Math.abs(wy - y1) < 1.5) { hit = w0; break; }
+        }
+        if (!hit) return;
+        hit.classList.add("hit");
+        setTimeout(() => hit.classList.remove("hit"), 260);
+    }
 
     let size = 12;
     let cellSize = 24;
@@ -463,14 +692,14 @@
     function loadBest() {
         const raw = localStorage.getItem(bestKey());
         bestTime = raw === null ? null : Number(raw);
-        bestTimeEl.textContent = bestTime === null ? "—" : bestTime + "s";
+        bestTimeEl.textContent = bestTime === null ? "—" : bestTime + "с";
     }
 
     function saveBest(t) {
         if (bestTime === null || t < bestTime) {
             bestTime = t;
             localStorage.setItem(bestKey(), String(t));
-            bestTimeEl.textContent = t + "s";
+            bestTimeEl.textContent = t + "с";
             return true;
         }
         return false;
@@ -598,11 +827,11 @@
         clearInterval(timer);
         startTime = Date.now();
         elapsed = 0;
-        timeEl.textContent = "0s";
+        timeEl.textContent = "0с";
         timer = setInterval(() => {
             if (locked) return;
             elapsed = formatElapsed();
-            timeEl.textContent = elapsed + "s";
+            timeEl.textContent = elapsed + "с";
         }, 250);
     }
 
@@ -615,7 +844,18 @@
         visited = new Set(["0,0"]);
         stepsEl.textContent = "0";
         locked = false;
+        timeEl.textContent = "0с";
+
+        goal.classList.remove("burst");
+        goal.style.opacity = "";
+        board.classList.remove("glow");
         placePieces();
+
+        game.classList.remove("fade-in");
+        void game.offsetWidth;
+        game.classList.add("fade-in");
+
+        audio.regenerate();
         startTimer();
     }
 
@@ -637,10 +877,18 @@
         if (locked) return false;
         const nx = x + dx;
         const ny = y + dy;
-        if (!canMove(nx, ny)) return false;
+        if (!canMove(nx, ny)) {
+            audio.bump();
+            shakeBoard();
+            flash("bump", 200);
+            flashWall(x, y, dx, dy);
+            vibrate([12, 30, 12]);
+            return false;
+        }
 
         const key = nx + "," + ny;
-        if (!visited.has(key)) {
+        const isNewCell = !visited.has(key);
+        if (isNewCell) {
             visited.add(key);
             addTrail(x, y);
         }
@@ -650,6 +898,9 @@
         stepsEl.textContent = String(steps);
         player.style.left = (x * cellSize + pieceOffset) + "px";
         player.style.top  = (y * cellSize + pieceOffset) + "px";
+
+        if (isNewCell) audio.discover();
+        else           audio.step();
         vibrate(6);
         checkWin();
         return true;
@@ -661,15 +912,30 @@
             clearInterval(timer);
             const t = formatElapsed();
             elapsed = t;
-            timeEl.textContent = t + "s";
+            timeEl.textContent = t + "с";
             vibrate([15, 60, 15, 60, 25]);
 
             const isBest = saveBest(t);
-            winTime.textContent = t + "s";
+
+            // Visual: goal explodes, board glows gold, screen flashes, confetti rains.
+            goal.classList.add("burst");
+            board.classList.add("glow");
+            flash("win", 500);
+            confetti(isBest ? 70 : 40);
+
+            // Audio: fanfare + optional new-best bell stack.
+            audio.win();
+            if (isBest) {
+                audio.newBest();
+                vibrate([30, 80, 30, 80, 30, 80, 80]);
+            }
+
+            winTime.textContent = t + "с";
             winSteps.textContent = String(steps);
-            winMessage.textContent = "Maze solved!";
-            newBestRow.innerHTML = isBest ? '<span class="new-best">★ New best time!</span>' : "";
-            winOverlay.classList.add("active");
+            winMessage.textContent = "Лабіринт пройдено!";
+            newBestRow.innerHTML = isBest ? '<span class="new-best">★ Новий рекорд!</span>' : "";
+
+            setTimeout(() => winOverlay.classList.add("active"), 850);
         }
     }
 
@@ -741,16 +1007,19 @@
         btn.classList.add("active");
         size = newSize;
         loadBest();
+        audio.tick();
         winOverlay.classList.remove("active");
         reset();
     });
 
     restartBtn.addEventListener("click", () => {
+        audio.tick();
         winOverlay.classList.remove("active");
         reset();
     });
 
     winNext.addEventListener("click", () => {
+        audio.tick();
         winOverlay.classList.remove("active");
         reset();
     });
