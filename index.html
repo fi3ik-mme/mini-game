@@ -2,47 +2,98 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Mini Games</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+    <title>Міні-Ігри · Українською</title>
+
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <meta name="theme-color" content="#1a1a2e" />
+    <meta name="application-name" content="Міні-Ігри" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Міні-Ігри" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="icon" type="image/svg+xml" href="./icon.svg" />
+    <link rel="apple-touch-icon" href="./icon.svg" />
+    <meta name="description" content="Колекція міні-ігор українською мовою. Працює офлайн на телефоні." />
+
     <style>
-        * { box-sizing: border-box; }
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+        html, body { overscroll-behavior: none; }
 
         body {
             margin: 0;
             min-height: 100vh;
+            min-height: 100dvh;
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            font-family: Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
             color: white;
             padding: 20px;
+            padding-bottom: max(20px, env(safe-area-inset-bottom));
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .badges {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 14px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 12px;
+            border-radius: 99px;
+            font-size: 0.78rem;
+            color: #fde68a;
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+        }
+
+        .badge.offline {
+            color: #86efac;
+            background: rgba(34, 197, 94, 0.1);
+            border-color: rgba(34, 197, 94, 0.35);
         }
 
         h1 {
             font-size: 2.2rem;
-            margin-bottom: 0.3rem;
+            margin: 0 0 6px;
             text-align: center;
+            background: linear-gradient(180deg, #fde68a 0%, #fbbf24 60%, #d97706 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         .subtitle {
-            color: #aaa;
-            margin-bottom: 2.5rem;
+            color: #cbd5e1;
+            margin: 0 0 28px;
             text-align: center;
+            font-size: 0.95rem;
+            max-width: 360px;
+            line-height: 1.5;
         }
 
         .menu {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 14px;
             width: 100%;
             max-width: 360px;
         }
 
         .game-card {
             display: block;
-            padding: 20px 24px;
+            padding: 18px 22px;
             background: rgba(255, 255, 255, 0.08);
             border: 2px solid rgba(255, 255, 255, 0.15);
             border-radius: 16px;
@@ -51,25 +102,21 @@
             transition: background 0.2s, border-color 0.2s, transform 0.15s;
         }
 
-        .game-card:hover {
-            background: rgba(255, 255, 255, 0.14);
-            border-color: rgba(255, 255, 255, 0.35);
-            transform: translateY(-2px);
-        }
-
         .game-card:active {
-            transform: translateY(0);
+            background: rgba(255, 255, 255, 0.16);
+            border-color: rgba(255, 255, 255, 0.35);
+            transform: scale(0.985);
         }
 
         .game-card h2 {
             margin: 0 0 6px;
-            font-size: 1.3rem;
+            font-size: 1.25rem;
         }
 
         .game-card p {
             margin: 0;
-            color: #bbb;
-            font-size: 0.95rem;
+            color: #cbd5e1;
+            font-size: 0.92rem;
             line-height: 1.4;
         }
 
@@ -77,12 +124,224 @@
             font-size: 2rem;
             margin-bottom: 8px;
         }
+
+        .footer-actions {
+            margin-top: 24px;
+            width: 100%;
+            max-width: 360px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .action-btn {
+            padding: 14px 18px;
+            border-radius: 14px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: 0;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: transform 0.1s, background 0.2s;
+        }
+
+        .action-btn:active { transform: scale(0.98); }
+
+        .btn-install {
+            background: linear-gradient(180deg, #fbbf24, #d97706);
+            color: #1a1a2e;
+            box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+        }
+
+        .btn-share {
+            background: rgba(255, 255, 255, 0.08);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-share:active { background: rgba(255, 255, 255, 0.16); }
+
+        [hidden] { display: none !important; }
+
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            z-index: 100;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+
+        .modal-backdrop.active { display: flex; }
+
+        .modal {
+            background: linear-gradient(180deg, #1e3a8a 0%, #1a1a2e 100%);
+            border: 2px solid rgba(255, 215, 0, 0.55);
+            border-radius: 18px;
+            padding: 22px 20px;
+            max-width: 420px;
+            width: 100%;
+            color: white;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+        }
+
+        .modal h2 {
+            margin: 0 0 6px;
+            font-size: 1.3rem;
+            color: #fde68a;
+            text-align: center;
+        }
+
+        .modal p {
+            color: #cbd5e1;
+            font-size: 0.92rem;
+            margin: 0 0 14px;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .url-box {
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            padding: 10px 12px;
+            margin-bottom: 12px;
+            font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+            font-size: 0.85rem;
+            color: #fde68a;
+            word-break: break-all;
+            text-align: center;
+        }
+
+        .share-actions {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        @media (min-width: 380px) {
+            .share-actions { grid-template-columns: 1fr 1fr; }
+            .share-actions .share-row { grid-column: 1 / -1; }
+        }
+
+        .share-btn-row {
+            padding: 12px 14px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 12px;
+            color: white;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.92rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: background 0.15s, border-color 0.15s;
+        }
+
+        .share-btn-row:active {
+            background: rgba(255, 255, 255, 0.18);
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+
+        .share-btn-row.primary {
+            background: linear-gradient(180deg, #fbbf24, #d97706);
+            color: #1a1a2e;
+            border-color: transparent;
+            font-weight: 700;
+        }
+
+        details {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 10px 14px;
+            margin-bottom: 12px;
+        }
+
+        details summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: #fde68a;
+            font-size: 0.92rem;
+            padding: 4px 0;
+            list-style: none;
+        }
+
+        details summary::-webkit-details-marker { display: none; }
+        details summary::before {
+            content: "▸ ";
+            display: inline-block;
+            transition: transform 0.15s;
+        }
+        details[open] summary::before { content: "▾ "; }
+
+        details .install-help {
+            margin-top: 10px;
+            color: #cbd5e1;
+            font-size: 0.88rem;
+            line-height: 1.55;
+        }
+
+        details .install-help p { margin: 6px 0; }
+        details .install-help strong { color: #fde68a; }
+
+        .modal-close {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            color: white;
+            font-family: inherit;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: calc(20px + env(safe-area-inset-bottom));
+            left: 50%;
+            transform: translateX(-50%) translateY(120%);
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid rgba(34, 197, 94, 0.5);
+            color: #86efac;
+            padding: 10px 18px;
+            border-radius: 99px;
+            font-size: 0.9rem;
+            z-index: 200;
+            transition: transform 0.3s ease;
+            pointer-events: none;
+        }
+
+        .toast.show { transform: translateX(-50%) translateY(0); }
     </style>
 </head>
 <body>
 
-<h1>Mini Games</h1>
-<p class="subtitle">Обери гру</p>
+<div class="badges">
+    <span class="badge offline" id="offline-badge">✓ Працює офлайн</span>
+    <span class="badge">🇺🇦 Українською</span>
+</div>
+
+<h1>Міні-Ігри</h1>
+<p class="subtitle">Колекція ігор українською мовою. Встанови на телефон — і грай без інтернету.</p>
 
 <nav class="menu">
     <a class="game-card" href="games/maze/index.html">
@@ -97,6 +356,204 @@
         <p>Вікторина на зразок «Хто хоче стати мільйонером?»</p>
     </a>
 </nav>
+
+<div class="footer-actions">
+    <button id="install-btn" class="action-btn btn-install" type="button" hidden>📲 Встановити додаток</button>
+    <button id="share-btn" class="action-btn btn-share" type="button">📤 Запросити друзів</button>
+</div>
+
+<div id="share-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="share-title">
+    <div class="modal">
+        <h2 id="share-title">Поділитися додатком</h2>
+        <p>Надішли посилання друзям. Вони зможуть встановити Міні-Ігри собі на телефон і грати офлайн.</p>
+
+        <div class="url-box" id="share-url"></div>
+
+        <div class="share-actions">
+            <button id="share-native" class="share-btn-row primary share-row" type="button" hidden>📲 Поділитися…</button>
+            <button id="share-copy" class="share-btn-row" type="button">📋 Скопіювати</button>
+            <a id="share-mailto" class="share-btn-row" href="#">✉️ Email</a>
+            <a id="share-tg" class="share-btn-row" href="#" target="_blank" rel="noopener">💬 Telegram</a>
+            <a id="share-wa" class="share-btn-row" href="#" target="_blank" rel="noopener">🟢 WhatsApp</a>
+            <a id="share-viber" class="share-btn-row" href="#">🟣 Viber</a>
+            <a id="share-sms" class="share-btn-row" href="#">💌 SMS</a>
+        </div>
+
+        <details>
+            <summary>Як встановити додаток на телефон?</summary>
+            <div class="install-help">
+                <p><strong>📱 iPhone / iPad:</strong> Відкрий посилання у <em>Safari</em> → натисни «Поділитися» <span style="font-family:monospace">⬆️</span> → «Додати на головний екран» (<em>Add to Home Screen</em>).</p>
+                <p><strong>🤖 Android:</strong> Відкрий посилання у <em>Chrome</em>. Зʼявиться банер «Встановити додаток». Або: меню (⋮) → «Встановити додаток» / «Додати на головний екран».</p>
+                <p><strong>💻 Komputer:</strong> Chrome / Edge — у адресному рядку буде значок «Встановити» (⊕).</p>
+                <p style="margin-top:10px;color:#86efac;"><strong>✓ Після встановлення</strong> можна грати без інтернету — усі ігри та питання зберігаються на пристрої.</p>
+            </div>
+        </details>
+
+        <button id="share-close" class="modal-close" type="button">Закрити</button>
+    </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script>
+    // --- PWA: service worker registration ---
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+            navigator.serviceWorker.register("./sw.js").catch(() => {});
+        });
+    }
+
+    // --- Install prompt (Android Chrome / desktop Chrome / Edge) ---
+    let deferredInstall = null;
+    const installBtn = document.getElementById("install-btn");
+
+    window.addEventListener("beforeinstallprompt", (e) => {
+        e.preventDefault();
+        deferredInstall = e;
+        installBtn.hidden = false;
+    });
+
+    installBtn.addEventListener("click", async () => {
+        if (!deferredInstall) return;
+        deferredInstall.prompt();
+        try { await deferredInstall.userChoice; } catch (_) {}
+        deferredInstall = null;
+        installBtn.hidden = true;
+    });
+
+    window.addEventListener("appinstalled", () => {
+        deferredInstall = null;
+        installBtn.hidden = true;
+        toast("Додаток встановлено ✓");
+    });
+
+    // --- Hide install button if already running as standalone ---
+    function isStandalone() {
+        return window.matchMedia("(display-mode: standalone)").matches
+            || window.navigator.standalone === true;
+    }
+    if (isStandalone()) installBtn.hidden = true;
+
+    // --- Share modal logic ---
+    const shareBtn   = document.getElementById("share-btn");
+    const shareModal = document.getElementById("share-modal");
+    const shareClose = document.getElementById("share-close");
+    const shareUrlEl = document.getElementById("share-url");
+    const shareNative = document.getElementById("share-native");
+    const shareCopy   = document.getElementById("share-copy");
+    const shareMailto = document.getElementById("share-mailto");
+    const shareTg     = document.getElementById("share-tg");
+    const shareWa     = document.getElementById("share-wa");
+    const shareViber  = document.getElementById("share-viber");
+    const shareSms    = document.getElementById("share-sms");
+
+    // Build a clean install URL pointing to the app root (not to a deep page).
+    const installUrl = (() => {
+        const u = new URL(".", location.href);
+        u.hash = "";
+        u.search = "";
+        return u.toString();
+    })();
+
+    const SHARE_TITLE = "Міні-Ігри українською";
+    const SHARE_TEXT  = "Привіт! Спробуй наші Міні-Ігри українською мовою. Можна встановити на телефон і грати офлайн.";
+
+    shareUrlEl.textContent = installUrl;
+
+    function emailBody() {
+        return (
+            "Привіт!\n\n" +
+            "Запрошую тебе спробувати Міні-Ігри українською мовою. " +
+            "Можна встановити на телефон і грати без інтернету.\n\n" +
+            "🔗 Посилання: " + installUrl + "\n\n" +
+            "Як встановити:\n" +
+            "📱 iPhone — відкрий у Safari → «Поділитися» → «На головний екран»\n" +
+            "🤖 Android — відкрий у Chrome → «Встановити додаток»\n\n" +
+            "Гарної гри!"
+        );
+    }
+
+    shareMailto.href = "mailto:?subject=" + encodeURIComponent("Міні-Ігри українською (можна встановити на телефон)") +
+        "&body=" + encodeURIComponent(emailBody());
+
+    const tgText = SHARE_TEXT + "\n\n" + installUrl;
+    shareTg.href = "https://t.me/share/url?url=" + encodeURIComponent(installUrl) +
+        "&text=" + encodeURIComponent(SHARE_TEXT);
+    shareWa.href = "https://wa.me/?text=" + encodeURIComponent(tgText);
+    shareViber.href = "viber://forward?text=" + encodeURIComponent(tgText);
+    shareSms.href = "sms:?&body=" + encodeURIComponent(tgText);
+
+    // Show native share button if supported (iOS Safari, Android Chrome, modern Edge).
+    if (navigator.share) {
+        shareNative.hidden = false;
+    }
+
+    shareBtn.addEventListener("click", async () => {
+        // If native share is available, prefer it directly.
+        if (navigator.share) {
+            try {
+                await navigator.share({ title: SHARE_TITLE, text: SHARE_TEXT, url: installUrl });
+                return;
+            } catch (_) { /* user cancelled — fall through to modal */ }
+        }
+        shareModal.classList.add("active");
+    });
+
+    shareNative.addEventListener("click", async () => {
+        try {
+            await navigator.share({ title: SHARE_TITLE, text: SHARE_TEXT, url: installUrl });
+            shareModal.classList.remove("active");
+        } catch (_) {}
+    });
+
+    shareCopy.addEventListener("click", async () => {
+        try {
+            await navigator.clipboard.writeText(installUrl);
+            toast("Посилання скопійовано ✓");
+        } catch (_) {
+            // Fallback: select text in the url box for manual copy
+            const range = document.createRange();
+            range.selectNodeContents(shareUrlEl);
+            const sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+            toast("Скопіюй виділене посилання");
+        }
+    });
+
+    shareClose.addEventListener("click", () => shareModal.classList.remove("active"));
+    shareModal.addEventListener("click", (e) => {
+        if (e.target === shareModal) shareModal.classList.remove("active");
+    });
+
+    // --- Tiny toast helper ---
+    let toastTimer = null;
+    function toast(msg) {
+        const t = document.getElementById("toast");
+        t.textContent = msg;
+        t.classList.add("show");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => t.classList.remove("show"), 2200);
+    }
+
+    // --- Update offline badge based on current cache / connection state ---
+    const offlineBadge = document.getElementById("offline-badge");
+    function refreshOfflineBadge() {
+        if (!("serviceWorker" in navigator)) {
+            offlineBadge.textContent = "Офлайн недоступний";
+            offlineBadge.style.color = "#94a3b8";
+            offlineBadge.style.borderColor = "rgba(148,163,184,0.3)";
+            offlineBadge.style.background = "rgba(148,163,184,0.1)";
+            return;
+        }
+        offlineBadge.textContent = navigator.onLine
+            ? "✓ Працює офлайн"
+            : "📴 Зараз без інтернету — все ще працює";
+    }
+    window.addEventListener("online", refreshOfflineBadge);
+    window.addEventListener("offline", refreshOfflineBadge);
+    refreshOfflineBadge();
+</script>
 
 </body>
 </html>

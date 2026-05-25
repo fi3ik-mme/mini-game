@@ -3,10 +3,36 @@ import { test, expect } from "@playwright/test";
 test.describe("Mini Games smoke tests", () => {
   test("menu lists both games", async ({ page }) => {
     await page.goto("/");
-    await expect(page).toHaveTitle(/Mini Games/i);
-    await expect(page.getByRole("heading", { name: "Mini Games" })).toBeVisible();
+    await expect(page).toHaveTitle(/Міні-Ігри/);
+    await expect(page.getByRole("heading", { name: "Міні-Ігри" })).toBeVisible();
     await expect(page.getByRole("link", { name: /Лабіринт/ })).toBeVisible();
     await expect(page.getByRole("link", { name: /Перший мільйон/ })).toBeVisible();
+  });
+
+  test("PWA assets are reachable and manifest is valid", async ({ page, request }) => {
+    const manifestRes = await request.get("/manifest.webmanifest");
+    expect(manifestRes.ok()).toBeTruthy();
+    const manifest = await manifestRes.json();
+    expect(manifest.name).toContain("Міні-Ігри");
+    expect(manifest.lang).toBe("uk");
+    expect(manifest.start_url).toBeTruthy();
+    expect(manifest.display).toBe("standalone");
+    expect(Array.isArray(manifest.icons)).toBe(true);
+    expect(manifest.icons.length).toBeGreaterThan(0);
+
+    const swRes = await request.get("/sw.js");
+    expect(swRes.ok()).toBeTruthy();
+    const swText = await swRes.text();
+    expect(swText).toContain("CACHE_NAME");
+    expect(swText).toMatch(/addEventListener\(["']fetch["']/);
+
+    const iconRes = await request.get("/icon.svg");
+    expect(iconRes.ok()).toBeTruthy();
+
+    await page.goto("/");
+    await expect(page.locator('link[rel="manifest"]')).toHaveAttribute("href", /manifest\.webmanifest$/);
+    await expect(page.locator('meta[name="theme-color"]')).toHaveAttribute("content", "#1a1a2e");
+    await expect(page.locator("#share-btn")).toBeVisible();
   });
 
   test("maze game loads and player moves", async ({ page }) => {
