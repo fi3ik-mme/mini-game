@@ -1,155 +1,497 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, viewport-fit=cover"/>
     <title>Maze Game</title>
 
     <style>
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+        html, body { overscroll-behavior: none; }
+
         body {
             margin: 0;
-            background: #1e1e1e;
+            min-height: 100vh;
+            min-height: 100dvh;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
-            font-family: Arial;
-            color: white;
+            padding: 12px 12px 24px;
+            padding-bottom: max(24px, env(safe-area-inset-bottom));
             touch-action: manipulation;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .top-bar {
+            width: 100%;
+            max-width: 480px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
         .back-link {
-            align-self: flex-start;
-            margin: 12px 0 0 16px;
-            color: #aaa;
+            color: #cbd5e1;
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            padding: 8px 12px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .back-link:hover { color: white; }
+        .back-link:active { background: rgba(255, 255, 255, 0.14); }
+
+        .difficulty {
+            display: inline-flex;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 2px;
+            gap: 2px;
+        }
+
+        .diff-btn {
+            background: transparent;
+            border: 0;
+            color: #cbd5e1;
+            font-size: 0.85rem;
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.15s, color 0.15s;
+            font-family: inherit;
+        }
+
+        .diff-btn.active {
+            background: rgba(255, 255, 255, 0.14);
+            color: white;
+            font-weight: 600;
+        }
 
         #hud {
-            margin-top: 10px;
+            width: 100%;
+            max-width: 480px;
+            margin-top: 14px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+        }
+
+        .stat {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 10px 12px;
             text-align: center;
         }
 
-        #message {
-            height: 20px;
-            color: lime;
-            margin-top: 5px;
+        .stat-label {
+            display: block;
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #94a3b8;
+            margin-bottom: 2px;
+        }
+
+        .stat-value {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: white;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .stat.best .stat-value { color: #fde68a; }
+
+        #board {
+            margin-top: 14px;
+            width: var(--board-size, 320px);
+            height: var(--board-size, 320px);
+            position: relative;
+            border-radius: 18px;
+            padding: 8px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.06);
         }
 
         #game {
             position: relative;
-            width: 300px;
-            height: 300px;
-            background: #333;
-            border: 4px solid white;
-            margin-top: 10px;
+            width: 100%;
+            height: 100%;
+            background: #0b1430;
+            border-radius: 12px;
+            overflow: hidden;
+            touch-action: none;
+        }
+
+        #player, #goal {
+            position: absolute;
+            width: var(--piece-size, 16px);
+            height: var(--piece-size, 16px);
+            border-radius: 50%;
+            transition: left 0.09s ease-out, top 0.09s ease-out;
         }
 
         #player {
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            background: red;
-            border-radius: 4px;
+            background: radial-gradient(circle at 30% 30%, #ffb4b4, #ef4444 55%, #b91c1c);
+            box-shadow: 0 0 12px rgba(239, 68, 68, 0.75), 0 2px 6px rgba(0, 0, 0, 0.4);
+            z-index: 3;
         }
 
         #goal {
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            background: limegreen;
+            background: radial-gradient(circle at 30% 30%, #c8f7d5, #22c55e 55%, #15803d);
+            box-shadow: 0 0 14px rgba(34, 197, 94, 0.7);
+            animation: pulse 1.6s infinite ease-in-out;
+            z-index: 2;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 10px rgba(34, 197, 94, 0.5); }
+            50% { transform: scale(1.18); box-shadow: 0 0 20px rgba(34, 197, 94, 0.95); }
         }
 
         .wall {
             position: absolute;
-            background: #888;
+            background: rgba(226, 232, 240, 0.85);
+            border-radius: 1px;
+        }
+
+        .trail {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(239, 68, 68, 0.22);
+            pointer-events: none;
+            z-index: 1;
         }
 
         .controls {
-            margin-top: 20px;
+            margin-top: 18px;
             display: grid;
-            grid-template-columns: 80px 80px 80px;
-            grid-template-rows: 80px 80px;
+            grid-template-columns: repeat(3, minmax(60px, 76px));
+            grid-template-rows: repeat(3, minmax(60px, 76px));
+            gap: 8px;
+        }
+
+        .ctrl {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
+            color: white;
+            font-size: 1.7rem;
+            line-height: 1;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.1s, transform 0.06s;
+            cursor: pointer;
+            font-weight: 600;
+            font-family: inherit;
+        }
+
+        .ctrl:active, .ctrl.pressed {
+            background: rgba(255, 255, 255, 0.22);
+            transform: scale(0.94);
+        }
+
+        #up    { grid-column: 2; grid-row: 1; }
+        #left  { grid-column: 1; grid-row: 2; }
+        #right { grid-column: 3; grid-row: 2; }
+        #down  { grid-column: 2; grid-row: 3; }
+
+        .actions {
+            margin-top: 14px;
+            display: flex;
             gap: 10px;
         }
 
-        button {
-            font-size: 28px;
-            border: none;
-            border-radius: 16px;
-            background: #444;
+        .action-btn {
+            padding: 10px 18px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             color: white;
-            user-select: none;
-            touch-action: none;
+            font-size: 0.95rem;
+            cursor: pointer;
+            font-family: inherit;
         }
 
-        button:active {
-            background: #777;
+        .action-btn:active { background: rgba(255, 255, 255, 0.18); }
+
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.65);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            z-index: 100;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
         }
 
-        #up { grid-column: 2; }
-        #left { grid-column: 1; grid-row: 2; }
-        #down { grid-column: 2; grid-row: 2; }
-        #right { grid-column: 3; grid-row: 2; }
+        .overlay.active { display: flex; }
+
+        .modal {
+            background: linear-gradient(180deg, #1e3a8a 0%, #1a1a2e 100%);
+            border: 2px solid rgba(255, 215, 0, 0.55);
+            border-radius: 18px;
+            padding: 24px 22px;
+            width: 100%;
+            max-width: 340px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+            animation: pop 0.28s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+        }
+
+        @keyframes pop {
+            from { transform: scale(0.8); opacity: 0; }
+            to   { transform: scale(1);   opacity: 1; }
+        }
+
+        .modal h2 {
+            margin: 0 0 4px;
+            font-size: 1.5rem;
+            color: #ffe066;
+        }
+
+        .modal .sub {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            margin: 0 0 16px;
+        }
+
+        .modal-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .modal-stat {
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .modal-stat .l {
+            font-size: 0.68rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .modal-stat .v {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: white;
+            margin-top: 2px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .new-best {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(255, 215, 0, 0.18);
+            color: #fde68a;
+            border-radius: 99px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 14px;
+        }
+
+        .modal-actions button {
+            flex: 1;
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: 0;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: #ffd700;
+            color: #1a1a2e;
+        }
+
+        .btn-primary:active { background: #f5c800; }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 360px) {
+            .controls {
+                grid-template-columns: repeat(3, 58px);
+                grid-template-rows: repeat(3, 58px);
+            }
+            .ctrl { font-size: 1.4rem; border-radius: 14px; }
+        }
     </style>
 </head>
 
 <body>
 
-<a class="back-link" href="../../index.html">← Меню</a>
-
-<div id="hud">
-    <div>Time: <span id="time">0</span>s</div>
-    <div>Best Time: <span id="bestTime">-</span>s</div>
-    <div id="message"></div>
+<div class="top-bar">
+    <a class="back-link" href="../../index.html">← Меню</a>
+    <div class="difficulty" id="difficulty">
+        <button class="diff-btn" data-size="8" type="button">Easy</button>
+        <button class="diff-btn active" data-size="12" type="button">Medium</button>
+        <button class="diff-btn" data-size="16" type="button">Hard</button>
+    </div>
 </div>
 
-<div id="game">
-    <div id="player"></div>
-    <div id="goal"></div>
+<div id="hud">
+    <div class="stat">
+        <span class="stat-label">Time</span>
+        <span class="stat-value" id="time">0s</span>
+    </div>
+    <div class="stat">
+        <span class="stat-label">Steps</span>
+        <span class="stat-value" id="steps">0</span>
+    </div>
+    <div class="stat best">
+        <span class="stat-label">Best</span>
+        <span class="stat-value" id="bestTime">—</span>
+    </div>
+</div>
+
+<div id="board">
+    <div id="game">
+        <div id="player"></div>
+        <div id="goal"></div>
+    </div>
 </div>
 
 <div class="controls">
-    <button id="up">⬆️</button>
-    <button id="left">⬅️</button>
-    <button id="down">⬇️</button>
-    <button id="right">➡️</button>
+    <button id="up" class="ctrl" aria-label="Up" type="button">↑</button>
+    <button id="left" class="ctrl" aria-label="Left" type="button">←</button>
+    <button id="right" class="ctrl" aria-label="Right" type="button">→</button>
+    <button id="down" class="ctrl" aria-label="Down" type="button">↓</button>
+</div>
+
+<div class="actions">
+    <button id="restart" class="action-btn" type="button">↻ New maze</button>
+</div>
+
+<div id="winOverlay" class="overlay" role="dialog" aria-modal="true" aria-labelledby="winTitle">
+    <div class="modal">
+        <h2 id="winTitle">🎉 You made it!</h2>
+        <p class="sub" id="winMessage">Maze solved.</p>
+        <div id="newBestRow"></div>
+        <div class="modal-stats">
+            <div class="modal-stat">
+                <div class="l">Time</div>
+                <div class="v" id="winTime">0s</div>
+            </div>
+            <div class="modal-stat">
+                <div class="l">Steps</div>
+                <div class="v" id="winSteps">0</div>
+            </div>
+        </div>
+        <div class="modal-actions">
+            <button class="btn-primary" id="winNext" type="button">Play again →</button>
+        </div>
+    </div>
 </div>
 
 <script>
+    const board = document.getElementById("board");
     const game = document.getElementById("game");
     const player = document.getElementById("player");
     const goal = document.getElementById("goal");
     const timeEl = document.getElementById("time");
+    const stepsEl = document.getElementById("steps");
     const bestTimeEl = document.getElementById("bestTime");
-    const message = document.getElementById("message");
+    const difficultyEl = document.getElementById("difficulty");
+    const restartBtn = document.getElementById("restart");
+    const winOverlay = document.getElementById("winOverlay");
+    const winTime = document.getElementById("winTime");
+    const winSteps = document.getElementById("winSteps");
+    const winMessage = document.getElementById("winMessage");
+    const winNext = document.getElementById("winNext");
+    const newBestRow = document.getElementById("newBestRow");
 
-    const size = 10;
-    const cellSize = 30;
-    const pieceSize = 16;
-    const pieceOffset = (cellSize - pieceSize) / 2;
+    let size = 12;
+    let cellSize = 24;
+    let pieceSize = 14;
+    let pieceOffset = 5;
 
     let grid = [];
+    let visited = new Set();
     let x = 0, y = 0;
+    let steps = 0;
     let locked = false;
-    let startTime;
-    let timer;
-    let keys = [];
+    let startTime = 0;
+    let elapsed = 0;
+    let timer = null;
+    let bestTime = null;
 
-    let bestTime = sessionStorage.getItem("bestTime");
-    if (bestTime !== null) bestTimeEl.textContent = bestTime;
+    function bestKey() { return "maze.best." + size; }
+
+    function loadBest() {
+        const raw = localStorage.getItem(bestKey());
+        bestTime = raw === null ? null : Number(raw);
+        bestTimeEl.textContent = bestTime === null ? "—" : bestTime + "s";
+    }
+
+    function saveBest(t) {
+        if (bestTime === null || t < bestTime) {
+            bestTime = t;
+            localStorage.setItem(bestKey(), String(t));
+            bestTimeEl.textContent = t + "s";
+            return true;
+        }
+        return false;
+    }
+
+    function computeSizes() {
+        const horizontal = Math.min(window.innerWidth - 24, 460);
+        const verticalBudget = window.innerHeight - 360;
+        const target = Math.max(260, Math.min(horizontal, Math.max(260, verticalBudget), 460));
+        const innerSize = target - 16;
+        cellSize = Math.floor(innerSize / size);
+        const realInner = cellSize * size;
+        const boardSize = realInner + 16;
+
+        pieceSize = Math.max(8, Math.round(cellSize * 0.58));
+        pieceOffset = Math.round((cellSize - pieceSize) / 2);
+
+        document.documentElement.style.setProperty("--board-size", boardSize + "px");
+        document.documentElement.style.setProperty("--piece-size", pieceSize + "px");
+    }
 
     function createGrid() {
         grid = [];
-        for (let y = 0; y < size; y++) {
-            let row = [];
-            for (let x = 0; x < size; x++) {
+        for (let yy = 0; yy < size; yy++) {
+            const row = [];
+            for (let xx = 0; xx < size; xx++) {
                 row.push({
-                    x, y,
+                    x: xx, y: yy,
                     visited: false,
-                    walls: { top:true, right:true, bottom:true, left:true }
+                    walls: { top: true, right: true, bottom: true, left: true }
                 });
             }
             grid.push(row);
@@ -157,180 +499,271 @@
     }
 
     function neighbors(c) {
-        let n = [];
-        if (c.y > 0) n.push(grid[c.y-1][c.x]);
-        if (c.y < size-1) n.push(grid[c.y+1][c.x]);
-        if (c.x > 0) n.push(grid[c.y][c.x-1]);
-        if (c.x < size-1) n.push(grid[c.y][c.x+1]);
-        return n.filter(n => !n.visited);
+        const n = [];
+        if (c.y > 0)        n.push(grid[c.y - 1][c.x]);
+        if (c.y < size - 1) n.push(grid[c.y + 1][c.x]);
+        if (c.x > 0)        n.push(grid[c.y][c.x - 1]);
+        if (c.x < size - 1) n.push(grid[c.y][c.x + 1]);
+        return n.filter(nb => !nb.visited);
     }
 
-    function remove(a,b){
-        let dx=a.x-b.x;
-        let dy=a.y-b.y;
-
-        if(dx===1){a.walls.left=false;b.walls.right=false;}
-        if(dx===-1){a.walls.right=false;b.walls.left=false;}
-        if(dy===1){a.walls.top=false;b.walls.bottom=false;}
-        if(dy===-1){a.walls.bottom=false;b.walls.top=false;}
+    function removeWall(a, b) {
+        const dx = a.x - b.x;
+        const dy = a.y - b.y;
+        if (dx === 1)  { a.walls.left = false;  b.walls.right = false; }
+        if (dx === -1) { a.walls.right = false; b.walls.left = false; }
+        if (dy === 1)  { a.walls.top = false;   b.walls.bottom = false; }
+        if (dy === -1) { a.walls.bottom = false; b.walls.top = false; }
     }
 
-    function generate(){
+    function generate() {
         createGrid();
-
-        let stack=[];
-        let cur=grid[0][0];
-        cur.visited=true;
-
-        while(true){
-            let n=neighbors(cur);
-
-            if(n.length){
-                let next=n[Math.floor(Math.random()*n.length)];
-                next.visited=true;
+        const stack = [];
+        let cur = grid[0][0];
+        cur.visited = true;
+        while (true) {
+            const n = neighbors(cur);
+            if (n.length) {
+                const next = n[Math.floor(Math.random() * n.length)];
+                next.visited = true;
                 stack.push(cur);
-                remove(cur,next);
-                cur=next;
+                removeWall(cur, next);
+                cur = next;
             } else {
-                cur=stack.pop();
-                if(!cur) break;
+                cur = stack.pop();
+                if (!cur) break;
             }
         }
     }
 
-    function draw(){
-        game.querySelectorAll(".wall").forEach(w=>w.remove());
-
-        for(let y=0;y<size;y++){
-            for(let x=0;x<size;x++){
-                let c=grid[y][x];
-                let px=x*cellSize;
-                let py=y*cellSize;
-
-                if(c.walls.top) wall(px,py,cellSize,2);
-                if(c.walls.left) wall(px,py,2,cellSize);
-            }
-        }
-
-        wall(0,size*cellSize,size*cellSize,2);
-        wall(size*cellSize,0,2,size*cellSize);
-    }
-
-    function wall(x,y,w,h){
-        let d=document.createElement("div");
-        d.className="wall";
-        d.style.left=x+"px";
-        d.style.top=y+"px";
-        d.style.width=w+"px";
-        d.style.height=h+"px";
+    function wall(px, py, w, h) {
+        const d = document.createElement("div");
+        d.className = "wall";
+        d.style.left = px + "px";
+        d.style.top = py + "px";
+        d.style.width = w + "px";
+        d.style.height = h + "px";
         game.appendChild(d);
     }
 
-    function load(){
+    function draw() {
+        game.querySelectorAll(".wall, .trail").forEach(w => w.remove());
+        const thick = Math.max(2, Math.round(cellSize * 0.08));
+        for (let yy = 0; yy < size; yy++) {
+            for (let xx = 0; xx < size; xx++) {
+                const c = grid[yy][xx];
+                const px = xx * cellSize;
+                const py = yy * cellSize;
+                if (c.walls.top)  wall(px, py, cellSize, thick);
+                if (c.walls.left) wall(px, py, thick, cellSize);
+            }
+        }
+        wall(0, size * cellSize - thick, size * cellSize, thick);
+        wall(size * cellSize - thick, 0, thick, size * cellSize);
+    }
+
+    function placePieces() {
+        player.style.left = (x * cellSize + pieceOffset) + "px";
+        player.style.top  = (y * cellSize + pieceOffset) + "px";
+        goal.style.left = ((size - 1) * cellSize + pieceOffset) + "px";
+        goal.style.top  = ((size - 1) * cellSize + pieceOffset) + "px";
+    }
+
+    function addTrail(cx, cy) {
+        const dotSize = Math.max(4, Math.round(cellSize * 0.22));
+        const offset = Math.round((cellSize - dotSize) / 2);
+        const d = document.createElement("div");
+        d.className = "trail";
+        d.style.left = (cx * cellSize + offset) + "px";
+        d.style.top  = (cy * cellSize + offset) + "px";
+        d.style.width = dotSize + "px";
+        d.style.height = dotSize + "px";
+        game.appendChild(d);
+    }
+
+    function formatElapsed() {
+        return Math.floor((Date.now() - startTime) / 1000);
+    }
+
+    function startTimer() {
+        clearInterval(timer);
+        startTime = Date.now();
+        elapsed = 0;
+        timeEl.textContent = "0s";
+        timer = setInterval(() => {
+            if (locked) return;
+            elapsed = formatElapsed();
+            timeEl.textContent = elapsed + "s";
+        }, 250);
+    }
+
+    function reset() {
+        computeSizes();
         generate();
         draw();
-
-        x=0;y=0;
-        locked=false;
-
-        player.style.left=pieceOffset+"px";
-        player.style.top=pieceOffset+"px";
-
-        goal.style.left=((size-1)*cellSize+pieceOffset)+"px";
-        goal.style.top=((size-1)*cellSize+pieceOffset)+"px";
-
-        message.textContent="";
-
+        x = 0; y = 0;
+        steps = 0;
+        visited = new Set(["0,0"]);
+        stepsEl.textContent = "0";
+        locked = false;
+        placePieces();
         startTimer();
     }
 
-    function startTimer(){
-        clearInterval(timer);
-        startTime=Date.now();
-
-        timer=setInterval(()=>{
-            if(!locked){
-                timeEl.textContent=Math.floor((Date.now()-startTime)/1000);
-            }
-        },200);
+    function vibrate(ms) {
+        if (navigator.vibrate) navigator.vibrate(ms);
     }
 
-    function can(nx,ny){
-        if(nx<0||ny<0||nx>=size||ny>=size) return false;
-
-        let c=grid[y][x];
-
-        if(nx===x+1 && c.walls.right) return false;
-        if(nx===x-1 && c.walls.left) return false;
-        if(ny===y+1 && c.walls.bottom) return false;
-        if(ny===y-1 && c.walls.top) return false;
-
+    function canMove(nx, ny) {
+        if (nx < 0 || ny < 0 || nx >= size || ny >= size) return false;
+        const c = grid[y][x];
+        if (nx === x + 1 && c.walls.right)  return false;
+        if (nx === x - 1 && c.walls.left)   return false;
+        if (ny === y + 1 && c.walls.bottom) return false;
+        if (ny === y - 1 && c.walls.top)    return false;
         return true;
     }
 
-    function move(dx,dy){
-        if(locked) return;
+    function move(dx, dy) {
+        if (locked) return false;
+        const nx = x + dx;
+        const ny = y + dy;
+        if (!canMove(nx, ny)) return false;
 
-        let nx=x+dx;
-        let ny=y+dy;
+        const key = nx + "," + ny;
+        if (!visited.has(key)) {
+            visited.add(key);
+            addTrail(x, y);
+        }
 
-        if(!can(nx,ny)) return;
-
-        x=nx;y=ny;
-
-        player.style.left=(x*cellSize+pieceOffset)+"px";
-        player.style.top=(y*cellSize+pieceOffset)+"px";
-
-        win();
+        x = nx; y = ny;
+        steps++;
+        stepsEl.textContent = String(steps);
+        player.style.left = (x * cellSize + pieceOffset) + "px";
+        player.style.top  = (y * cellSize + pieceOffset) + "px";
+        vibrate(6);
+        checkWin();
+        return true;
     }
 
-    function win(){
-        if(x===size-1 && y===size-1){
-            locked=true;
+    function checkWin() {
+        if (x === size - 1 && y === size - 1) {
+            locked = true;
+            clearInterval(timer);
+            const t = formatElapsed();
+            elapsed = t;
+            timeEl.textContent = t + "s";
+            vibrate([15, 60, 15, 60, 25]);
 
-            let t=Math.floor((Date.now()-startTime)/1000);
-            message.textContent="Finished in "+t+"s";
-
-            if(bestTime===null || t<bestTime){
-                bestTime=t;
-                sessionStorage.setItem("bestTime",bestTime);
-                bestTimeEl.textContent=bestTime;
-            }
-
-            setTimeout(load,1200);
+            const isBest = saveBest(t);
+            winTime.textContent = t + "s";
+            winSteps.textContent = String(steps);
+            winMessage.textContent = "Maze solved!";
+            newBestRow.innerHTML = isBest ? '<span class="new-best">★ New best time!</span>' : "";
+            winOverlay.classList.add("active");
         }
     }
 
-    function hold(btn,dx,dy){
-        let i;
-
-        const s=()=>i=setInterval(()=>move(dx,dy),120);
-        const e=()=>clearInterval(i);
-
-        btn.addEventListener("mousedown",s);
-        btn.addEventListener("touchstart",s);
-        btn.addEventListener("mouseup",e);
-        btn.addEventListener("touchend",e);
+    function holdControl(btn, dx, dy) {
+        let interval = null;
+        const start = (e) => {
+            if (e) e.preventDefault();
+            if (locked) return;
+            btn.classList.add("pressed");
+            move(dx, dy);
+            clearInterval(interval);
+            interval = setInterval(() => move(dx, dy), 110);
+        };
+        const stop = () => {
+            btn.classList.remove("pressed");
+            clearInterval(interval);
+            interval = null;
+        };
+        btn.addEventListener("pointerdown", start);
+        btn.addEventListener("pointerup", stop);
+        btn.addEventListener("pointerleave", stop);
+        btn.addEventListener("pointercancel", stop);
     }
 
-  const up = document.getElementById("up");
-  const down = document.getElementById("down");
-  const left = document.getElementById("left");
-  const right = document.getElementById("right");
+    holdControl(document.getElementById("up"), 0, -1);
+    holdControl(document.getElementById("down"), 0, 1);
+    holdControl(document.getElementById("left"), -1, 0);
+    holdControl(document.getElementById("right"), 1, 0);
 
-    hold(up,0,-1);
-    hold(down,0,1);
-    hold(left,-1,0);
-    hold(right,1,0);
+    let swipeStart = null;
+    const SWIPE_THRESHOLD = 22;
 
-    document.addEventListener("keydown",e=>{
-        if(e.key==="ArrowUp")move(0,-1);
-        if(e.key==="ArrowDown")move(0,1);
-        if(e.key==="ArrowLeft")move(-1,0);
-        if(e.key==="ArrowRight")move(1,0);
+    game.addEventListener("touchstart", (e) => {
+        if (e.touches.length !== 1) return;
+        swipeStart = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    }, { passive: true });
+
+    game.addEventListener("touchmove", (e) => {
+        if (!swipeStart || e.touches.length !== 1) return;
+        const t = e.touches[0];
+        const dx = t.clientX - swipeStart.x;
+        const dy = t.clientY - swipeStart.y;
+        if (Math.abs(dx) < SWIPE_THRESHOLD && Math.abs(dy) < SWIPE_THRESHOLD) return;
+
+        if (Math.abs(dx) > Math.abs(dy)) {
+            move(dx > 0 ? 1 : -1, 0);
+        } else {
+            move(0, dy > 0 ? 1 : -1);
+        }
+        swipeStart = { x: t.clientX, y: t.clientY };
+    }, { passive: true });
+
+    game.addEventListener("touchend", () => { swipeStart = null; });
+    game.addEventListener("touchcancel", () => { swipeStart = null; });
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowUp")    { e.preventDefault(); move(0, -1); }
+        if (e.key === "ArrowDown")  { e.preventDefault(); move(0, 1); }
+        if (e.key === "ArrowLeft")  { e.preventDefault(); move(-1, 0); }
+        if (e.key === "ArrowRight") { e.preventDefault(); move(1, 0); }
     });
 
-    load();
+    difficultyEl.addEventListener("click", (e) => {
+        const btn = e.target.closest(".diff-btn");
+        if (!btn) return;
+        const newSize = Number(btn.dataset.size);
+        if (newSize === size) return;
+        difficultyEl.querySelectorAll(".diff-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        size = newSize;
+        loadBest();
+        winOverlay.classList.remove("active");
+        reset();
+    });
+
+    restartBtn.addEventListener("click", () => {
+        winOverlay.classList.remove("active");
+        reset();
+    });
+
+    winNext.addEventListener("click", () => {
+        winOverlay.classList.remove("active");
+        reset();
+    });
+
+    let resizeRaf = null;
+    window.addEventListener("resize", () => {
+        if (resizeRaf) cancelAnimationFrame(resizeRaf);
+        resizeRaf = requestAnimationFrame(() => {
+            computeSizes();
+            draw();
+            placePieces();
+            game.querySelectorAll(".trail").forEach(t => t.remove());
+            visited.forEach(key => {
+                const [tx, ty] = key.split(",").map(Number);
+                if (tx === x && ty === y) return;
+                addTrail(tx, ty);
+            });
+        });
+    });
+
+    loadBest();
+    reset();
 </script>
 
 </body>
