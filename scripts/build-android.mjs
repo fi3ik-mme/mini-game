@@ -59,10 +59,10 @@ const KEY_PASS = process.env.BUBBLEWRAP_KEY_PASSWORD || "minigames";
  *   - release.json at the repo root, which the live site exposes so any
  *     installed APK can poll it and prompt the user to update.
  * --------------------------------------------------------------------------- */
-const APP_VERSION_CODE = 2;
-const APP_VERSION_NAME = "1.1.0";
+const APP_VERSION_CODE = 3;
+const APP_VERSION_NAME = "1.2.0";
 const RELEASE_NOTES =
-  "Додано «Академію пригод» з 3 темами та 60 запитаннями, виправлено вікно «Запросити друзів».";
+  "У «Першому мільйоні» тепер ілюстрації до кожного питання в усіх 8 предметах і нові іконки у списку предметів.";
 
 const log = new ConsoleLog("build-android");
 

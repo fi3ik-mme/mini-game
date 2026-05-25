@@ -1,0 +1,1162 @@
+{
+  "title": "Українська мова",
+  "subject": "Українська мова",
+  "grade": "4 клас (НУШ)",
+  "questions": [
+    {
+      "text": "У якому слові наголос падає на перший склад?",
+      "answers": [
+        "книжки́",
+        "кни́га",
+        "пиро́га",
+        "вікно́"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"70\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"34\" font-weight=\"900\" fill=\"#fde68a\">кни́га</text>\n      <text x=\"160\" y=\"100\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">наголос на «и́»</text></svg>"
+    },
+    {
+      "text": "Яке слово є іменником?",
+      "answers": [
+        "швидко",
+        "синій",
+        "школа",
+        "читати"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 160\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"160\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"20\" y=\"20\" width=\"280\" height=\"40\" rx=\"20\" fill=\"#fbbf24\"/>\n      <text x=\"160\" y=\"46\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#0f172a\">іменник</text>\n      <text x=\"160\" y=\"86\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" fill=\"#fde68a\">школа</text>\n      <text x=\"160\" y=\"120\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">що? хто? — предмет</text></svg>"
+    },
+    {
+      "text": "У реченні «Діти грають у дворі» підмет — це:",
+      "answers": [
+        "грають",
+        "діти",
+        "у дворі",
+        "грають у дворі"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 140\" style=\"width:330px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"360\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"180\" y=\"50\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" fill=\"#fde68a\">Діти грають у дворі</text>\n      <line x1=\"40\" y1=\"58\" x2=\"320\" y2=\"58\" stroke=\"#fbbf24\" stroke-width=\"0.5\" opacity=\"0.3\"/>\n      <g font-family=\"Inter, Arial\" font-size=\"12\">\n        <text x=\"60\" y=\"92\" fill=\"#34d399\" font-weight=\"800\">діти</text>\n        <text x=\"60\" y=\"108\" fill=\"#bbf7d0\">— підмет (хто? що?)</text>\n        <text x=\"220\" y=\"92\" fill=\"#fb923c\" font-weight=\"800\">присудок</text>\n        <text x=\"220\" y=\"108\" fill=\"#fed7aa\">— присудок (що робить?)</text>\n      </g></svg>"
+    },
+    {
+      "text": "Яке слово написано правильно?",
+      "answers": [
+        "биологія",
+        "біологія",
+        "біоллогія",
+        "біолгія"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"74\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"26\" font-weight=\"900\" fill=\"#34d399\">✓ біологія</text>\n      <text x=\"160\" y=\"108\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#bbf7d0\">правильне написання</text></svg>"
+    },
+    {
+      "text": "Скільки приголосних звуків у слові «сніг»?",
+      "answers": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 160\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"160\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"60\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"32\" font-weight=\"900\"><tspan fill=\"#34d399\">с</tspan><tspan fill=\"#34d399\">н</tspan><tspan fill=\"#fbbf24\">і</tspan><tspan fill=\"#34d399\">г</tspan></text>\n      <text x=\"160\" y=\"100\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#fbbf24\" font-weight=\"800\">1 голосних</text>\n      <text x=\"160\" y=\"120\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#34d399\" font-weight=\"800\">3 приголосних</text>\n      <text x=\"160\" y=\"146\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">всього 4 звуків</text></svg>"
+    },
+    {
+      "text": "Яке слово є дієсловом?",
+      "answers": [
+        "веселий",
+        "співати",
+        "спів",
+        "співак"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 160\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"160\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"20\" y=\"20\" width=\"280\" height=\"40\" rx=\"20\" fill=\"#dc2626\"/>\n      <text x=\"160\" y=\"46\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#0f172a\">дієслово</text>\n      <text x=\"160\" y=\"86\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" fill=\"#fde68a\">співати</text>\n      <text x=\"160\" y=\"120\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">що робить? — дія</text></svg>"
+    },
+    {
+      "text": "У слові «лісник» корінь — це:",
+      "answers": [
+        "ліс",
+        "ник",
+        "лісник",
+        "лісн"
+      ],
+      "correct": 0,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">У слові «лісник» корінь — це:</span><br><b style=\"color:#34d399;font-size:1.1em\">ліс</b></div>"
+    },
+    {
+      "text": "Яке речення є питальним?",
+      "answers": [
+        "Я люблю читати.",
+        "Як тебе звати?",
+        "Сонце світить яскраво.",
+        "Підемо гуляти."
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Яке речення є питальним</span><br><b style=\"color:#34d399;font-size:1.1em\">Як тебе звати?</b></div>"
+    },
+    {
+      "text": "Яке слово є синонімом до слова «швидкий»?",
+      "answers": [
+        "повільний",
+        "миттєвий",
+        "великий",
+        "тихий"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"40\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" font-weight=\"800\" fill=\"#fbbf24\">синоніми (схоже значення)</text>\n      <text x=\"80\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#34d399\">швидкий</text>\n      <text x=\"160\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"22\" fill=\"#fbbf24\">≈</text>\n      <text x=\"240\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#a78bfa\">миттєвий</text></svg>"
+    },
+    {
+      "text": "У слові «подружка» суфікс — це:",
+      "answers": [
+        "по-",
+        "-друж-",
+        "-к-",
+        "-а"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">У слові «подружка» суфікс — це:</span><br><b style=\"color:#34d399;font-size:1.1em\">-к-</b></div>"
+    },
+    {
+      "text": "Яке слово написано з великої літери правильно?",
+      "answers": [
+        "україна",
+        "Україна",
+        "украЇна",
+        "УкраїнА"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"74\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"26\" font-weight=\"900\" fill=\"#34d399\">✓ Україна</text>\n      <text x=\"160\" y=\"108\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#bbf7d0\">правильне написання</text></svg>"
+    },
+    {
+      "text": "Яка частина мови відповідає на питання «який? яка? яке?»?",
+      "answers": [
+        "іменник",
+        "прикметник",
+        "дієслово",
+        "прислівник"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 160\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"160\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"20\" y=\"20\" width=\"280\" height=\"40\" rx=\"20\" fill=\"#fbbf24\"/>\n      <text x=\"160\" y=\"46\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#0f172a\">іменник</text>\n      <text x=\"160\" y=\"86\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" fill=\"#fde68a\">прикметник</text>\n      <text x=\"160\" y=\"120\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">що? хто? — предмет</text></svg>"
+    },
+    {
+      "text": "У реченні «Мама пече пиріг» присудок — це:",
+      "answers": [
+        "мама",
+        "пече",
+        "пиріг",
+        "пече пиріг"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 140\" style=\"width:330px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"360\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"180\" y=\"50\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" fill=\"#fde68a\">Мама пече пиріг</text>\n      <line x1=\"40\" y1=\"58\" x2=\"320\" y2=\"58\" stroke=\"#fbbf24\" stroke-width=\"0.5\" opacity=\"0.3\"/>\n      <g font-family=\"Inter, Arial\" font-size=\"12\">\n        <text x=\"60\" y=\"92\" fill=\"#34d399\" font-weight=\"800\">підмет</text>\n        <text x=\"60\" y=\"108\" fill=\"#bbf7d0\">— підмет (хто? що?)</text>\n        <text x=\"220\" y=\"92\" fill=\"#fb923c\" font-weight=\"800\">пече</text>\n        <text x=\"220\" y=\"108\" fill=\"#fed7aa\">— присудок (що робить?)</text>\n      </g></svg>"
+    },
+    {
+      "text": "Яке слово є антонімом до слова «день»?",
+      "answers": [
+        "ранок",
+        "вечір",
+        "ніч",
+        "полудень"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"40\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" font-weight=\"800\" fill=\"#fbbf24\">антоніми (протилежне)</text>\n      <text x=\"80\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#34d399\">день</text>\n      <text x=\"160\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"22\" fill=\"#fbbf24\">↔</text>\n      <text x=\"240\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#a78bfa\">ніч</text></svg>"
+    },
+    {
+      "text": "Скільки слів у реченні «Весна прийшла рано цього року»?",
+      "answers": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Скільки слів у реченні «Весна прийшла рано цього року»</span><br><b style=\"color:#34d399;font-size:1.1em\">5</b></div>"
+    },
+    {
+      "text": "Скільки літер в українському алфавіті?",
+      "answers": [
+        "29",
+        "32",
+        "33",
+        "36"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 140\" style=\"width:340px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"360\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"180\" y=\"50\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"13\" fill=\"#fbbf24\" font-weight=\"700\">Українська абетка</text>\n      <text x=\"180\" y=\"80\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"12\" fill=\"#fde68a\">А Б В Г Ґ Д Е Є Ж З И І Ї Й К Л</text>\n      <text x=\"180\" y=\"102\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"12\" fill=\"#fde68a\">М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ь Ю Я</text>\n      <text x=\"180\" y=\"128\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">33 літери · 38 звуків</text></svg>"
+    },
+    {
+      "text": "Скільки голосних букв в українській мові?",
+      "answers": [
+        "6",
+        "8",
+        "10",
+        "12"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Скільки голосних букв в українській мові</span><br><b style=\"color:#34d399;font-size:1.1em\">10</b></div>"
+    },
+    {
+      "text": "Яка літера не позначає звука?",
+      "answers": [
+        "й",
+        "щ",
+        "ь",
+        "ї"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 140\" style=\"width:340px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"360\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"180\" y=\"50\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"13\" fill=\"#fbbf24\" font-weight=\"700\">Українська абетка</text>\n      <text x=\"180\" y=\"80\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"12\" fill=\"#fde68a\">А Б В Г Ґ Д Е Є Ж З И І Ї Й К Л</text>\n      <text x=\"180\" y=\"102\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"12\" fill=\"#fde68a\">М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ь Ю Я</text>\n      <text x=\"180\" y=\"128\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">33 літери · 38 звуків</text></svg>"
+    },
+    {
+      "text": "Скільки складів у слові «олівець»?",
+      "answers": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Скільки складів у слові «олівець»</span><br><b style=\"color:#34d399;font-size:1.1em\">3</b></div>"
+    },
+    {
+      "text": "Скільки складів у слові «дерево»?",
+      "answers": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Скільки складів у слові «дерево»</span><br><b style=\"color:#34d399;font-size:1.1em\">3</b></div>"
+    },
+    {
+      "text": "Скільки голосних звуків у слові «зошит»?",
+      "answers": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 160\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"160\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"60\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"32\" font-weight=\"900\"><tspan fill=\"#34d399\">з</tspan><tspan fill=\"#fbbf24\">о</tspan><tspan fill=\"#34d399\">ш</tspan><tspan fill=\"#fbbf24\">и</tspan><tspan fill=\"#34d399\">т</tspan></text>\n      <text x=\"160\" y=\"100\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#fbbf24\" font-weight=\"800\">2 голосних</text>\n      <text x=\"160\" y=\"120\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#34d399\" font-weight=\"800\">3 приголосних</text>\n      <text x=\"160\" y=\"146\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">всього 5 звуків</text></svg>"
+    },
+    {
+      "text": "Який знак ставимо у слові «з'їзд»?",
+      "answers": [
+        "м'який знак",
+        "апостроф",
+        "тире",
+        "кома"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Який знак ставимо у слові «з'їзд»</span><br><b style=\"color:#34d399;font-size:1.1em\">апостроф</b></div>"
+    },
+    {
+      "text": "Яке слово пишемо з апострофом?",
+      "answers": [
+        "буряк",
+        "сімя",
+        "сім'я",
+        "тісто"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Яке слово пишемо з апострофом</span><br><b style=\"color:#34d399;font-size:1.1em\">сім'я</b></div>"
+    },
+    {
+      "text": "У якому слові пишемо м'який знак?",
+      "answers": [
+        "день",
+        "школа",
+        "мама",
+        "читати"
+      ],
+      "correct": 0,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">У якому слові пишемо м'який знак</span><br><b style=\"color:#34d399;font-size:1.1em\">день</b></div>"
+    },
+    {
+      "text": "Яка з букв є йотованою?",
+      "answers": [
+        "а",
+        "о",
+        "я",
+        "у"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Яка з букв є йотованою</span><br><b style=\"color:#34d399;font-size:1.1em\">я</b></div>"
+    },
+    {
+      "text": "Яка пара дзвінкого і глухого приголосних правильна?",
+      "answers": [
+        "б — п",
+        "м — н",
+        "л — р",
+        "й — щ"
+      ],
+      "correct": 0,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Яка пара дзвінкого і глухого приголосних правильна</span><br><b style=\"color:#34d399;font-size:1.1em\">б — п</b></div>"
+    },
+    {
+      "text": "У слові «дзвін» скільки звуків?",
+      "answers": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">У слові «дзвін» скільки звуків</span><br><b style=\"color:#34d399;font-size:1.1em\">4</b></div>"
+    },
+    {
+      "text": "Питання «що робить?» ставимо до:",
+      "answers": [
+        "іменника",
+        "прикметника",
+        "дієслова",
+        "прислівника"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 160\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"160\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"20\" y=\"20\" width=\"280\" height=\"40\" rx=\"20\" fill=\"#fbbf24\"/>\n      <text x=\"160\" y=\"46\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#0f172a\">іменник</text>\n      <text x=\"160\" y=\"86\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" fill=\"#fde68a\">дієслова</text>\n      <text x=\"160\" y=\"120\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">що? хто? — предмет</text></svg>"
+    },
+    {
+      "text": "Питання «хто? що?» ставимо до:",
+      "answers": [
+        "іменника",
+        "прикметника",
+        "дієслова",
+        "прислівника"
+      ],
+      "correct": 0,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 160\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"160\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"20\" y=\"20\" width=\"280\" height=\"40\" rx=\"20\" fill=\"#fbbf24\"/>\n      <text x=\"160\" y=\"46\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#0f172a\">іменник</text>\n      <text x=\"160\" y=\"86\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" fill=\"#fde68a\">іменника</text>\n      <text x=\"160\" y=\"120\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">що? хто? — предмет</text></svg>"
+    },
+    {
+      "text": "Слово «червоний» — яка частина мови?",
+      "answers": [
+        "іменник",
+        "прикметник",
+        "дієслово",
+        "прислівник"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 160\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"160\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"20\" y=\"20\" width=\"280\" height=\"40\" rx=\"20\" fill=\"#fbbf24\"/>\n      <text x=\"160\" y=\"46\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#0f172a\">іменник</text>\n      <text x=\"160\" y=\"86\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" fill=\"#fde68a\">прикметник</text>\n      <text x=\"160\" y=\"120\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">що? хто? — предмет</text></svg>"
+    },
+    {
+      "text": "Слово «гарно» — яка частина мови?",
+      "answers": [
+        "іменник",
+        "прикметник",
+        "дієслово",
+        "прислівник"
+      ],
+      "correct": 3,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 160\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"160\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"20\" y=\"20\" width=\"280\" height=\"40\" rx=\"20\" fill=\"#fbbf24\"/>\n      <text x=\"160\" y=\"46\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#0f172a\">іменник</text>\n      <text x=\"160\" y=\"86\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" fill=\"#fde68a\">прислівник</text>\n      <text x=\"160\" y=\"120\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">що? хто? — предмет</text></svg>"
+    },
+    {
+      "text": "Який ряд складається тільки із займенників?",
+      "answers": [
+        "я, ти, він",
+        "стіл, кіт, дім",
+        "великий, малий, новий",
+        "бігти, читати, грати"
+      ],
+      "correct": 0,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 160\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"160\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"20\" y=\"20\" width=\"280\" height=\"40\" rx=\"20\" fill=\"#0ea5e9\"/>\n      <text x=\"160\" y=\"46\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#0f172a\">займенник</text>\n      <text x=\"160\" y=\"86\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" fill=\"#fde68a\">я, ти, він</text>\n      <text x=\"160\" y=\"120\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">я, ти, він, вона, воно, ми, ви, вони</text></svg>"
+    },
+    {
+      "text": "Який ряд складається тільки з числівників?",
+      "answers": [
+        "один, п'ять, десять",
+        "я, ти, ми",
+        "школа, парта, олівець",
+        "білий, синій, зелений"
+      ],
+      "correct": 0,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 160\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"160\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"20\" y=\"20\" width=\"280\" height=\"40\" rx=\"20\" fill=\"#f97316\"/>\n      <text x=\"160\" y=\"46\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#0f172a\">числівник</text>\n      <text x=\"160\" y=\"86\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" fill=\"#fde68a\">один, п'ять, десять</text>\n      <text x=\"160\" y=\"120\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">скільки? — кількість</text></svg>"
+    },
+    {
+      "text": "Яке слово є прийменником?",
+      "answers": [
+        "на",
+        "ходити",
+        "гарний",
+        "син"
+      ],
+      "correct": 0,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Яке слово є прийменником</span><br><b style=\"color:#34d399;font-size:1.1em\">на</b></div>"
+    },
+    {
+      "text": "Яке слово є сполучником?",
+      "answers": [
+        "і",
+        "бігти",
+        "дім",
+        "синій"
+      ],
+      "correct": 0,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Яке слово є сполучником</span><br><b style=\"color:#34d399;font-size:1.1em\">і</b></div>"
+    },
+    {
+      "text": "Скільки відмінків в українській мові?",
+      "answers": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Скільки відмінків в українській мові</span><br><b style=\"color:#34d399;font-size:1.1em\">7</b></div>"
+    },
+    {
+      "text": "Питання «кого? чого?» — це питання якого відмінка?",
+      "answers": [
+        "називного",
+        "родового",
+        "давального",
+        "знахідного"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Питання «кого? чого?» — це питання якого відмінка</span><br><b style=\"color:#34d399;font-size:1.1em\">родового</b></div>"
+    },
+    {
+      "text": "Питання «хто? що?» — це питання якого відмінка?",
+      "answers": [
+        "називного",
+        "родового",
+        "давального",
+        "орудного"
+      ],
+      "correct": 0,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Питання «хто? що?» — це питання якого відмінка</span><br><b style=\"color:#34d399;font-size:1.1em\">називного</b></div>"
+    },
+    {
+      "text": "Скільки часів має дієслово в українській мові?",
+      "answers": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <g font-family=\"Inter, Arial\" font-size=\"14\" font-weight=\"800\" text-anchor=\"middle\">\n        <rect x=\"20\" y=\"40\" width=\"80\" height=\"50\" rx=\"6\" fill=\"#1e293b\" stroke=\"#334155\"/>\n        <text x=\"60\" y=\"62\" fill=\"#cbd5e1\">минулий</text>\n        <text x=\"60\" y=\"80\" font-size=\"11\" fill=\"#94a3b8\">що робив?</text>\n\n        <rect x=\"120\" y=\"40\" width=\"80\" height=\"50\" rx=\"6\" fill=\"#fbbf24\" stroke=\"#334155\"/>\n        <text x=\"160\" y=\"62\" fill=\"#0f172a\">теперішній</text>\n        <text x=\"160\" y=\"80\" font-size=\"11\" fill=\"#0f172a\">що робить?</text>\n\n        <rect x=\"220\" y=\"40\" width=\"80\" height=\"50\" rx=\"6\" fill=\"#1e293b\" stroke=\"#334155\"/>\n        <text x=\"260\" y=\"62\" fill=\"#cbd5e1\">майбутній</text>\n        <text x=\"260\" y=\"80\" font-size=\"11\" fill=\"#94a3b8\">що буде робити?</text>\n      </g></svg>"
+    },
+    {
+      "text": "Слово «писав» — це дієслово якого часу?",
+      "answers": [
+        "минулого",
+        "теперішнього",
+        "майбутнього",
+        "не дієслово"
+      ],
+      "correct": 0,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <g font-family=\"Inter, Arial\" font-size=\"14\" font-weight=\"800\" text-anchor=\"middle\">\n        <rect x=\"20\" y=\"40\" width=\"80\" height=\"50\" rx=\"6\" fill=\"#34d399\" stroke=\"#334155\"/>\n        <text x=\"60\" y=\"62\" fill=\"#0f172a\">минулий</text>\n        <text x=\"60\" y=\"80\" font-size=\"11\" fill=\"#0f172a\">що робив?</text>\n\n        <rect x=\"120\" y=\"40\" width=\"80\" height=\"50\" rx=\"6\" fill=\"#1e293b\" stroke=\"#334155\"/>\n        <text x=\"160\" y=\"62\" fill=\"#cbd5e1\">теперішній</text>\n        <text x=\"160\" y=\"80\" font-size=\"11\" fill=\"#94a3b8\">що робить?</text>\n\n        <rect x=\"220\" y=\"40\" width=\"80\" height=\"50\" rx=\"6\" fill=\"#1e293b\" stroke=\"#334155\"/>\n        <text x=\"260\" y=\"62\" fill=\"#cbd5e1\">майбутній</text>\n        <text x=\"260\" y=\"80\" font-size=\"11\" fill=\"#94a3b8\">що буде робити?</text>\n      </g></svg>"
+    },
+    {
+      "text": "Слово «пише» — це дієслово якого часу?",
+      "answers": [
+        "минулого",
+        "теперішнього",
+        "майбутнього",
+        "не дієслово"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <g font-family=\"Inter, Arial\" font-size=\"14\" font-weight=\"800\" text-anchor=\"middle\">\n        <rect x=\"20\" y=\"40\" width=\"80\" height=\"50\" rx=\"6\" fill=\"#1e293b\" stroke=\"#334155\"/>\n        <text x=\"60\" y=\"62\" fill=\"#cbd5e1\">минулий</text>\n        <text x=\"60\" y=\"80\" font-size=\"11\" fill=\"#94a3b8\">що робив?</text>\n\n        <rect x=\"120\" y=\"40\" width=\"80\" height=\"50\" rx=\"6\" fill=\"#fbbf24\" stroke=\"#334155\"/>\n        <text x=\"160\" y=\"62\" fill=\"#0f172a\">теперішній</text>\n        <text x=\"160\" y=\"80\" font-size=\"11\" fill=\"#0f172a\">що робить?</text>\n\n        <rect x=\"220\" y=\"40\" width=\"80\" height=\"50\" rx=\"6\" fill=\"#1e293b\" stroke=\"#334155\"/>\n        <text x=\"260\" y=\"62\" fill=\"#cbd5e1\">майбутній</text>\n        <text x=\"260\" y=\"80\" font-size=\"11\" fill=\"#94a3b8\">що буде робити?</text>\n      </g></svg>"
+    },
+    {
+      "text": "Слово «писатиме» — це дієслово якого часу?",
+      "answers": [
+        "минулого",
+        "теперішнього",
+        "майбутнього",
+        "наказового способу"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <g font-family=\"Inter, Arial\" font-size=\"14\" font-weight=\"800\" text-anchor=\"middle\">\n        <rect x=\"20\" y=\"40\" width=\"80\" height=\"50\" rx=\"6\" fill=\"#1e293b\" stroke=\"#334155\"/>\n        <text x=\"60\" y=\"62\" fill=\"#cbd5e1\">минулий</text>\n        <text x=\"60\" y=\"80\" font-size=\"11\" fill=\"#94a3b8\">що робив?</text>\n\n        <rect x=\"120\" y=\"40\" width=\"80\" height=\"50\" rx=\"6\" fill=\"#1e293b\" stroke=\"#334155\"/>\n        <text x=\"160\" y=\"62\" fill=\"#cbd5e1\">теперішній</text>\n        <text x=\"160\" y=\"80\" font-size=\"11\" fill=\"#94a3b8\">що робить?</text>\n\n        <rect x=\"220\" y=\"40\" width=\"80\" height=\"50\" rx=\"6\" fill=\"#a78bfa\" stroke=\"#334155\"/>\n        <text x=\"260\" y=\"62\" fill=\"#0f172a\">майбутній</text>\n        <text x=\"260\" y=\"80\" font-size=\"11\" fill=\"#0f172a\">що буде робити?</text>\n      </g></svg>"
+    },
+    {
+      "text": "Скільки родів мають іменники в українській мові?",
+      "answers": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 160\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"160\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"20\" y=\"20\" width=\"280\" height=\"40\" rx=\"20\" fill=\"#fbbf24\"/>\n      <text x=\"160\" y=\"46\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#0f172a\">іменник</text>\n      <text x=\"160\" y=\"86\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" fill=\"#fde68a\">3</text>\n      <text x=\"160\" y=\"120\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">що? хто? — предмет</text></svg>"
+    },
+    {
+      "text": "Іменник «книга» — якого роду?",
+      "answers": [
+        "чоловічого",
+        "жіночого",
+        "середнього",
+        "спільного"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 160\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"160\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"20\" y=\"20\" width=\"280\" height=\"40\" rx=\"20\" fill=\"#fbbf24\"/>\n      <text x=\"160\" y=\"46\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#0f172a\">іменник</text>\n      <text x=\"160\" y=\"86\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" fill=\"#fde68a\">жіночого</text>\n      <text x=\"160\" y=\"120\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">що? хто? — предмет</text></svg>"
+    },
+    {
+      "text": "Іменник «дерево» — якого роду?",
+      "answers": [
+        "чоловічого",
+        "жіночого",
+        "середнього",
+        "спільного"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 160\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"160\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"20\" y=\"20\" width=\"280\" height=\"40\" rx=\"20\" fill=\"#fbbf24\"/>\n      <text x=\"160\" y=\"46\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#0f172a\">іменник</text>\n      <text x=\"160\" y=\"86\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" fill=\"#fde68a\">середнього</text>\n      <text x=\"160\" y=\"120\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">що? хто? — предмет</text></svg>"
+    },
+    {
+      "text": "Іменник «учень» — якого роду?",
+      "answers": [
+        "чоловічого",
+        "жіночого",
+        "середнього",
+        "спільного"
+      ],
+      "correct": 0,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 160\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"160\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"20\" y=\"20\" width=\"280\" height=\"40\" rx=\"20\" fill=\"#fbbf24\"/>\n      <text x=\"160\" y=\"46\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#0f172a\">іменник</text>\n      <text x=\"160\" y=\"86\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" fill=\"#fde68a\">чоловічого</text>\n      <text x=\"160\" y=\"120\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">що? хто? — предмет</text></svg>"
+    },
+    {
+      "text": "Підкресленим членом речення «Книга лежить на столі.» є...:",
+      "answers": [
+        "Книга — підмет",
+        "лежить — підмет",
+        "на столі — підмет",
+        "немає підмета"
+      ],
+      "correct": 0,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 140\" style=\"width:330px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"360\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"180\" y=\"50\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" fill=\"#fde68a\">Книга лежить на столі.</text>\n      <line x1=\"40\" y1=\"58\" x2=\"320\" y2=\"58\" stroke=\"#fbbf24\" stroke-width=\"0.5\" opacity=\"0.3\"/>\n      <g font-family=\"Inter, Arial\" font-size=\"12\">\n        <text x=\"60\" y=\"92\" fill=\"#34d399\" font-weight=\"800\">Книга — підмет</text>\n        <text x=\"60\" y=\"108\" fill=\"#bbf7d0\">— підмет (хто? що?)</text>\n        <text x=\"220\" y=\"92\" fill=\"#fb923c\" font-weight=\"800\">присудок</text>\n        <text x=\"220\" y=\"108\" fill=\"#fed7aa\">— присудок (що робить?)</text>\n      </g></svg>"
+    },
+    {
+      "text": "Яке речення є окличним?",
+      "answers": [
+        "Я читаю книгу.",
+        "Як гарно надворі!",
+        "Котра година?",
+        "Принеси зошит."
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Яке речення є окличним</span><br><b style=\"color:#34d399;font-size:1.1em\">Як гарно надворі!</b></div>"
+    },
+    {
+      "text": "Яке речення є спонукальним?",
+      "answers": [
+        "Сонце світить яскраво.",
+        "Котра година?",
+        "Закрий, будь ласка, двері.",
+        "Який гарний день!"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Яке речення є спонукальним</span><br><b style=\"color:#34d399;font-size:1.1em\">Закрий, будь ласка, двері.</b></div>"
+    },
+    {
+      "text": "Яке речення є розповідним?",
+      "answers": [
+        "Учень пише диктант.",
+        "Хто це?",
+        "Біжи швидше!",
+        "Як шкода!"
+      ],
+      "correct": 0,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Яке речення є розповідним</span><br><b style=\"color:#34d399;font-size:1.1em\">Учень пише диктант.</b></div>"
+    },
+    {
+      "text": "Який знак ставимо у кінці питального речення?",
+      "answers": [
+        ".",
+        "?",
+        "!",
+        "..."
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 220 140\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"220\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"110\" y=\"78\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"60\" font-weight=\"900\" fill=\"#fbbf24\">?</text>\n      <text x=\"110\" y=\"116\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#fde68a\">знак питання — у кінці питального речення</text></svg>"
+    },
+    {
+      "text": "Який знак ставимо у кінці окличного речення?",
+      "answers": [
+        ".",
+        "?",
+        "!",
+        ","
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 220 140\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"220\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"110\" y=\"78\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"60\" font-weight=\"900\" fill=\"#fbbf24\">!</text>\n      <text x=\"110\" y=\"116\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#fde68a\">знак оклику — сильна емоція</text></svg>"
+    },
+    {
+      "text": "У слові «садівник» корінь — це:",
+      "answers": [
+        "сад",
+        "сад-",
+        "садів-",
+        "-ник"
+      ],
+      "correct": 0,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">У слові «садівник» корінь — це:</span><br><b style=\"color:#34d399;font-size:1.1em\">сад</b></div>"
+    },
+    {
+      "text": "У слові «прийшов» префікс — це:",
+      "answers": [
+        "при-",
+        "-й-",
+        "-шов",
+        "-ов"
+      ],
+      "correct": 0,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">У слові «прийшов» префікс — це:</span><br><b style=\"color:#34d399;font-size:1.1em\">при-</b></div>"
+    },
+    {
+      "text": "У слові «розмовляти» префікс — це:",
+      "answers": [
+        "роз-",
+        "роз",
+        "-мов-",
+        "-ляти"
+      ],
+      "correct": 0,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">У слові «розмовляти» префікс — це:</span><br><b style=\"color:#34d399;font-size:1.1em\">роз-</b></div>"
+    },
+    {
+      "text": "У слові «школа» закінчення — це:",
+      "answers": [
+        "шк-",
+        "-кол-",
+        "-о",
+        "-а"
+      ],
+      "correct": 3,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">У слові «школа» закінчення — це:</span><br><b style=\"color:#34d399;font-size:1.1em\">-а</b></div>"
+    },
+    {
+      "text": "У слові «вікно» закінчення — це:",
+      "answers": [
+        "в-",
+        "-ік-",
+        "-н-",
+        "-о"
+      ],
+      "correct": 3,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">У слові «вікно» закінчення — це:</span><br><b style=\"color:#34d399;font-size:1.1em\">-о</b></div>"
+    },
+    {
+      "text": "Спільнокореневі слова — це слова з:",
+      "answers": [
+        "однаковим закінченням",
+        "однаковим коренем",
+        "однаковим наголосом",
+        "однаковою кількістю звуків"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Спільнокореневі слова — це слова з:</span><br><b style=\"color:#34d399;font-size:1.1em\">однаковим коренем</b></div>"
+    },
+    {
+      "text": "Який ряд складається тільки зі спільнокореневих слів?",
+      "answers": [
+        "ліс, лісовий, лісник",
+        "стіл, столиця, стояти",
+        "бігти, бігун, бігаю — стрибати",
+        "сад, садок, сила"
+      ],
+      "correct": 0,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Який ряд складається тільки зі спільнокореневих слів</span><br><b style=\"color:#34d399;font-size:1.1em\">ліс, лісовий, лісник</b></div>"
+    },
+    {
+      "text": "Слова, які мають близьке значення, називають:",
+      "answers": [
+        "синонімами",
+        "антонімами",
+        "омонімами",
+        "паронімами"
+      ],
+      "correct": 0,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"40\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" font-weight=\"800\" fill=\"#fbbf24\">синоніми (схоже значення)</text>\n      <text x=\"80\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#34d399\"></text>\n      <text x=\"160\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"22\" fill=\"#fbbf24\">≈</text>\n      <text x=\"240\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#a78bfa\">синонімами</text></svg>"
+    },
+    {
+      "text": "Слова з протилежним значенням називають:",
+      "answers": [
+        "синонімами",
+        "антонімами",
+        "омонімами",
+        "омофонами"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"40\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" font-weight=\"800\" fill=\"#fbbf24\">синоніми (схоже значення)</text>\n      <text x=\"80\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#34d399\"></text>\n      <text x=\"160\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"22\" fill=\"#fbbf24\">≈</text>\n      <text x=\"240\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#a78bfa\">антонімами</text></svg>"
+    },
+    {
+      "text": "Який синонім до слова «гарний»?",
+      "answers": [
+        "потворний",
+        "красивий",
+        "сумний",
+        "сильний"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"40\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" font-weight=\"800\" fill=\"#fbbf24\">синоніми (схоже значення)</text>\n      <text x=\"80\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#34d399\">гарний</text>\n      <text x=\"160\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"22\" fill=\"#fbbf24\">≈</text>\n      <text x=\"240\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#a78bfa\">красивий</text></svg>"
+    },
+    {
+      "text": "Який синонім до слова «сміливий»?",
+      "answers": [
+        "боягузливий",
+        "відважний",
+        "слабкий",
+        "тихий"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"40\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" font-weight=\"800\" fill=\"#fbbf24\">синоніми (схоже значення)</text>\n      <text x=\"80\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#34d399\">сміливий</text>\n      <text x=\"160\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"22\" fill=\"#fbbf24\">≈</text>\n      <text x=\"240\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#a78bfa\">відважний</text></svg>"
+    },
+    {
+      "text": "Який синонім до слова «розумний»?",
+      "answers": [
+        "мудрий",
+        "веселий",
+        "тихий",
+        "ледачий"
+      ],
+      "correct": 0,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"40\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" font-weight=\"800\" fill=\"#fbbf24\">синоніми (схоже значення)</text>\n      <text x=\"80\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#34d399\">розумний</text>\n      <text x=\"160\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"22\" fill=\"#fbbf24\">≈</text>\n      <text x=\"240\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#a78bfa\">мудрий</text></svg>"
+    },
+    {
+      "text": "Який синонім до слова «бігти»?",
+      "answers": [
+        "сидіти",
+        "мчати",
+        "стояти",
+        "лежати"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"40\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" font-weight=\"800\" fill=\"#fbbf24\">синоніми (схоже значення)</text>\n      <text x=\"80\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#34d399\">бігти</text>\n      <text x=\"160\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"22\" fill=\"#fbbf24\">≈</text>\n      <text x=\"240\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#a78bfa\">мчати</text></svg>"
+    },
+    {
+      "text": "Який синонім до слова «радіти»?",
+      "answers": [
+        "сумувати",
+        "плакати",
+        "веселитися",
+        "сердитися"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"40\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" font-weight=\"800\" fill=\"#fbbf24\">синоніми (схоже значення)</text>\n      <text x=\"80\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#34d399\">радіти</text>\n      <text x=\"160\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"22\" fill=\"#fbbf24\">≈</text>\n      <text x=\"240\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#a78bfa\">веселитися</text></svg>"
+    },
+    {
+      "text": "Який антонім до слова «великий»?",
+      "answers": [
+        "широкий",
+        "малий",
+        "довгий",
+        "товстий"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"40\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" font-weight=\"800\" fill=\"#fbbf24\">антоніми (протилежне)</text>\n      <text x=\"80\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#34d399\">великий</text>\n      <text x=\"160\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"22\" fill=\"#fbbf24\">↔</text>\n      <text x=\"240\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#a78bfa\">малий</text></svg>"
+    },
+    {
+      "text": "Який антонім до слова «холодний»?",
+      "answers": [
+        "мокрий",
+        "теплий",
+        "вологий",
+        "темний"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"40\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" font-weight=\"800\" fill=\"#fbbf24\">антоніми (протилежне)</text>\n      <text x=\"80\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#34d399\">холодний</text>\n      <text x=\"160\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"22\" fill=\"#fbbf24\">↔</text>\n      <text x=\"240\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#a78bfa\">теплий</text></svg>"
+    },
+    {
+      "text": "Який антонім до слова «високий»?",
+      "answers": [
+        "великий",
+        "маленький",
+        "низький",
+        "товстий"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"40\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" font-weight=\"800\" fill=\"#fbbf24\">антоніми (протилежне)</text>\n      <text x=\"80\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#34d399\">високий</text>\n      <text x=\"160\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"22\" fill=\"#fbbf24\">↔</text>\n      <text x=\"240\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#a78bfa\">низький</text></svg>"
+    },
+    {
+      "text": "Який антонім до слова «чорний»?",
+      "answers": [
+        "сірий",
+        "коричневий",
+        "білий",
+        "синій"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"40\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" font-weight=\"800\" fill=\"#fbbf24\">антоніми (протилежне)</text>\n      <text x=\"80\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#34d399\">чорний</text>\n      <text x=\"160\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"22\" fill=\"#fbbf24\">↔</text>\n      <text x=\"240\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#a78bfa\">білий</text></svg>"
+    },
+    {
+      "text": "Який антонім до слова «солодкий»?",
+      "answers": [
+        "кислий",
+        "гіркий",
+        "смачний",
+        "м'який"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"40\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" font-weight=\"800\" fill=\"#fbbf24\">антоніми (протилежне)</text>\n      <text x=\"80\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#34d399\">солодкий</text>\n      <text x=\"160\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"22\" fill=\"#fbbf24\">↔</text>\n      <text x=\"240\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#a78bfa\">гіркий</text></svg>"
+    },
+    {
+      "text": "Який антонім до прислівника «швидко»?",
+      "answers": [
+        "миттєво",
+        "повільно",
+        "хутко",
+        "одразу"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 160\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"160\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"20\" y=\"20\" width=\"280\" height=\"40\" rx=\"20\" fill=\"#a78bfa\"/>\n      <text x=\"160\" y=\"46\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#0f172a\">прислівник</text>\n      <text x=\"160\" y=\"86\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" fill=\"#fde68a\">повільно</text>\n      <text x=\"160\" y=\"120\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">як? коли? — спосіб дії</text></svg>"
+    },
+    {
+      "text": "Слова «коса» (волосся) і «коса» (знаряддя) — це:",
+      "answers": [
+        "синоніми",
+        "антоніми",
+        "омоніми",
+        "спільнокореневі"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"40\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" font-weight=\"800\" fill=\"#fbbf24\">синоніми (схоже значення)</text>\n      <text x=\"80\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#34d399\">коса</text>\n      <text x=\"160\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"22\" fill=\"#fbbf24\">≈</text>\n      <text x=\"240\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#a78bfa\">омоніми</text></svg>"
+    },
+    {
+      "text": "У слові «учитель» наголос падає на:",
+      "answers": [
+        "перший склад",
+        "другий склад",
+        "третій склад",
+        "наголосу немає"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"70\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"34\" font-weight=\"900\" fill=\"#fde68a\">другий склад</text>\n      <text x=\"160\" y=\"100\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">наголос на «д́»</text></svg>"
+    },
+    {
+      "text": "У слові «олівець» наголос падає на:",
+      "answers": [
+        "перший склад",
+        "другий склад",
+        "третій склад",
+        "наголосу немає"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"70\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"34\" font-weight=\"900\" fill=\"#fde68a\">третій склад</text>\n      <text x=\"160\" y=\"100\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">наголос на «т́»</text></svg>"
+    },
+    {
+      "text": "Перша літера українського алфавіту — це:",
+      "answers": [
+        "А",
+        "Б",
+        "О",
+        "Я"
+      ],
+      "correct": 0,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 140\" style=\"width:340px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"360\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"180\" y=\"50\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"13\" fill=\"#fbbf24\" font-weight=\"700\">Українська абетка</text>\n      <text x=\"180\" y=\"80\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"12\" fill=\"#fde68a\">А Б В Г Ґ Д Е Є Ж З И І Ї Й К Л</text>\n      <text x=\"180\" y=\"102\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"12\" fill=\"#fde68a\">М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ь Ю Я</text>\n      <text x=\"180\" y=\"128\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">33 літери · 38 звуків</text></svg>"
+    },
+    {
+      "text": "Остання літера українського алфавіту — це:",
+      "answers": [
+        "Ю",
+        "Я",
+        "Ь",
+        "Ї"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 140\" style=\"width:340px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"360\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"180\" y=\"50\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"13\" fill=\"#fbbf24\" font-weight=\"700\">Українська абетка</text>\n      <text x=\"180\" y=\"80\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"12\" fill=\"#fde68a\">А Б В Г Ґ Д Е Є Ж З И І Ї Й К Л</text>\n      <text x=\"180\" y=\"102\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"12\" fill=\"#fde68a\">М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ь Ю Я</text>\n      <text x=\"180\" y=\"128\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">33 літери · 38 звуків</text></svg>"
+    },
+    {
+      "text": "Яка літера завжди позначає два звуки на початку слова?",
+      "answers": [
+        "о",
+        "н",
+        "ї",
+        "ц"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 140\" style=\"width:340px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"360\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"180\" y=\"50\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"13\" fill=\"#fbbf24\" font-weight=\"700\">Українська абетка</text>\n      <text x=\"180\" y=\"80\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"12\" fill=\"#fde68a\">А Б В Г Ґ Д Е Є Ж З И І Ї Й К Л</text>\n      <text x=\"180\" y=\"102\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"12\" fill=\"#fde68a\">М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ь Ю Я</text>\n      <text x=\"180\" y=\"128\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">33 літери · 38 звуків</text></svg>"
+    },
+    {
+      "text": "Яке слово починається з двох звуків через йотовану букву?",
+      "answers": [
+        "їжак",
+        "ліс",
+        "сонце",
+        "хата"
+      ],
+      "correct": 0,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Яке слово починається з двох звуків через йотовану букву</span><br><b style=\"color:#34d399;font-size:1.1em\">їжак</b></div>"
+    },
+    {
+      "text": "Яке слово пишемо разом?",
+      "answers": [
+        "що б",
+        "не дивно",
+        "якнайкраще",
+        "все ж"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Яке слово пишемо разом</span><br><b style=\"color:#34d399;font-size:1.1em\">якнайкраще</b></div>"
+    },
+    {
+      "text": "Як пишеться частка «не» з дієсловом «знати»?",
+      "answers": [
+        "разом: незнати",
+        "окремо: не знати",
+        "через дефіс: не-знати",
+        "через апостроф: не'знати"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <g font-family=\"Inter, Arial\" font-size=\"14\" font-weight=\"800\" text-anchor=\"middle\">\n        <rect x=\"20\" y=\"40\" width=\"80\" height=\"50\" rx=\"6\" fill=\"#1e293b\" stroke=\"#334155\"/>\n        <text x=\"60\" y=\"62\" fill=\"#cbd5e1\">минулий</text>\n        <text x=\"60\" y=\"80\" font-size=\"11\" fill=\"#94a3b8\">що робив?</text>\n\n        <rect x=\"120\" y=\"40\" width=\"80\" height=\"50\" rx=\"6\" fill=\"#fbbf24\" stroke=\"#334155\"/>\n        <text x=\"160\" y=\"62\" fill=\"#0f172a\">теперішній</text>\n        <text x=\"160\" y=\"80\" font-size=\"11\" fill=\"#0f172a\">що робить?</text>\n\n        <rect x=\"220\" y=\"40\" width=\"80\" height=\"50\" rx=\"6\" fill=\"#1e293b\" stroke=\"#334155\"/>\n        <text x=\"260\" y=\"62\" fill=\"#cbd5e1\">майбутній</text>\n        <text x=\"260\" y=\"80\" font-size=\"11\" fill=\"#94a3b8\">що буде робити?</text>\n      </g></svg>"
+    },
+    {
+      "text": "Які власні назви пишемо з великої літери?",
+      "answers": [
+        "імена людей",
+        "клички тварин",
+        "назви міст",
+        "усі перелічені"
+      ],
+      "correct": 3,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"74\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"26\" font-weight=\"900\" fill=\"#34d399\">✓ усі перелічені</text>\n      <text x=\"160\" y=\"108\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#bbf7d0\">правильне написання</text></svg>"
+    },
+    {
+      "text": "У реченні «Учні читають цікаву книгу» додаток — це:",
+      "answers": [
+        "учні",
+        "читають",
+        "цікаву",
+        "книгу"
+      ],
+      "correct": 3,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">У реченні «Учні читають цікаву книгу» додаток — це:</span><br><b style=\"color:#34d399;font-size:1.1em\">книгу</b></div>"
+    },
+    {
+      "text": "У реченні «Білі сніжинки падали на землю» означенням є:",
+      "answers": [
+        "сніжинки",
+        "падали",
+        "білі",
+        "на землю"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">У реченні «Білі сніжинки падали на землю» означенням є:</span><br><b style=\"color:#34d399;font-size:1.1em\">білі</b></div>"
+    },
+    {
+      "text": "Однорідні члени речення відокремлюють:",
+      "answers": [
+        "крапкою",
+        "комами",
+        "тире",
+        "не відокремлюють"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Однорідні члени речення відокремлюють:</span><br><b style=\"color:#34d399;font-size:1.1em\">комами</b></div>"
+    },
+    {
+      "text": "Звертання у реченні виділяють:",
+      "answers": [
+        "крапками",
+        "комами",
+        "знаком оклику завжди",
+        "не виділяють"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Звертання у реченні виділяють:</span><br><b style=\"color:#34d399;font-size:1.1em\">комами</b></div>"
+    },
+    {
+      "text": "У слові «весна» останній звук — це:",
+      "answers": [
+        "голосний",
+        "приголосний",
+        "немає звуку",
+        "м'який знак"
+      ],
+      "correct": 0,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">У слові «весна» останній звук — це:</span><br><b style=\"color:#34d399;font-size:1.1em\">голосний</b></div>"
+    },
+    {
+      "text": "У слові «син» — скільки звуків і літер?",
+      "answers": [
+        "2 звуки, 2 літери",
+        "3 звуки, 3 літери",
+        "3 звуки, 4 літери",
+        "4 звуки, 3 літери"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 140\" style=\"width:340px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"360\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"180\" y=\"50\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"13\" fill=\"#fbbf24\" font-weight=\"700\">Українська абетка</text>\n      <text x=\"180\" y=\"80\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"12\" fill=\"#fde68a\">А Б В Г Ґ Д Е Є Ж З И І Ї Й К Л</text>\n      <text x=\"180\" y=\"102\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"12\" fill=\"#fde68a\">М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ь Ю Я</text>\n      <text x=\"180\" y=\"128\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">33 літери · 38 звуків</text></svg>"
+    },
+    {
+      "text": "Скільки звуків у слові «яма»?",
+      "answers": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Скільки звуків у слові «яма»</span><br><b style=\"color:#34d399;font-size:1.1em\">4</b></div>"
+    },
+    {
+      "text": "Слово «вечір» — антонім до:",
+      "answers": [
+        "ніч",
+        "ранок",
+        "день",
+        "обід"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"40\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" font-weight=\"800\" fill=\"#fbbf24\">антоніми (протилежне)</text>\n      <text x=\"80\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#34d399\">вечір</text>\n      <text x=\"160\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"22\" fill=\"#fbbf24\">↔</text>\n      <text x=\"240\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#a78bfa\">ранок</text></svg>"
+    },
+    {
+      "text": "У реченні «Сонечко яскраво світить» присудок — це:",
+      "answers": [
+        "сонечко",
+        "яскраво",
+        "світить",
+        "немає присудка"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 140\" style=\"width:330px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"360\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"180\" y=\"50\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" fill=\"#fde68a\">Сонечко яскраво світить</text>\n      <line x1=\"40\" y1=\"58\" x2=\"320\" y2=\"58\" stroke=\"#fbbf24\" stroke-width=\"0.5\" opacity=\"0.3\"/>\n      <g font-family=\"Inter, Arial\" font-size=\"12\">\n        <text x=\"60\" y=\"92\" fill=\"#34d399\" font-weight=\"800\">підмет</text>\n        <text x=\"60\" y=\"108\" fill=\"#bbf7d0\">— підмет (хто? що?)</text>\n        <text x=\"220\" y=\"92\" fill=\"#fb923c\" font-weight=\"800\">світить</text>\n        <text x=\"220\" y=\"108\" fill=\"#fed7aa\">— присудок (що робить?)</text>\n      </g></svg>"
+    },
+    {
+      "text": "У реченні «Маленький котик грається» означення — це:",
+      "answers": [
+        "маленький",
+        "котик",
+        "грається",
+        "немає означення"
+      ],
+      "correct": 0,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">У реченні «Маленький котик грається» означення — це:</span><br><b style=\"color:#34d399;font-size:1.1em\">маленький</b></div>"
+    },
+    {
+      "text": "Який рід має іменник «море»?",
+      "answers": [
+        "чоловічий",
+        "жіночий",
+        "середній",
+        "спільний"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 160\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"160\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"20\" y=\"20\" width=\"280\" height=\"40\" rx=\"20\" fill=\"#fbbf24\"/>\n      <text x=\"160\" y=\"46\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#0f172a\">іменник</text>\n      <text x=\"160\" y=\"86\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" fill=\"#fde68a\">середній</text>\n      <text x=\"160\" y=\"120\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">що? хто? — предмет</text></svg>"
+    },
+    {
+      "text": "Іменник «лікар» — який рід?",
+      "answers": [
+        "чоловічий",
+        "жіночий",
+        "середній",
+        "спільний"
+      ],
+      "correct": 0,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 160\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"160\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"20\" y=\"20\" width=\"280\" height=\"40\" rx=\"20\" fill=\"#fbbf24\"/>\n      <text x=\"160\" y=\"46\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#0f172a\">іменник</text>\n      <text x=\"160\" y=\"86\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" fill=\"#fde68a\">чоловічий</text>\n      <text x=\"160\" y=\"120\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">що? хто? — предмет</text></svg>"
+    },
+    {
+      "text": "Дієслово «бігти» — на яке питання відповідає?",
+      "answers": [
+        "хто? що?",
+        "який?",
+        "що робити?",
+        "де?"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 160\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"160\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"20\" y=\"20\" width=\"280\" height=\"40\" rx=\"20\" fill=\"#dc2626\"/>\n      <text x=\"160\" y=\"46\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#0f172a\">дієслово</text>\n      <text x=\"160\" y=\"86\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" fill=\"#fde68a\">що робити?</text>\n      <text x=\"160\" y=\"120\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">що робить? — дія</text></svg>"
+    },
+    {
+      "text": "Як пишемо слова, що називають родичів (мама, тато, бабуся)?",
+      "answers": [
+        "завжди з великої літери",
+        "із маленької літери",
+        "тільки великими буквами",
+        "у лапках"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"74\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"26\" font-weight=\"900\" fill=\"#34d399\">✓ із маленької літери</text>\n      <text x=\"160\" y=\"108\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#bbf7d0\">правильне написання</text></svg>"
+    },
+    {
+      "text": "Знайди іменник у множині:",
+      "answers": [
+        "учень",
+        "книжка",
+        "дерева",
+        "стіл"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 160\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"160\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"20\" y=\"20\" width=\"280\" height=\"40\" rx=\"20\" fill=\"#fbbf24\"/>\n      <text x=\"160\" y=\"46\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#0f172a\">іменник</text>\n      <text x=\"160\" y=\"86\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" fill=\"#fde68a\">дерева</text>\n      <text x=\"160\" y=\"120\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">що? хто? — предмет</text></svg>"
+    },
+    {
+      "text": "Знайди іменник в однині:",
+      "answers": [
+        "діти",
+        "учні",
+        "столи",
+        "котик"
+      ],
+      "correct": 3,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 160\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"160\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"20\" y=\"20\" width=\"280\" height=\"40\" rx=\"20\" fill=\"#fbbf24\"/>\n      <text x=\"160\" y=\"46\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#0f172a\">іменник</text>\n      <text x=\"160\" y=\"86\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" fill=\"#fde68a\">котик</text>\n      <text x=\"160\" y=\"120\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">що? хто? — предмет</text></svg>"
+    },
+    {
+      "text": "Прикметник, що відповідає на питання «яка?», — це:",
+      "answers": [
+        "синій",
+        "синє",
+        "синя",
+        "сині"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 160\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"160\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"20\" y=\"20\" width=\"280\" height=\"40\" rx=\"20\" fill=\"#34d399\"/>\n      <text x=\"160\" y=\"46\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#0f172a\">прикметник</text>\n      <text x=\"160\" y=\"86\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" fill=\"#fde68a\">синя</text>\n      <text x=\"160\" y=\"120\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">який? яка? яке? — ознака</text></svg>"
+    },
+    {
+      "text": "Як називається головне слово в реченні, від якого ставимо питання до інших?",
+      "answers": [
+        "підмет",
+        "присудок",
+        "означення",
+        "обставина"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 140\" style=\"width:330px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"360\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"180\" y=\"50\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" fill=\"#fde68a\"></text>\n      <line x1=\"40\" y1=\"58\" x2=\"320\" y2=\"58\" stroke=\"#fbbf24\" stroke-width=\"0.5\" opacity=\"0.3\"/>\n      <g font-family=\"Inter, Arial\" font-size=\"12\">\n        <text x=\"60\" y=\"92\" fill=\"#34d399\" font-weight=\"800\">присудок</text>\n        <text x=\"60\" y=\"108\" fill=\"#bbf7d0\">— підмет (хто? що?)</text>\n        <text x=\"220\" y=\"92\" fill=\"#fb923c\" font-weight=\"800\">присудок</text>\n        <text x=\"220\" y=\"108\" fill=\"#fed7aa\">— присудок (що робить?)</text>\n      </g></svg>"
+    },
+    {
+      "text": "Текст складається з:",
+      "answers": [
+        "лише одного речення",
+        "пов'язаних за змістом речень",
+        "окремих слів",
+        "лише запитань"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">📖 <b>Текст</b> — кілька речень, поєднаних спільною темою і змістом.</div>"
+    },
+    {
+      "text": "Заголовок тексту — це:",
+      "answers": [
+        "перше слово",
+        "коротка назва тексту",
+        "останнє речення",
+        "ім'я автора"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Заголовок тексту — це:</span><br><b style=\"color:#34d399;font-size:1.1em\">коротка назва тексту</b></div>"
+    },
+    {
+      "text": "Текст-розповідь відповідає на питання:",
+      "answers": [
+        "який?",
+        "що сталося?",
+        "чому?",
+        "де?"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Текст-розповідь відповідає на питання:</span><br><b style=\"color:#34d399;font-size:1.1em\">що сталося?</b></div>"
+    },
+    {
+      "text": "Текст-опис відповідає на питання:",
+      "answers": [
+        "що сталося?",
+        "який? яка? яке?",
+        "чому?",
+        "куди?"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Текст-опис відповідає на питання:</span><br><b style=\"color:#34d399;font-size:1.1em\">який? яка? яке?</b></div>"
+    },
+    {
+      "text": "Текст-міркування зазвичай має слова:",
+      "answers": [
+        "потім, далі, нарешті",
+        "тому що, отже, бо",
+        "великий, маленький, гарний",
+        "я, ти, він"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Текст-міркування зазвичай має слова:</span><br><b style=\"color:#34d399;font-size:1.1em\">тому що, отже, бо</b></div>"
+    }
+  ]
+}

@@ -67,7 +67,7 @@ test.describe("Mini Games smoke tests", () => {
     // Verify a sample of the cached subject JSONs is actually in the cache
     // and matches what the page fetches.
     const cached = await page.evaluate(async () => {
-      const cache = await caches.open("mini-games-v5");
+      const cache = await caches.open("mini-games-v7");
       const urls = [
         "./games/first-million/data/subjects.json",
         "./games/first-million/data/ya-doslidzhuyu-svit-4-klas.json",
@@ -382,6 +382,28 @@ test.describe("Mini Games smoke tests", () => {
         expect(Number.isInteger(q.correct)).toBe(true);
         expect(q.correct).toBeGreaterThanOrEqual(0);
         expect(q.correct).toBeLessThan(4);
+      }
+
+      // Subjects that ship illustrated media (по аналогії з «Я досліджую світ»):
+      // every question must have a non-empty media field with an SVG / info-card.
+      // After scripts/generate-first-million-media.mjs this now covers
+      // every subject in the «Перший мільйон» game.
+      const subjectsWithMedia = new Set([
+        "ya-doslidzhuyu-svit-4-klas.json",
+        "steam-4-klas.json",
+        "mystetstvo-4-klas.json",
+        "anhliyska-mova-4-klas.json",
+        "ispanska-mova-4-klas.json",
+        "matematyka-4-klas.json",
+        "ukrayinska-mova-4-klas.json",
+        "informatyka-4-klas.json",
+      ]);
+      if (subjectsWithMedia.has(subj.file)) {
+        for (const q of data.questions) {
+          expect(typeof q.media).toBe("string");
+          expect(q.media.length).toBeGreaterThan(20);
+          expect(/<svg|info-card|scheme-row|scheme-table|swatch|<img/.test(q.media)).toBe(true);
+        }
       }
     });
   }

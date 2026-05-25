@@ -1,4 +1,4 @@
-const CACHE_NAME = "mini-games-v5";
+const CACHE_NAME = "mini-games-v7";
 
 const PRECACHE = [
     "./",
@@ -13,10 +13,10 @@ const PRECACHE = [
     "./games/first-million/data/anhliyska-mova-4-klas.json",
     "./games/first-million/data/informatyka-4-klas.json",
     "./games/first-million/data/ispanska-mova-4-klas.json",
-    "./games/first-million/data/matematyka-2-yads-4-klas.json",
+    "./games/first-million/data/matematyka-4-klas.json",
     "./games/first-million/data/mystetstvo-4-klas.json",
     "./games/first-million/data/steam-4-klas.json",
-    "./games/first-million/data/ukrayinska-mova-2-yads-4-klas.json",
+    "./games/first-million/data/ukrayinska-mova-4-klas.json",
     "./games/first-million/data/ya-doslidzhuyu-svit-4-klas.json",
     "./games/adventure-academy/",
     "./games/adventure-academy/index.html",

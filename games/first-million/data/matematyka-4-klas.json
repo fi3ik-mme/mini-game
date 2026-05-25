@@ -1,0 +1,1239 @@
+{
+  "title": "Математика",
+  "subject": "Математика",
+  "grade": "4 клас (НУШ)",
+  "questions": [
+    {
+      "text": "Скільки буде 25 × 4?",
+      "answers": [
+        "90",
+        "100",
+        "110",
+        "80"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"70\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo, monospace\" font-size=\"34\" font-weight=\"900\" fill=\"#fde68a\">25 × 4 = <tspan fill=\"#34d399\">100</tspan></text>\n      <text x=\"160\" y=\"106\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">множення</text></svg>"
+    },
+    {
+      "text": "Який результат ділення 84 : 7?",
+      "answers": [
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"70\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo, monospace\" font-size=\"34\" font-weight=\"900\" fill=\"#fde68a\">84 : 7 = <tspan fill=\"#34d399\">12</tspan></text>\n      <text x=\"160\" y=\"106\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">ділення</text></svg>"
+    },
+    {
+      "text": "Скільки сантиметрів у 3 метрах?",
+      "answers": [
+        "30",
+        "300",
+        "3000",
+        "303"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 120\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"120\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"50\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"22\" font-weight=\"900\" fill=\"#fde68a\">1 м = <tspan fill=\"#34d399\">100 см</tspan></text>\n      <text x=\"160\" y=\"88\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">переведення одиниць</text></svg>"
+    },
+    {
+      "text": "Який дріб більший: 3/4 чи 2/3?",
+      "answers": [
+        "3/4",
+        "2/3",
+        "Вони рівні",
+        "Неможливо порівняти"
+      ],
+      "correct": 0,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 200\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"200\" fill=\"#0f172a\" rx=\"10\"/>\n      <g transform=\"translate(60 100)\">\n        <circle r=\"50\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n        <path d=\"M0 0 L3.061616997868383e-15 -50 A50 50 0 0 1 50 0 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\"/><path d=\"M0 0 L50 0 A50 50 0 0 1 3.061616997868383e-15 50 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\"/><path d=\"M0 0 L3.061616997868383e-15 50 A50 50 0 0 1 -50 6.123233995736766e-15 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\"/><path d=\"M0 0 L-50 6.123233995736766e-15 A50 50 0 0 1 -9.184850993605149e-15 -50 Z\" fill=\"#334155\" stroke=\"#fde68a\"/>\n        <text x=\"0\" y=\"76\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"16\" font-weight=\"800\" fill=\"#34d399\">3/4</text>\n      </g>\n      <g transform=\"translate(240 100)\">\n        <circle r=\"50\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n        <path d=\"M0 0 L3.061616997868383e-15 -50 A50 50 0 0 1 43.30127018922194 24.999999999999993 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\"/><path d=\"M0 0 L43.30127018922194 24.999999999999993 A50 50 0 0 1 -43.301270189221924 25.000000000000018 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\"/><path d=\"M0 0 L-43.301270189221924 25.000000000000018 A50 50 0 0 1 -9.184850993605149e-15 -50 Z\" fill=\"#334155\" stroke=\"#fde68a\"/>\n        <text x=\"0\" y=\"76\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"16\" font-weight=\"800\" fill=\"#cbd5e1\">2/3</text>\n      </g>\n      <text x=\"150\" y=\"104\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"22\" font-weight=\"900\" fill=\"#fde68a\">></text></svg>"
+    },
+    {
+      "text": "Периметр квадрата зі стороною 6 см дорівнює:",
+      "answers": [
+        "12 см",
+        "18 см",
+        "24 см",
+        "36 см"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 200\" style=\"width:230px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"240\" height=\"200\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"60\" y=\"40\" width=\"120\" height=\"120\" fill=\"rgba(251,191,36,0.18)\" stroke=\"#fbbf24\" stroke-width=\"3\"/>\n      <text x=\"120\" y=\"26\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"13\" fill=\"#fde68a\" font-weight=\"700\">6 см</text>\n      <text x=\"120\" y=\"180\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"13\" fill=\"#fde68a\" font-weight=\"700\">6 см</text>\n      <text x=\"44\" y=\"104\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"13\" fill=\"#fde68a\" font-weight=\"700\" transform=\"rotate(-90 44 104)\">6</text>\n      <text x=\"196\" y=\"104\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"13\" fill=\"#fde68a\" font-weight=\"700\" transform=\"rotate(90 196 104)\">6</text>\n      <text x=\"120\" y=\"195\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"13\" fill=\"#34d399\">P = 4 · 6 = 24 см</text></svg>"
+    },
+    {
+      "text": "Скільки хвилин у 2 годинах 30 хвилинах?",
+      "answers": [
+        "120",
+        "130",
+        "150",
+        "230"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Скільки хвилин у 2 годинах 30 хвилинах</span><br><b style=\"color:#34d399;font-size:1.1em\">150</b></div>"
+    },
+    {
+      "text": "Яке число є результатом 456 + 278?",
+      "answers": [
+        "624",
+        "634",
+        "734",
+        "744"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Яке число є результатом 456 + 278</span><br><b style=\"color:#34d399;font-size:1.1em\">734</b></div>"
+    },
+    {
+      "text": "Скільки кг у 2 т 500 кг?",
+      "answers": [
+        "250",
+        "2500",
+        "2050",
+        "2005"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Скільки кг у 2 т 500 кг</span><br><b style=\"color:#34d399;font-size:1.1em\">2500</b></div>"
+    },
+    {
+      "text": "Площа прямокутника 8 см × 5 см дорівнює:",
+      "answers": [
+        "13 см²",
+        "26 см²",
+        "40 см²",
+        "80 см²"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 280 180\" style=\"width:270px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"280\" height=\"180\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"50\" y=\"40\" width=\"180\" height=\"100\" fill=\"rgba(56,189,248,0.18)\" stroke=\"#38bdf8\" stroke-width=\"3\"/>\n      <rect x=\"43\" y=\"33\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"223\" y=\"33\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"43\" y=\"133\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"223\" y=\"133\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n      <text x=\"140\" y=\"168\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#bae6fd\" font-weight=\"700\">прямокутник · 4 прямі кути</text></svg>"
+    },
+    {
+      "text": "Яке число треба додати до 375, щоб отримати 500?",
+      "answers": [
+        "115",
+        "125",
+        "135",
+        "225"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Яке число треба додати до 375, щоб отримати 500</span><br><b style=\"color:#34d399;font-size:1.1em\">125</b></div>"
+    },
+    {
+      "text": "Скільки буде 9 × 9?",
+      "answers": [
+        "72",
+        "81",
+        "90",
+        "99"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 204 214\" style=\"width:204px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"204\" height=\"214\" fill=\"#0f172a\" rx=\"8\"/>\n      <rect x=\"50\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"130\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"146\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"162\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"178\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"130\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"146\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"162\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"178\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"130\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"146\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"162\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"178\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"130\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"146\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"162\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"178\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"130\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"146\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"162\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"178\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"130\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"146\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"162\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"178\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"126\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"126\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"126\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"126\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"126\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"130\" y=\"126\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"146\" y=\"126\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"162\" y=\"126\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"178\" y=\"126\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"142\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"142\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"142\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"142\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"142\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"130\" y=\"142\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"146\" y=\"142\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"162\" y=\"142\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"178\" y=\"142\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"158\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"158\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"158\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"158\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"158\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"130\" y=\"158\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"146\" y=\"158\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"162\" y=\"158\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"178\" y=\"158\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/>\n      <text x=\"122\" y=\"22\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"12\" fill=\"#fbbf24\">9</text>\n      <text x=\"40\" y=\"106\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"12\" fill=\"#fbbf24\">9</text>\n      <text x=\"102\" y=\"206\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"14\" font-weight=\"800\" fill=\"#34d399\">9 × 9 = 81</text></svg>"
+    },
+    {
+      "text": "Який залишок при діленні 47 на 5?",
+      "answers": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Який залишок при діленні 47 на 5</span><br><b style=\"color:#34d399;font-size:1.1em\">2</b></div>"
+    },
+    {
+      "text": "Скільки грамів у 2 кг 300 г?",
+      "answers": [
+        "230",
+        "2030",
+        "2300",
+        "20300"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Скільки грамів у 2 кг 300 г</span><br><b style=\"color:#34d399;font-size:1.1em\">2300</b></div>"
+    },
+    {
+      "text": "Яке число на 15 більше за 285?",
+      "answers": [
+        "290",
+        "300",
+        "310",
+        "320"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Яке число на 15 більше за 285</span><br><b style=\"color:#34d399;font-size:1.1em\">300</b></div>"
+    },
+    {
+      "text": "У класі 28 учнів. Якщо їх розділили на 4 рівні групи, скільки учнів у кожній?",
+      "answers": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">У класі 28 учнів. Якщо їх розділили на 4 рівні групи, скільки учнів у кожній</span><br><b style=\"color:#34d399;font-size:1.1em\">7</b></div>"
+    },
+    {
+      "text": "Скільки буде 7 × 8?",
+      "answers": [
+        "54",
+        "56",
+        "58",
+        "64"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 188 182\" style=\"width:188px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"188\" height=\"182\" fill=\"#0f172a\" rx=\"8\"/>\n      <rect x=\"50\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"130\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"146\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"162\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"130\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"146\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"162\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"130\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"146\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"162\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"130\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"146\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"162\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"130\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"146\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"162\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"130\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"146\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"162\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"126\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"126\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"126\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"126\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"126\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"130\" y=\"126\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"146\" y=\"126\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"162\" y=\"126\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/>\n      <text x=\"114\" y=\"22\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"12\" fill=\"#fbbf24\">8</text>\n      <text x=\"40\" y=\"90\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"12\" fill=\"#fbbf24\">7</text>\n      <text x=\"94\" y=\"174\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"14\" font-weight=\"800\" fill=\"#34d399\">7 × 8 = 56</text></svg>"
+    },
+    {
+      "text": "Скільки буде 6 × 9?",
+      "answers": [
+        "48",
+        "54",
+        "56",
+        "63"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 204 166\" style=\"width:204px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"204\" height=\"166\" fill=\"#0f172a\" rx=\"8\"/>\n      <rect x=\"50\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"130\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"146\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"162\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"178\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"130\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"146\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"162\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"178\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"130\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"146\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"162\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"178\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"130\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"146\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"162\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"178\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"130\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"146\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"162\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"178\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"130\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"146\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"162\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"178\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/>\n      <text x=\"122\" y=\"22\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"12\" fill=\"#fbbf24\">9</text>\n      <text x=\"40\" y=\"82\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"12\" fill=\"#fbbf24\">6</text>\n      <text x=\"102\" y=\"158\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"14\" font-weight=\"800\" fill=\"#34d399\">6 × 9 = 54</text></svg>"
+    },
+    {
+      "text": "Який результат ділення 72 : 8?",
+      "answers": [
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"70\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo, monospace\" font-size=\"34\" font-weight=\"900\" fill=\"#fde68a\">72 : 8 = <tspan fill=\"#34d399\">9</tspan></text>\n      <text x=\"160\" y=\"106\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">ділення</text></svg>"
+    },
+    {
+      "text": "Скільки буде 56 : 7?",
+      "answers": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">🧮 <b>56 : 7 = 8</b><br><span style=\"font-size:.85em;color:#cbd5e1\">за правилами порядку дій</span></div>"
+    },
+    {
+      "text": "Скільки буде 12 × 5?",
+      "answers": [
+        "50",
+        "55",
+        "60",
+        "65"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 140 262\" style=\"width:140px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"140\" height=\"262\" fill=\"#0f172a\" rx=\"8\"/>\n      <rect x=\"50\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"30\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"46\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"62\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"78\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"94\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"110\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"126\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"126\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"126\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"126\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"126\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"142\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"142\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"142\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"142\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"142\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"158\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"158\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"158\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"158\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"158\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"174\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"174\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"174\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"174\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"174\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"190\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"190\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"190\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"190\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"190\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"50\" y=\"206\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"66\" y=\"206\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"82\" y=\"206\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"98\" y=\"206\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/><rect x=\"114\" y=\"206\" width=\"14\" height=\"14\" fill=\"#fbbf24\" opacity=\"0.85\"/>\n      <text x=\"90\" y=\"22\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"12\" fill=\"#fbbf24\">5</text>\n      <text x=\"40\" y=\"130\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"12\" fill=\"#fbbf24\">12</text>\n      <text x=\"70\" y=\"254\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"14\" font-weight=\"800\" fill=\"#34d399\">12 × 5 = 60</text></svg>"
+    },
+    {
+      "text": "Скільки буде 13 × 4?",
+      "answers": [
+        "48",
+        "52",
+        "56",
+        "60"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"70\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo, monospace\" font-size=\"34\" font-weight=\"900\" fill=\"#fde68a\">13 × 4 = <tspan fill=\"#34d399\">52</tspan></text>\n      <text x=\"160\" y=\"106\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">множення</text></svg>"
+    },
+    {
+      "text": "Скільки буде 24 × 3?",
+      "answers": [
+        "62",
+        "68",
+        "72",
+        "84"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"70\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo, monospace\" font-size=\"34\" font-weight=\"900\" fill=\"#fde68a\">24 × 3 = <tspan fill=\"#34d399\">72</tspan></text>\n      <text x=\"160\" y=\"106\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">множення</text></svg>"
+    },
+    {
+      "text": "Який результат ділення 100 : 25?",
+      "answers": [
+        "2",
+        "4",
+        "5",
+        "10"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"70\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo, monospace\" font-size=\"34\" font-weight=\"900\" fill=\"#fde68a\">100 : 25 = <tspan fill=\"#34d399\">4</tspan></text>\n      <text x=\"160\" y=\"106\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">ділення</text></svg>"
+    },
+    {
+      "text": "Скільки буде 36 × 10?",
+      "answers": [
+        "36",
+        "306",
+        "360",
+        "3600"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"70\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo, monospace\" font-size=\"34\" font-weight=\"900\" fill=\"#fde68a\">36 × 10 = <tspan fill=\"#34d399\">360</tspan></text>\n      <text x=\"160\" y=\"106\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">множення</text></svg>"
+    },
+    {
+      "text": "Скільки буде 480 : 10?",
+      "answers": [
+        "4",
+        "48",
+        "480",
+        "4800"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">🧮 <b>480 : 10 = 48</b><br><span style=\"font-size:.85em;color:#cbd5e1\">за правилами порядку дій</span></div>"
+    },
+    {
+      "text": "Скільки буде 200 × 3?",
+      "answers": [
+        "230",
+        "500",
+        "600",
+        "2003"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"70\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo, monospace\" font-size=\"34\" font-weight=\"900\" fill=\"#fde68a\">200 × 3 = <tspan fill=\"#34d399\">600</tspan></text>\n      <text x=\"160\" y=\"106\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">множення</text></svg>"
+    },
+    {
+      "text": "Скільки буде 250 × 4?",
+      "answers": [
+        "100",
+        "850",
+        "1000",
+        "2540"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"70\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo, monospace\" font-size=\"34\" font-weight=\"900\" fill=\"#fde68a\">250 × 4 = <tspan fill=\"#34d399\">1000</tspan></text>\n      <text x=\"160\" y=\"106\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">множення</text></svg>"
+    },
+    {
+      "text": "Скільки буде 1000 : 4?",
+      "answers": [
+        "25",
+        "40",
+        "250",
+        "400"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">🧮 <b>1000 : 4 = 250</b><br><span style=\"font-size:.85em;color:#cbd5e1\">за правилами порядку дій</span></div>"
+    },
+    {
+      "text": "Скільки буде 99 × 1?",
+      "answers": [
+        "0",
+        "1",
+        "99",
+        "100"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"70\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo, monospace\" font-size=\"34\" font-weight=\"900\" fill=\"#fde68a\">99 × 1 = <tspan fill=\"#34d399\">99</tspan></text>\n      <text x=\"160\" y=\"106\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">множення</text></svg>"
+    },
+    {
+      "text": "Скільки буде 0 × 678?",
+      "answers": [
+        "0",
+        "1",
+        "678",
+        "6780"
+      ],
+      "correct": 0,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"70\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo, monospace\" font-size=\"34\" font-weight=\"900\" fill=\"#fde68a\">0 × 678 = <tspan fill=\"#34d399\">0</tspan></text>\n      <text x=\"160\" y=\"106\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">множення</text></svg>"
+    },
+    {
+      "text": "Скільки буде 1000 - 348?",
+      "answers": [
+        "552",
+        "642",
+        "652",
+        "752"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"70\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo, monospace\" font-size=\"34\" font-weight=\"900\" fill=\"#fde68a\">1000 − 348 = <tspan fill=\"#34d399\">652</tspan></text>\n      <text x=\"160\" y=\"106\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">віднімання</text></svg>"
+    },
+    {
+      "text": "Скільки буде 600 - 245?",
+      "answers": [
+        "345",
+        "355",
+        "445",
+        "455"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"70\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo, monospace\" font-size=\"34\" font-weight=\"900\" fill=\"#fde68a\">600 − 245 = <tspan fill=\"#34d399\">355</tspan></text>\n      <text x=\"160\" y=\"106\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">віднімання</text></svg>"
+    },
+    {
+      "text": "Скільки буде 348 + 152?",
+      "answers": [
+        "400",
+        "490",
+        "500",
+        "510"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"70\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo, monospace\" font-size=\"34\" font-weight=\"900\" fill=\"#fde68a\">348 + 152 = <tspan fill=\"#34d399\">500</tspan></text>\n      <text x=\"160\" y=\"106\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">додавання</text></svg>"
+    },
+    {
+      "text": "Скільки буде 999 + 1?",
+      "answers": [
+        "999",
+        "1000",
+        "1001",
+        "9991"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"70\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo, monospace\" font-size=\"34\" font-weight=\"900\" fill=\"#fde68a\">999 + 1 = <tspan fill=\"#34d399\">1000</tspan></text>\n      <text x=\"160\" y=\"106\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">додавання</text></svg>"
+    },
+    {
+      "text": "Який попередник числа 1000?",
+      "answers": [
+        "998",
+        "999",
+        "1001",
+        "1010"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Який попередник числа 1000</span><br><b style=\"color:#34d399;font-size:1.1em\">999</b></div>"
+    },
+    {
+      "text": "Яке число іде після 9999?",
+      "answers": [
+        "9998",
+        "10000",
+        "10001",
+        "100000"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Яке число іде після 9999</span><br><b style=\"color:#34d399;font-size:1.1em\">10000</b></div>"
+    },
+    {
+      "text": "Скільки сантиметрів у 1 метрі?",
+      "answers": [
+        "10",
+        "100",
+        "1000",
+        "10000"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 120\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"120\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"50\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"22\" font-weight=\"900\" fill=\"#fde68a\">1 м = <tspan fill=\"#34d399\">100 см</tspan></text>\n      <text x=\"160\" y=\"88\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">переведення одиниць</text></svg>"
+    },
+    {
+      "text": "Скільки метрів у 1 кілометрі?",
+      "answers": [
+        "10",
+        "100",
+        "1000",
+        "10000"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 120\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"120\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"50\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"22\" font-weight=\"900\" fill=\"#fde68a\">1 км = <tspan fill=\"#34d399\">1000 м</tspan></text>\n      <text x=\"160\" y=\"88\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">переведення одиниць</text></svg>"
+    },
+    {
+      "text": "Скільки кілограмів у 1 тонні?",
+      "answers": [
+        "10",
+        "100",
+        "1000",
+        "10000"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 120\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"120\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"50\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"22\" font-weight=\"900\" fill=\"#fde68a\">1 кг = <tspan fill=\"#34d399\">1000 г</tspan></text>\n      <text x=\"160\" y=\"88\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">переведення одиниць</text></svg>"
+    },
+    {
+      "text": "Скільки грамів у 1 кілограмі?",
+      "answers": [
+        "10",
+        "100",
+        "1000",
+        "10000"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 120\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"120\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"50\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"22\" font-weight=\"900\" fill=\"#fde68a\">1 кг = <tspan fill=\"#34d399\">1000 г</tspan></text>\n      <text x=\"160\" y=\"88\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">переведення одиниць</text></svg>"
+    },
+    {
+      "text": "Скільки хвилин у 1 годині?",
+      "answers": [
+        "10",
+        "30",
+        "60",
+        "100"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:180px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <circle cx=\"100\" cy=\"100\" r=\"92\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"4\"/>\n      <line x1=\"100\" y1=\"24\" x2=\"100\" y2=\"14\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"138\" y1=\"34.182069312382666\" x2=\"143\" y2=\"25.521815274538284\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"165.81793068761735\" y1=\"62.00000000000001\" x2=\"174.47818472546174\" y2=\"57.00000000000001\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"176\" y1=\"100\" x2=\"186\" y2=\"100\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"165.81793068761735\" y1=\"138\" x2=\"174.47818472546174\" y2=\"143\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"138\" y1=\"165.81793068761732\" x2=\"143\" y2=\"174.47818472546172\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"100\" y1=\"176\" x2=\"100\" y2=\"186\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"62.000000000000014\" y1=\"165.81793068761735\" x2=\"57.00000000000002\" y2=\"174.47818472546174\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"34.18206931238265\" y1=\"138\" x2=\"25.52181527453827\" y2=\"143\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"24\" y1=\"100.00000000000001\" x2=\"14\" y2=\"100.00000000000001\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"34.182069312382666\" y1=\"61.99999999999999\" x2=\"25.521815274538284\" y2=\"56.99999999999999\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"61.999999999999964\" y1=\"34.18206931238268\" x2=\"56.999999999999964\" y2=\"25.521815274538284\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n      \n          <line x1=\"100\" y1=\"100\" x2=\"60.68070187412838\" y2=\"72.4683310551498\" stroke=\"#fde68a\" stroke-width=\"5\" stroke-linecap=\"round\"/>\n          <line x1=\"100\" y1=\"100\" x2=\"162.35382907247958\" y2=\"64\" stroke=\"#fff\" stroke-width=\"3\" stroke-linecap=\"round\"/>\n      <circle cx=\"100\" cy=\"100\" r=\"5\" fill=\"#fbbf24\"/></svg>"
+    },
+    {
+      "text": "Скільки секунд у 1 хвилині?",
+      "answers": [
+        "30",
+        "60",
+        "100",
+        "120"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">⏱ 1 хвилина = <b>60 секунд</b></div>"
+    },
+    {
+      "text": "Скільки годин у 1 добі?",
+      "answers": [
+        "12",
+        "20",
+        "24",
+        "30"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Скільки годин у 1 добі</span><br><b style=\"color:#34d399;font-size:1.1em\">24</b></div>"
+    },
+    {
+      "text": "Скільки днів у тижні?",
+      "answers": [
+        "5",
+        "6",
+        "7",
+        "10"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">📅 У тижні <b>7 днів</b>:<br>Пн · Вт · Ср · Чт · Пт · Сб · Нд</div>"
+    },
+    {
+      "text": "Скільки місяців у році?",
+      "answers": [
+        "10",
+        "11",
+        "12",
+        "13"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">📅 У році <b>12 місяців</b></div>"
+    },
+    {
+      "text": "Скільки місяців у півріччі?",
+      "answers": [
+        "3",
+        "6",
+        "9",
+        "12"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Скільки місяців у півріччі</span><br><b style=\"color:#34d399;font-size:1.1em\">6</b></div>"
+    },
+    {
+      "text": "Скільки годин у 2 добах?",
+      "answers": [
+        "24",
+        "36",
+        "48",
+        "60"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Скільки годин у 2 добах</span><br><b style=\"color:#34d399;font-size:1.1em\">48</b></div>"
+    },
+    {
+      "text": "1 година 15 хвилин — це скільки хвилин?",
+      "answers": [
+        "65",
+        "75",
+        "85",
+        "115"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">1 година 15 хвилин — це скільки хвилин</span><br><b style=\"color:#34d399;font-size:1.1em\">75</b></div>"
+    },
+    {
+      "text": "5000 м — це скільки кілометрів?",
+      "answers": [
+        "5",
+        "50",
+        "500",
+        "5000"
+      ],
+      "correct": 0,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 120\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"120\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"50\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"22\" font-weight=\"900\" fill=\"#fde68a\">1 км = <tspan fill=\"#34d399\">1000 м</tspan></text>\n      <text x=\"160\" y=\"88\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">переведення одиниць</text></svg>"
+    },
+    {
+      "text": "200 см — це скільки метрів?",
+      "answers": [
+        "2",
+        "20",
+        "200",
+        "2000"
+      ],
+      "correct": 0,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">200 см — це скільки метрів</span><br><b style=\"color:#34d399;font-size:1.1em\">2</b></div>"
+    },
+    {
+      "text": "1 ц (центнер) — це скільки кілограмів?",
+      "answers": [
+        "10",
+        "100",
+        "1000",
+        "10000"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 120\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"120\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"50\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"22\" font-weight=\"900\" fill=\"#fde68a\">1 ц = <tspan fill=\"#34d399\">100 кг</tspan></text>\n      <text x=\"160\" y=\"88\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">переведення одиниць</text></svg>"
+    },
+    {
+      "text": "Периметр квадрата зі стороною 5 см дорівнює:",
+      "answers": [
+        "10 см",
+        "15 см",
+        "20 см",
+        "25 см"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 200\" style=\"width:230px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"240\" height=\"200\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"60\" y=\"40\" width=\"120\" height=\"120\" fill=\"rgba(251,191,36,0.18)\" stroke=\"#fbbf24\" stroke-width=\"3\"/>\n      <text x=\"120\" y=\"26\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"13\" fill=\"#fde68a\" font-weight=\"700\">5 см</text>\n      <text x=\"120\" y=\"180\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"13\" fill=\"#fde68a\" font-weight=\"700\">5 см</text>\n      <text x=\"44\" y=\"104\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"13\" fill=\"#fde68a\" font-weight=\"700\" transform=\"rotate(-90 44 104)\">5</text>\n      <text x=\"196\" y=\"104\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"13\" fill=\"#fde68a\" font-weight=\"700\" transform=\"rotate(90 196 104)\">5</text>\n      <text x=\"120\" y=\"195\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"13\" fill=\"#34d399\">P = 4 · 5 = 20 см</text></svg>"
+    },
+    {
+      "text": "Периметр прямокутника зі сторонами 4 см і 7 см:",
+      "answers": [
+        "11 см",
+        "14 см",
+        "22 см",
+        "28 см"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 280 180\" style=\"width:270px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"280\" height=\"180\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"50\" y=\"40\" width=\"180\" height=\"100\" fill=\"rgba(56,189,248,0.18)\" stroke=\"#38bdf8\" stroke-width=\"3\"/>\n      <rect x=\"43\" y=\"33\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"223\" y=\"33\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"43\" y=\"133\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"223\" y=\"133\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n      <text x=\"140\" y=\"168\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#bae6fd\" font-weight=\"700\">прямокутник · 4 прямі кути</text></svg>"
+    },
+    {
+      "text": "Площа квадрата зі стороною 4 см дорівнює:",
+      "answers": [
+        "8 см²",
+        "12 см²",
+        "16 см²",
+        "20 см²"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Площа квадрата зі стороною 4 см дорівнює:</span><br><b style=\"color:#34d399;font-size:1.1em\">16 см²</b></div>"
+    },
+    {
+      "text": "Площа квадрата зі стороною 7 см дорівнює:",
+      "answers": [
+        "14 см²",
+        "28 см²",
+        "49 см²",
+        "77 см²"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Площа квадрата зі стороною 7 см дорівнює:</span><br><b style=\"color:#34d399;font-size:1.1em\">49 см²</b></div>"
+    },
+    {
+      "text": "Площа прямокутника зі сторонами 6 см і 9 см:",
+      "answers": [
+        "15 см²",
+        "30 см²",
+        "54 см²",
+        "69 см²"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 280 180\" style=\"width:270px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"280\" height=\"180\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"50\" y=\"40\" width=\"180\" height=\"100\" fill=\"rgba(56,189,248,0.18)\" stroke=\"#38bdf8\" stroke-width=\"3\"/>\n      <rect x=\"43\" y=\"33\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"223\" y=\"33\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"43\" y=\"133\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"223\" y=\"133\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n      <text x=\"140\" y=\"168\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#bae6fd\" font-weight=\"700\">прямокутник · 4 прямі кути</text></svg>"
+    },
+    {
+      "text": "Скільки кутів у квадраті?",
+      "answers": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Скільки кутів у квадраті</span><br><b style=\"color:#34d399;font-size:1.1em\">4</b></div>"
+    },
+    {
+      "text": "Скільки сторін у трикутнику?",
+      "answers": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 220 180\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"220\" height=\"180\" fill=\"#0f172a\" rx=\"10\"/>\n      <polygon points=\"40,150 180,150 110,40\" fill=\"rgba(251,191,36,0.18)\" stroke=\"#fbbf24\" stroke-width=\"3\"/>\n      <text x=\"110\" y=\"168\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#fde68a\" font-weight=\"700\">сума кутів = 180°</text></svg>"
+    },
+    {
+      "text": "Прямий кут має скільки градусів?",
+      "answers": [
+        "45°",
+        "60°",
+        "90°",
+        "180°"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Прямий кут має скільки градусів</span><br><b style=\"color:#34d399;font-size:1.1em\">90°</b></div>"
+    },
+    {
+      "text": "У квадрата всі сторони:",
+      "answers": [
+        "різні",
+        "рівні",
+        "паралельні, але різні",
+        "тільки дві рівні"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">У квадрата всі сторони:</span><br><b style=\"color:#34d399;font-size:1.1em\">рівні</b></div>"
+    },
+    {
+      "text": "Скільки прямих кутів у прямокутнику?",
+      "answers": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct": 3,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 280 180\" style=\"width:270px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"280\" height=\"180\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"50\" y=\"40\" width=\"180\" height=\"100\" fill=\"rgba(56,189,248,0.18)\" stroke=\"#38bdf8\" stroke-width=\"3\"/>\n      <rect x=\"43\" y=\"33\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"223\" y=\"33\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"43\" y=\"133\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"223\" y=\"133\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n      <text x=\"140\" y=\"168\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#bae6fd\" font-weight=\"700\">прямокутник · 4 прямі кути</text></svg>"
+    },
+    {
+      "text": "Скільки сторін у п'ятикутника?",
+      "answers": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Скільки сторін у п'ятикутника</span><br><b style=\"color:#34d399;font-size:1.1em\">5</b></div>"
+    },
+    {
+      "text": "Скільки сторін у шестикутника?",
+      "answers": [
+        "4",
+        "5",
+        "6",
+        "8"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Скільки сторін у шестикутника</span><br><b style=\"color:#34d399;font-size:1.1em\">6</b></div>"
+    },
+    {
+      "text": "Площа квадрата зі стороною 10 см дорівнює:",
+      "answers": [
+        "20 см²",
+        "40 см²",
+        "100 см²",
+        "1000 см²"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Площа квадрата зі стороною 10 см дорівнює:</span><br><b style=\"color:#34d399;font-size:1.1em\">100 см²</b></div>"
+    },
+    {
+      "text": "Скільки буде 1/4 від 100?",
+      "answers": [
+        "20",
+        "25",
+        "40",
+        "50"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 220 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"220\" height=\"200\" fill=\"#0f172a\" rx=\"10\"/>\n      <circle cx=\"110\" cy=\"90\" r=\"64\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n      <path d=\"M110 90 L110 26 A64 64 0 0 1 174 90 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\" stroke-width=\"1\"/><path d=\"M110 90 L174 90 A64 64 0 0 1 110 154 Z\" fill=\"#334155\" stroke=\"#fde68a\" stroke-width=\"1\"/><path d=\"M110 90 L110 154 A64 64 0 0 1 46 90.00000000000001 Z\" fill=\"#334155\" stroke=\"#fde68a\" stroke-width=\"1\"/><path d=\"M110 90 L46 90.00000000000001 A64 64 0 0 1 109.99999999999999 26 Z\" fill=\"#334155\" stroke=\"#fde68a\" stroke-width=\"1\"/>\n      <text x=\"110\" y=\"184\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"22\" font-weight=\"900\" fill=\"#34d399\">1/4 від 100 = 25</text></svg>"
+    },
+    {
+      "text": "Скільки буде 1/2 від 200?",
+      "answers": [
+        "50",
+        "100",
+        "150",
+        "200"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 220 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"220\" height=\"200\" fill=\"#0f172a\" rx=\"10\"/>\n      <circle cx=\"110\" cy=\"90\" r=\"64\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n      <path d=\"M110 90 L110 26 A64 64 0 0 1 110 154 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\" stroke-width=\"1\"/><path d=\"M110 90 L110 154 A64 64 0 0 1 109.99999999999999 26 Z\" fill=\"#334155\" stroke=\"#fde68a\" stroke-width=\"1\"/>\n      <text x=\"110\" y=\"184\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"22\" font-weight=\"900\" fill=\"#34d399\">1/2 від 200 = 100</text></svg>"
+    },
+    {
+      "text": "Скільки буде 1/5 від 50?",
+      "answers": [
+        "5",
+        "10",
+        "15",
+        "25"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 220 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"220\" height=\"200\" fill=\"#0f172a\" rx=\"10\"/>\n      <circle cx=\"110\" cy=\"90\" r=\"64\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n      <path d=\"M110 90 L110 26 A64 64 0 0 1 170.86761704288983 70.22291236000336 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\" stroke-width=\"1\"/><path d=\"M110 90 L170.86761704288983 70.22291236000336 A64 64 0 0 1 147.6182561467183 141.77708763999664 Z\" fill=\"#334155\" stroke=\"#fde68a\" stroke-width=\"1\"/><path d=\"M110 90 L147.6182561467183 141.77708763999664 A64 64 0 0 1 72.38174385328173 141.77708763999664 Z\" fill=\"#334155\" stroke=\"#fde68a\" stroke-width=\"1\"/><path d=\"M110 90 L72.38174385328173 141.77708763999664 A64 64 0 0 1 49.13238295711017 70.22291236000338 Z\" fill=\"#334155\" stroke=\"#fde68a\" stroke-width=\"1\"/><path d=\"M110 90 L49.13238295711017 70.22291236000338 A64 64 0 0 1 109.99999999999999 26 Z\" fill=\"#334155\" stroke=\"#fde68a\" stroke-width=\"1\"/>\n      <text x=\"110\" y=\"184\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"22\" font-weight=\"900\" fill=\"#34d399\">1/5 від 50 = 10</text></svg>"
+    },
+    {
+      "text": "Скільки буде 3/4 від 100?",
+      "answers": [
+        "25",
+        "50",
+        "75",
+        "100"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 220 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"220\" height=\"200\" fill=\"#0f172a\" rx=\"10\"/>\n      <circle cx=\"110\" cy=\"90\" r=\"64\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n      <path d=\"M110 90 L110 26 A64 64 0 0 1 174 90 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\" stroke-width=\"1\"/><path d=\"M110 90 L174 90 A64 64 0 0 1 110 154 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\" stroke-width=\"1\"/><path d=\"M110 90 L110 154 A64 64 0 0 1 46 90.00000000000001 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\" stroke-width=\"1\"/><path d=\"M110 90 L46 90.00000000000001 A64 64 0 0 1 109.99999999999999 26 Z\" fill=\"#334155\" stroke=\"#fde68a\" stroke-width=\"1\"/>\n      <text x=\"110\" y=\"184\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"22\" font-weight=\"900\" fill=\"#34d399\">3/4 від 100 = 75</text></svg>"
+    },
+    {
+      "text": "Скільки буде 2/3 від 90?",
+      "answers": [
+        "30",
+        "45",
+        "60",
+        "75"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 220 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"220\" height=\"200\" fill=\"#0f172a\" rx=\"10\"/>\n      <circle cx=\"110\" cy=\"90\" r=\"64\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n      <path d=\"M110 90 L110 26 A64 64 0 0 1 165.42562584220408 121.99999999999999 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\" stroke-width=\"1\"/><path d=\"M110 90 L165.42562584220408 121.99999999999999 A64 64 0 0 1 54.57437415779594 122.00000000000003 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\" stroke-width=\"1\"/><path d=\"M110 90 L54.57437415779594 122.00000000000003 A64 64 0 0 1 109.99999999999999 26 Z\" fill=\"#334155\" stroke=\"#fde68a\" stroke-width=\"1\"/>\n      <text x=\"110\" y=\"184\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"22\" font-weight=\"900\" fill=\"#34d399\">2/3 від 90 = 60</text></svg>"
+    },
+    {
+      "text": "Скільки буде 1/8 від 64?",
+      "answers": [
+        "6",
+        "8",
+        "12",
+        "16"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 220 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"220\" height=\"200\" fill=\"#0f172a\" rx=\"10\"/>\n      <circle cx=\"110\" cy=\"90\" r=\"64\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n      <path d=\"M110 90 L110 26 A64 64 0 0 1 155.25483399593904 44.74516600406096 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\" stroke-width=\"1\"/><path d=\"M110 90 L155.25483399593904 44.74516600406096 A64 64 0 0 1 174 90 Z\" fill=\"#334155\" stroke=\"#fde68a\" stroke-width=\"1\"/><path d=\"M110 90 L174 90 A64 64 0 0 1 155.25483399593904 135.25483399593904 Z\" fill=\"#334155\" stroke=\"#fde68a\" stroke-width=\"1\"/><path d=\"M110 90 L155.25483399593904 135.25483399593904 A64 64 0 0 1 110 154 Z\" fill=\"#334155\" stroke=\"#fde68a\" stroke-width=\"1\"/><path d=\"M110 90 L110 154 A64 64 0 0 1 64.74516600406096 135.25483399593904 Z\" fill=\"#334155\" stroke=\"#fde68a\" stroke-width=\"1\"/><path d=\"M110 90 L64.74516600406096 135.25483399593904 A64 64 0 0 1 46 90.00000000000001 Z\" fill=\"#334155\" stroke=\"#fde68a\" stroke-width=\"1\"/><path d=\"M110 90 L46 90.00000000000001 A64 64 0 0 1 64.74516600406095 44.74516600406096 Z\" fill=\"#334155\" stroke=\"#fde68a\" stroke-width=\"1\"/><path d=\"M110 90 L64.74516600406095 44.74516600406096 A64 64 0 0 1 109.99999999999999 26 Z\" fill=\"#334155\" stroke=\"#fde68a\" stroke-width=\"1\"/>\n      <text x=\"110\" y=\"184\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"22\" font-weight=\"900\" fill=\"#34d399\">1/8 від 64 = 8</text></svg>"
+    },
+    {
+      "text": "Скільки буде 1/3 від 27?",
+      "answers": [
+        "3",
+        "9",
+        "13",
+        "27"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 220 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"220\" height=\"200\" fill=\"#0f172a\" rx=\"10\"/>\n      <circle cx=\"110\" cy=\"90\" r=\"64\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n      <path d=\"M110 90 L110 26 A64 64 0 0 1 165.42562584220408 121.99999999999999 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\" stroke-width=\"1\"/><path d=\"M110 90 L165.42562584220408 121.99999999999999 A64 64 0 0 1 54.57437415779594 122.00000000000003 Z\" fill=\"#334155\" stroke=\"#fde68a\" stroke-width=\"1\"/><path d=\"M110 90 L54.57437415779594 122.00000000000003 A64 64 0 0 1 109.99999999999999 26 Z\" fill=\"#334155\" stroke=\"#fde68a\" stroke-width=\"1\"/>\n      <text x=\"110\" y=\"184\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"22\" font-weight=\"900\" fill=\"#34d399\">1/3 від 27 = 9</text></svg>"
+    },
+    {
+      "text": "1/2 години — це скільки хвилин?",
+      "answers": [
+        "15",
+        "20",
+        "30",
+        "60"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">1/2 години — це скільки хвилин</span><br><b style=\"color:#34d399;font-size:1.1em\">30</b></div>"
+    },
+    {
+      "text": "1/4 доби — це скільки годин?",
+      "answers": [
+        "4",
+        "6",
+        "8",
+        "12"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">1/4 доби — це скільки годин</span><br><b style=\"color:#34d399;font-size:1.1em\">6</b></div>"
+    },
+    {
+      "text": "Який дріб більший: 1/2 чи 1/3?",
+      "answers": [
+        "1/2",
+        "1/3",
+        "Вони рівні",
+        "Неможливо порівняти"
+      ],
+      "correct": 0,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 200\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"200\" fill=\"#0f172a\" rx=\"10\"/>\n      <g transform=\"translate(60 100)\">\n        <circle r=\"50\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n        <path d=\"M0 0 L3.061616997868383e-15 -50 A50 50 0 0 1 3.061616997868383e-15 50 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\"/><path d=\"M0 0 L3.061616997868383e-15 50 A50 50 0 0 1 -9.184850993605149e-15 -50 Z\" fill=\"#334155\" stroke=\"#fde68a\"/>\n        <text x=\"0\" y=\"76\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"16\" font-weight=\"800\" fill=\"#34d399\">1/2</text>\n      </g>\n      <g transform=\"translate(240 100)\">\n        <circle r=\"50\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n        <path d=\"M0 0 L3.061616997868383e-15 -50 A50 50 0 0 1 43.30127018922194 24.999999999999993 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\"/><path d=\"M0 0 L43.30127018922194 24.999999999999993 A50 50 0 0 1 -43.301270189221924 25.000000000000018 Z\" fill=\"#334155\" stroke=\"#fde68a\"/><path d=\"M0 0 L-43.301270189221924 25.000000000000018 A50 50 0 0 1 -9.184850993605149e-15 -50 Z\" fill=\"#334155\" stroke=\"#fde68a\"/>\n        <text x=\"0\" y=\"76\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"16\" font-weight=\"800\" fill=\"#cbd5e1\">1/3</text>\n      </g>\n      <text x=\"150\" y=\"104\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"22\" font-weight=\"900\" fill=\"#fde68a\">></text></svg>"
+    },
+    {
+      "text": "Скільки буде 5 + 3 × 2?",
+      "answers": [
+        "11",
+        "13",
+        "16",
+        "20"
+      ],
+      "correct": 0,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"70\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo, monospace\" font-size=\"34\" font-weight=\"900\" fill=\"#fde68a\">5 + 3 = <tspan fill=\"#34d399\">11</tspan></text>\n      <text x=\"160\" y=\"106\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">додавання</text></svg>"
+    },
+    {
+      "text": "Скільки буде (5 + 3) × 2?",
+      "answers": [
+        "11",
+        "13",
+        "16",
+        "20"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">🧮 <b>(5 + 3) × 2 = 16</b><br><span style=\"font-size:.85em;color:#cbd5e1\">за правилами порядку дій</span></div>"
+    },
+    {
+      "text": "Скільки буде 20 - 4 × 3?",
+      "answers": [
+        "8",
+        "12",
+        "16",
+        "48"
+      ],
+      "correct": 0,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"70\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo, monospace\" font-size=\"34\" font-weight=\"900\" fill=\"#fde68a\">20 − 4 = <tspan fill=\"#34d399\">8</tspan></text>\n      <text x=\"160\" y=\"106\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">віднімання</text></svg>"
+    },
+    {
+      "text": "Скільки буде 100 - 50 + 25?",
+      "answers": [
+        "25",
+        "50",
+        "75",
+        "175"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"70\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo, monospace\" font-size=\"34\" font-weight=\"900\" fill=\"#fde68a\">100 − 50 = <tspan fill=\"#34d399\">75</tspan></text>\n      <text x=\"160\" y=\"106\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">віднімання</text></svg>"
+    },
+    {
+      "text": "Скільки буде 100 : 5 + 5?",
+      "answers": [
+        "10",
+        "20",
+        "25",
+        "30"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">🧮 <b>100 : 5 + 5 = 25</b><br><span style=\"font-size:.85em;color:#cbd5e1\">за правилами порядку дій</span></div>"
+    },
+    {
+      "text": "Скільки буде 12 + 8 × 0?",
+      "answers": [
+        "0",
+        "12",
+        "20",
+        "96"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"70\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo, monospace\" font-size=\"34\" font-weight=\"900\" fill=\"#fde68a\">12 + 8 = <tspan fill=\"#34d399\">12</tspan></text>\n      <text x=\"160\" y=\"106\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">додавання</text></svg>"
+    },
+    {
+      "text": "Скільки буде 200 - 100 : 10?",
+      "answers": [
+        "10",
+        "20",
+        "190",
+        "1900"
+      ],
+      "correct": 2,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"70\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo, monospace\" font-size=\"34\" font-weight=\"900\" fill=\"#fde68a\">200 − 100 = <tspan fill=\"#34d399\">190</tspan></text>\n      <text x=\"160\" y=\"106\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">віднімання</text></svg>"
+    },
+    {
+      "text": "Чому дорівнює римське число V?",
+      "answers": [
+        "1",
+        "5",
+        "10",
+        "50"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Чому дорівнює римське число V</span><br><b style=\"color:#34d399;font-size:1.1em\">5</b></div>"
+    },
+    {
+      "text": "Чому дорівнює римське число X?",
+      "answers": [
+        "5",
+        "10",
+        "50",
+        "100"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Чому дорівнює римське число X</span><br><b style=\"color:#34d399;font-size:1.1em\">10</b></div>"
+    },
+    {
+      "text": "Чому дорівнює римське число IV?",
+      "answers": [
+        "4",
+        "6",
+        "9",
+        "14"
+      ],
+      "correct": 0,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Чому дорівнює римське число IV</span><br><b style=\"color:#34d399;font-size:1.1em\">4</b></div>"
+    },
+    {
+      "text": "Чому дорівнює римське число IX?",
+      "answers": [
+        "7",
+        "9",
+        "11",
+        "19"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Чому дорівнює римське число IX</span><br><b style=\"color:#34d399;font-size:1.1em\">9</b></div>"
+    },
+    {
+      "text": "Чому дорівнює римське число XII?",
+      "answers": [
+        "10",
+        "12",
+        "14",
+        "22"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Чому дорівнює римське число XII</span><br><b style=\"color:#34d399;font-size:1.1em\">12</b></div>"
+    },
+    {
+      "text": "Чому дорівнює римське число L?",
+      "answers": [
+        "10",
+        "50",
+        "100",
+        "500"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Чому дорівнює римське число L</span><br><b style=\"color:#34d399;font-size:1.1em\">50</b></div>"
+    },
+    {
+      "text": "Чому дорівнює римське число C?",
+      "answers": [
+        "50",
+        "100",
+        "500",
+        "1000"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Чому дорівнює римське число C</span><br><b style=\"color:#34d399;font-size:1.1em\">100</b></div>"
+    },
+    {
+      "text": "Олівець коштує 5 грн. Скільки коштують 6 олівців?",
+      "answers": [
+        "11 грн",
+        "25 грн",
+        "30 грн",
+        "35 грн"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Олівець коштує 5 грн. Скільки коштують 6 олівців</span><br><b style=\"color:#34d399;font-size:1.1em\">30 грн</b></div>"
+    },
+    {
+      "text": "У саду 12 яблунь, а груш у 3 рази менше. Скільки груш?",
+      "answers": [
+        "3",
+        "4",
+        "9",
+        "36"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">У саду 12 яблунь, а груш у 3 рази менше. Скільки груш</span><br><b style=\"color:#34d399;font-size:1.1em\">4</b></div>"
+    },
+    {
+      "text": "У книзі 200 сторінок. Прочитали 75 сторінок. Скільки залишилось?",
+      "answers": [
+        "115",
+        "125",
+        "135",
+        "225"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 120\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"120\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"20\" y=\"40\" width=\"280\" height=\"40\" fill=\"#334155\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n      <rect x=\"20\" y=\"40\" width=\"105\" height=\"40\" fill=\"#fbbf24\"/>\n      <text x=\"160\" y=\"98\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"13\" fill=\"#fde68a\">всього 200 · прочитано 75 · залишилось 125</text>\n      <text x=\"72.5\" y=\"66\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"13\" font-weight=\"900\" fill=\"#0f172a\">75</text>\n      <text x=\"212.5\" y=\"66\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"13\" font-weight=\"900\" fill=\"#fde68a\">125</text></svg>"
+    },
+    {
+      "text": "У школі 360 учнів, з них 180 хлопчиків. Скільки дівчаток?",
+      "answers": [
+        "90",
+        "180",
+        "270",
+        "360"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">У школі 360 учнів, з них 180 хлопчиків. Скільки дівчаток</span><br><b style=\"color:#34d399;font-size:1.1em\">180</b></div>"
+    },
+    {
+      "text": "Автомобіль рухається зі швидкістю 60 км/год. Який шлях він пройде за 3 години?",
+      "answers": [
+        "63 км",
+        "120 км",
+        "180 км",
+        "360 км"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Автомобіль рухається зі швидкістю 60 км/год. Який шлях він пройде за 3 години</span><br><b style=\"color:#34d399;font-size:1.1em\">180 км</b></div>"
+    },
+    {
+      "text": "Авто проїхало 100 км за 2 год. Яка його швидкість?",
+      "answers": [
+        "50 км/год",
+        "60 км/год",
+        "100 км/год",
+        "200 км/год"
+      ],
+      "correct": 0,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Авто проїхало 100 км за 2 год. Яка його швидкість</span><br><b style=\"color:#34d399;font-size:1.1em\">50 км/год</b></div>"
+    },
+    {
+      "text": "Купили 4 цукерки по 5 грн і 2 шоколадки по 12 грн. Скільки заплатили?",
+      "answers": [
+        "34 грн",
+        "44 грн",
+        "54 грн",
+        "64 грн"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Купили 4 цукерки по 5 грн і 2 шоколадки по 12 грн. Скільки заплатили</span><br><b style=\"color:#34d399;font-size:1.1em\">44 грн</b></div>"
+    },
+    {
+      "text": "Бабуся приготувала 36 пиріжків і порівну поділила на 4 онуків. По скільки дісталось кожному?",
+      "answers": [
+        "6",
+        "8",
+        "9",
+        "12"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Бабуся приготувала 36 пиріжків і порівну поділила на 4 онуків. По скільки дісталось кожному</span><br><b style=\"color:#34d399;font-size:1.1em\">9</b></div>"
+    },
+    {
+      "text": "Учень читав по 30 хвилин на день. Скільки хвилин читав за 5 днів?",
+      "answers": [
+        "35",
+        "60",
+        "150",
+        "300"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Учень читав по 30 хвилин на день. Скільки хвилин читав за 5 днів</span><br><b style=\"color:#34d399;font-size:1.1em\">150</b></div>"
+    },
+    {
+      "text": "Площа кімнати 5 м × 4 м. Чому дорівнює площа?",
+      "answers": [
+        "9 м²",
+        "18 м²",
+        "20 м²",
+        "40 м²"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Площа кімнати 5 м × 4 м. Чому дорівнює площа</span><br><b style=\"color:#34d399;font-size:1.1em\">20 м²</b></div>"
+    },
+    {
+      "text": "Середнє арифметичне чисел 10, 20 і 30 дорівнює:",
+      "answers": [
+        "15",
+        "20",
+        "25",
+        "60"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Середнє арифметичне чисел 10, 20 і 30 дорівнює:</span><br><b style=\"color:#34d399;font-size:1.1em\">20</b></div>"
+    },
+    {
+      "text": "Середнє арифметичне чисел 4 і 6 дорівнює:",
+      "answers": [
+        "2",
+        "5",
+        "10",
+        "12"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Середнє арифметичне чисел 4 і 6 дорівнює:</span><br><b style=\"color:#34d399;font-size:1.1em\">5</b></div>"
+    },
+    {
+      "text": "Найбільше з чисел: 999, 1001, 1000, 998:",
+      "answers": [
+        "998",
+        "999",
+        "1000",
+        "1001"
+      ],
+      "correct": 3,
+      "media": "<div class=\"info-card\">🔢 <b>Найбільше:</b> 1001</div>"
+    },
+    {
+      "text": "Скільки сотень у числі 4567?",
+      "answers": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Скільки сотень у числі 4567</span><br><b style=\"color:#34d399;font-size:1.1em\">5</b></div>"
+    },
+    {
+      "text": "У числі 3456 цифра 4 означає:",
+      "answers": [
+        "4 одиниці",
+        "4 десятки",
+        "4 сотні",
+        "4 тисячі"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">У числі 3456 цифра 4 означає:</span><br><b style=\"color:#34d399;font-size:1.1em\">4 сотні</b></div>"
+    },
+    {
+      "text": "Скільки нулів у мільйоні?",
+      "answers": [
+        "3",
+        "4",
+        "6",
+        "9"
+      ],
+      "correct": 2,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Скільки нулів у мільйоні</span><br><b style=\"color:#34d399;font-size:1.1em\">6</b></div>"
+    },
+    {
+      "text": "Скільки сотень у тисячі?",
+      "answers": [
+        "10",
+        "100",
+        "1000",
+        "10000"
+      ],
+      "correct": 0,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Скільки сотень у тисячі</span><br><b style=\"color:#34d399;font-size:1.1em\">10</b></div>"
+    },
+    {
+      "text": "Найбільше двоцифрове число — це:",
+      "answers": [
+        "89",
+        "99",
+        "100",
+        "999"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">🔢 <b>Найбільше:</b> 99</div>"
+    },
+    {
+      "text": "Найменше трицифрове число — це:",
+      "answers": [
+        "99",
+        "100",
+        "111",
+        "999"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">🔢 <b>Найменше:</b> 100</div>"
+    },
+    {
+      "text": "Якщо зараз 14:30, котра буде година через 2 години?",
+      "answers": [
+        "12:30",
+        "15:30",
+        "16:00",
+        "16:30"
+      ],
+      "correct": 3,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Якщо зараз 14:30, котра буде година через 2 години</span><br><b style=\"color:#34d399;font-size:1.1em\">16:30</b></div>"
+    },
+    {
+      "text": "Скільки хвилин залишилося до півночі від 23:45?",
+      "answers": [
+        "10",
+        "15",
+        "20",
+        "45"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Скільки хвилин залишилося до півночі від 23:45</span><br><b style=\"color:#34d399;font-size:1.1em\">15</b></div>"
+    },
+    {
+      "text": "Скільки днів у лютому в простому (не високосному) році?",
+      "answers": [
+        "28",
+        "29",
+        "30",
+        "31"
+      ],
+      "correct": 0,
+      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Скільки днів у лютому в простому (не високосному) році</span><br><b style=\"color:#34d399;font-size:1.1em\">28</b></div>"
+    },
+    {
+      "text": "Який місяць іде перед серпнем?",
+      "answers": [
+        "червень",
+        "липень",
+        "вересень",
+        "жовтень"
+      ],
+      "correct": 1,
+      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 220 140\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"220\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"20\" y=\"20\" width=\"180\" height=\"30\" fill=\"#fbbf24\"/>\n      <text x=\"110\" y=\"40\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" font-weight=\"900\" fill=\"#7c2d12\">липень</text>\n      <g font-family=\"ui-monospace, Menlo\" font-size=\"11\" fill=\"#cbd5e1\">\n        <text x=\"30\" y=\"74\">Пн Вт Ср Чт Пт Сб Нд</text><text x=\"30\" y=\"90\"> 1  2  3  4  5  6  7</text><text x=\"30\" y=\"106\"> 8  9 10 11 12 13 14</text><text x=\"30\" y=\"122\">15 16 17 18 19 20 21</text>\n      </g></svg>"
+    },
+    {
+      "text": "Який день тижня перший?",
+      "answers": [
+        "неділя",
+        "понеділок",
+        "вівторок",
+        "субота"
+      ],
+      "correct": 1,
+      "media": "<div class=\"info-card\">📅 У тижні <b>7 днів</b>:<br>Пн · Вт · Ср · Чт · Пт · Сб · Нд</div>"
+    }
+  ]
+}
