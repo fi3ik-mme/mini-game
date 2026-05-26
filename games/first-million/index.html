@@ -75,6 +75,8 @@
 
         .icon-btn:active { background: rgba(255, 255, 255, 0.18); }
 
+        .top-controls { display: flex; gap: 6px; }
+
         .screen {
             display: none;
             width: 100%;
@@ -574,6 +576,13 @@
         }
 
         .modal-btn:active { transform: scale(0.97); }
+        .modal-btn:disabled {
+            background: rgba(255, 255, 255, 0.08);
+            color: #94a3b8;
+            cursor: not-allowed;
+            box-shadow: none;
+            opacity: 0.7;
+        }
 
         .modal-btn.secondary {
             background: rgba(255, 255, 255, 0.08);
@@ -666,6 +675,305 @@
             75% { transform: translateX(-2px); }
         }
 
+        /* ---------- Hints bar (lifelines) ---------- */
+        .hints-bar {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .hint-btn {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            padding: 10px 6px;
+            min-height: 64px;
+            background: linear-gradient(180deg, rgba(251, 191, 36, 0.18), rgba(217, 119, 6, 0.10));
+            border: 1.5px solid rgba(251, 191, 36, 0.5);
+            border-radius: 12px;
+            color: #fde68a;
+            font-family: inherit;
+            font-size: 0.78rem;
+            font-weight: 700;
+            line-height: 1.15;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.1s, background 0.2s, border-color 0.2s, opacity 0.2s;
+            overflow: hidden;
+        }
+        .hint-btn .hint-emoji {
+            font-size: 1.4rem;
+            line-height: 1;
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
+        }
+        .hint-btn .hint-label { display: block; }
+        .hint-btn:not(:disabled):active {
+            transform: scale(0.96);
+            background: rgba(251, 191, 36, 0.28);
+        }
+        .hint-btn:disabled, .hint-btn.used {
+            cursor: not-allowed;
+            opacity: 0.45;
+            background: rgba(255, 255, 255, 0.04);
+            color: #94a3b8;
+            border-color: rgba(148, 163, 184, 0.35);
+        }
+        .hint-btn.used::after {
+            content: "";
+            position: absolute;
+            left: 6px;
+            right: 6px;
+            top: 50%;
+            height: 2.5px;
+            background: #f87171;
+            box-shadow: 0 0 6px rgba(248, 113, 113, 0.9);
+            transform: rotate(-12deg);
+            border-radius: 2px;
+        }
+
+        /* ---------- Eliminated answer (50/50) ---------- */
+        .answer-btn.eliminated {
+            pointer-events: none;
+            animation: eliminateFade 0.65s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+        }
+        .answer-btn.eliminated::after {
+            content: "✗";
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: #f87171;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.85), 0 0 14px rgba(248, 113, 113, 0.7);
+            z-index: 2;
+            animation: eliminateX 0.5s cubic-bezier(0.2, 1.4, 0.4, 1) forwards;
+            pointer-events: none;
+        }
+        @keyframes eliminateFade {
+            0%   { opacity: 1; }
+            40%  { opacity: 1; filter: grayscale(0); }
+            100% { opacity: 0.18; transform: scale(0.94); filter: grayscale(1) blur(0.5px); }
+        }
+        @keyframes eliminateX {
+            from { opacity: 0; transform: scale(0) rotate(-45deg); }
+            to   { opacity: 1; transform: scale(1) rotate(0); }
+        }
+
+        /* ---------- Hint modals (shared) ---------- */
+        .hint-modal .hint-sub {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            margin: 0 0 14px;
+        }
+        .hint-modal .hint-tip {
+            color: #94a3b8;
+            font-size: 0.82rem;
+            margin: 14px 0;
+            font-style: italic;
+        }
+
+        /* ---------- Audience modal: animated bar chart ---------- */
+        .audience-chart {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            align-items: end;
+            height: 200px;
+            padding: 14px 8px 8px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 215, 0, 0.28);
+            border-radius: 12px;
+        }
+        .audience-bar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            height: 100%;
+            gap: 6px;
+            position: relative;
+        }
+        .audience-bar-pct {
+            color: #fde68a;
+            font-weight: 700;
+            font-size: 0.92rem;
+            font-variant-numeric: tabular-nums;
+            opacity: 0;
+            animation: audPctIn 0.4s ease 1.4s forwards;
+        }
+        @keyframes audPctIn {
+            from { opacity: 0; transform: translateY(4px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .audience-bar-fill {
+            width: 100%;
+            max-width: 60px;
+            min-height: 4px;
+            border-radius: 6px 6px 0 0;
+            background: linear-gradient(180deg, #fbbf24, #d97706);
+            box-shadow: 0 -2px 8px rgba(251, 191, 36, 0.35);
+            height: 0;
+            transition: height 1.35s cubic-bezier(0.3, 1.1, 0.4, 1);
+        }
+        .audience-bar.is-eliminated .audience-bar-fill {
+            background: linear-gradient(180deg, #475569, #334155);
+            opacity: 0.5;
+            box-shadow: none;
+        }
+        .audience-bar-label {
+            display: grid;
+            place-items: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            color: #fbbf24;
+            background: rgba(255, 215, 0, 0.15);
+            border: 1.5px solid #fbbf24;
+            font-weight: 700;
+            font-size: 0.92rem;
+        }
+
+        /* ---------- Phone-friend modal ---------- */
+        .phone-call {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 0 20px;
+            min-height: 220px;
+        }
+        .phone-avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 35%, #1e3a8a 0%, #0f172a 80%);
+            display: grid;
+            place-items: center;
+            font-size: 3.6rem;
+            border: 3px solid #fbbf24;
+            box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.15), 0 0 28px rgba(251, 191, 36, 0.35);
+            transition: box-shadow 0.3s;
+        }
+        .phone-avatar.ringing { animation: phoneRing 0.55s ease-in-out infinite; }
+        .phone-avatar.answered {
+            animation: none;
+            box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.25), 0 0 28px rgba(74, 222, 128, 0.45);
+            border-color: #4ade80;
+        }
+        @keyframes phoneRing {
+            0%, 100% { transform: rotate(0)   scale(1); }
+            15%      { transform: rotate(-9deg) scale(1.04); }
+            30%      { transform: rotate(9deg)  scale(1.04); }
+            45%      { transform: rotate(-6deg) scale(1.02); }
+            60%      { transform: rotate(6deg)  scale(1.02); }
+        }
+        /* Ringing waves */
+        .phone-line {
+            position: relative;
+            width: 0;
+            height: 0;
+        }
+        .phone-line::before,
+        .phone-line::after {
+            content: "";
+            position: absolute;
+            top: -120px;
+            left: -65px;
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 2px solid rgba(251, 191, 36, 0.45);
+            opacity: 0;
+            animation: phoneWave 1.4s ease-out infinite;
+        }
+        .phone-line::after { animation-delay: 0.7s; }
+        .phone-line.silent::before, .phone-line.silent::after { animation: none; opacity: 0; }
+        @keyframes phoneWave {
+            0%   { transform: scale(0.55); opacity: 0.75; }
+            80%  { transform: scale(1.35); opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        .phone-status {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            font-style: italic;
+            min-height: 1.4em;
+        }
+        .phone-status .dots {
+            display: inline-block;
+            width: 1.2em;
+            text-align: left;
+        }
+        .phone-status .dots::after {
+            display: inline-block;
+            content: "";
+            animation: phoneDots 1.2s steps(4, end) infinite;
+        }
+        @keyframes phoneDots {
+            0%   { content: ""; }
+            25%  { content: "."; }
+            50%  { content: ".."; }
+            75%  { content: "..."; }
+            100% { content: ""; }
+        }
+        .phone-bubble {
+            position: relative;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(251, 191, 36, 0.4);
+            border-radius: 16px;
+            padding: 14px 16px;
+            color: #fde68a;
+            text-align: left;
+            line-height: 1.4;
+            max-width: 360px;
+            font-size: 0.95rem;
+            animation: bubbleIn 0.4s ease both;
+        }
+        .phone-bubble strong {
+            color: #fbbf24;
+            font-size: 1.05rem;
+        }
+        .phone-bubble .friend-pick {
+            display: inline-block;
+            background: rgba(251, 191, 36, 0.25);
+            border: 1.5px solid #fbbf24;
+            color: #fde68a;
+            border-radius: 99px;
+            padding: 2px 12px;
+            margin: 0 4px;
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+        .phone-bubble .friend-quote {
+            display: block;
+            margin-top: 6px;
+            font-style: italic;
+            color: #cbd5e1;
+            font-size: 0.88rem;
+        }
+        .phone-bubble::before {
+            content: "";
+            position: absolute;
+            top: -8px;
+            left: 22px;
+            width: 12px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 1px solid rgba(251, 191, 36, 0.4);
+            border-top: 1px solid rgba(251, 191, 36, 0.4);
+            transform: rotate(45deg);
+        }
+        @keyframes bubbleIn {
+            from { opacity: 0; transform: translateY(10px) scale(0.96); }
+            to   { opacity: 1; transform: translateY(0)   scale(1); }
+        }
+
         /* ---------- Larger screens ---------- */
         @media (min-width: 560px) {
             .answers {
@@ -682,7 +990,10 @@
 
 <div class="top-bar">
     <a class="back-link" href="../../index.html">← Меню</a>
-    <button id="sound-toggle" class="icon-btn" aria-label="Звук" type="button">🔊</button>
+    <div class="top-controls">
+        <button id="voice-toggle" class="icon-btn" aria-label="Озвучка" type="button">🔇</button>
+        <button id="sound-toggle" class="icon-btn" aria-label="Звук" type="button">🔊</button>
+    </div>
 </div>
 
 <div id="subject-screen" class="screen active">
@@ -703,6 +1014,21 @@
             <span id="question-counter">Питання 1 з 15</span>
         </div>
         <button id="ladder-open" class="icon-btn" aria-label="Призова драбина" type="button">📊</button>
+    </div>
+
+    <div class="hints-bar" id="hints-bar">
+        <button id="hint-5050" class="hint-btn" type="button" aria-label="50 на 50">
+            <span class="hint-emoji">✂️</span>
+            <span class="hint-label">50 / 50</span>
+        </button>
+        <button id="hint-audience" class="hint-btn" type="button" aria-label="Допомога залу">
+            <span class="hint-emoji">👥</span>
+            <span class="hint-label">Допомога залу</span>
+        </button>
+        <button id="hint-phone" class="hint-btn" type="button" aria-label="Дзвінок другу">
+            <span class="hint-emoji">📞</span>
+            <span class="hint-label">Дзвінок другу</span>
+        </button>
     </div>
 
     <div id="question-text" class="question-box">Завантаження...</div>
@@ -734,6 +1060,31 @@
         <div id="modal-media" class="media"></div>
         <div id="modal-explanation" class="explanation"></div>
         <button id="modal-continue" class="modal-btn" type="button">Далі →</button>
+    </div>
+</div>
+
+<!-- ============ Audience hint modal ============ -->
+<div id="audience-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="audience-title">
+    <div class="modal hint-modal audience-modal">
+        <h3 id="audience-title">👥 Опитування залу</h3>
+        <p class="hint-sub">Глядачі проголосували, ось результат:</p>
+        <div class="audience-chart" id="audience-chart"></div>
+        <p class="hint-tip">Зал часто, але не завжди, обирає правильну відповідь.</p>
+        <button id="audience-close" class="modal-btn" type="button">Дякую, залу!</button>
+    </div>
+</div>
+
+<!-- ============ Phone-a-friend hint modal ============ -->
+<div id="phone-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="phone-title">
+    <div class="modal hint-modal phone-modal">
+        <h3 id="phone-title">📞 Дзвінок другу</h3>
+        <div class="phone-call">
+            <div class="phone-avatar" id="phone-avatar">🧑‍💼</div>
+            <div class="phone-line" id="phone-line"></div>
+            <div class="phone-status" id="phone-status">Викликаємо</div>
+            <div class="phone-bubble" id="phone-bubble" hidden></div>
+        </div>
+        <button id="phone-close" class="modal-btn" type="button" disabled>Дякую, друже!</button>
     </div>
 </div>
 
@@ -777,13 +1128,31 @@
     const ladderCloseBtn = document.getElementById("ladder-close");
 
     const soundToggle = document.getElementById("sound-toggle");
+    const voiceToggle = document.getElementById("voice-toggle");
     const flashEl     = document.getElementById("flash");
+
+    const hint5050Btn    = document.getElementById("hint-5050");
+    const hintAudienceBtn = document.getElementById("hint-audience");
+    const hintPhoneBtn   = document.getElementById("hint-phone");
+
+    const audienceModal  = document.getElementById("audience-modal");
+    const audienceChart  = document.getElementById("audience-chart");
+    const audienceCloseBtn = document.getElementById("audience-close");
+
+    const phoneModal    = document.getElementById("phone-modal");
+    const phoneAvatar   = document.getElementById("phone-avatar");
+    const phoneLine     = document.getElementById("phone-line");
+    const phoneStatus   = document.getElementById("phone-status");
+    const phoneBubble   = document.getElementById("phone-bubble");
+    const phoneCloseBtn = document.getElementById("phone-close");
 
     let questions = [];
     let currentIndex = 0;
     let locked = false;
     let guaranteedPrize = 0;
     let currentSubjectTitle = "";
+    let hintsUsed = { fiftyFifty: false, audience: false, phone: false };
+    let phoneTimers = [];
 
     const gameBase = (() => {
         const match = location.pathname.match(/^(.*\/games\/[^/]+)/);
@@ -870,6 +1239,26 @@
             walkaway: () => {
                 [659, 523, 698, 880].forEach((f, i) => tone(f, 0.24, "sine", 0.11, i * 0.1));
             },
+            fiftyFifty: () => {
+                tone(880, 0.08, "square", 0.09);
+                tone(1320, 0.10, "square", 0.09, 0.06);
+                tone(1760, 0.16, "triangle", 0.10, 0.13);
+            },
+            audienceCheer: () => {
+                noise(0.55, 0.05, 0);
+                [392, 523, 659, 784].forEach((f, i) => tone(f, 0.32, "sine", 0.06, i * 0.07));
+            },
+            phoneRing: () => {
+                // Classic two-tone ring (~0.6s)
+                tone(440, 0.18, "sine", 0.10, 0);
+                tone(480, 0.18, "sine", 0.10, 0.02);
+                tone(440, 0.18, "sine", 0.10, 0.32);
+                tone(480, 0.18, "sine", 0.10, 0.34);
+            },
+            phonePickup: () => {
+                tone(523, 0.08, "triangle", 0.10);
+                tone(784, 0.12, "triangle", 0.10, 0.06);
+            },
             isMuted: () => muted,
             toggle:  () => {
                 muted = !muted;
@@ -888,6 +1277,60 @@
     soundToggle.addEventListener("click", () => {
         audio.toggle();
         updateSoundIcon();
+    });
+
+    /* -------------------- VOICE (uk-UA speech-synthesis) -------------------- */
+    const voice = (() => {
+        const supported = "speechSynthesis" in window;
+        let ukVoice = null;
+        let on = localStorage.getItem("fm.voice") === "1";
+        function pickVoice() {
+            if (!supported) return;
+            const voices = speechSynthesis.getVoices();
+            ukVoice = voices.find(v => /^uk(-|_)/i.test(v.lang)) || null;
+        }
+        if (supported) {
+            pickVoice();
+            speechSynthesis.onvoiceschanged = pickVoice;
+        }
+        return {
+            supported,
+            isOn: () => on,
+            toggle() {
+                on = !on;
+                localStorage.setItem("fm.voice", on ? "1" : "0");
+                if (!on) try { speechSynthesis.cancel(); } catch (_) {}
+                return on;
+            },
+            speak(text) {
+                if (!supported || !on || !text) return;
+                try {
+                    speechSynthesis.cancel();
+                    const u = new SpeechSynthesisUtterance(text);
+                    u.lang = "uk-UA";
+                    if (ukVoice) u.voice = ukVoice;
+                    u.rate = 0.95;
+                    u.pitch = 1.05;
+                    speechSynthesis.speak(u);
+                } catch (_) {}
+            },
+            stop() {
+                if (!supported) return;
+                try { speechSynthesis.cancel(); } catch (_) {}
+            }
+        };
+    })();
+
+    function updateVoiceIcon() {
+        voiceToggle.textContent = voice.isOn() ? "🗣️" : "🔇";
+    }
+    updateVoiceIcon();
+    voiceToggle.addEventListener("click", () => {
+        voice.toggle();
+        updateVoiceIcon();
+        if (voice.isOn()) {
+            voice.speak("Голос увімкнено");
+        }
     });
 
     /* -------------------- Haptics + visual fx -------------------- */
@@ -1032,6 +1475,8 @@
             locked = false;
             guaranteedPrize = 0;
             currentSubjectTitle = data.title || title || "";
+            hintsUsed = { fiftyFifty: false, audience: false, phone: false };
+            updateHintButtons();
 
             buildPrizeLadder();
             showScreen("game");
@@ -1080,6 +1525,14 @@
 
         walkAwayBtn.disabled = currentIndex === 0;
         updatePrizeLadder();
+        updateHintButtons();
+
+        // Read out the question if voice-over is enabled.
+        if (voice.isOn()) {
+            const parts = [q.text];
+            q.answers.forEach((a, i) => parts.push(labels[i] + ". " + a));
+            voice.speak(parts.join(". "));
+        }
     }
 
     function showExplanation(isCorrect, q, onContinue) {
@@ -1116,6 +1569,8 @@
     function selectAnswer(index, chosenBtn) {
         if (locked) return;
         locked = true;
+        voice.stop();
+        updateHintButtons();
 
         const q = questions[currentIndex];
         const buttons = answersEl.querySelectorAll(".answer-btn");
@@ -1209,14 +1664,248 @@
         showScreen("result");
     }
 
+    /* -------------------- Lifelines / hints -------------------- */
+    const LABELS = ["A", "B", "C", "D"];
+
+    function updateHintButtons() {
+        // A hint is available only between answer selections (not while locked).
+        const disabled = locked || !questions.length;
+        hint5050Btn.disabled    = disabled || hintsUsed.fiftyFifty;
+        hintAudienceBtn.disabled = disabled || hintsUsed.audience;
+        hintPhoneBtn.disabled   = disabled || hintsUsed.phone;
+        hint5050Btn.classList.toggle("used", hintsUsed.fiftyFifty);
+        hintAudienceBtn.classList.toggle("used", hintsUsed.audience);
+        hintPhoneBtn.classList.toggle("used", hintsUsed.phone);
+    }
+
+    function shuffle(arr) {
+        for (let i = arr.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
+    }
+
+    function visibleAnswerIndices() {
+        const out = [];
+        answersEl.querySelectorAll(".answer-btn").forEach((btn, i) => {
+            if (!btn.classList.contains("eliminated")) out.push(i);
+        });
+        return out;
+    }
+
+    /* ----- 50/50: remove two wrong answers with X-strike animation ----- */
+    function useFiftyFifty() {
+        if (hintsUsed.fiftyFifty || locked) return;
+        hintsUsed.fiftyFifty = true;
+        updateHintButtons();
+        audio.fiftyFifty();
+        vibrate(20);
+
+        const q = questions[currentIndex];
+        const buttons = [...answersEl.querySelectorAll(".answer-btn")];
+        const wrongIndices = [];
+        for (let i = 0; i < q.answers.length; i++) {
+            if (i !== q.correct) wrongIndices.push(i);
+        }
+        shuffle(wrongIndices);
+        const toEliminate = wrongIndices.slice(0, 2);
+
+        toEliminate.forEach((idx, i) => {
+            setTimeout(() => {
+                const btn = buttons[idx];
+                if (!btn) return;
+                btn.classList.add("eliminated");
+                btn.disabled = true;
+            }, i * 220);
+        });
+    }
+
+    /* ----- Audience: animated bar chart with weighted votes ----- */
+    function generateAudienceVotes(correctIdx, total) {
+        // Correct answer gets 38–62%, the rest split between wrong answers.
+        const correctPct = 38 + Math.floor(Math.random() * 25);
+        let remaining = 100 - correctPct;
+        const wrongIdxs = [];
+        for (let i = 0; i < total; i++) if (i !== correctIdx) wrongIdxs.push(i);
+
+        const splits = [];
+        for (let i = 0; i < wrongIdxs.length - 1; i++) {
+            const v = Math.floor(Math.random() * (remaining + 1));
+            splits.push(v);
+            remaining -= v;
+        }
+        splits.push(remaining);
+        shuffle(splits);
+
+        const result = new Array(total).fill(0);
+        result[correctIdx] = correctPct;
+        wrongIdxs.forEach((idx, i) => { result[idx] = splits[i]; });
+        return result;
+    }
+
+    function useAudience() {
+        if (hintsUsed.audience || locked) return;
+        hintsUsed.audience = true;
+        updateHintButtons();
+        audio.audienceCheer();
+        vibrate(15);
+
+        const q = questions[currentIndex];
+        const votes = generateAudienceVotes(q.correct, q.answers.length);
+
+        // Mark which answers were already removed by 50/50 — they get 0%.
+        const visible = new Set(visibleAnswerIndices());
+
+        audienceChart.innerHTML = "";
+        votes.forEach((pct, i) => {
+            const bar = document.createElement("div");
+            bar.className = "audience-bar" + (visible.has(i) ? "" : " is-eliminated");
+            const shownPct = visible.has(i) ? pct : 0;
+            bar.innerHTML =
+                '<span class="audience-bar-pct">' + shownPct + '%</span>' +
+                '<div class="audience-bar-fill" data-target="' + shownPct + '"></div>' +
+                '<div class="audience-bar-label">' + LABELS[i] + '</div>';
+            audienceChart.appendChild(bar);
+        });
+
+        audienceModal.classList.add("active");
+
+        // Trigger CSS height transition next frame.
+        requestAnimationFrame(() => {
+            audienceChart.querySelectorAll(".audience-bar-fill").forEach(fill => {
+                const target = Number(fill.dataset.target) || 0;
+                fill.style.height = target + "%";
+            });
+        });
+    }
+
+    /* ----- Phone a friend: ringing → answered with confidence ----- */
+    const FRIEND_QUOTES = {
+        high: [
+            "Я майже впевнений!",
+            "Можеш на мене покластися.",
+            "Це точно правильна відповідь."
+        ],
+        medium: [
+            "Думаю так, але не на 100%.",
+            "Мабуть це, але перевір сама.",
+            "Радше так, ніж ні."
+        ],
+        low: [
+            "Чесно — не дуже впевнений.",
+            "Це просто здогадка, але…",
+            "Спробую вгадати разом з тобою."
+        ]
+    };
+
+    function clearPhoneTimers() {
+        phoneTimers.forEach(t => clearTimeout(t));
+        phoneTimers = [];
+    }
+
+    function usePhoneFriend() {
+        if (hintsUsed.phone || locked) return;
+        hintsUsed.phone = true;
+        updateHintButtons();
+        vibrate(15);
+
+        const q = questions[currentIndex];
+        const visible = visibleAnswerIndices();
+
+        // Friend's confidence: ~70% correct, 30% wrong (within still-visible options).
+        const trusts = Math.random() < 0.7;
+        let friendPick;
+        if (trusts && visible.includes(q.correct)) {
+            friendPick = q.correct;
+        } else {
+            const wrongs = visible.filter(i => i !== q.correct);
+            friendPick = wrongs.length
+                ? wrongs[Math.floor(Math.random() * wrongs.length)]
+                : q.correct;
+        }
+        const isCorrect = friendPick === q.correct;
+        // High confidence only when actually correct; medium most of the time; low for blind guess
+        let confidence;
+        if (isCorrect && Math.random() < 0.55) confidence = "high";
+        else if (!isCorrect && Math.random() < 0.35) confidence = "low";
+        else confidence = "medium";
+        const quote = FRIEND_QUOTES[confidence][
+            Math.floor(Math.random() * FRIEND_QUOTES[confidence].length)
+        ];
+
+        // Open modal — ringing phase
+        clearPhoneTimers();
+        phoneAvatar.classList.remove("answered");
+        phoneAvatar.classList.add("ringing");
+        phoneLine.classList.remove("silent");
+        phoneStatus.innerHTML = 'Викликаємо <span class="dots"></span>';
+        phoneBubble.hidden = true;
+        phoneBubble.innerHTML = "";
+        phoneCloseBtn.disabled = true;
+        phoneModal.classList.add("active");
+        audio.phoneRing();
+        phoneTimers.push(setTimeout(() => audio.phoneRing(), 700));
+        phoneTimers.push(setTimeout(() => audio.phoneRing(), 1400));
+
+        // Friend answers
+        phoneTimers.push(setTimeout(() => {
+            phoneAvatar.classList.remove("ringing");
+            phoneAvatar.classList.add("answered");
+            phoneLine.classList.add("silent");
+            phoneStatus.textContent = "Друг на лінії";
+            audio.phonePickup();
+
+            phoneBubble.innerHTML =
+                "<strong>Друг:</strong> Я думаю, що відповідь — " +
+                '<span class="friend-pick">' + LABELS[friendPick] + '</span>' +
+                ", «" + escapeHtml(q.answers[friendPick]) + "». " +
+                '<span class="friend-quote">' + escapeHtml(quote) + '</span>';
+            phoneBubble.hidden = false;
+            phoneCloseBtn.disabled = false;
+
+            if (voice.isOn()) {
+                voice.speak("Я думаю, відповідь " + LABELS[friendPick] + ". " + quote);
+            }
+        }, 2100));
+    }
+
+    function closePhoneModal() {
+        clearPhoneTimers();
+        voice.stop();
+        phoneModal.classList.remove("active");
+        phoneAvatar.classList.remove("ringing", "answered");
+        phoneBubble.hidden = true;
+        phoneBubble.innerHTML = "";
+    }
+
+    hint5050Btn.addEventListener("click", () => { audio.tick(); useFiftyFifty(); });
+    hintAudienceBtn.addEventListener("click", () => { audio.tick(); useAudience(); });
+    hintPhoneBtn.addEventListener("click", () => { audio.tick(); usePhoneFriend(); });
+
+    audienceCloseBtn.addEventListener("click", () => {
+        audio.tick();
+        audienceModal.classList.remove("active");
+    });
+    audienceModal.addEventListener("click", (e) => {
+        if (e.target === audienceModal) audienceModal.classList.remove("active");
+    });
+
+    phoneCloseBtn.addEventListener("click", () => { audio.tick(); closePhoneModal(); });
+    phoneModal.addEventListener("click", (e) => {
+        if (e.target === phoneModal && !phoneCloseBtn.disabled) closePhoneModal();
+    });
+
     /* -------------------- Wiring -------------------- */
     walkAwayBtn.addEventListener("click", () => {
         if (locked || currentIndex === 0) return;
+        voice.stop();
         endGame("walkaway", PRIZES[currentIndex - 1]);
     });
 
     playAgainBtn.addEventListener("click", () => {
         audio.tick();
+        voice.stop();
         showScreen("subject");
     });
 
