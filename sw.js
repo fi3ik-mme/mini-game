@@ -1,4 +1,4 @@
-const CACHE_NAME = "mini-games-v7";
+const CACHE_NAME = "mini-games-v8";
 
 const PRECACHE = [
     "./",
@@ -23,7 +23,8 @@ const PRECACHE = [
     "./games/adventure-academy/data/themes.json",
     "./games/adventure-academy/data/space.json",
     "./games/adventure-academy/data/human-body.json",
-    "./games/adventure-academy/data/ancient-egypt.json"
+    "./games/adventure-academy/data/ancient-egypt.json",
+    "./games/adventure-academy/data/steam.json"
 ];
 
 self.addEventListener("install", (event) => {
