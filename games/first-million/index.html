@@ -177,7 +177,57 @@
             color: #fde68a;
         }
 
-        .subject-btn span { color: #cbd5e1; font-size: 0.88rem; line-height: 1.4; }
+        .subject-btn .subject-desc { color: #cbd5e1; font-size: 0.88rem; line-height: 1.4; display: block; }
+
+        /* ---------- Per-subject progress badges ---------- */
+        .subject-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .subject-stats .stat {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 9px;
+            border-radius: 99px;
+            font-size: 0.76rem;
+            font-weight: 600;
+            line-height: 1.2;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #cbd5e1;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .subject-stats .stat-fresh {
+            background: transparent;
+            border-color: transparent;
+            color: #64748b;
+            padding-left: 0;
+            font-weight: 500;
+            font-style: italic;
+        }
+
+        .subject-stats .stat-millions {
+            background: linear-gradient(180deg, rgba(251, 191, 36, 0.32), rgba(217, 119, 6, 0.22));
+            border-color: rgba(251, 191, 36, 0.55);
+            color: #fef3c7;
+            box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 2px 6px rgba(245, 158, 11, 0.18);
+        }
+
+        /* Subtle pulse so first-ever millions feel celebratory. */
+        @keyframes lemon-shimmer {
+            0%, 100% { transform: scale(1); }
+            50%      { transform: scale(1.15) rotate(-6deg); }
+        }
+        .subject-stats .stat-millions .lemon {
+            display: inline-block;
+            animation: lemon-shimmer 2.4s ease-in-out infinite;
+            transform-origin: 50% 80%;
+        }
 
         /* ---------- Game screen ---------- */
         .game-header {
@@ -1151,8 +1201,49 @@
     let locked = false;
     let guaranteedPrize = 0;
     let currentSubjectTitle = "";
+    let currentSubjectId = "";
     let hintsUsed = { fiftyFifty: false, audience: false, phone: false };
     let phoneTimers = [];
+
+    /* -------------------- Per-subject progress (localStorage) -------------------- */
+    // Tracks attempts + millions won for each subject so the picker can show
+    // a small badge under each subject card (🎯 N games · 🍋 × M).
+    const subjectStats = (() => {
+        const LS_KEY = "fm.subjectStats";
+        const FRESH = { played: 0, won: 0, millions: 0, lastPlayed: 0 };
+        function loadAll() {
+            try { return JSON.parse(localStorage.getItem(LS_KEY) || "{}"); }
+            catch (_) { return {}; }
+        }
+        function saveAll(all) {
+            try { localStorage.setItem(LS_KEY, JSON.stringify(all)); } catch (_) {}
+        }
+        function getOne(id) {
+            if (!id) return { ...FRESH };
+            const all = loadAll();
+            return { ...FRESH, ...(all[id] || {}) };
+        }
+        function update(id, patch) {
+            if (!id) return;
+            const all = loadAll();
+            const merged = { ...FRESH, ...(all[id] || {}), ...patch };
+            all[id] = merged;
+            saveAll(all);
+        }
+        return {
+            get: getOne,
+            recordStart(id) {
+                if (!id) return;
+                const s = getOne(id);
+                update(id, { played: s.played + 1, lastPlayed: Date.now() });
+            },
+            recordMillion(id) {
+                if (!id) return;
+                const s = getOne(id);
+                update(id, { won: s.won + 1, millions: s.millions + 1 });
+            }
+        };
+    })();
 
     const gameBase = (() => {
         const match = location.pathname.match(/^(.*\/games\/[^/]+)/);
@@ -1279,23 +1370,47 @@
         updateSoundIcon();
     });
 
-    /* -------------------- VOICE (uk-UA speech-synthesis) -------------------- */
+    /* -------------------- VOICE (uk-UA speech-synthesis with random voices) -------------------- */
     const voice = (() => {
         const supported = "speechSynthesis" in window;
-        let ukVoice = null;
+        let voicePool = [];
         let on = localStorage.getItem("fm.voice") === "1";
-        function pickVoice() {
+
+        // Build a pool of voices that can handle Ukrainian reasonably well.
+        // Priority: native uk → other Cyrillic Slavic → Latin-script Slavic → any.
+        // We pick from the highest non-empty tier so quality stays best-available
+        // while still giving variety across multiple voices in that tier.
+        function refreshPool() {
             if (!supported) return;
-            const voices = speechSynthesis.getVoices();
-            ukVoice = voices.find(v => /^uk(-|_)/i.test(v.lang)) || null;
+            const all = speechSynthesis.getVoices();
+            if (!all.length) { voicePool = []; return; }
+            const uk = all.filter(v => /^uk([-_]|$)/i.test(v.lang));
+            if (uk.length) { voicePool = uk; return; }
+            const slavicCyr = all.filter(v => /^(ru|be|bg|sr|mk)([-_]|$)/i.test(v.lang));
+            if (slavicCyr.length) { voicePool = slavicCyr; return; }
+            const slavicLat = all.filter(v => /^(pl|cs|sk|hr|sl)([-_]|$)/i.test(v.lang));
+            if (slavicLat.length) { voicePool = slavicLat; return; }
+            voicePool = all;
         }
         if (supported) {
-            pickVoice();
-            speechSynthesis.onvoiceschanged = pickVoice;
+            refreshPool();
+            speechSynthesis.onvoiceschanged = refreshPool;
         }
+
+        function pickRandomVoice() {
+            if (!voicePool.length) return null;
+            return voicePool[Math.floor(Math.random() * voicePool.length)];
+        }
+        // Slight pitch/rate jitter per utterance — gives even a single-voice device
+        // a sense of "different speakers" each time.
+        function jitter(low, high) {
+            return low + Math.random() * (high - low);
+        }
+
         return {
             supported,
             isOn: () => on,
+            voiceCount: () => voicePool.length,
             toggle() {
                 on = !on;
                 localStorage.setItem("fm.voice", on ? "1" : "0");
@@ -1308,9 +1423,10 @@
                     speechSynthesis.cancel();
                     const u = new SpeechSynthesisUtterance(text);
                     u.lang = "uk-UA";
-                    if (ukVoice) u.voice = ukVoice;
-                    u.rate = 0.95;
-                    u.pitch = 1.05;
+                    const v = pickRandomVoice();
+                    if (v) u.voice = v;
+                    u.rate  = jitter(0.88, 1.08);
+                    u.pitch = jitter(0.80, 1.25);
                     speechSynthesis.speak(u);
                 } catch (_) {}
             },
@@ -1328,7 +1444,12 @@
     voiceToggle.addEventListener("click", () => {
         voice.toggle();
         updateVoiceIcon();
-        if (voice.isOn()) {
+        if (!voice.isOn()) return;
+        // If a question is already on screen, read it right away so the user
+        // doesn't have to wait for the next question to hear voice-over.
+        if (gameScreen.classList.contains("active") && questions.length) {
+            speakCurrentQuestion();
+        } else {
             voice.speak("Голос увімкнено");
         }
     });
@@ -1423,9 +1544,13 @@
                     '<span class="subject-icon" aria-hidden="true">' + escapeHtml(icon) + '</span>' +
                     '<span class="subject-text">' +
                         '<strong>' + escapeHtml(subject.title) + '</strong>' +
-                        '<span>' + escapeHtml(subject.description) + '</span>' +
+                        '<span class="subject-desc">' + escapeHtml(subject.description) + '</span>' +
+                        renderSubjectStats(subject.id) +
                     '</span>';
-                btn.addEventListener("click", () => { audio.select(); startGame(subject.file, subject.title); });
+                btn.addEventListener("click", () => {
+                    audio.select();
+                    startGame(subject.file, subject.title, subject.id);
+                });
                 subjectList.appendChild(btn);
             });
         } catch (err) {
@@ -1439,7 +1564,24 @@
         }
     }
 
-    async function startGame(file, title) {
+    function renderSubjectStats(id) {
+        const s = subjectStats.get(id);
+        if (!s.played) {
+            return '<span class="subject-stats"><span class="stat stat-fresh">Ще не пробував</span></span>';
+        }
+        const playedWord = s.played === 1 ? "раз" : (s.played < 5 ? "рази" : "разів");
+        let html = '<span class="subject-stats">';
+        html += '<span class="stat" title="Скільки разів ти грав цей предмет">🎯 ' + s.played + ' ' + playedWord + '</span>';
+        if (s.millions > 0) {
+            html += '<span class="stat stat-millions" title="Скільки разів ти дійшов до мільйона">'
+                  + '<span class="lemon" aria-hidden="true">🍋</span> × ' + s.millions
+                  + '</span>';
+        }
+        html += '</span>';
+        return html;
+    }
+
+    async function startGame(file, title, id) {
         loadError.textContent = "";
         try {
             let res;
@@ -1475,8 +1617,14 @@
             locked = false;
             guaranteedPrize = 0;
             currentSubjectTitle = data.title || title || "";
+            currentSubjectId = id || "";
             hintsUsed = { fiftyFifty: false, audience: false, phone: false };
             updateHintButtons();
+
+            // Count this as an attempt the moment questions are loaded and the
+            // game screen is shown — even a quick "wrong-first-answer" still
+            // counts as having tried the subject.
+            subjectStats.recordStart(currentSubjectId);
 
             buildPrizeLadder();
             showScreen("game");
@@ -1527,12 +1675,24 @@
         updatePrizeLadder();
         updateHintButtons();
 
-        // Read out the question if voice-over is enabled.
-        if (voice.isOn()) {
-            const parts = [q.text];
-            q.answers.forEach((a, i) => parts.push(labels[i] + ". " + a));
-            voice.speak(parts.join(". "));
-        }
+        if (voice.isOn()) speakCurrentQuestion();
+    }
+
+    // Cyrillic letter names give the Ukrainian TTS engine clear, predictable
+    // pronunciation (the on-screen labels stay Latin A/B/C/D for the game-show look).
+    const VOICE_LETTERS = ["А", "Б", "В", "Г"];
+
+    function questionVoiceText(q) {
+        const parts = [q.text];
+        q.answers.forEach((a, i) => {
+            parts.push("Варіант " + VOICE_LETTERS[i] + ": " + a);
+        });
+        return parts.join(". ");
+    }
+
+    function speakCurrentQuestion() {
+        if (!questions.length || currentIndex < 0 || currentIndex >= questions.length) return;
+        voice.speak(questionVoiceText(questions[currentIndex]));
     }
 
     function showExplanation(isCorrect, q, onContinue) {
@@ -1557,8 +1717,19 @@
 
         explanationModal.classList.add("active");
 
+        if (voice.isOn()) {
+            const verdict = isCorrect ? "Правильно!" : "Неправильно.";
+            const parts = [
+                verdict,
+                "Правильна відповідь: " + correctAnswer + ".",
+                q.explanation || ""
+            ].filter(Boolean);
+            voice.speak(parts.join(" "));
+        }
+
         const handler = () => {
             audio.tick();
+            voice.stop();
             explanationModal.classList.remove("active");
             modalContinue.removeEventListener("click", handler);
             onContinue();
@@ -1630,6 +1801,9 @@
 
     function endGame(kind, prize) {
         if (kind === "win") {
+            // Reaching the last (15th) question correctly = the million prize.
+            // Record it for the picker badge before showing the result screen.
+            if (prize >= 1000000) subjectStats.recordMillion(currentSubjectId);
             resultEmoji.textContent = "🏆";
             resultTitle.textContent = "Вітаємо!";
             resultMessage.textContent = "Ти відповів на всі 15 питань і виграв головний приз!";
@@ -1906,6 +2080,8 @@
     playAgainBtn.addEventListener("click", () => {
         audio.tick();
         voice.stop();
+        // Reflect freshly-incremented stats (attempts / millions) in the picker.
+        loadSubjects();
         showScreen("subject");
     });
 
