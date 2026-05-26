@@ -115,6 +115,131 @@
             text-shadow: 0 0 30px rgba(251, 191, 36, 0.25);
         }
 
+        /* ---------- Wallet + Lemon Basket ---------- */
+        .wallet-bar {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            max-width: 640px;
+            margin: 0 auto 18px;
+        }
+
+        .wallet-card {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.16), rgba(251, 191, 36, 0.04));
+            border: 1px solid rgba(251, 191, 36, 0.4);
+            min-width: 0;
+            transition: border-color 0.2s;
+        }
+
+        .wallet-card.basket {
+            background: linear-gradient(135deg, rgba(250, 204, 21, 0.18), rgba(250, 204, 21, 0.04));
+            border-color: rgba(250, 204, 21, 0.45);
+        }
+
+        .wallet-card .wc-icon {
+            font-size: 1.7rem;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .wallet-card .wc-text {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        .wallet-card strong {
+            color: #fde68a;
+            font-size: 1.05rem;
+            line-height: 1.15;
+            font-weight: 800;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            display: inline-block;
+        }
+
+        .wallet-card.basket strong { color: #fef9c3; }
+
+        .wallet-card .wc-label {
+            color: #94a3b8;
+            font-size: 0.72rem;
+            margin-top: 2px;
+        }
+
+        .wallet-card.bump strong {
+            animation: walletBump 0.7s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+        }
+
+        @keyframes walletBump {
+            0%   { transform: scale(1); }
+            35%  { transform: scale(1.22); color: #4ade80; text-shadow: 0 0 14px rgba(74, 222, 128, 0.7); }
+            100% { transform: scale(1); }
+        }
+
+        .wallet-card.bump-lemon strong {
+            animation: lemonPop 0.8s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+        }
+
+        @keyframes lemonPop {
+            0%   { transform: scale(1) rotate(0deg); }
+            30%  { transform: scale(1.3) rotate(-8deg); color: #fde047; text-shadow: 0 0 16px rgba(253, 224, 71, 0.85); }
+            60%  { transform: scale(1.1) rotate(6deg); }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+
+        /* "+X ₴ у гаманець / +1 🍋 у корзину" block on result screen */
+        .earned-block {
+            margin: 14px 0 18px;
+            padding: 14px 16px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.18), rgba(16, 185, 129, 0.06));
+            border: 1px solid rgba(74, 222, 128, 0.45);
+            color: #d1fae5;
+            text-align: center;
+            animation: earnedFade 0.5s ease;
+        }
+
+        @keyframes earnedFade {
+            from { opacity: 0; transform: translateY(8px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .earned-block .earned-amount {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #86efac;
+        }
+
+        .earned-block .earned-amount strong {
+            font-size: 1.25rem;
+            color: #4ade80;
+        }
+
+        .earned-block .earned-lemon {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #fde047;
+            margin-top: 6px;
+            animation: lemonPop 0.8s 0.25s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+        }
+
+        .earned-block .earned-totals {
+            color: #cbd5e1 !important;
+            font-size: 0.82rem !important;
+            margin: 10px 0 0 !important;
+        }
+
+        .earned-block .earned-totals strong {
+            color: #fde68a;
+        }
+
         .subtitle {
             text-align: center;
             color: #94a3b8;
@@ -168,6 +293,35 @@
         .subject-text {
             flex: 1 1 auto;
             min-width: 0;
+        }
+
+        /* Locked tier styling — dimmed, muted accent, no hover lift. */
+        .subject-btn.locked {
+            opacity: 0.62;
+            background: rgba(148, 163, 184, 0.06);
+            border-color: rgba(148, 163, 184, 0.22);
+            cursor: help;
+        }
+        .subject-btn.locked:hover { transform: none; }
+        .subject-btn.locked:active {
+            transform: scale(0.985);
+            background: rgba(148, 163, 184, 0.1);
+            border-color: rgba(148, 163, 184, 0.3);
+        }
+        .subject-btn.locked .subject-icon {
+            filter: grayscale(0.5) brightness(0.85);
+        }
+        .subject-btn .tier-badge {
+            display: inline-block;
+            margin-left: 6px;
+            font-size: 0.85em;
+            letter-spacing: -1px;
+            vertical-align: baseline;
+        }
+        .subject-btn .lock-icon {
+            display: inline-block;
+            margin-left: 6px;
+            font-size: 0.9em;
         }
 
         .subject-btn strong {
@@ -634,6 +788,140 @@
             opacity: 0.7;
         }
 
+        /* ---------- Cheat-code modal ---------- */
+        .cheat-emoji {
+            font-size: 3rem;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 4px;
+            filter: drop-shadow(0 0 16px rgba(251, 191, 36, 0.55));
+        }
+        .cheat-hint {
+            color: #cbd5e1;
+            font-size: 0.92rem;
+            line-height: 1.45;
+            text-align: center;
+            margin: 0 0 14px;
+        }
+        .cheat-input {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px 14px;
+            font-size: 1rem;
+            color: white;
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 12px;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .cheat-input:focus {
+            border-color: rgba(251, 191, 36, 0.7);
+            box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.15);
+        }
+        .cheat-input.error {
+            border-color: rgba(248, 113, 113, 0.7);
+            animation: cheatShake 0.4s;
+        }
+        @keyframes cheatShake {
+            0%, 100% { transform: translateX(0); }
+            20%      { transform: translateX(-6px); }
+            40%      { transform: translateX(6px); }
+            60%      { transform: translateX(-4px); }
+            80%      { transform: translateX(4px); }
+        }
+        .cheat-feedback {
+            margin: 10px 0 0;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        .cheat-feedback.success { color: #86efac; }
+        .cheat-feedback.error   { color: #fca5a5; }
+        .cheat-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 16px;
+        }
+        .cheat-actions .modal-btn { flex: 1; padding: 12px 16px; }
+
+        /* ---------- Locked modal ---------- */
+        .locked-emoji {
+            font-size: 3rem;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 4px;
+            filter: drop-shadow(0 0 16px rgba(148, 163, 184, 0.5));
+        }
+        .locked-modal-message {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 0 0 14px;
+            text-align: center;
+        }
+        .locked-progress-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin: 6px 0 6px;
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+        .locked-progress-value {
+            color: #fde68a;
+            font-weight: 700;
+        }
+        .locked-progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 999px;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+        .locked-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #fbbf24, #f59e0b);
+            border-radius: 999px;
+            transition: width 0.4s ease;
+        }
+        .locked-checklist {
+            list-style: none;
+            padding: 0;
+            margin: 8px 0 14px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px 10px;
+        }
+        @media (max-width: 380px) {
+            .locked-checklist { grid-template-columns: 1fr; }
+        }
+        .locked-checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 8px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.04);
+            font-size: 0.84rem;
+            color: #cbd5e1;
+        }
+        .locked-checklist-item.done {
+            background: rgba(34, 197, 94, 0.12);
+            color: #d1fae5;
+        }
+        .locked-checklist-item.todo {
+            color: #94a3b8;
+        }
+        .locked-checklist-item .lc-mark { font-size: 0.95em; }
+        .locked-checklist-item .lc-icon { font-size: 1em; }
+        .locked-checklist-item .lc-title {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
         .modal-btn.secondary {
             background: rgba(255, 255, 255, 0.08);
             color: white;
@@ -1041,6 +1329,7 @@
 <div class="top-bar">
     <a class="back-link" href="../../index.html">← Меню</a>
     <div class="top-controls">
+        <button id="cheat-toggle" class="icon-btn" aria-label="Чіткод" type="button">🔑</button>
         <button id="voice-toggle" class="icon-btn" aria-label="Озвучка" type="button">🔇</button>
         <button id="sound-toggle" class="icon-btn" aria-label="Звук" type="button">🔊</button>
     </div>
@@ -1051,6 +1340,24 @@
         <div class="hero-emoji">💰</div>
         <h1>Перший мільйон</h1>
     </div>
+
+    <div class="wallet-bar" id="wallet-bar">
+        <div class="wallet-card" id="wallet-card" title="Гаманець: загальна сума виграних гривень">
+            <span class="wc-icon" aria-hidden="true">💰</span>
+            <span class="wc-text">
+                <strong id="wallet-amount">0 ₴</strong>
+                <span class="wc-label">у гаманці</span>
+            </span>
+        </div>
+        <div class="wallet-card basket" id="basket-card" title="Корзина: один лимон за кожне проходження категорії до мільйона">
+            <span class="wc-icon" aria-hidden="true">🧺</span>
+            <span class="wc-text">
+                <strong id="basket-count">0 🍋</strong>
+                <span class="wc-label">у корзині</span>
+            </span>
+        </div>
+    </div>
+
     <p class="subtitle">Обери предмет для гри</p>
     <div id="subject-list" class="subject-list"></div>
     <p id="load-error" class="error-msg"></p>
@@ -1092,6 +1399,15 @@
         <h2 id="result-title">Гра завершена</h2>
         <p id="result-message"></p>
         <div id="result-prize" class="result-prize"></div>
+
+        <div id="earned-block" class="earned-block" hidden>
+            <div class="earned-amount">+ <strong id="earned-amount">0</strong> ₴ у гаманець</div>
+            <div class="earned-lemon" id="earned-lemon" hidden>+ 1 🍋 у корзину!</div>
+            <div class="earned-totals">
+                💰 <strong id="result-wallet-total">0 ₴</strong> · 🧺 <strong id="result-basket-total">0 🍋</strong>
+            </div>
+        </div>
+
         <button id="play-again" class="primary-btn" type="button">Грати знову</button>
     </div>
 </div>
@@ -1101,6 +1417,32 @@
         <h3>Призова драбина</h3>
         <ol id="prize-ladder" class="prize-ladder" reversed></ol>
         <button id="ladder-close" class="modal-btn secondary" type="button">Закрити</button>
+    </div>
+</div>
+
+<div id="locked-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="locked-title">
+    <div class="modal">
+        <div class="locked-emoji" aria-hidden="true">🔒</div>
+        <h3 id="locked-title">Категорія заблокована</h3>
+        <p id="locked-message" class="locked-modal-message"></p>
+        <div id="locked-progress"></div>
+        <button id="locked-close" class="modal-btn" type="button">Зрозуміло</button>
+    </div>
+</div>
+
+<div id="cheat-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="cheat-title">
+    <div class="modal">
+        <div class="cheat-emoji" aria-hidden="true">🔑</div>
+        <h3 id="cheat-title">Чіткод</h3>
+        <p class="cheat-hint">Введи секретне слово, щоб активувати бонус.</p>
+        <input id="cheat-input" type="text" class="cheat-input"
+               autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"
+               placeholder="напр. відкрий всі" />
+        <p id="cheat-feedback" class="cheat-feedback" hidden></p>
+        <div class="cheat-actions">
+            <button id="cheat-cancel" class="modal-btn secondary" type="button">Скасувати</button>
+            <button id="cheat-submit" class="modal-btn" type="button">Активувати</button>
+        </div>
     </div>
 </div>
 
@@ -1167,6 +1509,17 @@
     const resultEmoji     = document.getElementById("result-emoji");
     const playAgainBtn    = document.getElementById("play-again");
 
+    // Wallet bar (subject screen) + earned block (result screen).
+    const walletCardEl     = document.getElementById("wallet-card");
+    const basketCardEl     = document.getElementById("basket-card");
+    const walletAmountEl   = document.getElementById("wallet-amount");
+    const basketCountEl    = document.getElementById("basket-count");
+    const earnedBlock      = document.getElementById("earned-block");
+    const earnedAmountEl   = document.getElementById("earned-amount");
+    const earnedLemonEl    = document.getElementById("earned-lemon");
+    const resultWalletTotalEl = document.getElementById("result-wallet-total");
+    const resultBasketTotalEl = document.getElementById("result-basket-total");
+
     const explanationModal = document.getElementById("explanation-modal");
     const modalTitle       = document.getElementById("modal-title");
     const modalMedia       = document.getElementById("modal-media");
@@ -1176,6 +1529,19 @@
     const ladderModal = document.getElementById("ladder-modal");
     const ladderOpenBtn  = document.getElementById("ladder-open");
     const ladderCloseBtn = document.getElementById("ladder-close");
+
+    const lockedModal      = document.getElementById("locked-modal");
+    const lockedTitleEl    = document.getElementById("locked-title");
+    const lockedMessageEl  = document.getElementById("locked-message");
+    const lockedProgressEl = document.getElementById("locked-progress");
+    const lockedCloseBtn   = document.getElementById("locked-close");
+
+    const cheatToggle    = document.getElementById("cheat-toggle");
+    const cheatModal     = document.getElementById("cheat-modal");
+    const cheatInput     = document.getElementById("cheat-input");
+    const cheatFeedback  = document.getElementById("cheat-feedback");
+    const cheatSubmitBtn = document.getElementById("cheat-submit");
+    const cheatCancelBtn = document.getElementById("cheat-cancel");
 
     const soundToggle = document.getElementById("sound-toggle");
     const voiceToggle = document.getElementById("voice-toggle");
@@ -1205,6 +1571,69 @@
     let hintsUsed = { fiftyFifty: false, audience: false, phone: false };
     let phoneTimers = [];
 
+    /* -------------------- Wallet (lifetime hryvnia + lemon basket) -------------------- */
+    // The wallet accumulates every prize the user actually walks away with —
+    // a winning million, a guaranteed milestone (1 000 / 32 000), or whatever
+    // they took home with «Забрати виграш». The basket counts how many times
+    // they reached the millionaire question correctly across all subjects
+    // (= sum of `subjectStats[*].millions`).
+    const wallet = (() => {
+        const KEY = "fm.wallet";
+        function load() {
+            try { return JSON.parse(localStorage.getItem(KEY) || "{}"); }
+            catch (_) { return {}; }
+        }
+        function save(w) {
+            try { localStorage.setItem(KEY, JSON.stringify(w)); } catch (_) {}
+        }
+        function get() {
+            const w = load();
+            return { hryvnias: Number.isFinite(w.hryvnias) ? Math.max(0, w.hryvnias) : 0 };
+        }
+        return {
+            get,
+            add(amount) {
+                if (!Number.isFinite(amount) || amount <= 0) return get();
+                const w = get();
+                w.hryvnias += Math.floor(amount);
+                save(w);
+                return w;
+            }
+        };
+    })();
+
+    function totalLemons() {
+        try {
+            const all = JSON.parse(localStorage.getItem("fm.subjectStats") || "{}");
+            let total = 0;
+            for (const id in all) total += (all[id]?.millions || 0);
+            return total;
+        } catch (_) { return 0; }
+    }
+
+    function fmtUah(n) {
+        return Number(n || 0).toLocaleString("uk-UA") + " ₴";
+    }
+
+    // Pulses the card to draw attention to a freshly-changed value.
+    function bumpCard(card, cls = "bump") {
+        if (!card) return;
+        card.classList.remove(cls);
+        // Force reflow so the animation restarts when the user wins twice in a row.
+        void card.offsetWidth;
+        card.classList.add(cls);
+    }
+
+    function refreshWalletBar(opts = {}) {
+        const { bumpHryvnias = false, bumpLemon = false } = opts;
+        const w = wallet.get();
+        const lemons = totalLemons();
+        if (walletAmountEl) walletAmountEl.textContent = fmtUah(w.hryvnias);
+        if (basketCountEl)  basketCountEl.textContent  = lemons + " 🍋";
+        if (bumpHryvnias) bumpCard(walletCardEl, "bump");
+        if (bumpLemon)    bumpCard(basketCardEl, "bump-lemon");
+    }
+
     /* -------------------- Per-subject progress (localStorage) -------------------- */
     // Tracks attempts + millions won for each subject so the picker can show
     // a small badge under each subject card (🎯 N games · 🍋 × M).
@@ -1232,6 +1661,7 @@
         }
         return {
             get: getOne,
+            getAll: loadAll,
             recordStart(id) {
                 if (!id) return;
                 const s = getOne(id);
@@ -1244,6 +1674,123 @@
             }
         };
     })();
+
+    /* -------------------- Cheat codes -------------------- */
+    // Definitions live in data/cheatcodes.json so they can change without
+    // shipping a code update. Active cheats persist in localStorage so they
+    // survive reloads.
+    const cheats = (() => {
+        const KEY = "fm.cheats";
+        function load() {
+            try { return JSON.parse(localStorage.getItem(KEY) || "{}"); }
+            catch (_) { return {}; }
+        }
+        function save(c) {
+            try { localStorage.setItem(KEY, JSON.stringify(c)); } catch (_) {}
+        }
+        return {
+            get: load,
+            isOn(name) { return !!load()[name]; },
+            apply(effect) {
+                if (!effect || !effect.type) return;
+                const c = load();
+                if (effect.type === "unlockAll") c.unlockAll = true;
+                save(c);
+            }
+        };
+    })();
+
+    function normalizeCheatCode(s) {
+        return String(s || "").normalize("NFC").trim().toLowerCase().replace(/\s+/g, " ");
+    }
+
+    /* -------------------- Unlock rules -------------------- */
+    // Each subject declares its unlock requirement in subjects.json. Visualised
+    // both in the title (a small emoji badge after the subject name) and on the
+    // button itself (locked / unlocked styling + a click-through modal).
+    function tierBadge(subject) {
+        const u = subject && subject.unlock;
+        if (!u || u.type === "free") return "";
+        if (u.type === "lemons") return "🍋".repeat(Math.max(1, Math.min(5, u.min || 1)));
+        if (u.type === "everySubject") return "🏆";
+        return "";
+    }
+
+    function isUnlocked(subject, allStats, allSubjects) {
+        if (cheats.isOn("unlockAll")) return true;
+        const u = subject && subject.unlock;
+        if (!u || u.type === "free") return true;
+        if (u.type === "lemons") {
+            let total = 0;
+            for (const id in allStats) total += (allStats[id]?.millions || 0);
+            return total >= (u.min || 1);
+        }
+        if (u.type === "everySubject") {
+            // Need ≥1 lemon in every *other* subject (not itself).
+            return (allSubjects || []).every(s =>
+                s.id === subject.id || (allStats[s.id]?.millions || 0) >= 1
+            );
+        }
+        return true;
+    }
+
+    // Returns { title, message, progressHtml } describing why a subject is locked.
+    function lockedReason(subject, allStats, allSubjects) {
+        const u = subject && subject.unlock;
+        if (!u || u.type === "free") return null;
+        if (u.type === "lemons") {
+            const min = u.min || 1;
+            let have = 0;
+            for (const id in allStats) have += (allStats[id]?.millions || 0);
+            const lemonWord = min === 1 ? "лимон" : (min < 5 ? "лимони" : "лимонів");
+            return {
+                title: "🔒 Категорія заблокована",
+                message:
+                    "Щоб відкрити «" + subject.title + "», збери щонайменше " +
+                    min + " " + lemonWord + " 🍋 у будь-яких категоріях " +
+                    "(виграй мільйон у категорії — отримаєш 1 🍋).",
+                progressHtml:
+                    '<div class="locked-progress-row">' +
+                        '<span class="locked-progress-label">Прогрес</span>' +
+                        '<span class="locked-progress-value">' +
+                            Math.min(have, min) + ' / ' + min + ' 🍋' +
+                        '</span>' +
+                    '</div>' +
+                    '<div class="locked-progress-bar">' +
+                        '<div class="locked-progress-fill" style="width:' +
+                            Math.min(100, Math.round((have / min) * 100)) + '%"></div>' +
+                    '</div>'
+            };
+        }
+        if (u.type === "everySubject") {
+            const others = (allSubjects || []).filter(s => s.id !== subject.id);
+            const items = others.map(s => {
+                const got = (allStats[s.id]?.millions || 0) >= 1;
+                return '<li class="locked-checklist-item ' + (got ? "done" : "todo") + '">' +
+                    '<span class="lc-mark">' + (got ? "✅" : "⬜") + '</span>' +
+                    '<span class="lc-icon" aria-hidden="true">' + escapeHtml(s.icon || "📚") + '</span>' +
+                    '<span class="lc-title">' + escapeHtml(s.title) + '</span>' +
+                '</li>';
+            }).join("");
+            const doneCount = others.filter(s => (allStats[s.id]?.millions || 0) >= 1).length;
+            return {
+                title: "🔒 Фінальний бос: Мемологія",
+                message:
+                    "Щоб відкрити «" + subject.title + "», виграй мільйон " +
+                    "хоча б один раз у кожній іншій категорії — " +
+                    "потрібен щонайменше 1 🍋 у кожній.",
+                progressHtml:
+                    '<div class="locked-progress-row">' +
+                        '<span class="locked-progress-label">Прогрес</span>' +
+                        '<span class="locked-progress-value">' +
+                            doneCount + ' / ' + others.length + ' категорій' +
+                        '</span>' +
+                    '</div>' +
+                    '<ul class="locked-checklist">' + items + '</ul>'
+            };
+        }
+        return null;
+    }
 
     const gameBase = (() => {
         const match = location.pathname.match(/^(.*\/games\/[^/]+)/);
@@ -1528,26 +2075,46 @@
 
     /* -------------------- Subject load + start game -------------------- */
     async function loadSubjects() {
+        // Sync wallet + basket totals every time we return to the picker so
+        // freshly-earned hryvnias / lemons appear without a page reload.
+        refreshWalletBar();
         try {
             const res = await fetch(gameUrl("data/subjects.json"));
             if (!res.ok) throw new Error("subjects.json HTTP " + res.status);
             const subjects = await res.json();
 
             subjectList.innerHTML = "";
+            // Stable sort by tier so JSON order wins within each tier.
+            const sorted = subjects.slice().sort((a, b) => (a.tier || 0) - (b.tier || 0));
+            const allStats = subjectStats.getAll();
             const SUBJECT_FALLBACK_ICON = "📚";
-            subjects.forEach(subject => {
+            sorted.forEach(subject => {
                 const btn = document.createElement("button");
                 btn.type = "button";
-                btn.className = "subject-btn";
+                const unlocked = isUnlocked(subject, allStats, sorted);
+                btn.className = "subject-btn" + (unlocked ? "" : " locked");
+                btn.dataset.subjectId = subject.id;
+                btn.dataset.tier = String(subject.tier || 0);
+                // Note: locked buttons are still clickable — they open the
+                // requirements modal — so no aria-disabled here.
                 const icon = subject.icon || SUBJECT_FALLBACK_ICON;
+                const badge = tierBadge(subject);
+                const titleHtml = escapeHtml(subject.title) +
+                    (badge ? ' <span class="tier-badge" aria-hidden="true">' + badge + '</span>' : "") +
+                    (unlocked ? "" : ' <span class="lock-icon" aria-hidden="true">🔒</span>');
                 btn.innerHTML =
                     '<span class="subject-icon" aria-hidden="true">' + escapeHtml(icon) + '</span>' +
                     '<span class="subject-text">' +
-                        '<strong>' + escapeHtml(subject.title) + '</strong>' +
+                        '<strong>' + titleHtml + '</strong>' +
                         '<span class="subject-desc">' + escapeHtml(subject.description) + '</span>' +
                         renderSubjectStats(subject.id) +
                     '</span>';
                 btn.addEventListener("click", () => {
+                    if (!unlocked) {
+                        audio.lose();
+                        showLockedModal(subject, sorted);
+                        return;
+                    }
                     audio.select();
                     startGame(subject.file, subject.title, subject.id);
                 });
@@ -1800,10 +2367,12 @@
     }
 
     function endGame(kind, prize) {
+        const wonMillion = kind === "win" && prize >= 1000000;
+
         if (kind === "win") {
             // Reaching the last (15th) question correctly = the million prize.
             // Record it for the picker badge before showing the result screen.
-            if (prize >= 1000000) subjectStats.recordMillion(currentSubjectId);
+            if (wonMillion) subjectStats.recordMillion(currentSubjectId);
             resultEmoji.textContent = "🏆";
             resultTitle.textContent = "Вітаємо!";
             resultMessage.textContent = "Ти відповів на всі 15 питань і виграв головний приз!";
@@ -1835,6 +2404,24 @@
             }
             audio.lose();
         }
+
+        // Add prize to wallet + render the «earned» summary on the result screen.
+        if (prize > 0) wallet.add(prize);
+        if (earnedBlock) {
+            if (prize > 0) {
+                earnedBlock.hidden = false;
+                if (earnedAmountEl) earnedAmountEl.textContent = Number(prize).toLocaleString("uk-UA");
+                if (earnedLemonEl)  earnedLemonEl.hidden = !wonMillion;
+                if (resultWalletTotalEl) resultWalletTotalEl.textContent = fmtUah(wallet.get().hryvnias);
+                if (resultBasketTotalEl) resultBasketTotalEl.textContent = totalLemons() + " 🍋";
+            } else {
+                earnedBlock.hidden = true;
+            }
+        }
+        // Wallet bar will be visible again next time the user lands on the
+        // subject screen — pre-bump it so the new totals animate in.
+        refreshWalletBar({ bumpHryvnias: prize > 0, bumpLemon: wonMillion });
+
         showScreen("result");
     }
 
@@ -2096,6 +2683,124 @@
     ladderModal.addEventListener("click", (e) => {
         if (e.target === ladderModal) ladderModal.classList.remove("active");
     });
+
+    function showLockedModal(subject, allSubjects) {
+        const allStats = subjectStats.getAll();
+        const reason = lockedReason(subject, allStats, allSubjects);
+        if (!reason) return;
+        lockedTitleEl.textContent = reason.title;
+        lockedMessageEl.textContent = reason.message;
+        lockedProgressEl.innerHTML = reason.progressHtml || "";
+        lockedModal.classList.add("active");
+    }
+    lockedCloseBtn.addEventListener("click", () => {
+        audio.tick();
+        lockedModal.classList.remove("active");
+    });
+    lockedModal.addEventListener("click", (e) => {
+        if (e.target === lockedModal) lockedModal.classList.remove("active");
+    });
+
+    /* -------------------- Cheat modal -------------------- */
+    let cheatCodes = []; // populated on first open from data/cheatcodes.json
+    async function loadCheatCodes() {
+        if (cheatCodes.length) return cheatCodes;
+        try {
+            const res = await fetch(gameUrl("data/cheatcodes.json"));
+            if (!res.ok) throw new Error("HTTP " + res.status);
+            const data = await res.json();
+            cheatCodes = Array.isArray(data.codes) ? data.codes : [];
+        } catch (_) {
+            cheatCodes = [];
+        }
+        return cheatCodes;
+    }
+
+    function setCheatFeedback(text, kind) {
+        if (!cheatFeedback) return;
+        if (!text) {
+            cheatFeedback.hidden = true;
+            cheatFeedback.textContent = "";
+            cheatFeedback.classList.remove("success", "error");
+            return;
+        }
+        cheatFeedback.hidden = false;
+        cheatFeedback.textContent = text;
+        cheatFeedback.classList.remove("success", "error");
+        if (kind) cheatFeedback.classList.add(kind);
+    }
+
+    function openCheatModal() {
+        loadCheatCodes(); // warm cache; not awaited so the dialog opens instantly
+        cheatInput.value = "";
+        cheatInput.classList.remove("error");
+        setCheatFeedback("", null);
+        cheatModal.classList.add("active");
+        // Focus on next tick so the focus actually lands inside the modal.
+        setTimeout(() => cheatInput.focus(), 50);
+    }
+    function closeCheatModal() {
+        cheatModal.classList.remove("active");
+    }
+
+    async function submitCheatCode() {
+        const raw = cheatInput.value;
+        const norm = normalizeCheatCode(raw);
+        if (!norm) {
+            cheatInput.classList.remove("error");
+            void cheatInput.offsetWidth;
+            cheatInput.classList.add("error");
+            setCheatFeedback("Введи чіткод.", "error");
+            return;
+        }
+        const codes = await loadCheatCodes();
+        const match = codes.find(c => normalizeCheatCode(c.code) === norm);
+        if (!match) {
+            cheatInput.classList.remove("error");
+            void cheatInput.offsetWidth;
+            cheatInput.classList.add("error");
+            setCheatFeedback("Невідомий чіткод. Перевір написання.", "error");
+            audio.lose();
+            return;
+        }
+        cheats.apply(match.effect);
+        setCheatFeedback(match.title || "Чіткод активовано!", "success");
+        audio.win();
+        confetti(40);
+        // Re-render subject list so newly-unlocked tiers light up immediately.
+        loadSubjects();
+        // Auto-close after a short victory pause.
+        setTimeout(closeCheatModal, 1200);
+    }
+
+    if (cheatToggle) {
+        cheatToggle.addEventListener("click", () => {
+            audio.tick();
+            openCheatModal();
+        });
+    }
+    if (cheatCancelBtn) cheatCancelBtn.addEventListener("click", closeCheatModal);
+    if (cheatSubmitBtn) cheatSubmitBtn.addEventListener("click", submitCheatCode);
+    if (cheatInput) {
+        cheatInput.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                submitCheatCode();
+            } else if (e.key === "Escape") {
+                e.preventDefault();
+                closeCheatModal();
+            }
+        });
+        cheatInput.addEventListener("input", () => {
+            cheatInput.classList.remove("error");
+            setCheatFeedback("", null);
+        });
+    }
+    if (cheatModal) {
+        cheatModal.addEventListener("click", (e) => {
+            if (e.target === cheatModal) closeCheatModal();
+        });
+    }
 
     loadSubjects();
 

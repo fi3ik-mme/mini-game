@@ -38,49 +38,14 @@
             -webkit-user-select: none;
         }
 
-        .badges {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-bottom: 14px;
-        }
-
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 5px 12px;
-            border-radius: 99px;
-            font-size: 0.78rem;
-            color: #fde68a;
-            background: rgba(251, 191, 36, 0.1);
-            border: 1px solid rgba(251, 191, 36, 0.3);
-        }
-
-        .badge.offline {
-            color: #86efac;
-            background: rgba(34, 197, 94, 0.1);
-            border-color: rgba(34, 197, 94, 0.35);
-        }
-
         h1 {
             font-size: 2.2rem;
-            margin: 0 0 6px;
+            margin: 0 0 22px;
             text-align: center;
             background: linear-gradient(180deg, #fde68a 0%, #fbbf24 60%, #d97706 100%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-        }
-
-        .subtitle {
-            color: #cbd5e1;
-            margin: 0 0 28px;
-            text-align: center;
-            font-size: 0.95rem;
-            max-width: 360px;
-            line-height: 1.5;
         }
 
         .menu {
@@ -125,13 +90,49 @@
             margin-bottom: 8px;
         }
 
-        .footer-actions {
-            margin-top: 24px;
-            width: 100%;
-            max-width: 360px;
+        .footer-share-btn {
+            margin-top: 22px;
+            padding: 9px 18px;
+            border-radius: 99px;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            cursor: pointer;
+            font-family: inherit;
+            transition: background 0.15s, border-color 0.15s, color 0.15s;
+        }
+
+        .footer-share-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 215, 0, 0.35);
+            color: #fde68a;
+        }
+
+        .footer-share-btn:active { transform: scale(0.97); }
+
+        .install-section {
             display: flex;
             flex-direction: column;
             gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .modal-divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.78rem;
+            margin: 14px 0;
+            gap: 10px;
+        }
+        .modal-divider::before,
+        .modal-divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.12);
         }
 
         .action-btn {
@@ -156,14 +157,6 @@
             color: #1a1a2e;
             box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
         }
-
-        .btn-share {
-            background: rgba(255, 255, 255, 0.08);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .btn-share:active { background: rgba(255, 255, 255, 0.16); }
 
         .btn-apk {
             background: linear-gradient(180deg, #34d399, #059669);
@@ -475,11 +468,6 @@
 </head>
 <body>
 
-<div class="badges">
-    <span class="badge offline" id="offline-badge">✓ Працює офлайн</span>
-    <span class="badge">🇺🇦 Українською</span>
-</div>
-
 <aside id="apk-update" class="apk-update" hidden>
     <h3>🚀 <span>Доступна нова версія додатка</span></h3>
     <p id="apk-update-notes"></p>
@@ -491,7 +479,6 @@
 </aside>
 
 <h1>Міні-Ігри</h1>
-<p class="subtitle">Колекція ігор українською мовою. Встанови на телефон — і грай без інтернету.</p>
 
 <nav class="menu">
     <a class="game-card" href="games/first-million/index.html">
@@ -513,19 +500,22 @@
     </a>
 </nav>
 
-<div class="footer-actions">
-    <button id="install-btn" class="action-btn btn-install" type="button" hidden>📲 Встановити додаток</button>
-    <a id="apk-btn" class="action-btn btn-apk" href="./download/mini-games.apk" download="mini-games.apk">
-        🤖 Завантажити для Android <small>(APK)</small>
-    </a>
-    <p class="apk-hint">Окремий .apk-файл для Android. Працює без Google Play. <a href="#" id="apk-help-link">Як встановити?</a></p>
-    <button id="share-btn" class="action-btn btn-share" type="button">📤 Запросити друзів</button>
-</div>
+<button id="share-btn" class="footer-share-btn" type="button">📤 Поділитися та встановити</button>
 
 <div id="share-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="share-title">
     <div class="modal">
-        <h2 id="share-title">Поділитися додатком</h2>
-        <p>Надішли посилання друзям. Вони зможуть встановити Міні-Ігри собі на телефон і грати офлайн.</p>
+        <h2 id="share-title">Поділитися та встановити</h2>
+        <p>Встанови додаток на свій телефон або надішли посилання друзям — гратимуть офлайн.</p>
+
+        <div class="install-section">
+            <button id="install-btn" class="action-btn btn-install" type="button" hidden>📲 Встановити як веб-додаток</button>
+            <a id="apk-btn" class="action-btn btn-apk" href="./download/mini-games.apk" download="mini-games.apk">
+                🤖 Завантажити для Android <small>(APK)</small>
+            </a>
+            <p class="apk-hint">Окремий .apk-файл для Android. Працює без Google Play. <a href="#" id="apk-help-link">Як встановити?</a></p>
+        </div>
+
+        <div class="modal-divider"><span>або поділитися</span></div>
 
         <div class="url-box" id="share-url"></div>
 
@@ -883,43 +873,10 @@
         toastTimer = setTimeout(() => t.classList.remove("show"), 2200);
     }
 
-    // --- Offline badge: reflects cache completeness + connection state ---
-    const offlineBadge = document.getElementById("offline-badge");
-    let cacheState = null; // { done, total, missing }
-
-    function setBadgeStyle(color, border, bg) {
-        offlineBadge.style.color = color;
-        offlineBadge.style.borderColor = border;
-        offlineBadge.style.background = bg;
-    }
-
-    function refreshOfflineBadge() {
-        if (!("serviceWorker" in navigator)) {
-            offlineBadge.textContent = "Офлайн недоступний";
-            setBadgeStyle("#94a3b8", "rgba(148,163,184,0.3)", "rgba(148,163,184,0.1)");
-            return;
-        }
-
-        if (cacheState && cacheState.done < cacheState.total) {
-            offlineBadge.textContent =
-                "⏬ Завантаження для офлайн… " + cacheState.done + "/" + cacheState.total;
-            setBadgeStyle("#fde68a", "rgba(251,191,36,0.4)", "rgba(251,191,36,0.12)");
-            return;
-        }
-
-        if (cacheState && cacheState.missing && cacheState.missing.length > 0) {
-            const got = cacheState.total - cacheState.missing.length;
-            offlineBadge.textContent = "⚠ Офлайн частково: " + got + "/" + cacheState.total;
-            setBadgeStyle("#fde68a", "rgba(251,191,36,0.4)", "rgba(251,191,36,0.12)");
-            return;
-        }
-
-        offlineBadge.textContent = navigator.onLine
-            ? "✓ Готово до офлайн"
-            : "📴 Зараз без інтернету — все працює";
-        setBadgeStyle("", "", "");
-    }
-
+    // --- Background offline cache priming. The home screen no longer shows
+    // the cache badge UI (we kept the page minimal: only title + games),
+    // but we still want the service worker to precache subject JSONs as
+    // soon as possible after a first online visit. ---
     async function pingSWToEnsureCache() {
         if (!("serviceWorker" in navigator)) return;
         try {
@@ -929,23 +886,7 @@
         } catch (_) {}
     }
 
-    if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.addEventListener("message", (event) => {
-            const d = event.data || {};
-            if (d.type === "cache-progress" || d.type === "cache-complete") {
-                cacheState = { done: d.done, total: d.total, missing: d.missing || [] };
-                refreshOfflineBadge();
-            }
-        });
-    }
-
-    window.addEventListener("online", () => {
-        refreshOfflineBadge();
-        pingSWToEnsureCache();
-    });
-    window.addEventListener("offline", refreshOfflineBadge);
-
-    refreshOfflineBadge();
+    window.addEventListener("online", pingSWToEnsureCache);
     pingSWToEnsureCache();
 </script>
 

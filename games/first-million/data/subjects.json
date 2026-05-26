@@ -4,55 +4,80 @@
     "title": "Математика",
     "description": "4 клас (НУШ), 100+ запитань",
     "icon": "🧮",
-    "file": "data/matematyka-4-klas.json"
+    "file": "data/matematyka-4-klas.json",
+    "tier": 0,
+    "unlock": { "type": "free" }
   },
   {
     "id": "ukrayinska-mova",
     "title": "Українська мова",
     "description": "4 клас (НУШ), 100+ запитань",
     "icon": "📖",
-    "file": "data/ukrayinska-mova-4-klas.json"
+    "file": "data/ukrayinska-mova-4-klas.json",
+    "tier": 0,
+    "unlock": { "type": "free" }
   },
   {
     "id": "ya-doslidzhuyu-svit",
     "title": "Я досліджую світ",
     "description": "3–4 клас (НУШ), 100+ запитань",
     "icon": "🌍",
-    "file": "data/ya-doslidzhuyu-svit-4-klas.json"
+    "file": "data/ya-doslidzhuyu-svit-4-klas.json",
+    "tier": 0,
+    "unlock": { "type": "free" }
   },
   {
     "id": "anhliyska-mova",
     "title": "Англійська мова",
     "description": "4 клас (НУШ), 300 запитань",
     "icon": "🇬🇧",
-    "file": "data/anhliyska-mova-4-klas.json"
-  },
-  {
-    "id": "informatyka",
-    "title": "Інформатика",
-    "description": "4 клас (НУШ), 200+ запитань",
-    "icon": "💻",
-    "file": "data/informatyka-4-klas.json"
-  },
-  {
-    "id": "mystetstvo",
-    "title": "Мистецтво",
-    "description": "4 клас (НУШ), 100+ запитань",
-    "icon": "🎨",
-    "file": "data/mystetstvo-4-klas.json"
-  },
-  {
-    "id": "steam",
-    "title": "STEAM",
-    "description": "4 клас, інтегрований курс, 300+ запитань",
-    "icon": "🔬",
-    "file": "data/steam-4-klas.json"
+    "file": "data/anhliyska-mova-4-klas.json",
+    "tier": 1,
+    "unlock": { "type": "lemons", "min": 1 }
   },
   {
     "id": "ispanska-mova",
     "title": "Іспанська мова",
     "description": "4 клас (НУШ), 300+ запитань",
     "icon": "🇪🇸",
-    "file": "data/ispanska-mova-4-klas.json"
+    "file": "data/ispanska-mova-4-klas.json",
+    "tier": 1,
+    "unlock": { "type": "lemons", "min": 1 }
+  },
+  {
+    "id": "informatyka",
+    "title": "Інформатика",
+    "description": "4 клас (НУШ), 200+ запитань",
+    "icon": "💻",
+    "file": "data/informatyka-4-klas.json",
+    "tier": 1,
+    "unlock": { "type": "lemons", "min": 1 }
+  },
+  {
+    "id": "mystetstvo",
+    "title": "Мистецтво",
+    "description": "4 клас (НУШ), 100+ запитань",
+    "icon": "🎨",
+    "file": "data/mystetstvo-4-klas.json",
+    "tier": 2,
+    "unlock": { "type": "lemons", "min": 3 }
+  },
+  {
+    "id": "steam",
+    "title": "STEAM",
+    "description": "4 клас, інтегрований курс, 300+ запитань",
+    "icon": "🔬",
+    "file": "data/steam-4-klas.json",
+    "tier": 2,
+    "unlock": { "type": "lemons", "min": 3 }
+  },
+  {
+    "id": "memolohiya",
+    "title": "Мемологія",
+    "description": "Український інфопростір, 60 найсмішніших мемів",
+    "icon": "😂",
+    "file": "data/memolohiya-100.json",
+    "tier": 3,
+    "unlock": { "type": "everySubject" }
   }
 ]

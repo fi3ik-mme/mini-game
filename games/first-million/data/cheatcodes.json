@@ -1,0 +1,11 @@
+{
+  "comment": "Cheat codes are matched case-insensitively after trim + NFC normalisation. Add new entries to extend.",
+  "codes": [
+    {
+      "code": "відкрий всі",
+      "title": "🎉 Усі категорії відкриті!",
+      "message": "Тепер можна грати в будь-яку категорію без умов.",
+      "effect": { "type": "unlockAll" }
+    }
+  ]
+}
