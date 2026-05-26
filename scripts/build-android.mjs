@@ -59,10 +59,10 @@ const KEY_PASS = process.env.BUBBLEWRAP_KEY_PASSWORD || "minigames";
  *   - release.json at the repo root, which the live site exposes so any
  *     installed APK can poll it and prompt the user to update.
  * --------------------------------------------------------------------------- */
-const APP_VERSION_CODE = 3;
-const APP_VERSION_NAME = "1.2.0";
+const APP_VERSION_CODE = 4;
+const APP_VERSION_NAME = "1.3.0";
 const RELEASE_NOTES =
-  "У «Першому мільйоні» тепер ілюстрації до кожного питання в усіх 8 предметах і нові іконки у списку предметів.";
+  "«Академія пригод» тепер виглядає як інтерактивна карта: герой іде стежкою до обраної локації — пірамід Єгипту, лабораторії «Тіло людини» (вивіска з кронштейнами) або неонової вивіски «Космос», що левітує в кінці драбини зі сходинками. Додано нову тему STEAM (наука, технології, інженерія, математика) з 4 локаціями та 20 запитаннями — розблоковується після проходження «Тіла людини».";
 
 const log = new ConsoleLog("build-android");
 
