@@ -788,6 +788,86 @@
             opacity: 0.7;
         }
 
+        /* ---------- Reset progress (danger zone) ---------- */
+        .danger-zone {
+            display: flex;
+            justify-content: center;
+            margin: 28px 0 8px;
+        }
+        .reset-progress-btn {
+            padding: 8px 16px;
+            background: transparent;
+            color: #94a3b8;
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: 0.82rem;
+            font-family: inherit;
+            transition: color 0.2s, border-color 0.2s, background 0.2s;
+        }
+        .reset-progress-btn:hover {
+            color: #fca5a5;
+            border-color: rgba(248, 113, 113, 0.5);
+            background: rgba(248, 113, 113, 0.06);
+        }
+        .reset-progress-btn:active { transform: scale(0.97); }
+
+        .reset-emoji {
+            font-size: 3rem;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 4px;
+            filter: drop-shadow(0 0 16px rgba(248, 113, 113, 0.55));
+        }
+        .reset-warning {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            text-align: center;
+            margin: 0 0 12px;
+        }
+        .reset-warning-strong {
+            color: #fca5a5;
+            font-size: 0.9rem;
+            line-height: 1.45;
+            text-align: center;
+            font-weight: 700;
+            margin: 12px 0 0;
+        }
+        .reset-loss-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background: rgba(248, 113, 113, 0.08);
+            border: 1px solid rgba(248, 113, 113, 0.25);
+            border-radius: 12px;
+            padding: 12px 14px;
+        }
+        .reset-loss-list li {
+            color: #fecaca;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+        }
+        .reset-loss-list strong {
+            color: #fee2e2;
+            font-weight: 700;
+        }
+        .reset-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 16px;
+        }
+        .reset-actions .modal-btn { flex: 1; padding: 12px 14px; }
+        .modal-btn.danger {
+            background: linear-gradient(180deg, #ef4444, #b91c1c);
+            color: white;
+            box-shadow: 0 4px 14px rgba(239, 68, 68, 0.35);
+        }
+        .modal-btn.danger:active { transform: scale(0.97); }
+
         /* ---------- Cheat-code modal ---------- */
         .cheat-emoji {
             font-size: 3rem;
@@ -1361,6 +1441,11 @@
     <p class="subtitle">Обери предмет для гри</p>
     <div id="subject-list" class="subject-list"></div>
     <p id="load-error" class="error-msg"></p>
+    <div class="danger-zone">
+        <button id="reset-progress-btn" class="reset-progress-btn" type="button">
+            🗑 Очистити прогрес
+        </button>
+    </div>
 </div>
 
 <div id="game-screen" class="screen">
@@ -1427,6 +1512,27 @@
         <p id="locked-message" class="locked-modal-message"></p>
         <div id="locked-progress"></div>
         <button id="locked-close" class="modal-btn" type="button">Зрозуміло</button>
+    </div>
+</div>
+
+<div id="reset-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="reset-title">
+    <div class="modal">
+        <div class="reset-emoji" aria-hidden="true">🗑</div>
+        <h3 id="reset-title">Очистити прогрес?</h3>
+        <p class="reset-warning">
+            Ти повністю обнулиш свій прогрес у грі «Перший мільйон».
+        </p>
+        <ul class="reset-loss-list">
+            <li>💰 <strong id="reset-loss-hryvnias">0 ₴</strong> у гаманці зникнуть</li>
+            <li>🍋 <strong id="reset-loss-lemons">0</strong> лимонів з корзини зникнуть</li>
+            <li>🎯 Усі рекорди гри і відкриті категорії скинуться</li>
+            <li>🔑 Активні чіткоди вимкнуться</li>
+        </ul>
+        <p class="reset-warning-strong">Цю дію неможливо скасувати.</p>
+        <div class="reset-actions">
+            <button id="reset-cancel" class="modal-btn secondary" type="button">Скасувати</button>
+            <button id="reset-confirm" class="modal-btn danger" type="button">Так, очистити</button>
+        </div>
     </div>
 </div>
 
@@ -1542,6 +1648,13 @@
     const cheatFeedback  = document.getElementById("cheat-feedback");
     const cheatSubmitBtn = document.getElementById("cheat-submit");
     const cheatCancelBtn = document.getElementById("cheat-cancel");
+
+    const resetBtn         = document.getElementById("reset-progress-btn");
+    const resetModal       = document.getElementById("reset-modal");
+    const resetCancelBtn   = document.getElementById("reset-cancel");
+    const resetConfirmBtn  = document.getElementById("reset-confirm");
+    const resetLossHryvnias = document.getElementById("reset-loss-hryvnias");
+    const resetLossLemons  = document.getElementById("reset-loss-lemons");
 
     const soundToggle = document.getElementById("sound-toggle");
     const voiceToggle = document.getElementById("voice-toggle");
@@ -2799,6 +2912,45 @@
     if (cheatModal) {
         cheatModal.addEventListener("click", (e) => {
             if (e.target === cheatModal) closeCheatModal();
+        });
+    }
+
+    /* -------------------- Reset progress -------------------- */
+    function openResetModal() {
+        // Snapshot current totals so the user sees exactly what they'll lose.
+        const w = wallet.get();
+        if (resetLossHryvnias) resetLossHryvnias.textContent = fmtUah(w.hryvnias);
+        if (resetLossLemons)   resetLossLemons.textContent   = String(totalLemons());
+        resetModal.classList.add("active");
+    }
+    function closeResetModal() {
+        resetModal.classList.remove("active");
+    }
+    function performReset() {
+        try {
+            // Wipe everything tied to player progress; preserve user prefs
+            // (sound on/off, voice on/off) since those aren't "progress".
+            localStorage.removeItem("fm.wallet");
+            localStorage.removeItem("fm.subjectStats");
+            localStorage.removeItem("fm.cheats");
+        } catch (_) {}
+        closeResetModal();
+        refreshWalletBar();
+        loadSubjects();
+        audio.tick();
+    }
+
+    if (resetBtn) {
+        resetBtn.addEventListener("click", () => {
+            audio.tick();
+            openResetModal();
+        });
+    }
+    if (resetCancelBtn) resetCancelBtn.addEventListener("click", closeResetModal);
+    if (resetConfirmBtn) resetConfirmBtn.addEventListener("click", performReset);
+    if (resetModal) {
+        resetModal.addEventListener("click", (e) => {
+            if (e.target === resetModal) closeResetModal();
         });
     }
 
