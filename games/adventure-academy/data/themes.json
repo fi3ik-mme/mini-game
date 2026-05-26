@@ -22,5 +22,13 @@
     "emoji": "🏺",
     "color": "#b45309",
     "file": "data/ancient-egypt.json"
+  },
+  {
+    "id": "steam",
+    "title": "STEAM",
+    "subtitle": "Наука, технології, інженерія, математика",
+    "emoji": "🔬",
+    "color": "#0ea5e9",
+    "file": "data/steam.json"
   }
 ]

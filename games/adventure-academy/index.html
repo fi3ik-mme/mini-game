@@ -140,86 +140,456 @@
             text-align: center;
         }
 
-        /* ---------- Theme picker cards ---------- */
-        .theme-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
+        /* ---------- Adventure map (theme picker) ---------- */
+        .adventure-map {
+            position: relative;
             width: 100%;
-        }
-        @media (min-width: 560px) {
-            .theme-grid { grid-template-columns: 1fr 1fr; }
-        }
-        @media (min-width: 820px) {
-            .theme-grid { grid-template-columns: 1fr 1fr 1fr; }
+            max-width: 480px;
+            aspect-ratio: 5 / 7;
+            border-radius: 22px;
+            overflow: hidden;
+            background:
+                radial-gradient(ellipse at 50% 8%, #312e81 0%, transparent 55%),
+                radial-gradient(ellipse at 80% 80%, rgba(217,119,6,0.35) 0%, transparent 55%),
+                radial-gradient(ellipse at 20% 80%, rgba(14,165,233,0.25) 0%, transparent 55%),
+                linear-gradient(180deg, #0f0a24 0%, #1e1b4b 35%, #14532d 100%);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 18px 60px rgba(0, 0, 0, 0.55), inset 0 0 60px rgba(0,0,0,0.45);
         }
 
-        .theme-card {
-            position: relative;
-            overflow: hidden;
-            border: 0;
-            font-family: inherit;
-            cursor: pointer;
-            padding: 18px 16px;
-            border-radius: 18px;
-            background: linear-gradient(160deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            color: #f8fafc;
-            text-align: left;
-            display: flex;
-            gap: 14px;
-            align-items: center;
-            transition: transform 0.18s, border-color 0.2s, box-shadow 0.2s;
-        }
-        .theme-card::before {
-            content: "";
+        .map-svg {
             position: absolute;
             inset: 0;
-            background: var(--accent, #5b21b6);
-            opacity: 0.15;
-            pointer-events: none;
+            width: 100%;
+            height: 100%;
+            display: block;
         }
-        .theme-card:active { transform: scale(0.98); }
-        .theme-card .emoji {
-            font-size: 2.4rem;
+        .trail {
+            fill: none;
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-dasharray: 5 7;
+            opacity: 0.85;
+            animation: trail-move 1.8s linear infinite;
+        }
+        .trail-egypt { stroke: #fbbf24; }
+        .trail-lab   { stroke: #38bdf8; }
+        .trail-steam { stroke: #a78bfa; stroke-dasharray: 4 5; }
+        .trail-space { stroke: #c4b5fd; stroke-dasharray: 1 6; }
+        @keyframes trail-move {
+            to { stroke-dashoffset: -36; }
+        }
+        .twinkle { animation: twinkle 2.2s ease-in-out infinite; transform-origin: center; }
+        .twinkle:nth-child(2n) { animation-delay: 0.6s; }
+        .twinkle:nth-child(3n) { animation-delay: 1.2s; }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* Base button — only handles position & centering. Visuals live in .zone-inner. */
+        .zone {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            background: none;
+            border: 0;
+            padding: 0;
+            font-family: inherit;
+            color: inherit;
+            cursor: pointer;
+            z-index: 5;
+            transition: transform 0.15s ease;
+        }
+        .zone:active { transform: translate(-50%, -50%) scale(0.95); }
+        .zone-egypt { left: 76%; top: 80%; }
+        .zone-lab   { left: 24%; top: 78%; }
+        .zone-steam { left: 22%; top: 37%; }
+        .zone-space { left: 50%; top: 14%; }
+
+        /* Shared inner panel layout */
+        .zone-inner {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+            padding: 8px 12px 7px;
+            min-width: 110px;
+            text-align: center;
+        }
+        .zone-inner strong {
+            font-size: 0.78rem;
+            line-height: 1.15;
+            display: block;
+        }
+        .zone-inner .zone-emoji {
+            font-size: 1.6rem;
             line-height: 1;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
         }
-        .theme-card .titles { flex: 1; min-width: 0; }
-        .theme-card .titles strong {
+        .zone-inner .zone-progress {
             display: block;
-            font-size: 1.15rem;
-            margin-bottom: 4px;
-        }
-        .theme-card .titles span {
-            color: #cbd5e1;
-            font-size: 0.85rem;
-            display: block;
-        }
-        .theme-card .progress {
-            display: block;
-            margin-top: 8px;
-            height: 6px;
-            background: rgba(255,255,255,0.1);
+            width: 64px;
+            height: 4px;
+            background: rgba(0, 0, 0, 0.3);
             border-radius: 99px;
             overflow: hidden;
+            margin-top: 4px;
         }
-        .theme-card .progress span {
+        .zone-inner .zone-progress span {
             display: block;
             height: 100%;
-            background: linear-gradient(90deg, #fbbf24, #fde047);
+            width: 0%;
             transition: width 0.5s;
         }
-        .theme-card.done {
-            border-color: rgba(253, 224, 71, 0.5);
-            box-shadow: 0 0 0 1px rgba(253, 224, 71, 0.25), 0 6px 24px rgba(245, 158, 11, 0.18);
-        }
-        .theme-card.done::after {
+
+        /* Earned-badge medal on completed themes */
+        .zone.done::after {
             content: "🏅";
             position: absolute;
-            top: 8px;
-            right: 12px;
-            font-size: 1.4rem;
+            top: -14px;
+            right: -10px;
+            font-size: 1.2rem;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
+            z-index: 2;
+        }
+
+        /* ============================================================
+           SPACE — levitating neon sign, floating in zero gravity
+           ============================================================ */
+        .zone-space .zone-inner {
+            background: rgba(15, 10, 36, 0.55);
+            border: 2px solid #c4b5fd;
+            border-radius: 16px;
+            padding: 10px 16px 8px;
+            color: #f5f3ff;
+            box-shadow:
+                0 0 14px rgba(196, 181, 253, 0.55),
+                0 0 30px rgba(196, 181, 253, 0.35),
+                inset 0 0 12px rgba(196, 181, 253, 0.25);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+            animation: neon-float 3.8s ease-in-out infinite, neon-flicker 6s linear infinite;
+        }
+        .zone-space .zone-inner strong {
+            color: #f5d0fe;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 800;
+            text-shadow:
+                0 0 4px #f0abfc,
+                0 0 10px #c026d3,
+                0 0 18px rgba(192, 38, 211, 0.6);
+        }
+        .zone-space .zone-inner .zone-progress span {
+            background: linear-gradient(90deg, #c4b5fd, #f0abfc);
+            box-shadow: 0 0 6px rgba(196,181,253,0.7);
+        }
+        @keyframes neon-float {
+            0%, 100% { transform: translateY(0); }
+            50%      { transform: translateY(-7px); }
+        }
+        @keyframes neon-flicker {
+            0%, 49%, 51%, 100% { filter: none; opacity: 1; }
+            50%                { filter: brightness(0.55) saturate(2); opacity: 0.85; }
+            96%, 98%           { filter: brightness(1.2); }
+            97%                { filter: brightness(0.7); opacity: 0.7; }
+        }
+        .zone-space.done .zone-inner { border-color: #4ade80; box-shadow: 0 0 14px rgba(74,222,128,0.5), 0 0 30px rgba(74,222,128,0.3); }
+
+        /* ============================================================
+           LAB — institutional building plaque mounted on brackets
+           ============================================================ */
+        .zone-lab .zone-inner {
+            background: linear-gradient(180deg, #e0f2fe 0%, #bae6fd 55%, #7dd3fc 100%);
+            border: 2px solid #0c4a6e;
+            border-radius: 4px;
+            padding: 9px 14px 7px;
+            color: #082f49;
+            box-shadow:
+                0 4px 14px rgba(0, 0, 0, 0.5),
+                0 0 14px rgba(56, 189, 248, 0.4),
+                inset 0 -2px 6px rgba(3, 105, 161, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.6);
+        }
+        .zone-lab .zone-inner strong {
+            color: #0c4a6e;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+        }
+        .zone-lab .zone-inner strong em {
+            font-style: normal;
+            color: #075985;
+            font-weight: 700;
+            letter-spacing: 0;
+            text-transform: none;
+            font-size: 0.78rem;
+            display: block;
+            margin-top: 2px;
+        }
+        .zone-lab .zone-inner .zone-progress {
+            background: rgba(8, 47, 73, 0.25);
+        }
+        .zone-lab .zone-inner .zone-progress span {
+            background: linear-gradient(90deg, #0ea5e9, #22d3ee);
+        }
+        /* Mounting brackets */
+        .zone-lab .zone-inner::before,
+        .zone-lab .zone-inner::after {
+            content: "";
+            position: absolute;
+            top: -7px;
+            width: 4px;
+            height: 8px;
+            background: linear-gradient(180deg, #64748b, #1e293b);
+            border-radius: 1px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        }
+        .zone-lab .zone-inner::before { left: 16px; }
+        .zone-lab .zone-inner::after  { right: 16px; }
+        /* Blinking status LED */
+        .zone-lab > .led {
+            position: absolute;
+            top: 6px;
+            right: 8px;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #ef4444;
+            box-shadow: 0 0 6px #ef4444, 0 0 10px rgba(239,68,68,0.7);
+            animation: lab-led 1.4s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 3;
+        }
+        @keyframes lab-led {
+            0%, 100% { opacity: 1; }
+            50%      { opacity: 0.25; }
+        }
+
+        /* ============================================================
+           EGYPT — wooden signpost on a stake, slightly weathered
+           ============================================================ */
+        .zone-egypt .zone-inner {
+            background:
+                /* corner nails */
+                radial-gradient(circle 2.2px at 7px 7px,                    #1c1917 99%, transparent 100%),
+                radial-gradient(circle 2.2px at calc(100% - 7px) 7px,        #1c1917 99%, transparent 100%),
+                radial-gradient(circle 2.2px at 7px calc(100% - 7px),        #1c1917 99%, transparent 100%),
+                radial-gradient(circle 2.2px at calc(100% - 7px) calc(100% - 7px), #1c1917 99%, transparent 100%),
+                /* wood grain planks */
+                repeating-linear-gradient(
+                    0deg,
+                    #a16207 0px,
+                    #b45309 4px,
+                    #92400e 10px,
+                    #78350f 12px,
+                    #a16207 14px
+                );
+            border: 3px solid #451a03;
+            border-radius: 4px;
+            padding: 9px 14px 7px;
+            color: #fef3c7;
+            text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.55);
+            box-shadow:
+                0 6px 14px rgba(0, 0, 0, 0.55),
+                inset 0 0 10px rgba(67, 26, 3, 0.55),
+                inset 0 1px 0 rgba(255, 220, 150, 0.15);
+            transform-origin: 50% 100%;
+            animation: wood-sway 4.5s ease-in-out infinite;
+        }
+        .zone-egypt .zone-inner strong {
+            color: #fef3c7;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+        .zone-egypt .zone-inner .zone-progress {
+            background: rgba(67, 26, 3, 0.55);
+        }
+        .zone-egypt .zone-inner .zone-progress span {
+            background: linear-gradient(90deg, #fbbf24, #fde047);
+        }
+        /* Wooden post sticking into the sand */
+        .zone-egypt .zone-inner::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            width: 7px;
+            height: 26px;
+            background: linear-gradient(90deg, #451a03 0%, #92400e 45%, #78350f 100%);
+            border-radius: 1px;
+            transform: translateX(-50%);
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+        }
+        /* Small arrow tip on top-right to feel like a direction sign */
+        .zone-egypt .zone-inner::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -10px;
+            transform: translateY(-50%);
+            border: 10px solid transparent;
+            border-left: 12px solid #78350f;
+            filter: drop-shadow(1px 0 0 #451a03);
+        }
+        @keyframes wood-sway {
+            0%, 100% { transform: rotate(-2deg); }
+            50%      { transform: rotate(2deg); }
+        }
+
+        /* ============================================================
+           STEAM — holographic sci-fi panel
+           ============================================================ */
+        .zone-steam .zone-inner {
+            background: linear-gradient(135deg, rgba(34,211,238,0.18) 0%, rgba(167,139,250,0.20) 100%);
+            border: 1.5px solid rgba(34, 211, 238, 0.85);
+            border-radius: 4px;
+            padding: 8px 18px 7px;
+            min-width: 96px;
+            color: #e0f2fe;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            box-shadow:
+                0 0 16px rgba(34, 211, 238, 0.5),
+                inset 0 0 8px rgba(167, 139, 250, 0.25);
+        }
+        .zone-steam .zone-inner strong {
+            font-family: "Courier New", ui-monospace, monospace;
+            color: #22d3ee;
+            font-weight: 800;
+            letter-spacing: 4px;
+            font-size: 1rem;
+            text-shadow: 0 0 6px rgba(34, 211, 238, 0.8), 0 0 14px rgba(167, 139, 250, 0.6);
+        }
+        .zone-steam .zone-inner .zone-progress {
+            background: rgba(8, 47, 73, 0.5);
+        }
+        .zone-steam .zone-inner .zone-progress span {
+            background: linear-gradient(90deg, #22d3ee, #a78bfa);
+            box-shadow: 0 0 6px rgba(34, 211, 238, 0.6);
+        }
+        /* sci-fi corner brackets */
+        .zone-steam .zone-inner::before,
+        .zone-steam .zone-inner::after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-color: #22d3ee;
+            border-style: solid;
+            filter: drop-shadow(0 0 4px rgba(34, 211, 238, 0.7));
+        }
+        .zone-steam .zone-inner::before { top: -2px;    left: -2px;  border-width: 2px 0 0 2px; }
+        .zone-steam .zone-inner::after  { bottom: -2px; right: -2px; border-width: 0 2px 2px 0; }
+
+        /* ============================================================
+           Locked zone — desaturated + lock icon
+           ============================================================ */
+        .zone.locked .zone-inner {
+            opacity: 0.5;
+            filter: saturate(0.3) brightness(0.85);
+        }
+        .zone.locked::after {
+            content: "🔒";
+            position: absolute;
+            top: -14px;
+            right: -10px;
+            font-size: 1.3rem;
+            z-index: 2;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.7));
+            animation: none;
+        }
+        .zone.locked .zone-inner::before,
+        .zone.locked .zone-inner::after,
+        .zone.locked .led { animation: none; }
+        .zone.locked { cursor: not-allowed; }
+
+        /* ============================================================
+           Toast message (e.g. "Спочатку пройди Лабораторію!")
+           ============================================================ */
+        .toast-msg {
+            position: fixed;
+            bottom: 90px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(15, 10, 36, 0.95);
+            color: #fef3c7;
+            padding: 10px 20px;
+            border-radius: 14px;
+            border: 1px solid rgba(251, 191, 36, 0.6);
+            font-weight: 700;
+            font-size: 0.92rem;
+            z-index: 100;
+            animation: toast-in 1.9s ease forwards;
+            pointer-events: none;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
+            white-space: nowrap;
+            max-width: 90vw;
+            text-align: center;
+        }
+        @keyframes toast-in {
+            0%       { opacity: 0; transform: translate(-50%, 14px) scale(0.92); }
+            12%, 85% { opacity: 1; transform: translate(-50%, 0) scale(1); }
+            100%     { opacity: 0; transform: translate(-50%, -8px) scale(0.96); }
+        }
+
+        .hub-marker {
+            position: absolute;
+            left: 50%;
+            top: 92%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+            pointer-events: none;
+            z-index: 4;
+        }
+        .hub-marker .hub-emoji {
+            font-size: 1.6rem;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.6));
+        }
+        .hub-marker .hub-label {
+            font-size: 0.7rem;
+            color: #fde68a;
+            background: rgba(0,0,0,0.4);
+            padding: 1px 8px;
+            border-radius: 99px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .character {
+            position: absolute;
+            left: var(--cx, 50%);
+            top:  var(--cy, 92%);
+            transform: translate(-50%, -100%);
+            pointer-events: none;
+            z-index: 8;
+            will-change: left, top;
+        }
+        .character::before {
+            content: "🧒";
+            display: inline-block;
+            font-size: 1.8rem;
+            line-height: 1;
+            filter: drop-shadow(0 3px 4px rgba(0,0,0,0.6));
+            animation: char-bob 0.55s ease-in-out infinite;
+        }
+        .character.walking::before {
+            animation: char-walk 0.28s ease-in-out infinite;
+        }
+        @keyframes char-bob {
+            0%, 100% { transform: translateY(0); }
+            50%      { transform: translateY(-3px); }
+        }
+        @keyframes char-walk {
+            0%, 100% { transform: translateY(0) rotate(-4deg); }
+            50%      { transform: translateY(-4px) rotate(4deg); }
         }
 
         /* ---------- Map view ---------- */
@@ -710,12 +1080,365 @@
     <span class="hud-chip badges">🏅 <span class="v" id="badges-count">0</span>/3</span>
 </div>
 
-<!-- ============ SCREEN: PICKER ============ -->
+<!-- ============ SCREEN: PICKER (adventure map) ============ -->
 <section id="picker-screen" class="screen active">
-    <h1 class="page-title">🎒 Академія пригод</h1>
-    <p class="page-sub">Обери тему й розпочни подорож</p>
-    <div id="theme-grid" class="theme-grid"></div>
-    <p class="map-tip" id="picker-tip">Кожна тема — 4 локації, 5 запитань у кожній.</p>
+    <h1 class="page-title">🗺️ Академія пригод</h1>
+    <p class="page-sub">Обери стежку — і вирушай у пригоду!</p>
+
+    <div class="adventure-map" id="adventure-map">
+        <svg class="map-svg" viewBox="0 0 400 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+                <linearGradient id="sandGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%"  stop-color="#fcd34d"/>
+                    <stop offset="60%" stop-color="#f59e0b"/>
+                    <stop offset="100%" stop-color="#92400e"/>
+                </linearGradient>
+                <linearGradient id="pyrLight" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%"  stop-color="#fde68a"/>
+                    <stop offset="100%" stop-color="#b45309"/>
+                </linearGradient>
+                <linearGradient id="pyrShade" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%"  stop-color="#78350f"/>
+                    <stop offset="100%" stop-color="#451a03"/>
+                </linearGradient>
+                <linearGradient id="labGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%"  stop-color="#0f172a"/>
+                    <stop offset="100%" stop-color="#020617"/>
+                </linearGradient>
+                <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%"  stop-color="#1e1b4b"/>
+                    <stop offset="100%" stop-color="#312e81" stop-opacity="0"/>
+                </linearGradient>
+                <radialGradient id="moonGrad" cx="50%" cy="40%" r="60%">
+                    <stop offset="0%"  stop-color="#fef9c3"/>
+                    <stop offset="100%" stop-color="#fde047"/>
+                </radialGradient>
+                <radialGradient id="planetGrad" cx="35%" cy="35%" r="65%">
+                    <stop offset="0%"  stop-color="#c4b5fd"/>
+                    <stop offset="100%" stop-color="#5b21b6"/>
+                </radialGradient>
+                <radialGradient id="hubGlow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%"  stop-color="#fde68a" stop-opacity="0.5"/>
+                    <stop offset="100%" stop-color="#fde68a" stop-opacity="0"/>
+                </radialGradient>
+                <linearGradient id="steamGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%"  stop-color="#1e3a8a" stop-opacity="0.85"/>
+                    <stop offset="100%" stop-color="#0c1d3c" stop-opacity="0.95"/>
+                </linearGradient>
+                <linearGradient id="screenGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%"  stop-color="#082f49"/>
+                    <stop offset="100%" stop-color="#0f172a"/>
+                </linearGradient>
+            </defs>
+
+            <!-- ===== Space sky band (top) ===== -->
+            <rect x="0" y="0" width="400" height="220" fill="url(#skyGrad)"/>
+            <!-- Stars -->
+            <g fill="#fff">
+                <circle class="twinkle" cx="40"  cy="30"  r="1.6"/>
+                <circle class="twinkle" cx="90"  cy="80"  r="1"/>
+                <circle class="twinkle" cx="140" cy="40"  r="1.4"/>
+                <circle class="twinkle" cx="260" cy="30"  r="1"/>
+                <circle class="twinkle" cx="320" cy="70"  r="1.6"/>
+                <circle class="twinkle" cx="365" cy="35"  r="1.2"/>
+                <circle class="twinkle" cx="370" cy="155" r="1.4"/>
+                <circle class="twinkle" cx="30"  cy="170" r="1"/>
+                <circle class="twinkle" cx="60"  cy="130" r="1"/>
+                <circle class="twinkle" cx="340" cy="120" r="1"/>
+            </g>
+            <!-- Moon (top right) -->
+            <circle cx="340" cy="55" r="20" fill="url(#moonGrad)"/>
+            <circle cx="346" cy="50" r="4"  fill="#fcd34d" opacity="0.55"/>
+            <circle cx="334" cy="62" r="2"  fill="#fcd34d" opacity="0.55"/>
+            <!-- Ringed planet (top left) -->
+            <ellipse cx="55" cy="100" rx="28" ry="6" fill="none" stroke="#fbbf24" stroke-width="1.5" opacity="0.7"/>
+            <circle  cx="55" cy="100" r="14" fill="url(#planetGrad)"/>
+            <ellipse cx="55" cy="100" rx="28" ry="6" fill="none" stroke="#fbbf24" stroke-width="1.5" opacity="0.4" transform="rotate(8 55 100)"/>
+            <!-- Rocket flying near top -->
+            <g transform="translate(220 110) rotate(-20)">
+                <path d="M0 -10 Q4 -2 4 6 L-4 6 Q-4 -2 0 -10 Z" fill="#f8fafc"/>
+                <circle cx="0" cy="-2" r="2" fill="#38bdf8"/>
+                <path d="M-4 4 L-8 10 L-4 8 Z" fill="#ef4444"/>
+                <path d="M4 4 L8 10 L4 8 Z" fill="#ef4444"/>
+                <path d="M-2 6 L0 14 L2 6 Z" fill="#fbbf24" opacity="0.8"/>
+            </g>
+
+            <!-- ===== Stairway to space (10 steps from ground to neon sign) ===== -->
+            <g>
+                <g>
+                    <rect x="178" y="455" width="44" height="6" fill="#cbd5e1"/>
+                    <rect x="178" y="461" width="44" height="3" fill="#64748b"/>
+                </g>
+                <g>
+                    <rect x="178" y="420" width="44" height="6" fill="#cbd5e1"/>
+                    <rect x="178" y="426" width="44" height="3" fill="#64748b"/>
+                </g>
+                <g>
+                    <rect x="178" y="385" width="44" height="6" fill="#cbd5e1"/>
+                    <rect x="178" y="391" width="44" height="3" fill="#64748b"/>
+                </g>
+                <g>
+                    <rect x="178" y="350" width="44" height="6" fill="#cbd5e1"/>
+                    <rect x="178" y="356" width="44" height="3" fill="#64748b"/>
+                </g>
+                <g>
+                    <rect x="178" y="315" width="44" height="6" fill="#e2e8f0"/>
+                    <rect x="178" y="321" width="44" height="3" fill="#64748b"/>
+                </g>
+                <g>
+                    <rect x="178" y="280" width="44" height="6" fill="#e2e8f0"/>
+                    <rect x="178" y="286" width="44" height="3" fill="#64748b"/>
+                </g>
+                <g>
+                    <rect x="178" y="245" width="44" height="6" fill="#e2e8f0"/>
+                    <rect x="178" y="251" width="44" height="3" fill="#64748b"/>
+                </g>
+                <g>
+                    <rect x="178" y="210" width="44" height="6" fill="#e2e8f0"/>
+                    <rect x="178" y="216" width="44" height="3" fill="#64748b"/>
+                </g>
+                <g>
+                    <rect x="178" y="175" width="44" height="6" fill="#f1f5f9"/>
+                    <rect x="178" y="181" width="44" height="3" fill="#94a3b8"/>
+                </g>
+                <g>
+                    <rect x="178" y="140" width="44" height="6" fill="#f1f5f9"/>
+                    <rect x="178" y="146" width="44" height="3" fill="#94a3b8"/>
+                </g>
+            </g>
+            <!-- Railing posts -->
+            <g stroke="#94a3b8" stroke-width="1" opacity="0.6">
+                <line x1="178" y1="140" x2="178" y2="465"/>
+                <line x1="222" y1="140" x2="222" y2="465"/>
+            </g>
+
+            <!-- ===== Egypt (lower right) ===== -->
+            <path d="M 230 560 L 220 420 Q 260 380 400 380 L 400 560 Z" fill="url(#sandGrad)"/>
+            <!-- Sun behind pyramids -->
+            <circle cx="345" cy="380" r="20" fill="#fef3c7" opacity="0.85"/>
+            <!-- Big pyramid -->
+            <polygon points="290,455 335,375 335,455" fill="url(#pyrLight)"/>
+            <polygon points="335,455 335,375 380,455" fill="url(#pyrShade)"/>
+            <line x1="335" y1="375" x2="335" y2="455" stroke="#451a03" stroke-width="0.6" opacity="0.5"/>
+            <!-- Small pyramid -->
+            <polygon points="245,460 275,410 275,460" fill="url(#pyrLight)"/>
+            <polygon points="275,460 275,410 305,460" fill="url(#pyrShade)"/>
+            <!-- Sand dunes -->
+            <path d="M 230 510 Q 270 495 320 510 T 400 510 L 400 560 L 230 560 Z" fill="#d97706" opacity="0.55"/>
+            <!-- Palm tree -->
+            <g transform="translate(255 510)">
+                <path d="M 0 0 Q -2 -20 0 -38" stroke="#78350f" stroke-width="3" fill="none"/>
+                <ellipse cx="-2" cy="-40" rx="14" ry="4" fill="#15803d" transform="rotate(-25 -2 -40)"/>
+                <ellipse cx="-2" cy="-40" rx="14" ry="4" fill="#16a34a" transform="rotate(25 -2 -40)"/>
+                <ellipse cx="-2" cy="-42" rx="14" ry="4" fill="#15803d" transform="rotate(75 -2 -42)"/>
+                <ellipse cx="-2" cy="-42" rx="14" ry="4" fill="#16a34a" transform="rotate(-75 -2 -42)"/>
+                <circle cx="-2" cy="-42" r="3" fill="#a16207"/>
+            </g>
+            <!-- Hieroglyph hints on big pyramid -->
+            <g fill="#451a03" opacity="0.55" font-size="7" font-family="serif">
+                <text x="318" y="425">𓂀</text>
+                <text x="318" y="440">𓆣</text>
+            </g>
+
+            <!-- ===== Laboratory (lower left) ===== -->
+            <rect x="0" y="380" width="170" height="180" fill="url(#labGrad)"/>
+            <!-- Lab floor stripe -->
+            <rect x="0" y="540" width="170" height="20" fill="#1e293b"/>
+            <!-- Lab building -->
+            <rect x="14"  y="395" width="142" height="135" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2"/>
+            <!-- Roof beam -->
+            <rect x="10"  y="392" width="150" height="6" fill="#0ea5e9" opacity="0.7"/>
+            <!-- X-ray screen window with skeleton (skull + ribs) -->
+            <rect x="26" y="410" width="48" height="58" fill="#082f49" stroke="#38bdf8" stroke-width="1"/>
+            <g stroke="#e0f2fe" stroke-width="1.2" fill="none">
+                <!-- Skull -->
+                <ellipse cx="50" cy="425" rx="9" ry="8" fill="#e0f2fe" opacity="0.9"/>
+                <circle  cx="46.5" cy="424" r="1.4" fill="#082f49"/>
+                <circle  cx="53.5" cy="424" r="1.4" fill="#082f49"/>
+                <path d="M 47 430 L 47 433 M 50 430 L 50 433 M 53 430 L 53 433"/>
+                <!-- Spine -->
+                <line x1="50" y1="435" x2="50" y2="460"/>
+                <!-- Ribs -->
+                <path d="M 50 438 Q 40 442 41 446"/>
+                <path d="M 50 438 Q 60 442 59 446"/>
+                <path d="M 50 444 Q 38 448 39 452"/>
+                <path d="M 50 444 Q 62 448 61 452"/>
+                <path d="M 50 450 Q 39 454 41 458"/>
+                <path d="M 50 450 Q 61 454 59 458"/>
+            </g>
+            <!-- DNA window -->
+            <rect x="88" y="410" width="48" height="58" fill="#082f49" stroke="#38bdf8" stroke-width="1"/>
+            <g fill="none" stroke-width="1.4">
+                <path d="M 96 414 Q 124 425 96 436 Q 68 447 96 458" stroke="#22d3ee"/>
+                <path d="M 128 414 Q 100 425 128 436 Q 156 447 128 458" stroke="#a78bfa"/>
+                <line x1="100" y1="420" x2="124" y2="420" stroke="#fbbf24"/>
+                <line x1="124" y1="428" x2="100" y2="428" stroke="#fbbf24"/>
+                <line x1="100" y1="436" x2="124" y2="436" stroke="#fbbf24"/>
+                <line x1="124" y1="444" x2="100" y2="444" stroke="#fbbf24"/>
+                <line x1="100" y1="452" x2="124" y2="452" stroke="#fbbf24"/>
+            </g>
+            <!-- Door -->
+            <rect x="65" y="490" width="40" height="40" fill="#0ea5e9" opacity="0.35" stroke="#38bdf8" stroke-width="1"/>
+            <circle cx="98" cy="510" r="1.5" fill="#fde047"/>
+            <!-- Stairs from lab door up to STEAM platform -->
+            <g opacity="0.6">
+                <line x1="76"  y1="490" x2="76"  y2="380" stroke="#38bdf8" stroke-width="0.8" stroke-dasharray="3 3"/>
+                <line x1="94"  y1="490" x2="94"  y2="380" stroke="#38bdf8" stroke-width="0.8" stroke-dasharray="3 3"/>
+            </g>
+
+            <!-- ===== STEAM platform (upper floor above the lab) ===== -->
+            <!-- Platform/building base -->
+            <rect x="4" y="200" width="166" height="180" fill="url(#steamGrad)"
+                  stroke="rgba(34,211,238,0.55)" stroke-width="1" rx="6"/>
+            <!-- Tech grid -->
+            <g stroke="rgba(34,211,238,0.18)" stroke-width="0.5">
+                <line x1="4"  y1="240" x2="170" y2="240"/>
+                <line x1="4"  y1="290" x2="170" y2="290"/>
+                <line x1="4"  y1="340" x2="170" y2="340"/>
+                <line x1="46" y1="200" x2="46" y2="380"/>
+                <line x1="86" y1="200" x2="86" y2="380"/>
+                <line x1="126" y1="200" x2="126" y2="380"/>
+            </g>
+            <!-- Roof beam -->
+            <rect x="0" y="197" width="170" height="6" fill="#06b6d4" opacity="0.7"/>
+
+            <!-- "STEAM" label etched into roof beam -->
+            <text x="86" y="225" text-anchor="middle" font-size="9" font-weight="bold"
+                  fill="#a78bfa" font-family="monospace" opacity="0.85">π² ⚛ ∑ Δ</text>
+
+            <!-- Atom orbit (left-middle) -->
+            <g transform="translate(28 260)" fill="none" stroke="#22d3ee" stroke-width="0.9" opacity="0.75">
+                <ellipse cx="0" cy="0" rx="15" ry="5"/>
+                <ellipse cx="0" cy="0" rx="15" ry="5" transform="rotate(60)"/>
+                <ellipse cx="0" cy="0" rx="15" ry="5" transform="rotate(-60)"/>
+                <circle  cx="0" cy="0" r="2.6" fill="#fde047" stroke="none"/>
+            </g>
+
+            <!-- Gear (right-middle) -->
+            <g transform="translate(144 248)" fill="#64748b" opacity="0.8">
+                <circle cx="0" cy="0" r="9"/>
+                <circle cx="0" cy="0" r="4.5" fill="#0f172a"/>
+                <rect x="-1.5" y="-12" width="3" height="3"/>
+                <rect x="-1.5" y="9"   width="3" height="3"/>
+                <rect x="-12"  y="-1.5" width="3" height="3"/>
+                <rect x="9"    y="-1.5" width="3" height="3"/>
+                <rect x="-9.5" y="-9.5" width="3" height="3" transform="rotate(45 -8 -8)"/>
+                <rect x="6.5"  y="-9.5" width="3" height="3" transform="rotate(-45 8 -8)"/>
+            </g>
+
+            <!-- Microscope (lower-left of platform) -->
+            <g transform="translate(36 350)">
+                <rect x="-14" y="0"  width="28" height="6"  rx="2" fill="#475569"/>
+                <rect x="-12" y="-3" width="24" height="3"        fill="#334155"/>
+                <path d="M 0 -3 L 0 -22 L 8 -22" fill="none" stroke="#64748b" stroke-width="3" stroke-linejoin="round"/>
+                <rect x="6" y="-30" width="6" height="10" fill="#1e293b" stroke="#64748b" stroke-width="0.6"/>
+                <circle cx="9"  cy="-30" r="2"   fill="#0ea5e9"/>
+                <circle cx="-9" cy="-12" r="5"   fill="#475569" stroke="#94a3b8" stroke-width="0.6"/>
+                <circle cx="-9" cy="-12" r="2.5" fill="#22d3ee" opacity="0.9"/>
+                <rect   x="-15" y="-7" width="8" height="2" fill="#e2e8f0"/>
+            </g>
+
+            <!-- Flask with bubbling green liquid (center-bottom) -->
+            <g transform="translate(86 360)">
+                <circle class="twinkle" cx="0"  cy="-25" r="1.4" fill="#a7f3d0"/>
+                <circle class="twinkle" cx="-3" cy="-30" r="1"   fill="#a7f3d0"/>
+                <circle class="twinkle" cx="4"  cy="-34" r="0.9" fill="#86efac"/>
+                <path d="M -3 -16 L -3 -22 L 3 -22 L 3 -16 L 12 -2 L 12 0 L -12 0 L -12 -2 Z"
+                      fill="rgba(34,211,238,0.22)" stroke="#22d3ee" stroke-width="1.2"/>
+                <path d="M -10 -5 L 10 -5 L 11 -2 L -11 -2 Z" fill="#22c55e" opacity="0.85"/>
+                <rect x="-3" y="-25" width="6" height="3" fill="#78350f"/>
+            </g>
+
+            <!-- Test tube rack (right of flask) -->
+            <g transform="translate(126 360)">
+                <rect x="-13" y="0"  width="26" height="3"  fill="#334155"/>
+                <rect x="-10" y="-22" width="3" height="22" fill="rgba(167,139,250,0.45)" stroke="#a78bfa" stroke-width="0.6"/>
+                <rect x="-1"  y="-22" width="3" height="22" fill="rgba(251,146,60,0.45)"  stroke="#fb923c" stroke-width="0.6"/>
+                <rect x="8"   y="-22" width="3" height="22" fill="rgba(34,211,238,0.45)"  stroke="#22d3ee" stroke-width="0.6"/>
+            </g>
+
+            <!-- Computer monitor with code (lower-right corner inset) -->
+            <g transform="translate(146 340)">
+                <rect x="-3" y="0" width="6" height="6" fill="#475569"/>
+                <rect x="-12" y="6" width="24" height="3" fill="#334155" rx="1"/>
+                <rect x="-22" y="-28" width="44" height="32" fill="url(#screenGrad)" stroke="#22d3ee" stroke-width="1" rx="2"/>
+                <line x1="-17" y1="-22" x2="-2" y2="-22" stroke="#22d3ee" stroke-width="1.1"/>
+                <line x1="-17" y1="-18" x2="12" y2="-18" stroke="#22c55e" stroke-width="1.1"/>
+                <line x1="-13" y1="-14" x2="8"  y2="-14" stroke="#22d3ee" stroke-width="1.1"/>
+                <line x1="-17" y1="-10" x2="6"  y2="-10" stroke="#a78bfa" stroke-width="1.1"/>
+                <line x1="-13" y1="-6"  x2="0"  y2="-6"  stroke="#22d3ee" stroke-width="1.1"/>
+            </g>
+
+            <!-- ===== Ground around hub (grass clearing) ===== -->
+            <ellipse cx="200" cy="510" rx="80" ry="22" fill="#16a34a" opacity="0.55"/>
+            <ellipse cx="200" cy="510" rx="55" ry="14" fill="#22c55e" opacity="0.5"/>
+            <!-- Hub glow -->
+            <circle cx="200" cy="505" r="55" fill="url(#hubGlow)"/>
+            <!-- Tiny flowers around hub -->
+            <g>
+                <circle cx="160" cy="515" r="1.5" fill="#fde047"/>
+                <circle cx="240" cy="518" r="1.5" fill="#f9a8d4"/>
+                <circle cx="180" cy="525" r="1.5" fill="#fff"/>
+                <circle cx="225" cy="525" r="1.5" fill="#fde047"/>
+            </g>
+
+            <!-- ===== Trails (animated) ===== -->
+            <!-- HUB → Egypt -->
+            <path id="trail-ancient-egypt" class="trail trail-egypt"
+                  d="M 200 505 Q 240 480 280 470 T 305 455"/>
+            <!-- HUB → Lab -->
+            <path id="trail-human-body" class="trail trail-lab"
+                  d="M 200 505 Q 160 480 120 470 T 96 455"/>
+            <!-- HUB → Space (up all the stairs) -->
+            <path id="trail-space" class="trail trail-space"
+                  d="M 200 505 L 200 460 L 200 425 L 200 390 L 200 355 L 200 320 L 200 285 L 200 250 L 200 215 L 200 180 L 200 145 L 200 90"/>
+            <!-- HUB → through Lab → STEAM (upper floor) -->
+            <path id="trail-steam" class="trail trail-steam"
+                  d="M 200 505 Q 150 478 96 455 L 96 380 L 88 220"/>
+        </svg>
+
+        <!-- Zone marker buttons -->
+        <button class="zone zone-egypt" data-theme="ancient-egypt" type="button" aria-label="Давній Єгипет">
+            <span class="zone-inner">
+                <span class="zone-emoji">🏺</span>
+                <strong>Давній<br/>Єгипет</strong>
+                <span class="zone-progress"><span></span></span>
+            </span>
+        </button>
+        <button class="zone zone-lab" data-theme="human-body" type="button" aria-label="Тіло людини">
+            <span class="led"></span>
+            <span class="zone-inner">
+                <span class="zone-emoji">🫀</span>
+                <strong>Лабораторія<br/><em>«Тіло людини»</em></strong>
+                <span class="zone-progress"><span></span></span>
+            </span>
+        </button>
+        <button class="zone zone-steam" data-theme="steam" type="button" aria-label="STEAM">
+            <span class="zone-inner">
+                <span class="zone-emoji">🔬</span>
+                <strong>STEAM</strong>
+                <span class="zone-progress"><span></span></span>
+            </span>
+        </button>
+        <button class="zone zone-space" data-theme="space" type="button" aria-label="Космос">
+            <span class="zone-inner">
+                <span class="zone-emoji">🚀</span>
+                <strong>Космос</strong>
+                <span class="zone-progress"><span></span></span>
+            </span>
+        </button>
+
+        <!-- Hub (starting point) -->
+        <div class="hub-marker">
+            <span class="hub-emoji">🏕️</span>
+            <span class="hub-label">Старт</span>
+        </div>
+
+        <!-- Walking character -->
+        <div class="character" id="character"></div>
+    </div>
+
+    <p class="map-tip" id="picker-tip">Тапни локацію — герой піде туди стежкою.</p>
 </section>
 
 <!-- ============ SCREEN: MAP ============ -->
@@ -797,7 +1520,10 @@
     const themeResultScreen   = document.getElementById("theme-result-screen");
     const screens = [pickerScreen, mapScreen, questionScreen, locationResultScreen, themeResultScreen];
 
-    const themeGrid    = document.getElementById("theme-grid");
+    const adventureMap = document.getElementById("adventure-map");
+    const mapSvg       = adventureMap ? adventureMap.querySelector(".map-svg") : null;
+    const characterEl  = document.getElementById("character");
+    const zoneEls      = adventureMap ? [...adventureMap.querySelectorAll(".zone")] : [];
     const themeEmojiEl = document.getElementById("theme-emoji");
     const themeTitleEl = document.getElementById("theme-title");
     const themeIntroEl = document.getElementById("theme-intro");
@@ -1017,6 +1743,13 @@
         document.body.appendChild(el);
         setTimeout(() => el.remove(), 1500);
     }
+    function toast(text) {
+        const el = document.createElement("div");
+        el.className = "toast-msg";
+        el.textContent = text;
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 1900);
+    }
 
     /* -------------------- HUD -------------------- */
     function popChip(el) {
@@ -1079,29 +1812,100 @@
         return data;
     }
 
-    /* -------------------- Picker -------------------- */
+    /* -------------------- Picker (adventure map) -------------------- */
+    // Character starts and returns to the hub at the bottom centre of the map.
+    const HUB_POS = { x: 50, y: 92 };
+    let walkAnim = null;
+
+    function setCharacterPct(xPct, yPct) {
+        characterEl.style.setProperty("--cx", xPct + "%");
+        characterEl.style.setProperty("--cy", yPct + "%");
+    }
+
+    function placeCharacterAtHub() {
+        if (walkAnim) { cancelAnimationFrame(walkAnim); walkAnim = null; }
+        characterEl.classList.remove("walking");
+        setCharacterPct(HUB_POS.x, HUB_POS.y);
+    }
+
+    function walkAlongPath(pathEl, duration = 1300) {
+        return new Promise((resolve) => {
+            if (!pathEl || !mapSvg) { resolve(); return; }
+            const vb = mapSvg.viewBox.baseVal;
+            const len = pathEl.getTotalLength();
+            characterEl.classList.add("walking");
+            const start = performance.now();
+            function step(now) {
+                const t = Math.min(1, (now - start) / duration);
+                const eased = 0.5 - 0.5 * Math.cos(Math.PI * t);
+                const pt = pathEl.getPointAtLength(len * eased);
+                setCharacterPct((pt.x / vb.width) * 100, (pt.y / vb.height) * 100);
+                if (t < 1) {
+                    walkAnim = requestAnimationFrame(step);
+                } else {
+                    walkAnim = null;
+                    characterEl.classList.remove("walking");
+                    resolve();
+                }
+            }
+            walkAnim = requestAnimationFrame(step);
+        });
+    }
+
+    let isWalking = false;
+
+    // Themes that require another theme's badge before they unlock.
+    const THEME_PREREQ = {
+        steam: { themeId: "human-body", label: "Лабораторію" }
+    };
+
+    function isThemeLocked(themeId) {
+        const req = THEME_PREREQ[themeId];
+        if (!req) return false;
+        return !state.badges.includes(req.themeId);
+    }
+
     function renderPicker() {
-        themeGrid.innerHTML = "";
+        placeCharacterAtHub();
         themes.forEach(t => {
+            const zoneEl = adventureMap.querySelector(`.zone[data-theme="${t.id}"]`);
+            if (!zoneEl) return;
             const ts = themeState(t.id);
             const isDone = state.badges.includes(t.id);
             const totalLocs = 4;
-            const completedLocs = ts.completed.length;
-            const pct = Math.round((completedLocs / totalLocs) * 100);
+            const pct = Math.round((ts.completed.length / totalLocs) * 100);
+            const locked = isThemeLocked(t.id);
 
-            const card = document.createElement("button");
-            card.type = "button";
-            card.className = "theme-card" + (isDone ? " done" : "");
-            card.style.setProperty("--accent", t.color);
-            card.innerHTML =
-                `<span class="emoji">${t.emoji}</span>
-                 <span class="titles">
-                    <strong>${t.title}</strong>
-                    <span>${t.subtitle}</span>
-                    <span class="progress"><span style="width:${pct}%"></span></span>
-                 </span>`;
-            card.addEventListener("click", () => { audio.select(); openTheme(t); });
-            themeGrid.appendChild(card);
+            zoneEl.classList.toggle("done", isDone);
+            zoneEl.classList.toggle("locked", locked);
+            zoneEl.setAttribute("aria-label",
+                locked ? `${t.title} — заблоковано` : `${t.title} — ${t.subtitle}`);
+            const bar = zoneEl.querySelector(".zone-progress span");
+            if (bar) bar.style.width = pct + "%";
+
+            zoneEl.onclick = async () => {
+                if (isWalking) return;
+                if (locked) {
+                    audio.wrong();
+                    vibrate(20);
+                    shakeScreen();
+                    toast(`Спочатку пройди ${THEME_PREREQ[t.id].label}!`);
+                    return;
+                }
+                isWalking = true;
+                audio.select();
+                const pathEl = document.getElementById("trail-" + t.id);
+                try {
+                    // STEAM's path is longer (through the lab) — give it more time.
+                    const dur = t.id === "steam" ? 1700 : 1300;
+                    await walkAlongPath(pathEl, dur);
+                    await openTheme(t);
+                } catch (_) {
+                    placeCharacterAtHub();
+                } finally {
+                    isWalking = false;
+                }
+            };
         });
     }
 
