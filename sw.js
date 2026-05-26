@@ -1,4 +1,4 @@
-const CACHE_NAME = "mini-games-v15";
+const CACHE_NAME = "mini-games-v16";
 
 const PRECACHE = [
     "./",

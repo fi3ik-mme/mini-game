@@ -12,7 +12,10 @@
         "вікно́"
       ],
       "correct": 1,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"70\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"34\" font-weight=\"900\" fill=\"#fde68a\">кни́га</text>\n      <text x=\"160\" y=\"100\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">наголос на «и́»</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9A%D0%BD%D0%B8%D0%B6%D0%BA%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Books-aj.svg_aj_ashton_01e.svg/languk-330px-Books-aj.svg_aj_ashton_01e.svg.png\" alt=\"Книжка\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"70\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"34\" font-weight=\"900\" fill=\"#fde68a\">кни́га</text>\n      <text x=\"160\" y=\"100\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#cbd5e1\">наголос на «и́»</text></svg>",
+      "wikiKeyword": "книга",
+      "wikiTitle": "Книжка",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9A%D0%BD%D0%B8%D0%B6%D0%BA%D0%B0"
     },
     {
       "text": "Яке слово є іменником?",
@@ -23,7 +26,10 @@
         "читати"
       ],
       "correct": 2,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 160\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"160\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"20\" y=\"20\" width=\"280\" height=\"40\" rx=\"20\" fill=\"#fbbf24\"/>\n      <text x=\"160\" y=\"46\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#0f172a\">іменник</text>\n      <text x=\"160\" y=\"86\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" fill=\"#fde68a\">школа</text>\n      <text x=\"160\" y=\"120\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">що? хто? — предмет</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A8%D0%BA%D0%BE%D0%BB%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Serrekundamadrassa.JPG/330px-Serrekundamadrassa.JPG\" alt=\"Школа\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 160\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"160\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"20\" y=\"20\" width=\"280\" height=\"40\" rx=\"20\" fill=\"#fbbf24\"/>\n      <text x=\"160\" y=\"46\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#0f172a\">іменник</text>\n      <text x=\"160\" y=\"86\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" fill=\"#fde68a\">школа</text>\n      <text x=\"160\" y=\"120\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">що? хто? — предмет</text></svg>",
+      "wikiKeyword": "школа",
+      "wikiTitle": "Школа",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A8%D0%BA%D0%BE%D0%BB%D0%B0"
     },
     {
       "text": "У реченні «Діти грають у дворі» підмет — це:",
@@ -34,7 +40,10 @@
         "грають у дворі"
       ],
       "correct": 1,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 140\" style=\"width:330px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"360\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"180\" y=\"50\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" fill=\"#fde68a\">Діти грають у дворі</text>\n      <line x1=\"40\" y1=\"58\" x2=\"320\" y2=\"58\" stroke=\"#fbbf24\" stroke-width=\"0.5\" opacity=\"0.3\"/>\n      <g font-family=\"Inter, Arial\" font-size=\"12\">\n        <text x=\"60\" y=\"92\" fill=\"#34d399\" font-weight=\"800\">діти</text>\n        <text x=\"60\" y=\"108\" fill=\"#bbf7d0\">— підмет (хто? що?)</text>\n        <text x=\"220\" y=\"92\" fill=\"#fb923c\" font-weight=\"800\">присудок</text>\n        <text x=\"220\" y=\"108\" fill=\"#fed7aa\">— присудок (що робить?)</text>\n      </g></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%94%D0%B8%D1%82%D0%B8%D0%BD%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Little_girl_of_Don_Som.jpg/330px-Little_girl_of_Don_Som.jpg\" alt=\"Дитина\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 140\" style=\"width:330px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"360\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"180\" y=\"50\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" fill=\"#fde68a\">Діти грають у дворі</text>\n      <line x1=\"40\" y1=\"58\" x2=\"320\" y2=\"58\" stroke=\"#fbbf24\" stroke-width=\"0.5\" opacity=\"0.3\"/>\n      <g font-family=\"Inter, Arial\" font-size=\"12\">\n        <text x=\"60\" y=\"92\" fill=\"#34d399\" font-weight=\"800\">діти</text>\n        <text x=\"60\" y=\"108\" fill=\"#bbf7d0\">— підмет (хто? що?)</text>\n        <text x=\"220\" y=\"92\" fill=\"#fb923c\" font-weight=\"800\">присудок</text>\n        <text x=\"220\" y=\"108\" fill=\"#fed7aa\">— присудок (що робить?)</text>\n      </g></svg>",
+      "wikiKeyword": "діти",
+      "wikiTitle": "Дитина",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%94%D0%B8%D1%82%D0%B8%D0%BD%D0%B0"
     },
     {
       "text": "Яке слово написано правильно?",
@@ -45,7 +54,10 @@
         "біолгія"
       ],
       "correct": 1,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"74\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"26\" font-weight=\"900\" fill=\"#34d399\">✓ біологія</text>\n      <text x=\"160\" y=\"108\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#bbf7d0\">правильне написання</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%91%D1%96%D0%BE%D0%BB%D0%BE%D0%B3%D1%96%D1%8F\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Rotavirus_Reconstruction.jpg/330px-Rotavirus_Reconstruction.jpg\" alt=\"Біологія\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"74\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"26\" font-weight=\"900\" fill=\"#34d399\">✓ біологія</text>\n      <text x=\"160\" y=\"108\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#bbf7d0\">правильне написання</text></svg>",
+      "wikiKeyword": "біологія",
+      "wikiTitle": "Біологія",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%91%D1%96%D0%BE%D0%BB%D0%BE%D0%B3%D1%96%D1%8F"
     },
     {
       "text": "Скільки приголосних звуків у слові «сніг»?",
@@ -78,7 +90,10 @@
         "лісн"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">У слові «лісник» корінь — це:</span><br><b style=\"color:#34d399;font-size:1.1em\">ліс</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9B%D1%96%D1%81\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Brussels_Zonienwoud.jpg/330px-Brussels_Zonienwoud.jpg\" alt=\"Ліс\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">У слові «лісник» корінь — це:</span><br><b style=\"color:#34d399;font-size:1.1em\">ліс</b></div>",
+      "wikiKeyword": "ліс",
+      "wikiTitle": "Ліс",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9B%D1%96%D1%81"
     },
     {
       "text": "Яке речення є питальним?",
@@ -122,7 +137,10 @@
         "УкраїнА"
       ],
       "correct": 1,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"74\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"26\" font-weight=\"900\" fill=\"#34d399\">✓ Україна</text>\n      <text x=\"160\" y=\"108\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#bbf7d0\">правильне написання</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/languk-330px-Flag_of_Ukraine.svg.png\" alt=\"Україна\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"74\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"26\" font-weight=\"900\" fill=\"#34d399\">✓ Україна</text>\n      <text x=\"160\" y=\"108\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#bbf7d0\">правильне написання</text></svg>",
+      "wikiKeyword": "Украіна",
+      "wikiTitle": "Україна",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B0"
     },
     {
       "text": "Яка частина мови відповідає на питання «який? яка? яке?»?",
@@ -144,7 +162,10 @@
         "пече пиріг"
       ],
       "correct": 1,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 140\" style=\"width:330px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"360\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"180\" y=\"50\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" fill=\"#fde68a\">Мама пече пиріг</text>\n      <line x1=\"40\" y1=\"58\" x2=\"320\" y2=\"58\" stroke=\"#fbbf24\" stroke-width=\"0.5\" opacity=\"0.3\"/>\n      <g font-family=\"Inter, Arial\" font-size=\"12\">\n        <text x=\"60\" y=\"92\" fill=\"#34d399\" font-weight=\"800\">підмет</text>\n        <text x=\"60\" y=\"108\" fill=\"#bbf7d0\">— підмет (хто? що?)</text>\n        <text x=\"220\" y=\"92\" fill=\"#fb923c\" font-weight=\"800\">пече</text>\n        <text x=\"220\" y=\"108\" fill=\"#fed7aa\">— присудок (що робить?)</text>\n      </g></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9F%D0%B5%D1%87%D0%B5\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Pece_Slovenia_3.jpg/330px-Pece_Slovenia_3.jpg\" alt=\"Пече\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 140\" style=\"width:330px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"360\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"180\" y=\"50\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" fill=\"#fde68a\">Мама пече пиріг</text>\n      <line x1=\"40\" y1=\"58\" x2=\"320\" y2=\"58\" stroke=\"#fbbf24\" stroke-width=\"0.5\" opacity=\"0.3\"/>\n      <g font-family=\"Inter, Arial\" font-size=\"12\">\n        <text x=\"60\" y=\"92\" fill=\"#34d399\" font-weight=\"800\">підмет</text>\n        <text x=\"60\" y=\"108\" fill=\"#bbf7d0\">— підмет (хто? що?)</text>\n        <text x=\"220\" y=\"92\" fill=\"#fb923c\" font-weight=\"800\">пече</text>\n        <text x=\"220\" y=\"108\" fill=\"#fed7aa\">— присудок (що робить?)</text>\n      </g></svg>",
+      "wikiKeyword": "пече",
+      "wikiTitle": "Пече",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9F%D0%B5%D1%87%D0%B5"
     },
     {
       "text": "Яке слово є антонімом до слова «день»?",
@@ -155,7 +176,10 @@
         "полудень"
       ],
       "correct": 2,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"40\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" font-weight=\"800\" fill=\"#fbbf24\">антоніми (протилежне)</text>\n      <text x=\"80\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#34d399\">день</text>\n      <text x=\"160\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"22\" fill=\"#fbbf24\">↔</text>\n      <text x=\"240\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#a78bfa\">ніч</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9D%D1%96%D1%87\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Crescent_moon%2C_Istanbul%2C_Turkey_%289603517863%29.jpg/330px-Crescent_moon%2C_Istanbul%2C_Turkey_%289603517863%29.jpg\" alt=\"Ніч\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"40\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" font-weight=\"800\" fill=\"#fbbf24\">антоніми (протилежне)</text>\n      <text x=\"80\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#34d399\">день</text>\n      <text x=\"160\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"22\" fill=\"#fbbf24\">↔</text>\n      <text x=\"240\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#a78bfa\">ніч</text></svg>",
+      "wikiKeyword": "ніч",
+      "wikiTitle": "Ніч",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9D%D1%96%D1%87"
     },
     {
       "text": "Скільки слів у реченні «Весна прийшла рано цього року»?",
@@ -254,7 +278,10 @@
         "тісто"
       ],
       "correct": 2,
-      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Яке слово пишемо з апострофом</span><br><b style=\"color:#34d399;font-size:1.1em\">сім'я</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A1%D1%96%D0%BC'%D1%8F\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Inupiat_Family_from_Noatak%2C_Alaska%2C_1929%2C_Edward_S._Curtis_%28restored%29.jpg/330px-Inupiat_Family_from_Noatak%2C_Alaska%2C_1929%2C_Edward_S._Curtis_%28restored%29.jpg\" alt=\"Сім'я\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Яке слово пишемо з апострофом</span><br><b style=\"color:#34d399;font-size:1.1em\">сім'я</b></div>",
+      "wikiKeyword": "сім'я",
+      "wikiTitle": "Сім'я",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A1%D1%96%D0%BC'%D1%8F"
     },
     {
       "text": "У якому слові пишемо м'який знак?",
@@ -265,7 +292,10 @@
         "читати"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">У якому слові пишемо м'який знак</span><br><b style=\"color:#34d399;font-size:1.1em\">день</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%94%D0%B5%D0%BD%D1%8C\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Daylight.png/330px-Daylight.png\" alt=\"День\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">У якому слові пишемо м'який знак</span><br><b style=\"color:#34d399;font-size:1.1em\">день</b></div>",
+      "wikiKeyword": "день",
+      "wikiTitle": "День",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%94%D0%B5%D0%BD%D1%8C"
     },
     {
       "text": "Яка з букв є йотованою?",
@@ -518,7 +548,10 @@
         "немає підмета"
       ],
       "correct": 0,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 140\" style=\"width:330px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"360\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"180\" y=\"50\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" fill=\"#fde68a\">Книга лежить на столі.</text>\n      <line x1=\"40\" y1=\"58\" x2=\"320\" y2=\"58\" stroke=\"#fbbf24\" stroke-width=\"0.5\" opacity=\"0.3\"/>\n      <g font-family=\"Inter, Arial\" font-size=\"12\">\n        <text x=\"60\" y=\"92\" fill=\"#34d399\" font-weight=\"800\">Книга — підмет</text>\n        <text x=\"60\" y=\"108\" fill=\"#bbf7d0\">— підмет (хто? що?)</text>\n        <text x=\"220\" y=\"92\" fill=\"#fb923c\" font-weight=\"800\">присудок</text>\n        <text x=\"220\" y=\"108\" fill=\"#fed7aa\">— присудок (що робить?)</text>\n      </g></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9A%D0%BD%D0%B8%D0%B6%D0%BA%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Books-aj.svg_aj_ashton_01e.svg/languk-330px-Books-aj.svg_aj_ashton_01e.svg.png\" alt=\"Книжка\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 140\" style=\"width:330px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"360\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"180\" y=\"50\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" fill=\"#fde68a\">Книга лежить на столі.</text>\n      <line x1=\"40\" y1=\"58\" x2=\"320\" y2=\"58\" stroke=\"#fbbf24\" stroke-width=\"0.5\" opacity=\"0.3\"/>\n      <g font-family=\"Inter, Arial\" font-size=\"12\">\n        <text x=\"60\" y=\"92\" fill=\"#34d399\" font-weight=\"800\">Книга — підмет</text>\n        <text x=\"60\" y=\"108\" fill=\"#bbf7d0\">— підмет (хто? що?)</text>\n        <text x=\"220\" y=\"92\" fill=\"#fb923c\" font-weight=\"800\">присудок</text>\n        <text x=\"220\" y=\"108\" fill=\"#fed7aa\">— присудок (що робить?)</text>\n      </g></svg>",
+      "wikiKeyword": "Книга",
+      "wikiTitle": "Книжка",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9A%D0%BD%D0%B8%D0%B6%D0%BA%D0%B0"
     },
     {
       "text": "Яке речення є окличним?",
@@ -584,7 +617,10 @@
         "-ник"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">У слові «садівник» корінь — це:</span><br><b style=\"color:#34d399;font-size:1.1em\">сад</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A1%D0%B0%D0%B4\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Privater_Garten_in_Bad_Salzuflen_2013.jpg/330px-Privater_Garten_in_Bad_Salzuflen_2013.jpg\" alt=\"Сад\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">У слові «садівник» корінь — це:</span><br><b style=\"color:#34d399;font-size:1.1em\">сад</b></div>",
+      "wikiKeyword": "сад",
+      "wikiTitle": "Сад",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A1%D0%B0%D0%B4"
     },
     {
       "text": "У слові «прийшов» префікс — це:",
@@ -650,7 +686,10 @@
         "сад, садок, сила"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Який ряд складається тільки зі спільнокореневих слів</span><br><b style=\"color:#34d399;font-size:1.1em\">ліс, лісовий, лісник</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9B%D1%96%D1%81\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Brussels_Zonienwoud.jpg/330px-Brussels_Zonienwoud.jpg\" alt=\"Ліс\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Який ряд складається тільки зі спільнокореневих слів</span><br><b style=\"color:#34d399;font-size:1.1em\">ліс, лісовий, лісник</b></div>",
+      "wikiKeyword": "ліс",
+      "wikiTitle": "Ліс",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9B%D1%96%D1%81"
     },
     {
       "text": "Слова, які мають близьке значення, називають:",
@@ -804,7 +843,10 @@
         "спільнокореневі"
       ],
       "correct": 2,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"40\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" font-weight=\"800\" fill=\"#fbbf24\">синоніми (схоже значення)</text>\n      <text x=\"80\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#34d399\">коса</text>\n      <text x=\"160\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"22\" fill=\"#fbbf24\">≈</text>\n      <text x=\"240\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#a78bfa\">омоніми</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9E%D0%BC%D0%BE%D0%BD%D1%96%D0%BC%D0%B8\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Homograph_homophone_venn_diagram_%28Ukrainian%29.png/330px-Homograph_homophone_venn_diagram_%28Ukrainian%29.png\" alt=\"Омоніми\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"40\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" font-weight=\"800\" fill=\"#fbbf24\">синоніми (схоже значення)</text>\n      <text x=\"80\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#34d399\">коса</text>\n      <text x=\"160\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"22\" fill=\"#fbbf24\">≈</text>\n      <text x=\"240\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#a78bfa\">омоніми</text></svg>",
+      "wikiKeyword": "омоніми",
+      "wikiTitle": "Омоніми",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9E%D0%BC%D0%BE%D0%BD%D1%96%D0%BC%D0%B8"
     },
     {
       "text": "У слові «учитель» наголос падає на:",
@@ -870,7 +912,10 @@
         "хата"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Яке слово починається з двох звуків через йотовану букву</span><br><b style=\"color:#34d399;font-size:1.1em\">їжак</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%86%D0%B6%D0%B0%D0%BA\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/HUN_Izs%C3%A1k_C%C3%ADmer.svg/languk-330px-HUN_Izs%C3%A1k_C%C3%ADmer.svg.png\" alt=\"Іжак\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">Яке слово починається з двох звуків через йотовану букву</span><br><b style=\"color:#34d399;font-size:1.1em\">їжак</b></div>",
+      "wikiKeyword": "іжак",
+      "wikiTitle": "Іжак",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%86%D0%B6%D0%B0%D0%BA"
     },
     {
       "text": "Яке слово пишемо разом?",
@@ -925,7 +970,10 @@
         "на землю"
       ],
       "correct": 2,
-      "media": "<div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">У реченні «Білі сніжинки падали на землю» означенням є:</span><br><b style=\"color:#34d399;font-size:1.1em\">білі</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%91%D1%96%D0%BB%D1%96\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Discharge_%281%29.jpg/330px-Discharge_%281%29.jpg\" alt=\"Білі\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">📝 <span style=\"color:#cbd5e1\">У реченні «Білі сніжинки падали на землю» означенням є:</span><br><b style=\"color:#34d399;font-size:1.1em\">білі</b></div>",
+      "wikiKeyword": "білі",
+      "wikiTitle": "Білі",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%91%D1%96%D0%BB%D1%96"
     },
     {
       "text": "Однорідні члени речення відокремлюють:",
@@ -991,7 +1039,10 @@
         "обід"
       ],
       "correct": 1,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"40\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" font-weight=\"800\" fill=\"#fbbf24\">антоніми (протилежне)</text>\n      <text x=\"80\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#34d399\">вечір</text>\n      <text x=\"160\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"22\" fill=\"#fbbf24\">↔</text>\n      <text x=\"240\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#a78bfa\">ранок</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A0%D0%B0%D0%BD%D0%BE%D0%BA\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Ambiance_du_matin.jpg/330px-Ambiance_du_matin.jpg\" alt=\"Ранок\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"160\" y=\"40\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" font-weight=\"800\" fill=\"#fbbf24\">антоніми (протилежне)</text>\n      <text x=\"80\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#34d399\">вечір</text>\n      <text x=\"160\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"22\" fill=\"#fbbf24\">↔</text>\n      <text x=\"240\" y=\"92\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"20\" font-weight=\"900\" fill=\"#a78bfa\">ранок</text></svg>",
+      "wikiKeyword": "ранок",
+      "wikiTitle": "Ранок",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A0%D0%B0%D0%BD%D0%BE%D0%BA"
     },
     {
       "text": "У реченні «Сонечко яскраво світить» присудок — це:",
@@ -1068,7 +1119,10 @@
         "стіл"
       ],
       "correct": 2,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 160\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"160\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"20\" y=\"20\" width=\"280\" height=\"40\" rx=\"20\" fill=\"#fbbf24\"/>\n      <text x=\"160\" y=\"46\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#0f172a\">іменник</text>\n      <text x=\"160\" y=\"86\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" fill=\"#fde68a\">дерева</text>\n      <text x=\"160\" y=\"120\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">що? хто? — предмет</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%94%D0%B5%D1%80%D0%B5%D0%B2%D0%BE\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Coastal_redwood.jpg/330px-Coastal_redwood.jpg\" alt=\"Дерево\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 160\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"160\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"20\" y=\"20\" width=\"280\" height=\"40\" rx=\"20\" fill=\"#fbbf24\"/>\n      <text x=\"160\" y=\"46\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#0f172a\">іменник</text>\n      <text x=\"160\" y=\"86\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" fill=\"#fde68a\">дерева</text>\n      <text x=\"160\" y=\"120\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">що? хто? — предмет</text></svg>",
+      "wikiKeyword": "дерева",
+      "wikiTitle": "Дерево",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%94%D0%B5%D1%80%D0%B5%D0%B2%D0%BE"
     },
     {
       "text": "Знайди іменник в однині:",
@@ -1090,7 +1144,10 @@
         "сині"
       ],
       "correct": 2,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 160\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"160\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"20\" y=\"20\" width=\"280\" height=\"40\" rx=\"20\" fill=\"#34d399\"/>\n      <text x=\"160\" y=\"46\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#0f172a\">прикметник</text>\n      <text x=\"160\" y=\"86\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" fill=\"#fde68a\">синя</text>\n      <text x=\"160\" y=\"120\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">який? яка? яке? — ознака</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BD%D1%8F\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Ob_river_basin.png/330px-Ob_river_basin.png\" alt=\"Синя\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 160\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"160\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"20\" y=\"20\" width=\"280\" height=\"40\" rx=\"20\" fill=\"#34d399\"/>\n      <text x=\"160\" y=\"46\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#0f172a\">прикметник</text>\n      <text x=\"160\" y=\"86\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"14\" fill=\"#fde68a\">синя</text>\n      <text x=\"160\" y=\"120\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#cbd5e1\">який? яка? яке? — ознака</text></svg>",
+      "wikiKeyword": "синя",
+      "wikiTitle": "Синя",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BD%D1%8F"
     },
     {
       "text": "Як називається головне слово в реченні, від якого ставимо питання до інших?",
