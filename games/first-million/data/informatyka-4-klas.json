@@ -54,7 +54,10 @@
         "принтер"
       ],
       "correct": 1,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Як називають «мозок» комп'ютера</span><br><b style=\"color:#34d399;font-size:1.1em\">процесор</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9C%D0%BE%D0%B7%D0%BE%D0%BA\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Encephalon_human_sagittal_section_multilingual.svg/languk-330px-Encephalon_human_sagittal_section_multilingual.svg.png\" alt=\"Мозок\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Як називають «мозок» комп'ютера</span><br><b style=\"color:#34d399;font-size:1.1em\">процесор</b></div>",
+      "wikiKeyword": "мозок",
+      "wikiTitle": "Мозок",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9C%D0%BE%D0%B7%D0%BE%D0%BA"
     },
     {
       "text": "Який пристрій використовують для друку документів на папері?",
@@ -213,7 +216,10 @@
         "процесор"
       ],
       "correct": 1,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">До якої групи належить принтер</span><br><b style=\"color:#34d399;font-size:1.1em\">виведення</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9F%D1%80%D0%B8%D0%BD%D1%82%D0%B5%D1%80\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Canon_PIXUS_560i_expand.jpg/330px-Canon_PIXUS_560i_expand.jpg\" alt=\"Принтер\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">До якої групи належить принтер</span><br><b style=\"color:#34d399;font-size:1.1em\">виведення</b></div>",
+      "wikiKeyword": "принтер",
+      "wikiTitle": "Принтер",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9F%D1%80%D0%B8%D0%BD%D1%82%D0%B5%D1%80"
     },
     {
       "text": "До якої групи належать колонки?",
@@ -307,7 +313,10 @@
         "малювання"
       ],
       "correct": 1,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Меню «Пуск» у Windows використовують переважно для:</span><br><b style=\"color:#34d399;font-size:1.1em\">запуску програм</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9C%D0%B5%D0%BD%D1%8E\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/DomiliseMenuSept2008.jpg/330px-DomiliseMenuSept2008.jpg\" alt=\"Меню\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Меню «Пуск» у Windows використовують переважно для:</span><br><b style=\"color:#34d399;font-size:1.1em\">запуску програм</b></div>",
+      "wikiKeyword": "Меню",
+      "wikiTitle": "Меню",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9C%D0%B5%D0%BD%D1%8E"
     },
     {
       "text": "Як називають об'єкт файлової системи, у якому зберігаються інші файли і папки?",
@@ -557,7 +566,10 @@
         "програма"
       ],
       "correct": 1,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Що таке Wi-Fi</span><br><b style=\"color:#34d399;font-size:1.1em\">бездротова передача даних на короткі відстані</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/Wi-Fi\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/WiFi_Logo.svg/languk-330px-WiFi_Logo.svg.png\" alt=\"Wi-Fi\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Що таке Wi-Fi</span><br><b style=\"color:#34d399;font-size:1.1em\">бездротова передача даних на короткі відстані</b></div>",
+      "wikiKeyword": "Wi-Fi",
+      "wikiTitle": "Wi-Fi",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/Wi-Fi"
     },
     {
       "text": "Що означає префікс https:// перед адресою сайту?",
@@ -637,7 +649,10 @@
         "оновлення системи"
       ],
       "correct": 0,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 180\" style=\"width:220px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"240\" height=\"180\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"40\" y=\"30\" width=\"160\" height=\"20\" rx=\"3\" fill=\"#7c2d12\"/><text x=\"50\" y=\"44\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#fda4af\">🗑 SPAM!!! 💰💰💰</text><rect x=\"40\" y=\"60\" width=\"160\" height=\"20\" rx=\"3\" fill=\"#7c2d12\"/><text x=\"50\" y=\"74\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#fda4af\">🗑 SPAM!!! 💰💰💰</text><rect x=\"40\" y=\"90\" width=\"160\" height=\"20\" rx=\"3\" fill=\"#7c2d12\"/><text x=\"50\" y=\"104\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#fda4af\">🗑 SPAM!!! 💰💰💰</text>\n      <text x=\"120\" y=\"160\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#fde68a\" font-weight=\"800\">спам — небажані повідомлення</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B0%D0%BC\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Spammed-mail-folder.png/330px-Spammed-mail-folder.png\" alt=\"Спам\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 180\" style=\"width:220px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"240\" height=\"180\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"40\" y=\"30\" width=\"160\" height=\"20\" rx=\"3\" fill=\"#7c2d12\"/><text x=\"50\" y=\"44\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#fda4af\">🗑 SPAM!!! 💰💰💰</text><rect x=\"40\" y=\"60\" width=\"160\" height=\"20\" rx=\"3\" fill=\"#7c2d12\"/><text x=\"50\" y=\"74\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#fda4af\">🗑 SPAM!!! 💰💰💰</text><rect x=\"40\" y=\"90\" width=\"160\" height=\"20\" rx=\"3\" fill=\"#7c2d12\"/><text x=\"50\" y=\"104\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#fda4af\">🗑 SPAM!!! 💰💰💰</text>\n      <text x=\"120\" y=\"160\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#fde68a\" font-weight=\"800\">спам — небажані повідомлення</text></svg>",
+      "wikiKeyword": "спам",
+      "wikiTitle": "Спам",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B0%D0%BC"
     },
     {
       "text": "Що таке антивірусна програма?",
@@ -659,7 +674,10 @@
         "тип принтера"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Що таке кібербулінг</span><br><b style=\"color:#34d399;font-size:1.1em\">цькування людей в інтернеті</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9A%D1%96%D0%B1%D0%B5%D1%80%D0%B1%D1%83%D0%BB%D1%96%D0%BD%D0%B3\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Cyberbullying.jpg/330px-Cyberbullying.jpg\" alt=\"Кібербулінг\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Що таке кібербулінг</span><br><b style=\"color:#34d399;font-size:1.1em\">цькування людей в інтернеті</b></div>",
+      "wikiKeyword": "кібербулінг",
+      "wikiTitle": "Кібербулінг",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9A%D1%96%D0%B1%D0%B5%D1%80%D0%B1%D1%83%D0%BB%D1%96%D0%BD%D0%B3"
     },
     {
       "text": "Чи можна повідомляти незнайомим у мережі свою адресу та номер телефону?",
@@ -692,7 +710,10 @@
         "розширення файлу"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Що таке алгоритм</span><br><b style=\"color:#34d399;font-size:1.1em\">чітка послідовність дій для виконання задачі</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/2/23/Image-Al-Kit%C4%81b_al-mu%E1%B8%ABta%E1%B9%A3ar_f%C4%AB_%E1%B8%A5is%C4%81b_al-%C4%9Fabr_wa-l-muq%C4%81bala.jpg\" alt=\"Алгоритм\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Що таке алгоритм</span><br><b style=\"color:#34d399;font-size:1.1em\">чітка послідовність дій для виконання задачі</b></div>",
+      "wikiKeyword": "алгоритм",
+      "wikiTitle": "Алгоритм",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC"
     },
     {
       "text": "Як називається алгоритм, у якому дії виконуються одна за одною без розгалужень і повторень?",
@@ -703,7 +724,10 @@
         "паралельний"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Як називається алгоритм, у якому дії виконуються одна за одною без розгалужень і повторень</span><br><b style=\"color:#34d399;font-size:1.1em\">лінійний</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/2/23/Image-Al-Kit%C4%81b_al-mu%E1%B8%ABta%E1%B9%A3ar_f%C4%AB_%E1%B8%A5is%C4%81b_al-%C4%9Fabr_wa-l-muq%C4%81bala.jpg\" alt=\"Алгоритм\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Як називається алгоритм, у якому дії виконуються одна за одною без розгалужень і повторень</span><br><b style=\"color:#34d399;font-size:1.1em\">лінійний</b></div>",
+      "wikiKeyword": "алгоритм",
+      "wikiTitle": "Алгоритм",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC"
     },
     {
       "text": "Як називається алгоритм, у якому є умова «якщо… то…»?",
@@ -714,7 +738,10 @@
         "хаотичний"
       ],
       "correct": 1,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Як називається алгоритм, у якому є умова «якщо… то…»</span><br><b style=\"color:#34d399;font-size:1.1em\">розгалужений (з умовою)</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/2/23/Image-Al-Kit%C4%81b_al-mu%E1%B8%ABta%E1%B9%A3ar_f%C4%AB_%E1%B8%A5is%C4%81b_al-%C4%9Fabr_wa-l-muq%C4%81bala.jpg\" alt=\"Алгоритм\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Як називається алгоритм, у якому є умова «якщо… то…»</span><br><b style=\"color:#34d399;font-size:1.1em\">розгалужений (з умовою)</b></div>",
+      "wikiKeyword": "алгоритм",
+      "wikiTitle": "Алгоритм",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC"
     },
     {
       "text": "Як називається алгоритм, у якому деякі дії повторюються кілька разів?",
@@ -725,7 +752,10 @@
         "одноразовий"
       ],
       "correct": 2,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Як називається алгоритм, у якому деякі дії повторюються кілька разів</span><br><b style=\"color:#34d399;font-size:1.1em\">циклічний</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/2/23/Image-Al-Kit%C4%81b_al-mu%E1%B8%ABta%E1%B9%A3ar_f%C4%AB_%E1%B8%A5is%C4%81b_al-%C4%9Fabr_wa-l-muq%C4%81bala.jpg\" alt=\"Алгоритм\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Як називається алгоритм, у якому деякі дії повторюються кілька разів</span><br><b style=\"color:#34d399;font-size:1.1em\">циклічний</b></div>",
+      "wikiKeyword": "алгоритм",
+      "wikiTitle": "Алгоритм",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC"
     },
     {
       "text": "Як називається схематичне зображення алгоритму геометричними фігурами?",
@@ -803,7 +833,10 @@
         "адмін"
       ],
       "correct": 1,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Як називається той, хто виконує алгоритм</span><br><b style=\"color:#34d399;font-size:1.1em\">виконавець</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/2/23/Image-Al-Kit%C4%81b_al-mu%E1%B8%ABta%E1%B9%A3ar_f%C4%AB_%E1%B8%A5is%C4%81b_al-%C4%9Fabr_wa-l-muq%C4%81bala.jpg\" alt=\"Алгоритм\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Як називається той, хто виконує алгоритм</span><br><b style=\"color:#34d399;font-size:1.1em\">виконавець</b></div>",
+      "wikiKeyword": "алгоритм",
+      "wikiTitle": "Алгоритм",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC"
     },
     {
       "text": "Що таке Scratch?",
@@ -814,7 +847,10 @@
         "антивірус"
       ],
       "correct": 1,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 180\" style=\"width:230px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"240\" height=\"180\" fill=\"#fb923c\" rx=\"10\"/>\n      <text x=\"120\" y=\"42\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#fff\">Scratch</text>\n      <g font-family=\"Inter, Arial\" font-size=\"11\">\n        <rect x=\"40\" y=\"60\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#facc15\"/>\n        <text x=\"60\" y=\"76\" fill=\"#0f172a\">коли натиснуто ⚑</text>\n        <rect x=\"40\" y=\"86\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#0ea5e9\"/>\n        <text x=\"60\" y=\"102\" fill=\"#fff\">рухайся 10 кроків</text>\n        <rect x=\"40\" y=\"112\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#dc2626\"/>\n        <text x=\"60\" y=\"128\" fill=\"#fff\">⬛ зупинити все</text>\n      </g>\n      <text x=\"120\" y=\"160\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#fff\" font-weight=\"700\">блочне програмування</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A1%D0%BA%D1%80%D0%B5%D1%82%D1%87_(%D0%BC%D0%BE%D0%B2%D0%B0_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F)\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Scratchlogo.svg/languk-330px-Scratchlogo.svg.png\" alt=\"Скретч (мова програмування)\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 180\" style=\"width:230px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"240\" height=\"180\" fill=\"#fb923c\" rx=\"10\"/>\n      <text x=\"120\" y=\"42\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#fff\">Scratch</text>\n      <g font-family=\"Inter, Arial\" font-size=\"11\">\n        <rect x=\"40\" y=\"60\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#facc15\"/>\n        <text x=\"60\" y=\"76\" fill=\"#0f172a\">коли натиснуто ⚑</text>\n        <rect x=\"40\" y=\"86\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#0ea5e9\"/>\n        <text x=\"60\" y=\"102\" fill=\"#fff\">рухайся 10 кроків</text>\n        <rect x=\"40\" y=\"112\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#dc2626\"/>\n        <text x=\"60\" y=\"128\" fill=\"#fff\">⬛ зупинити все</text>\n      </g>\n      <text x=\"120\" y=\"160\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#fff\" font-weight=\"700\">блочне програмування</text></svg>",
+      "wikiKeyword": "Scratch",
+      "wikiTitle": "Скретч (мова програмування)",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A1%D0%BA%D1%80%D0%B5%D1%82%D1%87_(%D0%BC%D0%BE%D0%B2%D0%B0_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F)"
     },
     {
       "text": "Як у Scratch називається об'єкт, яким керує програміст (наприклад, котик)?",
@@ -825,7 +861,10 @@
         "блок"
       ],
       "correct": 0,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 180\" style=\"width:230px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"240\" height=\"180\" fill=\"#fb923c\" rx=\"10\"/>\n      <text x=\"120\" y=\"42\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#fff\">Scratch</text>\n      <g font-family=\"Inter, Arial\" font-size=\"11\">\n        <rect x=\"40\" y=\"60\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#facc15\"/>\n        <text x=\"60\" y=\"76\" fill=\"#0f172a\">коли натиснуто ⚑</text>\n        <rect x=\"40\" y=\"86\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#0ea5e9\"/>\n        <text x=\"60\" y=\"102\" fill=\"#fff\">рухайся 10 кроків</text>\n        <rect x=\"40\" y=\"112\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#dc2626\"/>\n        <text x=\"60\" y=\"128\" fill=\"#fff\">⬛ зупинити все</text>\n      </g>\n      <text x=\"120\" y=\"160\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#fff\" font-weight=\"700\">блочне програмування</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A1%D0%BA%D1%80%D0%B5%D1%82%D1%87_(%D0%BC%D0%BE%D0%B2%D0%B0_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F)\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Scratchlogo.svg/languk-330px-Scratchlogo.svg.png\" alt=\"Скретч (мова програмування)\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 180\" style=\"width:230px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"240\" height=\"180\" fill=\"#fb923c\" rx=\"10\"/>\n      <text x=\"120\" y=\"42\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#fff\">Scratch</text>\n      <g font-family=\"Inter, Arial\" font-size=\"11\">\n        <rect x=\"40\" y=\"60\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#facc15\"/>\n        <text x=\"60\" y=\"76\" fill=\"#0f172a\">коли натиснуто ⚑</text>\n        <rect x=\"40\" y=\"86\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#0ea5e9\"/>\n        <text x=\"60\" y=\"102\" fill=\"#fff\">рухайся 10 кроків</text>\n        <rect x=\"40\" y=\"112\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#dc2626\"/>\n        <text x=\"60\" y=\"128\" fill=\"#fff\">⬛ зупинити все</text>\n      </g>\n      <text x=\"120\" y=\"160\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#fff\" font-weight=\"700\">блочне програмування</text></svg>",
+      "wikiKeyword": "Scratch",
+      "wikiTitle": "Скретч (мова програмування)",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A1%D0%BA%D1%80%D0%B5%D1%82%D1%87_(%D0%BC%D0%BE%D0%B2%D0%B0_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F)"
     },
     {
       "text": "Як у Scratch називається фон, на якому діють спрайти?",
@@ -850,7 +889,10 @@
         "костюм"
       ],
       "correct": 1,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 180\" style=\"width:230px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"240\" height=\"180\" fill=\"#fb923c\" rx=\"10\"/>\n      <text x=\"120\" y=\"42\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#fff\">Scratch</text>\n      <g font-family=\"Inter, Arial\" font-size=\"11\">\n        <rect x=\"40\" y=\"60\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#facc15\"/>\n        <text x=\"60\" y=\"76\" fill=\"#0f172a\">коли натиснуто ⚑</text>\n        <rect x=\"40\" y=\"86\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#0ea5e9\"/>\n        <text x=\"60\" y=\"102\" fill=\"#fff\">рухайся 10 кроків</text>\n        <rect x=\"40\" y=\"112\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#dc2626\"/>\n        <text x=\"60\" y=\"128\" fill=\"#fff\">⬛ зупинити все</text>\n      </g>\n      <text x=\"120\" y=\"160\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#fff\" font-weight=\"700\">блочне програмування</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A1%D0%BA%D1%80%D0%B5%D1%82%D1%87_(%D0%BC%D0%BE%D0%B2%D0%B0_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F)\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Scratchlogo.svg/languk-330px-Scratchlogo.svg.png\" alt=\"Скретч (мова програмування)\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 180\" style=\"width:230px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"240\" height=\"180\" fill=\"#fb923c\" rx=\"10\"/>\n      <text x=\"120\" y=\"42\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#fff\">Scratch</text>\n      <g font-family=\"Inter, Arial\" font-size=\"11\">\n        <rect x=\"40\" y=\"60\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#facc15\"/>\n        <text x=\"60\" y=\"76\" fill=\"#0f172a\">коли натиснуто ⚑</text>\n        <rect x=\"40\" y=\"86\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#0ea5e9\"/>\n        <text x=\"60\" y=\"102\" fill=\"#fff\">рухайся 10 кроків</text>\n        <rect x=\"40\" y=\"112\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#dc2626\"/>\n        <text x=\"60\" y=\"128\" fill=\"#fff\">⬛ зупинити все</text>\n      </g>\n      <text x=\"120\" y=\"160\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#fff\" font-weight=\"700\">блочне програмування</text></svg>",
+      "wikiKeyword": "Scratch",
+      "wikiTitle": "Скретч (мова програмування)",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A1%D0%BA%D1%80%D0%B5%D1%82%D1%87_(%D0%BC%D0%BE%D0%B2%D0%B0_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F)"
     },
     {
       "text": "Що означає зелений прапорець у Scratch?",
@@ -861,7 +903,10 @@
         "змінити фон"
       ],
       "correct": 1,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 180\" style=\"width:230px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"240\" height=\"180\" fill=\"#fb923c\" rx=\"10\"/>\n      <text x=\"120\" y=\"42\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#fff\">Scratch</text>\n      <g font-family=\"Inter, Arial\" font-size=\"11\">\n        <rect x=\"40\" y=\"60\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#facc15\"/>\n        <text x=\"60\" y=\"76\" fill=\"#0f172a\">коли натиснуто ⚑</text>\n        <rect x=\"40\" y=\"86\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#0ea5e9\"/>\n        <text x=\"60\" y=\"102\" fill=\"#fff\">рухайся 10 кроків</text>\n        <rect x=\"40\" y=\"112\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#dc2626\"/>\n        <text x=\"60\" y=\"128\" fill=\"#fff\">⬛ зупинити все</text>\n      </g>\n      <text x=\"120\" y=\"160\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#fff\" font-weight=\"700\">блочне програмування</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A1%D0%BA%D1%80%D0%B5%D1%82%D1%87_(%D0%BC%D0%BE%D0%B2%D0%B0_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F)\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Scratchlogo.svg/languk-330px-Scratchlogo.svg.png\" alt=\"Скретч (мова програмування)\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 180\" style=\"width:230px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"240\" height=\"180\" fill=\"#fb923c\" rx=\"10\"/>\n      <text x=\"120\" y=\"42\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#fff\">Scratch</text>\n      <g font-family=\"Inter, Arial\" font-size=\"11\">\n        <rect x=\"40\" y=\"60\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#facc15\"/>\n        <text x=\"60\" y=\"76\" fill=\"#0f172a\">коли натиснуто ⚑</text>\n        <rect x=\"40\" y=\"86\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#0ea5e9\"/>\n        <text x=\"60\" y=\"102\" fill=\"#fff\">рухайся 10 кроків</text>\n        <rect x=\"40\" y=\"112\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#dc2626\"/>\n        <text x=\"60\" y=\"128\" fill=\"#fff\">⬛ зупинити все</text>\n      </g>\n      <text x=\"120\" y=\"160\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#fff\" font-weight=\"700\">блочне програмування</text></svg>",
+      "wikiKeyword": "Scratch",
+      "wikiTitle": "Скретч (мова програмування)",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A1%D0%BA%D1%80%D0%B5%D1%82%D1%87_(%D0%BC%D0%BE%D0%B2%D0%B0_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F)"
     },
     {
       "text": "Що означає червоний восьмикутний знак у Scratch?",
@@ -872,7 +917,10 @@
         "зберегти"
       ],
       "correct": 0,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 180\" style=\"width:230px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"240\" height=\"180\" fill=\"#fb923c\" rx=\"10\"/>\n      <text x=\"120\" y=\"42\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#fff\">Scratch</text>\n      <g font-family=\"Inter, Arial\" font-size=\"11\">\n        <rect x=\"40\" y=\"60\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#facc15\"/>\n        <text x=\"60\" y=\"76\" fill=\"#0f172a\">коли натиснуто ⚑</text>\n        <rect x=\"40\" y=\"86\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#0ea5e9\"/>\n        <text x=\"60\" y=\"102\" fill=\"#fff\">рухайся 10 кроків</text>\n        <rect x=\"40\" y=\"112\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#dc2626\"/>\n        <text x=\"60\" y=\"128\" fill=\"#fff\">⬛ зупинити все</text>\n      </g>\n      <text x=\"120\" y=\"160\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#fff\" font-weight=\"700\">блочне програмування</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A1%D0%BA%D1%80%D0%B5%D1%82%D1%87_(%D0%BC%D0%BE%D0%B2%D0%B0_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F)\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Scratchlogo.svg/languk-330px-Scratchlogo.svg.png\" alt=\"Скретч (мова програмування)\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 180\" style=\"width:230px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"240\" height=\"180\" fill=\"#fb923c\" rx=\"10\"/>\n      <text x=\"120\" y=\"42\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#fff\">Scratch</text>\n      <g font-family=\"Inter, Arial\" font-size=\"11\">\n        <rect x=\"40\" y=\"60\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#facc15\"/>\n        <text x=\"60\" y=\"76\" fill=\"#0f172a\">коли натиснуто ⚑</text>\n        <rect x=\"40\" y=\"86\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#0ea5e9\"/>\n        <text x=\"60\" y=\"102\" fill=\"#fff\">рухайся 10 кроків</text>\n        <rect x=\"40\" y=\"112\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#dc2626\"/>\n        <text x=\"60\" y=\"128\" fill=\"#fff\">⬛ зупинити все</text>\n      </g>\n      <text x=\"120\" y=\"160\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#fff\" font-weight=\"700\">блочне програмування</text></svg>",
+      "wikiKeyword": "Scratch",
+      "wikiTitle": "Скретч (мова програмування)",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A1%D0%BA%D1%80%D0%B5%D1%82%D1%87_(%D0%BC%D0%BE%D0%B2%D0%B0_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F)"
     },
     {
       "text": "Якого кольору блоки руху (Motion) у Scratch?",
@@ -883,7 +931,10 @@
         "жовтого"
       ],
       "correct": 0,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 180\" style=\"width:230px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"240\" height=\"180\" fill=\"#fb923c\" rx=\"10\"/>\n      <text x=\"120\" y=\"42\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#fff\">Scratch</text>\n      <g font-family=\"Inter, Arial\" font-size=\"11\">\n        <rect x=\"40\" y=\"60\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#facc15\"/>\n        <text x=\"60\" y=\"76\" fill=\"#0f172a\">коли натиснуто ⚑</text>\n        <rect x=\"40\" y=\"86\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#0ea5e9\"/>\n        <text x=\"60\" y=\"102\" fill=\"#fff\">рухайся 10 кроків</text>\n        <rect x=\"40\" y=\"112\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#dc2626\"/>\n        <text x=\"60\" y=\"128\" fill=\"#fff\">⬛ зупинити все</text>\n      </g>\n      <text x=\"120\" y=\"160\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#fff\" font-weight=\"700\">блочне програмування</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A1%D0%BA%D1%80%D0%B5%D1%82%D1%87_(%D0%BC%D0%BE%D0%B2%D0%B0_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F)\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Scratchlogo.svg/languk-330px-Scratchlogo.svg.png\" alt=\"Скретч (мова програмування)\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 180\" style=\"width:230px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"240\" height=\"180\" fill=\"#fb923c\" rx=\"10\"/>\n      <text x=\"120\" y=\"42\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#fff\">Scratch</text>\n      <g font-family=\"Inter, Arial\" font-size=\"11\">\n        <rect x=\"40\" y=\"60\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#facc15\"/>\n        <text x=\"60\" y=\"76\" fill=\"#0f172a\">коли натиснуто ⚑</text>\n        <rect x=\"40\" y=\"86\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#0ea5e9\"/>\n        <text x=\"60\" y=\"102\" fill=\"#fff\">рухайся 10 кроків</text>\n        <rect x=\"40\" y=\"112\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#dc2626\"/>\n        <text x=\"60\" y=\"128\" fill=\"#fff\">⬛ зупинити все</text>\n      </g>\n      <text x=\"120\" y=\"160\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#fff\" font-weight=\"700\">блочне програмування</text></svg>",
+      "wikiKeyword": "Scratch",
+      "wikiTitle": "Скретч (мова програмування)",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A1%D0%BA%D1%80%D0%B5%D1%82%D1%87_(%D0%BC%D0%BE%D0%B2%D0%B0_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F)"
     },
     {
       "text": "Який блок Scratch повторює дії задану кількість разів?",
@@ -894,7 +945,10 @@
         "змінити костюм"
       ],
       "correct": 1,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 180\" style=\"width:230px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"240\" height=\"180\" fill=\"#fb923c\" rx=\"10\"/>\n      <text x=\"120\" y=\"42\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#fff\">Scratch</text>\n      <g font-family=\"Inter, Arial\" font-size=\"11\">\n        <rect x=\"40\" y=\"60\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#facc15\"/>\n        <text x=\"60\" y=\"76\" fill=\"#0f172a\">коли натиснуто ⚑</text>\n        <rect x=\"40\" y=\"86\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#0ea5e9\"/>\n        <text x=\"60\" y=\"102\" fill=\"#fff\">рухайся 10 кроків</text>\n        <rect x=\"40\" y=\"112\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#dc2626\"/>\n        <text x=\"60\" y=\"128\" fill=\"#fff\">⬛ зупинити все</text>\n      </g>\n      <text x=\"120\" y=\"160\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#fff\" font-weight=\"700\">блочне програмування</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A1%D0%BA%D1%80%D0%B5%D1%82%D1%87_(%D0%BC%D0%BE%D0%B2%D0%B0_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F)\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Scratchlogo.svg/languk-330px-Scratchlogo.svg.png\" alt=\"Скретч (мова програмування)\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 180\" style=\"width:230px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"240\" height=\"180\" fill=\"#fb923c\" rx=\"10\"/>\n      <text x=\"120\" y=\"42\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#fff\">Scratch</text>\n      <g font-family=\"Inter, Arial\" font-size=\"11\">\n        <rect x=\"40\" y=\"60\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#facc15\"/>\n        <text x=\"60\" y=\"76\" fill=\"#0f172a\">коли натиснуто ⚑</text>\n        <rect x=\"40\" y=\"86\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#0ea5e9\"/>\n        <text x=\"60\" y=\"102\" fill=\"#fff\">рухайся 10 кроків</text>\n        <rect x=\"40\" y=\"112\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#dc2626\"/>\n        <text x=\"60\" y=\"128\" fill=\"#fff\">⬛ зупинити все</text>\n      </g>\n      <text x=\"120\" y=\"160\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#fff\" font-weight=\"700\">блочне програмування</text></svg>",
+      "wikiKeyword": "Scratch",
+      "wikiTitle": "Скретч (мова програмування)",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A1%D0%BA%D1%80%D0%B5%D1%82%D1%87_(%D0%BC%D0%BE%D0%B2%D0%B0_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F)"
     },
     {
       "text": "Який блок Scratch виконує дії лише за певної умови?",
@@ -905,7 +959,10 @@
         "грати звук"
       ],
       "correct": 1,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 180\" style=\"width:230px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"240\" height=\"180\" fill=\"#fb923c\" rx=\"10\"/>\n      <text x=\"120\" y=\"42\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#fff\">Scratch</text>\n      <g font-family=\"Inter, Arial\" font-size=\"11\">\n        <rect x=\"40\" y=\"60\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#facc15\"/>\n        <text x=\"60\" y=\"76\" fill=\"#0f172a\">коли натиснуто ⚑</text>\n        <rect x=\"40\" y=\"86\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#0ea5e9\"/>\n        <text x=\"60\" y=\"102\" fill=\"#fff\">рухайся 10 кроків</text>\n        <rect x=\"40\" y=\"112\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#dc2626\"/>\n        <text x=\"60\" y=\"128\" fill=\"#fff\">⬛ зупинити все</text>\n      </g>\n      <text x=\"120\" y=\"160\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#fff\" font-weight=\"700\">блочне програмування</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A1%D0%BA%D1%80%D0%B5%D1%82%D1%87_(%D0%BC%D0%BE%D0%B2%D0%B0_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F)\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Scratchlogo.svg/languk-330px-Scratchlogo.svg.png\" alt=\"Скретч (мова програмування)\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 180\" style=\"width:230px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"240\" height=\"180\" fill=\"#fb923c\" rx=\"10\"/>\n      <text x=\"120\" y=\"42\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#fff\">Scratch</text>\n      <g font-family=\"Inter, Arial\" font-size=\"11\">\n        <rect x=\"40\" y=\"60\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#facc15\"/>\n        <text x=\"60\" y=\"76\" fill=\"#0f172a\">коли натиснуто ⚑</text>\n        <rect x=\"40\" y=\"86\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#0ea5e9\"/>\n        <text x=\"60\" y=\"102\" fill=\"#fff\">рухайся 10 кроків</text>\n        <rect x=\"40\" y=\"112\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#dc2626\"/>\n        <text x=\"60\" y=\"128\" fill=\"#fff\">⬛ зупинити все</text>\n      </g>\n      <text x=\"120\" y=\"160\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#fff\" font-weight=\"700\">блочне програмування</text></svg>",
+      "wikiKeyword": "Scratch",
+      "wikiTitle": "Скретч (мова програмування)",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A1%D0%BA%D1%80%D0%B5%D1%82%D1%87_(%D0%BC%D0%BE%D0%B2%D0%B0_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F)"
     },
     {
       "text": "Як у Scratch змінити вигляд спрайта?",
@@ -916,7 +973,10 @@
         "натиснути на 'Звуки'"
       ],
       "correct": 0,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 180\" style=\"width:230px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"240\" height=\"180\" fill=\"#fb923c\" rx=\"10\"/>\n      <text x=\"120\" y=\"42\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#fff\">Scratch</text>\n      <g font-family=\"Inter, Arial\" font-size=\"11\">\n        <rect x=\"40\" y=\"60\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#facc15\"/>\n        <text x=\"60\" y=\"76\" fill=\"#0f172a\">коли натиснуто ⚑</text>\n        <rect x=\"40\" y=\"86\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#0ea5e9\"/>\n        <text x=\"60\" y=\"102\" fill=\"#fff\">рухайся 10 кроків</text>\n        <rect x=\"40\" y=\"112\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#dc2626\"/>\n        <text x=\"60\" y=\"128\" fill=\"#fff\">⬛ зупинити все</text>\n      </g>\n      <text x=\"120\" y=\"160\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#fff\" font-weight=\"700\">блочне програмування</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A1%D0%BA%D1%80%D0%B5%D1%82%D1%87_(%D0%BC%D0%BE%D0%B2%D0%B0_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F)\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Scratchlogo.svg/languk-330px-Scratchlogo.svg.png\" alt=\"Скретч (мова програмування)\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 180\" style=\"width:230px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"240\" height=\"180\" fill=\"#fb923c\" rx=\"10\"/>\n      <text x=\"120\" y=\"42\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"16\" font-weight=\"900\" fill=\"#fff\">Scratch</text>\n      <g font-family=\"Inter, Arial\" font-size=\"11\">\n        <rect x=\"40\" y=\"60\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#facc15\"/>\n        <text x=\"60\" y=\"76\" fill=\"#0f172a\">коли натиснуто ⚑</text>\n        <rect x=\"40\" y=\"86\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#0ea5e9\"/>\n        <text x=\"60\" y=\"102\" fill=\"#fff\">рухайся 10 кроків</text>\n        <rect x=\"40\" y=\"112\" width=\"160\" height=\"22\" rx=\"4\" fill=\"#dc2626\"/>\n        <text x=\"60\" y=\"128\" fill=\"#fff\">⬛ зупинити все</text>\n      </g>\n      <text x=\"120\" y=\"160\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"11\" fill=\"#fff\" font-weight=\"700\">блочне програмування</text></svg>",
+      "wikiKeyword": "Scratch",
+      "wikiTitle": "Скретч (мова програмування)",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A1%D0%BA%D1%80%D0%B5%D1%82%D1%87_(%D0%BC%D0%BE%D0%B2%D0%B0_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F)"
     },
     {
       "text": "Програма для редагування тексту — це:",
@@ -952,7 +1012,10 @@
         "Ctrl + Z"
       ],
       "correct": 1,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Яка комбінація клавіш копіює виділений текст</span><br><b style=\"color:#34d399;font-size:1.1em\">Ctrl + C</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BA%D1%81%D1%82\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Text.jpg/330px-Text.jpg\" alt=\"Текст\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Яка комбінація клавіш копіює виділений текст</span><br><b style=\"color:#34d399;font-size:1.1em\">Ctrl + C</b></div>",
+      "wikiKeyword": "текст",
+      "wikiTitle": "Текст",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BA%D1%81%D1%82"
     },
     {
       "text": "Яка комбінація клавіш вставляє скопійований текст?",
@@ -963,7 +1026,10 @@
         "Ctrl + P"
       ],
       "correct": 1,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Яка комбінація клавіш вставляє скопійований текст</span><br><b style=\"color:#34d399;font-size:1.1em\">Ctrl + V</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BA%D1%81%D1%82\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Text.jpg/330px-Text.jpg\" alt=\"Текст\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Яка комбінація клавіш вставляє скопійований текст</span><br><b style=\"color:#34d399;font-size:1.1em\">Ctrl + V</b></div>",
+      "wikiKeyword": "текст",
+      "wikiTitle": "Текст",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BA%D1%81%D1%82"
     },
     {
       "text": "Яка комбінація клавіш вирізає виділений текст?",
@@ -974,7 +1040,10 @@
         "Ctrl + A"
       ],
       "correct": 1,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Яка комбінація клавіш вирізає виділений текст</span><br><b style=\"color:#34d399;font-size:1.1em\">Ctrl + X</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BA%D1%81%D1%82\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Text.jpg/330px-Text.jpg\" alt=\"Текст\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Яка комбінація клавіш вирізає виділений текст</span><br><b style=\"color:#34d399;font-size:1.1em\">Ctrl + X</b></div>",
+      "wikiKeyword": "текст",
+      "wikiTitle": "Текст",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BA%D1%81%D1%82"
     },
     {
       "text": "Яка комбінація клавіш скасовує останню дію?",
@@ -996,7 +1065,10 @@
         "Ctrl + X"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Яка комбінація клавіш виділяє весь текст у документі</span><br><b style=\"color:#34d399;font-size:1.1em\">Ctrl + A</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BA%D1%81%D1%82\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Text.jpg/330px-Text.jpg\" alt=\"Текст\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Яка комбінація клавіш виділяє весь текст у документі</span><br><b style=\"color:#34d399;font-size:1.1em\">Ctrl + A</b></div>",
+      "wikiKeyword": "текст",
+      "wikiTitle": "Текст",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BA%D1%81%D1%82"
     },
     {
       "text": "Яка комбінація клавіш у Word робить виділений текст напівжирним?",
@@ -1237,7 +1309,10 @@
         "тип миші"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Що таке піксель</span><br><b style=\"color:#34d399;font-size:1.1em\">найменша точка на екрані / у зображенні</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9F%D1%96%D0%BA%D1%81%D0%B5%D0%BB%D1%8C\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/uk/e/ef/Piksel.jpg\" alt=\"Піксель\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Що таке піксель</span><br><b style=\"color:#34d399;font-size:1.1em\">найменша точка на екрані / у зображенні</b></div>",
+      "wikiKeyword": "піксель",
+      "wikiTitle": "Піксель",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9F%D1%96%D0%BA%D1%81%D0%B5%D0%BB%D1%8C"
     },
     {
       "text": "Яку клавішу натискають, щоб почати новий рядок або підтвердити введення?",
@@ -1248,7 +1323,10 @@
         "Tab"
       ],
       "correct": 0,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"10\" y=\"30\" width=\"300\" height=\"50\" rx=\"6\" fill=\"#475569\" stroke=\"#fbbf24\" stroke-width=\"2\"/><text x=\"160\" y=\"62\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"16\" font-weight=\"900\" fill=\"#fde68a\">Enter</text>\n      <text x=\"160\" y=\"118\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"13\" fill=\"#bbf7d0\" font-weight=\"700\">підтвердити дію / перехід рядка</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%BD%D1%8F_%D0%B2_%D0%A5%D1%80%D0%B0%D0%BC_%D0%9F%D1%80%D0%B5%D1%81%D0%B2%D1%8F%D1%82%D0%BE%D1%97_%D0%94%D1%96%D0%B2%D0%B8_%D0%9C%D0%B0%D1%80%D1%96%D1%97\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Presentation_of_Virgin_Mary_%28icon%29.jpg/330px-Presentation_of_Virgin_Mary_%28icon%29.jpg\" alt=\"Введення в Храм Пресвятої Діви Марії\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"10\" y=\"30\" width=\"300\" height=\"50\" rx=\"6\" fill=\"#475569\" stroke=\"#fbbf24\" stroke-width=\"2\"/><text x=\"160\" y=\"62\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"16\" font-weight=\"900\" fill=\"#fde68a\">Enter</text>\n      <text x=\"160\" y=\"118\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"13\" fill=\"#bbf7d0\" font-weight=\"700\">підтвердити дію / перехід рядка</text></svg>",
+      "wikiKeyword": "введення",
+      "wikiTitle": "Введення в Храм Пресвятої Діви Марії",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%BD%D1%8F_%D0%B2_%D0%A5%D1%80%D0%B0%D0%BC_%D0%9F%D1%80%D0%B5%D1%81%D0%B2%D1%8F%D1%82%D0%BE%D1%97_%D0%94%D1%96%D0%B2%D0%B8_%D0%9C%D0%B0%D1%80%D1%96%D1%97"
     },
     {
       "text": "Найдовша клавіша на клавіатурі — це:",
@@ -1270,7 +1348,10 @@
         "Esc"
       ],
       "correct": 1,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Яка клавіша стирає символ ліворуч від курсора</span><br><b style=\"color:#34d399;font-size:1.1em\">Backspace</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/ReligijneSymbole.svg/languk-330px-ReligijneSymbole.svg.png\" alt=\"Символ\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Яка клавіша стирає символ ліворуч від курсора</span><br><b style=\"color:#34d399;font-size:1.1em\">Backspace</b></div>",
+      "wikiKeyword": "символ",
+      "wikiTitle": "Символ",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB"
     },
     {
       "text": "Яка клавіша стирає символ праворуч від курсора?",
@@ -1281,7 +1362,10 @@
         "Esc"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Яка клавіша стирає символ праворуч від курсора</span><br><b style=\"color:#34d399;font-size:1.1em\">Delete</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/ReligijneSymbole.svg/languk-330px-ReligijneSymbole.svg.png\" alt=\"Символ\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Яка клавіша стирає символ праворуч від курсора</span><br><b style=\"color:#34d399;font-size:1.1em\">Delete</b></div>",
+      "wikiKeyword": "символ",
+      "wikiTitle": "Символ",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB"
     },
     {
       "text": "Яку клавішу утримують, щоб ввести велику літеру разово?",
@@ -1325,7 +1409,10 @@
         "Esc"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Яка клавіша служить для відступу й переміщення між полями форми</span><br><b style=\"color:#34d399;font-size:1.1em\">Tab</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9F%D0%B5%D1%80%D0%B5%D0%BC%D1%96%D1%89%D0%B5%D0%BD%D0%BD%D1%8F\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Distancedisplacement-uk.svg/languk-330px-Distancedisplacement-uk.svg.png\" alt=\"Переміщення\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Яка клавіша служить для відступу й переміщення між полями форми</span><br><b style=\"color:#34d399;font-size:1.1em\">Tab</b></div>",
+      "wikiKeyword": "переміщення",
+      "wikiTitle": "Переміщення",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9F%D0%B5%D1%80%D0%B5%D0%BC%D1%96%D1%89%D0%B5%D0%BD%D0%BD%D1%8F"
     },
     {
       "text": "Яка клавіша часто використовується разом з іншими для гарячих комбінацій (Ctrl+C, Ctrl+V)?",
@@ -1383,7 +1470,10 @@
         "поштова"
       ],
       "correct": 1,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Як називається невелика комп'ютерна мережа в одній кімнаті чи будівлі</span><br><b style=\"color:#34d399;font-size:1.1em\">локальна</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%91%D1%83%D0%B4%D0%B8%D0%BD%D0%BE%D0%BA\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Donetsk_fasad_02.jpg/330px-Donetsk_fasad_02.jpg\" alt=\"Будинок\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Як називається невелика комп'ютерна мережа в одній кімнаті чи будівлі</span><br><b style=\"color:#34d399;font-size:1.1em\">локальна</b></div>",
+      "wikiKeyword": "будівлі",
+      "wikiTitle": "Будинок",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%91%D1%83%D0%B4%D0%B8%D0%BD%D0%BE%D0%BA"
     },
     {
       "text": "Як називається пристрій, який розподіляє Wi-Fi удома?",
@@ -1408,7 +1498,10 @@
         "Ілон Маск"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Кого називають одним із засновників компанії Microsoft</span><br><b style=\"color:#34d399;font-size:1.1em\">Білл Гейтс</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/Microsoft\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Aerial_Microsoft_West_Campus_August_2009.jpg/330px-Aerial_Microsoft_West_Campus_August_2009.jpg\" alt=\"Microsoft\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Кого називають одним із засновників компанії Microsoft</span><br><b style=\"color:#34d399;font-size:1.1em\">Білл Гейтс</b></div>",
+      "wikiKeyword": "Microsoft",
+      "wikiTitle": "Microsoft",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/Microsoft"
     },
     {
       "text": "Кого називають співзасновником компанії Apple?",
@@ -1461,7 +1554,10 @@
         "одиниця інформації"
       ],
       "correct": 1,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Що таке штучний інтелект (AI)</span><br><b style=\"color:#34d399;font-size:1.1em\">програма, яка імітує деякі здатності людського мислення</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%86%D0%BD%D1%82%D0%B5%D0%BB%D0%B5%D0%BA%D1%82\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Guilford_model.jpg/330px-Guilford_model.jpg\" alt=\"Інтелект\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Що таке штучний інтелект (AI)</span><br><b style=\"color:#34d399;font-size:1.1em\">програма, яка імітує деякі здатності людського мислення</b></div>",
+      "wikiKeyword": "інтелект",
+      "wikiTitle": "Інтелект",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%86%D0%BD%D1%82%D0%B5%D0%BB%D0%B5%D0%BA%D1%82"
     },
     {
       "text": "Що з переліченого є мовою програмування?",
@@ -1472,7 +1568,10 @@
         "Excel"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Що з переліченого є мовою програмування</span><br><b style=\"color:#34d399;font-size:1.1em\">Python</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Coding_Shots_Annual_Plan_high_res-5.jpg/330px-Coding_Shots_Annual_Plan_high_res-5.jpg\" alt=\"Програмування\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Що з переліченого є мовою програмування</span><br><b style=\"color:#34d399;font-size:1.1em\">Python</b></div>",
+      "wikiKeyword": "програмування",
+      "wikiTitle": "Програмування",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F"
     },
     {
       "text": "Як називається помилка у програмі?",
@@ -1483,7 +1582,10 @@
         "файл"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Як називається помилка у програмі</span><br><b style=\"color:#34d399;font-size:1.1em\">баг</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BC%D0%B8%D0%BB%D0%BA%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/General_relativity_-_FACT%21.jpg/330px-General_relativity_-_FACT%21.jpg\" alt=\"Помилка\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Як називається помилка у програмі</span><br><b style=\"color:#34d399;font-size:1.1em\">баг</b></div>",
+      "wikiKeyword": "помилка",
+      "wikiTitle": "Помилка",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BC%D0%B8%D0%BB%D0%BA%D0%B0"
     },
     {
       "text": "Як називають усунення помилок у програмі?",
@@ -1505,7 +1607,10 @@
         "запис"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Як називається процес встановлення програми на комп'ютер</span><br><b style=\"color:#34d399;font-size:1.1em\">інсталяція (установка)</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%BF'%D1%8E%D1%82%D0%B5%D1%80\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/DM_IBM_S360.jpg/330px-DM_IBM_S360.jpg\" alt=\"Комп'ютер\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Як називається процес встановлення програми на комп'ютер</span><br><b style=\"color:#34d399;font-size:1.1em\">інсталяція (установка)</b></div>",
+      "wikiKeyword": "комп",
+      "wikiTitle": "Комп'ютер",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%BF'%D1%8E%D1%82%D0%B5%D1%80"
     },
     {
       "text": "Як називається процес видалення програми з комп'ютера?",
@@ -1516,7 +1621,10 @@
         "копіювання"
       ],
       "correct": 1,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Як називається процес видалення програми з комп'ютера</span><br><b style=\"color:#34d399;font-size:1.1em\">деінсталяція (видалення)</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%BF'%D1%8E%D1%82%D0%B5%D1%80\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/DM_IBM_S360.jpg/330px-DM_IBM_S360.jpg\" alt=\"Комп'ютер\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Як називається процес видалення програми з комп'ютера</span><br><b style=\"color:#34d399;font-size:1.1em\">деінсталяція (видалення)</b></div>",
+      "wikiKeyword": "комп",
+      "wikiTitle": "Комп'ютер",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%BF'%D1%8E%D1%82%D0%B5%D1%80"
     },
     {
       "text": "Що таке оновлення програми?",
@@ -1549,7 +1657,10 @@
         "тип монітора"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Що таке хмарне сховище (наприклад, Google Drive)</span><br><b style=\"color:#34d399;font-size:1.1em\">місце на чужому комп'ютері в інтернеті, де можна зберігати свої файли</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/Google\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Googleplex_HQ_%28cropped%29.jpg/330px-Googleplex_HQ_%28cropped%29.jpg\" alt=\"Google\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Що таке хмарне сховище (наприклад, Google Drive)</span><br><b style=\"color:#34d399;font-size:1.1em\">місце на чужому комп'ютері в інтернеті, де можна зберігати свої файли</b></div>",
+      "wikiKeyword": "Google",
+      "wikiTitle": "Google",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/Google"
     },
     {
       "text": "Який пристрій встановлюють всередину комп'ютера для постійного зберігання даних?",
@@ -1571,10 +1682,10 @@
         "DVD"
       ],
       "correct": 0,
-      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9E%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BC'%D1%8F%D1%82%D1%8C\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Corsair_CM2X1024-6400C5DHX_20080221.jpg/330px-Corsair_CM2X1024-6400C5DHX_20080221.jpg\" alt=\"Оперативна пам'ять\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect x=\"20\" y=\"40\" width=\"280\" height=\"60\" rx=\"4\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n      <rect x=\"20\" y=\"40\" width=\"280\" height=\"14\" fill=\"#0f172a\"/>\n      <rect x=\"30\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"47\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"64\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"81\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"98\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"115\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"132\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"149\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"166\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"183\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"200\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"217\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"234\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"251\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"268\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"285\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/>\n      <text x=\"160\" y=\"130\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#fde68a\" font-weight=\"800\">оперативна пам'ять (RAM)</text></svg>",
-      "wikiKeyword": "оперативна пам'ять",
-      "wikiTitle": "Оперативна пам'ять",
-      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9E%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%B0_%D0%BF%D0%B0%D0%BC'%D1%8F%D1%82%D1%8C"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%BF'%D1%8E%D1%82%D0%B5%D1%80\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/DM_IBM_S360.jpg/330px-DM_IBM_S360.jpg\" alt=\"Комп'ютер\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect x=\"20\" y=\"40\" width=\"280\" height=\"60\" rx=\"4\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n      <rect x=\"20\" y=\"40\" width=\"280\" height=\"14\" fill=\"#0f172a\"/>\n      <rect x=\"30\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"47\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"64\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"81\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"98\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"115\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"132\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"149\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"166\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"183\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"200\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"217\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"234\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"251\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"268\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/><rect x=\"285\" y=\"58\" width=\"14\" height=\"20\" fill=\"#0ea5e9\"/>\n      <text x=\"160\" y=\"130\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#fde68a\" font-weight=\"800\">оперативна пам'ять (RAM)</text></svg>",
+      "wikiKeyword": "комп",
+      "wikiTitle": "Комп'ютер",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%BF'%D1%8E%D1%82%D0%B5%D1%80"
     },
     {
       "text": "Якого типу диск читає лазер?",
@@ -1649,7 +1760,10 @@
         "тип монітора"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Веб-сторінка — це</span><br><b style=\"color:#34d399;font-size:1.1em\">окрема сторінка сайту в інтернеті</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%92%D0%B5%D0%B1%D1%81%D1%82%D0%BE%D1%80%D1%96%D0%BD%D0%BA%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Chromium_on_Ubuntu.png/330px-Chromium_on_Ubuntu.png\" alt=\"Вебсторінка\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Веб-сторінка — це</span><br><b style=\"color:#34d399;font-size:1.1em\">окрема сторінка сайту в інтернеті</b></div>",
+      "wikiKeyword": "Веб-сторінка",
+      "wikiTitle": "Вебсторінка",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%92%D0%B5%D0%B1%D1%81%D1%82%D0%BE%D1%80%D1%96%D0%BD%D0%BA%D0%B0"
     },
     {
       "text": "Що таке посилання (link) на веб-сторінці?",
@@ -1671,7 +1785,10 @@
         "друк"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Що означає значок 🔍 у багатьох програмах</span><br><b style=\"color:#34d399;font-size:1.1em\">пошук</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%97%D0%BD%D0%B0%D1%87%D0%BE%D0%BA\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/WMUA-made_pin_buttons_%28034%29.JPG/330px-WMUA-made_pin_buttons_%28034%29.JPG\" alt=\"Значок\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Що означає значок 🔍 у багатьох програмах</span><br><b style=\"color:#34d399;font-size:1.1em\">пошук</b></div>",
+      "wikiKeyword": "значок",
+      "wikiTitle": "Значок",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%97%D0%BD%D0%B0%D1%87%D0%BE%D0%BA"
     },
     {
       "text": "Що означає значок 💾 (дискета) у програмах?",
@@ -1682,7 +1799,10 @@
         "вийти"
       ],
       "correct": 0,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 220 180\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"220\" height=\"180\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"110\" y=\"100\" text-anchor=\"middle\" font-size=\"62\">💾</text>\n      <text x=\"110\" y=\"156\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"13\" fill=\"#fde68a\" font-weight=\"800\">зберегти</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%93%D0%BD%D1%83%D1%87%D0%BA%D0%B8%D0%B9_%D0%B4%D0%B8%D1%81%D0%BA\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Floppy_disk_2009_G1.jpg/330px-Floppy_disk_2009_G1.jpg\" alt=\"Гнучкий диск\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 220 180\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"220\" height=\"180\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"110\" y=\"100\" text-anchor=\"middle\" font-size=\"62\">💾</text>\n      <text x=\"110\" y=\"156\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"13\" fill=\"#fde68a\" font-weight=\"800\">зберегти</text></svg>",
+      "wikiKeyword": "дискета",
+      "wikiTitle": "Гнучкий диск",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%93%D0%BD%D1%83%D1%87%D0%BA%D0%B8%D0%B9_%D0%B4%D0%B8%D1%81%D0%BA"
     },
     {
       "text": "Що означає значок 🖨 у програмах?",
@@ -1732,7 +1852,10 @@
         "клавіша на клавіатурі"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Що таке вкладка (tab) у браузері</span><br><b style=\"color:#34d399;font-size:1.1em\">окрема веб-сторінка у тому ж вікні браузера</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%92%D0%BA%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/OpenOffice.org2.2_Export_to_PDF.png/330px-OpenOffice.org2.2_Export_to_PDF.png\" alt=\"Вкладка\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Що таке вкладка (tab) у браузері</span><br><b style=\"color:#34d399;font-size:1.1em\">окрема веб-сторінка у тому ж вікні браузера</b></div>",
+      "wikiKeyword": "вкладка",
+      "wikiTitle": "Вкладка",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%92%D0%BA%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0"
     },
     {
       "text": "Як називається список улюблених сторінок у браузері?",
@@ -1754,7 +1877,10 @@
         "список програм"
       ],
       "correct": 0,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 200\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <circle cx=\"160\" cy=\"100\" r=\"70\" fill=\"#1d4ed8\"/>\n      <line x1=\"160\" y1=\"100\" x2=\"230\" y2=\"100\" stroke=\"#bae6fd\" stroke-width=\"1.5\"/><line x1=\"160\" y1=\"100\" x2=\"195\" y2=\"160.6217782649107\" stroke=\"#bae6fd\" stroke-width=\"1.5\"/><line x1=\"160\" y1=\"100\" x2=\"125.00000000000001\" y2=\"160.62177826491072\" stroke=\"#bae6fd\" stroke-width=\"1.5\"/><line x1=\"160\" y1=\"100\" x2=\"90\" y2=\"100.00000000000001\" stroke=\"#bae6fd\" stroke-width=\"1.5\"/><line x1=\"160\" y1=\"100\" x2=\"124.99999999999997\" y2=\"39.378221735089305\" stroke=\"#bae6fd\" stroke-width=\"1.5\"/><line x1=\"160\" y1=\"100\" x2=\"195\" y2=\"39.3782217350893\" stroke=\"#bae6fd\" stroke-width=\"1.5\"/>\n      <circle cx=\"160\" cy=\"100\" r=\"70\" fill=\"none\" stroke=\"#bae6fd\" stroke-width=\"2\"/>\n      <ellipse cx=\"160\" cy=\"100\" rx=\"70\" ry=\"28\" fill=\"none\" stroke=\"#bae6fd\" stroke-width=\"2\"/>\n      <text x=\"160\" y=\"106\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"22\" font-weight=\"900\" fill=\"#fff\">🌐</text>\n      <text x=\"160\" y=\"186\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#fde68a\" font-weight=\"800\">інтернет — мережа мереж</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%86%D1%81%D1%82%D0%BE%D1%80%D1%96%D1%8F\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Marble_bust_of_Herodotos_MET_DT11742_%28cropped%29.jpg/330px-Marble_bust_of_Herodotos_MET_DT11742_%28cropped%29.jpg\" alt=\"Історія\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 200\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <circle cx=\"160\" cy=\"100\" r=\"70\" fill=\"#1d4ed8\"/>\n      <line x1=\"160\" y1=\"100\" x2=\"230\" y2=\"100\" stroke=\"#bae6fd\" stroke-width=\"1.5\"/><line x1=\"160\" y1=\"100\" x2=\"195\" y2=\"160.6217782649107\" stroke=\"#bae6fd\" stroke-width=\"1.5\"/><line x1=\"160\" y1=\"100\" x2=\"125.00000000000001\" y2=\"160.62177826491072\" stroke=\"#bae6fd\" stroke-width=\"1.5\"/><line x1=\"160\" y1=\"100\" x2=\"90\" y2=\"100.00000000000001\" stroke=\"#bae6fd\" stroke-width=\"1.5\"/><line x1=\"160\" y1=\"100\" x2=\"124.99999999999997\" y2=\"39.378221735089305\" stroke=\"#bae6fd\" stroke-width=\"1.5\"/><line x1=\"160\" y1=\"100\" x2=\"195\" y2=\"39.3782217350893\" stroke=\"#bae6fd\" stroke-width=\"1.5\"/>\n      <circle cx=\"160\" cy=\"100\" r=\"70\" fill=\"none\" stroke=\"#bae6fd\" stroke-width=\"2\"/>\n      <ellipse cx=\"160\" cy=\"100\" rx=\"70\" ry=\"28\" fill=\"none\" stroke=\"#bae6fd\" stroke-width=\"2\"/>\n      <text x=\"160\" y=\"106\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"22\" font-weight=\"900\" fill=\"#fff\">🌐</text>\n      <text x=\"160\" y=\"186\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#fde68a\" font-weight=\"800\">інтернет — мережа мереж</text></svg>",
+      "wikiKeyword": "історія",
+      "wikiTitle": "Історія",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%86%D1%81%D1%82%D0%BE%D1%80%D1%96%D1%8F"
     },
     {
       "text": "Як часто варто змінювати важливі паролі?",
@@ -1859,7 +1985,10 @@
         "сайтів"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">ENIAC — це один із перших</span><br><b style=\"color:#34d399;font-size:1.1em\">електронних комп'ютерів</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/ENIAC\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Glen_Beck_and_Betty_Snyder_program_the_ENIAC_in_building_328_at_the_Ballistic_Research_Laboratory.jpg/330px-Glen_Beck_and_Betty_Snyder_program_the_ENIAC_in_building_328_at_the_Ballistic_Research_Laboratory.jpg\" alt=\"ENIAC\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">ENIAC — це один із перших</span><br><b style=\"color:#34d399;font-size:1.1em\">електронних комп'ютерів</b></div>",
+      "wikiKeyword": "ENIAC",
+      "wikiTitle": "ENIAC",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/ENIAC"
     },
     {
       "text": "Який з цих пристроїв з'явився найраніше?",
@@ -1881,7 +2010,10 @@
         "пароль"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Як називається текст, написаний мовою програмування</span><br><b style=\"color:#34d399;font-size:1.1em\">програмний код</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Coding_Shots_Annual_Plan_high_res-5.jpg/330px-Coding_Shots_Annual_Plan_high_res-5.jpg\" alt=\"Програмування\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Як називається текст, написаний мовою програмування</span><br><b style=\"color:#34d399;font-size:1.1em\">програмний код</b></div>",
+      "wikiKeyword": "програмування",
+      "wikiTitle": "Програмування",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F"
     },
     {
       "text": "Чому програмний код пишеться англійськими словами (наприклад, if, for, print)?",
@@ -1903,7 +2035,10 @@
         "ярлик"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Як називається помилка, через яку програма не запускається або працює неправильно</span><br><b style=\"color:#34d399;font-size:1.1em\">баг</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BC%D0%B8%D0%BB%D0%BA%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/General_relativity_-_FACT%21.jpg/330px-General_relativity_-_FACT%21.jpg\" alt=\"Помилка\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Як називається помилка, через яку програма не запускається або працює неправильно</span><br><b style=\"color:#34d399;font-size:1.1em\">баг</b></div>",
+      "wikiKeyword": "помилка",
+      "wikiTitle": "Помилка",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BC%D0%B8%D0%BB%D0%BA%D0%B0"
     },
     {
       "text": "Гра, у яку грає кілька людей одночасно через інтернет, — це:",
@@ -1914,7 +2049,10 @@
         "локальна гра без мережі"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Гра, у яку грає кілька людей одночасно через інтернет, — це:</span><br><b style=\"color:#34d399;font-size:1.1em\">онлайн-гра / мультиплеєр</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%86%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Internet_users_per_100_and_GDP_per_capita.jpg/330px-Internet_users_per_100_and_GDP_per_capita.jpg\" alt=\"Інтернет\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Гра, у яку грає кілька людей одночасно через інтернет, — це:</span><br><b style=\"color:#34d399;font-size:1.1em\">онлайн-гра / мультиплеєр</b></div>",
+      "wikiKeyword": "інтернет",
+      "wikiTitle": "Інтернет",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%86%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82"
     },
     {
       "text": "Що з переліченого може зменшити втому очей під час роботи з комп'ютером?",
@@ -1936,7 +2074,10 @@
         "не потрібно взагалі"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">👁 Щоб берегти очі: <b>20–20–20</b> — кожні 20 хв дивись 20 секунд на щось за 6 м (≈20 футів).</div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A5%D0%B2%D0%B8%D0%BB%D0%B8%D0%BD%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/La_minute_%28315630347%29.jpg/330px-La_minute_%28315630347%29.jpg\" alt=\"Хвилина\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">👁 Щоб берегти очі: <b>20–20–20</b> — кожні 20 хв дивись 20 секунд на щось за 6 м (≈20 футів).</div>",
+      "wikiKeyword": "хвилина",
+      "wikiTitle": "Хвилина",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A5%D0%B2%D0%B8%D0%BB%D0%B8%D0%BD%D0%B0"
     },
     {
       "text": "Що таке «хмара» (cloud) у комп'ютерному значенні?",
@@ -1947,7 +2088,10 @@
         "природне явище"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Що таке «хмара» (cloud) у комп'ютерному значенні</span><br><b style=\"color:#34d399;font-size:1.1em\">сервери в інтернеті, на яких зберігаються дані та працюють програми</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A5%D0%BC%D0%B0%D1%80%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Sky-2.jpg/330px-Sky-2.jpg\" alt=\"Хмара\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Що таке «хмара» (cloud) у комп'ютерному значенні</span><br><b style=\"color:#34d399;font-size:1.1em\">сервери в інтернеті, на яких зберігаються дані та працюють програми</b></div>",
+      "wikiKeyword": "хмара",
+      "wikiTitle": "Хмара",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A5%D0%BC%D0%B0%D1%80%D0%B0"
     },
     {
       "text": "Чим smart-годинник відрізняється від звичайного годинника?",
@@ -1991,7 +2135,10 @@
         "ярлик"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Як називається об'єднання комп'ютерів для обміну даними</span><br><b style=\"color:#34d399;font-size:1.1em\">мережа</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%BF'%D1%8E%D1%82%D0%B5%D1%80\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/DM_IBM_S360.jpg/330px-DM_IBM_S360.jpg\" alt=\"Комп'ютер\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Як називається об'єднання комп'ютерів для обміну даними</span><br><b style=\"color:#34d399;font-size:1.1em\">мережа</b></div>",
+      "wikiKeyword": "комп",
+      "wikiTitle": "Комп'ютер",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%BF'%D1%8E%D1%82%D0%B5%D1%80"
     },
     {
       "text": "Як називаються невидимі правила, за якими комп'ютери спілкуються в мережі?",
@@ -2035,7 +2182,10 @@
         "Esc"
       ],
       "correct": 0,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"10\" y=\"30\" width=\"300\" height=\"50\" rx=\"6\" fill=\"#475569\" stroke=\"#fbbf24\" stroke-width=\"2\"/><text x=\"160\" y=\"62\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"16\" font-weight=\"900\" fill=\"#fde68a\">PrtSc</text>\n      <text x=\"160\" y=\"118\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"13\" fill=\"#bbf7d0\" font-weight=\"700\">знімок екрана</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA_%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Ubuntu_11.10_Final.png/330px-Ubuntu_11.10_Final.png\" alt=\"Знімок екрана\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 140\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"140\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"10\" y=\"30\" width=\"300\" height=\"50\" rx=\"6\" fill=\"#475569\" stroke=\"#fbbf24\" stroke-width=\"2\"/><text x=\"160\" y=\"62\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"16\" font-weight=\"900\" fill=\"#fde68a\">PrtSc</text>\n      <text x=\"160\" y=\"118\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"13\" fill=\"#bbf7d0\" font-weight=\"700\">знімок екрана</text></svg>",
+      "wikiKeyword": "скриншот",
+      "wikiTitle": "Знімок екрана",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA_%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0"
     },
     {
       "text": "Як ще називають жорсткий магнітний диск?",
@@ -2046,10 +2196,7 @@
         "GPU"
       ],
       "correct": 0,
-      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%96%D0%BE%D1%80%D1%81%D1%82%D0%BA%D0%B8%D0%B9_%D0%B4%D0%B8%D1%81%D0%BA\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Hdd_od_srodka.jpg/330px-Hdd_od_srodka.jpg\" alt=\"Жорсткий диск\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Як ще називають жорсткий магнітний диск</span><br><b style=\"color:#34d399;font-size:1.1em\">HDD</b></div>",
-      "wikiKeyword": "HDD",
-      "wikiTitle": "Жорсткий диск",
-      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%96%D0%BE%D1%80%D1%81%D1%82%D0%BA%D0%B8%D0%B9_%D0%B4%D0%B8%D1%81%D0%BA"
+      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Як ще називають жорсткий магнітний диск</span><br><b style=\"color:#34d399;font-size:1.1em\">HDD</b></div>"
     },
     {
       "text": "Що таке SSD?",
@@ -2085,7 +2232,10 @@
         "довжина проводу"
       ],
       "correct": 0,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 280 200\" style=\"width:270px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect x=\"30\" y=\"20\" width=\"220\" height=\"140\" rx=\"8\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"3\"/>\n      <rect x=\"42\" y=\"32\" width=\"196\" height=\"116\" fill=\"#0ea5e9\"/>\n      <circle cx=\"140\" cy=\"80\" r=\"22\" fill=\"#fbbf24\"/>\n      <polygon points=\"80,140 110,100 140,140\" fill=\"#16a34a\"/>\n      <polygon points=\"140,140 180,90 220,140\" fill=\"#15803d\"/>\n      <rect x=\"110\" y=\"160\" width=\"60\" height=\"12\" fill=\"#475569\"/>\n      <rect x=\"80\" y=\"172\" width=\"120\" height=\"6\" fill=\"#475569\"/>\n      <text x=\"140\" y=\"194\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#fde68a\" font-weight=\"800\">монітор</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%97%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/1752_James_Ayscough_A_short_account_of_the_Eye_and_nature_of_vision_p30.jpg/330px-1752_James_Ayscough_A_short_account_of_the_Eye_and_nature_of_vision_p30.jpg\" alt=\"Зображення\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 280 200\" style=\"width:270px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect x=\"30\" y=\"20\" width=\"220\" height=\"140\" rx=\"8\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"3\"/>\n      <rect x=\"42\" y=\"32\" width=\"196\" height=\"116\" fill=\"#0ea5e9\"/>\n      <circle cx=\"140\" cy=\"80\" r=\"22\" fill=\"#fbbf24\"/>\n      <polygon points=\"80,140 110,100 140,140\" fill=\"#16a34a\"/>\n      <polygon points=\"140,140 180,90 220,140\" fill=\"#15803d\"/>\n      <rect x=\"110\" y=\"160\" width=\"60\" height=\"12\" fill=\"#475569\"/>\n      <rect x=\"80\" y=\"172\" width=\"120\" height=\"6\" fill=\"#475569\"/>\n      <text x=\"140\" y=\"194\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#fde68a\" font-weight=\"800\">монітор</text></svg>",
+      "wikiKeyword": "зображення",
+      "wikiTitle": "Зображення",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%97%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F"
     },
     {
       "text": "Яка з цих ігор є відомим конструктором/середовищем, де можна створювати свої світи?",
@@ -2096,10 +2246,7 @@
         "Excel"
       ],
       "correct": 0,
-      "media": "<a href=\"https://uk.wikipedia.org/wiki/Minecraft\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/uk/thumb/4/48/Minecraft_logo.png/330px-Minecraft_logo.png\" alt=\"Minecraft\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Яка з цих ігор є відомим конструктором/середовищем, де можна створювати свої світи</span><br><b style=\"color:#34d399;font-size:1.1em\">Minecraft</b></div>",
-      "wikiKeyword": "Minecraft",
-      "wikiTitle": "Minecraft",
-      "wikiUrl": "https://uk.wikipedia.org/wiki/Minecraft"
+      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Яка з цих ігор є відомим конструктором/середовищем, де можна створювати свої світи</span><br><b style=\"color:#34d399;font-size:1.1em\">Minecraft</b></div>"
     },
     {
       "text": "Що таке емодзі (emoji)?",
@@ -2132,7 +2279,10 @@
         "ножиці"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Що з переліченого — мобільний застосунок</span><br><b style=\"color:#34d399;font-size:1.1em\">YouTube на телефоні</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%97%D0%B0%D1%81%D1%82%D0%BE%D1%81%D1%83%D0%BD%D0%BE%D0%BA\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Gimp_2.4.3.png/330px-Gimp_2.4.3.png\" alt=\"Застосунок\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Що з переліченого — мобільний застосунок</span><br><b style=\"color:#34d399;font-size:1.1em\">YouTube на телефоні</b></div>",
+      "wikiKeyword": "застосунок",
+      "wikiTitle": "Застосунок",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%97%D0%B0%D1%81%D1%82%D0%BE%D1%81%D1%83%D0%BD%D0%BE%D0%BA"
     },
     {
       "text": "Що означає Ctrl + P у багатьох програмах?",
@@ -2215,10 +2365,7 @@
         "ZIP"
       ],
       "correct": 0,
-      "media": "<a href=\"https://uk.wikipedia.org/wiki/JPEG\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/JPEG_format_logo.svg/languk-330px-JPEG_format_logo.svg.png\" alt=\"JPEG\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Який формат використовують для стиснення фотографій (з невеликою втратою якості)</span><br><b style=\"color:#34d399;font-size:1.1em\">JPG</b></div>",
-      "wikiKeyword": "JPG",
-      "wikiTitle": "JPEG",
-      "wikiUrl": "https://uk.wikipedia.org/wiki/JPEG"
+      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Який формат використовують для стиснення фотографій (з невеликою втратою якості)</span><br><b style=\"color:#34d399;font-size:1.1em\">JPG</b></div>"
     },
     {
       "text": "Який з пристроїв може керуватися голосом і відповідати на запитання?",
@@ -2229,7 +2376,10 @@
         "звичайна лінійка"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Який з пристроїв може керуватися голосом і відповідати на запитання</span><br><b style=\"color:#34d399;font-size:1.1em\">голосовий помічник (смартколонка, смартфон)</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9F%D0%B8%D1%82%D0%B0%D0%BD%D0%BD%D1%8F\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Joan_Brossa_Vel%C3%B2drom_Cam%C3%AD_obrint_interrogaci%C3%B3.JPG/330px-Joan_Brossa_Vel%C3%B2drom_Cam%C3%AD_obrint_interrogaci%C3%B3.JPG\" alt=\"Питання\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Який з пристроїв може керуватися голосом і відповідати на запитання</span><br><b style=\"color:#34d399;font-size:1.1em\">голосовий помічник (смартколонка, смартфон)</b></div>",
+      "wikiKeyword": "запитання",
+      "wikiTitle": "Питання",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9F%D0%B8%D1%82%D0%B0%D0%BD%D0%BD%D1%8F"
     },
     {
       "text": "Що з переліченого — приклад смарт-пристрою?",
@@ -2312,7 +2462,10 @@
         "вимкнути комп'ютер"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Що з переліченого треба робити, перш ніж щось публікувати в інтернеті</span><br><b style=\"color:#34d399;font-size:1.1em\">подумати, чи це безпечно і коректно для тебе та інших</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9F%D0%B5%D1%80%D1%88_(%D0%BF%D1%80%D0%BE%D0%B2%D1%96%D0%BD%D1%86%D1%96%D1%8F)\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Carte_du_Perche.svg/languk-330px-Carte_du_Perche.svg.png\" alt=\"Перш (провінція)\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Що з переліченого треба робити, перш ніж щось публікувати в інтернеті</span><br><b style=\"color:#34d399;font-size:1.1em\">подумати, чи це безпечно і коректно для тебе та інших</b></div>",
+      "wikiKeyword": "перш",
+      "wikiTitle": "Перш (провінція)",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9F%D0%B5%D1%80%D1%88_(%D0%BF%D1%80%D0%BE%D0%B2%D1%96%D0%BD%D1%86%D1%96%D1%8F)"
     },
     {
       "text": "Що з цих браузерів розроблено компанією Google?",
@@ -2323,7 +2476,10 @@
         "Firefox"
       ],
       "correct": 2,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 200\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <circle cx=\"160\" cy=\"100\" r=\"70\" fill=\"#1d4ed8\"/>\n      <line x1=\"160\" y1=\"100\" x2=\"230\" y2=\"100\" stroke=\"#bae6fd\" stroke-width=\"1.5\"/><line x1=\"160\" y1=\"100\" x2=\"195\" y2=\"160.6217782649107\" stroke=\"#bae6fd\" stroke-width=\"1.5\"/><line x1=\"160\" y1=\"100\" x2=\"125.00000000000001\" y2=\"160.62177826491072\" stroke=\"#bae6fd\" stroke-width=\"1.5\"/><line x1=\"160\" y1=\"100\" x2=\"90\" y2=\"100.00000000000001\" stroke=\"#bae6fd\" stroke-width=\"1.5\"/><line x1=\"160\" y1=\"100\" x2=\"124.99999999999997\" y2=\"39.378221735089305\" stroke=\"#bae6fd\" stroke-width=\"1.5\"/><line x1=\"160\" y1=\"100\" x2=\"195\" y2=\"39.3782217350893\" stroke=\"#bae6fd\" stroke-width=\"1.5\"/>\n      <circle cx=\"160\" cy=\"100\" r=\"70\" fill=\"none\" stroke=\"#bae6fd\" stroke-width=\"2\"/>\n      <ellipse cx=\"160\" cy=\"100\" rx=\"70\" ry=\"28\" fill=\"none\" stroke=\"#bae6fd\" stroke-width=\"2\"/>\n      <text x=\"160\" y=\"106\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"22\" font-weight=\"900\" fill=\"#fff\">🌐</text>\n      <text x=\"160\" y=\"186\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#fde68a\" font-weight=\"800\">інтернет — мережа мереж</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/Google\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Googleplex_HQ_%28cropped%29.jpg/330px-Googleplex_HQ_%28cropped%29.jpg\" alt=\"Google\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 200\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <circle cx=\"160\" cy=\"100\" r=\"70\" fill=\"#1d4ed8\"/>\n      <line x1=\"160\" y1=\"100\" x2=\"230\" y2=\"100\" stroke=\"#bae6fd\" stroke-width=\"1.5\"/><line x1=\"160\" y1=\"100\" x2=\"195\" y2=\"160.6217782649107\" stroke=\"#bae6fd\" stroke-width=\"1.5\"/><line x1=\"160\" y1=\"100\" x2=\"125.00000000000001\" y2=\"160.62177826491072\" stroke=\"#bae6fd\" stroke-width=\"1.5\"/><line x1=\"160\" y1=\"100\" x2=\"90\" y2=\"100.00000000000001\" stroke=\"#bae6fd\" stroke-width=\"1.5\"/><line x1=\"160\" y1=\"100\" x2=\"124.99999999999997\" y2=\"39.378221735089305\" stroke=\"#bae6fd\" stroke-width=\"1.5\"/><line x1=\"160\" y1=\"100\" x2=\"195\" y2=\"39.3782217350893\" stroke=\"#bae6fd\" stroke-width=\"1.5\"/>\n      <circle cx=\"160\" cy=\"100\" r=\"70\" fill=\"none\" stroke=\"#bae6fd\" stroke-width=\"2\"/>\n      <ellipse cx=\"160\" cy=\"100\" rx=\"70\" ry=\"28\" fill=\"none\" stroke=\"#bae6fd\" stroke-width=\"2\"/>\n      <text x=\"160\" y=\"106\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"22\" font-weight=\"900\" fill=\"#fff\">🌐</text>\n      <text x=\"160\" y=\"186\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#fde68a\" font-weight=\"800\">інтернет — мережа мереж</text></svg>",
+      "wikiKeyword": "Google",
+      "wikiTitle": "Google",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/Google"
     },
     {
       "text": "Що з цих браузерів розроблено компанією Microsoft?",
@@ -2362,7 +2518,10 @@
         "тире"
       ],
       "correct": 0,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 220 180\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"220\" height=\"180\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"110\" y=\"100\" text-anchor=\"middle\" font-size=\"62\">🔍</text>\n      <text x=\"110\" y=\"156\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"13\" fill=\"#fde68a\" font-weight=\"800\">пошук</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%97%D0%BD%D0%B0%D0%BA\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Need_Directions%3F_%2839476959205%29.jpg/330px-Need_Directions%3F_%2839476959205%29.jpg\" alt=\"Знак\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 220 180\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"220\" height=\"180\" fill=\"#0f172a\" rx=\"10\"/>\n      <text x=\"110\" y=\"100\" text-anchor=\"middle\" font-size=\"62\">🔍</text>\n      <text x=\"110\" y=\"156\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"13\" fill=\"#fde68a\" font-weight=\"800\">пошук</text></svg>",
+      "wikiKeyword": "знаки",
+      "wikiTitle": "Знак",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%97%D0%BD%D0%B0%D0%BA"
     },
     {
       "text": "Що таке логін?",
@@ -2373,7 +2532,10 @@
         "тип миші"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Що таке логін</span><br><b style=\"color:#34d399;font-size:1.1em\">ім'я користувача для входу в акаунт</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9B%D0%BE%D0%B3%D1%96%D0%BD\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/uk/thumb/b/b0/%D0%9B%D0%BE%D0%B3%D1%96%D0%BD_%D0%92%D1%96%D0%BA%D1%96%D0%BF%D0%B5%D0%B4%D1%96%D1%8F.png/330px-%D0%9B%D0%BE%D0%B3%D1%96%D0%BD_%D0%92%D1%96%D0%BA%D1%96%D0%BF%D0%B5%D0%B4%D1%96%D1%8F.png\" alt=\"Логін\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Що таке логін</span><br><b style=\"color:#34d399;font-size:1.1em\">ім'я користувача для входу в акаунт</b></div>",
+      "wikiKeyword": "логін",
+      "wikiTitle": "Логін",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9B%D0%BE%D0%B3%D1%96%D0%BD"
     },
     {
       "text": "Що з переліченого — приклад двофакторної автентифікації?",
@@ -2420,7 +2582,10 @@
         "видалити файл"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Як зменшити розмір зображення для надсилання поштою</span><br><b style=\"color:#34d399;font-size:1.1em\">перетворити у формат JPG з нижчою якістю або змінити розмір (resize)</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%97%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/1752_James_Ayscough_A_short_account_of_the_Eye_and_nature_of_vision_p30.jpg/330px-1752_James_Ayscough_A_short_account_of_the_Eye_and_nature_of_vision_p30.jpg\" alt=\"Зображення\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">💻 <span style=\"color:#cbd5e1\">Як зменшити розмір зображення для надсилання поштою</span><br><b style=\"color:#34d399;font-size:1.1em\">перетворити у формат JPG з нижчою якістю або змінити розмір (resize)</b></div>",
+      "wikiKeyword": "зображення",
+      "wikiTitle": "Зображення",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%97%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F"
     }
   ]
 }

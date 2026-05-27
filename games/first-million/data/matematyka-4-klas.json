@@ -45,7 +45,10 @@
         "Неможливо порівняти"
       ],
       "correct": 0,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 200\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"200\" fill=\"#0f172a\" rx=\"10\"/>\n      <g transform=\"translate(60 100)\">\n        <circle r=\"50\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n        <path d=\"M0 0 L3.061616997868383e-15 -50 A50 50 0 0 1 50 0 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\"/><path d=\"M0 0 L50 0 A50 50 0 0 1 3.061616997868383e-15 50 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\"/><path d=\"M0 0 L3.061616997868383e-15 50 A50 50 0 0 1 -50 6.123233995736766e-15 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\"/><path d=\"M0 0 L-50 6.123233995736766e-15 A50 50 0 0 1 -9.184850993605149e-15 -50 Z\" fill=\"#334155\" stroke=\"#fde68a\"/>\n        <text x=\"0\" y=\"76\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"16\" font-weight=\"800\" fill=\"#34d399\">3/4</text>\n      </g>\n      <g transform=\"translate(240 100)\">\n        <circle r=\"50\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n        <path d=\"M0 0 L3.061616997868383e-15 -50 A50 50 0 0 1 43.30127018922194 24.999999999999993 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\"/><path d=\"M0 0 L43.30127018922194 24.999999999999993 A50 50 0 0 1 -43.301270189221924 25.000000000000018 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\"/><path d=\"M0 0 L-43.301270189221924 25.000000000000018 A50 50 0 0 1 -9.184850993605149e-15 -50 Z\" fill=\"#334155\" stroke=\"#fde68a\"/>\n        <text x=\"0\" y=\"76\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"16\" font-weight=\"800\" fill=\"#cbd5e1\">2/3</text>\n      </g>\n      <text x=\"150\" y=\"104\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"22\" font-weight=\"900\" fill=\"#fde68a\">></text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%94%D1%80%D1%96%D0%B1\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Cake_quarters.svg/languk-330px-Cake_quarters.svg.png\" alt=\"Дріб\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 200\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"200\" fill=\"#0f172a\" rx=\"10\"/>\n      <g transform=\"translate(60 100)\">\n        <circle r=\"50\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n        <path d=\"M0 0 L3.061616997868383e-15 -50 A50 50 0 0 1 50 0 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\"/><path d=\"M0 0 L50 0 A50 50 0 0 1 3.061616997868383e-15 50 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\"/><path d=\"M0 0 L3.061616997868383e-15 50 A50 50 0 0 1 -50 6.123233995736766e-15 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\"/><path d=\"M0 0 L-50 6.123233995736766e-15 A50 50 0 0 1 -9.184850993605149e-15 -50 Z\" fill=\"#334155\" stroke=\"#fde68a\"/>\n        <text x=\"0\" y=\"76\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"16\" font-weight=\"800\" fill=\"#34d399\">3/4</text>\n      </g>\n      <g transform=\"translate(240 100)\">\n        <circle r=\"50\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n        <path d=\"M0 0 L3.061616997868383e-15 -50 A50 50 0 0 1 43.30127018922194 24.999999999999993 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\"/><path d=\"M0 0 L43.30127018922194 24.999999999999993 A50 50 0 0 1 -43.301270189221924 25.000000000000018 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\"/><path d=\"M0 0 L-43.301270189221924 25.000000000000018 A50 50 0 0 1 -9.184850993605149e-15 -50 Z\" fill=\"#334155\" stroke=\"#fde68a\"/>\n        <text x=\"0\" y=\"76\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"16\" font-weight=\"800\" fill=\"#cbd5e1\">2/3</text>\n      </g>\n      <text x=\"150\" y=\"104\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"22\" font-weight=\"900\" fill=\"#fde68a\">></text></svg>",
+      "wikiKeyword": "дріб",
+      "wikiTitle": "Дріб",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%94%D1%80%D1%96%D0%B1"
     },
     {
       "text": "Периметр квадрата зі стороною 6 см дорівнює:",
@@ -67,7 +70,10 @@
         "230"
       ],
       "correct": 2,
-      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Скільки хвилин у 2 годинах 30 хвилинах</span><br><b style=\"color:#34d399;font-size:1.1em\">150</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A5%D0%B2%D0%B8%D0%BB%D0%B8%D0%BD%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/La_minute_%28315630347%29.jpg/330px-La_minute_%28315630347%29.jpg\" alt=\"Хвилина\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Скільки хвилин у 2 годинах 30 хвилинах</span><br><b style=\"color:#34d399;font-size:1.1em\">150</b></div>",
+      "wikiKeyword": "хвилина",
+      "wikiTitle": "Хвилина",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A5%D0%B2%D0%B8%D0%BB%D0%B8%D0%BD%D0%B0"
     },
     {
       "text": "Яке число є результатом 456 + 278?",
@@ -100,7 +106,10 @@
         "80 см²"
       ],
       "correct": 2,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 280 180\" style=\"width:270px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"280\" height=\"180\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"50\" y=\"40\" width=\"180\" height=\"100\" fill=\"rgba(56,189,248,0.18)\" stroke=\"#38bdf8\" stroke-width=\"3\"/>\n      <rect x=\"43\" y=\"33\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"223\" y=\"33\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"43\" y=\"133\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"223\" y=\"133\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n      <text x=\"140\" y=\"168\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#bae6fd\" font-weight=\"700\">прямокутник · 4 прямі кути</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9F%D0%BB%D0%BE%D1%89%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Rectangle_4x5.svg/languk-330px-Rectangle_4x5.svg.png\" alt=\"Площа\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 280 180\" style=\"width:270px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"280\" height=\"180\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"50\" y=\"40\" width=\"180\" height=\"100\" fill=\"rgba(56,189,248,0.18)\" stroke=\"#38bdf8\" stroke-width=\"3\"/>\n      <rect x=\"43\" y=\"33\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"223\" y=\"33\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"43\" y=\"133\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"223\" y=\"133\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n      <text x=\"140\" y=\"168\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#bae6fd\" font-weight=\"700\">прямокутник · 4 прямі кути</text></svg>",
+      "wikiKeyword": "Площа",
+      "wikiTitle": "Площа",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9F%D0%BB%D0%BE%D1%89%D0%B0"
     },
     {
       "text": "Яке число треба додати до 375, щоб отримати 500?",
@@ -452,7 +461,10 @@
         "100"
       ],
       "correct": 2,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:180px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <circle cx=\"100\" cy=\"100\" r=\"92\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"4\"/>\n      <line x1=\"100\" y1=\"24\" x2=\"100\" y2=\"14\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"138\" y1=\"34.182069312382666\" x2=\"143\" y2=\"25.521815274538284\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"165.81793068761735\" y1=\"62.00000000000001\" x2=\"174.47818472546174\" y2=\"57.00000000000001\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"176\" y1=\"100\" x2=\"186\" y2=\"100\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"165.81793068761735\" y1=\"138\" x2=\"174.47818472546174\" y2=\"143\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"138\" y1=\"165.81793068761732\" x2=\"143\" y2=\"174.47818472546172\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"100\" y1=\"176\" x2=\"100\" y2=\"186\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"62.000000000000014\" y1=\"165.81793068761735\" x2=\"57.00000000000002\" y2=\"174.47818472546174\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"34.18206931238265\" y1=\"138\" x2=\"25.52181527453827\" y2=\"143\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"24\" y1=\"100.00000000000001\" x2=\"14\" y2=\"100.00000000000001\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"34.182069312382666\" y1=\"61.99999999999999\" x2=\"25.521815274538284\" y2=\"56.99999999999999\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"61.999999999999964\" y1=\"34.18206931238268\" x2=\"56.999999999999964\" y2=\"25.521815274538284\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n      \n          <line x1=\"100\" y1=\"100\" x2=\"60.68070187412838\" y2=\"72.4683310551498\" stroke=\"#fde68a\" stroke-width=\"5\" stroke-linecap=\"round\"/>\n          <line x1=\"100\" y1=\"100\" x2=\"162.35382907247958\" y2=\"64\" stroke=\"#fff\" stroke-width=\"3\" stroke-linecap=\"round\"/>\n      <circle cx=\"100\" cy=\"100\" r=\"5\" fill=\"#fbbf24\"/></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A5%D0%B2%D0%B8%D0%BB%D0%B8%D0%BD%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/La_minute_%28315630347%29.jpg/330px-La_minute_%28315630347%29.jpg\" alt=\"Хвилина\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:180px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <circle cx=\"100\" cy=\"100\" r=\"92\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"4\"/>\n      <line x1=\"100\" y1=\"24\" x2=\"100\" y2=\"14\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"138\" y1=\"34.182069312382666\" x2=\"143\" y2=\"25.521815274538284\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"165.81793068761735\" y1=\"62.00000000000001\" x2=\"174.47818472546174\" y2=\"57.00000000000001\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"176\" y1=\"100\" x2=\"186\" y2=\"100\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"165.81793068761735\" y1=\"138\" x2=\"174.47818472546174\" y2=\"143\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"138\" y1=\"165.81793068761732\" x2=\"143\" y2=\"174.47818472546172\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"100\" y1=\"176\" x2=\"100\" y2=\"186\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"62.000000000000014\" y1=\"165.81793068761735\" x2=\"57.00000000000002\" y2=\"174.47818472546174\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"34.18206931238265\" y1=\"138\" x2=\"25.52181527453827\" y2=\"143\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"24\" y1=\"100.00000000000001\" x2=\"14\" y2=\"100.00000000000001\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"34.182069312382666\" y1=\"61.99999999999999\" x2=\"25.521815274538284\" y2=\"56.99999999999999\" stroke=\"#fbbf24\" stroke-width=\"2\"/><line x1=\"61.999999999999964\" y1=\"34.18206931238268\" x2=\"56.999999999999964\" y2=\"25.521815274538284\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n      \n          <line x1=\"100\" y1=\"100\" x2=\"60.68070187412838\" y2=\"72.4683310551498\" stroke=\"#fde68a\" stroke-width=\"5\" stroke-linecap=\"round\"/>\n          <line x1=\"100\" y1=\"100\" x2=\"162.35382907247958\" y2=\"64\" stroke=\"#fff\" stroke-width=\"3\" stroke-linecap=\"round\"/>\n      <circle cx=\"100\" cy=\"100\" r=\"5\" fill=\"#fbbf24\"/></svg>",
+      "wikiKeyword": "хвилина",
+      "wikiTitle": "Хвилина",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A5%D0%B2%D0%B8%D0%BB%D0%B8%D0%BD%D0%B0"
     },
     {
       "text": "Скільки секунд у 1 хвилині?",
@@ -463,7 +475,10 @@
         "120"
       ],
       "correct": 1,
-      "media": "<div class=\"info-card\">⏱ 1 хвилина = <b>60 секунд</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BA%D1%83%D0%BD%D0%B4%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Clock-pendulum.gif/330px-Clock-pendulum.gif\" alt=\"Секунда\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">⏱ 1 хвилина = <b>60 секунд</b></div>",
+      "wikiKeyword": "секунда",
+      "wikiTitle": "Секунда",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BA%D1%83%D0%BD%D0%B4%D0%B0"
     },
     {
       "text": "Скільки годин у 1 добі?",
@@ -474,7 +489,10 @@
         "30"
       ],
       "correct": 2,
-      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Скільки годин у 1 добі</span><br><b style=\"color:#34d399;font-size:1.1em\">24</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%93%D0%BE%D0%B4%D0%B8%D0%BD%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/AnalogClockAnimation1_2hands_1h_in_6sec.gif/330px-AnalogClockAnimation1_2hands_1h_in_6sec.gif\" alt=\"Година\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Скільки годин у 1 добі</span><br><b style=\"color:#34d399;font-size:1.1em\">24</b></div>",
+      "wikiKeyword": "година",
+      "wikiTitle": "Година",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%93%D0%BE%D0%B4%D0%B8%D0%BD%D0%B0"
     },
     {
       "text": "Скільки днів у тижні?",
@@ -485,7 +503,10 @@
         "10"
       ],
       "correct": 2,
-      "media": "<div class=\"info-card\">📅 У тижні <b>7 днів</b>:<br>Пн · Вт · Ср · Чт · Пт · Сб · Нд</div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A2%D0%B8%D0%B6%D0%B4%D0%B5%D0%BD%D1%8C\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Weekday_heptagram.svg/languk-330px-Weekday_heptagram.svg.png\" alt=\"Тиждень\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">📅 У тижні <b>7 днів</b>:<br>Пн · Вт · Ср · Чт · Пт · Сб · Нд</div>",
+      "wikiKeyword": "тиждень",
+      "wikiTitle": "Тиждень",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A2%D0%B8%D0%B6%D0%B4%D0%B5%D0%BD%D1%8C"
     },
     {
       "text": "Скільки місяців у році?",
@@ -496,7 +517,10 @@
         "13"
       ],
       "correct": 2,
-      "media": "<div class=\"info-card\">📅 У році <b>12 місяців</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A0%D1%96%D0%BA\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Analemma_fishburn.tif/lossy-page1-330px-Analemma_fishburn.tif.jpg\" alt=\"Рік\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">📅 У році <b>12 місяців</b></div>",
+      "wikiKeyword": "рік",
+      "wikiTitle": "Рік",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A0%D1%96%D0%BA"
     },
     {
       "text": "Скільки місяців у півріччі?",
@@ -518,7 +542,10 @@
         "60"
       ],
       "correct": 2,
-      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Скільки годин у 2 добах</span><br><b style=\"color:#34d399;font-size:1.1em\">48</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%93%D0%BE%D0%B4%D0%B8%D0%BD%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/AnalogClockAnimation1_2hands_1h_in_6sec.gif/330px-AnalogClockAnimation1_2hands_1h_in_6sec.gif\" alt=\"Година\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Скільки годин у 2 добах</span><br><b style=\"color:#34d399;font-size:1.1em\">48</b></div>",
+      "wikiKeyword": "година",
+      "wikiTitle": "Година",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%93%D0%BE%D0%B4%D0%B8%D0%BD%D0%B0"
     },
     {
       "text": "1 година 15 хвилин — це скільки хвилин?",
@@ -529,7 +556,10 @@
         "115"
       ],
       "correct": 1,
-      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">1 година 15 хвилин — це скільки хвилин</span><br><b style=\"color:#34d399;font-size:1.1em\">75</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A5%D0%B2%D0%B8%D0%BB%D0%B8%D0%BD%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/La_minute_%28315630347%29.jpg/330px-La_minute_%28315630347%29.jpg\" alt=\"Хвилина\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">1 година 15 хвилин — це скільки хвилин</span><br><b style=\"color:#34d399;font-size:1.1em\">75</b></div>",
+      "wikiKeyword": "хвилина",
+      "wikiTitle": "Хвилина",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A5%D0%B2%D0%B8%D0%BB%D0%B8%D0%BD%D0%B0"
     },
     {
       "text": "5000 м — це скільки кілометрів?",
@@ -595,7 +625,10 @@
         "20 см²"
       ],
       "correct": 2,
-      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Площа квадрата зі стороною 4 см дорівнює:</span><br><b style=\"color:#34d399;font-size:1.1em\">16 см²</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9F%D0%BB%D0%BE%D1%89%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Rectangle_4x5.svg/languk-330px-Rectangle_4x5.svg.png\" alt=\"Площа\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Площа квадрата зі стороною 4 см дорівнює:</span><br><b style=\"color:#34d399;font-size:1.1em\">16 см²</b></div>",
+      "wikiKeyword": "Площа",
+      "wikiTitle": "Площа",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9F%D0%BB%D0%BE%D1%89%D0%B0"
     },
     {
       "text": "Площа квадрата зі стороною 7 см дорівнює:",
@@ -606,7 +639,10 @@
         "77 см²"
       ],
       "correct": 2,
-      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Площа квадрата зі стороною 7 см дорівнює:</span><br><b style=\"color:#34d399;font-size:1.1em\">49 см²</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9F%D0%BB%D0%BE%D1%89%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Rectangle_4x5.svg/languk-330px-Rectangle_4x5.svg.png\" alt=\"Площа\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Площа квадрата зі стороною 7 см дорівнює:</span><br><b style=\"color:#34d399;font-size:1.1em\">49 см²</b></div>",
+      "wikiKeyword": "Площа",
+      "wikiTitle": "Площа",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9F%D0%BB%D0%BE%D1%89%D0%B0"
     },
     {
       "text": "Площа прямокутника зі сторонами 6 см і 9 см:",
@@ -617,7 +653,10 @@
         "69 см²"
       ],
       "correct": 2,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 280 180\" style=\"width:270px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"280\" height=\"180\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"50\" y=\"40\" width=\"180\" height=\"100\" fill=\"rgba(56,189,248,0.18)\" stroke=\"#38bdf8\" stroke-width=\"3\"/>\n      <rect x=\"43\" y=\"33\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"223\" y=\"33\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"43\" y=\"133\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"223\" y=\"133\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n      <text x=\"140\" y=\"168\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#bae6fd\" font-weight=\"700\">прямокутник · 4 прямі кути</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9F%D0%BB%D0%BE%D1%89%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Rectangle_4x5.svg/languk-330px-Rectangle_4x5.svg.png\" alt=\"Площа\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 280 180\" style=\"width:270px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"280\" height=\"180\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"50\" y=\"40\" width=\"180\" height=\"100\" fill=\"rgba(56,189,248,0.18)\" stroke=\"#38bdf8\" stroke-width=\"3\"/>\n      <rect x=\"43\" y=\"33\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"223\" y=\"33\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"43\" y=\"133\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"223\" y=\"133\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n      <text x=\"140\" y=\"168\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#bae6fd\" font-weight=\"700\">прямокутник · 4 прямі кути</text></svg>",
+      "wikiKeyword": "Площа",
+      "wikiTitle": "Площа",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9F%D0%BB%D0%BE%D1%89%D0%B0"
     },
     {
       "text": "Скільки кутів у квадраті?",
@@ -628,7 +667,10 @@
         "6"
       ],
       "correct": 1,
-      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Скільки кутів у квадраті</span><br><b style=\"color:#34d399;font-size:1.1em\">4</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9A%D1%83%D1%82\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Angle_Symbol.svg/languk-330px-Angle_Symbol.svg.png\" alt=\"Кут\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Скільки кутів у квадраті</span><br><b style=\"color:#34d399;font-size:1.1em\">4</b></div>",
+      "wikiKeyword": "кут",
+      "wikiTitle": "Кут",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9A%D1%83%D1%82"
     },
     {
       "text": "Скільки сторін у трикутнику?",
@@ -661,7 +703,10 @@
         "тільки дві рівні"
       ],
       "correct": 1,
-      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">У квадрата всі сторони:</span><br><b style=\"color:#34d399;font-size:1.1em\">рівні</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9A%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Regular_polygon_4_annotated.svg/languk-330px-Regular_polygon_4_annotated.svg.png\" alt=\"Квадрат\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">У квадрата всі сторони:</span><br><b style=\"color:#34d399;font-size:1.1em\">рівні</b></div>",
+      "wikiKeyword": "Квадрат",
+      "wikiTitle": "Квадрат",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9A%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82"
     },
     {
       "text": "Скільки прямих кутів у прямокутнику?",
@@ -672,7 +717,10 @@
         "4"
       ],
       "correct": 3,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 280 180\" style=\"width:270px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"280\" height=\"180\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"50\" y=\"40\" width=\"180\" height=\"100\" fill=\"rgba(56,189,248,0.18)\" stroke=\"#38bdf8\" stroke-width=\"3\"/>\n      <rect x=\"43\" y=\"33\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"223\" y=\"33\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"43\" y=\"133\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"223\" y=\"133\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n      <text x=\"140\" y=\"168\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#bae6fd\" font-weight=\"700\">прямокутник · 4 прямі кути</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9A%D1%83%D1%82\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Angle_Symbol.svg/languk-330px-Angle_Symbol.svg.png\" alt=\"Кут\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 280 180\" style=\"width:270px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"280\" height=\"180\" fill=\"#0f172a\" rx=\"10\"/>\n      <rect x=\"50\" y=\"40\" width=\"180\" height=\"100\" fill=\"rgba(56,189,248,0.18)\" stroke=\"#38bdf8\" stroke-width=\"3\"/>\n      <rect x=\"43\" y=\"33\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"223\" y=\"33\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"43\" y=\"133\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/><rect x=\"223\" y=\"133\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n      <text x=\"140\" y=\"168\" text-anchor=\"middle\" font-family=\"Inter, Arial\" font-size=\"12\" fill=\"#bae6fd\" font-weight=\"700\">прямокутник · 4 прямі кути</text></svg>",
+      "wikiKeyword": "кут",
+      "wikiTitle": "Кут",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9A%D1%83%D1%82"
     },
     {
       "text": "Скільки сторін у п'ятикутника?",
@@ -705,7 +753,10 @@
         "1000 см²"
       ],
       "correct": 2,
-      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Площа квадрата зі стороною 10 см дорівнює:</span><br><b style=\"color:#34d399;font-size:1.1em\">100 см²</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9F%D0%BB%D0%BE%D1%89%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Rectangle_4x5.svg/languk-330px-Rectangle_4x5.svg.png\" alt=\"Площа\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Площа квадрата зі стороною 10 см дорівнює:</span><br><b style=\"color:#34d399;font-size:1.1em\">100 см²</b></div>",
+      "wikiKeyword": "Площа",
+      "wikiTitle": "Площа",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9F%D0%BB%D0%BE%D1%89%D0%B0"
     },
     {
       "text": "Скільки буде 1/4 від 100?",
@@ -793,7 +844,10 @@
         "60"
       ],
       "correct": 2,
-      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">1/2 години — це скільки хвилин</span><br><b style=\"color:#34d399;font-size:1.1em\">30</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A5%D0%B2%D0%B8%D0%BB%D0%B8%D0%BD%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/La_minute_%28315630347%29.jpg/330px-La_minute_%28315630347%29.jpg\" alt=\"Хвилина\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">1/2 години — це скільки хвилин</span><br><b style=\"color:#34d399;font-size:1.1em\">30</b></div>",
+      "wikiKeyword": "хвилина",
+      "wikiTitle": "Хвилина",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A5%D0%B2%D0%B8%D0%BB%D0%B8%D0%BD%D0%B0"
     },
     {
       "text": "1/4 доби — це скільки годин?",
@@ -804,7 +858,10 @@
         "12"
       ],
       "correct": 1,
-      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">1/4 доби — це скільки годин</span><br><b style=\"color:#34d399;font-size:1.1em\">6</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%93%D0%BE%D0%B4%D0%B8%D0%BD%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/AnalogClockAnimation1_2hands_1h_in_6sec.gif/330px-AnalogClockAnimation1_2hands_1h_in_6sec.gif\" alt=\"Година\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">1/4 доби — це скільки годин</span><br><b style=\"color:#34d399;font-size:1.1em\">6</b></div>",
+      "wikiKeyword": "година",
+      "wikiTitle": "Година",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%93%D0%BE%D0%B4%D0%B8%D0%BD%D0%B0"
     },
     {
       "text": "Який дріб більший: 1/2 чи 1/3?",
@@ -815,7 +872,10 @@
         "Неможливо порівняти"
       ],
       "correct": 0,
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 200\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"200\" fill=\"#0f172a\" rx=\"10\"/>\n      <g transform=\"translate(60 100)\">\n        <circle r=\"50\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n        <path d=\"M0 0 L3.061616997868383e-15 -50 A50 50 0 0 1 3.061616997868383e-15 50 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\"/><path d=\"M0 0 L3.061616997868383e-15 50 A50 50 0 0 1 -9.184850993605149e-15 -50 Z\" fill=\"#334155\" stroke=\"#fde68a\"/>\n        <text x=\"0\" y=\"76\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"16\" font-weight=\"800\" fill=\"#34d399\">1/2</text>\n      </g>\n      <g transform=\"translate(240 100)\">\n        <circle r=\"50\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n        <path d=\"M0 0 L3.061616997868383e-15 -50 A50 50 0 0 1 43.30127018922194 24.999999999999993 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\"/><path d=\"M0 0 L43.30127018922194 24.999999999999993 A50 50 0 0 1 -43.301270189221924 25.000000000000018 Z\" fill=\"#334155\" stroke=\"#fde68a\"/><path d=\"M0 0 L-43.301270189221924 25.000000000000018 A50 50 0 0 1 -9.184850993605149e-15 -50 Z\" fill=\"#334155\" stroke=\"#fde68a\"/>\n        <text x=\"0\" y=\"76\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"16\" font-weight=\"800\" fill=\"#cbd5e1\">1/3</text>\n      </g>\n      <text x=\"150\" y=\"104\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"22\" font-weight=\"900\" fill=\"#fde68a\">></text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%94%D1%80%D1%96%D0%B1\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Cake_quarters.svg/languk-330px-Cake_quarters.svg.png\" alt=\"Дріб\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 200\" style=\"width:300px;max-width:100%;height:auto;background:#0d1117;border-radius:10px;padding:8px;\">\n      <rect width=\"320\" height=\"200\" fill=\"#0f172a\" rx=\"10\"/>\n      <g transform=\"translate(60 100)\">\n        <circle r=\"50\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n        <path d=\"M0 0 L3.061616997868383e-15 -50 A50 50 0 0 1 3.061616997868383e-15 50 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\"/><path d=\"M0 0 L3.061616997868383e-15 50 A50 50 0 0 1 -9.184850993605149e-15 -50 Z\" fill=\"#334155\" stroke=\"#fde68a\"/>\n        <text x=\"0\" y=\"76\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"16\" font-weight=\"800\" fill=\"#34d399\">1/2</text>\n      </g>\n      <g transform=\"translate(240 100)\">\n        <circle r=\"50\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n        <path d=\"M0 0 L3.061616997868383e-15 -50 A50 50 0 0 1 43.30127018922194 24.999999999999993 Z\" fill=\"#fbbf24\" stroke=\"#fde68a\"/><path d=\"M0 0 L43.30127018922194 24.999999999999993 A50 50 0 0 1 -43.301270189221924 25.000000000000018 Z\" fill=\"#334155\" stroke=\"#fde68a\"/><path d=\"M0 0 L-43.301270189221924 25.000000000000018 A50 50 0 0 1 -9.184850993605149e-15 -50 Z\" fill=\"#334155\" stroke=\"#fde68a\"/>\n        <text x=\"0\" y=\"76\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"16\" font-weight=\"800\" fill=\"#cbd5e1\">1/3</text>\n      </g>\n      <text x=\"150\" y=\"104\" text-anchor=\"middle\" font-family=\"ui-monospace, Menlo\" font-size=\"22\" font-weight=\"900\" fill=\"#fde68a\">></text></svg>",
+      "wikiKeyword": "дріб",
+      "wikiTitle": "Дріб",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%94%D1%80%D1%96%D0%B1"
     },
     {
       "text": "Скільки буде 5 + 3 × 2?",
@@ -980,7 +1040,10 @@
         "35 грн"
       ],
       "correct": 2,
-      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Олівець коштує 5 грн. Скільки коштують 6 олівців</span><br><b style=\"color:#34d399;font-size:1.1em\">30 грн</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9E%D0%BB%D1%96%D0%B2%D0%B5%D1%86%D1%8C\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/2014-01-16-Hittegods_%2812009261426%29.jpg/330px-2014-01-16-Hittegods_%2812009261426%29.jpg\" alt=\"Олівець\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Олівець коштує 5 грн. Скільки коштують 6 олівців</span><br><b style=\"color:#34d399;font-size:1.1em\">30 грн</b></div>",
+      "wikiKeyword": "Олівець",
+      "wikiTitle": "Олівець",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9E%D0%BB%D1%96%D0%B2%D0%B5%D1%86%D1%8C"
     },
     {
       "text": "У саду 12 яблунь, а груш у 3 рази менше. Скільки груш?",
@@ -1024,7 +1087,10 @@
         "360 км"
       ],
       "correct": 2,
-      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Автомобіль рухається зі швидкістю 60 км/год. Який шлях він пройде за 3 години</span><br><b style=\"color:#34d399;font-size:1.1em\">180 км</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D1%96%D0%BB%D1%8C\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/2019_Tesla_Model_3_Long_Range_Dual_Motor_in_Red_Multi-Coat%2C_front_left%2C_2021-05-30.jpg/330px-2019_Tesla_Model_3_Long_Range_Dual_Motor_in_Red_Multi-Coat%2C_front_left%2C_2021-05-30.jpg\" alt=\"Автомобіль\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Автомобіль рухається зі швидкістю 60 км/год. Який шлях він пройде за 3 години</span><br><b style=\"color:#34d399;font-size:1.1em\">180 км</b></div>",
+      "wikiKeyword": "Автомобіль",
+      "wikiTitle": "Автомобіль",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D1%96%D0%BB%D1%8C"
     },
     {
       "text": "Авто проїхало 100 км за 2 год. Яка його швидкість?",
@@ -1035,7 +1101,10 @@
         "200 км/год"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Авто проїхало 100 км за 2 год. Яка його швидкість</span><br><b style=\"color:#34d399;font-size:1.1em\">50 км/год</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A8%D0%B2%D0%B8%D0%B4%D0%BA%D1%96%D1%81%D1%82%D1%8C\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/US_Navy_040501-N-1336S-037_The_U.S._Navy_sponsored_Chevy_Monte_Carlo_NASCAR_leads_a_pack_into_turn_four_at_California_Speedway.jpg/330px-US_Navy_040501-N-1336S-037_The_U.S._Navy_sponsored_Chevy_Monte_Carlo_NASCAR_leads_a_pack_into_turn_four_at_California_Speedway.jpg\" alt=\"Швидкість\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Авто проїхало 100 км за 2 год. Яка його швидкість</span><br><b style=\"color:#34d399;font-size:1.1em\">50 км/год</b></div>",
+      "wikiKeyword": "швидкість",
+      "wikiTitle": "Швидкість",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A8%D0%B2%D0%B8%D0%B4%D0%BA%D1%96%D1%81%D1%82%D1%8C"
     },
     {
       "text": "Купили 4 цукерки по 5 грн і 2 шоколадки по 12 грн. Скільки заплатили?",
@@ -1046,7 +1115,10 @@
         "64 грн"
       ],
       "correct": 1,
-      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Купили 4 цукерки по 5 грн і 2 шоколадки по 12 грн. Скільки заплатили</span><br><b style=\"color:#34d399;font-size:1.1em\">44 грн</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A6%D1%83%D0%BA%D0%B5%D1%80%D0%BA%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Cherry_cordial_%28candy%29.JPG/330px-Cherry_cordial_%28candy%29.JPG\" alt=\"Цукерка\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Купили 4 цукерки по 5 грн і 2 шоколадки по 12 грн. Скільки заплатили</span><br><b style=\"color:#34d399;font-size:1.1em\">44 грн</b></div>",
+      "wikiKeyword": "цукерки",
+      "wikiTitle": "Цукерка",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A6%D1%83%D0%BA%D0%B5%D1%80%D0%BA%D0%B0"
     },
     {
       "text": "Бабуся приготувала 36 пиріжків і порівну поділила на 4 онуків. По скільки дісталось кожному?",
@@ -1068,7 +1140,10 @@
         "300"
       ],
       "correct": 2,
-      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Учень читав по 30 хвилин на день. Скільки хвилин читав за 5 днів</span><br><b style=\"color:#34d399;font-size:1.1em\">150</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A5%D0%B2%D0%B8%D0%BB%D0%B8%D0%BD%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/La_minute_%28315630347%29.jpg/330px-La_minute_%28315630347%29.jpg\" alt=\"Хвилина\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Учень читав по 30 хвилин на день. Скільки хвилин читав за 5 днів</span><br><b style=\"color:#34d399;font-size:1.1em\">150</b></div>",
+      "wikiKeyword": "хвилина",
+      "wikiTitle": "Хвилина",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A5%D0%B2%D0%B8%D0%BB%D0%B8%D0%BD%D0%B0"
     },
     {
       "text": "Площа кімнати 5 м × 4 м. Чому дорівнює площа?",
@@ -1079,7 +1154,10 @@
         "40 м²"
       ],
       "correct": 2,
-      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Площа кімнати 5 м × 4 м. Чому дорівнює площа</span><br><b style=\"color:#34d399;font-size:1.1em\">20 м²</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9F%D0%BB%D0%BE%D1%89%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Rectangle_4x5.svg/languk-330px-Rectangle_4x5.svg.png\" alt=\"Площа\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Площа кімнати 5 м × 4 м. Чому дорівнює площа</span><br><b style=\"color:#34d399;font-size:1.1em\">20 м²</b></div>",
+      "wikiKeyword": "Площа",
+      "wikiTitle": "Площа",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9F%D0%BB%D0%BE%D1%89%D0%B0"
     },
     {
       "text": "Середнє арифметичне чисел 10, 20 і 30 дорівнює:",
@@ -1189,7 +1267,10 @@
         "16:30"
       ],
       "correct": 3,
-      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Якщо зараз 14:30, котра буде година через 2 години</span><br><b style=\"color:#34d399;font-size:1.1em\">16:30</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%93%D0%BE%D0%B4%D0%B8%D0%BD%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/AnalogClockAnimation1_2hands_1h_in_6sec.gif/330px-AnalogClockAnimation1_2hands_1h_in_6sec.gif\" alt=\"Година\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Якщо зараз 14:30, котра буде година через 2 години</span><br><b style=\"color:#34d399;font-size:1.1em\">16:30</b></div>",
+      "wikiKeyword": "година",
+      "wikiTitle": "Година",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%93%D0%BE%D0%B4%D0%B8%D0%BD%D0%B0"
     },
     {
       "text": "Скільки хвилин залишилося до півночі від 23:45?",
@@ -1200,7 +1281,10 @@
         "45"
       ],
       "correct": 1,
-      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Скільки хвилин залишилося до півночі від 23:45</span><br><b style=\"color:#34d399;font-size:1.1em\">15</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A5%D0%B2%D0%B8%D0%BB%D0%B8%D0%BD%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/La_minute_%28315630347%29.jpg/330px-La_minute_%28315630347%29.jpg\" alt=\"Хвилина\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Скільки хвилин залишилося до півночі від 23:45</span><br><b style=\"color:#34d399;font-size:1.1em\">15</b></div>",
+      "wikiKeyword": "хвилина",
+      "wikiTitle": "Хвилина",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A5%D0%B2%D0%B8%D0%BB%D0%B8%D0%BD%D0%B0"
     },
     {
       "text": "Скільки днів у лютому в простому (не високосному) році?",
@@ -1211,7 +1295,10 @@
         "31"
       ],
       "correct": 0,
-      "media": "<div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Скільки днів у лютому в простому (не високосному) році</span><br><b style=\"color:#34d399;font-size:1.1em\">28</b></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%94%D0%B5%D0%BD%D1%8C\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Daylight.png/330px-Daylight.png\" alt=\"День\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🧮 <span style=\"color:#cbd5e1\">Скільки днів у лютому в простому (не високосному) році</span><br><b style=\"color:#34d399;font-size:1.1em\">28</b></div>",
+      "wikiKeyword": "день",
+      "wikiTitle": "День",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%94%D0%B5%D0%BD%D1%8C"
     },
     {
       "text": "Який місяць іде перед серпнем?",
@@ -1236,7 +1323,10 @@
         "субота"
       ],
       "correct": 1,
-      "media": "<div class=\"info-card\">📅 У тижні <b>7 днів</b>:<br>Пн · Вт · Ср · Чт · Пт · Сб · Нд</div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%94%D0%B5%D0%BD%D1%8C\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Daylight.png/330px-Daylight.png\" alt=\"День\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">📅 У тижні <b>7 днів</b>:<br>Пн · Вт · Ср · Чт · Пт · Сб · Нд</div>",
+      "wikiKeyword": "день",
+      "wikiTitle": "День",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%94%D0%B5%D0%BD%D1%8C"
     }
   ]
 }

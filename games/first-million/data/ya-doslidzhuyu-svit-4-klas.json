@@ -121,7 +121,10 @@
       ],
       "correct": 1,
       "explanation": "Тихий океан — найбільший: він займає близько третини поверхні Землі і більший за всю сушу разом.",
-      "media": "<table class=\"scheme-table\"><thead><tr><th>Океан</th><th>Площа (млн км²)</th></tr></thead><tbody><tr><td>Тихий</td><td>≈ 165</td></tr><tr><td>Атлантичний</td><td>≈ 92</td></tr><tr><td>Індійський</td><td>≈ 73</td></tr><tr><td>Південний</td><td>≈ 20</td></tr><tr><td>Пн. Льодовитий</td><td>≈ 14</td></tr></tbody></table>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9E%D0%BA%D0%B5%D0%B0%D0%BD\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Clouds_over_the_Atlantic_Ocean.jpg/330px-Clouds_over_the_Atlantic_Ocean.jpg\" alt=\"Океан\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><table class=\"scheme-table\"><thead><tr><th>Океан</th><th>Площа (млн км²)</th></tr></thead><tbody><tr><td>Тихий</td><td>≈ 165</td></tr><tr><td>Атлантичний</td><td>≈ 92</td></tr><tr><td>Індійський</td><td>≈ 73</td></tr><tr><td>Південний</td><td>≈ 20</td></tr><tr><td>Пн. Льодовитий</td><td>≈ 14</td></tr></tbody></table>",
+      "wikiKeyword": "океан",
+      "wikiTitle": "Океан",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9E%D0%BA%D0%B5%D0%B0%D0%BD"
     },
     {
       "text": "На якому материку розташована Україна?",
@@ -148,7 +151,10 @@
       ],
       "correct": 2,
       "explanation": "Київ — столиця і найбільше місто України, розташоване на берегах Дніпра.",
-      "media": "<div class=\"info-card\">🏛️ <b>Київ</b><br><span style=\"opacity:0.8\">розташований на берегах Дніпра</span></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A1%D1%82%D0%BE%D0%BB%D0%B8%D1%86%D1%8F\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Parliament_Hill%2C_Ottawa.jpg/330px-Parliament_Hill%2C_Ottawa.jpg\" alt=\"Столиця\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🏛️ <b>Київ</b><br><span style=\"opacity:0.8\">розташований на берегах Дніпра</span></div>",
+      "wikiKeyword": "Столиця",
+      "wikiTitle": "Столиця",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A1%D1%82%D0%BE%D0%BB%D0%B8%D1%86%D1%8F"
     },
     {
       "text": "Найдовша річка України — це:",
@@ -175,7 +181,10 @@
       ],
       "correct": 0,
       "explanation": "Синій колір символізує небо, жовтий — пшеничне поле. Це офіційні кольори Державного Прапора України.",
-      "media": "<img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMjAwIj4KPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiMwMDU3YjciLz4KPHJlY3QgeT0iMTAwIiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2ZmZDcwMCIvPgo8cmVjdCB4PSIyIiB5PSIyIiB3aWR0aD0iMjk2IiBoZWlnaHQ9IjE5NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+\" alt=\"Прапор України\" style=\"width:220px;max-width:100%;height:auto;border-radius:8px;background:#0d1117;padding:6px;\"/>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BB%D1%96%D1%80\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Colouring_pencils.jpg/330px-Colouring_pencils.jpg\" alt=\"Колір\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMjAwIj4KPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiMwMDU3YjciLz4KPHJlY3QgeT0iMTAwIiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2ZmZDcwMCIvPgo8cmVjdCB4PSIyIiB5PSIyIiB3aWR0aD0iMjk2IiBoZWlnaHQ9IjE5NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+\" alt=\"Прапор України\" style=\"width:220px;max-width:100%;height:auto;border-radius:8px;background:#0d1117;padding:6px;\"/>",
+      "wikiKeyword": "Кольори",
+      "wikiTitle": "Колір",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BB%D1%96%D1%80"
     },
     {
       "text": "Хто є главою держави Україна?",
@@ -187,7 +196,10 @@
       ],
       "correct": 1,
       "explanation": "Главою держави в Україні є Президент. Його обирає народ на 5 років.",
-      "media": "<div class=\"info-card\">🇺🇦 <b>Президент України</b><br>обирається народом на 5 років</div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/languk-330px-Flag_of_Ukraine.svg.png\" alt=\"Україна\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🇺🇦 <b>Президент України</b><br>обирається народом на 5 років</div>",
+      "wikiKeyword": "Украіна",
+      "wikiTitle": "Україна",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B0"
     },
     {
       "text": "Скільки областей в Україні?",
@@ -241,7 +253,10 @@
       ],
       "correct": 0,
       "explanation": "Українська мова — єдина державна мова в Україні згідно з Конституцією (стаття 10).",
-      "media": "<div class=\"info-card\">🇺🇦 <b>Українська мова</b><br>(Конституція України, ст. 10)</div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9C%D0%BE%D0%B2%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Human_Language_Families_Ukr.png/330px-Human_Language_Families_Ukr.png\" alt=\"Мова\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🇺🇦 <b>Українська мова</b><br>(Конституція України, ст. 10)</div>",
+      "wikiKeyword": "мова",
+      "wikiTitle": "Мова",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9C%D0%BE%D0%B2%D0%B0"
     },
     {
       "text": "День Незалежності України відзначають:",
@@ -253,7 +268,10 @@
       ],
       "correct": 1,
       "explanation": "24 серпня 1991 року Верховна Рада ухвалила Акт проголошення незалежності України. Тому це головне державне свято.",
-      "media": "<div class=\"info-card\">🎉 <b>24 серпня</b><br>з 1991 року — Акт проголошення незалежності</div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%94%D0%B5%D0%BD%D1%8C\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Daylight.png/330px-Daylight.png\" alt=\"День\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🎉 <b>24 серпня</b><br>з 1991 року — Акт проголошення незалежності</div>",
+      "wikiKeyword": "День",
+      "wikiTitle": "День",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%94%D0%B5%D0%BD%D1%8C"
     },
     {
       "text": "Які два моря омивають Україну?",
@@ -379,7 +397,10 @@
       ],
       "correct": 1,
       "explanation": "Травоїдні тварини (наприклад, корова, заєць, олень) їдять лише рослинну їжу — траву, листя, кору.",
-      "media": "<div class=\"scheme-row\"><span class=\"node\">🌿 рослини</span><span class=\"arrow\">→</span><span class=\"node\">🐄 травоїдні</span></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A2%D0%B2%D0%B0%D1%80%D0%B8%D0%BD%D0%B8\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Animal_diversity_October_2007.jpg/330px-Animal_diversity_October_2007.jpg\" alt=\"Тварини\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"scheme-row\"><span class=\"node\">🌿 рослини</span><span class=\"arrow\">→</span><span class=\"node\">🐄 травоїдні</span></div>",
+      "wikiKeyword": "Тварини",
+      "wikiTitle": "Тварини",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A2%D0%B2%D0%B0%D1%80%D0%B8%D0%BD%D0%B8"
     },
     {
       "text": "Тварини, які полюють на інших тварин, — це:",
@@ -514,7 +535,10 @@
       ],
       "correct": 0,
       "explanation": "Правильний ланцюг починається з рослини (виробника), яку їсть травоїдна тварина, а її — хижак: трава → заєць → лисиця.",
-      "media": "<div class=\"scheme-row\"><span class=\"node\">🌱 трава</span><span class=\"arrow\">→</span><span class=\"node\">🐰 заєць</span><span class=\"arrow\">→</span><span class=\"node\">🦊 лисиця</span></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BD%D1%86%D1%8E%D0%B3\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Broad_chain_closeup.jpg/330px-Broad_chain_closeup.jpg\" alt=\"Ланцюг\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"scheme-row\"><span class=\"node\">🌱 трава</span><span class=\"arrow\">→</span><span class=\"node\">🐰 заєць</span><span class=\"arrow\">→</span><span class=\"node\">🦊 лисиця</span></div>",
+      "wikiKeyword": "ланцюг",
+      "wikiTitle": "Ланцюг",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BD%D1%86%D1%8E%D0%B3"
     },
     {
       "text": "Що таке Червона книга?",
@@ -526,7 +550,10 @@
       ],
       "correct": 1,
       "explanation": "Червона книга — список рослин і тварин, що зникають або потребують охорони. Знищувати їх заборонено.",
-      "media": "<div class=\"info-card\">📕 <b>Червона книга</b><br>перелік рідкісних і зникаючих<br>видів рослин і тварин</div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A7%D0%B5%D1%80%D0%B2%D0%BE%D0%BD%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/%D0%AE%D1%80%D0%BA%D1%96%D0%B2%D1%86%D1%96_%28%D0%9D%D0%B5%D0%BC%D0%B8%D1%80%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D1%80-%D0%BD%29._%D0%A1%D1%82%D0%B0%D0%B2%D0%BE%D0%BA.jpg/330px-%D0%AE%D1%80%D0%BA%D1%96%D0%B2%D1%86%D1%96_%28%D0%9D%D0%B5%D0%BC%D0%B8%D1%80%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D1%80-%D0%BD%29._%D0%A1%D1%82%D0%B0%D0%B2%D0%BE%D0%BA.jpg\" alt=\"Червона\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">📕 <b>Червона книга</b><br>перелік рідкісних і зникаючих<br>видів рослин і тварин</div>",
+      "wikiKeyword": "Червона",
+      "wikiTitle": "Червона",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A7%D0%B5%D1%80%D0%B2%D0%BE%D0%BD%D0%B0"
     },
     {
       "text": "Який птах занесений до Червоної книги України?",
@@ -538,7 +565,10 @@
       ],
       "correct": 1,
       "explanation": "Чорний лелека — рідкісний птах, що гніздиться у глухих лісах, він під особливою охороною.",
-      "media": "<div class=\"emoji-big\">🪶 чорний лелека</div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9A%D0%BD%D0%B8%D0%B6%D0%BA%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Books-aj.svg_aj_ashton_01e.svg/languk-330px-Books-aj.svg_aj_ashton_01e.svg.png\" alt=\"Книжка\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"emoji-big\">🪶 чорний лелека</div>",
+      "wikiKeyword": "книги",
+      "wikiTitle": "Книжка",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9A%D0%BD%D0%B8%D0%B6%D0%BA%D0%B0"
     },
     {
       "text": "Орган, який качає кров по тілу людини, — це:",
@@ -595,7 +625,10 @@
       ],
       "correct": 1,
       "explanation": "Хребет (хребетний стовп) — кістковий канал з хребців, всередині якого проходить спинний мозок.",
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><g fill=\"#cbd5e1\" stroke=\"#1e293b\" stroke-width=\"2\"><rect x=\"80\" y=\"20\" width=\"40\" height=\"20\" rx=\"4\"/><rect x=\"80\" y=\"44\" width=\"40\" height=\"20\" rx=\"4\"/><rect x=\"80\" y=\"68\" width=\"40\" height=\"20\" rx=\"4\"/><rect x=\"80\" y=\"92\" width=\"40\" height=\"20\" rx=\"4\"/><rect x=\"80\" y=\"116\" width=\"40\" height=\"20\" rx=\"4\"/><rect x=\"80\" y=\"140\" width=\"40\" height=\"20\" rx=\"4\"/></g><line x1=\"100\" y1=\"20\" x2=\"100\" y2=\"160\" stroke=\"#fbbf24\" stroke-width=\"3\" opacity=\"0.7\"/><text x=\"100\" y=\"185\" text-anchor=\"middle\" font-size=\"13\" fill=\"#fde68a\" font-weight=\"bold\">ХРЕБЕТ</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9C%D0%BE%D0%B7%D0%BE%D0%BA\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Encephalon_human_sagittal_section_multilingual.svg/languk-330px-Encephalon_human_sagittal_section_multilingual.svg.png\" alt=\"Мозок\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><g fill=\"#cbd5e1\" stroke=\"#1e293b\" stroke-width=\"2\"><rect x=\"80\" y=\"20\" width=\"40\" height=\"20\" rx=\"4\"/><rect x=\"80\" y=\"44\" width=\"40\" height=\"20\" rx=\"4\"/><rect x=\"80\" y=\"68\" width=\"40\" height=\"20\" rx=\"4\"/><rect x=\"80\" y=\"92\" width=\"40\" height=\"20\" rx=\"4\"/><rect x=\"80\" y=\"116\" width=\"40\" height=\"20\" rx=\"4\"/><rect x=\"80\" y=\"140\" width=\"40\" height=\"20\" rx=\"4\"/></g><line x1=\"100\" y1=\"20\" x2=\"100\" y2=\"160\" stroke=\"#fbbf24\" stroke-width=\"3\" opacity=\"0.7\"/><text x=\"100\" y=\"185\" text-anchor=\"middle\" font-size=\"13\" fill=\"#fde68a\" font-weight=\"bold\">ХРЕБЕТ</text></svg>",
+      "wikiKeyword": "мозок",
+      "wikiTitle": "Мозок",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9C%D0%BE%D0%B7%D0%BE%D0%BA"
     },
     {
       "text": "Грудна клітка захищає насамперед:",
@@ -607,7 +640,10 @@
       ],
       "correct": 0,
       "explanation": "Ребра і груднина утворюють грудну клітку, яка захищає серце і легені від пошкоджень.",
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><g fill=\"none\" stroke=\"#f5f5f4\" stroke-width=\"3\"><path d=\"M40 50 Q100 70 160 50\"/><path d=\"M40 75 Q100 95 160 75\"/><path d=\"M40 100 Q100 120 160 100\"/><path d=\"M40 125 Q100 145 160 125\"/></g><line x1=\"100\" y1=\"40\" x2=\"100\" y2=\"160\" stroke=\"#f5f5f4\" stroke-width=\"3\"/><path d=\"M100 90 C 80 75, 65 90, 70 105 Q80 120 100 130 Q120 120 130 105 C 135 90, 120 75, 100 90 Z\" fill=\"#dc2626\" opacity=\"0.85\"/><text x=\"100\" y=\"185\" text-anchor=\"middle\" font-size=\"12\" fill=\"#fde68a\" font-weight=\"bold\">СЕРЦЕ + ЛЕГЕНІ</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9A%D0%BB%D1%96%D1%82%D0%BA%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Hattingen_Blankenstein_-_Bauernhausmuseum_05_ies.jpg/330px-Hattingen_Blankenstein_-_Bauernhausmuseum_05_ies.jpg\" alt=\"Клітка\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><g fill=\"none\" stroke=\"#f5f5f4\" stroke-width=\"3\"><path d=\"M40 50 Q100 70 160 50\"/><path d=\"M40 75 Q100 95 160 75\"/><path d=\"M40 100 Q100 120 160 100\"/><path d=\"M40 125 Q100 145 160 125\"/></g><line x1=\"100\" y1=\"40\" x2=\"100\" y2=\"160\" stroke=\"#f5f5f4\" stroke-width=\"3\"/><path d=\"M100 90 C 80 75, 65 90, 70 105 Q80 120 100 130 Q120 120 130 105 C 135 90, 120 75, 100 90 Z\" fill=\"#dc2626\" opacity=\"0.85\"/><text x=\"100\" y=\"185\" text-anchor=\"middle\" font-size=\"12\" fill=\"#fde68a\" font-weight=\"bold\">СЕРЦЕ + ЛЕГЕНІ</text></svg>",
+      "wikiKeyword": "клітка",
+      "wikiTitle": "Клітка",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9A%D0%BB%D1%96%D1%82%D0%BA%D0%B0"
     },
     {
       "text": "Найбільший орган тіла людини — це:",
@@ -661,7 +697,10 @@
       ],
       "correct": 2,
       "explanation": "Дитині 9–10 років радять спати 9–10 годин на добу — це потрібно для росту, відновлення й уваги в школі.",
-      "media": "<div class=\"info-card\">😴 <b>9–10 годин на добу</b><br>важливо для росту та уваги</div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%93%D0%BE%D0%B4%D0%B8%D0%BD%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/AnalogClockAnimation1_2hands_1h_in_6sec.gif/330px-AnalogClockAnimation1_2hands_1h_in_6sec.gif\" alt=\"Година\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">😴 <b>9–10 годин на добу</b><br>важливо для росту та уваги</div>",
+      "wikiKeyword": "година",
+      "wikiTitle": "Година",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%93%D0%BE%D0%B4%D0%B8%D0%BD%D0%B0"
     },
     {
       "text": "Які зуби у дітей з часом змінюються?",
@@ -673,7 +712,10 @@
       ],
       "correct": 1,
       "explanation": "Молочні зуби у дітей випадають і на їх місці виростають постійні (корінні).",
-      "media": "<div class=\"scheme-row\"><span class=\"node\">🦷 молочні</span><span class=\"arrow\">→</span><span class=\"node\">🦷 постійні</span></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%97%D1%83%D0%B1%D0%B8\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/06-10-06smile.jpg/330px-06-10-06smile.jpg\" alt=\"Зуби\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"scheme-row\"><span class=\"node\">🦷 молочні</span><span class=\"arrow\">→</span><span class=\"node\">🦷 постійні</span></div>",
+      "wikiKeyword": "зуби",
+      "wikiTitle": "Зуби",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%97%D1%83%D0%B1%D0%B8"
     },
     {
       "text": "Скільки разів на день рекомендується чистити зуби?",
@@ -685,7 +727,10 @@
       ],
       "correct": 1,
       "explanation": "Стоматологи радять чистити зуби 2 рази на день — вранці й увечері — щоб запобігти карієсу.",
-      "media": "<div class=\"info-card\">🪥 <b>2 рази</b> на день<br>вранці та ввечері</div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%94%D0%B5%D0%BD%D1%8C\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Daylight.png/330px-Daylight.png\" alt=\"День\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🪥 <b>2 рази</b> на день<br>вранці та ввечері</div>",
+      "wikiKeyword": "день",
+      "wikiTitle": "День",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%94%D0%B5%D0%BD%D1%8C"
     },
     {
       "text": "Що корисно вживати щодня для здоров'я?",
@@ -733,7 +778,10 @@
       ],
       "correct": 2,
       "explanation": "У році 12 місяців — від січня до грудня.",
-      "media": "<div class=\"scheme\">12 місяців у році:\n01 Січень   02 Лютий    03 Березень\n04 Квітень  05 Травень  06 Червень\n07 Липень   08 Серпень  09 Вересень\n10 Жовтень  11 Листопад 12 Грудень</div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A0%D1%96%D0%BA\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Analemma_fishburn.tif/lossy-page1-330px-Analemma_fishburn.tif.jpg\" alt=\"Рік\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"scheme\">12 місяців у році:\n01 Січень   02 Лютий    03 Березень\n04 Квітень  05 Травень  06 Червень\n07 Липень   08 Серпень  09 Вересень\n10 Жовтень  11 Листопад 12 Грудень</div>",
+      "wikiKeyword": "рік",
+      "wikiTitle": "Рік",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A0%D1%96%D0%BA"
     },
     {
       "text": "Скільки пір року?",
@@ -787,7 +835,10 @@
       ],
       "correct": 0,
       "explanation": "У вигляді льоду вода перебуває у твердому стані. Це стається при температурі 0 °C і нижче.",
-      "media": "<table class=\"scheme-table\"><thead><tr><th>Стан</th><th>Приклад</th></tr></thead><tbody><tr><td>Твердий</td><td>🧊 лід, сніг</td></tr><tr><td>Рідкий</td><td>💧 вода у річці</td></tr><tr><td>Газоподібний</td><td>💨 водяна пара</td></tr></tbody></table>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Water_molecule.svg/languk-330px-Water_molecule.svg.png\" alt=\"Вода\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><table class=\"scheme-table\"><thead><tr><th>Стан</th><th>Приклад</th></tr></thead><tbody><tr><td>Твердий</td><td>🧊 лід, сніг</td></tr><tr><td>Рідкий</td><td>💧 вода у річці</td></tr><tr><td>Газоподібний</td><td>💨 водяна пара</td></tr></tbody></table>",
+      "wikiKeyword": "вода",
+      "wikiTitle": "Вода",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%B0"
     },
     {
       "text": "Що утворюється під час випаровування води?",
@@ -886,7 +937,10 @@
       ],
       "correct": 0,
       "explanation": "Паралелі — уявні лінії, паралельні екватору; вони йдуть зі сходу на захід.",
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><circle cx=\"100\" cy=\"100\" r=\"80\" fill=\"#3b82f6\"/><g fill=\"none\" stroke=\"#fff\" stroke-width=\"1.5\"><ellipse cx=\"100\" cy=\"60\" rx=\"78\" ry=\"10\"/><ellipse cx=\"100\" cy=\"80\" rx=\"79\" ry=\"6\"/><ellipse cx=\"100\" cy=\"100\" rx=\"80\" ry=\"3\"/><ellipse cx=\"100\" cy=\"120\" rx=\"79\" ry=\"6\"/><ellipse cx=\"100\" cy=\"140\" rx=\"78\" ry=\"10\"/></g><text x=\"186\" y=\"103\" font-size=\"10\" fill=\"#fde68a\">Сх</text><text x=\"2\" y=\"103\" font-size=\"10\" fill=\"#fde68a\">Зх</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B0%D0%BB%D0%B5%D0%BB%D1%96\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/uk/thumb/c/c6/%D0%9F%D0%BE%D1%81%D1%82%D0%B5%D1%80_%D0%B4%D0%BE_%D1%84%D1%96%D0%BB%D1%8C%D0%BC%D1%83_%C2%AB%D0%9F%D0%B0%D1%80%D0%B0%D0%BB%D0%B5%D0%BB%D1%96%C2%BB%2C_2015.jpg/330px-%D0%9F%D0%BE%D1%81%D1%82%D0%B5%D1%80_%D0%B4%D0%BE_%D1%84%D1%96%D0%BB%D1%8C%D0%BC%D1%83_%C2%AB%D0%9F%D0%B0%D1%80%D0%B0%D0%BB%D0%B5%D0%BB%D1%96%C2%BB%2C_2015.jpg\" alt=\"Паралелі\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><circle cx=\"100\" cy=\"100\" r=\"80\" fill=\"#3b82f6\"/><g fill=\"none\" stroke=\"#fff\" stroke-width=\"1.5\"><ellipse cx=\"100\" cy=\"60\" rx=\"78\" ry=\"10\"/><ellipse cx=\"100\" cy=\"80\" rx=\"79\" ry=\"6\"/><ellipse cx=\"100\" cy=\"100\" rx=\"80\" ry=\"3\"/><ellipse cx=\"100\" cy=\"120\" rx=\"79\" ry=\"6\"/><ellipse cx=\"100\" cy=\"140\" rx=\"78\" ry=\"10\"/></g><text x=\"186\" y=\"103\" font-size=\"10\" fill=\"#fde68a\">Сх</text><text x=\"2\" y=\"103\" font-size=\"10\" fill=\"#fde68a\">Зх</text></svg>",
+      "wikiKeyword": "Паралелі",
+      "wikiTitle": "Паралелі",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B0%D0%BB%D0%B5%D0%BB%D1%96"
     },
     {
       "text": "Яким кольором на карті позначають гори?",
@@ -922,7 +976,10 @@
       ],
       "correct": 2,
       "explanation": "Низовини й рівнини зазвичай позначають зеленим кольором, височини — жовтим.",
-      "media": "<div class=\"swatch\"><div class=\"chip\" style=\"background:#16a34a\"></div><div>зелений — рівнини</div></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A0%D1%96%D0%B2%D0%BD%D0%B8%D0%BD%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/8/8a/Barringer-Arial.jpg\" alt=\"Рівнина\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"swatch\"><div class=\"chip\" style=\"background:#16a34a\"></div><div>зелений — рівнини</div></div>",
+      "wikiKeyword": "рівнини",
+      "wikiTitle": "Рівнина",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A0%D1%96%D0%B2%D0%BD%D0%B8%D0%BD%D0%B0"
     },
     {
       "text": "Що таке план місцевості?",
@@ -958,7 +1015,10 @@
       ],
       "correct": 0,
       "explanation": "Вугілля горить і дає тепло — воно належить до групи горючих (паливних) корисних копалин.",
-      "media": "<div class=\"info-card\">🪨 <b>Горючі</b> корисні копалини:<br>вугілля · нафта · природний газ · торф</div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%92%D1%83%D0%B3%D1%96%D0%BB%D0%BB%D1%8F\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Liquefaction-charbon.jpg/330px-Liquefaction-charbon.jpg\" alt=\"Вугілля\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🪨 <b>Горючі</b> корисні копалини:<br>вугілля · нафта · природний газ · торф</div>",
+      "wikiKeyword": "вугілля",
+      "wikiTitle": "Вугілля",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%92%D1%83%D0%B3%D1%96%D0%BB%D0%BB%D1%8F"
     },
     {
       "text": "До якої групи корисних копалин належить пісок?",
@@ -970,7 +1030,10 @@
       ],
       "correct": 2,
       "explanation": "Пісок використовують у будівництві (бетон, скло) — це будівельна корисна копалина.",
-      "media": "<div class=\"info-card\">🏗️ <b>Будівельні</b> копалини:<br>пісок · глина · граніт · вапняк</div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9F%D1%96%D1%81%D0%BE%D0%BA\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Libya_4608_Idehan_Ubari_Dunes_Luca_Galuzzi_2007.jpg/330px-Libya_4608_Idehan_Ubari_Dunes_Luca_Galuzzi_2007.jpg\" alt=\"Пісок\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🏗️ <b>Будівельні</b> копалини:<br>пісок · глина · граніт · вапняк</div>",
+      "wikiKeyword": "пісок",
+      "wikiTitle": "Пісок",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9F%D1%96%D1%81%D0%BE%D0%BA"
     },
     {
       "text": "Що отримують із залізної руди?",
@@ -997,7 +1060,10 @@
       ],
       "correct": 1,
       "explanation": "Ґрунт — це верхній родючий шар землі, у якому ростуть рослини. Він утворюється сотні й тисячі років.",
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 180\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect y=\"0\" width=\"200\" height=\"20\" fill=\"#16a34a\"/><rect y=\"20\" width=\"200\" height=\"40\" fill=\"#3f2a1a\"/><rect y=\"60\" width=\"200\" height=\"40\" fill=\"#7c4a26\"/><rect y=\"100\" width=\"200\" height=\"40\" fill=\"#a16207\"/><rect y=\"140\" width=\"200\" height=\"40\" fill=\"#6b7280\"/><text x=\"6\" y=\"44\" font-size=\"11\" fill=\"#fff\">верхній родючий шар</text><text x=\"6\" y=\"84\" font-size=\"11\" fill=\"#fff\">мінеральні речовини</text><text x=\"6\" y=\"124\" font-size=\"11\" fill=\"#fff\">материнська порода</text><text x=\"6\" y=\"164\" font-size=\"11\" fill=\"#fff\">камінь</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D2%90%D1%80%D1%83%D0%BD%D1%82\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/%D0%A7%D0%BE%D1%80%D0%BD%D0%BE%D0%B7%D0%B5%D0%BC.JPG/330px-%D0%A7%D0%BE%D1%80%D0%BD%D0%BE%D0%B7%D0%B5%D0%BC.JPG\" alt=\"Ґрунт\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 180\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect y=\"0\" width=\"200\" height=\"20\" fill=\"#16a34a\"/><rect y=\"20\" width=\"200\" height=\"40\" fill=\"#3f2a1a\"/><rect y=\"60\" width=\"200\" height=\"40\" fill=\"#7c4a26\"/><rect y=\"100\" width=\"200\" height=\"40\" fill=\"#a16207\"/><rect y=\"140\" width=\"200\" height=\"40\" fill=\"#6b7280\"/><text x=\"6\" y=\"44\" font-size=\"11\" fill=\"#fff\">верхній родючий шар</text><text x=\"6\" y=\"84\" font-size=\"11\" fill=\"#fff\">мінеральні речовини</text><text x=\"6\" y=\"124\" font-size=\"11\" fill=\"#fff\">материнська порода</text><text x=\"6\" y=\"164\" font-size=\"11\" fill=\"#fff\">камінь</text></svg>",
+      "wikiKeyword": "Ґрунт",
+      "wikiTitle": "Ґрунт",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D2%90%D1%80%D1%83%D0%BD%D1%82"
     },
     {
       "text": "Найголовніша властивість ґрунту — це:",
@@ -1057,7 +1123,10 @@
       ],
       "correct": 1,
       "explanation": "Олександр Ґрейам Белл запатентував перший телефон у 1876 році і назавжди змінив спосіб спілкування.",
-      "media": "<div class=\"info-card\">📞 <b>Олександр Ґрейам Белл</b><br>1876 р. — перший практичний телефон</div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Telefon_BW_2012-02-18_13-44-32.JPG/330px-Telefon_BW_2012-02-18_13-44-32.JPG\" alt=\"Телефон\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">📞 <b>Олександр Ґрейам Белл</b><br>1876 р. — перший практичний телефон</div>",
+      "wikiKeyword": "телефон",
+      "wikiTitle": "Телефон",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD"
     },
     {
       "text": "Кого вважають винахідником електричної лампи розжарювання?",
@@ -1126,7 +1195,10 @@
       ],
       "correct": 1,
       "explanation": "Місяць — єдиний природний супутник Землі. Він обертається навколо нашої планети.",
-      "media": "<img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAgMTIwIj4KPHJlY3Qgd2lkdGg9IjI0MCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiMwYjEwMjQiLz4KPGcgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC42Ij48Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIwLjgiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIyNSIgcj0iMC44Ii8+PGNpcmNsZSBjeD0iMTIwIiBjeT0iMTAiIHI9IjAuOCIvPjxjaXJjbGUgY3g9IjE4MCIgY3k9IjEwMCIgcj0iMC44Ii8+PGNpcmNsZSBjeD0iNDAiIGN5PSIxMDUiIHI9IjAuOCIvPjwvZz4KPGNpcmNsZSBjeD0iNjAiIGN5PSI2MCIgcj0iNDAiIGZpbGw9IiMzYjgyZjYiLz4KPHBhdGggZD0iTTMwIDUwIFE0MCA0NSA1NSA1NSBMNjUgNTAgTDc1IDY1IEw2MCA3NSBMNDUgNzAgWiIgZmlsbD0iIzE2YTM0YSIvPgo8cGF0aCBkPSJNNzAgODAgUTg1IDc4IDk1IDkwIEw4MCA5NSBaIiBmaWxsPSIjMTZhMzRhIi8+CjxlbGxpcHNlIGN4PSI1MCIgY3k9IjQwIiByeD0iMTIiIHJ5PSI1IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjUiLz4KPGNpcmNsZSBjeD0iMTcwIiBjeT0iNjAiIHI9IjIwIiBmaWxsPSIjZTVlN2ViIi8+CjxjaXJjbGUgY3g9IjE2MyIgY3k9IjU1IiByPSIzIiBmaWxsPSIjOWNhM2FmIi8+CjxjaXJjbGUgY3g9IjE3OCIgY3k9IjYyIiByPSIyIiBmaWxsPSIjOWNhM2FmIi8+CjxjaXJjbGUgY3g9IjE3MCIgY3k9IjcyIiByPSIyLjUiIGZpbGw9IiM5Y2EzYWYiLz4KPHRleHQgeD0iNjAiIHk9IjExNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iI2ZmZiI+0JfQtdC80LvRjzwvdGV4dD4KPHRleHQgeD0iMTcwIiB5PSIxMTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9IiNmZmYiPtCc0ZbRgdGP0YbRjDwvdGV4dD4KPC9zdmc+\" alt=\"Земля і Місяць\" style=\"width:240px;max-width:100%;height:auto;border-radius:8px;background:#0d1117;padding:6px;\"/>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A1%D1%83%D0%BF%D1%83%D1%82%D0%BD%D0%B8%D0%BA\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Moons_of_solar_system_small.png/330px-Moons_of_solar_system_small.png\" alt=\"Супутник\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAgMTIwIj4KPHJlY3Qgd2lkdGg9IjI0MCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiMwYjEwMjQiLz4KPGcgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC42Ij48Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIwLjgiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIyNSIgcj0iMC44Ii8+PGNpcmNsZSBjeD0iMTIwIiBjeT0iMTAiIHI9IjAuOCIvPjxjaXJjbGUgY3g9IjE4MCIgY3k9IjEwMCIgcj0iMC44Ii8+PGNpcmNsZSBjeD0iNDAiIGN5PSIxMDUiIHI9IjAuOCIvPjwvZz4KPGNpcmNsZSBjeD0iNjAiIGN5PSI2MCIgcj0iNDAiIGZpbGw9IiMzYjgyZjYiLz4KPHBhdGggZD0iTTMwIDUwIFE0MCA0NSA1NSA1NSBMNjUgNTAgTDc1IDY1IEw2MCA3NSBMNDUgNzAgWiIgZmlsbD0iIzE2YTM0YSIvPgo8cGF0aCBkPSJNNzAgODAgUTg1IDc4IDk1IDkwIEw4MCA5NSBaIiBmaWxsPSIjMTZhMzRhIi8+CjxlbGxpcHNlIGN4PSI1MCIgY3k9IjQwIiByeD0iMTIiIHJ5PSI1IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjUiLz4KPGNpcmNsZSBjeD0iMTcwIiBjeT0iNjAiIHI9IjIwIiBmaWxsPSIjZTVlN2ViIi8+CjxjaXJjbGUgY3g9IjE2MyIgY3k9IjU1IiByPSIzIiBmaWxsPSIjOWNhM2FmIi8+CjxjaXJjbGUgY3g9IjE3OCIgY3k9IjYyIiByPSIyIiBmaWxsPSIjOWNhM2FmIi8+CjxjaXJjbGUgY3g9IjE3MCIgY3k9IjcyIiByPSIyLjUiIGZpbGw9IiM5Y2EzYWYiLz4KPHRleHQgeD0iNjAiIHk9IjExNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iI2ZmZiI+0JfQtdC80LvRjzwvdGV4dD4KPHRleHQgeD0iMTcwIiB5PSIxMTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9IiNmZmYiPtCc0ZbRgdGP0YbRjDwvdGV4dD4KPC9zdmc+\" alt=\"Земля і Місяць\" style=\"width:240px;max-width:100%;height:auto;border-radius:8px;background:#0d1117;padding:6px;\"/>",
+      "wikiKeyword": "супутник",
+      "wikiTitle": "Супутник",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A1%D1%83%D0%BF%D1%83%D1%82%D0%BD%D0%B8%D0%BA"
     },
     {
       "text": "Що таке ліс?",
@@ -1150,7 +1222,10 @@
       ],
       "correct": 1,
       "explanation": "Білий лелека часто будує гнізда на високих стовпах, дахах будинків чи дзвіницях. У народі вважається символом дому.",
-      "media": "<div class=\"emoji-big\">🪺 гніздо на даху чи стовпі</div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9B%D0%B5%D0%BB%D0%B5%D0%BA%D0%B0_%D0%B1%D1%96%D0%BB%D0%B8%D0%B9\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Bristol.zoo.white.stork.head.arp.jpg/330px-Bristol.zoo.white.stork.head.arp.jpg\" alt=\"Лелека білий\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"emoji-big\">🪺 гніздо на даху чи стовпі</div>",
+      "wikiKeyword": "лелека",
+      "wikiTitle": "Лелека білий",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9B%D0%B5%D0%BB%D0%B5%D0%BA%D0%B0_%D0%B1%D1%96%D0%BB%D0%B8%D0%B9"
     },
     {
       "text": "Як перейти проїжджу частину безпечно?",
@@ -1198,7 +1273,10 @@
       ],
       "correct": 2,
       "explanation": "У разі пожежі дзвонять 101 — це служба ДСНС (рятувальники).",
-      "media": "<table class=\"scheme-table\"><thead><tr><th>Номер</th><th>Служба</th></tr></thead><tbody><tr><td><b>101</b></td><td>🚒 Пожежна (ДСНС)</td></tr><tr><td>102</td><td>🚓 Поліція</td></tr><tr><td>103</td><td>🚑 Швидка</td></tr></tbody></table>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9F%D0%BE%D0%B6%D0%B5%D0%B6%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Midsummer_bonfire_closeup.jpg/330px-Midsummer_bonfire_closeup.jpg\" alt=\"Пожежа\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><table class=\"scheme-table\"><thead><tr><th>Номер</th><th>Служба</th></tr></thead><tbody><tr><td><b>101</b></td><td>🚒 Пожежна (ДСНС)</td></tr><tr><td>102</td><td>🚓 Поліція</td></tr><tr><td>103</td><td>🚑 Швидка</td></tr></tbody></table>",
+      "wikiKeyword": "пожежі",
+      "wikiTitle": "Пожежа",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9F%D0%BE%D0%B6%D0%B5%D0%B6%D0%B0"
     },
     {
       "text": "Куди телефонувати, щоб викликати швидку допомогу?",
@@ -1234,7 +1312,10 @@
       ],
       "correct": 1,
       "explanation": "Евакуація — організоване й безпечне виведення людей із небезпечного місця (пожежа, вибух, повітряна тривога) у безпечне.",
-      "media": "<div class=\"scheme-row\"><span class=\"node\">⚠️ небезпека</span><span class=\"arrow\">→</span><span class=\"node\">🚪 евакуація</span><span class=\"arrow\">→</span><span class=\"node\">✅ безпечне місце</span></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%95%D0%B2%D0%B0%D0%BA%D1%83%D0%B0%D1%86%D1%96%D1%8F\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Evacuation_bus._Dnipro..jpg/330px-Evacuation_bus._Dnipro..jpg\" alt=\"Евакуація\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"scheme-row\"><span class=\"node\">⚠️ небезпека</span><span class=\"arrow\">→</span><span class=\"node\">🚪 евакуація</span><span class=\"arrow\">→</span><span class=\"node\">✅ безпечне місце</span></div>",
+      "wikiKeyword": "евакуація",
+      "wikiTitle": "Евакуація",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%95%D0%B2%D0%B0%D0%BA%D1%83%D0%B0%D1%86%D1%96%D1%8F"
     },
     {
       "text": "Що небезпечно робити в інтернеті?",
@@ -1258,7 +1339,10 @@
       ],
       "correct": 1,
       "explanation": "Спільнота — це група людей, об'єднаних спільними інтересами, метою чи місцем (родина, клас, громада, нація).",
-      "media": "<div class=\"scheme-row\"><span class=\"node\">👥 люди</span><span class=\"arrow\">→</span><span class=\"node\">🎯 спільні інтереси/мета</span></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A1%D0%BF%D1%96%D0%BB%D1%8C%D0%BD%D0%BE%D1%82%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/%D0%9B%D1%8E%D0%B4%D0%B8_%D0%BD%D0%B0_%D0%BC%D0%BE%D1%81%D1%82%D1%83_%D1%87%D0%B5%D1%80%D0%B5%D0%B7_%D0%9C%D0%B8%D0%BD%D1%81%D0%BA%D1%83%D1%8E_%D0%BA%D0%BE%D0%BB%D1%8C%D1%86%D0%B5%D0%B2%D1%83%D1%8E_%D0%B0%D0%B0%D1%82%D0%BE%D0%B4%D0%BE%D1%80%D0%BE%D0%B3%D1%83.jpg/330px-%D0%9B%D1%8E%D0%B4%D0%B8_%D0%BD%D0%B0_%D0%BC%D0%BE%D1%81%D1%82%D1%83_%D1%87%D0%B5%D1%80%D0%B5%D0%B7_%D0%9C%D0%B8%D0%BD%D1%81%D0%BA%D1%83%D1%8E_%D0%BA%D0%BE%D0%BB%D1%8C%D1%86%D0%B5%D0%B2%D1%83%D1%8E_%D0%B0%D0%B0%D1%82%D0%BE%D0%B4%D0%BE%D1%80%D0%BE%D0%B3%D1%83.jpg\" alt=\"Спільнота\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"scheme-row\"><span class=\"node\">👥 люди</span><span class=\"arrow\">→</span><span class=\"node\">🎯 спільні інтереси/мета</span></div>",
+      "wikiKeyword": "Спільнота",
+      "wikiTitle": "Спільнота",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A1%D0%BF%D1%96%D0%BB%D1%8C%D0%BD%D0%BE%D1%82%D0%B0"
     },
     {
       "text": "Найперша спільнота, у якій опиняється дитина після народження, — це:",
@@ -1285,7 +1369,10 @@
       ],
       "correct": 2,
       "explanation": "За Конституцією України кожна дитина — і хлопчики, і дівчатка — має право на безоплатну освіту.",
-      "media": "<div class=\"emoji-big\">🎒📚 усі діти</div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%B2%D0%BE\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/JMR-Memphis1.jpg/330px-JMR-Memphis1.jpg\" alt=\"Право\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"emoji-big\">🎒📚 усі діти</div>",
+      "wikiKeyword": "Право",
+      "wikiTitle": "Право",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%B2%D0%BE"
     },
     {
       "text": "ООН ухвалила Конвенцію про права дитини у:",
@@ -1384,7 +1471,10 @@
       ],
       "correct": 0,
       "explanation": "Меркурій — перша планета від Сонця, найменша і найшвидша в Сонячній системі.",
-      "media": "<div class=\"scheme-row\"><span class=\"node\">☀️</span><span class=\"arrow\">→</span><span class=\"node\">Меркурій</span><span class=\"arrow\">→</span><span class=\"node\">Венера</span><span class=\"arrow\">→</span><span class=\"node\">Земля</span></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BD%D1%86%D0%B5\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819.jpg/330px-The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819.jpg\" alt=\"Сонце\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"scheme-row\"><span class=\"node\">☀️</span><span class=\"arrow\">→</span><span class=\"node\">Меркурій</span><span class=\"arrow\">→</span><span class=\"node\">Венера</span><span class=\"arrow\">→</span><span class=\"node\">Земля</span></div>",
+      "wikiKeyword": "Сонця",
+      "wikiTitle": "Сонце",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BD%D1%86%D0%B5"
     },
     {
       "text": "Найбільша планета Сонячної системи — це:",
@@ -1396,7 +1486,10 @@
       ],
       "correct": 1,
       "explanation": "Юпітер — газовий гігант, найбільша планета. У ньому помістилося б понад 1300 таких планет, як Земля.",
-      "media": "<img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMjAgMjIwIj4KPHJlY3Qgd2lkdGg9IjIyMCIgaGVpZ2h0PSIyMjAiIGZpbGw9IiMwYjEwMjQiLz4KPGNpcmNsZSBjeD0iMTEwIiBjeT0iMTEwIiByPSI5MCIgZmlsbD0iI2Q0YTM3MyIvPgo8ZWxsaXBzZSBjeD0iMTEwIiBjeT0iNzAiIHJ4PSI4NSIgcnk9IjYiIGZpbGw9IiNhODc2NTEiLz4KPGVsbGlwc2UgY3g9IjExMCIgY3k9IjkwIiByeD0iODgiIHJ5PSI0IiBmaWxsPSIjZTljNDZhIi8+CjxlbGxpcHNlIGN4PSIxMTAiIGN5PSIxMTAiIHJ4PSI4OCIgcnk9IjUiIGZpbGw9IiNhODc2NTEiLz4KPGVsbGlwc2UgY3g9IjExMCIgY3k9IjEzMCIgcng9Ijg2IiByeT0iNCIgZmlsbD0iI2U5YzQ2YSIvPgo8ZWxsaXBzZSBjeD0iMTEwIiBjeT0iMTUwIiByeD0iODAiIHJ5PSI2IiBmaWxsPSIjYTg3NjUxIi8+CjxlbGxpcHNlIGN4PSIxMzUiIGN5PSIxMzAiIHJ4PSIxNCIgcnk9IjkiIGZpbGw9IiNkYzI2MjYiLz4KPGVsbGlwc2UgY3g9IjEzNSIgY3k9IjEzMCIgcng9IjEwIiByeT0iNiIgZmlsbD0iIzdmMWQxZCIvPgo8L3N2Zz4=\" alt=\"Юпітер\" style=\"width:200px;max-width:100%;height:auto;border-radius:8px;background:#0d1117;padding:6px;\"/>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9F%D0%BB%D0%B0%D0%BD%D0%B5%D1%82%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Planet_collage_to_scale.jpg/330px-Planet_collage_to_scale.jpg\" alt=\"Планета\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMjAgMjIwIj4KPHJlY3Qgd2lkdGg9IjIyMCIgaGVpZ2h0PSIyMjAiIGZpbGw9IiMwYjEwMjQiLz4KPGNpcmNsZSBjeD0iMTEwIiBjeT0iMTEwIiByPSI5MCIgZmlsbD0iI2Q0YTM3MyIvPgo8ZWxsaXBzZSBjeD0iMTEwIiBjeT0iNzAiIHJ4PSI4NSIgcnk9IjYiIGZpbGw9IiNhODc2NTEiLz4KPGVsbGlwc2UgY3g9IjExMCIgY3k9IjkwIiByeD0iODgiIHJ5PSI0IiBmaWxsPSIjZTljNDZhIi8+CjxlbGxpcHNlIGN4PSIxMTAiIGN5PSIxMTAiIHJ4PSI4OCIgcnk9IjUiIGZpbGw9IiNhODc2NTEiLz4KPGVsbGlwc2UgY3g9IjExMCIgY3k9IjEzMCIgcng9Ijg2IiByeT0iNCIgZmlsbD0iI2U5YzQ2YSIvPgo8ZWxsaXBzZSBjeD0iMTEwIiBjeT0iMTUwIiByeD0iODAiIHJ5PSI2IiBmaWxsPSIjYTg3NjUxIi8+CjxlbGxpcHNlIGN4PSIxMzUiIGN5PSIxMzAiIHJ4PSIxNCIgcnk9IjkiIGZpbGw9IiNkYzI2MjYiLz4KPGVsbGlwc2UgY3g9IjEzNSIgY3k9IjEzMCIgcng9IjEwIiByeT0iNiIgZmlsbD0iIzdmMWQxZCIvPgo8L3N2Zz4=\" alt=\"Юпітер\" style=\"width:200px;max-width:100%;height:auto;border-radius:8px;background:#0d1117;padding:6px;\"/>",
+      "wikiKeyword": "планета",
+      "wikiTitle": "Планета",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9F%D0%BB%D0%B0%D0%BD%D0%B5%D1%82%D0%B0"
     },
     {
       "text": "Червоною планетою називають:",
@@ -1420,7 +1513,10 @@
       ],
       "correct": 1,
       "explanation": "Сатурн знаменитий своїми великими і яскравими кільцями зі шматочків льоду й каменю.",
-      "media": "<img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyODAgMTgwIj4KPHJlY3Qgd2lkdGg9IjI4MCIgaGVpZ2h0PSIxODAiIGZpbGw9IiMwYjEwMjQiLz4KPGcgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC41Ij48Y2lyY2xlIGN4PSIyMCIgY3k9IjMwIiByPSIwLjgiLz48Y2lyY2xlIGN4PSIyNTAiIGN5PSI0MCIgcj0iMC44Ii8+PGNpcmNsZSBjeD0iMjAwIiBjeT0iMTYwIiByPSIwLjgiLz48L2c+CjxlbGxpcHNlIGN4PSIxNDAiIGN5PSI5MCIgcng9IjEyNSIgcnk9IjIyIiBmaWxsPSJub25lIiBzdHJva2U9IiNkNGEzNzMiIHN0cm9rZS13aWR0aD0iMyIvPgo8ZWxsaXBzZSBjeD0iMTQwIiBjeT0iOTAiIHJ4PSIxMTUiIHJ5PSIxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmRlNjhhIiBzdHJva2Utd2lkdGg9IjIiIG9wYWNpdHk9IjAuNyIvPgo8ZWxsaXBzZSBjeD0iMTQwIiBjeT0iOTAiIHJ4PSIxMDUiIHJ5PSI2IiBmaWxsPSJub25lIiBzdHJva2U9IiNhODc2NTEiIHN0cm9rZS13aWR0aD0iMSIvPgo8Y2lyY2xlIGN4PSIxNDAiIGN5PSI5MCIgcj0iNTAiIGZpbGw9IiNlOGMwNzQiLz4KPGVsbGlwc2UgY3g9IjE0MCIgY3k9IjgwIiByeD0iNDgiIHJ5PSIzIiBmaWxsPSIjYzg5YzVhIi8+CjxlbGxpcHNlIGN4PSIxNDAiIGN5PSIxMDAiIHJ4PSI0OCIgcnk9IjMiIGZpbGw9IiNjODljNWEiLz4KPGVsbGlwc2UgY3g9IjE0MCIgY3k9IjkwIiByeD0iMTI1IiByeT0iMjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIwLjUiIG9wYWNpdHk9IjAuNSIvPgo8L3N2Zz4=\" alt=\"Сатурн з кільцями\" style=\"width:240px;max-width:100%;height:auto;border-radius:8px;background:#0d1117;padding:6px;\"/>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9F%D0%BB%D0%B0%D0%BD%D0%B5%D1%82%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Planet_collage_to_scale.jpg/330px-Planet_collage_to_scale.jpg\" alt=\"Планета\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyODAgMTgwIj4KPHJlY3Qgd2lkdGg9IjI4MCIgaGVpZ2h0PSIxODAiIGZpbGw9IiMwYjEwMjQiLz4KPGcgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC41Ij48Y2lyY2xlIGN4PSIyMCIgY3k9IjMwIiByPSIwLjgiLz48Y2lyY2xlIGN4PSIyNTAiIGN5PSI0MCIgcj0iMC44Ii8+PGNpcmNsZSBjeD0iMjAwIiBjeT0iMTYwIiByPSIwLjgiLz48L2c+CjxlbGxpcHNlIGN4PSIxNDAiIGN5PSI5MCIgcng9IjEyNSIgcnk9IjIyIiBmaWxsPSJub25lIiBzdHJva2U9IiNkNGEzNzMiIHN0cm9rZS13aWR0aD0iMyIvPgo8ZWxsaXBzZSBjeD0iMTQwIiBjeT0iOTAiIHJ4PSIxMTUiIHJ5PSIxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmRlNjhhIiBzdHJva2Utd2lkdGg9IjIiIG9wYWNpdHk9IjAuNyIvPgo8ZWxsaXBzZSBjeD0iMTQwIiBjeT0iOTAiIHJ4PSIxMDUiIHJ5PSI2IiBmaWxsPSJub25lIiBzdHJva2U9IiNhODc2NTEiIHN0cm9rZS13aWR0aD0iMSIvPgo8Y2lyY2xlIGN4PSIxNDAiIGN5PSI5MCIgcj0iNTAiIGZpbGw9IiNlOGMwNzQiLz4KPGVsbGlwc2UgY3g9IjE0MCIgY3k9IjgwIiByeD0iNDgiIHJ5PSIzIiBmaWxsPSIjYzg5YzVhIi8+CjxlbGxpcHNlIGN4PSIxNDAiIGN5PSIxMDAiIHJ4PSI0OCIgcnk9IjMiIGZpbGw9IiNjODljNWEiLz4KPGVsbGlwc2UgY3g9IjE0MCIgY3k9IjkwIiByeD0iMTI1IiByeT0iMjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIwLjUiIG9wYWNpdHk9IjAuNSIvPgo8L3N2Zz4=\" alt=\"Сатурн з кільцями\" style=\"width:240px;max-width:100%;height:auto;border-radius:8px;background:#0d1117;padding:6px;\"/>",
+      "wikiKeyword": "Планета",
+      "wikiTitle": "Планета",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9F%D0%BB%D0%B0%D0%BD%D0%B5%D1%82%D0%B0"
     },
     {
       "text": "Найдальша від Сонця планета Сонячної системи — це:",
@@ -1432,7 +1528,10 @@
       ],
       "correct": 1,
       "explanation": "Нептун — восьма й найдальша від Сонця планета. Це холодний газовий гігант синього кольору.",
-      "media": "<div class=\"scheme-row\"><span class=\"node\">Уран</span><span class=\"arrow\">→</span><span class=\"node\">🔵 Нептун</span></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BD%D1%86%D0%B5\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819.jpg/330px-The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819.jpg\" alt=\"Сонце\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"scheme-row\"><span class=\"node\">Уран</span><span class=\"arrow\">→</span><span class=\"node\">🔵 Нептун</span></div>",
+      "wikiKeyword": "Сонця",
+      "wikiTitle": "Сонце",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BD%D1%86%D0%B5"
     },
     {
       "text": "На якому місці від Сонця розташована Земля?",
@@ -1444,7 +1543,10 @@
       ],
       "correct": 2,
       "explanation": "Земля — третя планета від Сонця: Меркурій, Венера, Земля, Марс і далі.",
-      "media": "<div class=\"scheme\">1. ☿ Меркурій\n2. ♀ Венера\n3. 🌍 ЗЕМЛЯ ←\n4. ♂ Марс\n5. ♃ Юпітер\n6. ♄ Сатурн\n7. ♅ Уран\n8. ♆ Нептун</div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BD%D1%86%D0%B5\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819.jpg/330px-The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819.jpg\" alt=\"Сонце\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"scheme\">1. ☿ Меркурій\n2. ♀ Венера\n3. 🌍 ЗЕМЛЯ ←\n4. ♂ Марс\n5. ♃ Юпітер\n6. ♄ Сатурн\n7. ♅ Уран\n8. ♆ Нептун</div>",
+      "wikiKeyword": "Сонця",
+      "wikiTitle": "Сонце",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BD%D1%86%D0%B5"
     },
     {
       "text": "Скільки природних супутників має Земля?",
@@ -1456,7 +1558,10 @@
       ],
       "correct": 1,
       "explanation": "У Землі один природний супутник — Місяць. Хоча штучних супутників (запущених людиною) тисячі.",
-      "media": "<div class=\"info-card\">🌍 Земля → <b>1 супутник</b> = 🌕 Місяць</div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%97%D0%B5%D0%BC%D0%BB%D1%8F\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/The_Blue_Marble_%28remastered%29.jpg/330px-The_Blue_Marble_%28remastered%29.jpg\" alt=\"Земля\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🌍 Земля → <b>1 супутник</b> = 🌕 Місяць</div>",
+      "wikiKeyword": "Земля",
+      "wikiTitle": "Земля",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%97%D0%B5%D0%BC%D0%BB%D1%8F"
     },
     {
       "text": "Як називається наша галактика?",
@@ -1468,7 +1573,10 @@
       ],
       "correct": 1,
       "explanation": "Наша галактика називається Чумацький Шлях (англ. Milky Way). У ній сотні мільярдів зірок.",
-      "media": "<div class=\"info-card\">🌌 <b>Чумацький Шлях</b><br>(Milky Way) — сотні мільярдів зірок</div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%93%D0%B0%D0%BB%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B0\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/NGC_4414_%28NASA-med%29.jpg/330px-NGC_4414_%28NASA-med%29.jpg\" alt=\"Галактика\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🌌 <b>Чумацький Шлях</b><br>(Milky Way) — сотні мільярдів зірок</div>",
+      "wikiKeyword": "галактика",
+      "wikiTitle": "Галактика",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%93%D0%B0%D0%BB%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B0"
     },
     {
       "text": "Що таке сузір'я?",
@@ -1507,7 +1615,10 @@
       ],
       "correct": 1,
       "explanation": "Один оберт навколо своєї осі Земля робить за добу — 24 години. Через це чергуються день і ніч.",
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"200\" height=\"200\" fill=\"#0b1024\"/><circle cx=\"100\" cy=\"100\" r=\"55\" fill=\"#3b82f6\"/><line x1=\"100\" y1=\"30\" x2=\"100\" y2=\"170\" stroke=\"#fde68a\" stroke-width=\"2\" stroke-dasharray=\"4 4\"/><path d=\"M 70 50 A 60 30 0 1 1 130 50\" fill=\"none\" stroke=\"#fde68a\" stroke-width=\"2\"/><polygon points=\"130,50 122,46 124,56\" fill=\"#fde68a\"/><text x=\"100\" y=\"190\" text-anchor=\"middle\" font-size=\"14\" fill=\"#fde68a\" font-weight=\"bold\">1 доба = 24 години</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9E%D0%B1%D0%B5%D1%80%D1%82\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Full_angle.svg/languk-330px-Full_angle.svg.png\" alt=\"Оберт\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"200\" height=\"200\" fill=\"#0b1024\"/><circle cx=\"100\" cy=\"100\" r=\"55\" fill=\"#3b82f6\"/><line x1=\"100\" y1=\"30\" x2=\"100\" y2=\"170\" stroke=\"#fde68a\" stroke-width=\"2\" stroke-dasharray=\"4 4\"/><path d=\"M 70 50 A 60 30 0 1 1 130 50\" fill=\"none\" stroke=\"#fde68a\" stroke-width=\"2\"/><polygon points=\"130,50 122,46 124,56\" fill=\"#fde68a\"/><text x=\"100\" y=\"190\" text-anchor=\"middle\" font-size=\"14\" fill=\"#fde68a\" font-weight=\"bold\">1 доба = 24 години</text></svg>",
+      "wikiKeyword": "оберт",
+      "wikiTitle": "Оберт",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9E%D0%B1%D0%B5%D1%80%D1%82"
     },
     {
       "text": "Що відбувається через обертання Землі навколо своєї осі?",
@@ -1519,7 +1630,10 @@
       ],
       "correct": 1,
       "explanation": "Сторона Землі, повернута до Сонця, освітлюється — там день; протилежна — у тіні, там ніч. Через обертання вони чергуються.",
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 220 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"220\" height=\"200\" fill=\"#0b1024\"/><circle cx=\"40\" cy=\"100\" r=\"22\" fill=\"#fbbf24\"/><g stroke=\"#fbbf24\" stroke-width=\"1.5\"><line x1=\"40\" y1=\"70\" x2=\"40\" y2=\"78\"/><line x1=\"40\" y1=\"122\" x2=\"40\" y2=\"130\"/><line x1=\"62\" y1=\"100\" x2=\"70\" y2=\"100\"/></g><circle cx=\"150\" cy=\"100\" r=\"40\" fill=\"#3b82f6\"/><path d=\"M150 60 A 40 40 0 0 1 150 140 Z\" fill=\"#fde68a\" opacity=\"0.85\"/><text x=\"118\" y=\"100\" font-size=\"11\" fill=\"#fff\" font-weight=\"bold\">ніч</text><text x=\"160\" y=\"100\" font-size=\"11\" fill=\"#1e293b\" font-weight=\"bold\">день</text><text x=\"110\" y=\"190\" text-anchor=\"middle\" font-size=\"12\" fill=\"#fde68a\" font-weight=\"bold\">зміна дня і ночі</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9E%D0%B1%D0%B5%D1%80%D1%82%D0%B0%D0%BD%D0%BD%D1%8F\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/0/02/Rotating_Sphere.gif\" alt=\"Обертання\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 220 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"220\" height=\"200\" fill=\"#0b1024\"/><circle cx=\"40\" cy=\"100\" r=\"22\" fill=\"#fbbf24\"/><g stroke=\"#fbbf24\" stroke-width=\"1.5\"><line x1=\"40\" y1=\"70\" x2=\"40\" y2=\"78\"/><line x1=\"40\" y1=\"122\" x2=\"40\" y2=\"130\"/><line x1=\"62\" y1=\"100\" x2=\"70\" y2=\"100\"/></g><circle cx=\"150\" cy=\"100\" r=\"40\" fill=\"#3b82f6\"/><path d=\"M150 60 A 40 40 0 0 1 150 140 Z\" fill=\"#fde68a\" opacity=\"0.85\"/><text x=\"118\" y=\"100\" font-size=\"11\" fill=\"#fff\" font-weight=\"bold\">ніч</text><text x=\"160\" y=\"100\" font-size=\"11\" fill=\"#1e293b\" font-weight=\"bold\">день</text><text x=\"110\" y=\"190\" text-anchor=\"middle\" font-size=\"12\" fill=\"#fde68a\" font-weight=\"bold\">зміна дня і ночі</text></svg>",
+      "wikiKeyword": "обертання",
+      "wikiTitle": "Обертання",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9E%D0%B1%D0%B5%D1%80%D1%82%D0%B0%D0%BD%D0%BD%D1%8F"
     },
     {
       "text": "Чому на Землі змінюються пори року?",
@@ -1531,7 +1645,10 @@
       ],
       "correct": 0,
       "explanation": "Земля обертається навколо Сонця і має нахилену вісь. Через цей нахил різні півкулі по черзі отримують більше тепла й світла.",
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 280 180\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"280\" height=\"180\" fill=\"#0b1024\"/><circle cx=\"140\" cy=\"90\" r=\"20\" fill=\"#fbbf24\"/><ellipse cx=\"140\" cy=\"90\" rx=\"120\" ry=\"40\" fill=\"none\" stroke=\"#fde68a\" stroke-width=\"1\" stroke-dasharray=\"4 4\"/><g transform=\"translate(30 90) rotate(-23)\"><circle r=\"14\" fill=\"#3b82f6\"/><line x1=\"0\" y1=\"-18\" x2=\"0\" y2=\"18\" stroke=\"#f59e0b\" stroke-width=\"1.5\"/></g><g transform=\"translate(250 90) rotate(-23)\"><circle r=\"14\" fill=\"#3b82f6\"/><line x1=\"0\" y1=\"-18\" x2=\"0\" y2=\"18\" stroke=\"#f59e0b\" stroke-width=\"1.5\"/></g><text x=\"140\" y=\"160\" text-anchor=\"middle\" font-size=\"11\" fill=\"#fde68a\">нахил осі Землі ≈ 23.5° + рух навколо Сонця</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9F%D0%BE%D1%80%D0%B8\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Porosity_thin_section_GP.jpg/330px-Porosity_thin_section_GP.jpg\" alt=\"Пори\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 280 180\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"280\" height=\"180\" fill=\"#0b1024\"/><circle cx=\"140\" cy=\"90\" r=\"20\" fill=\"#fbbf24\"/><ellipse cx=\"140\" cy=\"90\" rx=\"120\" ry=\"40\" fill=\"none\" stroke=\"#fde68a\" stroke-width=\"1\" stroke-dasharray=\"4 4\"/><g transform=\"translate(30 90) rotate(-23)\"><circle r=\"14\" fill=\"#3b82f6\"/><line x1=\"0\" y1=\"-18\" x2=\"0\" y2=\"18\" stroke=\"#f59e0b\" stroke-width=\"1.5\"/></g><g transform=\"translate(250 90) rotate(-23)\"><circle r=\"14\" fill=\"#3b82f6\"/><line x1=\"0\" y1=\"-18\" x2=\"0\" y2=\"18\" stroke=\"#f59e0b\" stroke-width=\"1.5\"/></g><text x=\"140\" y=\"160\" text-anchor=\"middle\" font-size=\"11\" fill=\"#fde68a\">нахил осі Землі ≈ 23.5° + рух навколо Сонця</text></svg>",
+      "wikiKeyword": "пори",
+      "wikiTitle": "Пори",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9F%D0%BE%D1%80%D0%B8"
     },
     {
       "text": "Сонячне затемнення відбувається, коли:",
@@ -1543,7 +1660,10 @@
       ],
       "correct": 1,
       "explanation": "Місяць проходить між Сонцем і Землею і закриває собою диск Сонця. Це й називають сонячним затемненням.",
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 120\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"320\" height=\"120\" fill=\"#0b1024\"/><circle cx=\"40\" cy=\"60\" r=\"22\" fill=\"#fbbf24\"/><text x=\"40\" y=\"100\" text-anchor=\"middle\" font-size=\"11\" fill=\"#fde68a\">Сонце</text><circle cx=\"160\" cy=\"60\" r=\"14\" fill=\"#9ca3af\"/><text x=\"160\" y=\"100\" text-anchor=\"middle\" font-size=\"11\" fill=\"#fde68a\">Місяць</text><circle cx=\"270\" cy=\"60\" r=\"20\" fill=\"#3b82f6\"/><text x=\"270\" y=\"100\" text-anchor=\"middle\" font-size=\"11\" fill=\"#fde68a\">Земля</text><polygon points=\"160,60 270,52 270,68\" fill=\"#1e293b\" opacity=\"0.7\"/></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%97%D0%B0%D1%82%D0%B5%D0%BC%D0%BD%D0%B5%D0%BD%D0%BD%D1%8F\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Solar_eclipse_1999_4.jpg/330px-Solar_eclipse_1999_4.jpg\" alt=\"Затемнення\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 120\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"320\" height=\"120\" fill=\"#0b1024\"/><circle cx=\"40\" cy=\"60\" r=\"22\" fill=\"#fbbf24\"/><text x=\"40\" y=\"100\" text-anchor=\"middle\" font-size=\"11\" fill=\"#fde68a\">Сонце</text><circle cx=\"160\" cy=\"60\" r=\"14\" fill=\"#9ca3af\"/><text x=\"160\" y=\"100\" text-anchor=\"middle\" font-size=\"11\" fill=\"#fde68a\">Місяць</text><circle cx=\"270\" cy=\"60\" r=\"20\" fill=\"#3b82f6\"/><text x=\"270\" y=\"100\" text-anchor=\"middle\" font-size=\"11\" fill=\"#fde68a\">Земля</text><polygon points=\"160,60 270,52 270,68\" fill=\"#1e293b\" opacity=\"0.7\"/></svg>",
+      "wikiKeyword": "затемнення",
+      "wikiTitle": "Затемнення",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%97%D0%B0%D1%82%D0%B5%D0%BC%D0%BD%D0%B5%D0%BD%D0%BD%D1%8F"
     },
     {
       "text": "Місячне затемнення відбувається, коли:",
@@ -1555,7 +1675,10 @@
       ],
       "correct": 1,
       "explanation": "Земля опиняється між Сонцем і Місяцем і кидає свою тінь на Місяць — Місяць стає темним або червонуватим.",
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 120\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"320\" height=\"120\" fill=\"#0b1024\"/><circle cx=\"40\" cy=\"60\" r=\"22\" fill=\"#fbbf24\"/><text x=\"40\" y=\"100\" text-anchor=\"middle\" font-size=\"11\" fill=\"#fde68a\">Сонце</text><circle cx=\"170\" cy=\"60\" r=\"20\" fill=\"#3b82f6\"/><text x=\"170\" y=\"100\" text-anchor=\"middle\" font-size=\"11\" fill=\"#fde68a\">Земля</text><circle cx=\"280\" cy=\"60\" r=\"14\" fill=\"#7f1d1d\"/><text x=\"280\" y=\"100\" text-anchor=\"middle\" font-size=\"11\" fill=\"#fde68a\">Місяць</text><polygon points=\"170,60 280,52 280,68\" fill=\"#1e293b\" opacity=\"0.7\"/></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%97%D0%B0%D1%82%D0%B5%D0%BC%D0%BD%D0%B5%D0%BD%D0%BD%D1%8F\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Solar_eclipse_1999_4.jpg/330px-Solar_eclipse_1999_4.jpg\" alt=\"Затемнення\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 120\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"320\" height=\"120\" fill=\"#0b1024\"/><circle cx=\"40\" cy=\"60\" r=\"22\" fill=\"#fbbf24\"/><text x=\"40\" y=\"100\" text-anchor=\"middle\" font-size=\"11\" fill=\"#fde68a\">Сонце</text><circle cx=\"170\" cy=\"60\" r=\"20\" fill=\"#3b82f6\"/><text x=\"170\" y=\"100\" text-anchor=\"middle\" font-size=\"11\" fill=\"#fde68a\">Земля</text><circle cx=\"280\" cy=\"60\" r=\"14\" fill=\"#7f1d1d\"/><text x=\"280\" y=\"100\" text-anchor=\"middle\" font-size=\"11\" fill=\"#fde68a\">Місяць</text><polygon points=\"170,60 280,52 280,68\" fill=\"#1e293b\" opacity=\"0.7\"/></svg>",
+      "wikiKeyword": "затемнення",
+      "wikiTitle": "Затемнення",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%97%D0%B0%D1%82%D0%B5%D0%BC%D0%BD%D0%B5%D0%BD%D0%BD%D1%8F"
     },
     {
       "text": "Як називається фаза, коли Місяць повністю освітлений?",
@@ -1612,7 +1735,10 @@
       ],
       "correct": 2,
       "explanation": "20 липня 1969 року. Це сталося під час місії «Аполлон-11».",
-      "media": "<div class=\"info-card\">🌕 <b>1969 рік</b><br>20 липня — місія «Аполлон-11»</div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%A0%D1%96%D0%BA\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Analemma_fishburn.tif/lossy-page1-330px-Analemma_fishburn.tif.jpg\" alt=\"Рік\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"info-card\">🌕 <b>1969 рік</b><br>20 липня — місія «Аполлон-11»</div>",
+      "wikiKeyword": "рік",
+      "wikiTitle": "Рік",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%A0%D1%96%D0%BA"
     },
     {
       "text": "Як називається спеціальний костюм космонавта для виходу у відкритий космос?",
@@ -1639,7 +1765,10 @@
       ],
       "correct": 1,
       "explanation": "У космос виводять кораблі за допомогою ракет — потужних апаратів, що використовують реактивну тягу.",
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 120 240\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"120\" height=\"240\" fill=\"#0b1024\"/><polygon points=\"60,10 75,50 45,50\" fill=\"#dc2626\"/><rect x=\"45\" y=\"50\" width=\"30\" height=\"120\" fill=\"#f5f5f4\"/><circle cx=\"60\" cy=\"80\" r=\"6\" fill=\"#3b82f6\"/><circle cx=\"60\" cy=\"100\" r=\"6\" fill=\"#3b82f6\"/><rect x=\"40\" y=\"170\" width=\"40\" height=\"20\" fill=\"#9ca3af\"/><polygon points=\"40,170 30,200 50,200\" fill=\"#9ca3af\"/><polygon points=\"80,170 90,200 70,200\" fill=\"#9ca3af\"/><polygon points=\"50,200 70,200 65,230 55,230\" fill=\"#fbbf24\"/><polygon points=\"55,230 65,230 60,250\" fill=\"#dc2626\"/></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9A%D0%BE%D1%81%D0%BC%D0%BE%D0%BD%D0%B0%D0%B2%D1%82\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Bruce_McCandless_II_during_EVA_in_1984.jpg/330px-Bruce_McCandless_II_during_EVA_in_1984.jpg\" alt=\"Космонавт\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 120 240\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"120\" height=\"240\" fill=\"#0b1024\"/><polygon points=\"60,10 75,50 45,50\" fill=\"#dc2626\"/><rect x=\"45\" y=\"50\" width=\"30\" height=\"120\" fill=\"#f5f5f4\"/><circle cx=\"60\" cy=\"80\" r=\"6\" fill=\"#3b82f6\"/><circle cx=\"60\" cy=\"100\" r=\"6\" fill=\"#3b82f6\"/><rect x=\"40\" y=\"170\" width=\"40\" height=\"20\" fill=\"#9ca3af\"/><polygon points=\"40,170 30,200 50,200\" fill=\"#9ca3af\"/><polygon points=\"80,170 90,200 70,200\" fill=\"#9ca3af\"/><polygon points=\"50,200 70,200 65,230 55,230\" fill=\"#fbbf24\"/><polygon points=\"55,230 65,230 60,250\" fill=\"#dc2626\"/></svg>",
+      "wikiKeyword": "космонавти",
+      "wikiTitle": "Космонавт",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9A%D0%BE%D1%81%D0%BC%D0%BE%D0%BD%D0%B0%D0%B2%D1%82"
     },
     {
       "text": "Як скорочено називають Міжнародну космічну станцію?",
@@ -1732,7 +1861,10 @@
       ],
       "correct": 1,
       "explanation": "Невагомість — стан, у якому тіла не тиснуть на опору. На МКС космонавти і предмети «плавають», бо станція безперервно «падає» по орбіті разом з ними.",
-      "media": "<div class=\"scheme-row\"><span class=\"node\">🚀 орбіта</span><span class=\"arrow\">→</span><span class=\"node\">👨‍🚀 космонавт «плаває»</span></div>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9D%D0%B5%D0%B2%D0%B0%D0%B3%D0%BE%D0%BC%D1%96%D1%81%D1%82%D1%8C\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Foale_ZeroG.jpg/330px-Foale_ZeroG.jpg\" alt=\"Невагомість\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><div class=\"scheme-row\"><span class=\"node\">🚀 орбіта</span><span class=\"arrow\">→</span><span class=\"node\">👨‍🚀 космонавт «плаває»</span></div>",
+      "wikiKeyword": "невагомість",
+      "wikiTitle": "Невагомість",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9D%D0%B5%D0%B2%D0%B0%D0%B3%D0%BE%D0%BC%D1%96%D1%81%D1%82%D1%8C"
     },
     {
       "text": "Якого кольору наша Земля з космосу переважно?",
@@ -1744,7 +1876,10 @@
       ],
       "correct": 2,
       "explanation": "Земля з космосу здається переважно блакитною — це колір океанів, що покривають близько 70% поверхні.",
-      "media": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"200\" height=\"200\" fill=\"#000\"/><circle cx=\"100\" cy=\"100\" r=\"80\" fill=\"#3b82f6\"/><path d=\"M40 90 Q60 80 80 95 L95 90 L110 100 L130 95 L150 105 L140 115 L120 115 L105 110 L85 115 L65 110 L50 100 Z\" fill=\"#16a34a\"/><ellipse cx=\"100\" cy=\"50\" rx=\"30\" ry=\"6\" fill=\"#fff\" opacity=\"0.5\"/><text x=\"100\" y=\"195\" text-anchor=\"middle\" font-size=\"12\" fill=\"#7dd3fc\">🔵 блакитна</text></svg>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%97%D0%B5%D0%BC%D0%BB%D1%8F\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/The_Blue_Marble_%28remastered%29.jpg/330px-The_Blue_Marble_%28remastered%29.jpg\" alt=\"Земля\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" style=\"width:200px;max-width:100%;height:auto;background:#0d1117;border-radius:8px;padding:6px;\"><rect width=\"200\" height=\"200\" fill=\"#000\"/><circle cx=\"100\" cy=\"100\" r=\"80\" fill=\"#3b82f6\"/><path d=\"M40 90 Q60 80 80 95 L95 90 L110 100 L130 95 L150 105 L140 115 L120 115 L105 110 L85 115 L65 110 L50 100 Z\" fill=\"#16a34a\"/><ellipse cx=\"100\" cy=\"50\" rx=\"30\" ry=\"6\" fill=\"#fff\" opacity=\"0.5\"/><text x=\"100\" y=\"195\" text-anchor=\"middle\" font-size=\"12\" fill=\"#7dd3fc\">🔵 блакитна</text></svg>",
+      "wikiKeyword": "Земля",
+      "wikiTitle": "Земля",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%97%D0%B5%D0%BC%D0%BB%D1%8F"
     },
     {
       "text": "Чому Землю називають «блакитною планетою»?",
@@ -1858,7 +1993,10 @@
       ],
       "correct": 2,
       "explanation": "Кільця мають усі чотири планети-гіганти: Юпітер, Сатурн (найвиразніші), Уран і Нептун. У внутрішніх кам'янистих планет кілець немає.",
-      "media": "<table class=\"scheme-table\"><thead><tr><th>Планета</th><th>Кільця</th></tr></thead><tbody><tr><td>Юпітер</td><td>✅ (тонкі)</td></tr><tr><td>Сатурн</td><td>✅ (найвиразніші)</td></tr><tr><td>Уран</td><td>✅</td></tr><tr><td>Нептун</td><td>✅</td></tr></tbody></table>"
+      "media": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9A%D1%96%D0%BB%D1%8C%D1%86%D1%8F\" target=\"_blank\" rel=\"noopener\" title=\"Стаття у Вікіпедії\" style=\"display:block;margin-bottom:10px\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/5/53/Weingartner.jpg\" alt=\"Кільця\" loading=\"lazy\" style=\"display:block;margin:0 auto;max-width:100%;max-height:240px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);cursor:pointer\"/></a><table class=\"scheme-table\"><thead><tr><th>Планета</th><th>Кільця</th></tr></thead><tbody><tr><td>Юпітер</td><td>✅ (тонкі)</td></tr><tr><td>Сатурн</td><td>✅ (найвиразніші)</td></tr><tr><td>Уран</td><td>✅</td></tr><tr><td>Нептун</td><td>✅</td></tr></tbody></table>",
+      "wikiKeyword": "кільця",
+      "wikiTitle": "Кільця",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/%D0%9A%D1%96%D0%BB%D1%8C%D1%86%D1%8F"
     },
     {
       "text": "Як називається людина, що працює у космосі?",
