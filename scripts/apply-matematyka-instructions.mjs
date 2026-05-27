@@ -1,8 +1,15 @@
 #!/usr/bin/env node
 /**
- * Застосовує інструкції з first-million-instructions.md
+ * Застосовує інструкції з first-million-instructions.md + евристичні патерни
  * node scripts/apply-matematyka-instructions.mjs
  */
+import {
+  makeMatematykaMedia,
+  makeUkrMovaMedia,
+  makeInformatykaMedia,
+  makeAnhliyskaMedia,
+  makeIspanskaMedia,
+} from "./generate-first-million-media.mjs";
 
 import { readFileSync, writeFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
@@ -12,8 +19,10 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA = resolve(__dirname, "../games/first-million/data");
 const BG = "#0d1117";
 
-const COIN_25 =
-  "https://upload.wikimedia.org/wikipedia/commons/7/7d/25-kopiyok-Ukraine.JPG";
+/** Локальні PNG з прозорим фоном; згенерувати: node scripts/generate-coin-assets.mjs */
+const COINS = "assets/coins";
+const coinImg = (file, alt, size = 56) =>
+  `<img src="${COINS}/${file}" alt="${alt}" width="${size}" height="${size}" loading="lazy" style="display:block;object-fit:contain;background:transparent"/>`;
 
 function svg(viewBox, body, width = 300) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}" style="width:${width}px;max-width:100%;height:auto;background:${BG};border-radius:10px;padding:8px;">${body}</svg>`;
@@ -39,17 +48,12 @@ function infoCard(html) {
 const MEDIA = {
   coins25x4Photos: () =>
     infoCard(
-      `<div style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin:6px 0">
-        ${[0, 1, 2, 3]
-          .map(
-            () =>
-              `<img src="${COIN_25}" alt="25 копійок" width="72" height="34" style="border-radius:6px;object-fit:contain;background:rgba(0,0,0,0.2)"/>`,
-          )
-          .join("")}
-        <span style="font-size:1.6rem;color:#fde68a;font-weight:800">=</span>
-        <span style="display:inline-flex;align-items:center;justify-content:center;min-width:72px;min-height:72px;border-radius:50%;background:linear-gradient(180deg,#fbbf24,#d97706);color:#1a1a2e;font-weight:900;font-size:1.1rem;border:2px solid #fde68a">1 ₴</span>
+      `<div style="display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap;margin:6px 0">
+        ${[0, 1, 2, 3].map(() => coinImg("25-kopiyok.png", "25 копійок")).join("")}
+        <span style="font-size:1.6rem;color:#fde68a;font-weight:800;padding:0 4px">=</span>
+        ${coinImg("1-hryvnia-obverse.png", "1 гривня (аверс з гербом)", 72)}
       </div>
-      <p style="text-align:center;color:#86efac;margin:8px 0 0">25 × 4 = 100 копійок = 1 гривня</p>`,
+      <p style="text-align:center;color:#86efac;margin:8px 0 0">25 × 4 = 1 гривня <span style="color:#94a3b8">(100 копійок)</span></p>`,
     ),
 
   lengthTable: () =>
@@ -187,7 +191,7 @@ const MEDIA = {
         return `${cx + r * Math.cos(a)},${cy + r * Math.sin(a)}`;
       })
       .join(" ");
-    const names = { 5: "п'ятикутник", 6: "шестикутник" };
+    const names = { 3: "трикутник", 5: "п'ятикутник", 6: "шестикутник" };
     return svg(
       "0 0 220 180",
       `<rect width="220" height="180" fill="#0f172a" rx="10"/>
@@ -589,16 +593,291 @@ const ukrayinskaPatches = {
   },
 };
 
-// —— Математика ——
-const matPath = resolve(DATA, "matematyka-4-klas.json");
-const matData = JSON.parse(readFileSync(matPath, "utf8"));
-const matCount = applyPatches(matData.questions, matematykaPatches);
-writeFileSync(matPath, JSON.stringify(matData, null, 2) + "\n", "utf8");
-console.log(`Математика: ${matCount} patches → ${matPath}`);
+const EXPLICIT_INDICES = {
+  matematyka: new Set(Object.keys(matematykaPatches).map(Number)),
+  ukrayinska: new Set(Object.keys(ukrayinskaPatches).map(Number)),
+};
 
-// —— Українська мова ——
-const ukrPath = resolve(DATA, "ukrayinska-mova-4-klas.json");
-const ukrData = JSON.parse(readFileSync(ukrPath, "utf8"));
-const ukrCount = applyPatches(ukrData.questions, ukrayinskaPatches);
-writeFileSync(ukrPath, JSON.stringify(ukrData, null, 2) + "\n", "utf8");
-console.log(`Українська мова: ${ukrCount} patches → ${ukrPath}`);
+function revealsAnswer(q) {
+  const ans = (q.answers[q.correct] || "").trim();
+  if (!ans || !q.media) return false;
+  if (/font-size:1\.1em/.test(q.media) && q.media.includes(ans)) return true;
+  if (/color:#34d399;font-size:1\.1em/.test(q.media)) return true;
+  return false;
+}
+
+function leaksAnswer(media) {
+  return /font-size:1\.1em/.test(media || "");
+}
+
+function hintOnlyCard(q, emoji = "💡") {
+  const hint = q.text.replace(/[?.…]+$/u, "").trim();
+  return infoCard(`${emoji} <span style="color:#cbd5e1">${hint}</span>`);
+}
+
+function stripWikiHtml(media) {
+  if (!media) return media;
+  return media
+    .replace(/<a href="https:\/\/uk\.wikipedia\.org[^"]*"[^>]*>[\s\S]*?<\/a>/gi, "")
+    .replace(/<div class="info-card"><a href="https:\/\/uk\.wikipedia\.org[\s\S]*?<\/a><\/div>/gi, "")
+    .trim();
+}
+
+const UKR_GRAMMAR_WIKI =
+  /наголос|іменник|підмет|присудок|дієслов|прикметник|прислівник|синонім|антонім|орфограф|пунктуац|абетк|алфавіт|частк|граматик|речен/i;
+
+function shouldStripUkrWiki(q) {
+  const corpus = `${q.text} ${q.wikiKeyword || ""} ${q.wikiTitle || ""}`;
+  if (/написан.+правильн|орфограф/i.test(q.text)) return true;
+  if (/голосн|приголосн/i.test(q.text)) return true;
+  if (/корінь|суфікс|префікс/i.test(q.text) && !/морфолог/i.test(corpus)) return true;
+  if (q.wikiKeyword && !UKR_GRAMMAR_WIKI.test(corpus)) return true;
+  return false;
+}
+
+function enhanceMatematyka(q) {
+  const t = q.text;
+  if (/піврічч/i.test(t) && !/scheme-table/.test(q.media || "")) {
+    return {
+      media: MEDIA.timeTable() + infoCard("📅 1 рік = 2 півріччя · кожне по <b>6 місяців</b>"),
+      ...WIKI.year,
+    };
+  }
+  if (/сторін у трикутник/i.test(t)) {
+    return { _stripWiki: true, media: MEDIA.polygon(3) };
+  }
+  if (/наступник числа/i.test(t)) {
+    const m = t.match(/числа\s+(\d+)/);
+    if (m) {
+      const n = +m[1];
+      return { media: numberLineAround(n) };
+    }
+  }
+  if (/римськ/i.test(t) && !/Римське/.test(q.media || "")) {
+    return { media: romanFull(), ...WIKI.roman };
+  }
+  if (/Площа прямокутника.+дорівнює/i.test(t)) {
+    const sides = t.match(/(\d+)\s*см\s*×\s*(\d+)/i);
+    if (sides) {
+      return {
+        text: `Яка площа прямокутника зі сторонами ${sides[1]} і ${sides[2]} см відповідно?`,
+        media:
+          wikiBlock(
+            WIKI.ploshcha.wikiUrl,
+            WIKI.ploshcha.wikiTitle,
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Rectangle_4x5.svg/languk-330px-Rectangle_4x5.svg.png",
+            "Площа",
+          ) + MEDIA.rectArea(),
+        ...WIKI.ploshcha,
+      };
+    }
+  }
+  if (/у книзі.+сторінок/i.test(t)) {
+    const nums = t.match(/\d+/g) || [];
+    return {
+      _stripWiki: true,
+      media: infoCard(
+        `📚 Всього <b>${nums[0] || "?"}</b> сторінок · прочитано <b>${nums[1] || "?"}</b><br>залишилось = ${nums[0] || "?"} − ${nums[1] || "?"}`,
+      ),
+    };
+  }
+  if (/школі.+учнів.+дівчат/i.test(t)) {
+    return {
+      _stripWiki: true,
+      media: infoCard("🏫 👦👧 Усього учнів − хлопчики = дівчатка"),
+    };
+  }
+  if (/котра буде година|хвилин залишилося/i.test(t)) {
+    return { media: timeFull(), ...WIKI.time };
+  }
+  if (/сотень у тисячі/i.test(t)) {
+    return { media: MEDIA.digitPlaces() };
+  }
+  if (/нулів у мільйоні/i.test(t)) {
+    return { media: infoCard("1 000 000 — одиниця + <b>6 нулів</b>") };
+  }
+  if (/(сантиметр|метр|кілометр|мм|дм|\bм\b|\bкм\b)/i.test(t) && /скільки|це скільки/i.test(t) && !/scheme-table/.test(q.media || "")) {
+    return { media: length() };
+  }
+  if (/(кілограм|грам|тонн|центнер|\bкг\b|\bг\b|\bт\b|\bц\b)/i.test(t) && /скільки|це скільки/i.test(t) && !/scheme-table/.test(q.media || "")) {
+    return { media: mass() };
+  }
+  if (/(хвилин|годин|секунд|доб|тиждень|місяц|рік|1\/\d+\s+(години|доби))/i.test(t) && /скільки|це скільки/i.test(t) && !/scheme-table/.test(q.media || "")) {
+    return { media: timeFull(), ...WIKI.time };
+  }
+  if (/кутів у квадрат|прямих кутів|прямий кут|градусів/i.test(t)) {
+    return { _stripWiki: true };
+  }
+  if (/п'ятикутник|шестикутник/i.test(t) && !/polygon/.test(q.media || "")) {
+    const sides = /шестикутник/i.test(t) ? 6 : 5;
+    return { _stripWiki: true, media: MEDIA.polygon(sides) };
+  }
+  return null;
+}
+
+function numberLineAround(center) {
+  const nums = [center - 3, center - 2, center - 1, center, center + 1, center + 2, center + 3];
+  return svg(
+    "0 0 360 90",
+    `<rect width="360" height="90" fill="#0f172a" rx="10"/>
+      <line x1="20" y1="50" x2="340" y2="50" stroke="#fbbf24" stroke-width="2.5"/>
+      ${nums
+        .map((n, i) => {
+          const x = 20 + i * 53;
+          const isTarget = n === center - 1 || n === center;
+          return `<line x1="${x}" y1="44" x2="${x}" y2="56" stroke="#fbbf24" stroke-width="${isTarget ? 3 : 1.5}"/>
+                  <text x="${x}" y="78" text-anchor="middle" font-family="ui-monospace,Menlo" font-size="10" fill="${n === center - 1 ? "#34d399" : "#94a3b8"}" font-weight="${n === center - 1 ? 800 : 400}">${n}</text>
+                  ${n === center - 1 ? `<text x="${x}" y="30" text-anchor="middle" font-size="9" fill="#86efac">наступник</text>` : ""}`;
+        })
+        .join("")}`,
+    340,
+  );
+}
+
+function morphScheme(word, label) {
+  const w = word.replace(/[«»]/g, "");
+  return svg(
+    "0 0 320 140",
+    `<rect width="320" height="140" fill="#0f172a" rx="10"/>
+      <text x="160" y="62" text-anchor="middle" font-family="Inter,Arial" font-size="28" font-weight="900" fill="#fde68a">${w}</text>
+      <text x="160" y="96" text-anchor="middle" font-family="Inter,Arial" font-size="14" fill="#34d399" font-weight="800">знайди ${label}</text>
+      <text x="160" y="118" text-anchor="middle" font-family="Inter,Arial" font-size="11" fill="#cbd5e1">розбір слова: приставка · корінь · суфікс · закінчення</text>`,
+    300,
+  );
+}
+
+function enhanceUkrainian(q) {
+  const t = q.text;
+  if (/корінь/i.test(t)) {
+    const w = (t.match(/«([^»]+)»/) || [])[1];
+    if (w) return { _stripWiki: true, media: morphScheme(w, "корінь") };
+  }
+  if (/суфікс/i.test(t)) {
+    const w = (t.match(/«([^»]+)»/) || [])[1];
+    if (w) return { _stripWiki: true, media: morphScheme(w, "суфікс") };
+  }
+  if (/префікс/i.test(t)) {
+    const w = (t.match(/«([^»]+)»/) || [])[1];
+    if (w) return { _stripWiki: true, media: morphScheme(w, "приставку") };
+  }
+  if (/питальн.+речен/i.test(t)) {
+    return {
+      _stripWiki: true,
+      media:
+        svg(
+          "0 0 320 140",
+          `<rect width="320" height="140" fill="#0f172a" rx="10"/>
+          <text x="160" y="58" text-anchor="middle" font-family="Inter,Arial" font-size="15" fill="#fde68a">Як тебе звати<b fill="#fbbf24">?</b></text>
+          <text x="160" y="100" text-anchor="middle" font-family="Inter,Arial" font-size="12" fill="#34d399">питальне речення · знак ?</text>`,
+          300,
+        ),
+    };
+  }
+  if (/окличн.+речен/i.test(t)) {
+    return {
+      _stripWiki: true,
+      media: svg(
+        "0 0 220 140",
+        `<rect width="220" height="140" fill="#0f172a" rx="10"/>
+        <text x="110" y="78" text-anchor="middle" font-family="Inter,Arial" font-size="60" font-weight="900" fill="#fbbf24">!</text>
+        <text x="110" y="116" text-anchor="middle" font-family="Inter,Arial" font-size="12" fill="#fde68a">окличне речення</text>`,
+        200,
+      ),
+    };
+  }
+  if (/розповідн.+речен/i.test(t)) {
+    return {
+      _stripWiki: true,
+      media: svg(
+        "0 0 320 140",
+        `<rect width="320" height="140" fill="#0f172a" rx="10"/>
+        <text x="160" y="62" text-anchor="middle" font-family="Inter,Arial" font-size="15" fill="#fde68a">Сонце світить яскраво<b fill="#94a3b8">.</b></text>
+        <text x="160" y="100" text-anchor="middle" font-family="Inter,Arial" font-size="12" fill="#34d399">розповідне речення · крапка</text>`,
+        300,
+      ),
+    };
+  }
+  if (/скільки слів у реченні/i.test(t)) {
+    const sent = (t.match(/«([^»]+)»/) || [])[1] || "";
+    const words = sent.split(/\s+/).filter(Boolean);
+    return {
+      _stripWiki: true,
+      media: infoCard(
+        `📖 «${sent}»<br>${words.map((w, i) => `<span style="color:#fde68a">${i + 1}.</span> ${w}`).join(" · ")}<br><span style="color:#86efac">порахуй слова</span>`,
+      ),
+    };
+  }
+  if (/скільки букв|скільки звуків/i.test(t) && !/голосн|приголосн/i.test(t)) {
+    const w = (t.match(/«([^»]+)»/) || [])[1];
+    if (w) {
+      return {
+        _stripWiki: true,
+        media: infoCard(`🔤 Слово «<b>${w}</b>» — порахуй букви/звуки`),
+      };
+    }
+  }
+  if (revealsAnswer(q)) {
+    const fresh = makeUkrMovaMedia(q);
+    if (fresh && !leaksAnswer(fresh)) {
+      return { _stripWiki: true, media: fresh };
+    }
+    return { _stripWiki: true, media: hintOnlyCard(q, "📝") };
+  }
+  if (shouldStripUkrWiki(q)) {
+    const cleaned = stripWikiHtml(q.media);
+    if (cleaned !== q.media) {
+      return { _stripWiki: true, media: cleaned || q.media };
+    }
+  }
+  return null;
+}
+
+function applyHeuristics(questions, subjectId, maker) {
+  let count = 0;
+  const skip = EXPLICIT_INDICES[subjectId] || new Set();
+  for (let i = 0; i < questions.length; i++) {
+    const q = questions[i];
+    let patch = null;
+    if (subjectId === "matematyka") patch = enhanceMatematyka(q);
+    else if (subjectId === "ukrayinska") patch = enhanceUkrainian(q);
+
+    if (patch && !skip.has(i)) {
+      applyPatch(q, patch);
+      count++;
+      continue;
+    }
+
+    if (revealsAnswer(q) && !skip.has(i) && subjectId !== "ukrayinska") {
+      let fresh = maker ? maker(q) : null;
+      if (!fresh || leaksAnswer(fresh)) {
+        const emoji = { informatyka: "💻", matematyka: "🧮" }[subjectId] || "💡";
+        fresh = hintOnlyCard(q, emoji);
+      }
+      if (fresh !== q.media) {
+        q.media = fresh;
+        delete q.wikiKeyword;
+        delete q.wikiTitle;
+        delete q.wikiUrl;
+        count++;
+      }
+    }
+  }
+  return count;
+}
+
+const SUBJECTS = [
+  { id: "matematyka", file: "matematyka-4-klas.json", patches: matematykaPatches, maker: makeMatematykaMedia },
+  { id: "ukrayinska", file: "ukrayinska-mova-4-klas.json", patches: ukrayinskaPatches, maker: makeUkrMovaMedia },
+  { id: "informatyka", file: "informatyka-4-klas.json", patches: null, maker: makeInformatykaMedia },
+  { id: "anhliyska", file: "anhliyska-mova-4-klas.json", patches: null, maker: makeAnhliyskaMedia },
+  { id: "ispanska", file: "ispanska-mova-4-klas.json", patches: null, maker: makeIspanskaMedia },
+];
+
+for (const sub of SUBJECTS) {
+  const path = resolve(DATA, sub.file);
+  const data = JSON.parse(readFileSync(path, "utf8"));
+  const explicit = sub.patches ? applyPatches(data.questions, sub.patches) : 0;
+  const heuristic = applyHeuristics(data.questions, sub.id, sub.maker);
+  writeFileSync(path, JSON.stringify(data, null, 2) + "\n", "utf8");
+  console.log(`${sub.file}: ${explicit} явних + ${heuristic} евристичних → ${path}`);
+}

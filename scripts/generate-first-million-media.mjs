@@ -1536,7 +1536,21 @@ async function main() {
   console.log("\n✓ All five subjects now have media.");
 }
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+const isMain =
+  process.argv[1] &&
+  path.resolve(process.argv[1]) === path.resolve(fileURLToPath(import.meta.url));
+
+if (isMain) {
+  main().catch((e) => {
+    console.error(e);
+    process.exit(1);
+  });
+}
+
+export {
+  makeMatematykaMedia,
+  makeUkrMovaMedia,
+  makeInformatykaMedia,
+  makeAnhliyskaMedia,
+  makeIspanskaMedia,
+};

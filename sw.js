@@ -1,4 +1,4 @@
-const CACHE_NAME = "mini-games-v18";
+const CACHE_NAME = "mini-games-v19";
 
 const PRECACHE = [
     "./",
@@ -21,6 +21,8 @@ const PRECACHE = [
     "./games/first-million/data/ya-doslidzhuyu-svit-4-klas.json",
     "./games/first-million/data/memolohiya-100.json",
     "./games/first-million/data/cheatcodes.json",
+    "./games/first-million/assets/coins/25-kopiyok.png",
+    "./games/first-million/assets/coins/1-hryvnia-obverse.png",
     "./games/adventure-academy/",
     "./games/adventure-academy/index.html",
     "./games/adventure-academy/data/themes.json",
