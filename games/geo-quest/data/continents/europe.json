@@ -1,0 +1,193 @@
+{
+  "id": "europe",
+  "title": "Європа",
+  "map": {
+    "viewBox": "0 0 1000 780",
+    "geoFile": "data/maps/europe-countries.json"
+  },
+  "nodes": [
+    {
+      "id": "ukraine",
+      "title": "Україна",
+      "emoji": "🇺🇦",
+      "countryId": "ukraine",
+      "unlock": { "type": "free" },
+      "rounds": [
+        {
+          "type": "capital",
+          "text": "Столиця України:",
+          "country": "Україна",
+          "answers": ["Київ", "Львів", "Одеса", "Харків"],
+          "correct": 0,
+          "explanation": "Київ — столиця України з давніх часів."
+        },
+        {
+          "type": "quiz",
+          "text": "Яке море омиває південь України?",
+          "answers": ["Чорне", "Балтійське", "Середземне", "Північне"],
+          "correct": 0,
+          "explanation": "Південне узбережжя України — на Чорному морі."
+        },
+        {
+          "type": "yesno",
+          "text": "Дніпро — найдовша річка, що тече територією України.",
+          "correct": true,
+          "explanation": "Так. Дніпро перетинає Україну з півночі на південь."
+        }
+      ]
+    },
+    {
+      "id": "poland",
+      "title": "Польща",
+      "emoji": "🇵🇱",
+      "countryId": "poland",
+      "unlock": { "requires": "ukraine", "minStars": 2 },
+      "rounds": [
+        {
+          "type": "mapTap",
+          "text": "Знайди на карті: Польща",
+          "targetCountryId": "poland",
+          "mapId": "europe-countries",
+          "explanation": "Польща — на сході Європи, між Німеччиною та Україною."
+        },
+        {
+          "type": "capital",
+          "text": "Столиця Польщі:",
+          "country": "Польща",
+          "answers": ["Варшава", "Краків", "Гданськ", "Вроцлав"],
+          "correct": 0,
+          "explanation": "Варшава — столиця Польщі."
+        },
+        {
+          "type": "quiz",
+          "text": "Яка валюта в Польщі?",
+          "answers": ["Злотий", "Євро", "Долар", "Фунт"],
+          "correct": 0,
+          "explanation": "Польща використовує злотий (PLN)."
+        }
+      ]
+    },
+    {
+      "id": "france",
+      "title": "Франція",
+      "emoji": "🇫🇷",
+      "countryId": "france",
+      "unlock": { "requires": "poland", "minStars": 2 },
+      "rounds": [
+        {
+          "type": "capital",
+          "text": "Столиця Франції:",
+          "country": "Франція",
+          "answers": ["Париж", "Ліон", "Марсель", "Ніцца"],
+          "correct": 0,
+          "explanation": "Париж — столиця Франції."
+        },
+        {
+          "type": "quiz",
+          "text": "Яка вежа — символ Парижа?",
+          "answers": ["Ейфелева", "Пізанська", "Біг-Бен", "Колізей"],
+          "correct": 0,
+          "explanation": "Ейфелева вежа стоїть у Парижі."
+        },
+        {
+          "type": "mapTap",
+          "text": "Знайди на карті: Франція",
+          "targetCountryId": "france",
+          "mapId": "europe-countries",
+          "explanation": "Франція — на заході Європи."
+        }
+      ]
+    },
+    {
+      "id": "italy",
+      "title": "Італія",
+      "emoji": "🇮🇹",
+      "countryId": "italy",
+      "unlock": { "requires": "france", "minStars": 2 },
+      "rounds": [
+        {
+          "type": "quiz",
+          "text": "Яка форма нагадує контур Італії на карті?",
+          "answers": ["Чобіт", "Коло", "Трикутник", "Квадрат"],
+          "correct": 0,
+          "explanation": "Півострів Італія нагадує чобіт або чобіток."
+        },
+        {
+          "type": "capital",
+          "text": "Столиця Італії:",
+          "country": "Італія",
+          "answers": ["Рим", "Мілан", "Венеція", "Неаполь"],
+          "correct": 0,
+          "explanation": "Рим — столиця Італії."
+        },
+        {
+          "type": "yesno",
+          "text": "Везувій — діючий вулкан поблизу Неаполя в Італії.",
+          "correct": true,
+          "explanation": "Так. Везувій знаходиться в Італії."
+        }
+      ]
+    },
+    {
+      "id": "spain",
+      "title": "Іспанія",
+      "emoji": "🇪🇸",
+      "countryId": "spain",
+      "unlock": { "requires": "italy", "minStars": 2 },
+      "rounds": [
+        {
+          "type": "yesno",
+          "text": "Іспанія займає більшу частину Піренейського півострова.",
+          "correct": true,
+          "explanation": "Так. На півострові також Андорра, частина Франції та Португалія."
+        },
+        {
+          "type": "capital",
+          "text": "Столиця Іспанії:",
+          "country": "Іспанія",
+          "answers": ["Мадрид", "Барселона", "Валенсія", "Севілья"],
+          "correct": 0,
+          "explanation": "Мадрид — столиця Іспанії."
+        },
+        {
+          "type": "quiz",
+          "text": "Яке море омиває схід Іспанії?",
+          "answers": ["Середземне", "Північне", "Чорне", "Балтійське"],
+          "correct": 0,
+          "explanation": "Східне узбережжя Іспанії — на Середземному морі."
+        }
+      ]
+    },
+    {
+      "id": "norway",
+      "title": "Норвегія",
+      "emoji": "🇳🇴",
+      "countryId": "norway",
+      "unlock": { "requires": "spain", "minStars": 2 },
+      "rounds": [
+        {
+          "type": "quiz",
+          "text": "Яку країну називають «країною фіордів»?",
+          "answers": ["Норвегія", "Швеція", "Данія", "Фінляндія"],
+          "correct": 0,
+          "explanation": "У Норвегії багато глибоких заток — фіордів."
+        },
+        {
+          "type": "mapTap",
+          "text": "Знайди на карті: Норвегія",
+          "targetCountryId": "norway",
+          "mapId": "europe-countries",
+          "explanation": "Норвегія — на півночі Європи, на Скандинавському півострові."
+        },
+        {
+          "type": "quiz",
+          "text": "Столиця Норвегії:",
+          "answers": ["Осло", "Берген", "Стокгольм", "Копенгаген"],
+          "correct": 0,
+          "explanation": "Осло — столиця Норвегії.",
+          "boss": true
+        }
+      ]
+    }
+  ]
+}

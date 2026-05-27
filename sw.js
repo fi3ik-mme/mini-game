@@ -1,4 +1,4 @@
-const CACHE_NAME = "mini-games-v19";
+const CACHE_NAME = "mini-games-v21";
 
 const PRECACHE = [
     "./",
@@ -29,7 +29,16 @@ const PRECACHE = [
     "./games/adventure-academy/data/space.json",
     "./games/adventure-academy/data/human-body.json",
     "./games/adventure-academy/data/ancient-egypt.json",
-    "./games/adventure-academy/data/steam.json"
+    "./games/adventure-academy/data/steam.json",
+    "./games/geo-quest/",
+    "./games/geo-quest/index.html",
+    "./games/geo-quest/data/world.json",
+    "./games/geo-quest/data/continents/europe.json",
+    "./games/geo-quest/data/continents/ocean.json",
+    "./games/geo-quest/data/maps/europe-simple.json",
+    "./games/geo-quest/data/maps/europe-countries.json",
+    "./games/geo-quest/data/maps/ocean-regions.json",
+    "./games/geo-quest/assets/earth-equirect.jpg"
 ];
 
 self.addEventListener("install", (event) => {

@@ -1,0 +1,71 @@
+{
+  "title": "Geo Quest",
+  "tagline": "Досліджуй • Вивчай • Перемагай",
+  "maxStarsTotal": 30,
+  "continents": [
+    {
+      "id": "europe",
+      "title": "Європа",
+      "emoji": "🏰",
+      "color": "#3b82f6",
+      "file": "data/continents/europe.json",
+      "unlock": { "type": "free" }
+    },
+    {
+      "id": "asia",
+      "title": "Азія",
+      "emoji": "🏯",
+      "color": "#dc2626",
+      "file": "data/continents/asia.json",
+      "comingSoon": true
+    },
+    {
+      "id": "africa",
+      "title": "Африка",
+      "emoji": "🦁",
+      "color": "#ca8a04",
+      "file": "data/continents/africa.json",
+      "comingSoon": true
+    },
+    {
+      "id": "north-america",
+      "title": "Північна Америка",
+      "emoji": "🗽",
+      "color": "#16a34a",
+      "file": "data/continents/north-america.json",
+      "comingSoon": true
+    },
+    {
+      "id": "south-america",
+      "title": "Південна Америка",
+      "emoji": "🌴",
+      "color": "#059669",
+      "file": "data/continents/south-america.json",
+      "comingSoon": true
+    },
+    {
+      "id": "oceania",
+      "title": "Австралія й Океанія",
+      "emoji": "🦘",
+      "color": "#7c3aed",
+      "file": "data/continents/oceania.json",
+      "comingSoon": true
+    },
+    {
+      "id": "antarctica",
+      "title": "Антарктида",
+      "emoji": "🐧",
+      "color": "#94a3b8",
+      "file": "data/continents/antarctica.json",
+      "comingSoon": true
+    }
+  ],
+  "ocean": {
+    "id": "ocean",
+    "title": "Світовий океан",
+    "emoji": "🌊",
+    "color": "#0891b2",
+    "file": "data/continents/ocean.json",
+    "unlock": { "type": "free" }
+  }
+}

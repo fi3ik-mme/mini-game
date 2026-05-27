@@ -1409,7 +1409,7 @@
 <div class="top-bar">
     <div style="display:flex;gap:6px;align-items:center;">
         <a class="back-link" href="../../index.html">← Меню</a>
-        <a class="back-link" href="edit.html" title="Редактор питань">✏️</a>
+        <a id="edit-link" class="back-link" href="edit.html" title="Редактор питань" hidden>✏️</a>
     </div>
     <div class="top-controls">
         <button id="cheat-toggle" class="icon-btn" aria-label="Чіткод" type="button">🔑</button>
@@ -1811,6 +1811,7 @@
                 if (!effect || !effect.type) return;
                 const c = load();
                 if (effect.type === "unlockAll") c.unlockAll = true;
+                if (effect.type === "editor") c.editor = true;
                 save(c);
             }
         };
@@ -1818,6 +1819,11 @@
 
     function normalizeCheatCode(s) {
         return String(s || "").normalize("NFC").trim().toLowerCase().replace(/\s+/g, " ");
+    }
+
+    function updateEditorLink() {
+        const link = document.getElementById("edit-link");
+        if (link) link.hidden = !cheats.isOn("editor");
     }
 
     /* -------------------- Unlock rules -------------------- */
@@ -2883,6 +2889,7 @@
         setCheatFeedback(match.title || "Чіткод активовано!", "success");
         audio.win();
         confetti(40);
+        updateEditorLink();
         // Re-render subject list so newly-unlocked tiers light up immediately.
         loadSubjects();
         // Auto-close after a short victory pause.
@@ -2938,6 +2945,7 @@
             localStorage.removeItem("fm.cheats");
         } catch (_) {}
         closeResetModal();
+        updateEditorLink();
         refreshWalletBar();
         loadSubjects();
         audio.tick();
@@ -2957,6 +2965,7 @@
         });
     }
 
+    updateEditorLink();
     loadSubjects();
 
     if ("serviceWorker" in navigator) {

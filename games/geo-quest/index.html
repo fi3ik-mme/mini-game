@@ -1,0 +1,1786 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, viewport-fit=cover"/>
+    <title>Geo Quest</title>
+    <link rel="icon" type="image/svg+xml" href="../../icon.svg" />
+    <style>
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        html, body { overscroll-behavior: none; }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            min-height: 100dvh;
+            background: radial-gradient(ellipse at top, #0c4a6e 0%, #0f172a 65%);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            color: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 12px;
+            padding-bottom: max(16px, env(safe-area-inset-bottom));
+            touch-action: manipulation;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        body.shake { animation: shake 0.45s; }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-6px); }
+            40% { transform: translateX(6px); }
+            60% { transform: translateX(-4px); }
+            80% { transform: translateX(4px); }
+        }
+
+        .top-bar {
+            width: 100%;
+            max-width: 720px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        .back-link {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 8px 12px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .back-link:active { background: rgba(255,255,255,0.14); }
+        .top-controls { display: flex; gap: 6px; }
+        .icon-btn {
+            background: rgba(255,255,255,0.06);
+            color: #f8fafc;
+            border: 1px solid rgba(255,255,255,0.12);
+            font-size: 1.1rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+        .icon-btn:active { transform: scale(0.94); }
+
+        .hud {
+            width: 100%;
+            max-width: 720px;
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        .hud-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 99px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        .hud-chip.pop { animation: pop 0.45s ease; }
+        @keyframes pop {
+            0% { transform: scale(1); }
+            40% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .hud-chip.stars { color: #fde047; border-color: rgba(253,224,71,0.4); }
+        .hud-chip.coins { color: #fbbf24; border-color: rgba(251,191,36,0.4); }
+
+        .screen {
+            display: none;
+            width: 100%;
+            max-width: 720px;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            animation: screen-in 0.35s ease;
+        }
+        .screen.active { display: flex; }
+        @keyframes screen-in {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1.title {
+            margin: 0;
+            font-size: 1.75rem;
+            text-align: center;
+            background: linear-gradient(180deg, #fde68a, #fbbf24 60%, #d97706);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .tagline { color: #94a3b8; font-size: 0.85rem; margin: -4px 0 8px; }
+
+        .hub-scene {
+            position: relative;
+            width: min(96vw, 400px);
+            aspect-ratio: 1;
+            margin: 0 auto 10px;
+            flex-shrink: 0;
+            overflow: visible;
+        }
+        .hub-scene.flight { overflow: hidden; }
+        .globe-wrap {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 58%;
+            height: 58%;
+            transform: translate(-50%, -50%) scale(1);
+            transform-origin: center center;
+            z-index: 2;
+            will-change: transform;
+        }
+        .globe-canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            cursor: grab;
+            touch-action: none;
+            box-shadow:
+                0 0 40px rgba(56, 189, 248, 0.25),
+                0 12px 28px rgba(0, 0, 0, 0.45);
+        }
+        .globe-canvas.dragging { cursor: grabbing; }
+        .flight-vignette {
+            position: absolute;
+            inset: -8%;
+            border-radius: 50%;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 6;
+            background: radial-gradient(circle at 50% 48%, transparent 18%, rgba(0, 8, 24, 0.55) 72%, rgba(0, 0, 0, 0.88) 100%);
+            transition: opacity 0.35s ease;
+        }
+        .hub-scene.flight .flight-vignette { opacity: 1; }
+        .hub-scene.flight .orbit-ring {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease;
+        }
+        .hub-scene.flight .globe-canvas {
+            box-shadow:
+                0 0 60px rgba(56, 189, 248, 0.45),
+                0 20px 50px rgba(0, 0, 0, 0.55);
+        }
+        #screen-hub.flight-active .hub-actions,
+        #screen-hub.flight-active .hub-footer,
+        #screen-hub.flight-active .tagline {
+            opacity: 0.25;
+            pointer-events: none;
+            transition: opacity 0.35s;
+        }
+        .globe-canvas:focus-visible {
+            outline: 2px solid #fbbf24;
+            outline-offset: 4px;
+        }
+        .hub-scene::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 62%;
+            height: 62%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.12), transparent 55%);
+            pointer-events: none;
+            z-index: 3;
+        }
+        .orbit-ring {
+            position: absolute;
+            inset: 0;
+            z-index: 4;
+            pointer-events: none;
+        }
+        .orbit-chip {
+            position: absolute;
+            pointer-events: auto;
+            width: 76px;
+            padding: 8px 6px;
+            border-radius: 14px;
+            border: 2px solid rgba(255, 255, 255, 0.18);
+            background: rgba(15, 23, 42, 0.88);
+            backdrop-filter: blur(6px);
+            color: #f8fafc;
+            cursor: pointer;
+            text-align: center;
+            transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+        }
+        .orbit-chip:active { transform: translate(-50%, -50%) scale(0.94); }
+        .orbit-chip .em { display: block; font-size: 1.35rem; line-height: 1.1; }
+        .orbit-chip .nm {
+            display: block;
+            font-size: 0.62rem;
+            line-height: 1.2;
+            color: #cbd5e1;
+            margin-top: 3px;
+            max-width: 72px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .orbit-chip .pr { display: block; font-size: 0.65rem; color: #fde047; margin-top: 2px; }
+        .orbit-chip.locked { opacity: 0.55; }
+        .orbit-chip.highlight {
+            border-color: #fbbf24;
+            box-shadow: 0 0 16px rgba(251, 191, 36, 0.45);
+        }
+        .orbit-chip.pulse { animation: pulse 1.5s infinite; }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(251,191,36,0.45); }
+            50% { box-shadow: 0 0 0 8px rgba(251,191,36,0); }
+        }
+        @media (min-width: 400px) {
+            .orbit-chip { width: 84px; }
+            .orbit-chip .nm { font-size: 0.68rem; max-width: 80px; }
+        }
+
+        .hub-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            width: 100%;
+            max-width: 320px;
+        }
+        .btn {
+            border: none;
+            border-radius: 14px;
+            padding: 14px 18px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            color: white;
+            width: 100%;
+        }
+        .btn:active { transform: scale(0.98); }
+        .btn-primary { background: linear-gradient(180deg, #22c55e, #15803d); }
+        .btn-secondary { background: linear-gradient(180deg, #3b82f6, #1d4ed8); }
+
+        .hub-footer {
+            width: 100%;
+            max-width: 720px;
+            display: flex;
+            justify-content: space-around;
+            font-size: 0.8rem;
+            color: #94a3b8;
+            padding-top: 4px;
+        }
+
+        .map-header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .map-header h2 { margin: 0; font-size: 1.25rem; flex: 1; text-align: center; }
+
+        .map-scroll {
+            width: 100%;
+            max-width: 720px;
+            max-height: min(72vh, 640px);
+            overflow-y: auto;
+            border-radius: 18px;
+            border: 2px solid rgba(255,255,255,0.12);
+            background: #0c4a6e;
+        }
+        .map-svg { width: 100%; height: auto; display: block; }
+        .map-geo {
+            stroke: rgba(255, 255, 255, 0.45);
+            stroke-width: 1.2;
+            stroke-linejoin: round;
+            transition: fill 0.2s;
+        }
+        .map-geo.context {
+            fill: rgba(71, 85, 105, 0.45);
+        }
+        .map-geo.playable {
+            fill: rgba(56, 189, 248, 0.42);
+            stroke: rgba(186, 230, 253, 0.75);
+            stroke-width: 1.5;
+        }
+        .map-geo.playable.done {
+            fill: rgba(34, 197, 94, 0.48);
+        }
+        .map-node {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .map-node circle { stroke: #fff; stroke-width: 3; }
+        .map-node.locked circle { fill: #64748b; }
+        .map-node.available circle { fill: #22c55e; }
+        .map-node.current circle { fill: #fbbf24; animation: pulse 1.2s infinite; }
+        .map-node.done-1 circle { fill: #eab308; }
+        .map-node.done-2 circle { fill: #f59e0b; }
+        .map-node.done-3 circle { fill: #f97316; }
+        .map-node text { fill: #fff; font-size: 22px; text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+        .trail { fill: none; stroke: rgba(253,224,71,0.5); stroke-width: 4; stroke-dasharray: 8 6; }
+
+        .game-header {
+            width: 100%;
+            text-align: center;
+        }
+        .game-location { font-weight: 700; font-size: 1rem; }
+        .round-dots {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .round-dots .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+        }
+        .round-dots .dot.done { background: #22c55e; }
+        .round-dots .dot.current { background: #fbbf24; transform: scale(1.2); }
+
+        .mentor {
+            width: 100%;
+            padding: 10px 14px;
+            border-radius: 14px;
+            background: rgba(34,197,94,0.15);
+            border: 1px solid rgba(34,197,94,0.35);
+            font-size: 0.9rem;
+            color: #bbf7d0;
+        }
+        .prompt {
+            font-size: 1.15rem;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.35;
+            padding: 8px 4px;
+        }
+        .media { width: 100%; text-align: center; }
+        .media img { max-width: 100%; max-height: 200px; border-radius: 12px; }
+
+        .answers {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+        }
+        .answer-btn {
+            padding: 16px;
+            border-radius: 14px;
+            border: 2px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.08);
+            color: #f8fafc;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+        }
+        .answer-btn:active { background: rgba(255,255,255,0.18); }
+        .answer-btn.correct { background: rgba(34,197,94,0.35); border-color: #22c55e; }
+        .answer-btn.wrong { background: rgba(239,68,68,0.35); border-color: #ef4444; }
+        .answer-btn:disabled { opacity: 0.7; pointer-events: none; }
+
+        .answers.yesno { flex-direction: row; }
+        .answers.yesno .answer-btn { flex: 1; }
+
+        .map-tap-svg {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            display: block;
+            border-radius: 12px;
+            background: rgba(15,23,42,0.5);
+        }
+        .map-tap-svg path {
+            fill: rgba(56,189,248,0.35);
+            stroke: #7dd3fc;
+            stroke-width: 2;
+            cursor: pointer;
+        }
+        .map-tap-svg path:hover, .map-tap-svg path:focus { fill: rgba(251,191,36,0.5); }
+        .map-tap-svg path.highlight { fill: rgba(34,197,94,0.6); }
+
+        .combo-banner {
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, #f59e0b, #eab308);
+            color: #1e293b;
+            font-weight: 800;
+            padding: 10px 24px;
+            border-radius: 99px;
+            z-index: 50;
+            animation: screen-in 0.3s;
+        }
+
+        .modal-backdrop {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.65);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .modal-backdrop.active { display: flex; }
+        .modal {
+            background: linear-gradient(180deg, #1e3a5f, #0f172a);
+            border: 2px solid rgba(255,255,255,0.15);
+            border-radius: 20px;
+            padding: 24px 20px;
+            max-width: 360px;
+            width: 100%;
+            text-align: center;
+        }
+        .modal h3 { margin: 0 0 10px; font-size: 1.25rem; }
+        .modal p { color: #cbd5e1; margin: 0 0 16px; line-height: 1.4; }
+        .modal .stars-big { font-size: 2rem; letter-spacing: 4px; margin: 8px 0; }
+        .modal-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            background: #3b82f6;
+            color: white;
+        }
+        .modal-btn:active { opacity: 0.9; }
+
+        .flash {
+            pointer-events: none;
+            position: fixed;
+            inset: 0;
+            z-index: 40;
+            opacity: 0;
+        }
+        .flash.correct { animation: flash-in 0.35s; background: rgba(34,197,94,0.25); }
+        .flash.wrong { animation: flash-in 0.35s; background: rgba(239,68,68,0.2); }
+        .flash.win { animation: flash-in 0.5s; background: rgba(251,191,36,0.2); }
+        @keyframes flash-in {
+            0% { opacity: 0; }
+            30% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+        .confetti {
+            position: fixed;
+            top: -20px;
+            z-index: 60;
+            animation: fall 2.5s forwards;
+            pointer-events: none;
+        }
+        @keyframes fall {
+            to { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+        }
+        .toast-msg {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(15,23,42,0.95);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 10px 18px;
+            border-radius: 99px;
+            z-index: 80;
+            font-size: 0.9rem;
+        }
+
+        @media (min-width: 560px) {
+            .answers.grid { display: grid; grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="top-bar">
+    <a class="back-link" href="../../index.html">← Меню</a>
+    <div class="top-controls">
+        <button id="sound-toggle" class="icon-btn" type="button" aria-label="Звук">🔊</button>
+        <button id="voice-toggle" class="icon-btn" type="button" aria-label="Озвучка">🔇</button>
+    </div>
+</header>
+
+<div class="hud">
+    <span class="hud-chip stars">⭐ <span id="stars-count">0</span></span>
+    <span class="hud-chip coins">🪙 <span id="coins-count">0</span></span>
+</div>
+
+<section id="screen-hub" class="screen active">
+    <h1 class="title">Geo Quest</h1>
+    <p class="tagline" id="hub-tagline">Досліджуй • Вивчай • Перемагай</p>
+    <div class="hub-scene" id="hub-scene">
+        <div class="globe-wrap" id="globe-wrap">
+            <canvas id="globe-canvas" class="globe-canvas" aria-label="Глобус Землі. Обертай пальцем і натисни на континент."></canvas>
+        </div>
+        <div class="flight-vignette" id="flight-vignette" aria-hidden="true"></div>
+        <div class="orbit-ring" id="orbit-ring"></div>
+    </div>
+    <div class="hub-actions">
+        <button id="btn-resume" class="btn btn-primary" type="button">Продовжити подорож</button>
+        <button id="btn-levels" class="btn btn-secondary" type="button">Вибір рівня</button>
+    </div>
+    <footer class="hub-footer">
+        <span id="footer-stars">Зірки: 0 / 30</span>
+        <span id="footer-badges">Бейджі: 0</span>
+    </footer>
+</section>
+
+<section id="screen-map" class="screen">
+    <div class="map-header">
+        <button id="map-back" class="back-link" type="button">← Глобус</button>
+        <h2 id="map-title">Карта</h2>
+        <span style="width:72px"></span>
+    </div>
+    <div class="map-scroll" id="map-scroll">
+        <svg id="map-svg" class="map-svg" viewBox="0 0 800 1200"></svg>
+    </div>
+</section>
+
+<section id="screen-game" class="screen">
+    <div class="game-header">
+        <div class="game-location" id="game-location">—</div>
+        <div class="round-dots" id="round-dots"></div>
+    </div>
+    <div id="mentor-bubble" class="mentor">🧭 Капітан Компас: готовий до пригод?</div>
+    <div id="game-prompt" class="prompt"></div>
+    <div id="game-media" class="media"></div>
+    <div id="game-answers" class="answers grid"></div>
+</section>
+
+<div id="modal-locked" class="modal-backdrop" role="dialog">
+    <div class="modal">
+        <h3>🔒 Маркер закритий</h3>
+        <p id="locked-msg">Спочатку набери 2 зірки на попередній точці.</p>
+        <button class="modal-btn" type="button" data-close="locked">Зрозуміло</button>
+    </div>
+</div>
+
+<div id="modal-feedback" class="modal-backdrop" role="dialog">
+    <div class="modal">
+        <h3 id="feedback-title">Пояснення</h3>
+        <p id="feedback-text"></p>
+        <button id="feedback-next" class="modal-btn" type="button">Далі</button>
+    </div>
+</div>
+
+<div id="modal-result" class="modal-backdrop" role="dialog">
+    <div class="modal">
+        <h3 id="result-title">Точку пройдено!</h3>
+        <div class="stars-big" id="result-stars">⭐</div>
+        <p id="result-coins">+0 монет</p>
+        <button id="result-next" class="modal-btn" type="button">На карту</button>
+    </div>
+</div>
+
+<div id="flash" class="flash"></div>
+
+<script>
+(function () {
+    "use strict";
+
+    const STORAGE_KEY = "geoQuest:v1";
+    const UNLOCK_MIN_STARS = 2;
+    const MAX_STARS_TOTAL = 30;
+
+    /** Lat/lon bounds for picking continents on the globe (approximate). */
+    const LAND_PICKERS = [
+        { id: "antarctica", test(lat, lon) { return lat < -60; } },
+        { id: "oceania", test(lat, lon) { return lat >= -50 && lat <= 12 && lon >= 95 && lon <= 180; } },
+        { id: "south-america", test(lat, lon) { return lat >= -56 && lat <= 15 && lon >= -82 && lon <= -34; } },
+        { id: "north-america", test(lat, lon) { return lat >= 12 && lat <= 72 && lon >= -170 && lon <= -52; } },
+        { id: "europe", test(lat, lon) { return lat >= 36 && lat <= 72 && lon >= -30 && lon <= 60; } },
+        { id: "africa", test(lat, lon) { return lat >= -35 && lat <= 37 && lon >= -20 && lon <= 52; } },
+        {
+            id: "asia",
+            test(lat, lon) {
+                if (lat < -8 || lat > 77) return false;
+                return (lon >= 25 && lon <= 180) || (lon >= -180 && lon <= -168);
+            }
+        }
+    ];
+
+    const PRAISE = [
+        "Чудово, досліднику!",
+        "Саме так! Ти на карті!",
+        "Відмінна географія!",
+        "Капітан гордиться!",
+        "Ще одна перемога!"
+    ];
+    const ENCOURAGE = [
+        "Нічого страшного — вчимося разом!",
+        "Ось підказка:",
+        "Спробуй ще раз наступного разу!",
+        "Головне — запам’ятати:"
+    ];
+
+    const DEFAULT_SAVE = {
+        version: 1,
+        coins: 0,
+        totalStars: 0,
+        comboBest: 0,
+        soundOn: true,
+        voiceOn: false,
+        lastPlayed: null,
+        continents: {},
+        badges: []
+    };
+
+    const hubScreen = document.getElementById("screen-hub");
+    const mapScreen = document.getElementById("screen-map");
+    const gameScreen = document.getElementById("screen-game");
+    const screens = [hubScreen, mapScreen, gameScreen];
+
+    const starsCountEl = document.getElementById("stars-count");
+    const coinsCountEl = document.getElementById("coins-count");
+    const hubScene = document.getElementById("hub-scene");
+    const orbitRing = document.getElementById("orbit-ring");
+    const globeWrap = document.getElementById("globe-wrap");
+    const globeCanvas = document.getElementById("globe-canvas");
+    const mapSvg = document.getElementById("map-svg");
+    const mapTitle = document.getElementById("map-title");
+    const gameLocation = document.getElementById("game-location");
+    const roundDots = document.getElementById("round-dots");
+    const mentorBubble = document.getElementById("mentor-bubble");
+    const gamePrompt = document.getElementById("game-prompt");
+    const gameMedia = document.getElementById("game-media");
+    const gameAnswers = document.getElementById("game-answers");
+    const flashEl = document.getElementById("flash");
+    const soundToggle = document.getElementById("sound-toggle");
+    const voiceToggle = document.getElementById("voice-toggle");
+
+    const gameBase = (() => {
+        const m = location.pathname.match(/^(.*\/games\/[^/]+)/);
+        return (m ? m[1] : location.pathname.replace(/\/[^/]*$/, "")) + "/";
+    })();
+    const url = (p) => gameBase + p.replace(/^\//, "");
+
+    function loadSave() {
+        try {
+            const raw = localStorage.getItem(STORAGE_KEY);
+            if (!raw) return JSON.parse(JSON.stringify(DEFAULT_SAVE));
+            return { ...DEFAULT_SAVE, ...JSON.parse(raw) };
+        } catch (_) {
+            return JSON.parse(JSON.stringify(DEFAULT_SAVE));
+        }
+    }
+    function saveSave() {
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(save)); } catch (_) {}
+    }
+    const save = loadSave();
+
+    const audio = (() => {
+        let ctx = null;
+        function ensure() {
+            if (!ctx) {
+                const C = window.AudioContext || window.webkitAudioContext;
+                if (!C) return null;
+                ctx = new C();
+            }
+            if (ctx.state === "suspended") ctx.resume();
+            return ctx;
+        }
+        function tone(freq, dur, type = "sine", gain = 0.12, when = 0) {
+            if (!save.soundOn) return;
+            const c = ensure();
+            if (!c) return;
+            const t0 = c.currentTime + when;
+            const osc = c.createOscillator();
+            const g = c.createGain();
+            osc.type = type;
+            osc.frequency.setValueAtTime(freq, t0);
+            g.gain.setValueAtTime(0, t0);
+            g.gain.linearRampToValueAtTime(gain, t0 + 0.01);
+            g.gain.exponentialRampToValueAtTime(0.001, t0 + dur);
+            osc.connect(g).connect(c.destination);
+            osc.start(t0);
+            osc.stop(t0 + dur + 0.05);
+        }
+        return {
+            tap: () => tone(660, 0.05, "triangle", 0.08),
+            select: () => { tone(523, 0.08, "triangle", 0.1); tone(784, 0.1, "triangle", 0.1, 0.05); },
+            correct: () => [659, 880, 1175].forEach((f, i) => tone(f, 0.18, "triangle", 0.12, i * 0.07)),
+            wrong: () => { tone(220, 0.22, "sawtooth", 0.1); tone(165, 0.34, "sawtooth", 0.09, 0.08); },
+            star: () => { tone(1175, 0.1); tone(1760, 0.14, "sine", 0.1, 0.06); },
+            coin: () => { tone(880, 0.08, "square", 0.08); tone(1320, 0.12, "square", 0.08, 0.05); },
+            win: () => [523, 659, 784, 1047].forEach((f, i) => tone(f, 0.2, "triangle", 0.12, i * 0.1))
+        };
+    })();
+
+    const voice = (() => {
+        const supported = "speechSynthesis" in window;
+        let ukVoice = null;
+        function pick() {
+            if (!supported) return;
+            ukVoice = speechSynthesis.getVoices().find(v => /^uk/i.test(v.lang)) || null;
+        }
+        if (supported) {
+            pick();
+            speechSynthesis.onvoiceschanged = pick;
+        }
+        return {
+            speak(text) {
+                if (!supported || !save.voiceOn || !text) return;
+                try {
+                    speechSynthesis.cancel();
+                    const u = new SpeechSynthesisUtterance(text);
+                    u.lang = "uk-UA";
+                    if (ukVoice) u.voice = ukVoice;
+                    speechSynthesis.speak(u);
+                } catch (_) {}
+            },
+            stop() {
+                if (supported) try { speechSynthesis.cancel(); } catch (_) {}
+            }
+        };
+    })();
+
+    function randomPick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+    function flash(kind) {
+        flashEl.className = "flash " + kind;
+        void flashEl.offsetWidth;
+        setTimeout(() => { flashEl.className = "flash"; }, 400);
+    }
+    function shake() {
+        document.body.classList.remove("shake");
+        void document.body.offsetWidth;
+        document.body.classList.add("shake");
+        setTimeout(() => document.body.classList.remove("shake"), 450);
+    }
+    function confetti(n = 28) {
+        const em = ["🎉", "⭐", "🪙", "🌍", "✨"];
+        for (let i = 0; i < n; i++) {
+            const el = document.createElement("span");
+            el.className = "confetti";
+            el.textContent = em[i % em.length];
+            el.style.left = Math.random() * 100 + "vw";
+            el.style.fontSize = 14 + Math.random() * 16 + "px";
+            document.body.appendChild(el);
+            setTimeout(() => el.remove(), 2800);
+        }
+    }
+    function toast(msg) {
+        const el = document.createElement("div");
+        el.className = "toast-msg";
+        el.textContent = msg;
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 2000);
+    }
+    function showComboBanner(text) {
+        const el = document.createElement("div");
+        el.className = "combo-banner";
+        el.textContent = text;
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 1400);
+    }
+
+    function continentSave(id) {
+        if (!save.continents[id]) save.continents[id] = { nodes: {} };
+        return save.continents[id];
+    }
+    function nodeStars(continentId, nodeId) {
+        return save.continents[continentId]?.nodes[nodeId]?.stars || 0;
+    }
+    function recalcTotalStars() {
+        let t = 0;
+        for (const cid in save.continents) {
+            const nodes = save.continents[cid].nodes || {};
+            for (const nid in nodes) t += nodes[nid].stars || 0;
+        }
+        save.totalStars = t;
+    }
+    function updateHud(animate) {
+        starsCountEl.textContent = save.totalStars;
+        coinsCountEl.textContent = save.coins;
+        document.getElementById("footer-stars").textContent =
+            "Зірки: " + save.totalStars + " / " + MAX_STARS_TOTAL;
+        document.getElementById("footer-badges").textContent =
+            "Бейджі: " + (save.badges?.length || 0);
+        if (animate === "stars") {
+            starsCountEl.parentElement.classList.remove("pop");
+            void starsCountEl.parentElement.offsetWidth;
+            starsCountEl.parentElement.classList.add("pop");
+        }
+        if (animate === "coins") {
+            coinsCountEl.parentElement.classList.remove("pop");
+            void coinsCountEl.parentElement.offsetWidth;
+            coinsCountEl.parentElement.classList.add("pop");
+        }
+    }
+
+    soundToggle.addEventListener("click", () => {
+        save.soundOn = !save.soundOn;
+        saveSave();
+        soundToggle.textContent = save.soundOn ? "🔊" : "🔇";
+        if (save.soundOn) audio.tap();
+    });
+    voiceToggle.addEventListener("click", () => {
+        save.voiceOn = !save.voiceOn;
+        saveSave();
+        voiceToggle.textContent = save.voiceOn ? "🗣️" : "🔇";
+        if (save.voiceOn) voice.speak("Озвучка увімкнена");
+        else voice.stop();
+    });
+    soundToggle.textContent = save.soundOn ? "🔊" : "🔇";
+    voiceToggle.textContent = save.voiceOn ? "🗣️" : "🔇";
+
+    function showScreen(el) {
+        voice.stop();
+        screens.forEach(s => s.classList.toggle("active", s === el));
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    let world = null;
+    const continentCache = {};
+    const mapCache = {};
+    const mapGeoCache = {};
+
+    async function fetchJson(path) {
+        const res = await fetch(url(path));
+        if (!res.ok) throw new Error(path + " HTTP " + res.status);
+        return res.json();
+    }
+
+    async function loadWorld() {
+        if (world) return world;
+        world = await fetchJson("data/world.json");
+        return world;
+    }
+
+    async function loadContinentData(meta) {
+        const key = meta.id;
+        if (continentCache[key]) return continentCache[key];
+        const data = await fetchJson(meta.file);
+        continentCache[key] = data;
+        return data;
+    }
+
+    async function loadMap(mapId) {
+        if (mapCache[mapId]) return mapCache[mapId];
+        const data = await fetchJson("data/maps/" + mapId + ".json");
+        mapCache[mapId] = data;
+        return data;
+    }
+
+    async function loadContinentGeo(continentData) {
+        const geoFile = continentData.map?.geoFile;
+        if (!geoFile) return null;
+        if (mapGeoCache[continentData.id]) return mapGeoCache[continentData.id];
+        const data = await fetchJson(geoFile);
+        mapGeoCache[continentData.id] = data;
+        return data;
+    }
+
+    function nodeGeoId(node) {
+        return node.countryId || node.regionId || node.id;
+    }
+
+    function findGeoFeature(geo, node) {
+        if (!geo) return null;
+        const id = nodeGeoId(node);
+        const list = geo.countries || geo.regions || [];
+        return list.find(f => f.id === id) || null;
+    }
+
+    function getNodeCenter(geo, node) {
+        const f = findGeoFeature(geo, node);
+        if (f && f.center) return { x: f.center.x, y: f.center.y };
+        return null;
+    }
+
+    function getRegionList() {
+        const list = [];
+        for (const c of world.continents || []) list.push({ ...c, kind: "continent" });
+        if (world.ocean) list.push({ ...world.ocean, kind: "ocean" });
+        return list;
+    }
+
+    function isComingSoon(meta) {
+        return !!meta.comingSoon;
+    }
+
+    function maxStarsForRegion(data) {
+        return (data.nodes?.length || 0) * 3;
+    }
+
+    function starsInRegion(continentId) {
+        const cs = save.continents[continentId];
+        if (!cs) return 0;
+        let s = 0;
+        for (const nid in cs.nodes) s += cs.nodes[nid].stars || 0;
+        return s;
+    }
+
+    function canUnlockNode(node, data) {
+        const u = node.unlock;
+        if (!u || u.type === "free") return true;
+        if (!u.requires) return true;
+        const prevStars = nodeStars(data.id, u.requires);
+        return prevStars >= (u.minStars ?? UNLOCK_MIN_STARS);
+    }
+
+    function findPrevNode(node, data) {
+        const u = node.unlock;
+        if (!u || !u.requires) return null;
+        return data.nodes.find(n => n.id === u.requires) || null;
+    }
+
+    function starsForSession(correct, total, wrong, comboMax) {
+        const ratio = correct / total;
+        if (ratio < 0.5) return 0;
+        if (ratio >= 1) return 3;
+        if (ratio >= 0.8 && wrong <= 1) return 2;
+        if (ratio >= 0.8 && comboMax >= 3) return 3;
+        if (ratio >= 0.8) return 2;
+        return 1;
+    }
+
+    let currentRegion = null;
+    let currentData = null;
+    let currentNode = null;
+    let session = null;
+    let answering = false;
+
+    function regionMaxStars(meta) {
+        if (meta.id === "europe") return 18;
+        if (meta.id === "ocean") return 12;
+        return "—";
+    }
+
+    function renderOrbitRing() {
+        orbitRing.innerHTML = "";
+        const regions = getRegionList();
+        const n = regions.length;
+        const radiusPct = 46;
+        regions.forEach((meta, i) => {
+            const angleDeg = -90 + (360 / n) * i;
+            const angleRad = angleDeg * Math.PI / 180;
+            const left = 50 + radiusPct * Math.cos(angleRad);
+            const top = 50 + radiusPct * Math.sin(angleRad);
+            const chip = document.createElement("button");
+            chip.type = "button";
+            chip.className = "orbit-chip" + (isComingSoon(meta) ? " locked" : "");
+            chip.dataset.regionId = meta.id;
+            chip.style.left = left + "%";
+            chip.style.top = top + "%";
+            chip.style.transform = "translate(-50%, -50%)";
+            const got = starsInRegion(meta.id);
+            chip.innerHTML =
+                '<span class="em">' + meta.emoji + "</span>" +
+                '<span class="nm">' + meta.title + (isComingSoon(meta) ? " 🔒" : "") + "</span>" +
+                '<span class="pr">' + got + "/" + regionMaxStars(meta) + "</span>";
+            chip.addEventListener("click", () => beginRegionFlight(meta));
+            orbitRing.appendChild(chip);
+        });
+        highlightOrbitChip(save.lastPlayed?.continentId);
+    }
+
+    function highlightOrbitChip(regionId) {
+        orbitRing.querySelectorAll(".orbit-chip").forEach(c => {
+            c.classList.toggle("pulse", regionId && c.dataset.regionId === regionId);
+            c.classList.toggle("highlight", regionId && c.dataset.regionId === regionId);
+        });
+    }
+
+    function pickContinentAtLatLon(lat, lon) {
+        for (const p of LAND_PICKERS) {
+            if (p.test(lat, lon)) return p.id;
+        }
+        return null;
+    }
+
+    /**
+     * Геометричні центри регіонів (lat/lon на Землі).
+     * Кути камери (lon/tilt) обчислюються окремо, щоб центр екрана = ця точка.
+     */
+    const REGION_GEO_CENTERS = {
+        europe: { lat: 54.5, lon: 17.5 },
+        asia: { lat: 43.5, lon: 88.0 },
+        africa: { lat: 5.5, lon: 22.5 },
+        "north-america": { lat: 47.0, lon: -101.0 },
+        "south-america": { lat: -14.5, lon: -56.5 },
+        oceania: { lat: -23.5, lon: 140.5 },
+        antarctica: { lat: -82.5, lon: 25.0 },
+        ocean: { lat: 0.0, lon: -160.0 }
+    };
+    const TILT_MIN = -68;
+    const TILT_MAX = 68;
+
+    const AUTO_ROTATE_DEG_PER_SEC = 5;
+    const FLIGHT_ROTATE_MS = 1000;
+    const FLIGHT_ZOOM_MS = 1350;
+    const FLIGHT_MAX_ZOOM = 5.5;
+
+    const globe = (() => {
+        let lon = 20;
+        let tilt = 0;
+        let zoom = 1;
+        let texPixels = null;
+        let texW = 0;
+        let texH = 0;
+        let dragging = false;
+        let lastX = 0;
+        let lastY = 0;
+        let moved = false;
+        let ready = false;
+        let autoRotate = true;
+        let animating = false;
+        let loopId = 0;
+        let lastFrame = 0;
+
+        function normLon(l) {
+            return ((l + 180) % 360) - 180;
+        }
+
+        function lerpLon(from, to, t) {
+            let diff = ((to - from + 540) % 360) - 180;
+            return normLon(from + diff * t);
+        }
+
+        function clampTilt(v) {
+            return Math.max(TILT_MIN, Math.min(TILT_MAX, v));
+        }
+
+        function lerpTilt(from, to, t) {
+            return clampTilt(from + (to - from) * t);
+        }
+
+        /** Яка точка на Землі в центрі екрана при заданих кутах камери. */
+        function centerGeoAtAngles(viewLonDeg, viewTiltDeg) {
+            const lonR = viewLonDeg * Math.PI / 180;
+            const tiltR = viewTiltDeg * Math.PI / 180;
+            const cosY = Math.cos(-lonR);
+            const sinY = Math.sin(-lonR);
+            const x1 = sinY;
+            const z1 = cosY;
+            const cosX = Math.cos(-tiltR);
+            const sinX = Math.sin(-tiltR);
+            const y2 = -z1 * sinX;
+            const z2 = z1 * cosX;
+            const x2 = x1;
+            const lat = Math.asin(Math.max(-1, Math.min(1, y2))) * (180 / Math.PI);
+            const ln = Math.atan2(x2, z2) * (180 / Math.PI);
+            return { lat, lon: normLon(ln) };
+        }
+
+        function geoAngularDist(a, b) {
+            const φ1 = a.lat * Math.PI / 180;
+            const φ2 = b.lat * Math.PI / 180;
+            const Δλ = (b.lon - a.lon) * Math.PI / 180;
+            const h = Math.sin((φ2 - φ1) / 2) ** 2 +
+                Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ / 2) ** 2;
+            return 2 * Math.asin(Math.min(1, Math.sqrt(h)));
+        }
+
+        /** Підбирає lon/tilt, щоб (lat0, lon0) опинилась у центрі диска. */
+        function anglesToCenterGeo(lat0, lon0) {
+            let bestLon = lon0;
+            let bestTilt = lat0;
+            let bestD = 1e9;
+            const target = { lat: lat0, lon: normLon(lon0) };
+
+            function search(lonMin, lonMax, tiltMin, tiltMax, step) {
+                for (let t = tiltMin; t <= tiltMax; t += step) {
+                    for (let l = lonMin; l <= lonMax; l += step) {
+                        const c = centerGeoAtAngles(normLon(l), clampTilt(t));
+                        const d = geoAngularDist(c, target);
+                        if (d < bestD) {
+                            bestD = d;
+                            bestLon = l;
+                            bestTilt = t;
+                        }
+                    }
+                }
+            }
+
+            search(lon0 - 40, lon0 + 40, lat0 - 35, lat0 + 35, 0.5);
+            search(bestLon - 3, bestLon + 3, bestTilt - 3, bestTilt + 3, 0.08);
+            return { lon: normLon(bestLon), tilt: clampTilt(bestTilt) };
+        }
+
+        /** Камера: R_y(lon) · R_x(tilt). Зворотне перетворення променя виду → lat/lon. */
+        function viewToLatLon(nx, ny, nz) {
+            const lonR = lon * Math.PI / 180;
+            const tiltR = tilt * Math.PI / 180;
+            const cosY = Math.cos(-lonR);
+            const sinY = Math.sin(-lonR);
+            const x1 = nx * cosY + nz * sinY;
+            const z1 = -nx * sinY + nz * cosY;
+            const y1 = ny;
+            const cosX = Math.cos(-tiltR);
+            const sinX = Math.sin(-tiltR);
+            const x2 = x1;
+            const y2 = y1 * cosX - z1 * sinX;
+            const z2 = y1 * sinX + z1 * cosX;
+            const lat = Math.asin(Math.max(-1, Math.min(1, y2))) * (180 / Math.PI);
+            const ln = Math.atan2(x2, z2) * (180 / Math.PI);
+            return { lat, lon: normLon(ln) };
+        }
+
+        function easeInOut(t) {
+            return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+        }
+
+        function applyTransform() {
+            globeWrap.style.transform = "translate(-50%, -50%) scale(" + zoom.toFixed(3) + ")";
+        }
+
+        function sampleTexture(u, v) {
+            const x = Math.min(texW - 1, Math.max(0, Math.floor(u * texW)));
+            const y = Math.min(texH - 1, Math.max(0, Math.floor(v * texH)));
+            const i = (y * texW + x) * 4;
+            return [texPixels[i], texPixels[i + 1], texPixels[i + 2]];
+        }
+
+        function canvasPixelToLatLon(px, py, size) {
+            const cx = size / 2;
+            const cy = size / 2;
+            const R = size / 2 * 0.96;
+            const nx = (px - cx) / R;
+            const ny = -(py - cy) / R;
+            if (nx * nx + ny * ny > 1) return null;
+            const nz = Math.sqrt(1 - nx * nx - ny * ny);
+            return viewToLatLon(nx, ny, nz);
+        }
+
+        function draw() {
+            if (!ready || !texPixels) return;
+            const dpr = Math.min(window.devicePixelRatio || 1, 2);
+            const display = Math.min(globeCanvas.clientWidth, globeCanvas.clientHeight) || 220;
+            const size = Math.max(64, Math.floor(display * dpr));
+            if (globeCanvas.width !== size || globeCanvas.height !== size) {
+                globeCanvas.width = size;
+                globeCanvas.height = size;
+            }
+            const ctx = globeCanvas.getContext("2d", { willReadFrequently: true });
+            const img = ctx.createImageData(size, size);
+            const data = img.data;
+            const cx = size / 2;
+            const cy = size / 2;
+            const R = size / 2 * 0.96;
+
+            for (let py = 0; py < size; py++) {
+                for (let px = 0; px < size; px++) {
+                    const i = (py * size + px) * 4;
+                    const nx = (px - cx) / R;
+                    const ny = -(py - cy) / R;
+                    const d2 = nx * nx + ny * ny;
+                    if (d2 > 1) {
+                        data[i + 3] = 0;
+                        continue;
+                    }
+                    const nz = Math.sqrt(1 - d2);
+                    const { lat, lon: ln } = viewToLatLon(nx, ny, nz);
+                    let u = (ln + 180) / 360;
+                    const v = (90 - lat) / 180;
+                    const rgb = sampleTexture(u, v);
+                    const light = 0.45 + 0.55 * Math.max(0, nz * 0.85 + nx * 0.15);
+                    data[i] = Math.min(255, rgb[0] * light);
+                    data[i + 1] = Math.min(255, rgb[1] * light);
+                    data[i + 2] = Math.min(255, rgb[2] * light);
+                    data[i + 3] = 255;
+                }
+            }
+            ctx.putImageData(img, 0, 0);
+            ctx.globalCompositeOperation = "destination-over";
+            const atmo = ctx.createRadialGradient(cx, cy, R * 0.5, cx, cy, R * 1.02);
+            atmo.addColorStop(0, "rgba(30, 100, 180, 0)");
+            atmo.addColorStop(1, "rgba(10, 40, 90, 0.35)");
+            ctx.fillStyle = atmo;
+            ctx.beginPath();
+            ctx.arc(cx, cy, R, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.globalCompositeOperation = "source-over";
+        }
+
+        function tick(now) {
+            if (!lastFrame) lastFrame = now;
+            const dt = Math.min(48, now - lastFrame);
+            lastFrame = now;
+            if (ready && autoRotate && !dragging && !animating) {
+                lon = normLon(lon + (AUTO_ROTATE_DEG_PER_SEC * dt) / 1000);
+                draw();
+            }
+            loopId = requestAnimationFrame(tick);
+        }
+
+        function loadTexture() {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.onload = () => {
+                    const c = document.createElement("canvas");
+                    c.width = img.naturalWidth;
+                    c.height = img.naturalHeight;
+                    c.getContext("2d").drawImage(img, 0, 0);
+                    const id = c.getContext("2d").getImageData(0, 0, c.width, c.height);
+                    texPixels = id.data;
+                    texW = c.width;
+                    texH = c.height;
+                    ready = true;
+                    applyTransform();
+                    draw();
+                    if (!loopId) loopId = requestAnimationFrame(tick);
+                    resolve();
+                };
+                img.onerror = () => reject(new Error("earth texture"));
+                img.src = url("assets/earth-equirect.jpg");
+            });
+        }
+
+        function onPointerDown(e) {
+            if (animating) return;
+            dragging = true;
+            moved = false;
+            lastX = e.clientX;
+            lastY = e.clientY;
+            globeCanvas.classList.add("dragging");
+            globeCanvas.setPointerCapture(e.pointerId);
+        }
+
+        function onPointerMove(e) {
+            if (!dragging || animating) return;
+            const dx = e.clientX - lastX;
+            const dy = e.clientY - lastY;
+            if (Math.abs(dx) > 2 || Math.abs(dy) > 2) moved = true;
+            lastX = e.clientX;
+            lastY = e.clientY;
+            lon = normLon(lon + dx * 0.35);
+            tilt = clampTilt(tilt - dy * 0.22);
+            draw();
+        }
+
+        function onPointerUp(e) {
+            if (!dragging) return;
+            dragging = false;
+            globeCanvas.classList.remove("dragging");
+            try { globeCanvas.releasePointerCapture(e.pointerId); } catch (_) {}
+            if (animating) return;
+            if (!moved) {
+                const rect = globeCanvas.getBoundingClientRect();
+                const scale = globeCanvas.width / rect.width;
+                const px = (e.clientX - rect.left) * scale;
+                const py = (e.clientY - rect.top) * scale;
+                const hit = canvasPixelToLatLon(px, py, globeCanvas.width);
+                if (hit) {
+                    const cid = pickContinentAtLatLon(hit.lat, hit.lon);
+                    if (cid) {
+                        const meta = getRegionList().find(r => r.id === cid);
+                        if (meta) beginRegionFlight(meta);
+                    } else {
+                        toast("Це океан — обери материк або плитку 🌊");
+                        audio.tap();
+                    }
+                }
+            }
+        }
+
+        function flyTo(meta) {
+            const geo = REGION_GEO_CENTERS[meta.id] || { lat: 0, lon: 0 };
+            const aimed = anglesToCenterGeo(geo.lat, geo.lon);
+            const targetLon = aimed.lon;
+            const targetTilt = aimed.tilt;
+            const startLon = lon;
+            const startTilt = tilt;
+            const startZoom = zoom;
+            animating = true;
+            autoRotate = false;
+            hubScene.classList.add("flight");
+            hubScreen.classList.add("flight-active");
+
+            return new Promise(resolve => {
+                const t0 = performance.now();
+                const total = FLIGHT_ROTATE_MS + FLIGHT_ZOOM_MS;
+
+                function frame(now) {
+                    const elapsed = now - t0;
+                    if (elapsed < FLIGHT_ROTATE_MS) {
+                        const t = easeInOut(elapsed / FLIGHT_ROTATE_MS);
+                        lon = lerpLon(startLon, targetLon, t);
+                        tilt = lerpTilt(startTilt, targetTilt, t);
+                        zoom = startZoom;
+                    } else if (elapsed < total) {
+                        lon = targetLon;
+                        tilt = targetTilt;
+                        const t = easeInOut((elapsed - FLIGHT_ROTATE_MS) / FLIGHT_ZOOM_MS);
+                        zoom = startZoom + (FLIGHT_MAX_ZOOM - startZoom) * t;
+                    } else {
+                        lon = targetLon;
+                        tilt = targetTilt;
+                        zoom = FLIGHT_MAX_ZOOM;
+                        applyTransform();
+                        draw();
+                        resolve();
+                        return;
+                    }
+                    applyTransform();
+                    draw();
+                    requestAnimationFrame(frame);
+                }
+                requestAnimationFrame(frame);
+            });
+        }
+
+        function resetView() {
+            animating = false;
+            autoRotate = true;
+            zoom = 1;
+            tilt = 0;
+            applyTransform();
+            hubScene.classList.remove("flight");
+            hubScreen.classList.remove("flight-active");
+            draw();
+        }
+
+        globeCanvas.addEventListener("pointerdown", onPointerDown);
+        globeCanvas.addEventListener("pointermove", onPointerMove);
+        globeCanvas.addEventListener("pointerup", onPointerUp);
+        globeCanvas.addEventListener("pointercancel", onPointerUp);
+        window.addEventListener("resize", () => { if (ready) draw(); });
+
+        return {
+            loadTexture,
+            flyTo,
+            resetView,
+            setView(lonDeg, tiltDeg) {
+                lon = normLon(lonDeg);
+                tilt = clampTilt(tiltDeg || 0);
+                draw();
+            },
+            setGeoCenter(latDeg, lonDeg) {
+                const a = anglesToCenterGeo(latDeg, lonDeg);
+                lon = a.lon;
+                tilt = a.tilt;
+                draw();
+            },
+            isAnimating: () => animating
+        };
+    })();
+
+    let flightBusy = false;
+
+    async function beginRegionFlight(meta) {
+        if (flightBusy || globe.isAnimating()) return;
+        if (isComingSoon(meta)) {
+            toast("Скоро відкриється!");
+            audio.tap();
+            return;
+        }
+        if (!hubScreen.classList.contains("active")) {
+            await openRegionAfterFlight(meta);
+            return;
+        }
+        flightBusy = true;
+        const resumeBtn = document.getElementById("btn-resume");
+        const levelsBtn = document.getElementById("btn-levels");
+        resumeBtn.disabled = true;
+        levelsBtn.disabled = true;
+        try {
+            const dataPromise = loadContinentData(meta);
+            await globe.flyTo(meta);
+            await dataPromise;
+            await openRegionAfterFlight(meta);
+        } finally {
+            flightBusy = false;
+            resumeBtn.disabled = false;
+            levelsBtn.disabled = false;
+        }
+    }
+
+    async function openRegionAfterFlight(meta) {
+        audio.select();
+        currentRegion = meta;
+        currentData = continentCache[meta.id] || await loadContinentData(meta);
+        save.lastPlayed = { continentId: meta.id, nodeId: save.lastPlayed?.nodeId };
+        saveSave();
+        highlightOrbitChip(meta.id);
+        await renderMap();
+        showScreen(mapScreen);
+        globe.resetView();
+    }
+
+    function nodeStatusClass(node, data) {
+        if (!canUnlockNode(node, data)) return "locked";
+        const stars = nodeStars(data.id, node.id);
+        if (stars >= 3) return "done-3";
+        if (stars >= 2) return "done-2";
+        if (stars >= 1) return "done-1";
+        const firstOpen = data.nodes.find(n => canUnlockNode(n, data) && nodeStars(data.id, n.id) < 3);
+        if (firstOpen && firstOpen.id === node.id) return "current";
+        return "available";
+    }
+
+    async function renderMap() {
+        if (!currentData) return;
+        mapTitle.textContent = currentData.title;
+        const geo = await loadContinentGeo(currentData);
+        const vb = (geo && geo.viewBox) || currentData.map?.viewBox || "0 0 1000 780";
+        mapSvg.setAttribute("viewBox", vb);
+        const parts = vb.split(/\s+/).map(Number);
+        const w = parts[2] || 1000;
+        const h = parts[3] || 780;
+
+        let html = "";
+        html += '<rect width="' + w + '" height="' + h + '" fill="' +
+            (geo && geo.background ? geo.background : "#1e3a8a") + '"/>';
+
+        const features = geo ? (geo.countries || geo.regions || []) : [];
+        const playableIds = new Set(currentData.nodes.map(n => nodeGeoId(n)));
+        const starsByNode = {};
+        for (const node of currentData.nodes) {
+            starsByNode[nodeGeoId(node)] = nodeStars(currentData.id, node.id);
+        }
+
+        for (const f of features) {
+            const isPlayable = playableIds.has(f.id);
+            const stars = starsByNode[f.id] || 0;
+            let extra = "";
+            if (isPlayable && stars > 0) extra = " done";
+            html += '<path class="map-geo' + (isPlayable ? " playable" + extra : " context") +
+                '" data-geo-id="' + f.id + '" d="' + f.path + '"/>';
+        }
+
+        const positions = currentData.nodes.map(node => {
+            const c = getNodeCenter(geo, node);
+            return { node, x: c ? c.x : w / 2, y: c ? c.y : h / 2 };
+        });
+
+        if (positions.length > 1) {
+            html += '<polyline class="trail" points="' +
+                positions.map(p => p.x + "," + p.y).join(" ") + '"/>';
+        }
+
+        for (const p of positions) {
+            const node = p.node;
+            const cls = nodeStatusClass(node, currentData);
+            const stars = nodeStars(currentData.id, node.id);
+            const starTxt = stars > 0 ? "⭐".repeat(stars) : "";
+            html += '<g class="map-node ' + cls + '" data-id="' + node.id +
+                '" transform="translate(' + p.x + "," + p.y + ')">' +
+                '<circle r="26" cx="0" cy="0"/>' +
+                '<text y="1">' + node.emoji + "</text>" +
+                (starTxt ? '<text y="40" font-size="13">' + starTxt + "</text>" : "") +
+                "</g>";
+        }
+        mapSvg.innerHTML = html;
+
+        mapSvg.querySelectorAll(".map-node").forEach(g => {
+            g.addEventListener("click", () => {
+                const id = g.getAttribute("data-id");
+                const node = currentData.nodes.find(n => n.id === id);
+                if (!node) return;
+                if (!canUnlockNode(node, currentData)) {
+                    const prev = findPrevNode(node, currentData);
+                    document.getElementById("locked-msg").textContent = prev
+                        ? "Спочатку набери щонайменше " + UNLOCK_MIN_STARS + " ⭐ на «" + prev.title + "»."
+                        : "Ця точка ще закрита.";
+                    document.getElementById("modal-locked").classList.add("active");
+                    audio.wrong();
+                    return;
+                }
+                startNode(node);
+            });
+        });
+
+        const current = currentData.nodes.find(n => nodeStatusClass(n, currentData) === "current");
+        if (current) {
+            const c = getNodeCenter(geo, current);
+            if (c) {
+                document.getElementById("map-scroll").scrollTop = Math.max(0, c.y - 120);
+            }
+        }
+    }
+
+    function startNode(node) {
+        audio.select();
+        currentNode = node;
+        session = { correct: 0, wrong: 0, combo: 0, comboMax: 0, coinsEarned: 0, roundIndex: 0 };
+        save.lastPlayed = { continentId: currentData.id, nodeId: node.id };
+        saveSave();
+        showScreen(gameScreen);
+        renderRound();
+    }
+
+    function renderRoundDots() {
+        roundDots.innerHTML = "";
+        const total = currentNode.rounds.length;
+        for (let i = 0; i < total; i++) {
+            const d = document.createElement("span");
+            d.className = "dot";
+            if (i < session.roundIndex) d.classList.add("done");
+            if (i === session.roundIndex) d.classList.add("current");
+            roundDots.appendChild(d);
+        }
+        gameLocation.textContent = currentNode.title + " · " + (session.roundIndex + 1) + "/" + total;
+    }
+
+    const mapCacheLoaded = {};
+
+    const renderers = {
+        quiz(ctx, round) {
+            gamePrompt.textContent = round.text;
+            gameMedia.innerHTML = round.media || "";
+            gameAnswers.className = "answers grid";
+            gameAnswers.innerHTML = "";
+            round.answers.forEach((ans, i) => {
+                const btn = document.createElement("button");
+                btn.type = "button";
+                btn.className = "answer-btn";
+                btn.textContent = ans;
+                btn.addEventListener("click", () => submitAnswer(i === round.correct, round, btn));
+                gameAnswers.appendChild(btn);
+            });
+        },
+        yesno(ctx, round) {
+            gamePrompt.textContent = round.text;
+            gameMedia.innerHTML = round.media || "";
+            gameAnswers.className = "answers yesno";
+            gameAnswers.innerHTML = "";
+            [["Так", true], ["Ні", false]].forEach(([label, val]) => {
+                const btn = document.createElement("button");
+                btn.type = "button";
+                btn.className = "answer-btn";
+                btn.textContent = label;
+                btn.addEventListener("click", () => submitAnswer(val === round.correct, round, btn));
+                gameAnswers.appendChild(btn);
+            });
+        },
+        capital(ctx, round) {
+            renderers.quiz(ctx, round);
+        },
+        async mapTap(ctx, round) {
+            gamePrompt.textContent = round.text;
+            gameMedia.innerHTML = "";
+            gameAnswers.className = "answers";
+            gameAnswers.innerHTML = "<p style='text-align:center;color:#94a3b8'>Натисни країну на карті</p>";
+            const mapData = await loadMap(round.mapId || "europe-simple");
+            const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            svg.setAttribute("viewBox", mapData.viewBox || "0 0 400 360");
+            svg.setAttribute("class", "map-tap-svg");
+            for (const c of mapData.countries) {
+                const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                path.setAttribute("d", c.path);
+                path.setAttribute("data-id", c.id);
+                if (c.id === round.targetCountryId) path.classList.add("highlight");
+                path.addEventListener("click", () => {
+                    if (answering) return;
+                    const ok = c.id === round.targetCountryId;
+                    if (!ok) path.setAttribute("fill", "rgba(239,68,68,0.5)");
+                    submitAnswer(ok, round, path);
+                });
+                svg.appendChild(path);
+            }
+            gameMedia.innerHTML = "";
+            gameMedia.appendChild(svg);
+        }
+    };
+
+    function renderRound() {
+        answering = false;
+        const round = currentNode.rounds[session.roundIndex];
+        renderRoundDots();
+        mentorBubble.textContent = "🧭 " + randomPick(PRAISE);
+        voice.speak(round.text);
+        const fn = renderers[round.type];
+        if (!fn) {
+            gamePrompt.textContent = "Невідомий тип: " + round.type;
+            return;
+        }
+        Promise.resolve(fn(null, round)).catch(console.error);
+    }
+
+    function awardCoins(amount, round) {
+        let add = amount;
+        if (session.combo >= 3) {
+            add *= 2;
+            showComboBanner("Комбо x2! +" + add + " 🪙");
+        }
+        if (round.boss) add *= 2;
+        session.coinsEarned += add;
+        save.coins += add;
+        audio.coin();
+        updateHud("coins");
+    }
+
+    function submitAnswer(ok, round, el) {
+        if (answering) return;
+        answering = true;
+        [...gameAnswers.querySelectorAll(".answer-btn")].forEach(b => b.disabled = true);
+
+        if (ok) {
+            if (el && el.classList) el.classList.add("correct");
+            session.correct++;
+            session.combo++;
+            session.comboMax = Math.max(session.comboMax, session.combo);
+            awardCoins(1, round);
+            audio.correct();
+            flash("correct");
+            mentorBubble.textContent = "🧭 " + randomPick(PRAISE);
+            setTimeout(advanceRound, 600);
+        } else {
+            if (el && el.classList) el.classList.add("wrong");
+            session.wrong++;
+            session.combo = 0;
+            audio.wrong();
+            flash("wrong");
+            shake();
+            mentorBubble.textContent = "🧭 " + randomPick(ENCOURAGE);
+            document.getElementById("feedback-title").textContent = "Ось пояснення";
+            document.getElementById("feedback-text").textContent = round.explanation || "";
+            document.getElementById("modal-feedback").classList.add("active");
+        }
+    }
+
+    function advanceRound() {
+        document.getElementById("modal-feedback").classList.remove("active");
+        session.roundIndex++;
+        if (session.roundIndex >= currentNode.rounds.length) {
+            finishNode();
+        } else {
+            renderRound();
+        }
+    }
+
+    document.getElementById("feedback-next").addEventListener("click", () => {
+        audio.tap();
+        advanceRound();
+    });
+
+    function finishNode() {
+        const total = currentNode.rounds.length;
+        const stars = starsForSession(session.correct, total, session.wrong, session.comboMax);
+        const cs = continentSave(currentData.id);
+        const prev = cs.nodes[currentNode.id]?.stars || 0;
+        if (stars > prev) cs.nodes[currentNode.id] = { stars, bestCombo: session.comboMax };
+        else if (cs.nodes[currentNode.id]) {
+            cs.nodes[currentNode.id].bestCombo = Math.max(cs.nodes[currentNode.id].bestCombo || 0, session.comboMax);
+        } else {
+            cs.nodes[currentNode.id] = { stars, bestCombo: session.comboMax };
+        }
+        if (stars === 3) {
+            save.coins += 3;
+            session.coinsEarned += 3;
+        }
+        save.comboBest = Math.max(save.comboBest, session.comboMax);
+        recalcTotalStars();
+        saveSave();
+        updateHud("stars");
+
+        const titles = ["Спробуй ще!", "Непогано!", "Молодець!", "Ідеально!"];
+        document.getElementById("result-title").textContent = titles[stars] || "Готово";
+        document.getElementById("result-stars").textContent = stars > 0 ? "⭐".repeat(stars) : "—";
+        document.getElementById("result-coins").textContent = "+" + session.coinsEarned + " монет";
+        document.getElementById("modal-result").classList.add("active");
+        if (stars >= 2) {
+            audio.win();
+            confetti(stars === 3 ? 40 : 20);
+            flash("win");
+        } else {
+            audio.star();
+        }
+
+        if (stars >= 3 && currentData.id === "europe" &&
+            currentData.nodes.every(n => nodeStars("europe", n.id) >= 3)) {
+            if (!save.badges.includes("europe-complete")) {
+                save.badges.push("europe-complete");
+                saveSave();
+                setTimeout(() => toast("Бейдж: Європа завершена! 🏅"), 800);
+            }
+        }
+    }
+
+    document.getElementById("result-next").addEventListener("click", () => {
+        audio.tap();
+        document.getElementById("modal-result").classList.remove("active");
+        renderMap().then(() => {
+            renderOrbitRing();
+            showScreen(mapScreen);
+        });
+    });
+
+    document.querySelectorAll("[data-close]").forEach(btn => {
+        btn.addEventListener("click", () => {
+            audio.tap();
+            btn.closest(".modal-backdrop").classList.remove("active");
+        });
+    });
+
+    document.getElementById("map-back").addEventListener("click", () => {
+        audio.tap();
+        globe.resetView();
+        renderOrbitRing();
+        showScreen(hubScreen);
+    });
+
+    function resumeProgress() {
+        const lp = save.lastPlayed;
+        if (lp?.continentId) {
+            const meta = getRegionList().find(r => r.id === lp.continentId);
+            if (meta && !isComingSoon(meta)) {
+                beginRegionFlight(meta).then(() => {
+                    if (lp.nodeId && currentData) {
+                        const node = currentData.nodes.find(n => n.id === lp.nodeId);
+                        if (node && canUnlockNode(node, currentData)) startNode(node);
+                    }
+                });
+                return;
+            }
+        }
+        const europe = getRegionList().find(r => r.id === "europe");
+        if (europe) beginRegionFlight(europe);
+    }
+
+    document.getElementById("btn-resume").addEventListener("click", () => {
+        audio.tap();
+        resumeProgress();
+    });
+    document.getElementById("btn-levels").addEventListener("click", () => {
+        audio.tap();
+        document.getElementById("hub-scene").scrollIntoView({ behavior: "smooth", block: "center" });
+        orbitRing.querySelectorAll(".orbit-chip").forEach(c => {
+            c.classList.add("highlight");
+            setTimeout(() => c.classList.remove("highlight"), 1200);
+        });
+    });
+
+    async function init() {
+        updateHud();
+        try {
+            await loadWorld();
+            document.getElementById("hub-tagline").textContent = world.tagline || "";
+            await Promise.all([
+                loadContinentData(world.continents.find(c => c.id === "europe")),
+                loadContinentData(world.ocean),
+                globe.loadTexture()
+            ]);
+            renderOrbitRing();
+            if (save.lastPlayed?.continentId && REGION_GEO_CENTERS[save.lastPlayed.continentId]) {
+                const c = REGION_GEO_CENTERS[save.lastPlayed.continentId];
+                globe.setGeoCenter(c.lat, c.lon);
+            }
+        } catch (err) {
+            console.error(err);
+            toast("Не вдалося завантажити дані");
+        }
+    }
+
+    init();
+
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+            navigator.serviceWorker.register("../../sw.js").catch(() => {});
+        });
+    }
+})();
+</script>
+</body>
+</html>

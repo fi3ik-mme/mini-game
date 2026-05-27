@@ -466,6 +466,16 @@
 <div id="toast" class="toast"></div>
 
 <script>
+    (function gateEditor() {
+        const KEY = "fm.cheats";
+        try {
+            const c = JSON.parse(localStorage.getItem(KEY) || "{}");
+            if (c.editor) return;
+        } catch (_) {}
+        window.location.replace("index.html");
+        throw new Error("editor access denied");
+    })();
+
     const STORAGE_KEY = "first-million:content-instructions";
     const LABELS = ["A", "B", "C", "D"];
 
