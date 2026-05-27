@@ -1,4 +1,4 @@
-// scripts/enrich-wiki-media.mjs (v2)
+// scripts/enrich-wiki-media.mjs (v3 — topic-entity aware)
 //
 // Goes through every question of a Перший-мільйон category, builds an ordered
 // list of keyword candidates (correct answer first, then long nouns / proper
@@ -119,19 +119,120 @@ function lemmatizeUk(s) {
     return UK_LEMMA[low] ? UK_LEMMA[low] : s;
 }
 
+// Quiz surface form → Wikipedia article title (per language).
+const ENTITY_ALIASES = {
+    uk: {
+        paint: "Microsoft Paint", пейнт: "Microsoft Paint",
+        word: "Microsoft Word", excel: "Microsoft Excel",
+        powerpoint: "Microsoft PowerPoint", windows: "Microsoft Windows", віндовс: "Microsoft Windows",
+        chrome: "Google Chrome", firefox: "Mozilla Firefox", edge: "Microsoft Edge",
+        google: "Google", youtube: "YouTube",
+        wikipedia: "Вікіпедія", вікіпедія: "Вікіпедія",
+        браузер: "Веб-браузер", браузері: "Веб-браузер",
+        інтернет: "Інтернет", internet: "Інтернет",
+        wifi: "Wi-Fi", "wi-fi": "Wi-Fi",
+        pdf: "PDF", usb: "USB",
+        python: "Python", java: "Java",
+        photoshop: "Adobe Photoshop",
+        процесор: "Мікропроцесор", мікропроцесор: "Мікропроцесор",
+        powerpoint: "Microsoft PowerPoint",
+    },
+    en: {
+        paint: "Microsoft Paint", word: "Microsoft Word", excel: "Microsoft Excel",
+        windows: "Microsoft Windows", chrome: "Google Chrome", internet: "Internet",
+    },
+    es: {
+        paint: "Microsoft Paint", word: "Microsoft Word", excel: "Microsoft Excel",
+        windows: "Microsoft Windows", internet: "Internet",
+    },
+};
+
+// Answers that are UI sub-features — when the question names a parent app (Paint, Word…),
+// link to the parent entity, not the tool name.
+const SUBFEATURE_UK = new Set([
+    "олівець", "гумка", "ластик", "заливка", "палітра", "лінія", "прямокутник", "коло", "овал",
+    "текст", "спрей", "пензель", "курсор", "значок", "ярлик", "вкладка", "меню", "кнопка",
+    "панель", "інструмент", "фігура", "напис", "заливка", "виділення", "копіювання",
+]);
+
 // Per-subject manual overrides. Map: { questionIndex: { keyword: "...", skip: bool } }.
-// Use these to pin a keyword for known-tricky cases or skip a bad auto-match.
 const OVERRIDES = {
     "steam-4-klas.json": {
-        // Q[0..2] are "Що означає STEAM?" — generic acronym, skip the auto-hit on "Science" journal.
         0: { skip: true },
         1: { skip: true },
     },
     "matematyka-4-klas.json": {
-        // 59 = "У квадрата всі сторони рівні" — auto-hit was a sci-fi film "Рівні". Override to "Квадрат".
         59: { keyword: "Квадрат" },
     },
 };
+
+function resolveEntityKeyword(token, lang) {
+    if (!token) return null;
+    const map = ENTITY_ALIASES[lang] || ENTITY_ALIASES.uk;
+    const key = stripDiacritics(String(token)).toLowerCase().trim();
+    if (map[key]) return map[key];
+    // "Microsoft Paint" already canonical
+    if (/^microsoft\s+/i.test(token)) return token;
+    return token;
+}
+
+function questionBlob(q) {
+    const mediaText = (q.media || "").replace(/<[^>]+>/g, " ");
+    return ((q.text || "") + " " + mediaText).trim();
+}
+
+/** Parent / topic entities named in the question (Paint, Word, Windows, браузер…). */
+function extractTopicEntities(q, lang) {
+    const combined = questionBlob(q);
+    const found = new Map();
+
+    const add = (raw, priority = 100) => {
+        const cleaned = cleanCandidate(raw);
+        if (!cleaned) return;
+        const kw = resolveEntityKeyword(cleaned, lang);
+        if (!isViableKeyword(kw, lang) && kw.length < 3) return;
+        const key = kw.toLowerCase();
+        const prev = found.get(key);
+        if (!prev || priority > prev.priority) found.set(key, { kw, raw: cleaned, priority });
+    };
+
+    // «у Paint», «в Word», «на Windows»
+    for (const m of combined.matchAll(/\b(?:у|в|на|до|зі?|із|для)\s+([A-Za-zА-ЯІЇЄҐ][A-Za-zА-ЯЇЄҐa-zа-яіїєґ0-9]+)/gi)) {
+        add(m[1], 100);
+    }
+
+    // Tech proper nouns anywhere in the question
+    for (const m of combined.matchAll(/\b(Microsoft\s+)?(Paint|Word|Excel|PowerPoint|Windows|Chrome|Firefox|Edge|Google|YouTube)\b/gi)) {
+        add(m[0], 98);
+    }
+
+    if (/\bбраузер/i.test(combined)) add("Веб-браузер", 96);
+    if (/\bwindows\b/i.test(combined) || /\bвіндовс\b/i.test(combined)) add("Microsoft Windows", 96);
+    if (/\bінтернет/i.test(combined)) add("Інтернет", 94);
+
+    // Bold answer in info-card when it is the named product (e.g. Paint)
+    for (const m of (q.media || "").matchAll(/<b[^>]*>([^<]+)<\/b>/gi)) {
+        const inner = m[1].trim();
+        if (/^(paint|word|excel|powerpoint|windows|chrome)$/i.test(inner)) add(inner, 95);
+    }
+
+    return [...found.values()].sort((a, b) => b.priority - a.priority);
+}
+
+function isAnswerMainSubject(q, ansClean) {
+    if (!ansClean) return false;
+    const t = (q.text || "").toLowerCase();
+    if (/^(що таке|як називається|як називають|що означає|який .* є|яка .* є)\b/.test(t)) return true;
+    if (/\b(це|називається)\s*[?:]?\s*$/i.test((q.text || "").trim())) return true;
+    const low = ansClean.toLowerCase();
+    if (ENTITY_ALIASES.uk[low] || /^(paint|word|excel|powerpoint|windows)$/i.test(ansClean)) return true;
+    return false;
+}
+
+function isSubfeatureAnswer(ansClean, lang) {
+    if (!ansClean || lang !== "uk") return false;
+    return SUBFEATURE_UK.has(stripDiacritics(ansClean).toLowerCase());
+}
 
 const HEADERS = {
     "User-Agent": "mini-game-build/1.1 (https://github.com/fi3ik-mme/mini-game; static site PWA)",
@@ -203,24 +304,51 @@ function extractFromQuestion(text, lang) {
 
 function buildCandidates(q, lang) {
     const cands = [];
+    const seen = new Set();
+    const add = (kw, source, priority, extra = {}) => {
+        const resolved = resolveEntityKeyword(kw, lang);
+        if (!resolved || !isViableKeyword(resolved, lang)) return;
+        const key = resolved.toLowerCase();
+        if (seen.has(key)) return;
+        seen.add(key);
+        cands.push({ kw: resolved, source, priority, ...extra });
+    };
+
+    const topics = extractTopicEntities(q, lang);
     const ans = (q.answers && typeof q.correct === "number") ? q.answers[q.correct] : null;
+    const ansClean = cleanCandidate(ans);
+    const hasTopic = topics.length > 0;
+    const subfeature = isSubfeatureAnswer(ansClean, lang);
+    const mainSubject = isAnswerMainSubject(q, ansClean);
 
-    // 1. From answer (cleaned)
-    const a = cleanCandidate(ans);
-    if (a && isViableKeyword(a, lang)) {
-        cands.push({ kw: a, source: "answer" });
-    }
+    // 1. Topic entities from the question (Paint, Word, Windows…) — highest priority
+    for (const t of topics) add(t.kw, "topic", t.priority);
 
-    // 2. From question text — only when the answer was generic OR the answer is
-    // in the wrong language (English/Spanish-subject questions are in Ukrainian).
-    // For lang=uk we always also add question-derived candidates.
-    if (lang === "uk") {
-        const qCands = extractFromQuestion(q.text, lang);
-        for (const k of qCands) {
-            if (cands.find(c => c.kw.toLowerCase() === k.toLowerCase())) continue;
-            cands.push({ kw: k, source: "question" });
+    // Metaphor in quotes («мозок» комп'ютера) — real entity is the answer (процесор).
+    const quoted = (q.text || "").match(/«([^»]+)»/);
+    if (quoted && ansClean) {
+        const qInner = stripDiacritics(quoted[1]).toLowerCase();
+        if (qInner !== ansClean.toLowerCase() && qInner.length >= 3) {
+            add(ansClean, "answer", 92, { mainSubject: true });
         }
     }
+
+    // 2. Answer when it IS the subject («графічний редактор — Paint»)
+    if (ansClean && mainSubject) add(ansClean, "answer", 90, { mainSubject: true });
+
+    // 3. Answer when it is NOT a sub-feature of a named parent app
+    if (ansClean && !subfeature && !mainSubject) add(ansClean, "answer", 75);
+
+    // 4. Answer as sub-feature only if no parent topic was found
+    if (ansClean && subfeature && !hasTopic) add(ansClean, "answer", 50, { subfeature: true });
+
+    // 5. Other nouns from question text (uk only) — lower priority when topic exists
+    if (lang === "uk") {
+        const qPriority = hasTopic ? 35 : 55;
+        for (const k of extractFromQuestion(q.text, lang)) add(k, "question", qPriority);
+    }
+
+    cands.sort((a, b) => b.priority - a.priority);
     return cands;
 }
 
@@ -282,35 +410,60 @@ function articlePasses(wr, kw, q) {
 
     const desc = (wr.description || "").toLowerCase();
     const ext = (wr.extract || "").toLowerCase();
-    const qText = (q.text || "").toLowerCase();
+    const blob = desc + " " + ext;
+    const qText = questionBlob(q).toLowerCase();
     const title = wr.title || "";
 
-    // 0. Reject articles whose title carries disambiguation in parentheses —
-    // Wikipedia returns these only when no plain article exists, which usually
-    // means the keyword is too generic for our context.
-    // Examples we want to reject: "Таке (1944)" (a WW2 destroyer), "Кіт (фільм)".
     if (/\(\d{3,4}\)$/.test(title)) return false;
     if (/\((фільм|альбом|пісня|роман|серіал|відеогра|комікс|село|селище|місто|компанія|корабель|міноносець|есмінець)\)$/i.test(title)) return false;
 
-    // 1. Reject media-spinoff articles unless the question mentions media.
     if (BAD_TYPE_RE.test(desc) || BAD_TYPE_RE.test(ext.slice(0, 80))) {
         if (!BAD_TYPE_RE.test(qText)) return false;
     }
 
-    // 2. Reject village / minor-geo articles for short keywords (< 5 chars)
-    // unless the question is about geography / population centres.
     if (kw.length < 6 && BAD_GEO_RE.test(desc)) {
         if (!/(місто|село|країна|континент|столиц|географ|населенн|регіон)/i.test(qText)) return false;
     }
 
-    // 3. For very short keywords (< 5 chars), require the article title to
-    // overlap with the keyword (avoids hits like "Кіт" → film "Кіт у чоботях").
     if (kw.length < 5) {
         const kwL = stripDiacritics(kw).toLowerCase();
         const titleL = stripDiacritics(wr.title || "").toLowerCase();
         if (titleL.indexOf(kwL) === -1 && kwL.indexOf(titleL) === -1) return false;
     }
+
+    // Context mismatches: question about software, article about unrelated physical object
+    if (/\bpaint\b/i.test(qText) && /(олівець|карандаш|фарба для письма)/i.test(blob) && !/paint|редактор|графічн|microsoft/i.test(blob)) return false;
+    if (/\bwindows\b/i.test(qText) && /^меню$/i.test(stripDiacritics(title)) && !/windows|операційн|microsoft|комп'ютер/i.test(blob)) return false;
+    if (/\bбраузер/i.test(qText) && /^вкладка$/i.test(stripDiacritics(title)) && !/браузер|веб|internet|сторінк/i.test(blob)) return false;
+    if (/\bword\b/i.test(qText) && /(слово|літера|алфавіт)/i.test(blob) && !/word|microsoft|текстовий редактор/i.test(blob)) return false;
+    if (/комп['']ютер/i.test(qText) && /^мозок$/i.test(stripDiacritics(kw)) && /(храм|церкв|релігій|собор)/i.test(blob)) return false;
+
     return true;
+}
+
+/** Higher score = better semantic fit for this question. */
+function scoreArticle(wr, kw, q, meta, lang) {
+    let score = meta.priority || 50;
+    const blob = ((wr.description || "") + " " + (wr.extract || "")).toLowerCase();
+    const qt = questionBlob(q).toLowerCase();
+    const titleL = stripDiacritics(wr.title || "").toLowerCase();
+
+    if (meta.source === "topic") score += 20;
+
+    for (const t of extractTopicEntities(q, lang)) {
+        const tk = t.kw.toLowerCase();
+        if (blob.includes(tk) || titleL.includes(tk.split(" ").pop())) score += 25;
+    }
+
+    if (meta.mainSubject) score += 15;
+    if (meta.subfeature && extractTopicEntities(q, lang).length) score -= 50;
+
+    if (/\bpaint\b/i.test(qt) && /microsoft paint|графічн|редактор/i.test(blob)) score += 20;
+    if (/\bwindows\b/i.test(qt) && /операційн|microsoft windows/i.test(blob)) score += 20;
+    if (/\bбраузер/i.test(qt) && /браузер|веб/i.test(blob)) score += 20;
+    if (/\bword\b/i.test(qt) && /microsoft word|текстов/i.test(blob)) score += 20;
+
+    return score;
 }
 
 function imageBlock(url, src, alt) {
@@ -335,11 +488,11 @@ async function processSubject(subject, opts) {
 
     const stats = {
         total: questions.length,
-        hits: 0, hitsAnswer: 0, hitsQuestion: 0, hitsOverride: 0,
+        hits: 0, hitsAnswer: 0, hitsQuestion: 0, hitsTopic: 0, hitsOverride: 0,
         skipExisting: 0, skipOverride: 0, noKeyword: 0, noMatch: 0,
     };
     const samples = [];
-    const newWins = []; // matches that came from question-text fallback (showcase)
+    const newWins = [];
 
     for (let i = 0; i < questions.length; i++) {
         const q = questions[i];
@@ -374,12 +527,17 @@ async function processSubject(subject, opts) {
         }
 
         let won = null;
+        let bestScore = -1;
         for (const c of candidates) {
             const wr = await fetchWiki(subject.lang, c.kw);
             if (!articlePasses(wr, c.kw, q)) continue;
-            won = { wr, c };
-            break;
+            const sc = scoreArticle(wr, c.kw, q, c, subject.lang);
+            if (sc > bestScore) {
+                bestScore = sc;
+                won = { wr, c, score: sc };
+            }
         }
+        if (won && bestScore < 35) won = null; // too weak a semantic match
 
         if (!won) {
             q.media = cleanMedia;
@@ -394,6 +552,7 @@ async function processSubject(subject, opts) {
         q.wikiUrl = won.wr.url;
         stats.hits++;
         if (won.c.source === "answer") stats.hitsAnswer++;
+        else if (won.c.source === "topic") stats.hitsTopic++;
         else if (won.c.source === "question") { stats.hitsQuestion++; newWins.push({ idx: i, kw: won.c.kw, title: won.wr.title }); }
         else if (won.c.source === "override") stats.hitsOverride++;
         if (samples.length < 5) samples.push({ idx: i, kw: won.c.kw, src: won.c.source, title: won.wr.title });
@@ -416,7 +575,7 @@ if (!targets.length) {
     process.exit(1);
 }
 
-console.log(`Wikipedia media enrichment v2 (dryRun=${dryRun}, force=${force})`);
+console.log(`Wikipedia media enrichment v3 (dryRun=${dryRun}, force=${force})`);
 let grandHits = 0, grandTotal = 0;
 for (const s of targets) {
     process.stdout.write(`\n=== ${s.id} (${s.lang}) ===\n`);
@@ -425,7 +584,7 @@ for (const s of targets) {
     const { stats, samples, newWins } = out;
     grandHits += stats.hits; grandTotal += stats.total;
     console.log(
-        `  total=${stats.total} hits=${stats.hits} (ans=${stats.hitsAnswer} q=${stats.hitsQuestion} ovr=${stats.hitsOverride})`
+        `  total=${stats.total} hits=${stats.hits} (topic=${stats.hitsTopic} ans=${stats.hitsAnswer} q=${stats.hitsQuestion} ovr=${stats.hitsOverride})`
         + ` skip-existing=${stats.skipExisting} skip-override=${stats.skipOverride}`
         + ` no-keyword=${stats.noKeyword} no-match=${stats.noMatch}`
     );
