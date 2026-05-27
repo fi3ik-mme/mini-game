@@ -189,6 +189,26 @@
           "boss": true
         }
       ]
+    },
+    {
+      "id": "europe-puzzle",
+      "title": "Пазл Європи",
+      "emoji": "🧩",
+      "bonus": true,
+      "countryId": "europe-puzzle",
+      "unlock": { "type": "bonus", "minStars": 2 },
+      "rounds": [
+        {
+          "type": "puzzle",
+          "text": "Збери класичний пазл 5×4. Натисни дві плитки, щоб поміняти їх місцями — має вийти карта Європи!",
+          "cols": 5,
+          "rows": 4,
+          "mapId": "europe-countries",
+          "explanation": "Чудово! Ти склав карту Європи — усі країни на своїх місцях.",
+          "explainOnSuccess": true,
+          "boss": true
+        }
+      ]
     }
   ]
 }

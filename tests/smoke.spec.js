@@ -269,9 +269,10 @@ test.describe("Mini Games smoke tests", () => {
     await page.getByRole("button", { name: /Європа/ }).click();
     await expect(page.locator("#screen-map")).toHaveClass(/active/, { timeout: 5000 });
     await expect(page.locator("#map-title")).toHaveText("Європа");
-    await expect(page.locator(".map-node")).toHaveCount(6);
+    await expect(page.locator(".map-node")).toHaveCount(7);
     await expect(page.locator('.map-node[data-id="ukraine"]')).not.toHaveClass(/locked/);
     await expect(page.locator('.map-node[data-id="poland"]')).toHaveClass(/locked/);
+    await expect(page.locator('.map-node[data-id="europe-puzzle"]')).toHaveClass(/locked/);
   });
 
   test("geo-quest: first node awards stars and unlocks next", async ({ page, request }) => {

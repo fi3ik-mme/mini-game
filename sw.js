@@ -1,4 +1,4 @@
-const CACHE_NAME = "mini-games-v25";
+const CACHE_NAME = "mini-games-v26";
 
 const PRECACHE = [
     "./",
@@ -39,7 +39,8 @@ const PRECACHE = [
     "./games/geo-quest/data/maps/europe-simple.json",
     "./games/geo-quest/data/maps/europe-countries.json",
     "./games/geo-quest/data/maps/ocean-regions.json",
-    "./games/geo-quest/assets/earth-equirect.jpg"
+    "./games/geo-quest/assets/earth-equirect.jpg",
+    "./games/geo-quest/assets/europe-puzzle.svg"
 ];
 
 self.addEventListener("install", (event) => {

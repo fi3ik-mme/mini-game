@@ -680,6 +680,89 @@
         @media (min-width: 560px) {
             .answers.grid { display: grid; grid-template-columns: 1fr 1fr; }
         }
+
+        .map-node.bonus-node .node-bg {
+            fill: #a855f7;
+            stroke: #f5d0fe;
+        }
+        .map-node.bonus-node.current .node-bg {
+            fill: #fbbf24;
+            animation: pulse 1.2s infinite;
+        }
+
+        .answers.puzzle-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+        .puzzle-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            width: 100%;
+        }
+        .puzzle-toolbar .puzzle-stat {
+            font-size: 0.88rem;
+            color: #cbd5e1;
+            padding: 6px 10px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.06);
+        }
+        .puzzle-toolbar .btn-mini {
+            padding: 8px 14px;
+            border-radius: 12px;
+            border: 2px solid rgba(255,255,255,0.18);
+            background: rgba(255,255,255,0.1);
+            color: #f8fafc;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .puzzle-toolbar .btn-mini:active { transform: scale(0.97); }
+        .puzzle-board {
+            display: grid;
+            gap: 3px;
+            width: 100%;
+            max-width: 500px;
+            aspect-ratio: 5 / 4;
+            padding: 6px;
+            border-radius: 14px;
+            background: rgba(0,0,0,0.35);
+            border: 2px solid rgba(251,191,36,0.35);
+            touch-action: manipulation;
+        }
+        .puzzle-piece {
+            margin: 0;
+            padding: 0;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 6px;
+            cursor: pointer;
+            background-color: #1e3a8a;
+            background-repeat: no-repeat;
+            box-shadow: inset 0 0 0 1px rgba(0,0,0,0.15);
+            transition: transform 0.12s ease, box-shadow 0.12s ease;
+            min-height: 0;
+        }
+        .puzzle-piece:active { transform: scale(0.98); }
+        .puzzle-piece.selected {
+            box-shadow: 0 0 0 3px #fbbf24, inset 0 0 0 1px rgba(0,0,0,0.2);
+            z-index: 2;
+        }
+        .puzzle-piece.correct-slot {
+            border-color: rgba(34,197,94,0.35);
+        }
+        .puzzle-preview {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 10px;
+            border: 2px solid rgba(255,255,255,0.2);
+            opacity: 0.85;
+        }
     </style>
 </head>
 <body>
@@ -1169,7 +1252,8 @@
         const node = p.node;
         const starTxt = stars > 0 ? "⭐".repeat(stars) : "";
         const label = node.title || "";
-        let g = '<g class="map-node' + (large ? " map-node--lg" : "") + " " + cls +
+        let g = '<g class="map-node' + (large ? " map-node--lg" : "") +
+            (node.bonus ? " bonus-node" : "") + " " + cls +
             '" data-id="' + node.id + '" transform="translate(' + p.x + "," + p.y + ')" pointer-events="all">';
         g += '<g class="node-inner">';
         g += '<circle class="node-bg" r="' + r + '" cx="0" cy="0"/>';
@@ -1261,6 +1345,11 @@
 
     function canUnlockNode(node, data) {
         const u = node.unlock;
+        if (u?.type === "bonus") {
+            const need = u.minStars ?? UNLOCK_MIN_STARS;
+            const main = data.nodes.filter(n => !n.bonus);
+            return main.length > 0 && main.every(n => nodeStars(data.id, n.id) >= need);
+        }
         if (!u || u.type === "free") return true;
         if (!u.requires) return true;
         const prevStars = nodeStars(data.id, u.requires);
@@ -1290,9 +1379,50 @@
     let answering = false;
 
     function regionMaxStars(meta) {
-        if (meta.id === "europe") return 18;
+        if (meta.id === "europe") return 21;
         if (meta.id === "ocean") return 12;
         return "—";
+    }
+
+    const puzzleImageCache = {};
+    const PUZZLE_COLORS = [
+        "#3b82f6", "#22c55e", "#eab308", "#f97316", "#a855f7", "#ec4899",
+        "#14b8a6", "#64748b", "#0ea5e9", "#84cc16", "#f43f5e", "#8b5cf6",
+        "#06b6d4", "#d946ef", "#f59e0b", "#10b981", "#6366f1", "#ef4444", "#2dd4bf",
+    ];
+
+    async function buildEuropePuzzleImage(mapId) {
+        const key = mapId || "europe-countries";
+        if (puzzleImageCache[key]) return puzzleImageCache[key];
+        const mapData = await loadMap(key);
+        const parts = (mapData.viewBox || "0 0 1000 780").split(/\s+/).map(Number);
+        const vw = parts[2] || 1000;
+        const vh = parts[3] || 780;
+        const cw = 500;
+        const ch = 400;
+        const canvas = document.createElement("canvas");
+        canvas.width = cw;
+        canvas.height = ch;
+        const ctx = canvas.getContext("2d");
+        ctx.fillStyle = "#1e3a8a";
+        ctx.fillRect(0, 0, cw, ch);
+        const sx = cw / vw;
+        const sy = ch / vh;
+        (mapData.countries || []).forEach((c, i) => {
+            if (!c.path || c.id === "europe-puzzle") return;
+            const p = new Path2D(c.path);
+            ctx.save();
+            ctx.scale(sx, sy);
+            ctx.fillStyle = PUZZLE_COLORS[i % PUZZLE_COLORS.length];
+            ctx.fill(p);
+            ctx.strokeStyle = "rgba(255,255,255,0.45)";
+            ctx.lineWidth = 1.2;
+            ctx.stroke(p);
+            ctx.restore();
+        });
+        const url = canvas.toDataURL("image/png");
+        puzzleImageCache[key] = url;
+        return url;
     }
 
     function renderOrbitRing() {
@@ -1749,8 +1879,13 @@
         if (stars >= 3) return "done-3";
         if (stars >= 2) return "done-2";
         if (stars >= 1) return "done-1";
-        const firstOpen = data.nodes.find(n => canUnlockNode(n, data) && nodeStars(data.id, n.id) < 3);
-        if (firstOpen && firstOpen.id === node.id) return "current";
+        if (!node.bonus) {
+            const firstOpen = data.nodes.find(n =>
+                !n.bonus && canUnlockNode(n, data) && nodeStars(data.id, n.id) < 3);
+            if (firstOpen && firstOpen.id === node.id) return "current";
+        } else if (stars === 0) {
+            return "current";
+        }
         return "available";
     }
 
@@ -1793,7 +1928,11 @@
             html += renderOceanDecorations(geo);
         }
 
-        const positions = currentData.nodes.map(node => {
+        const positions = currentData.nodes.filter(n => !n.bonus).map(node => {
+            const c = getNodeCenter(geo, node);
+            return { node, x: c ? c.x : w / 2, y: c ? c.y : h / 2 };
+        });
+        const bonusPositions = currentData.nodes.filter(n => n.bonus).map(node => {
             const c = getNodeCenter(geo, node);
             return { node, x: c ? c.x : w / 2, y: c ? c.y : h / 2 };
         });
@@ -1811,6 +1950,11 @@
             const stars = nodeStars(currentData.id, p.node.id);
             html += renderMapNode(p, cls, stars, largeNodes);
         }
+        for (const p of bonusPositions) {
+            const cls = nodeStatusClass(p.node, currentData);
+            const stars = nodeStars(currentData.id, p.node.id);
+            html += renderMapNode(p, cls, stars, largeNodes);
+        }
         mapSvg.innerHTML = html;
         const mapScroll = document.getElementById("map-scroll");
         mapScroll.classList.toggle("ocean-adventure", !!isOceanAdventure);
@@ -1824,9 +1968,16 @@
                 if (!node) return;
                 if (!canUnlockNode(node, currentData)) {
                     const prev = findPrevNode(node, currentData);
-                    document.getElementById("locked-msg").textContent = prev
-                        ? "Спочатку набери щонайменше " + UNLOCK_MIN_STARS + " ⭐ на «" + prev.title + "»."
-                        : "Ця точка ще закрита.";
+                    const lockedEl = document.getElementById("locked-msg");
+                    if (node.bonus) {
+                        lockedEl.textContent =
+                            "Бонус відкриється, коли на кожній країні Європи буде щонайменше " +
+                            UNLOCK_MIN_STARS + " ⭐.";
+                    } else {
+                        lockedEl.textContent = prev
+                            ? "Спочатку набери щонайменше " + UNLOCK_MIN_STARS + " ⭐ на «" + prev.title + "»."
+                            : "Ця точка ще закрита.";
+                    }
                     document.getElementById("modal-locked").classList.add("active");
                     audio.wrong();
                     return;
@@ -1848,7 +1999,10 @@
     function startNode(node) {
         audio.select();
         currentNode = node;
-        session = { correct: 0, wrong: 0, combo: 0, comboMax: 0, coinsEarned: 0, roundIndex: 0 };
+        session = {
+            correct: 0, wrong: 0, combo: 0, comboMax: 0, coinsEarned: 0, roundIndex: 0,
+            puzzleMoves: 0, puzzleHint: false,
+        };
         save.lastPlayed = { continentId: currentData.id, nodeId: node.id };
         saveSave();
         showScreen(gameScreen);
@@ -1865,7 +2019,12 @@
             if (i === session.roundIndex) d.classList.add("current");
             roundDots.appendChild(d);
         }
-        gameLocation.textContent = currentNode.title + " · " + (session.roundIndex + 1) + "/" + total;
+        const round = currentNode.rounds[session.roundIndex];
+        if (round && round.type === "puzzle") {
+            gameLocation.textContent = currentNode.title + " · бонус";
+        } else {
+            gameLocation.textContent = currentNode.title + " · " + (session.roundIndex + 1) + "/" + total;
+        }
     }
 
     const mapCacheLoaded = {};
@@ -1996,6 +2155,160 @@
                 gameAnswers.appendChild(btn);
             });
         },
+        async puzzle(ctx, round) {
+            gamePrompt.textContent = round.text;
+            gameMedia.innerHTML = "";
+            gameAnswers.className = "answers puzzle-wrap";
+            gameAnswers.innerHTML = "<p style='color:#94a3b8;text-align:center'>Завантаження пазла…</p>";
+            mentorBubble.textContent = "🧭 Обери першу плитку, потім другу — вони поміняються місцями.";
+
+            const cols = round.cols || 5;
+            const rows = round.rows || 4;
+            const total = cols * rows;
+            let imageUrl;
+            try {
+                imageUrl = await buildEuropePuzzleImage(round.mapId || "europe-countries");
+            } catch (e) {
+                console.error(e);
+                gameAnswers.innerHTML = "<p>Не вдалося завантажити пазл.</p>";
+                return;
+            }
+
+            gameAnswers.innerHTML = "";
+            const toolbar = document.createElement("div");
+            toolbar.className = "puzzle-toolbar";
+            const stat = document.createElement("span");
+            stat.className = "puzzle-stat";
+            stat.textContent = "Ходи: 0";
+            const preview = document.createElement("img");
+            preview.className = "puzzle-preview";
+            preview.src = imageUrl;
+            preview.alt = "Підказка: як має виглядати карта";
+            preview.hidden = true;
+            const hintBtn = document.createElement("button");
+            hintBtn.type = "button";
+            hintBtn.className = "btn-mini";
+            hintBtn.textContent = "Підказка";
+            const shuffleBtn = document.createElement("button");
+            shuffleBtn.type = "button";
+            shuffleBtn.className = "btn-mini";
+            shuffleBtn.textContent = "Перемішати";
+            toolbar.appendChild(stat);
+            toolbar.appendChild(hintBtn);
+            toolbar.appendChild(shuffleBtn);
+
+            const board = document.createElement("div");
+            board.className = "puzzle-board";
+            board.style.gridTemplateColumns = "repeat(" + cols + ", 1fr)";
+            board.style.gridTemplateRows = "repeat(" + rows + ", 1fr)";
+
+            let order = [];
+            for (let i = 0; i < total; i++) order.push(i);
+            let selected = null;
+            session.puzzleMoves = 0;
+            session.puzzleHint = false;
+
+            function shuffleOrder() {
+                do {
+                    order = shuffleArray(order);
+                } while (order.every((v, i) => v === i));
+                selected = null;
+            }
+            shuffleOrder();
+
+            function pieceBgPos(pieceIdx) {
+                const col = pieceIdx % cols;
+                const row = Math.floor(pieceIdx / cols);
+                const x = cols > 1 ? (col / (cols - 1)) * 100 : 0;
+                const y = rows > 1 ? (row / (rows - 1)) * 100 : 0;
+                return x + "% " + y + "%";
+            }
+
+            function isSolved() {
+                return order.every((v, i) => v === i);
+            }
+
+            function onSolved() {
+                if (answering) return;
+                answering = true;
+                session.correct = 1;
+                session.wrong = session.puzzleHint || session.puzzleMoves > 55 ? 1 : 0;
+                session.combo = 1;
+                session.comboMax = 1;
+                audio.correct();
+                flash("correct");
+                confetti(30);
+                mentorBubble.textContent = "🧭 Карта Європи зібрана! Чудова робота!";
+                setTimeout(() => {
+                    if (round.explainOnSuccess || round.explanation) {
+                        showFeedbackModal(round, true);
+                    } else {
+                        finishNode();
+                    }
+                }, 600);
+            }
+
+            function renderBoard() {
+                board.innerHTML = "";
+                order.forEach((pieceIdx, slotIdx) => {
+                    const btn = document.createElement("button");
+                    btn.type = "button";
+                    btn.className = "puzzle-piece";
+                    if (slotIdx === selected) btn.classList.add("selected");
+                    if (pieceIdx === slotIdx) btn.classList.add("correct-slot");
+                    btn.style.backgroundImage = "url(" + imageUrl + ")";
+                    btn.style.backgroundSize = cols * 100 + "% " + rows * 100 + "%";
+                    btn.style.backgroundPosition = pieceBgPos(pieceIdx);
+                    btn.setAttribute("aria-label", "Плитка " + (slotIdx + 1));
+                    btn.addEventListener("click", () => {
+                        if (answering) return;
+                        if (selected === null) {
+                            selected = slotIdx;
+                            audio.tap();
+                            renderBoard();
+                            return;
+                        }
+                        if (selected === slotIdx) {
+                            selected = null;
+                            renderBoard();
+                            return;
+                        }
+                        const a = selected;
+                        const b = slotIdx;
+                        const tmp = order[a];
+                        order[a] = order[b];
+                        order[b] = tmp;
+                        selected = null;
+                        session.puzzleMoves++;
+                        stat.textContent = "Ходи: " + session.puzzleMoves;
+                        audio.tap();
+                        renderBoard();
+                        if (isSolved()) onSolved();
+                    });
+                    board.appendChild(btn);
+                });
+            }
+
+            hintBtn.addEventListener("click", () => {
+                audio.tap();
+                session.puzzleHint = true;
+                preview.hidden = !preview.hidden;
+                hintBtn.textContent = preview.hidden ? "Підказка" : "Сховати";
+            });
+            shuffleBtn.addEventListener("click", () => {
+                if (answering) return;
+                audio.tap();
+                shuffleOrder();
+                session.puzzleMoves++;
+                stat.textContent = "Ходи: " + session.puzzleMoves;
+                renderBoard();
+            });
+
+            gameAnswers.appendChild(toolbar);
+            gameAnswers.appendChild(preview);
+            gameAnswers.appendChild(board);
+            renderBoard();
+        },
         async mapTap(ctx, round) {
             gamePrompt.textContent = round.text;
             gameMedia.innerHTML = "";
@@ -2096,6 +2409,12 @@
 
     document.getElementById("feedback-next").addEventListener("click", () => {
         audio.tap();
+        const round = currentNode && currentNode.rounds[session.roundIndex];
+        if (round && round.type === "puzzle" && answering) {
+            document.getElementById("modal-feedback").classList.remove("active");
+            finishNode();
+            return;
+        }
         advanceRound();
     });
 
@@ -2133,7 +2452,7 @@
         }
 
         if (stars >= 3 && currentData.id === "europe" &&
-            currentData.nodes.every(n => nodeStars("europe", n.id) >= 3)) {
+            currentData.nodes.filter(n => !n.bonus).every(n => nodeStars("europe", n.id) >= 3)) {
             if (!save.badges.includes("europe-complete")) {
                 save.badges.push("europe-complete");
                 saveSave();
