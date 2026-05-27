@@ -2013,6 +2013,17 @@
 
     function randomPick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
 
+    function shuffleArray(arr) {
+        const copy = arr.slice();
+        for (let i = copy.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            const tmp = copy[i];
+            copy[i] = copy[j];
+            copy[j] = tmp;
+        }
+        return copy;
+    }
+
     function renderProgressDots() {
         progressDots.innerHTML = "";
         runner.questions.forEach((q, i) => {
@@ -2038,12 +2049,10 @@
             ? "Це БОС-питання! +2 монети, якщо вгадаєш."
             : randomPick(INTROS);
 
-        // Shuffle answers but track the correct index in the shuffled order.
-        const original = q.answers.map((text, idx) => ({ text, isCorrect: idx === q.correct }));
-        const shuffled = original
-            .map(v => ({ v, k: Math.random() }))
-            .sort((a, b) => a.k - b.k)
-            .map(o => o.v);
+        // Shuffle answers each time the question is shown (new order on replay).
+        const shuffled = shuffleArray(
+            q.answers.map((text, idx) => ({ text, isCorrect: idx === q.correct }))
+        );
 
         const letters = ["А", "Б", "В", "Г"];
         answersEl.innerHTML = "";

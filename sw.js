@@ -1,4 +1,4 @@
-const CACHE_NAME = "mini-games-v21";
+const CACHE_NAME = "mini-games-v25";
 
 const PRECACHE = [
     "./",
@@ -34,6 +34,7 @@ const PRECACHE = [
     "./games/geo-quest/index.html",
     "./games/geo-quest/data/world.json",
     "./games/geo-quest/data/continents/europe.json",
+    "./games/geo-quest/data/rounds/ukraine-extra.json",
     "./games/geo-quest/data/continents/ocean.json",
     "./games/geo-quest/data/maps/europe-simple.json",
     "./games/geo-quest/data/maps/europe-countries.json",

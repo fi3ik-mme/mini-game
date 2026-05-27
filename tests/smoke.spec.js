@@ -279,9 +279,17 @@ test.describe("Mini Games smoke tests", () => {
     expect(europeRes.ok()).toBeTruthy();
     const europe = await europeRes.json();
     const ukraine = europe.nodes[0];
+    let ukraineRounds = ukraine.rounds || [];
+    if (ukraine.roundsFile) {
+      const extraRes = await request.get("/games/geo-quest/" + ukraine.roundsFile);
+      expect(extraRes.ok()).toBeTruthy();
+      const extra = await extraRes.json();
+      ukraineRounds = ukraineRounds.concat(extra.rounds || []);
+    }
     const answerFor = (round) => {
       if (round.type === "yesno") return round.correct ? "Так" : "Ні";
       if (round.type === "mapTap") return null;
+      if (round.type === "imageQuiz") return round.answers[round.correct].label || null;
       return round.answers[round.correct];
     };
 
@@ -294,9 +302,21 @@ test.describe("Mini Games smoke tests", () => {
 
     await expect(page.locator("#screen-game")).toHaveClass(/active/, { timeout: 5000 });
 
-    for (const round of ukraine.rounds) {
+    for (const round of ukraineRounds) {
       if (round.type === "mapTap") {
         await page.locator('.map-tap-svg path[data-id="' + round.targetCountryId + '"]').click();
+      } else if (round.type === "imageQuiz") {
+        const label = answerFor(round);
+        if (label) {
+          await page.locator(".answer-img-btn").filter({ hasText: label }).first().click();
+        } else {
+          const fileKey = decodeURIComponent(
+            (round.answers[round.correct].image.match(/FilePath\/([^?]+)/) || [])[1] || ""
+          );
+          await page.locator(".answer-img-btn").filter({
+            has: page.locator('img[src*="' + fileKey.replace(/"/g, "") + '"]'),
+          }).first().click();
+        }
       } else {
         const label = answerFor(round);
         await page.locator(".answer-btn").filter({ hasText: label }).first().click();

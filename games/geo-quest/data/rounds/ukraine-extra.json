@@ -1,0 +1,255 @@
+{
+  "rounds": [
+    {
+      "type": "imageQuiz",
+      "text": "Обери справжній малий герб України:",
+      "imageFit": "contain",
+      "answers": [
+        { "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lesser_Coat_of_Arms_of_Ukraine.svg?width=280" },
+        { "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Herb_Polski.svg?width=280" },
+        { "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Germany.svg?width=280" },
+        { "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_France.svg?width=280" }
+      ],
+      "correct": 0,
+      "explanation": "На гербі України — тризуб: стилізований сокіл, що символізує свободу та державність.",
+      "explanationMedia": {
+        "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lesser_Coat_of_Arms_of_Ukraine.svg?width=360",
+        "caption": "Малий герб України — тризуб",
+        "wikiUrl": "https://uk.wikipedia.org/wiki/Державний_герб_України"
+      },
+      "explainOnSuccess": true
+    },
+    {
+      "type": "imageQuiz",
+      "text": "Що зображено на фото? Обери вишиванку:",
+      "answers": [
+        { "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ukrainian_Embroidery.jpg?width=280" },
+        { "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Turkish_carpet.jpg?width=280" },
+        { "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jeans.jpg?width=280" },
+        { "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sweater.jpg?width=280" }
+      ],
+      "correct": 0,
+      "explanation": "Вишиванка — традиційна українська вишита сорочка з орнаментом. Кожен регіон має свої візерунки та кольори.",
+      "explanationMedia": {
+        "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ukrainian_Embroidery.jpg?width=360",
+        "caption": "Українська вишивка на одязі",
+        "wikiUrl": "https://uk.wikipedia.org/wiki/Вишиванка"
+      },
+      "explainOnSuccess": true
+    },
+    {
+      "type": "imageQuiz",
+      "text": "Обери калину — символічну рослину України:",
+      "answers": [
+        { "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Viburnum_opulus_fruit.jpg?width=280" },
+        { "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sunflower_from_Silesia2.jpg?width=280" },
+        { "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Raspberries_(Rubus_idaeus).jpg?width=280" },
+        { "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Table_grapes_on_white.jpg?width=280" }
+      ],
+      "correct": 0,
+      "explanation": "Калина — червоні грони гостролиста. У піснях і поезії вона символізує Батьківщину, памʼять і любов.",
+      "explanationMedia": {
+        "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Viburnum_opulus_fruit.jpg?width=360",
+        "caption": "Калина (гостролист)",
+        "wikiUrl": "https://uk.wikipedia.org/wiki/Калина_(рослина)"
+      },
+      "explainOnSuccess": true
+    },
+    {
+      "type": "quiz",
+      "text": "Яка область України найбільша за площею?",
+      "answers": ["Одеська", "Львівська", "Харківська", "Донецька"],
+      "correct": 0,
+      "explanation": "Одеська область — найбільша за площею. Вона виходить до Чорного моря на півдні.",
+      "explanationMedia": {
+        "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odessa_Opera_and_Ballet_Theater.jpg?width=360",
+        "caption": "Одеса — обласний центр Одеської області",
+        "wikiUrl": "https://uk.wikipedia.org/wiki/Одеська_область"
+      },
+      "explainOnSuccess": true
+    },
+    {
+      "type": "quiz",
+      "text": "У якій області розташовані Карпати та місто Ужгород?",
+      "answers": ["Закарпатська", "Волинська", "Чернігівська", "Полтавська"],
+      "correct": 0,
+      "explanation": "Закарпатська область — на крайньому заході України, між Карпатами та кордонами з ЄС.",
+      "explanationMedia": {
+        "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Uzhhorod%20Castle%201.jpg?width=360",
+        "caption": "Ужгородський замок",
+        "wikiUrl": "https://uk.wikipedia.org/wiki/Закарпатська_область"
+      },
+      "explainOnSuccess": true
+    },
+    {
+      "type": "yesno",
+      "text": "Місто Київ — це окрема одиниця, а не центр Київської області.",
+      "correct": true,
+      "explanation": "Так. Київ — місто з особливим статусом, столиця України. Обласний центр поруч — місто Біла Церква.",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/Київ",
+      "explainOnSuccess": true
+    },
+    {
+      "type": "quiz",
+      "text": "Свято Івана Купала в Україні традиційно відзначають улітку. Що роблять на Купалі?",
+      "answers": [
+        "Стрибають через вогнище та плетуть вінки",
+        "Садять ялинку",
+        "Варять кутю на Різдво",
+        "Фарбують яйця лише восени"
+      ],
+      "correct": 0,
+      "explanation": "На Купала ввечері запалюють багаття, плетуть вінки з трав, шукають папороть і купаються у воді.",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/Купальські_святкування",
+      "explainOnSuccess": true
+    },
+    {
+      "type": "quiz",
+      "text": "Писанка — це…",
+      "answers": [
+        "Розписане яйце на Великдень",
+        "Вишитий рушник",
+        "Глиняний горщик",
+        "Деревʼяна сопілка"
+      ],
+      "correct": 0,
+      "explanation": "Писанки прикрашають воском і барвниками. Кожен регіон має власні візерунки та символи.",
+      "explanationMedia": {
+        "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pysanky2011.JPG?width=360",
+        "caption": "Українські писанки",
+        "wikiUrl": "https://uk.wikipedia.org/wiki/Писанка"
+      },
+      "explainOnSuccess": true
+    },
+    {
+      "type": "yesno",
+      "text": "Маланка — це традиційне святкування Старого Нового року з масками та виставами.",
+      "correct": true,
+      "explanation": "Так. Маланку святкують на початку січня: ходять колядувати, грають сценки, вітають сусідів.",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/Маланка",
+      "explainOnSuccess": true
+    },
+    {
+      "type": "quiz",
+      "text": "Яка страва вважається одним із символів української кухні?",
+      "answers": ["Борщ", "Суші", "Паелья", "Багет"],
+      "correct": 0,
+      "explanation": "Борщ готують з буряка, капусти та овочів. Рецепт різниться в кожній родині та регіоні.",
+      "explanationMedia": {
+        "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ukrainian_borscht.jpg?width=360",
+        "caption": "Український борщ",
+        "wikiUrl": "https://uk.wikipedia.org/wiki/Борщ"
+      },
+      "explainOnSuccess": true
+    },
+    {
+      "type": "quiz",
+      "text": "Вареники — це…",
+      "answers": [
+        "Вироби з тіста з начинкою",
+        "Суп із риби",
+        "Салат із помідорів",
+        "Печиво без начинки"
+      ],
+      "correct": 0,
+      "explanation": "Вареники варять у воді. Начинка буває з картоплі, сиру, вишень чи маку.",
+      "explanationMedia": {
+        "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Varenyky.jpg?width=360",
+        "caption": "Вареники з картоплею",
+        "wikiUrl": "https://uk.wikipedia.org/wiki/Вареники"
+      },
+      "explainOnSuccess": true
+    },
+    {
+      "type": "yesno",
+      "text": "Сало — традиційний український продукт, який часто їдять з хлібом та цибулею.",
+      "correct": true,
+      "explanation": "Так. Сало солять або коптять. Його подають на свята разом із часником, хлібом і борщем.",
+      "explanationMedia": {
+        "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Salo.jpg?width=360",
+        "caption": "Сало — традиційна страва",
+        "wikiUrl": "https://uk.wikipedia.org/wiki/Сало"
+      },
+      "explainOnSuccess": true
+    },
+    {
+      "type": "quiz",
+      "text": "Бандура — це традиційний український…",
+      "answers": ["Музичний інструмент", "Танець", "Вид одягу", "Свято врожаю"],
+      "correct": 0,
+      "explanation": "Бандуристи співали думи та історичні пісні. Інструмент має багато струн і півмісяцеподібний корпус.",
+      "explanationMedia": {
+        "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bandura.jpg?width=360",
+        "caption": "Українська бандура",
+        "wikiUrl": "https://uk.wikipedia.org/wiki/Бандура"
+      },
+      "explainOnSuccess": true
+    },
+    {
+      "type": "quiz",
+      "text": "Трембіта — довгий деревʼяний ріг, який традиційно грають у Карпатах. Звідки він?",
+      "answers": ["З України (Гуцульщина)", "З Італії", "З Японії", "З Бразилії"],
+      "correct": 0,
+      "explanation": "Трембіту використовували для подачі сигналів у горах — збирали людей на свята чи попереджали про небезпеку.",
+      "explanationMedia": {
+        "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Trembita.jpg?width=360",
+        "caption": "Гуцульська трембіта",
+        "wikiUrl": "https://uk.wikipedia.org/wiki/Трембіта"
+      },
+      "explainOnSuccess": true
+    },
+    {
+      "type": "quiz",
+      "text": "Петриківський розпис — це…",
+      "answers": [
+        "Декоративний живопис квітами та птахами",
+        "Вид народного танцю",
+        "Страва з риби",
+        "Літній обряд з вогнищем"
+      ],
+      "correct": 0,
+      "explanation": "Петриківський розпис прикрашає посуд, скриньки та картини. Його визнано нематеріальною спадщиною ЮНЕСКО.",
+      "wikiUrl": "https://uk.wikipedia.org/wiki/Петриківський_розпис",
+      "explainOnSuccess": true
+    },
+    {
+      "type": "quiz",
+      "text": "Тарас Шевченко — відомий український…",
+      "answers": ["Поет і художник", "Футболіст", "Космонавт", "Хімік-лауреат Нобеля"],
+      "correct": 0,
+      "explanation": "Шевченко написав «Кобзар», малював картини. Його портрет є на банкноті 100 гривень.",
+      "explanationMedia": {
+        "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Taras%20Shevchenko.jpg?width=360",
+        "caption": "Тарас Шевченко",
+        "wikiUrl": "https://uk.wikipedia.org/wiki/Тарас_Шевченко"
+      },
+      "explainOnSuccess": true
+    },
+    {
+      "type": "quiz",
+      "text": "Леся Українка — видатна українська…",
+      "answers": ["Письменниця", "Плавчиня", "Політикиня США", "Скульпторка Франції"],
+      "correct": 0,
+      "explanation": "Леся Українка писала вірші, драми та переклади. Її твори вивчають у школі по всьому світу.",
+      "explanationMedia": {
+        "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lesya_Ukrainka.jpg?width=360",
+        "caption": "Леся Українка",
+        "wikiUrl": "https://uk.wikipedia.org/wiki/Леся_Українка"
+      },
+      "explainOnSuccess": true
+    },
+    {
+      "type": "quiz",
+      "text": "Ігор Сікорський — український винахідник, який створив…",
+      "answers": ["Вертольот", "Паровоз", "Телескоп", "Мікроскоп"],
+      "correct": 0,
+      "explanation": "Сікорський побудував перший успішний вертоліт у США та заснував авіакомпанію Sikorsky Aircraft.",
+      "explanationMedia": {
+        "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sikorsky%2C_Igor.jpg?width=360",
+        "caption": "Ігор Сікорський — авіаконструктор",
+        "wikiUrl": "https://uk.wikipedia.org/wiki/Ігор_Сікорський"
+      },
+      "explainOnSuccess": true
+    }
+  ]
+}

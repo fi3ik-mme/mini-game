@@ -1680,6 +1680,8 @@
 
     let questions = [];
     let currentIndex = 0;
+    /** Shuffled display order for the current question (reshuffled each renderQuestion). */
+    let currentAnswerOptions = null;
     let locked = false;
     let guaranteedPrize = 0;
     let currentSubjectTitle = "";
@@ -2350,12 +2352,18 @@
         answersEl.innerHTML = "";
         const labels = ["A", "B", "C", "D"];
 
-        q.answers.forEach((answer, i) => {
+        currentAnswerOptions = q.answers.map((text, idx) => ({
+            text: text,
+            isCorrect: idx === q.correct,
+        }));
+        shuffle(currentAnswerOptions);
+
+        currentAnswerOptions.forEach((opt, i) => {
             const btn = document.createElement("button");
             btn.type = "button";
             btn.className = "answer-btn";
             btn.dataset.label = labels[i];
-            btn.textContent = answer;
+            btn.textContent = opt.text;
             btn.addEventListener("click", () => selectAnswer(i, btn));
             answersEl.appendChild(btn);
         });
@@ -2373,10 +2381,19 @@
 
     function questionVoiceText(q) {
         const parts = [q.text];
-        q.answers.forEach((a, i) => {
-            parts.push("Варіант " + VOICE_LETTERS[i] + ": " + a);
+        const opts = currentAnswerOptions || q.answers.map((text, idx) => ({
+            text: text,
+            isCorrect: idx === q.correct,
+        }));
+        opts.forEach((opt, i) => {
+            parts.push("Варіант " + VOICE_LETTERS[i] + ": " + opt.text);
         });
         return parts.join(". ");
+    }
+
+    function correctDisplayIndex() {
+        if (!currentAnswerOptions) return -1;
+        return currentAnswerOptions.findIndex(o => o.isCorrect);
     }
 
     function speakCurrentQuestion() {
@@ -2426,7 +2443,7 @@
         modalContinue.addEventListener("click", handler);
     }
 
-    function selectAnswer(index, chosenBtn) {
+    function selectAnswer(displayIndex, chosenBtn) {
         if (locked) return;
         locked = true;
         voice.stop();
@@ -2434,6 +2451,7 @@
 
         const q = questions[currentIndex];
         const buttons = answersEl.querySelectorAll(".answer-btn");
+        const isCorrect = currentAnswerOptions[displayIndex].isCorrect;
 
         buttons.forEach(btn => { btn.disabled = true; if (btn !== chosenBtn) btn.classList.add("dim"); });
         chosenBtn.classList.add("locked");
@@ -2446,11 +2464,9 @@
 
             buttons.forEach((btn, i) => {
                 btn.classList.remove("dim");
-                if (i === q.correct) btn.classList.add("correct");
-                else if (i === index) btn.classList.add("wrong");
+                if (currentAnswerOptions[i].isCorrect) btn.classList.add("correct");
+                else if (i === displayIndex) btn.classList.add("wrong");
             });
-
-            const isCorrect = index === q.correct;
             const isMilestone = MILESTONES.has(currentIndex);
 
             if (isCorrect) {
@@ -2585,11 +2601,10 @@
         audio.fiftyFifty();
         vibrate(20);
 
-        const q = questions[currentIndex];
         const buttons = [...answersEl.querySelectorAll(".answer-btn")];
         const wrongIndices = [];
-        for (let i = 0; i < q.answers.length; i++) {
-            if (i !== q.correct) wrongIndices.push(i);
+        for (let i = 0; i < currentAnswerOptions.length; i++) {
+            if (!currentAnswerOptions[i].isCorrect) wrongIndices.push(i);
         }
         shuffle(wrongIndices);
         const toEliminate = wrongIndices.slice(0, 2);
@@ -2634,8 +2649,8 @@
         audio.audienceCheer();
         vibrate(15);
 
-        const q = questions[currentIndex];
-        const votes = generateAudienceVotes(q.correct, q.answers.length);
+        const correctIdx = correctDisplayIndex();
+        const votes = generateAudienceVotes(correctIdx, currentAnswerOptions.length);
 
         // Mark which answers were already removed by 50/50 — they get 0%.
         const visible = new Set(visibleAnswerIndices());
@@ -2695,19 +2710,20 @@
 
         const q = questions[currentIndex];
         const visible = visibleAnswerIndices();
+        const correctIdx = correctDisplayIndex();
 
         // Friend's confidence: ~70% correct, 30% wrong (within still-visible options).
         const trusts = Math.random() < 0.7;
         let friendPick;
-        if (trusts && visible.includes(q.correct)) {
-            friendPick = q.correct;
+        if (trusts && visible.includes(correctIdx)) {
+            friendPick = correctIdx;
         } else {
-            const wrongs = visible.filter(i => i !== q.correct);
+            const wrongs = visible.filter(i => i !== correctIdx);
             friendPick = wrongs.length
                 ? wrongs[Math.floor(Math.random() * wrongs.length)]
-                : q.correct;
+                : correctIdx;
         }
-        const isCorrect = friendPick === q.correct;
+        const isCorrect = friendPick === correctIdx;
         // High confidence only when actually correct; medium most of the time; low for blind guess
         let confidence;
         if (isCorrect && Math.random() < 0.55) confidence = "high";
@@ -2742,7 +2758,7 @@
             phoneBubble.innerHTML =
                 "<strong>Друг:</strong> Я думаю, що відповідь — " +
                 '<span class="friend-pick">' + LABELS[friendPick] + '</span>' +
-                ", «" + escapeHtml(q.answers[friendPick]) + "». " +
+                ", «" + escapeHtml(currentAnswerOptions[friendPick].text) + "». " +
                 '<span class="friend-quote">' + escapeHtml(quote) + '</span>';
             phoneBubble.hidden = false;
             phoneCloseBtn.disabled = false;

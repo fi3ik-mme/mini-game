@@ -12,6 +12,7 @@
       "emoji": "🇺🇦",
       "countryId": "ukraine",
       "unlock": { "type": "free" },
+      "roundsFile": "data/rounds/ukraine-extra.json",
       "rounds": [
         {
           "type": "capital",
