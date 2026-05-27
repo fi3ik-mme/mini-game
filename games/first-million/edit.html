@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+    <title>Редактор питань · Перший мільйон</title>
+    <link rel="icon" type="image/svg+xml" href="../../icon.svg" />
+    <style>
+        * { box-sizing: border-box; }
+
+        html, body { overscroll-behavior: none; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            min-height: 100dvh;
+            background: radial-gradient(ellipse at top, #1a237e 0%, #0d1117 70%);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            color: white;
+            padding: 12px 14px;
+            padding-bottom: max(24px, env(safe-area-inset-bottom));
+            user-select: text;
+            -webkit-user-select: text;
+        }
+
+        .top-bar {
+            width: 100%;
+            max-width: 720px;
+            margin: 0 auto 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .back-link {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 8px 12px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .back-link:active { background: rgba(255, 255, 255, 0.14); }
+
+        h1 {
+            margin: 0 0 4px;
+            font-size: 1.35rem;
+            background: linear-gradient(180deg, #fde68a 0%, #fbbf24 60%, #d97706 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .page-wrap {
+            width: 100%;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .subtitle {
+            color: #94a3b8;
+            font-size: 0.88rem;
+            margin: 0 0 14px;
+            line-height: 1.45;
+        }
+
+        .toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+            margin-bottom: 14px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+        }
+
+        .toolbar label {
+            font-size: 0.78rem;
+            color: #94a3b8;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .toolbar select,
+        .toolbar input[type="number"] {
+            font-family: inherit;
+            font-size: 0.92rem;
+            padding: 8px 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(0, 0, 0, 0.35);
+            color: white;
+            min-width: 0;
+        }
+
+        .toolbar select { flex: 1 1 180px; max-width: 100%; }
+
+        .field-grow { flex: 1 1 140px; }
+
+        .nav-row {
+            display: flex;
+            gap: 6px;
+            align-items: flex-end;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            font-family: inherit;
+            font-size: 0.88rem;
+            font-weight: 600;
+            padding: 8px 14px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.08);
+            color: white;
+            cursor: pointer;
+        }
+
+        .btn:active { transform: scale(0.98); }
+        .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+        .btn-primary {
+            background: linear-gradient(180deg, #fbbf24, #d97706);
+            color: #1a1a2e;
+            border-color: transparent;
+        }
+
+        .btn-accent {
+            background: linear-gradient(180deg, #34d399, #059669);
+            color: #052e1c;
+            border-color: transparent;
+        }
+
+        .stats {
+            font-size: 0.82rem;
+            color: #94a3b8;
+            margin-left: auto;
+        }
+
+        .stats strong { color: #fde68a; }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            width: 100%;
+        }
+
+        .filter-row input { accent-color: #fbbf24; }
+
+        .question-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 215, 0, 0.25);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        .card-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 14px;
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-bottom: 12px;
+        }
+
+        .card-meta .badge {
+            padding: 3px 8px;
+            border-radius: 6px;
+            background: rgba(251, 191, 36, 0.15);
+            border: 1px solid rgba(251, 191, 36, 0.35);
+            color: #fde68a;
+        }
+
+        .card-meta .badge.saved {
+            background: rgba(34, 197, 94, 0.15);
+            border-color: rgba(74, 222, 128, 0.4);
+            color: #86efac;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #64748b;
+            margin: 0 0 8px;
+        }
+
+        /* —— Game-like preview (як під час гри) —— */
+        .question-box {
+            background: linear-gradient(180deg, rgba(30, 64, 175, 0.45), rgba(15, 23, 42, 0.7));
+            border: 2px solid rgba(255, 215, 0, 0.55);
+            border-radius: 16px;
+            padding: 22px 18px;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 1.05rem;
+            line-height: 1.5;
+            margin-bottom: 14px;
+        }
+
+        .answers {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .answer-btn {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px 14px 60px;
+            min-height: 56px;
+            background: linear-gradient(180deg, #1e40af 0%, #1e3a8a 100%);
+            border: 2px solid rgba(255, 215, 0, 0.4);
+            border-radius: 999px;
+            color: white;
+            font-size: 0.98rem;
+            line-height: 1.35;
+            text-align: left;
+            pointer-events: none;
+        }
+
+        .answer-btn::before {
+            content: attr(data-label);
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255, 215, 0, 0.15);
+            border: 2px solid #fbbf24;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fbbf24;
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+
+        .answer-btn.correct {
+            background: linear-gradient(180deg, #15803d 0%, #166534 100%);
+            border-color: #4ade80;
+            box-shadow: 0 0 18px rgba(74, 222, 128, 0.45);
+        }
+
+        .answer-btn.correct::before {
+            background: #4ade80;
+            color: #15803d;
+            border-color: #4ade80;
+        }
+
+        /* —— Після відповіді (модалка пояснення) —— */
+        .after-answer {
+            background: rgba(15, 23, 42, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 14px;
+            padding: 14px;
+            margin-bottom: 14px;
+        }
+
+        .after-answer h4 {
+            margin: 0 0 10px;
+            font-size: 0.95rem;
+            color: #fde68a;
+        }
+
+        .media {
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .media:empty { display: none; margin: 0; }
+
+        .media .info-card,
+        .media .scheme,
+        .media .scheme-row,
+        .media .compare {
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            padding: 10px;
+            margin: 8px 0;
+            text-align: left;
+        }
+
+        .media svg,
+        .media img { max-width: 100%; height: auto; border-radius: 8px; }
+
+        .explanation-block {
+            color: #cbd5e1;
+            font-size: 0.92rem;
+            line-height: 1.5;
+        }
+
+        .explanation-block .answer-line {
+            color: #fde68a;
+            margin: 0 0 8px;
+        }
+
+        .wiki-block {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            line-height: 1.5;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+
+        .wiki-block a { color: #86efac; }
+
+        details.raw-json {
+            margin-bottom: 14px;
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        details.raw-json summary {
+            cursor: pointer;
+            padding: 10px 12px;
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+
+        details.raw-json pre {
+            margin: 0;
+            padding: 0 12px 12px;
+            font-size: 0.72rem;
+            overflow-x: auto;
+            color: #cbd5e1;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .instruction-area label {
+            display: block;
+            font-size: 0.88rem;
+            color: #fde68a;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .instruction-area textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 12px 14px;
+            border-radius: 12px;
+            border: 1px solid rgba(251, 191, 36, 0.45);
+            background: rgba(0, 0, 0, 0.35);
+            color: #f8fafc;
+            font-family: inherit;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            resize: vertical;
+        }
+
+        .instruction-area textarea:focus {
+            outline: none;
+            border-color: #fbbf24;
+            box-shadow: 0 0 0 2px rgba(251, 191, 36, 0.25);
+        }
+
+        .actions-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .error-msg {
+            color: #fca5a5;
+            font-size: 0.9rem;
+            margin: 8px 0;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: calc(20px + env(safe-area-inset-bottom));
+            left: 50%;
+            transform: translateX(-50%) translateY(120%);
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid rgba(34, 197, 94, 0.5);
+            color: #86efac;
+            padding: 10px 18px;
+            border-radius: 99px;
+            font-size: 0.9rem;
+            z-index: 100;
+            transition: transform 0.3s ease;
+            pointer-events: none;
+        }
+
+        .toast.show { transform: translateX(-50%) translateY(0); }
+
+        @media (min-width: 560px) {
+            .answers {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <a class="back-link" href="index.html">← До гри</a>
+    <a class="back-link" href="../../index.html">Меню</a>
+</div>
+
+<div class="page-wrap">
+    <h1>✏️ Редактор питань</h1>
+    <p class="subtitle">
+        Переглядай питання так, як їх бачить гравець, і записуй інструкції для правок.
+        Збереження — у браузері (localStorage); після сесії експортуй у Markdown.
+    </p>
+
+    <div class="toolbar">
+        <div class="field-grow">
+            <label for="subject-select">Предмет</label>
+            <select id="subject-select" disabled>
+                <option>Завантаження…</option>
+            </select>
+        </div>
+        <div class="nav-row">
+            <div>
+                <label for="question-index">№ питання</label>
+                <input id="question-index" type="number" min="1" value="1" disabled style="width: 5.5rem;" />
+            </div>
+            <button id="btn-prev" class="btn" type="button" disabled>←</button>
+            <button id="btn-next" class="btn" type="button" disabled>→</button>
+        </div>
+        <label class="filter-row">
+            <input id="filter-instructions" type="checkbox" />
+            Лише з інструкціями
+        </label>
+        <span class="stats" id="stats">—</span>
+    </div>
+
+    <div class="toolbar" style="margin-top: -6px;">
+        <button id="btn-apply" class="btn btn-primary" type="button" disabled>Застосувати</button>
+        <button id="btn-clear-one" class="btn" type="button" disabled>Очистити це питання</button>
+        <button id="btn-export" class="btn btn-accent" type="button">Експорт .md</button>
+        <button id="btn-export-json" class="btn" type="button">Експорт .json</button>
+    </div>
+
+    <p id="load-error" class="error-msg" hidden></p>
+    <div id="question-root"></div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script>
+    const STORAGE_KEY = "first-million:content-instructions";
+    const LABELS = ["A", "B", "C", "D"];
+
+    const subjectSelect = document.getElementById("subject-select");
+    const questionIndexInput = document.getElementById("question-index");
+    const btnPrev = document.getElementById("btn-prev");
+    const btnNext = document.getElementById("btn-next");
+    const btnApply = document.getElementById("btn-apply");
+    const btnClearOne = document.getElementById("btn-clear-one");
+    const btnExport = document.getElementById("btn-export");
+    const btnExportJson = document.getElementById("btn-export-json");
+    const filterInstructions = document.getElementById("filter-instructions");
+    const statsEl = document.getElementById("stats");
+    const loadError = document.getElementById("load-error");
+    const questionRoot = document.getElementById("question-root");
+
+    let subjects = [];
+    let currentSubject = null;
+    let questions = [];
+    let currentIdx = 0;
+
+    function escapeHtml(s) {
+        return String(s).replace(/[&<>"']/g, ch => ({
+            "&": "&amp;", "<": "&lt;", ">": "&gt;",
+            '"': "&quot;", "'": "&#39;"
+        }[ch]));
+    }
+
+    function loadStore() {
+        try {
+            const raw = localStorage.getItem(STORAGE_KEY);
+            if (!raw) return { version: 1, entries: {} };
+            const data = JSON.parse(raw);
+            if (!data || typeof data.entries !== "object") return { version: 1, entries: {} };
+            return data;
+        } catch (_) {
+            return { version: 1, entries: {} };
+        }
+    }
+
+    function saveStore(store) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(store));
+    }
+
+    function entryKey(subjectId, index) {
+        return subjectId + ":" + index;
+    }
+
+    function defaultInstructionText(q) {
+        const snippet = (q.text || "").trim();
+        const short = snippet.length > 72 ? snippet.slice(0, 69) + "…" : snippet;
+        return "В запитанні «" + short + "» потрібно …";
+    }
+
+    function getInstruction(subjectId, index) {
+        const store = loadStore();
+        const e = store.entries[entryKey(subjectId, index)];
+        return e && e.instruction ? e.instruction : "";
+    }
+
+    function hasInstruction(subjectId, index) {
+        const store = loadStore();
+        const e = store.entries[entryKey(subjectId, index)];
+        return !!(e && e.instruction && String(e.instruction).trim());
+    }
+
+    function countInstructionsForSubject(subjectId) {
+        let n = 0;
+        for (let i = 0; i < questions.length; i++) {
+            if (hasInstruction(subjectId, i)) n++;
+        }
+        return n;
+    }
+
+    function updateStats() {
+        if (!currentSubject) {
+            statsEl.textContent = "—";
+            return;
+        }
+        const n = countInstructionsForSubject(currentSubject.id);
+        statsEl.innerHTML = "<strong>" + n + "</strong> / " + questions.length + " з інструкціями";
+    }
+
+    let toastTimer = null;
+    function toast(msg) {
+        const t = document.getElementById("toast");
+        t.textContent = msg;
+        t.classList.add("show");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => t.classList.remove("show"), 2200);
+    }
+
+    function showError(msg) {
+        loadError.hidden = !msg;
+        loadError.textContent = msg || "";
+    }
+
+    function buildAnswerButtons(q) {
+        const frag = document.createDocumentFragment();
+        (q.answers || []).forEach((answer, i) => {
+            const div = document.createElement("div");
+            div.className = "answer-btn" + (i === q.correct ? " correct" : "");
+            div.dataset.label = LABELS[i] || String(i + 1);
+            div.textContent = answer;
+            frag.appendChild(div);
+        });
+        return frag;
+    }
+
+    function buildAfterAnswer(q) {
+        const correctAnswer = (q.answers || [])[q.correct] ?? "—";
+        let html = '<p class="answer-line"><strong>Правильна відповідь:</strong> ' +
+            escapeHtml(correctAnswer) + "</p>";
+        if (q.explanation) {
+            html += "<p>" + escapeHtml(q.explanation) + "</p>";
+        }
+        return html;
+    }
+
+    function buildWikiBlock(q) {
+        const parts = [];
+        if (q.wikiKeyword) parts.push("<strong>Ключове слово:</strong> " + escapeHtml(q.wikiKeyword));
+        if (q.wikiTitle) parts.push("<strong>Стаття:</strong> " + escapeHtml(q.wikiTitle));
+        if (q.wikiUrl) {
+            parts.push('<strong>Вікі:</strong> <a href="' + escapeHtml(q.wikiUrl) + '" target="_blank" rel="noopener">' +
+                escapeHtml(q.wikiUrl) + "</a>");
+        }
+        if (!parts.length) return null;
+        const el = document.createElement("div");
+        el.className = "wiki-block";
+        el.innerHTML = parts.join("<br>");
+        return el;
+    }
+
+    function renderQuestion() {
+        if (!questions.length) {
+            questionRoot.innerHTML = "<p class=\"error-msg\">Немає питань у цьому наборі.</p>";
+            return;
+        }
+
+        const q = questions[currentIdx];
+        const saved = getInstruction(currentSubject.id, currentIdx);
+        const placeholder = defaultInstructionText(q);
+
+        const card = document.createElement("article");
+        card.className = "question-card";
+
+        const meta = document.createElement("div");
+        meta.className = "card-meta";
+        const hasSaved = hasInstruction(currentSubject.id, currentIdx);
+        meta.innerHTML =
+            '<span class="badge">' + escapeHtml(currentSubject.title) + "</span>" +
+            '<span class="badge">Питання ' + (currentIdx + 1) + " з " + questions.length + "</span>" +
+            '<span class="badge' + (hasSaved ? " saved" : "") + '" id="saved-badge">' +
+            (hasSaved ? "✓ є інструкція" : "без інструкції") + "</span>" +
+            '<span class="badge">' + escapeHtml(currentSubject.file) + "</span>";
+        card.appendChild(meta);
+
+        const playLabel = document.createElement("p");
+        playLabel.className = "section-label";
+        playLabel.textContent = "Як у грі (під час питання)";
+        card.appendChild(playLabel);
+
+        const qBox = document.createElement("div");
+        qBox.className = "question-box";
+        qBox.textContent = q.text || "";
+        card.appendChild(qBox);
+
+        const answers = document.createElement("div");
+        answers.className = "answers";
+        answers.appendChild(buildAnswerButtons(q));
+        card.appendChild(answers);
+
+        if (q.media || q.explanation) {
+            const afterLabel = document.createElement("p");
+            afterLabel.className = "section-label";
+            afterLabel.textContent = "Як у грі (після відповіді — пояснення)";
+            card.appendChild(afterLabel);
+
+            const after = document.createElement("div");
+            after.className = "after-answer";
+            after.innerHTML = "<h4>✓ Правильно! / ✗ Неправильно</h4>";
+
+            if (q.media) {
+                const media = document.createElement("div");
+                media.className = "media";
+                media.innerHTML = q.media;
+                after.appendChild(media);
+            }
+
+            const expl = document.createElement("div");
+            expl.className = "explanation-block";
+            expl.innerHTML = buildAfterAnswer(q);
+            after.appendChild(expl);
+            card.appendChild(after);
+        }
+
+        const wiki = buildWikiBlock(q);
+        if (wiki) card.appendChild(wiki);
+
+        const rawDetails = document.createElement("details");
+        rawDetails.className = "raw-json";
+        rawDetails.innerHTML = "<summary>Повний JSON питання</summary>";
+        const pre = document.createElement("pre");
+        pre.textContent = JSON.stringify(q, null, 2);
+        rawDetails.appendChild(pre);
+        card.appendChild(rawDetails);
+
+        const instrWrap = document.createElement("div");
+        instrWrap.className = "instruction-area";
+        instrWrap.innerHTML = "<label for=\"instruction-field\">Інструкція для правок</label>";
+
+        const ta = document.createElement("textarea");
+        ta.id = "instruction-field";
+        ta.rows = 5;
+        ta.value = saved || placeholder;
+        instrWrap.appendChild(ta);
+        card.appendChild(instrWrap);
+
+        const actions = document.createElement("div");
+        actions.className = "actions-row";
+        const applyClone = btnApply.cloneNode(true);
+        applyClone.disabled = false;
+        applyClone.addEventListener("click", () => applyInstruction(ta));
+        actions.appendChild(applyClone);
+        card.appendChild(actions);
+
+        questionRoot.innerHTML = "";
+        questionRoot.appendChild(card);
+
+        questionIndexInput.value = String(currentIdx + 1);
+        questionIndexInput.max = String(questions.length);
+        btnPrev.disabled = currentIdx <= 0;
+        btnNext.disabled = currentIdx >= questions.length - 1;
+        btnApply.disabled = false;
+        btnClearOne.disabled = false;
+
+        updateStats();
+    }
+
+    function applyInstruction(ta) {
+        const text = (ta ? ta.value : "").trim();
+        if (!text) {
+            toast("Введі текст інструкції");
+            return;
+        }
+
+        const q = questions[currentIdx];
+        const store = loadStore();
+        const key = entryKey(currentSubject.id, currentIdx);
+        store.entries[key] = {
+            subjectId: currentSubject.id,
+            subjectTitle: currentSubject.title,
+            dataFile: currentSubject.file,
+            questionIndex: currentIdx,
+            questionText: q.text,
+            correctAnswer: (q.answers || [])[q.correct],
+            instruction: text,
+            updatedAt: new Date().toISOString()
+        };
+        saveStore(store);
+
+        const badge = document.getElementById("saved-badge");
+        if (badge) {
+            badge.className = "badge saved";
+            badge.textContent = "✓ є інструкція";
+        }
+        updateStats();
+        toast("Інструкцію збережено");
+    }
+
+    function clearCurrentInstruction() {
+        const store = loadStore();
+        delete store.entries[entryKey(currentSubject.id, currentIdx)];
+        saveStore(store);
+        renderQuestion();
+        toast("Інструкцію видалено");
+    }
+
+    function findNextWithFilter(delta) {
+        const onlyWith = filterInstructions.checked;
+        let i = currentIdx + delta;
+        while (i >= 0 && i < questions.length) {
+            if (!onlyWith || hasInstruction(currentSubject.id, i)) return i;
+            i += delta;
+        }
+        return -1;
+    }
+
+    function goToIndex(idx) {
+        if (idx < 0 || idx >= questions.length) return;
+        currentIdx = idx;
+        renderQuestion();
+    }
+
+    async function loadSubject(subjectMeta) {
+        showError("");
+        currentSubject = subjectMeta;
+        questionRoot.innerHTML = "<p class=\"subtitle\">Завантаження питань…</p>";
+        try {
+            const res = await fetch(subjectMeta.file);
+            if (!res.ok) throw new Error("Не вдалося завантажити " + subjectMeta.file);
+            const data = await res.json();
+            questions = data.questions || [];
+            if (!questions.length) throw new Error("У файлі немає питань");
+            currentIdx = 0;
+            subjectSelect.disabled = false;
+            questionIndexInput.disabled = false;
+            btnPrev.disabled = false;
+            btnNext.disabled = false;
+            renderQuestion();
+        } catch (err) {
+            showError(err.message);
+            questionRoot.innerHTML = "";
+        }
+    }
+
+    function exportMarkdown() {
+        const store = loadStore();
+        const entries = Object.values(store.entries)
+            .filter(e => e.instruction && e.instruction.trim())
+            .sort((a, b) => {
+                const st = (a.subjectTitle || "").localeCompare(b.subjectTitle || "", "uk");
+                if (st !== 0) return st;
+                return (a.questionIndex || 0) - (b.questionIndex || 0);
+            });
+
+        const lines = [
+            "# Інструкції до правок — Перший мільйон",
+            "",
+            "Згенеровано: " + new Date().toLocaleString("uk-UA"),
+            "",
+            "Цей файл зібрано з локального сховища редактора (`" + STORAGE_KEY + "`).",
+            ""
+        ];
+
+        if (!entries.length) {
+            lines.push("_Поки немає збережених інструкцій._");
+        } else {
+            let lastSubject = "";
+            for (const e of entries) {
+                const subj = e.subjectTitle || e.subjectId || "Без назви";
+                if (subj !== lastSubject) {
+                    if (lastSubject) lines.push("");
+                    lines.push("## " + subj);
+                    lines.push("");
+                    lastSubject = subj;
+                }
+                const num = (e.questionIndex ?? 0) + 1;
+                lines.push("### Питання " + num + " (`" + (e.dataFile || "") + "`, індекс " + e.questionIndex + ")");
+                lines.push("");
+                if (e.questionText) {
+                    lines.push("**Текст питання:** " + e.questionText);
+                    lines.push("");
+                }
+                if (e.correctAnswer) {
+                    lines.push("**Правильна відповідь:** " + e.correctAnswer);
+                    lines.push("");
+                }
+                lines.push("**Інструкція:**");
+                lines.push("");
+                lines.push(e.instruction.trim());
+                lines.push("");
+                lines.push("---");
+                lines.push("");
+            }
+        }
+
+        downloadFile(
+            "first-million-instructions.md",
+            "text/markdown;charset=utf-8",
+            lines.join("\n")
+        );
+        toast("Markdown завантажено");
+    }
+
+    function exportJson() {
+        const store = loadStore();
+        downloadFile(
+            "first-million-instructions.json",
+            "application/json;charset=utf-8",
+            JSON.stringify(store, null, 2)
+        );
+        toast("JSON завантажено");
+    }
+
+    function downloadFile(name, mime, content) {
+        const blob = new Blob([content], { type: mime });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = name;
+        a.click();
+        URL.revokeObjectURL(url);
+    }
+
+    btnApply.addEventListener("click", () => {
+        const ta = document.getElementById("instruction-field");
+        if (ta) applyInstruction(ta);
+    });
+
+    btnClearOne.addEventListener("click", clearCurrentInstruction);
+    btnExport.addEventListener("click", exportMarkdown);
+    btnExportJson.addEventListener("click", exportJson);
+
+    btnPrev.addEventListener("click", () => {
+        const next = findNextWithFilter(-1);
+        goToIndex(next >= 0 ? next : Math.max(0, currentIdx - 1));
+    });
+
+    btnNext.addEventListener("click", () => {
+        const next = findNextWithFilter(1);
+        goToIndex(next >= 0 ? next : Math.min(questions.length - 1, currentIdx + 1));
+    });
+
+    questionIndexInput.addEventListener("change", () => {
+        const n = parseInt(questionIndexInput.value, 10);
+        if (Number.isFinite(n)) goToIndex(Math.max(0, Math.min(questions.length - 1, n - 1)));
+    });
+
+    filterInstructions.addEventListener("change", () => {
+        if (filterInstructions.checked) {
+            const next = findNextWithFilter(0);
+            if (next < 0) {
+                const fwd = findNextWithFilter(1);
+                if (fwd >= 0) goToIndex(fwd);
+                else toast("Немає питань з інструкціями");
+            }
+        }
+    });
+
+    subjectSelect.addEventListener("change", () => {
+        const id = subjectSelect.value;
+        const meta = subjects.find(s => s.id === id);
+        if (meta) loadSubject(meta);
+    });
+
+    (async function init() {
+        try {
+            const res = await fetch("data/subjects.json");
+            if (!res.ok) throw new Error("Не вдалося завантажити список предметів");
+            subjects = await res.json();
+            subjectSelect.innerHTML = "";
+            subjects.forEach(s => {
+                const opt = document.createElement("option");
+                opt.value = s.id;
+                opt.textContent = (s.icon ? s.icon + " " : "") + s.title;
+                subjectSelect.appendChild(opt);
+            });
+            subjectSelect.disabled = false;
+
+            const params = new URLSearchParams(location.search);
+            const subjectParam = params.get("subject");
+            const qParam = parseInt(params.get("q") || "", 10);
+
+            if (subjectParam) subjectSelect.value = subjectParam;
+            const meta = subjects.find(s => s.id === subjectSelect.value) || subjects[0];
+            await loadSubject(meta);
+            if (Number.isFinite(qParam) && qParam >= 1) {
+                goToIndex(Math.min(questions.length - 1, qParam - 1));
+            }
+        } catch (err) {
+            showError(err.message);
+        }
+    })();
+</script>
+
+</body>
+</html>

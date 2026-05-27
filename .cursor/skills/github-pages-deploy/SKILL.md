@@ -46,10 +46,13 @@ something concrete to grep for. Good markers:
 
 Avoid markers that already exist in the previous deploy.
 
-### 3. Commit and push
+### 3. Commit and push (agent does this — do NOT ask the user to push)
 
-Only commit when there are changes to ship (user asked to deploy, or deploy
-is part of the task).
+When the user says **«реліз»**, **release**, **deploy**, or **publish**, the
+agent must **commit (if needed) and push to `origin/main` itself**. Pushing is
+part of the release task, not a hand-off to the user.
+
+Only commit when there are changes to ship.
 
 ```bash
 git add <relevant files>
@@ -58,15 +61,60 @@ Short summary of why.
 
 EOF
 )"
+```
+
+#### 3a. Push autonomously (try every method below before giving up)
+
+Run push with **full shell permissions** (not sandboxed) so macOS keychain /
+`gh` credentials can be used.
+
+**Order of attempts:**
+
+1. **Plain push**
+   ```bash
+   git push origin main
+   ```
+
+2. **`gh` as Git credential helper** (preferred when `gh` is logged in)
+   ```bash
+   gh auth status          # must show "Logged in"
+   gh auth setup-git       # wires gh into git for HTTPS
+   git push origin main
+   ```
+
+3. **Token from environment** (CI / user shell profile)
+   ```bash
+   # If GH_TOKEN or GITHUB_TOKEN is set:
+   git push https://x-access-token:${GH_TOKEN:-$GITHUB_TOKEN}@github.com/fi3ik-mme/mini-game.git main
+   ```
+
+4. **Confirm whether anything actually reached GitHub**
+   ```bash
+   git fetch origin main
+   git rev-parse HEAD
+   git rev-parse origin/main   # must equal local HEAD after a successful push
+   curl -s https://api.github.com/repos/fi3ik-mme/mini-game/commits/main \
+     | node -e 'let s="";process.stdin.on("data",c=>s+=c);process.stdin.on("end",()=>console.log(JSON.parse(s).sha?.slice(0,7)))'
+   ```
+
+**Do NOT** change `git remote` URL or run `git config` without explicit user
+permission — except `gh auth setup-git`, which only configures the credential
+helper for `gh`.
+
+**Only if all push attempts fail:** tell the user push could not run from this
+environment, show `git log origin/main..HEAD --oneline` (what is waiting), and
+ask them to run **once** in their terminal:
+
+```bash
+gh auth login    # GitHub.com → HTTPS → web browser (one-time setup)
 git push origin main
 ```
 
-If `git push` fails with a credential error
-(`could not read Username for 'https://github.com'`), STOP, report the failure
-to the user, and ask them to either run `gh auth login` or run `git push`
-manually. Do NOT change the remote URL or `git config` without explicit user
-permission. Once the user confirms the push, return to step 4 (verification)
-without re-asking — they expect verification to follow automatically.
+After they confirm «пушнув», **immediately** continue to step 4 (verification)
+without re-asking.
+
+**Never** stop at «please push yourself» on the first credential error without
+trying steps 2–4 above.
 
 ### 4. Verify (auto, always)
 

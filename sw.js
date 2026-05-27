@@ -9,6 +9,7 @@ const PRECACHE = [
     "./games/maze/index.html",
     "./games/first-million/",
     "./games/first-million/index.html",
+    "./games/first-million/edit.html",
     "./games/first-million/data/subjects.json",
     "./games/first-million/data/anhliyska-mova-4-klas.json",
     "./games/first-million/data/informatyka-4-klas.json",
