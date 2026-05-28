@@ -1,4 +1,4 @@
-const CACHE_NAME = "mini-games-v27";
+const CACHE_NAME = "mini-games-v28";
 const IMAGE_CACHE_NAME = "mini-games-images-v2";
 const IMAGE_EXT_RE = /\.(png|jpe?g|webp|gif|svg|avif)(\?.*)?$/i;
 const IMAGE_WARMUP_CONCURRENCY = 2;

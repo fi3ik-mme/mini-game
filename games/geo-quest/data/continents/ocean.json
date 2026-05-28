@@ -2,7 +2,7 @@
   "id": "ocean",
   "title": "Світовий океан",
   "map": {
-    "viewBox": "0 0 1200 620",
+    "viewBox": "0 0 1200 780",
     "geoFile": "data/maps/ocean-regions.json"
   },
   "nodes": [

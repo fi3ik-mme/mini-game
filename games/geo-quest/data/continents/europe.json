@@ -256,7 +256,7 @@
     },
     {
       "id": "europe-puzzle",
-      "title": "Пазл Європи",
+      "title": "Пазли Європи",
       "emoji": "🧩",
       "bonus": true,
       "countryId": "europe-puzzle",
@@ -264,12 +264,57 @@
       "rounds": [
         {
           "type": "puzzle",
-          "text": "Збери класичний пазл 5×4. Натисни дві плитки, щоб поміняти їх місцями — має вийти карта Європи!",
+          "text": "Збери пазл 5×4 — уся карта Європи. Натисни дві плитки, щоб поміняти їх місцями.",
           "cols": 5,
           "rows": 4,
           "mapId": "europe-countries",
           "explanation": "Чудово! Ти склав карту Європи — усі країни на своїх місцях.",
-          "explainOnSuccess": true,
+          "explainOnSuccess": true
+        },
+        {
+          "type": "puzzle",
+          "text": "Пазл 3×4: Україна. Збери контур країни.",
+          "cols": 3,
+          "rows": 4,
+          "mapId": "europe-countries",
+          "countryId": "ukraine",
+          "explanation": "Україна зібрана!"
+        },
+        {
+          "type": "puzzle",
+          "text": "Пазл 3×4: Франція.",
+          "cols": 3,
+          "rows": 4,
+          "mapId": "europe-countries",
+          "countryId": "france",
+          "explanation": "Франція зібрана!"
+        },
+        {
+          "type": "puzzle",
+          "text": "Пазл 3×4: Іспанія.",
+          "cols": 3,
+          "rows": 4,
+          "mapId": "europe-countries",
+          "countryId": "spain",
+          "explanation": "Іспанія зібрана!"
+        },
+        {
+          "type": "puzzle",
+          "text": "Пазл 3×4: Швеція.",
+          "cols": 3,
+          "rows": 4,
+          "mapId": "europe-countries",
+          "countryId": "sweden",
+          "explanation": "Швеція зібрана!"
+        },
+        {
+          "type": "puzzle",
+          "text": "Пазл 3×4: Німеччина.",
+          "cols": 3,
+          "rows": 4,
+          "mapId": "europe-countries",
+          "countryId": "germany",
+          "explanation": "Німеччина зібрана!",
           "boss": true
         }
       ]

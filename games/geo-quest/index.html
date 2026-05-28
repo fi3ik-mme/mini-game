@@ -109,8 +109,12 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        #screen-hub .title {
+            margin: 0 0 20px;
+            position: relative;
+            z-index: 5;
+        }
         h1.title {
-            margin: 0;
             font-size: 1.75rem;
             text-align: center;
             background: linear-gradient(180deg, #fde68a, #fbbf24 60%, #d97706);
@@ -121,9 +125,9 @@
 
         .hub-scene {
             position: relative;
-            width: min(96vw, 400px);
+            width: min(96vw, 440px);
             aspect-ratio: 1;
-            margin: 0 auto 10px;
+            margin: 12px auto 10px;
             flex-shrink: 0;
             overflow: visible;
         }
@@ -132,12 +136,13 @@
             position: absolute;
             left: 50%;
             top: 50%;
-            width: 58%;
-            height: 58%;
+            width: 88%;
+            height: 88%;
             transform: translate(-50%, -50%) scale(1);
             transform-origin: center center;
-            z-index: 2;
+            z-index: 1;
             will-change: transform;
+            pointer-events: auto;
         }
         .globe-canvas {
             display: block;
@@ -146,9 +151,10 @@
             border-radius: 50%;
             cursor: grab;
             touch-action: none;
+            opacity: 0.92;
             box-shadow:
-                0 0 40px rgba(56, 189, 248, 0.25),
-                0 12px 28px rgba(0, 0, 0, 0.45);
+                0 0 48px rgba(56, 189, 248, 0.3),
+                0 12px 28px rgba(0, 0, 0, 0.4);
         }
         .globe-canvas.dragging { cursor: grabbing; }
         .flight-vignette {
@@ -187,49 +193,57 @@
             position: absolute;
             left: 50%;
             top: 50%;
-            width: 62%;
-            height: 62%;
+            width: 90%;
+            height: 90%;
             transform: translate(-50%, -50%);
             border-radius: 50%;
-            background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.12), transparent 55%);
+            background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.1), transparent 55%);
             pointer-events: none;
-            z-index: 3;
+            z-index: 2;
         }
         .orbit-ring {
             position: absolute;
             inset: 0;
-            z-index: 4;
+            z-index: 5;
             pointer-events: none;
         }
         .orbit-chip {
             position: absolute;
             pointer-events: auto;
-            width: 76px;
-            padding: 8px 6px;
+            width: 82px;
+            min-height: 68px;
+            padding: 7px 5px;
             border-radius: 14px;
-            border: 2px solid rgba(255, 255, 255, 0.18);
-            background: rgba(15, 23, 42, 0.88);
-            backdrop-filter: blur(6px);
+            border: 2px solid rgba(255, 255, 255, 0.22);
+            background: rgba(15, 23, 42, 0.92);
+            backdrop-filter: blur(8px);
             color: #f8fafc;
             cursor: pointer;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
             transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
         }
         .orbit-chip:active { transform: translate(-50%, -50%) scale(0.94); }
-        .orbit-chip .em { display: block; font-size: 1.35rem; line-height: 1.1; }
+        .orbit-chip .em { display: block; font-size: 1.3rem; line-height: 1; flex-shrink: 0; }
         .orbit-chip .nm {
-            display: block;
-            font-size: 0.62rem;
-            line-height: 1.2;
+            display: -webkit-box;
+            width: 100%;
+            font-size: 0.58rem;
+            line-height: 1.15;
             color: #cbd5e1;
-            margin-top: 3px;
-            max-width: 72px;
+            margin-top: 2px;
             overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
+            white-space: normal;
+            word-break: break-word;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
         }
-        .orbit-chip .pr { display: block; font-size: 0.65rem; color: #fde047; margin-top: 2px; }
+        .orbit-chip .pr { display: block; font-size: 0.62rem; color: #fde047; margin-top: 1px; flex-shrink: 0; }
         .orbit-chip.locked { opacity: 0.55; }
         .orbit-chip.highlight {
             border-color: #fbbf24;
@@ -241,8 +255,8 @@
             50% { box-shadow: 0 0 0 8px rgba(251,191,36,0); }
         }
         @media (min-width: 400px) {
-            .orbit-chip { width: 84px; }
-            .orbit-chip .nm { font-size: 0.68rem; max-width: 80px; }
+            .orbit-chip { width: 90px; min-height: 72px; }
+            .orbit-chip .nm { font-size: 0.6rem; }
         }
 
         .hub-actions {
@@ -324,16 +338,28 @@
             background: #0c4a6e;
         }
         .map-scroll.ocean-adventure {
-            border-color: rgba(251, 191, 36, 0.35);
-            box-shadow: inset 0 0 40px rgba(6, 42, 71, 0.6);
+            border-color: rgba(251, 191, 36, 0.45);
+            box-shadow: inset 0 0 50px rgba(6, 42, 71, 0.5);
+            background: #0b3d5c;
         }
-        .map-scroll.ocean-adventure .map-geo.context {
-            fill: rgba(14, 116, 144, 0.2);
+        .ocean-layer {
+            stroke-linejoin: round;
+            stroke-linecap: round;
         }
-        .map-scroll.ocean-adventure .map-geo.playable {
-            fill: rgba(56, 189, 248, 0.18);
-            stroke: rgba(186, 230, 253, 0.45);
+        .ocean-trail-path {
+            fill: none;
+            stroke: rgba(253, 224, 71, 0.35);
+            stroke-width: 4;
+            stroke-dasharray: 10 8;
         }
+        .ocean-trail-star {
+            font-size: 14px;
+            text-anchor: middle;
+            dominant-baseline: central;
+            pointer-events: none;
+        }
+        .ocean-trail-star.pending { fill: rgba(255,255,255,0.35); }
+        .ocean-trail-star.done { fill: #fde047; }
         .map-svg { width: 100%; height: auto; display: block; }
         .map-geo {
             stroke: rgba(255, 255, 255, 0.45);
@@ -1421,22 +1447,46 @@
 
     function renderOceanMapLayers(geo, w, h) {
         let html = "";
-        const grad = geo.backgroundGradient;
-        if (grad && grad.length >= 2) {
-            html += '<defs><linearGradient id="oceanSea" x1="0" y1="0" x2="0" y2="1">' +
-                '<stop offset="0%" stop-color="' + grad[0] + '"/>' +
-                '<stop offset="55%" stop-color="' + (grad[1] || grad[0]) + '"/>' +
-                '<stop offset="100%" stop-color="' + (grad[2] || grad[1] || grad[0]) + '"/>' +
-                "</linearGradient></defs>";
-            html += '<rect width="' + w + '" height="' + h + '" fill="url(#oceanSea)"/>';
-        } else {
-            html += '<rect width="' + w + '" height="' + h + '" fill="' +
-                (geo.background || "#0c4a6e") + '"/>';
+        const grad = geo.backgroundGradient || [];
+        html += "<defs>";
+        html += '<linearGradient id="oceanDeepGrad" x1="0" y1="0" x2="0" y2="1">' +
+            '<stop offset="0%" stop-color="' + (grad[1] || "#3eb8d4") + '"/>' +
+            '<stop offset="100%" stop-color="' + (grad[2] || "#0b3d5c") + '"/>' +
+            "</linearGradient>";
+        html += '<linearGradient id="oceanSea" x1="0" y1="0" x2="0" y2="1">' +
+            '<stop offset="0%" stop-color="' + (grad[0] || "#8ed4f0") + '"/>' +
+            '<stop offset="45%" stop-color="' + (grad[1] || "#3eb8d4") + '"/>' +
+            '<stop offset="100%" stop-color="' + (grad[2] || "#0b3d5c") + '"/>' +
+            "</linearGradient>";
+        html += "</defs>";
+        html += '<rect width="' + w + '" height="' + h + '" fill="url(#oceanSea)"/>';
+        for (const layer of geo.backgroundLayers || []) {
+            if (!layer.d) continue;
+            let attrs = 'class="ocean-layer" d="' + layer.d + '" fill="' + (layer.fill || "#888") + '"';
+            if (layer.stroke) attrs += ' stroke="' + layer.stroke + '" stroke-width="' + (layer.strokeWidth || 1) + '"';
+            if (layer.opacity != null) attrs += ' opacity="' + layer.opacity + '"';
+            html += "<path " + attrs + "/>";
         }
-        for (const isle of geo.islands || []) {
-            const tiny = (isle.path || "").length < 80;
-            html += '<path class="map-island' + (tiny ? " tiny" : "") + '" d="' + isle.path + '"/>';
+        if (geo.trailPath) {
+            html += '<path class="ocean-trail-path" d="' + geo.trailPath + '"/>';
         }
+        return html;
+    }
+
+    function renderOceanTrailStars(geo, nodes) {
+        let html = "";
+        const stars = geo.trailStars || [];
+        if (!stars.length) return html;
+        let doneTrail = 0;
+        for (const node of nodes) {
+            if (nodeStars(currentData.id, node.id) >= 2) doneTrail++;
+        }
+        const starsPerSegment = Math.max(1, Math.floor(stars.length / Math.max(1, nodes.length)));
+        stars.forEach((s, i) => {
+            const done = i < doneTrail * starsPerSegment;
+            html += '<text class="ocean-trail-star ' + (done ? "done" : "pending") + '" x="' +
+                s.x + '" y="' + s.y + '">★</text>';
+        });
         return html;
     }
 
@@ -1454,7 +1504,8 @@
                 const isMap = (d.title || "").indexOf("Карта") >= 0;
                 const pad = geo.markerPadding ?? 44;
                 const tx = Math.min((geo.projection?.width || 1200) - pad, Math.max(pad, d.x));
-                const ty = Math.min((geo.projection?.height || 620) - pad, Math.max(pad, d.y));
+                const mapH = (geo.viewBox && +geo.viewBox.split(/\s+/)[3]) || geo.projection?.height || 780;
+                const ty = Math.min(mapH - pad, Math.max(pad, d.y));
                 html += '<g class="map-treasure" transform="translate(' + tx + "," + ty + ')">';
                 html += '<circle class="treasure-glow" r="18" cx="0" cy="0"/>';
                 if (isMap) {
@@ -1555,15 +1606,48 @@
         });
     }
 
-    async function buildEuropePuzzleImage(mapId) {
-        const key = mapId || "europe-countries";
-        if (puzzleImageCache[key]) return puzzleImageCache[key];
-        const mapData = await loadMap(key);
+    function pathBBox(pathStr) {
+        const nums = pathStr.match(/-?\d+(?:\.\d+)?/g);
+        if (!nums || nums.length < 4) return null;
+        let minX = Infinity;
+        let minY = Infinity;
+        let maxX = -Infinity;
+        let maxY = -Infinity;
+        for (let i = 0; i + 1 < nums.length; i += 2) {
+            const x = +nums[i];
+            const y = +nums[i + 1];
+            if (x < minX) minX = x;
+            if (y < minY) minY = y;
+            if (x > maxX) maxX = x;
+            if (y > maxY) maxY = y;
+        }
+        if (!isFinite(minX)) return null;
+        return { minX, minY, maxX, maxY, w: maxX - minX, h: maxY - minY };
+    }
+
+    function drawPuzzleCountry(ctx, country, colorIndex, sx, sy, ox, oy) {
+        const p = new Path2D(country.path);
+        ctx.save();
+        ctx.translate(ox, oy);
+        ctx.scale(sx, sy);
+        ctx.fillStyle = PUZZLE_NATURAL_COLORS[colorIndex % PUZZLE_NATURAL_COLORS.length];
+        ctx.fill(p);
+        ctx.strokeStyle = PUZZLE_OUTLINE_COLORS[colorIndex % PUZZLE_OUTLINE_COLORS.length];
+        ctx.lineWidth = 2;
+        ctx.stroke(p);
+        ctx.restore();
+    }
+
+    async function buildEuropePuzzleImage(mapId, options) {
+        const countryId = options && options.countryId;
+        const cacheKey = (mapId || "europe-countries") + (countryId ? ":" + countryId : "");
+        if (puzzleImageCache[cacheKey]) return puzzleImageCache[cacheKey];
+        const mapData = await loadMap(mapId);
         const parts = (mapData.viewBox || "0 0 1000 780").split(/\s+/).map(Number);
         const vw = parts[2] || 1000;
         const vh = parts[3] || 780;
-        const cw = 500;
-        const ch = 400;
+        const cw = countryId ? 360 : 500;
+        const ch = countryId ? 480 : 400;
         const canvas = document.createElement("canvas");
         canvas.width = cw;
         canvas.height = ch;
@@ -1574,22 +1658,27 @@
         seaGrad.addColorStop(1, "#1e3a8a");
         ctx.fillStyle = seaGrad;
         ctx.fillRect(0, 0, cw, ch);
-        const sx = cw / vw;
-        const sy = ch / vh;
-        (mapData.countries || []).forEach((c, i) => {
-            if (!c.path || c.id === "europe-puzzle") return;
-            const p = new Path2D(c.path);
-            ctx.save();
-            ctx.scale(sx, sy);
-            ctx.fillStyle = PUZZLE_NATURAL_COLORS[i % PUZZLE_NATURAL_COLORS.length];
-            ctx.fill(p);
-            ctx.strokeStyle = PUZZLE_OUTLINE_COLORS[i % PUZZLE_OUTLINE_COLORS.length];
-            ctx.lineWidth = 2;
-            ctx.stroke(p);
-            ctx.restore();
-        });
+
+        const countries = (mapData.countries || []).filter((c) => c.path && c.id !== "europe-puzzle");
+        if (countryId) {
+            const country = countries.find((c) => c.id === countryId);
+            if (country) {
+                const bbox = pathBBox(country.path);
+                if (bbox && bbox.w > 0 && bbox.h > 0) {
+                    const pad = 20;
+                    const scale = Math.min((cw - pad * 2) / bbox.w, (ch - pad * 2) / bbox.h);
+                    const ox = (cw - bbox.w * scale) / 2 - bbox.minX * scale;
+                    const oy = (ch - bbox.h * scale) / 2 - bbox.minY * scale;
+                    drawPuzzleCountry(ctx, country, 0, scale, scale, ox, oy);
+                }
+            }
+        } else {
+            const sx = cw / vw;
+            const sy = ch / vh;
+            countries.forEach((c, i) => drawPuzzleCountry(ctx, c, i, sx, sy, 0, 0));
+        }
         const url = canvas.toDataURL("image/png");
-        puzzleImageCache[key] = url;
+        puzzleImageCache[cacheKey] = url;
         return url;
     }
 
@@ -1662,7 +1751,7 @@
         { id: "monaco", country: "Монако", flag: "🇲🇨", capital: "Монако", coat: "🛡️ Ченці-мечники", alphabet: "é, è", geo: "Скеля Монако", fact: "Друга найменша держава світу.", dish: "Barbagiuan", clothing: "🤵 Святковий фрак", hero: "Грейс Келлі" },
         { id: "montenegro", country: "Чорногорія", flag: "🇲🇪", capital: "Подгориця", coat: "🛡️ Двоголовий орел", alphabet: "č, ć, nj", geo: "Каньйон Тара", fact: "Тут один із найглибших каньйонів Європи.", dish: "Njeguski prsut", clothing: "🧥 Crnogorska nosnja", hero: "Петро II Петрович-Негош" },
         { id: "netherlands", country: "Нідерланди", flag: "🇳🇱", capital: "Амстердам", coat: "🛡️ Лев", alphabet: "ij, ë", geo: "Рейн-Маас-Шельда", fact: "Значна частина країни нижче рівня моря.", dish: "Stroopwafel", clothing: "👗 Volendamse klederdracht", hero: "Вінсент ван Гог" },
-        { id: "north-macedonia", country: "Північна Македонія", flag: "🇲🇰", capital: "Скоп'є", coat: "🛡️ Лев", alphabet: "ѓ, ќ, љ", geo: "Охридське озеро", fact: "Охрид — одне з найдавніших озер світу.", dish: "Tavce gravce", clothing: "👘 Nosija", hero: "Гоце Делчев" },
+        { id: "north-macedonia", country: "Північна Македонія", flag: "🇲🇰", capital: "Скоп'є", coat: "⛰️ Гора Кораб", alphabet: "ѓ, ќ, љ", geo: "Охридське озеро", fact: "Охрид — одне з найдавніших озер світу.", dish: "Tavce gravce", clothing: "👘 Nosija", hero: "Гоце Делчев" },
         { id: "norway", country: "Норвегія", flag: "🇳🇴", capital: "Осло", coat: "🛡️ Лев з сокирою", alphabet: "æ, ø, å", geo: "Согне-фіорд", fact: "Країна фіордів і північного сяйва.", dish: "Fårikål", clothing: "👗 Bunad", hero: "Руаль Амундсен" },
         { id: "poland", country: "Польща", flag: "🇵🇱", capital: "Варшава", coat: "🛡️ Білий орел", alphabet: "ą, ć, ę, ł", geo: "Вісла", fact: "Одна з найбільших країн Центральної Європи.", dish: "Pierogi", clothing: "👘 Стрій Кракова", hero: "Марія Склодовська-Кюрі" },
         { id: "portugal", country: "Португалія", flag: "🇵🇹", capital: "Лісабон", coat: "🛡️ Щити і замки", alphabet: "ã, ç, õ", geo: "Дору", fact: "Найстаріші кордони Європи майже не змінювались.", dish: "Bacalhau", clothing: "👗 Traje minhoto", hero: "Васко да Гама" },
@@ -1807,7 +1896,16 @@
         const kind = round.pairKind;
         const count = Math.max(2, Math.min(10, round.count || 7));
         const pool = EUROPE_MATCH_BANK.filter((c) => c.country && c[kind]);
-        const picked = shuffleArray(pool).slice(0, Math.min(count, pool.length));
+        const ukraine = pool.find((c) => c.id === "ukraine");
+        const rest = pool.filter((c) => c.id !== "ukraine");
+        const pickCount = Math.min(count, pool.length);
+        let picked = [];
+        if (ukraine && pickCount > 0) {
+            picked.push(ukraine);
+            picked = picked.concat(shuffleArray(rest).slice(0, pickCount - 1));
+        } else {
+            picked = shuffleArray(pool).slice(0, pickCount);
+        }
         const left = shuffleArray(picked.map((c) => ({
             id: c.id,
             text: c.country,
@@ -1920,7 +2018,7 @@
         const n = regions.length;
         const radiusPct = 46;
         regions.forEach((meta, i) => {
-            const angleDeg = -90 + (360 / n) * i;
+            const angleDeg = -58 + (360 / n) * i;
             const angleRad = angleDeg * Math.PI / 180;
             const left = 50 + radiusPct * Math.cos(angleRad);
             const top = 50 + radiusPct * Math.sin(angleRad);
@@ -2404,25 +2502,30 @@
             starsByNode[nodeGeoId(node)] = nodeStars(currentData.id, node.id);
         }
 
-        for (const f of features) {
-            const isPlayable = playableIds.has(f.id);
-            const stars = starsByNode[f.id] || 0;
-            let extra = "";
-            if (isPlayable && stars > 0) extra = " done";
-            html += '<path class="map-geo' + (isPlayable ? " playable" + extra : " context") +
-                '" data-geo-id="' + f.id + '" d="' + f.path + '"/>';
+        if (!isOceanAdventure) {
+            for (const f of features) {
+                const isPlayable = playableIds.has(f.id);
+                const stars = starsByNode[f.id] || 0;
+                let extra = "";
+                if (isPlayable && stars > 0) extra = " done";
+                html += '<path class="map-geo' + (isPlayable ? " playable" + extra : " context") +
+                    '" data-geo-id="' + f.id + '" d="' + f.path + '"/>';
+            }
         }
 
         if (isOceanAdventure) {
             html += renderOceanDecorations(geo);
         }
 
-        const positions = currentData.nodes.filter(n => !n.bonus).map(node => {
+        const mainNodes = currentData.nodes.filter(n => !n.bonus);
+        const positions = mainNodes.map(node => {
             const c = getNodeCenter(geo, node);
             return { node, x: c ? c.x : w / 2, y: c ? c.y : h / 2 };
         });
 
-        if (positions.length > 1) {
+        if (isOceanAdventure) {
+            html += renderOceanTrailStars(geo, mainNodes);
+        } else if (positions.length > 1) {
             const trailD = buildFlexibleTrail(positions);
             if (trailD) {
                 html += '<path class="trail" d="' + trailD + '"/>';
@@ -2826,7 +2929,9 @@
             let imageUrl;
             let pieceSignatures;
             try {
-                imageUrl = await buildEuropePuzzleImage(round.mapId || "europe-countries");
+                imageUrl = await buildEuropePuzzleImage(round.mapId || "europe-countries", {
+                    countryId: round.countryId || null,
+                });
                 pieceSignatures = await buildPieceSignatures(imageUrl, cols, rows);
             } catch (e) {
                 console.error(e);
