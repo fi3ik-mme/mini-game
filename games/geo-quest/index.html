@@ -1737,6 +1737,7 @@
         "san-marino": "sm", serbia: "rs", slovakia: "sk", slovenia: "si", spain: "es", sweden: "se",
         switzerland: "ch", ukraine: "ua", "united-kingdom": "gb", vatican: "va"
     };
+    const COAT_IMAGE_CACHE = {};
 
     function parseGraphicValue(raw, fallbackIcon) {
         const text = String(raw || "");
@@ -1771,6 +1772,37 @@
         return "";
     }
 
+    async function fetchCoatImage(countryId) {
+        if (COAT_IMAGE_CACHE[countryId] !== undefined) return COAT_IMAGE_CACHE[countryId];
+        const iso2 = COUNTRY_ISO2[countryId];
+        if (!iso2) {
+            COAT_IMAGE_CACHE[countryId] = "";
+            return "";
+        }
+        const endpoint = "https://restcountries.com/v3.1/alpha/" + iso2 + "?fields=coatOfArms";
+        try {
+            const res = await fetch(endpoint, { cache: "force-cache" });
+            if (!res.ok) throw new Error("coat http " + res.status);
+            const data = await res.json();
+            const entry = Array.isArray(data) ? data[0] : data;
+            const coat = entry?.coatOfArms || {};
+            const src = coat.png || coat.svg || "";
+            COAT_IMAGE_CACHE[countryId] = src || "";
+            return COAT_IMAGE_CACHE[countryId];
+        } catch (_) {
+            COAT_IMAGE_CACHE[countryId] = "";
+            return "";
+        }
+    }
+
+    async function hydrateCoatImages(items) {
+        await Promise.all(items.map(async (item) => {
+            if (!item || item.imageKind !== "coat") return;
+            const fromApi = await fetchCoatImage(item.id);
+            item.image = fromApi || item.fallbackImage || "";
+        }));
+    }
+
     function buildMatchRoundPairs(round) {
         const kind = round.pairKind;
         const count = Math.max(2, Math.min(10, round.count || 7));
@@ -1786,7 +1818,7 @@
             if (kind === "flag") {
                 return {
                     id: c.id,
-                    text: c.country,
+                    text: "",
                     icon: "",
                     image: graphicImageUrl("flag", c.id, c.country, value),
                     graphic: true,
@@ -1799,7 +1831,8 @@
                     id: c.id,
                     text: parsed.text || c.country,
                     icon: parsed.icon,
-                    image: graphicImageUrl("coat", c.id, c.country, parsed.text),
+                    image: "",
+                    fallbackImage: graphicImageUrl("coat", c.id, c.country, parsed.text),
                     graphic: true,
                     imageKind: "coat"
                 };
@@ -2593,7 +2626,7 @@
                 gameAnswers.appendChild(btn);
             });
         },
-        matchPairs(ctx, round) {
+        async matchPairs(ctx, round) {
             gamePrompt.textContent = round.text || "З'єднай пари";
             gameMedia.innerHTML = "";
             gameAnswers.className = "answers match-wrap";
@@ -2604,6 +2637,9 @@
             if (!pairs.left.length || !pairs.right.length) {
                 gameAnswers.innerHTML = "<p class='match-hint'>Немає даних для раунду.</p>";
                 return;
+            }
+            if (round.pairKind === "coat") {
+                await hydrateCoatImages(pairs.right);
             }
             const graphicalRound = GRAPHICAL_PAIR_KINDS.has(round.pairKind);
 
