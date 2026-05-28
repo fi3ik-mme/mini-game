@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, viewport-fit=cover"/>
-    <title>Geo Quest</title>
+    <title>Гео Квест</title>
     <link rel="icon" type="image/svg+xml" href="../../icon.svg" />
     <style>
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -118,7 +118,6 @@
             background-clip: text;
             color: transparent;
         }
-        .tagline { color: #94a3b8; font-size: 0.85rem; margin: -4px 0 8px; }
 
         .hub-scene {
             position: relative;
@@ -174,8 +173,7 @@
                 0 20px 50px rgba(0, 0, 0, 0.55);
         }
         #screen-hub.flight-active .hub-actions,
-        #screen-hub.flight-active .hub-footer,
-        #screen-hub.flight-active .tagline {
+        #screen-hub.flight-active .hub-footer {
             opacity: 0.25;
             pointer-events: none;
             transition: opacity 0.35s;
@@ -285,10 +283,40 @@
             gap: 10px;
         }
         .map-header h2 { margin: 0; font-size: 1.25rem; flex: 1; text-align: center; }
+        .map-stage {
+            position: relative;
+            width: 100%;
+            max-width: 720px;
+        }
+        .map-bonus-actions {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 8;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .map-bonus-btn {
+            border: 2px solid rgba(251,191,36,0.6);
+            border-radius: 12px;
+            background: rgba(15,23,42,0.88);
+            color: #fde68a;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 8px 10px;
+            cursor: pointer;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+        }
+        .map-bonus-btn:active { transform: scale(0.97); }
+        .map-bonus-btn.locked {
+            color: #cbd5e1;
+            border-color: rgba(148, 163, 184, 0.6);
+        }
+        .map-bonus-btn:disabled { opacity: 0.88; }
 
         .map-scroll {
             width: 100%;
-            max-width: 720px;
             max-height: min(72vh, 640px);
             overflow-y: auto;
             border-radius: 18px;
@@ -737,6 +765,7 @@
             touch-action: manipulation;
         }
         .puzzle-piece {
+            position: relative;
             margin: 0;
             padding: 0;
             border: 1px solid rgba(255,255,255,0.2);
@@ -747,6 +776,7 @@
             box-shadow: inset 0 0 0 1px rgba(0,0,0,0.15);
             transition: transform 0.12s ease, box-shadow 0.12s ease;
             min-height: 0;
+            overflow: hidden;
         }
         .puzzle-piece:active { transform: scale(0.98); }
         .puzzle-piece.selected {
@@ -762,6 +792,123 @@
             border-radius: 10px;
             border: 2px solid rgba(255,255,255,0.2);
             opacity: 0.85;
+        }
+        .answers.match-wrap {
+            width: 100%;
+            max-width: 640px;
+            margin: 0 auto;
+            gap: 10px;
+        }
+        .match-hint {
+            margin: 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #cbd5e1;
+        }
+        .match-board {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            column-gap: clamp(34px, 9vw, 96px);
+            width: 100%;
+            padding: 10px;
+            border-radius: 14px;
+            border: 2px solid rgba(148, 163, 184, 0.3);
+            background: rgba(15, 23, 42, 0.5);
+        }
+        .match-col {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            min-width: 0;
+        }
+        .match-col.tiles {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px;
+            align-content: start;
+        }
+        .match-item {
+            border: 2px solid rgba(255,255,255,0.15);
+            border-radius: 12px;
+            background: rgba(255,255,255,0.07);
+            color: #f8fafc;
+            padding: 10px;
+            min-height: 52px;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .match-item .ico {
+            font-size: 1.3rem;
+            line-height: 1;
+            min-width: 1.3rem;
+            text-align: center;
+        }
+        .match-item .txt {
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .match-item:active { transform: scale(0.99); }
+        .match-item.image-tile {
+            min-height: 84px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 6px;
+            padding: 8px 6px;
+        }
+        .match-item.image-tile .ico {
+            font-size: 2rem;
+            min-width: 0;
+        }
+        .match-item.image-tile .txt {
+            font-size: 0.75rem;
+            line-height: 1.2;
+        }
+        .match-photo {
+            width: 100%;
+            max-width: 148px;
+            height: 72px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.25);
+            background: rgba(15, 23, 42, 0.45);
+            display: block;
+        }
+        .match-photo.flag {
+            max-width: 180px;
+            height: 96px;
+            object-fit: contain;
+            background: rgba(255,255,255,0.05);
+        }
+        .match-item.selected {
+            border-color: #fbbf24;
+            box-shadow: 0 0 0 2px rgba(251,191,36,0.35);
+        }
+        .match-item.matched {
+            border-color: rgba(34,197,94,0.6);
+            background: rgba(34,197,94,0.2);
+            cursor: default;
+        }
+        .match-item.mismatch {
+            border-color: rgba(239,68,68,0.7);
+            background: rgba(239,68,68,0.2);
+        }
+        .match-lines {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: visible;
         }
     </style>
 </head>
@@ -781,8 +928,7 @@
 </div>
 
 <section id="screen-hub" class="screen active">
-    <h1 class="title">Geo Quest</h1>
-    <p class="tagline" id="hub-tagline">Досліджуй • Вивчай • Перемагай</p>
+    <h1 class="title">Гео Квест</h1>
     <div class="hub-scene" id="hub-scene">
         <div class="globe-wrap" id="globe-wrap">
             <canvas id="globe-canvas" class="globe-canvas" aria-label="Глобус Землі. Обертай пальцем і натисни на континент."></canvas>
@@ -805,8 +951,11 @@
         <h2 id="map-title">Карта</h2>
         <span style="width:72px"></span>
     </div>
-    <div class="map-scroll" id="map-scroll">
-        <svg id="map-svg" class="map-svg" viewBox="0 0 800 1200"></svg>
+    <div class="map-stage">
+        <div id="map-bonus-actions" class="map-bonus-actions" hidden></div>
+        <div class="map-scroll" id="map-scroll">
+            <svg id="map-svg" class="map-svg" viewBox="0 0 800 1200"></svg>
+        </div>
     </div>
 </section>
 
@@ -919,6 +1068,7 @@
     const gameMedia = document.getElementById("game-media");
     const gameAnswers = document.getElementById("game-answers");
     const flashEl = document.getElementById("flash");
+    const mapBonusActions = document.getElementById("map-bonus-actions");
     const soundToggle = document.getElementById("sound-toggle");
     const voiceToggle = document.getElementById("voice-toggle");
 
@@ -1385,11 +1535,25 @@
     }
 
     const puzzleImageCache = {};
-    const PUZZLE_COLORS = [
-        "#3b82f6", "#22c55e", "#eab308", "#f97316", "#a855f7", "#ec4899",
-        "#14b8a6", "#64748b", "#0ea5e9", "#84cc16", "#f43f5e", "#8b5cf6",
-        "#06b6d4", "#d946ef", "#f59e0b", "#10b981", "#6366f1", "#ef4444", "#2dd4bf",
+    const PUZZLE_NATURAL_COLORS = [
+        "#7aa874", "#8eb67a", "#c0b37a", "#b88d66", "#9fbf88", "#a7a07a",
+        "#c6a874", "#89a68a", "#9cb47f", "#b39b72", "#93b08b", "#c7bb8f",
+        "#8ca37d", "#b6ac83", "#9ebd7a", "#b99770", "#83aa7f", "#cab081",
     ];
+    const PUZZLE_OUTLINE_COLORS = [
+        "#22d3ee", "#facc15", "#fb7185", "#34d399", "#a78bfa", "#fb923c",
+        "#38bdf8", "#f472b6", "#bef264", "#fda4af", "#60a5fa", "#c084fc",
+    ];
+
+    function loadImage(src, crossOrigin) {
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+            if (crossOrigin) img.crossOrigin = "anonymous";
+            img.onload = () => resolve(img);
+            img.onerror = () => reject(new Error("image load failed"));
+            img.src = src;
+        });
+    }
 
     async function buildEuropePuzzleImage(mapId) {
         const key = mapId || "europe-countries";
@@ -1404,7 +1568,11 @@
         canvas.width = cw;
         canvas.height = ch;
         const ctx = canvas.getContext("2d");
-        ctx.fillStyle = "#1e3a8a";
+        const seaGrad = ctx.createLinearGradient(0, 0, 0, ch);
+        seaGrad.addColorStop(0, "#2563eb");
+        seaGrad.addColorStop(0.55, "#1d4ed8");
+        seaGrad.addColorStop(1, "#1e3a8a");
+        ctx.fillStyle = seaGrad;
         ctx.fillRect(0, 0, cw, ch);
         const sx = cw / vw;
         const sy = ch / vh;
@@ -1413,16 +1581,304 @@
             const p = new Path2D(c.path);
             ctx.save();
             ctx.scale(sx, sy);
-            ctx.fillStyle = PUZZLE_COLORS[i % PUZZLE_COLORS.length];
+            ctx.fillStyle = PUZZLE_NATURAL_COLORS[i % PUZZLE_NATURAL_COLORS.length];
             ctx.fill(p);
-            ctx.strokeStyle = "rgba(255,255,255,0.45)";
-            ctx.lineWidth = 1.2;
+            ctx.strokeStyle = PUZZLE_OUTLINE_COLORS[i % PUZZLE_OUTLINE_COLORS.length];
+            ctx.lineWidth = 2;
             ctx.stroke(p);
             ctx.restore();
         });
         const url = canvas.toDataURL("image/png");
         puzzleImageCache[key] = url;
         return url;
+    }
+
+    function hashTilePixels(pixels) {
+        let hash = 2166136261 >>> 0;
+        for (let i = 0; i < pixels.length; i += 4) {
+            hash ^= pixels[i];
+            hash = Math.imul(hash, 16777619);
+            hash ^= pixels[i + 1];
+            hash = Math.imul(hash, 16777619);
+            hash ^= pixels[i + 2];
+            hash = Math.imul(hash, 16777619);
+            hash ^= pixels[i + 3];
+            hash = Math.imul(hash, 16777619);
+        }
+        return (hash >>> 0).toString(16);
+    }
+
+    async function buildPieceSignatures(imageUrl, cols, rows) {
+        const img = await loadImage(imageUrl, false);
+        const canvas = document.createElement("canvas");
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+        const ctx = canvas.getContext("2d", { willReadFrequently: true });
+        ctx.drawImage(img, 0, 0);
+        const tw = Math.floor(canvas.width / cols);
+        const th = Math.floor(canvas.height / rows);
+        const signatures = [];
+        for (let idx = 0; idx < cols * rows; idx++) {
+            const col = idx % cols;
+            const row = Math.floor(idx / cols);
+            const x = col * tw;
+            const y = row * th;
+            const w = col === cols - 1 ? (canvas.width - x) : tw;
+            const h = row === rows - 1 ? (canvas.height - y) : th;
+            const data = ctx.getImageData(x, y, w, h).data;
+            signatures.push(hashTilePixels(data));
+        }
+        return signatures;
+    }
+
+    const EUROPE_MATCH_BANK = [
+        { id: "albania", country: "Албанія", flag: "🇦🇱", capital: "Тирана", coat: "🛡️ Орел", alphabet: "ë, ç", geo: "Озеро Охрид", fact: "Одна з найстаріших мов Європи — албанська.", dish: "Tavë Kosi", clothing: "👗 Фустанела", hero: "Скендербег" },
+        { id: "andorra", country: "Андорра", flag: "🇦🇩", capital: "Андорра-ла-Велья", coat: "🛡️ Мітра", alphabet: "à, ó", geo: "Піренеї", fact: "Одна з найвищих столиць Європи.", dish: "Trinxat", clothing: "🧥 Вовняний плащ", hero: "Борис Скалер" },
+        { id: "austria", country: "Австрія", flag: "🇦🇹", capital: "Відень", coat: "🛡️ Чорний орел", alphabet: "ä, ö, ü, ß", geo: "Альпи", fact: "Відень багато років лідирує за якістю життя.", dish: "Віденський шніцель", clothing: "👗 Дірндль", hero: "Вольфганг Амадей Моцарт" },
+        { id: "belarus", country: "Білорусь", flag: "🇧🇾", capital: "Мінськ", coat: "🛡️ Контур країни", alphabet: "ў, і", geo: "Нароч", fact: "Має одну з найбільших площ боліт у Європі.", dish: "Драники", clothing: "👚 Вишиванка", hero: "Франциск Скорина" },
+        { id: "belgium", country: "Бельгія", flag: "🇧🇪", capital: "Брюссель", coat: "🛡️ Лев", alphabet: "é, è", geo: "Арденни", fact: "У Брюсселі розташована штаб-квартира ЄС.", dish: "Бельгійські вафлі", clothing: "🧥 Мереживний костюм", hero: "Одрі Хепберн" },
+        { id: "bosnia", country: "Боснія і Герцеговина", flag: "🇧🇦", capital: "Сараєво", coat: "🛡️ Лілії", alphabet: "ć, đ, š", geo: "Динарські Альпи", fact: "Має найкоротшу берегову лінію Адріатики.", dish: "Чевапі", clothing: "🦺 Єлек", hero: "Іво Андрич" },
+        { id: "bulgaria", country: "Болгарія", flag: "🇧🇬", capital: "Софія", coat: "🛡️ Лев", alphabet: "ж, щ, ъ", geo: "Рила", fact: "Одна з найстаріших держав Європи.", dish: "Баніца", clothing: "👘 Носія", hero: "Васил Левський" },
+        { id: "croatia", country: "Хорватія", flag: "🇭🇷", capital: "Загреб", coat: "🛡️ Шахівниця", alphabet: "č, ć, đ", geo: "Плітвіцькі озера", fact: "Має понад тисячу островів.", dish: "Паштицада", clothing: "👔 Лічтарська краватка", hero: "Нікола Тесла" },
+        { id: "cyprus", country: "Кіпр", flag: "🇨🇾", capital: "Нікосія", coat: "🛡️ Голуб миру", alphabet: "α, β, γ", geo: "Троодос", fact: "Нікосія — розділена столиця.", dish: "Халумі", clothing: "🧥 Фустані", hero: "Архієпископ Макаріос III" },
+        { id: "czechia", country: "Чехія", flag: "🇨🇿", capital: "Прага", coat: "🛡️ Двохвостий лев", alphabet: "č, ř, š", geo: "Влтава", fact: "Прага відома астрономічним годинником.", dish: "Свічкова", clothing: "🎩 Моравський костюм", hero: "Карл IV" },
+        { id: "denmark", country: "Данія", flag: "🇩🇰", capital: "Копенгаген", coat: "🛡️ Три леви", alphabet: "æ, ø, å", geo: "Ютландія", fact: "Одна з найщасливіших країн світу.", dish: "Smorrebrod", clothing: "🧥 Буннад", hero: "Ганс Крістіан Андерсен" },
+        { id: "estonia", country: "Естонія", flag: "🇪🇪", capital: "Таллінн", coat: "🛡️ Три леви", alphabet: "õ, ä, ö, ü", geo: "Чудське озеро", fact: "Голосування онлайн на нацвиборах.", dish: "Mulgipuder", clothing: "🧣 Rahvarõivad", hero: "Леннарт Мері" },
+        { id: "finland", country: "Фінляндія", flag: "🇫🇮", capital: "Гельсінкі", coat: "🛡️ Лев з мечем", alphabet: "ä, ö", geo: "Сайма", fact: "Країна тисяч озер.", dish: "Karjalanpiirakka", clothing: "🧥 Саамський костюм", hero: "Жан Сібеліус" },
+        { id: "france", country: "Франція", flag: "🇫🇷", capital: "Париж", coat: "🛡️ Лілія", alphabet: "é, è, ç", geo: "Монблан", fact: "Найвідвідуваніша країна світу.", dish: "Круасан", clothing: "👗 Бретонський костюм", hero: "Жанна д'Арк" },
+        { id: "germany", country: "Німеччина", flag: "🇩🇪", capital: "Берлін", coat: "🛡️ Орел", alphabet: "ä, ö, ü, ß", geo: "Рейн", fact: "Має найбільшу економіку ЄС.", dish: "Bratwurst", clothing: "🩳 Ледергозе", hero: "Йоганн Вольфганг Ґете" },
+        { id: "greece", country: "Греція", flag: "🇬🇷", capital: "Афіни", coat: "🛡️ Хрест", alphabet: "α, θ, ω", geo: "Олімп", fact: "Батьківщина Олімпійських ігор.", dish: "Мусака", clothing: "👗 Евзонський одяг", hero: "Одіссей Елітіс" },
+        { id: "hungary", country: "Угорщина", flag: "🇭🇺", capital: "Будапешт", coat: "🛡️ Корона святого Іштвана", alphabet: "á, é, ő, ű", geo: "Балатон", fact: "Одна з найбільших термальних систем Європи.", dish: "Гуляш", clothing: "🧥 Matyo", hero: "Шандор Петефі" },
+        { id: "iceland", country: "Ісландія", flag: "🇮🇸", capital: "Рейк'явік", coat: "🛡️ Чотири духи", alphabet: "ð, þ", geo: "Гекла", fact: "Близько 100% електрики з ВДЕ.", dish: "Skyr", clothing: "🧶 Lopapeysa", hero: "Лейф Еріксон" },
+        { id: "ireland", country: "Ірландія", flag: "🇮🇪", capital: "Дублін", coat: "🛡️ Золота арфа", alphabet: "á, é, í", geo: "Шаннон", fact: "Зелений острів відомий кельтською культурою.", dish: "Irish stew", clothing: "🧥 Кельтський плащ", hero: "Джеймс Джойс" },
+        { id: "italy", country: "Італія", flag: "🇮🇹", capital: "Рим", coat: "🛡️ Зірка Італії", alphabet: "à, è, ò", geo: "Етна", fact: "Має найбільшу кількість об'єктів ЮНЕСКО.", dish: "Піца Маргарита", clothing: "👗 Сардинський костюм", hero: "Леонардо да Вінчі" },
+        { id: "kosovo", country: "Косово", flag: "🇽🇰", capital: "Приштина", coat: "🛡️ Контур і зірки", alphabet: "ç, ë", geo: "Шар-Планина", fact: "Одна з наймолодших держав Європи.", dish: "Flija", clothing: "🧥 Xhubleta", hero: "Ібрагім Ругова" },
+        { id: "latvia", country: "Латвія", flag: "🇱🇻", capital: "Рига", coat: "🛡️ Сонце і лев", alphabet: "ā, ē, ģ", geo: "Гауя", fact: "Рига відома югендстилем.", dish: "Grey peas", clothing: "👗 Tautastērps", hero: "Райніс" },
+        { id: "liechtenstein", country: "Ліхтенштейн", flag: "🇱🇮", capital: "Вадуц", coat: "🛡️ Княжа корона", alphabet: "ä, ö, ü", geo: "Рейнська долина", fact: "Одна з найменших держав Європи.", dish: "Kasknopfle", clothing: "🧥 Тірольський костюм", hero: "Князь Франц-Йосиф II" },
+        { id: "lithuania", country: "Литва", flag: "🇱🇹", capital: "Вільнюс", coat: "🛡️ Витязь", alphabet: "ą, ė, ų", geo: "Нямунас", fact: "Вільнюс має один із найбільших старих центрів у ЄС.", dish: "Cepelinai", clothing: "👘 Tautiniai drabužiai", hero: "Мікалоюс Чюрльоніс" },
+        { id: "luxembourg", country: "Люксембург", flag: "🇱🇺", capital: "Люксембург", coat: "🛡️ Червоний лев", alphabet: "ë, ä", geo: "Арденни", fact: "Має три офіційні мови.", dish: "Judd mat Gaardebounen", clothing: "🧥 Арденнський стрій", hero: "Великий герцог Анрі" },
+        { id: "malta", country: "Мальта", flag: "🇲🇹", capital: "Валлетта", coat: "🛡️ Мальтійський хрест", alphabet: "għ, ħ, ż", geo: "Блакитна лагуна", fact: "Одна з найменших столиць Європи.", dish: "Pastizzi", clothing: "👗 Għonnella", hero: "Джордж Борг Олів'є" },
+        { id: "moldova", country: "Молдова", flag: "🇲🇩", capital: "Кишинів", coat: "🛡️ Тур", alphabet: "ă, ș, ț", geo: "Дністер", fact: "Відома винними підземеллями.", dish: "Мамалига", clothing: "👚 Ie", hero: "Штефан чел Маре" },
+        { id: "monaco", country: "Монако", flag: "🇲🇨", capital: "Монако", coat: "🛡️ Ченці-мечники", alphabet: "é, è", geo: "Скеля Монако", fact: "Друга найменша держава світу.", dish: "Barbagiuan", clothing: "🤵 Святковий фрак", hero: "Грейс Келлі" },
+        { id: "montenegro", country: "Чорногорія", flag: "🇲🇪", capital: "Подгориця", coat: "🛡️ Двоголовий орел", alphabet: "č, ć, nj", geo: "Каньйон Тара", fact: "Тут один із найглибших каньйонів Європи.", dish: "Njeguski prsut", clothing: "🧥 Crnogorska nosnja", hero: "Петро II Петрович-Негош" },
+        { id: "netherlands", country: "Нідерланди", flag: "🇳🇱", capital: "Амстердам", coat: "🛡️ Лев", alphabet: "ij, ë", geo: "Рейн-Маас-Шельда", fact: "Значна частина країни нижче рівня моря.", dish: "Stroopwafel", clothing: "👗 Volendamse klederdracht", hero: "Вінсент ван Гог" },
+        { id: "north-macedonia", country: "Північна Македонія", flag: "🇲🇰", capital: "Скоп'є", coat: "🛡️ Лев", alphabet: "ѓ, ќ, љ", geo: "Охридське озеро", fact: "Охрид — одне з найдавніших озер світу.", dish: "Tavce gravce", clothing: "👘 Nosija", hero: "Гоце Делчев" },
+        { id: "norway", country: "Норвегія", flag: "🇳🇴", capital: "Осло", coat: "🛡️ Лев з сокирою", alphabet: "æ, ø, å", geo: "Согне-фіорд", fact: "Країна фіордів і північного сяйва.", dish: "Fårikål", clothing: "👗 Bunad", hero: "Руаль Амундсен" },
+        { id: "poland", country: "Польща", flag: "🇵🇱", capital: "Варшава", coat: "🛡️ Білий орел", alphabet: "ą, ć, ę, ł", geo: "Вісла", fact: "Одна з найбільших країн Центральної Європи.", dish: "Pierogi", clothing: "👘 Стрій Кракова", hero: "Марія Склодовська-Кюрі" },
+        { id: "portugal", country: "Португалія", flag: "🇵🇹", capital: "Лісабон", coat: "🛡️ Щити і замки", alphabet: "ã, ç, õ", geo: "Дору", fact: "Найстаріші кордони Європи майже не змінювались.", dish: "Bacalhau", clothing: "👗 Traje minhoto", hero: "Васко да Гама" },
+        { id: "romania", country: "Румунія", flag: "🇷🇴", capital: "Бухарест", coat: "🛡️ Золотий орел", alphabet: "ă, â, ș, ț", geo: "Карпати", fact: "Тут розташована дельта Дунаю.", dish: "Sarmale", clothing: "👚 Ie romaneasca", hero: "Надя Команечі" },
+        { id: "san-marino", country: "Сан-Марино", flag: "🇸🇲", capital: "Сан-Марино", coat: "🛡️ Три вежі", alphabet: "à, è", geo: "Монте-Титано", fact: "Одна з найстаріших республік світу.", dish: "Torta Tre Monti", clothing: "🧥 Церемоніальний плащ", hero: "Святий Марин" },
+        { id: "serbia", country: "Сербія", flag: "🇷🇸", capital: "Белград", coat: "🛡️ Двоголовий орел", alphabet: "ђ, љ, њ", geo: "Дунай", fact: "Белград стоїть на злитті Сави і Дунаю.", dish: "Pljeskavica", clothing: "👘 Šajkača + opanak", hero: "Нікола Тесла" },
+        { id: "slovakia", country: "Словаччина", flag: "🇸🇰", capital: "Братислава", coat: "🛡️ Подвійний хрест", alphabet: "á, ä, č", geo: "Татри", fact: "Має численні печери ЮНЕСКО.", dish: "Bryndzove halusky", clothing: "👗 Kroj", hero: "Мілан Растіслав Штефанік" },
+        { id: "slovenia", country: "Словенія", flag: "🇸🇮", capital: "Любляна", coat: "🛡️ Триглав", alphabet: "č, š, ž", geo: "Озеро Блед", fact: "Одна з найзеленіших країн Європи.", dish: "Potica", clothing: "🧥 Gorenjska nosnja", hero: "Франце Прешерн" },
+        { id: "spain", country: "Іспанія", flag: "🇪🇸", capital: "Мадрид", coat: "🛡️ Королівський щит", alphabet: "ñ, á, ó", geo: "Піренеї", fact: "Має кілька офіційних регіональних мов.", dish: "Паелья", clothing: "👗 Traje de flamenca", hero: "Мігель де Сервантес" },
+        { id: "sweden", country: "Швеція", flag: "🇸🇪", capital: "Стокгольм", coat: "🛡️ Три корони", alphabet: "å, ä, ö", geo: "Венерн", fact: "Один із лідерів за інноваціями в Європі.", dish: "Kottbullar", clothing: "🧥 Sverigedrakt", hero: "Астрід Ліндгрен" },
+        { id: "switzerland", country: "Швейцарія", flag: "🇨🇭", capital: "Берн", coat: "🛡️ Білий хрест", alphabet: "ä, ö, ü, é", geo: "Маттерхорн", fact: "Має чотири офіційні мови.", dish: "Фондю", clothing: "🧥 Альпійський костюм", hero: "Роджер Федерер" },
+        { id: "ukraine", country: "Україна", flag: "🇺🇦", capital: "Київ", coat: "🛡️ Тризуб", alphabet: "ї, є, ґ", geo: "Дніпро", fact: "Найбільша за площею країна Європи.", dish: "Борщ", clothing: "👕 Вишиванка", hero: "Леся Українка" },
+        { id: "united-kingdom", country: "Велика Британія", flag: "🇬🇧", capital: "Лондон", coat: "🛡️ Лев і єдиноріг", alphabet: "w, y", geo: "Темза", fact: "Склалася з чотирьох історичних країн.", dish: "Fish and chips", clothing: "🧥 Кілт", hero: "Вільям Шекспір" },
+        { id: "vatican", country: "Ватикан", flag: "🇻🇦", capital: "Ватикан", coat: "🛡️ Ключі святого Петра", alphabet: "æ, œ", geo: "Собор Святого Петра", fact: "Найменша держава у світі.", dish: "Gnocchi", clothing: "⛪ Папська мантія", hero: "Папа Франциск" }
+    ];
+    const MATCH_LINE_COLORS = ["#22c55e", "#38bdf8", "#f59e0b", "#e879f9", "#f43f5e", "#14b8a6", "#facc15", "#60a5fa"];
+    const GRAPHICAL_PAIR_KINDS = new Set(["flag", "coat", "clothing"]);
+    const GEO_TYPE_BY_COUNTRY = {
+        albania: { type: "озеро", icon: "🏞️" },
+        andorra: { type: "гори", icon: "⛰️" },
+        austria: { type: "гори", icon: "⛰️" },
+        belarus: { type: "озеро", icon: "🏞️" },
+        belgium: { type: "гори", icon: "⛰️" },
+        bosnia: { type: "гори", icon: "⛰️" },
+        bulgaria: { type: "гори", icon: "⛰️" },
+        croatia: { type: "озера", icon: "🏞️" },
+        cyprus: { type: "гірський масив", icon: "⛰️" },
+        czechia: { type: "річка", icon: "🌊" },
+        denmark: { type: "півострів", icon: "🗺️" },
+        estonia: { type: "озеро", icon: "🏞️" },
+        finland: { type: "озеро", icon: "🏞️" },
+        france: { type: "гора", icon: "⛰️" },
+        germany: { type: "річка", icon: "🌊" },
+        greece: { type: "гора", icon: "⛰️" },
+        hungary: { type: "озеро", icon: "🏞️" },
+        iceland: { type: "вулкан", icon: "🌋" },
+        ireland: { type: "річка", icon: "🌊" },
+        italy: { type: "вулкан", icon: "🌋" },
+        kosovo: { type: "гори", icon: "⛰️" },
+        latvia: { type: "річка", icon: "🌊" },
+        liechtenstein: { type: "долина", icon: "🏔️" },
+        lithuania: { type: "річка", icon: "🌊" },
+        luxembourg: { type: "гори", icon: "⛰️" },
+        malta: { type: "морська лагуна", icon: "🌊" },
+        moldova: { type: "річка", icon: "🌊" },
+        monaco: { type: "скелястий мис", icon: "🪨" },
+        montenegro: { type: "каньйон", icon: "🏞️" },
+        netherlands: { type: "річкова дельта", icon: "🌊" },
+        "north-macedonia": { type: "озеро", icon: "🏞️" },
+        norway: { type: "фіорд", icon: "🌊" },
+        poland: { type: "річка", icon: "🌊" },
+        portugal: { type: "річка", icon: "🌊" },
+        romania: { type: "гори", icon: "⛰️" },
+        "san-marino": { type: "гора", icon: "⛰️" },
+        serbia: { type: "річка", icon: "🌊" },
+        slovakia: { type: "гори", icon: "⛰️" },
+        slovenia: { type: "озеро", icon: "🏞️" },
+        spain: { type: "гори", icon: "⛰️" },
+        sweden: { type: "озеро", icon: "🏞️" },
+        switzerland: { type: "гора", icon: "⛰️" },
+        ukraine: { type: "річка", icon: "🌊" },
+        "united-kingdom": { type: "річка", icon: "🌊" },
+        vatican: { type: "архітектурний комплекс", icon: "🏛️" }
+    };
+    const COUNTRY_ISO2 = {
+        albania: "al", andorra: "ad", austria: "at", belarus: "by", belgium: "be", bosnia: "ba",
+        bulgaria: "bg", croatia: "hr", cyprus: "cy", czechia: "cz", denmark: "dk", estonia: "ee",
+        finland: "fi", france: "fr", germany: "de", greece: "gr", hungary: "hu", iceland: "is",
+        ireland: "ie", italy: "it", kosovo: "xk", latvia: "lv", liechtenstein: "li", lithuania: "lt",
+        luxembourg: "lu", malta: "mt", moldova: "md", monaco: "mc", montenegro: "me", netherlands: "nl",
+        "north-macedonia": "mk", norway: "no", poland: "pl", portugal: "pt", romania: "ro",
+        "san-marino": "sm", serbia: "rs", slovakia: "sk", slovenia: "si", spain: "es", sweden: "se",
+        switzerland: "ch", ukraine: "ua", "united-kingdom": "gb", vatican: "va"
+    };
+
+    function parseGraphicValue(raw, fallbackIcon) {
+        const text = String(raw || "");
+        const first = text.split(/\s+/).find(Boolean) || "";
+        const hasEmoji = /[\u{1F1E6}-\u{1F1FF}\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u.test(first);
+        if (hasEmoji) {
+            return { icon: first, text: text.replace(first, "").trim() };
+        }
+        return { icon: fallbackIcon || "🖼️", text };
+    }
+
+    function stableSeed(str) {
+        let h = 5381;
+        for (let i = 0; i < str.length; i++) h = ((h << 5) + h) + str.charCodeAt(i);
+        return Math.abs(h);
+    }
+
+    function graphicImageUrl(kind, countryId, countryName, label) {
+        if (kind === "flag") {
+            const iso2 = COUNTRY_ISO2[countryId];
+            if (iso2) return "https://flagcdn.com/w320/" + iso2 + ".png";
+        }
+        const seed = stableSeed(countryId + ":" + kind);
+        if (kind === "coat") {
+            const tags = encodeURIComponent(countryName + ",heraldry,coat of arms,shield");
+            return "https://loremflickr.com/360/240/" + tags + "?lock=" + seed;
+        }
+        if (kind === "clothing") {
+            const tags = encodeURIComponent(countryName + ",traditional costume,national dress");
+            return "https://loremflickr.com/360/240/" + tags + "?lock=" + seed;
+        }
+        return "";
+    }
+
+    function buildMatchRoundPairs(round) {
+        const kind = round.pairKind;
+        const count = Math.max(2, Math.min(10, round.count || 7));
+        const pool = EUROPE_MATCH_BANK.filter((c) => c.country && c[kind]);
+        const picked = shuffleArray(pool).slice(0, Math.min(count, pool.length));
+        const left = shuffleArray(picked.map((c) => ({
+            id: c.id,
+            text: c.country,
+            icon: kind === "flag" ? "🌍" : c.flag
+        })));
+        const right = shuffleArray(picked.map((c) => {
+            const value = c[kind];
+            if (kind === "flag") {
+                return {
+                    id: c.id,
+                    text: c.country,
+                    icon: "",
+                    image: graphicImageUrl("flag", c.id, c.country, value),
+                    graphic: true,
+                    imageKind: "flag"
+                };
+            }
+            if (kind === "coat") {
+                const parsed = parseGraphicValue(value, "🛡️");
+                return {
+                    id: c.id,
+                    text: parsed.text || c.country,
+                    icon: parsed.icon,
+                    image: graphicImageUrl("coat", c.id, c.country, parsed.text),
+                    graphic: true,
+                    imageKind: "coat"
+                };
+            }
+            if (kind === "clothing") {
+                const parsed = parseGraphicValue(value, "👘");
+                return {
+                    id: c.id,
+                    text: parsed.text || c.country,
+                    icon: parsed.icon,
+                    image: graphicImageUrl("clothing", c.id, c.country, parsed.text),
+                    graphic: true,
+                    imageKind: "clothing"
+                };
+            }
+            if (kind === "geo") {
+                const geoMeta = GEO_TYPE_BY_COUNTRY[c.id] || { type: "географічний об'єкт", icon: "🗺️" };
+                return {
+                    id: c.id,
+                    text: value + " — " + geoMeta.type,
+                    icon: geoMeta.icon,
+                    graphic: false
+                };
+            }
+            return { id: c.id, text: value, icon: "•", graphic: false };
+        }));
+        return { left, right };
+    }
+
+    function getMapBonusNodes(data) {
+        if (!data || !Array.isArray(data.nodes)) return null;
+        return data.nodes.filter(node =>
+            node.bonus &&
+            Array.isArray(node.rounds) &&
+            node.rounds.some(round => round.type === "puzzle" || round.type === "matchPairs"));
+    }
+
+    function showLockedMessage(node, data) {
+        const prev = findPrevNode(node, data);
+        const lockedEl = document.getElementById("locked-msg");
+        if (node.bonus) {
+            lockedEl.textContent =
+                "Бонус відкриється, коли на кожній країні Європи буде щонайменше " +
+                UNLOCK_MIN_STARS + " ⭐.";
+        } else {
+            lockedEl.textContent = prev
+                ? "Спочатку набери щонайменше " + UNLOCK_MIN_STARS + " ⭐ на «" + prev.title + "»."
+                : "Ця точка ще закрита.";
+        }
+        document.getElementById("modal-locked").classList.add("active");
+    }
+
+    function renderMapBonusButtons() {
+        const nodes = getMapBonusNodes(currentData);
+        if (!nodes || nodes.length === 0) {
+            mapBonusActions.hidden = true;
+            mapBonusActions.innerHTML = "";
+            return;
+        }
+        mapBonusActions.hidden = false;
+        mapBonusActions.innerHTML = "";
+        nodes.forEach((node) => {
+            const unlocked = canUnlockNode(node, currentData);
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "map-bonus-btn" + (unlocked ? "" : " locked");
+            btn.disabled = !unlocked;
+            btn.textContent = (unlocked ? (node.emoji || "🎮") + " " : "🔒 ") + (node.title || "Бонус");
+            btn.addEventListener("click", () => {
+                audio.tap();
+                if (!canUnlockNode(node, currentData)) {
+                    showLockedMessage(node, currentData);
+                    audio.wrong();
+                    return;
+                }
+                startNode(node);
+            });
+            mapBonusActions.appendChild(btn);
+        });
     }
 
     function renderOrbitRing() {
@@ -1909,9 +2365,9 @@
         }
 
         const features = geo ? (geo.countries || geo.regions || []) : [];
-        const playableIds = new Set(currentData.nodes.map(n => nodeGeoId(n)));
+        const playableIds = new Set(currentData.nodes.filter(n => !n.bonus).map(n => nodeGeoId(n)));
         const starsByNode = {};
-        for (const node of currentData.nodes) {
+        for (const node of currentData.nodes.filter(n => !n.bonus)) {
             starsByNode[nodeGeoId(node)] = nodeStars(currentData.id, node.id);
         }
 
@@ -1932,10 +2388,6 @@
             const c = getNodeCenter(geo, node);
             return { node, x: c ? c.x : w / 2, y: c ? c.y : h / 2 };
         });
-        const bonusPositions = currentData.nodes.filter(n => n.bonus).map(node => {
-            const c = getNodeCenter(geo, node);
-            return { node, x: c ? c.x : w / 2, y: c ? c.y : h / 2 };
-        });
 
         if (positions.length > 1) {
             const trailD = buildFlexibleTrail(positions);
@@ -1950,14 +2402,10 @@
             const stars = nodeStars(currentData.id, p.node.id);
             html += renderMapNode(p, cls, stars, largeNodes);
         }
-        for (const p of bonusPositions) {
-            const cls = nodeStatusClass(p.node, currentData);
-            const stars = nodeStars(currentData.id, p.node.id);
-            html += renderMapNode(p, cls, stars, largeNodes);
-        }
         mapSvg.innerHTML = html;
         const mapScroll = document.getElementById("map-scroll");
         mapScroll.classList.toggle("ocean-adventure", !!isOceanAdventure);
+        renderMapBonusButtons();
 
         mapSvg.querySelectorAll(".map-node").forEach(g => {
             const onTap = (e) => {
@@ -1967,18 +2415,7 @@
                 const node = currentData.nodes.find(n => n.id === id);
                 if (!node) return;
                 if (!canUnlockNode(node, currentData)) {
-                    const prev = findPrevNode(node, currentData);
-                    const lockedEl = document.getElementById("locked-msg");
-                    if (node.bonus) {
-                        lockedEl.textContent =
-                            "Бонус відкриється, коли на кожній країні Європи буде щонайменше " +
-                            UNLOCK_MIN_STARS + " ⭐.";
-                    } else {
-                        lockedEl.textContent = prev
-                            ? "Спочатку набери щонайменше " + UNLOCK_MIN_STARS + " ⭐ на «" + prev.title + "»."
-                            : "Ця точка ще закрита.";
-                    }
-                    document.getElementById("modal-locked").classList.add("active");
+                    showLockedMessage(node, currentData);
                     audio.wrong();
                     return;
                 }
@@ -2002,6 +2439,7 @@
         session = {
             correct: 0, wrong: 0, combo: 0, comboMax: 0, coinsEarned: 0, roundIndex: 0,
             puzzleMoves: 0, puzzleHint: false,
+            roundCleanup: null,
         };
         save.lastPlayed = { continentId: currentData.id, nodeId: node.id };
         saveSave();
@@ -2155,6 +2593,190 @@
                 gameAnswers.appendChild(btn);
             });
         },
+        matchPairs(ctx, round) {
+            gamePrompt.textContent = round.text || "З'єднай пари";
+            gameMedia.innerHTML = "";
+            gameAnswers.className = "answers match-wrap";
+            gameAnswers.innerHTML = "";
+            mentorBubble.textContent = "🧭 Обери країну зліва і відповідність справа.";
+
+            const pairs = buildMatchRoundPairs(round);
+            if (!pairs.left.length || !pairs.right.length) {
+                gameAnswers.innerHTML = "<p class='match-hint'>Немає даних для раунду.</p>";
+                return;
+            }
+            const graphicalRound = GRAPHICAL_PAIR_KINDS.has(round.pairKind);
+
+            const hint = document.createElement("p");
+            hint.className = "match-hint";
+            hint.textContent = "Збери " + pairs.left.length + " правильних відповідностей.";
+            const board = document.createElement("div");
+            board.className = "match-board";
+            const lines = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            lines.setAttribute("class", "match-lines");
+            const leftCol = document.createElement("div");
+            leftCol.className = "match-col";
+            const rightCol = document.createElement("div");
+            rightCol.className = "match-col" + (graphicalRound ? " tiles" : "");
+            board.appendChild(lines);
+            board.appendChild(leftCol);
+            board.appendChild(rightCol);
+            gameAnswers.appendChild(hint);
+            gameAnswers.appendChild(board);
+
+            const matchLeftToRight = new Array(pairs.left.length).fill(-1);
+            const matchRightToLeft = new Array(pairs.right.length).fill(-1);
+            const matchLineColors = new Array(pairs.left.length).fill("");
+            let selectedLeft = -1;
+            let selectedRight = -1;
+            const leftBtns = [];
+            const rightBtns = [];
+
+            function makeItem(content, side) {
+                const btn = document.createElement("button");
+                btn.type = "button";
+                btn.className = "match-item " + side;
+                if (graphicalRound && side === "right") btn.classList.add("image-tile");
+                if (content.image) {
+                    const img = document.createElement("img");
+                    img.className = "match-photo" + (content.imageKind === "flag" ? " flag" : "");
+                    img.src = content.image;
+                    img.alt = content.text || "зображення";
+                    img.loading = "lazy";
+                    img.referrerPolicy = "no-referrer";
+                    img.onerror = function () {
+                        img.remove();
+                        if (!btn.querySelector(".ico")) {
+                            const fallback = document.createElement("span");
+                            fallback.className = "ico";
+                            fallback.textContent = content.icon || "🖼️";
+                            btn.prepend(fallback);
+                        }
+                    };
+                    btn.appendChild(img);
+                }
+                const ico = document.createElement("span");
+                ico.className = "ico";
+                ico.textContent = content.icon || "•";
+                if (content.image) {
+                    ico.style.display = "none";
+                }
+                const txt = document.createElement("span");
+                txt.className = "txt";
+                txt.textContent = content.text;
+                btn.appendChild(ico);
+                btn.appendChild(txt);
+                return btn;
+            }
+
+            function pointAt(el, side) {
+                const br = board.getBoundingClientRect();
+                const r = el.getBoundingClientRect();
+                return {
+                    x: side === "left" ? (r.right - br.left) : (r.left - br.left),
+                    y: r.top - br.top + r.height / 2
+                };
+            }
+
+            function drawLines() {
+                lines.innerHTML = "";
+                lines.setAttribute("viewBox", "0 0 " + board.clientWidth + " " + board.clientHeight);
+                for (let i = 0; i < matchLeftToRight.length; i++) {
+                    const j = matchLeftToRight[i];
+                    if (j < 0) continue;
+                    const a = pointAt(leftBtns[i], "left");
+                    const b = pointAt(rightBtns[j], "right");
+                    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                    const cx = (a.x + b.x) / 2;
+                    path.setAttribute("d", "M" + a.x + " " + a.y + " C " + cx + " " + a.y + ", " + cx + " " + b.y + ", " + b.x + " " + b.y);
+                    path.setAttribute("stroke", matchLineColors[i] || "#22c55e");
+                    path.setAttribute("stroke-width", "3");
+                    path.setAttribute("fill", "none");
+                    path.setAttribute("stroke-linecap", "round");
+                    lines.appendChild(path);
+                }
+            }
+
+            function rerenderStates() {
+                leftBtns.forEach((btn, i) => {
+                    btn.classList.toggle("selected", i === selectedLeft);
+                    btn.classList.toggle("matched", matchLeftToRight[i] >= 0);
+                    btn.disabled = answering || matchLeftToRight[i] >= 0;
+                });
+                rightBtns.forEach((btn, i) => {
+                    btn.classList.toggle("selected", i === selectedRight);
+                    btn.classList.toggle("matched", matchRightToLeft[i] >= 0);
+                    btn.disabled = answering || matchRightToLeft[i] >= 0;
+                });
+                drawLines();
+            }
+
+            function flashMismatch(a, b) {
+                a.classList.add("mismatch");
+                b.classList.add("mismatch");
+                setTimeout(() => {
+                    a.classList.remove("mismatch");
+                    b.classList.remove("mismatch");
+                }, 320);
+            }
+
+            function checkDone() {
+                if (matchLeftToRight.every(v => v >= 0)) {
+                    submitAnswer(true, round, null);
+                }
+            }
+
+            function tryPair(li, ri) {
+                if (answering) return;
+                if (pairs.left[li].id === pairs.right[ri].id) {
+                    matchLeftToRight[li] = ri;
+                    matchRightToLeft[ri] = li;
+                    matchLineColors[li] = MATCH_LINE_COLORS[(li + ri) % MATCH_LINE_COLORS.length];
+                    audio.tap();
+                    selectedLeft = -1;
+                    selectedRight = -1;
+                    rerenderStates();
+                    checkDone();
+                } else {
+                    audio.wrong();
+                    flashMismatch(leftBtns[li], rightBtns[ri]);
+                    selectedLeft = -1;
+                    selectedRight = -1;
+                    rerenderStates();
+                }
+            }
+
+            pairs.left.forEach((item, i) => {
+                const btn = makeItem(item, "left");
+                btn.addEventListener("click", () => {
+                    if (matchLeftToRight[i] >= 0 || answering) return;
+                    selectedLeft = selectedLeft === i ? -1 : i;
+                    if (selectedLeft >= 0 && selectedRight >= 0) tryPair(selectedLeft, selectedRight);
+                    rerenderStates();
+                });
+                leftBtns.push(btn);
+                leftCol.appendChild(btn);
+            });
+
+            pairs.right.forEach((item, i) => {
+                const btn = makeItem(item, "right");
+                btn.addEventListener("click", () => {
+                    if (matchRightToLeft[i] >= 0 || answering) return;
+                    selectedRight = selectedRight === i ? -1 : i;
+                    if (selectedLeft >= 0 && selectedRight >= 0) tryPair(selectedLeft, selectedRight);
+                    rerenderStates();
+                });
+                rightBtns.push(btn);
+                rightCol.appendChild(btn);
+            });
+
+            const onResize = () => drawLines();
+            window.addEventListener("resize", onResize);
+            session.roundCleanup = () => {
+                window.removeEventListener("resize", onResize);
+            };
+            rerenderStates();
+        },
         async puzzle(ctx, round) {
             gamePrompt.textContent = round.text;
             gameMedia.innerHTML = "";
@@ -2166,8 +2788,10 @@
             const rows = round.rows || 4;
             const total = cols * rows;
             let imageUrl;
+            let pieceSignatures;
             try {
                 imageUrl = await buildEuropePuzzleImage(round.mapId || "europe-countries");
+                pieceSignatures = await buildPieceSignatures(imageUrl, cols, rows);
             } catch (e) {
                 console.error(e);
                 gameAnswers.innerHTML = "<p>Не вдалося завантажити пазл.</p>";
@@ -2225,7 +2849,7 @@
             }
 
             function isSolved() {
-                return order.every((v, i) => v === i);
+                return order.every((pieceIdx, slotIdx) => pieceSignatures[pieceIdx] === pieceSignatures[slotIdx]);
             }
 
             function onSolved() {
@@ -2255,7 +2879,9 @@
                     btn.type = "button";
                     btn.className = "puzzle-piece";
                     if (slotIdx === selected) btn.classList.add("selected");
-                    if (pieceIdx === slotIdx) btn.classList.add("correct-slot");
+                    if (pieceSignatures[pieceIdx] === pieceSignatures[slotIdx]) {
+                        btn.classList.add("correct-slot");
+                    }
                     btn.style.backgroundImage = "url(" + imageUrl + ")";
                     btn.style.backgroundSize = cols * 100 + "% " + rows * 100 + "%";
                     btn.style.backgroundPosition = pieceBgPos(pieceIdx);
@@ -2337,6 +2963,10 @@
     };
 
     function renderRound() {
+        if (session && typeof session.roundCleanup === "function") {
+            try { session.roundCleanup(); } catch (_) {}
+            session.roundCleanup = null;
+        }
         answering = false;
         const round = currentNode.rounds[session.roundIndex];
         session.currentChoices = prepareRoundChoices(round);
@@ -2398,6 +3028,10 @@
     }
 
     function advanceRound() {
+        if (session && typeof session.roundCleanup === "function") {
+            try { session.roundCleanup(); } catch (_) {}
+            session.roundCleanup = null;
+        }
         document.getElementById("modal-feedback").classList.remove("active");
         session.roundIndex++;
         if (session.roundIndex >= currentNode.rounds.length) {
@@ -2419,6 +3053,10 @@
     });
 
     function finishNode() {
+        if (session && typeof session.roundCleanup === "function") {
+            try { session.roundCleanup(); } catch (_) {}
+            session.roundCleanup = null;
+        }
         const total = currentNode.rounds.length;
         const stars = starsForSession(session.correct, total, session.wrong, session.comboMax);
         const cs = continentSave(currentData.id);
@@ -2511,7 +3149,6 @@
         updateHud();
         try {
             await loadWorld();
-            document.getElementById("hub-tagline").textContent = world.tagline || "";
             await Promise.all([
                 loadContinentData(world.continents.find(c => c.id === "europe")),
                 loadContinentData(world.ocean),

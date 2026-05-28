@@ -1,4 +1,12 @@
-const CACHE_NAME = "mini-games-v26";
+const CACHE_NAME = "mini-games-v27";
+const IMAGE_CACHE_NAME = "mini-games-images-v2";
+const IMAGE_EXT_RE = /\.(png|jpe?g|webp|gif|svg|avif)(\?.*)?$/i;
+const IMAGE_WARMUP_CONCURRENCY = 2;
+const IMAGE_WARMUP_START_DELAY_MS = 2500;
+const IMAGE_WARMUP_PAUSE_MS = 80;
+
+let imageWarmupPromise = null;
+let imageUrlsPromise = null;
 
 const PRECACHE = [
     "./",
@@ -62,8 +70,14 @@ self.addEventListener("install", (event) => {
 self.addEventListener("activate", (event) => {
     event.waitUntil((async () => {
         const names = await caches.keys();
-        await Promise.all(names.filter(n => n !== CACHE_NAME).map(n => caches.delete(n)));
+        await Promise.all(
+            names
+                .filter(n => n !== CACHE_NAME && n !== IMAGE_CACHE_NAME)
+                .map(n => caches.delete(n))
+        );
         await self.clients.claim();
+        // Warm images in low-priority background mode (non-blocking).
+        scheduleImageWarmup();
     })());
 });
 
@@ -103,11 +117,160 @@ async function cacheThenNetwork(request) {
     }
 }
 
+function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function isImageLike(value) {
+    return typeof value === "string" && IMAGE_EXT_RE.test(value.trim());
+}
+
+function extractImageUrlsFromHtml(html, baseUrl, out) {
+    const srcRe = /\bsrc=["']([^"']+)["']/gi;
+    let m;
+    while ((m = srcRe.exec(html))) {
+        const src = m[1];
+        if (!src || src.startsWith("data:")) continue;
+        try {
+            const absolute = new URL(src, baseUrl).toString();
+            if (isImageLike(absolute)) out.add(absolute);
+        } catch (_) {}
+    }
+}
+
+function extractImageUrls(value, baseUrl, out) {
+    if (!value) return;
+    if (typeof value === "string") {
+        const trimmed = value.trim();
+        if (!trimmed || trimmed.startsWith("data:")) return;
+        if (trimmed.includes("<img")) {
+            extractImageUrlsFromHtml(trimmed, baseUrl, out);
+        }
+        if (isImageLike(trimmed)) {
+            try {
+                out.add(new URL(trimmed, baseUrl).toString());
+            } catch (_) {}
+        }
+        return;
+    }
+    if (Array.isArray(value)) {
+        for (const item of value) extractImageUrls(item, baseUrl, out);
+        return;
+    }
+    if (typeof value === "object") {
+        for (const k in value) {
+            if (Object.prototype.hasOwnProperty.call(value, k)) {
+                extractImageUrls(value[k], baseUrl, out);
+            }
+        }
+    }
+}
+
+async function collectImageUrls() {
+    if (imageUrlsPromise) return imageUrlsPromise;
+    imageUrlsPromise = (async () => {
+        const out = new Set();
+
+        for (const url of PRECACHE) {
+            if (isImageLike(url)) {
+                out.add(new URL(url, self.location.origin + "/").toString());
+            }
+        }
+        const jsonUrls = PRECACHE.filter((url) => url.endsWith(".json"));
+        for (const relativeUrl of jsonUrls) {
+            try {
+                const absoluteUrl = new URL(relativeUrl, self.location.origin + "/").toString();
+                const res = await fetch(absoluteUrl, { cache: "no-store" });
+                if (!res.ok) continue;
+                const json = await res.json();
+                extractImageUrls(json, absoluteUrl, out);
+            } catch (_) {}
+        }
+        return Array.from(out);
+    })();
+    return imageUrlsPromise;
+}
+
+async function putImageToCache(imageCache, url) {
+    let request;
+    try {
+        const absolute = new URL(url, self.location.origin + "/");
+        request = absolute.origin === self.location.origin
+            ? new Request(absolute.toString(), { cache: "reload" })
+            : new Request(absolute.toString(), {
+                mode: "no-cors",
+                credentials: "omit",
+                cache: "reload"
+            });
+    } catch (_) {
+        return false;
+    }
+    try {
+        const cached = await imageCache.match(request, { ignoreVary: true });
+        if (cached) return true;
+        const response = await fetch(request);
+        if (!response) return false;
+        if (response.ok || response.type === "opaque") {
+            await imageCache.put(request, response.clone());
+            return true;
+        }
+    } catch (_) {}
+    return false;
+}
+
+async function warmAllImages() {
+    const imageCache = await caches.open(IMAGE_CACHE_NAME);
+    const urls = await collectImageUrls();
+    let nextIndex = 0;
+    const workerCount = Math.min(IMAGE_WARMUP_CONCURRENCY, Math.max(1, urls.length));
+    const workers = Array.from({ length: workerCount }, async () => {
+        while (nextIndex < urls.length) {
+            const i = nextIndex++;
+            await putImageToCache(imageCache, urls[i]);
+            await sleep(IMAGE_WARMUP_PAUSE_MS);
+        }
+    });
+    await Promise.all(workers);
+}
+
+function scheduleImageWarmup() {
+    if (imageWarmupPromise) return imageWarmupPromise;
+    imageWarmupPromise = (async () => {
+        await sleep(IMAGE_WARMUP_START_DELAY_MS);
+        await warmAllImages().catch(() => {});
+    })().finally(() => {
+        imageWarmupPromise = null;
+    });
+    return imageWarmupPromise;
+}
+
+async function imageCacheFirst(request) {
+    const imageCache = await caches.open(IMAGE_CACHE_NAME);
+    const cached = await imageCache.match(request, { ignoreVary: true });
+    if (cached) return cached;
+    const fresh = await fetch(request);
+    if (fresh && (fresh.ok || fresh.type === "opaque")) {
+        imageCache.put(request, fresh.clone());
+    }
+    return fresh;
+}
+
 self.addEventListener("fetch", (event) => {
     const req = event.request;
     if (req.method !== "GET") return;
 
     const url = new URL(req.url);
+    const isImageRequest = req.destination === "image" || isImageLike(url.pathname);
+    if (isImageRequest) {
+        event.respondWith(imageCacheFirst(req).catch(async () => {
+            const imageCache = await caches.open(IMAGE_CACHE_NAME);
+            const offline = await imageCache.match(req, { ignoreVary: true });
+            if (offline) return offline;
+            return new Response("", { status: 503, statusText: "Offline image" });
+        }));
+        return;
+    }
+
     if (url.origin !== self.location.origin) return;
 
     // release.json publishes the latest native APK version. It must always be
@@ -150,6 +313,11 @@ self.addEventListener("message", (event) => {
     // the gaps so all subjects are guaranteed available offline.
     if (data && data.type === "ensure-cache") {
         event.waitUntil(ensureCache(event.source));
+        return;
+    }
+
+    if (data && data.type === "refresh-images") {
+        scheduleImageWarmup();
     }
 });
 
@@ -186,5 +354,7 @@ async function ensureCache(client) {
         report("cache-progress");
     }
 
+    // Start image warmup in background without delaying any page.
+    scheduleImageWarmup();
     report("cache-complete");
 }
