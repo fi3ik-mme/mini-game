@@ -1,0 +1,287 @@
+{
+  "id": "ukraine",
+  "title": "Україна",
+  "map": {
+    "viewBox": "0 0 1000 780",
+    "geoFile": "data/maps/ukraine-travel.json"
+  },
+  "nodes": [
+    {
+      "id": "lviv",
+      "title": "Львів",
+      "emoji": "🦁",
+      "regionId": "lviv",
+      "unlock": { "type": "free" },
+      "roundsFile": "data/rounds/ukraine-lviv-extra.json",
+      "rounds": [
+        {
+          "type": "capital",
+          "text": "Обласний центр Львівської області:",
+          "country": "Львівська область",
+          "answers": ["Львів", "Київ", "Одеса", "Ужгород"],
+          "correct": 0,
+          "explanation": "Львів — культурна столиця заходу України."
+        },
+        {
+          "type": "quiz",
+          "text": "Яка пам'ятка стоїть на площі Ринок у Львові?",
+          "answers": ["Ратуша", "Ейфелева вежа", "Колізей", "Біг-Бен"],
+          "correct": 0,
+          "explanation": "Львівська ратуша — символ міста."
+        },
+        {
+          "type": "yesno",
+          "text": "Львівська область межує з Польщею.",
+          "correct": true,
+          "explanation": "Так. Західний кордон України проходить через Карпати."
+        }
+      ]
+    },
+    {
+      "id": "kyiv",
+      "title": "Київ",
+      "emoji": "🏛️",
+      "regionId": "kyiv",
+      "unlock": { "requires": "lviv", "minStars": 2 },
+      "roundsFile": "data/rounds/ukraine-kyiv-extra.json",
+      "rounds": [
+        {
+          "type": "capital",
+          "text": "Столиця України:",
+          "country": "Україна",
+          "answers": ["Київ", "Львів", "Одеса", "Харків"],
+          "correct": 0,
+          "explanation": "Київ — столиця України з давніх часів."
+        },
+        {
+          "type": "quiz",
+          "text": "Яка річка тече через Київ?",
+          "answers": ["Дніпро", "Дунай", "Волга", "Рейн"],
+          "correct": 0,
+          "explanation": "Дніпро ділить місто на правий і лівий берег."
+        },
+        {
+          "type": "yesno",
+          "text": "Софійський собор у Києві — пам'ятка UNESCO.",
+          "correct": true,
+          "explanation": "Так. Собор збудований у XI столітті."
+        }
+      ]
+    },
+    {
+      "id": "odesa",
+      "title": "Одеса",
+      "emoji": "⚓",
+      "regionId": "odesa",
+      "unlock": { "requires": "kyiv", "minStars": 2 },
+      "roundsFile": "data/rounds/ukraine-odesa-extra.json",
+      "rounds": [
+        {
+          "type": "capital",
+          "text": "Обласний центр Одеської області:",
+          "country": "Одеська область",
+          "answers": ["Одеса", "Миколаїв", "Херсон", "Ізмаїл"],
+          "correct": 0,
+          "explanation": "Одеса — головний порт на Чорному морі."
+        },
+        {
+          "type": "quiz",
+          "text": "Які сходи — символ Одеси?",
+          "answers": ["Потьомкінські", "Сходи до неба", "Сходи в Рим", "Сходи в Париж"],
+          "correct": 0,
+          "explanation": "Потьомкінські сходи з'єднують центр із портом."
+        },
+        {
+          "type": "yesno",
+          "text": "Одеська область — найбільша за площею в Україні.",
+          "correct": true,
+          "explanation": "Так. Вона виходить до Чорного моря на півдні."
+        }
+      ]
+    },
+    {
+      "id": "black-sea",
+      "title": "Чорне море",
+      "emoji": "🌊",
+      "regionId": "black-sea",
+      "unlock": { "requires": "odesa", "minStars": 2 },
+      "roundsFile": "data/rounds/ukraine-black-sea-extra.json",
+      "rounds": [
+        {
+          "type": "quiz",
+          "text": "Яке море омиває південь України?",
+          "answers": ["Чорне", "Балтійське", "Середземне", "Північне"],
+          "correct": 0,
+          "explanation": "Південне узбережжя України — на Чорному морі."
+        },
+        {
+          "type": "yesno",
+          "text": "Дніпро впадає в Чорне море.",
+          "correct": true,
+          "explanation": "Так. Гирло — Дніпровсько-Бузький лиман."
+        },
+        {
+          "type": "quiz",
+          "text": "Яка риба традиційно виловлюється в Чорному морі?",
+          "answers": ["Оселедець", "Лосось атлантичний", "Тунець у тундрі", "Пінгвін"],
+          "correct": 0,
+          "explanation": "Оселедець і камбала — відомі чорноморські риби."
+        }
+      ]
+    },
+    {
+      "id": "carpathians",
+      "title": "Карпати",
+      "emoji": "⛰️",
+      "regionId": "carpathians",
+      "unlock": { "requires": "black-sea", "minStars": 2 },
+      "roundsFile": "data/rounds/ukraine-carpathians-extra.json",
+      "rounds": [
+        {
+          "type": "quiz",
+          "text": "Найвища вершина України — це…",
+          "answers": ["Говерла", "Еверест", "Монблан", "Кіліманджаро"],
+          "correct": 0,
+          "explanation": "Говерла (2061 м) — у Карпатах на Закарпатті."
+        },
+        {
+          "type": "yesno",
+          "text": "Трембіта — традиційний інструмент Гуцульщини.",
+          "correct": true,
+          "explanation": "Так. Довгий дерев'яний ріг подає сигнали в горах."
+        },
+        {
+          "type": "quiz",
+          "text": "У якій області розташовані Карпати та місто Ужгород?",
+          "answers": ["Закарпатська", "Волинська", "Чернігівська", "Полтавська"],
+          "correct": 0,
+          "explanation": "Закарпатська область — на крайньому заході України."
+        }
+      ]
+    },
+    {
+      "id": "dnipro",
+      "title": "Дніпро",
+      "emoji": "🌊",
+      "regionId": "dnipro",
+      "unlock": { "requires": "carpathians", "minStars": 2 },
+      "roundsFile": "data/rounds/ukraine-dnipro-extra.json",
+      "rounds": [
+        {
+          "type": "yesno",
+          "text": "Дніпро — найдовша річка, що тече територією України.",
+          "correct": true,
+          "explanation": "Так. Дніпро перетинає Україну з півночі на південь."
+        },
+        {
+          "type": "quiz",
+          "text": "Острів Хортиця пов'язаний з…",
+          "answers": ["Запорізькою Січчю", "Римом", "Вікінгами", "Самураями"],
+          "correct": 0,
+          "explanation": "Хортиця — колишня столиця козаків біля Запоріжжя."
+        },
+        {
+          "type": "quiz",
+          "text": "Місто на Дніпрі, назване на честь річки:",
+          "answers": ["Дніпро", "Львів", "Ужгород", "Чернівці"],
+          "correct": 0,
+          "explanation": "Дніпро — велике промислове місто на сході України.",
+          "boss": true
+        }
+      ]
+    },
+    {
+      "id": "ukraine-atlas-links",
+      "title": "Атлас Зв'язків",
+      "emoji": "🧵",
+      "bonus": true,
+      "regionId": "ukraine-atlas-links",
+      "unlock": { "type": "bonus", "minStars": 2 },
+      "rounds": [
+        {
+          "type": "matchPairs",
+          "pairKind": "capital",
+          "count": 7,
+          "text": "Співстав область та її обласний центр."
+        },
+        {
+          "type": "matchPairs",
+          "pairKind": "geo",
+          "count": 7,
+          "text": "Співстав область та відомий географічний об'єкт."
+        },
+        {
+          "type": "matchPairs",
+          "pairKind": "fact",
+          "count": 7,
+          "text": "Співстав область та цікавий факт."
+        },
+        {
+          "type": "matchPairs",
+          "pairKind": "dish",
+          "count": 7,
+          "text": "Співстав область та традиційну страву регіону."
+        },
+        {
+          "type": "matchPairs",
+          "pairKind": "hero",
+          "count": 7,
+          "text": "Співстав область та відому людину регіону."
+        },
+        {
+          "type": "matchPairs",
+          "pairKind": "symbol",
+          "count": 7,
+          "text": "Співстав область та символ або пам'ятку."
+        }
+      ]
+    },
+    {
+      "id": "ukraine-puzzle",
+      "title": "Пазли України",
+      "emoji": "🧩",
+      "bonus": true,
+      "regionId": "ukraine-puzzle-marker",
+      "unlock": { "type": "bonus", "minStars": 2 },
+      "rounds": [
+        {
+          "type": "puzzle",
+          "text": "Пазл 3×4: Львівська область.",
+          "cols": 3,
+          "rows": 4,
+          "mapId": "ukraine-travel",
+          "countryId": "lviv-oblast",
+          "explanation": "Львівщина зібрана!"
+        },
+        {
+          "type": "puzzle",
+          "text": "Пазл 3×4: Київська область.",
+          "cols": 3,
+          "rows": 4,
+          "mapId": "ukraine-travel",
+          "countryId": "kyiv-oblast",
+          "explanation": "Київщина зібрана!"
+        },
+        {
+          "type": "puzzle",
+          "text": "Пазл 3×4: Чорноморське узбережжя.",
+          "cols": 3,
+          "rows": 4,
+          "mapId": "ukraine-travel",
+          "countryId": "black-sea-coast",
+          "explanation": "Узбережжя зібране!"
+        },
+        {
+          "type": "puzzle",
+          "text": "Збери пазл 5×4 — уся карта України.",
+          "cols": 5,
+          "rows": 4,
+          "mapId": "ukraine-travel",
+          "explanation": "Чудово! Ти склав карту України!",
+          "explainOnSuccess": true,
+          "boss": true
+        }
+      ]
+    }
+  ]
+}

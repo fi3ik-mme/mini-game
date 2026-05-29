@@ -260,33 +260,43 @@ test.describe("Mini Games smoke tests", () => {
     await expect(nodes.nth(1)).not.toHaveClass(/locked/);
   });
 
-  test("geo-quest hub loads and europe map shows nodes", async ({ page }) => {
+  test("geo-quest hub loads and ukraine map shows nodes", async ({ page }) => {
     await page.goto("/games/geo-quest/index.html");
-    await expect(page).toHaveTitle("Geo Quest");
+    await expect(page).toHaveTitle(/Гео Квест|Geo Quest/);
     await expect(page.locator("#screen-hub")).toHaveClass(/active/);
-    await expect(page.getByRole("button", { name: /Європа/ })).toBeVisible({ timeout: 10000 });
+    await expect(page.getByRole("button", { name: /Україна/ })).toBeVisible({ timeout: 10000 });
 
-    await page.getByRole("button", { name: /Європа/ }).click();
+    await page.getByRole("button", { name: /Україна/ }).click();
     await expect(page.locator("#screen-map")).toHaveClass(/active/, { timeout: 5000 });
+    await expect(page.locator("#map-title")).toHaveText("Україна");
+    await expect(page.locator(".map-node")).toHaveCount(6);
+    await expect(page.locator('.map-node[data-id="lviv"]')).not.toHaveClass(/locked/);
+    await expect(page.locator('.map-node[data-id="kyiv"]')).toHaveClass(/locked/);
+    await expect(page.locator("#map-bonus-actions .map-bonus-btn").first()).toHaveClass(/locked/);
+  });
+
+  test("geo-quest europe map shows ukraine marker and country nodes", async ({ page }) => {
+    await page.goto("/games/geo-quest/index.html");
+    await page.getByRole("button", { name: /Європа/ }).click({ timeout: 10000 });
     await expect(page.locator("#map-title")).toHaveText("Європа");
-    await expect(page.locator(".map-node")).toHaveCount(7);
+    await expect(page.locator(".map-node")).toHaveCount(6);
     await expect(page.locator('.map-node[data-id="ukraine"]')).not.toHaveClass(/locked/);
     await expect(page.locator('.map-node[data-id="poland"]')).toHaveClass(/locked/);
-    await expect(page.locator('.map-node[data-id="europe-puzzle"]')).toHaveClass(/locked/);
   });
 
   test("geo-quest: first node awards stars and unlocks next", async ({ page, request }) => {
-    const europeRes = await request.get("/games/geo-quest/data/continents/europe.json");
-    expect(europeRes.ok()).toBeTruthy();
-    const europe = await europeRes.json();
-    const ukraine = europe.nodes[0];
-    let ukraineRounds = ukraine.rounds || [];
-    if (ukraine.roundsFile) {
-      const extraRes = await request.get("/games/geo-quest/" + ukraine.roundsFile);
+    const ukraineRes = await request.get("/games/geo-quest/data/continents/ukraine.json");
+    expect(ukraineRes.ok()).toBeTruthy();
+    const ukraineData = await ukraineRes.json();
+    const lviv = ukraineData.nodes[0];
+    let ukraineRounds = lviv.rounds || [];
+    if (lviv.roundsFile) {
+      const extraRes = await request.get("/games/geo-quest/" + lviv.roundsFile);
       expect(extraRes.ok()).toBeTruthy();
       const extra = await extraRes.json();
       ukraineRounds = ukraineRounds.concat(extra.rounds || []);
     }
+    expect(ukraineRounds.length).toBe(13);
     const answerFor = (round) => {
       if (round.type === "yesno") return round.correct ? "Так" : "Ні";
       if (round.type === "mapTap") return null;
@@ -298,8 +308,8 @@ test.describe("Mini Games smoke tests", () => {
       try { localStorage.removeItem("geoQuest:v1"); } catch (_) {}
     });
     await page.goto("/games/geo-quest/index.html");
-    await page.getByRole("button", { name: /Європа/ }).click({ timeout: 10000 });
-    await page.locator('.map-node[data-id="ukraine"]').click();
+    await page.getByRole("button", { name: /Україна/ }).click({ timeout: 10000 });
+    await page.locator('.map-node[data-id="lviv"]').click();
 
     await expect(page.locator("#screen-game")).toHaveClass(/active/, { timeout: 5000 });
 
@@ -332,7 +342,7 @@ test.describe("Mini Games smoke tests", () => {
     await expect(page.locator("#result-stars")).not.toHaveText("—");
     await page.locator("#result-next").click();
     await expect(page.locator("#screen-map")).toHaveClass(/active/);
-    await expect(page.locator('.map-node[data-id="poland"]')).not.toHaveClass(/locked/);
+    await expect(page.locator('.map-node[data-id="kyiv"]')).not.toHaveClass(/locked/);
 
     const saved = await page.evaluate(() => {
       try {
@@ -341,7 +351,7 @@ test.describe("Mini Games smoke tests", () => {
         return {};
       }
     });
-    expect(saved.continents?.europe?.nodes?.ukraine?.stars).toBeGreaterThanOrEqual(1);
+    expect(saved.continents?.ukraine?.nodes?.lviv?.stars).toBeGreaterThanOrEqual(1);
   });
 
   test("first million loads subjects and starts quiz", async ({ page }) => {

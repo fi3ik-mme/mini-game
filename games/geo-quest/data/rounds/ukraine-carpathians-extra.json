@@ -1,0 +1,120 @@
+{
+  "rounds": [
+    {
+      "type": "quiz",
+      "text": "Карпати — це…",
+      "answers": [
+        "Гори на заході України",
+        "Пустеля",
+        "Озеро",
+        "Полярний льодовик"
+      ],
+      "correct": 0,
+      "explanation": "Карпати тягнуться через кілька країн, у т.ч. Україну."
+    },
+    {
+      "type": "yesno",
+      "text": "Говерла — найвища вершина України.",
+      "correct": true,
+      "explanation": "Так. 2061 м, у Карпатах на Закарпатті."
+    },
+    {
+      "type": "quiz",
+      "text": "Трембіта традиційно грає в…",
+      "answers": [
+        "Гуцульщині",
+        "Сахарі",
+        "Амазонії",
+        "Антарктиді"
+      ],
+      "correct": 0,
+      "explanation": "Довгий дерев'яний ріг — символ Карпат."
+    },
+    {
+      "type": "quiz",
+      "text": "Яке місто — «ворота» до українських Карпат?",
+      "answers": [
+        "Ужгород / Івано-Франківськ",
+        "Одеса",
+        "Херсон",
+        "Суми"
+      ],
+      "correct": 0,
+      "explanation": "Закарпаття та Прикарпаття — туристичні регіони."
+    },
+    {
+      "type": "imageQuiz",
+      "text": "Обери Карпатський пейзаж:",
+      "answers": [
+        {
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Carpathian_Mountains_Ukraine.jpg?width=280"
+        },
+        {
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odessa_Opera_and_Ballet_Theater.jpg?width=280"
+        },
+        {
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Kyiv_Maidan_Nezhalezhnosti.jpg?width=280"
+        },
+        {
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Table_grapes_on_white.jpg?width=280"
+        }
+      ],
+      "correct": 0,
+      "explanation": "Карпати — ліси, полонини та вершини."
+    },
+    {
+      "type": "quiz",
+      "text": "Буковель — це…",
+      "answers": [
+        "Гірськолижний курорт",
+        "Порт",
+        "Степ",
+        "Пустеля"
+      ],
+      "correct": 0,
+      "explanation": "Буковель у Прикарпатті — популярне місце відпочинку."
+    },
+    {
+      "type": "yesno",
+      "text": "У Карпатах ростуть буки, ялини та смереки.",
+      "correct": true,
+      "explanation": "Так. Ліси багаті на різні породи дерев."
+    },
+    {
+      "type": "quiz",
+      "text": "Закарпаття славиться…",
+      "answers": [
+        "Термальними водами та вином",
+        "Кораловими рифами",
+        "Саванами",
+        "Вулканами"
+      ],
+      "correct": 0,
+      "explanation": "Регіон має унікальну культуру та природу."
+    },
+    {
+      "type": "quiz",
+      "text": "Хата-музей у Криворівні пов'язана з…",
+      "answers": [
+        "Фільмом «Тіні забутих предків»",
+        "Космосом",
+        "Океаном",
+        "Пустелею"
+      ],
+      "correct": 0,
+      "explanation": "Карпатські села зберегли традиції та кіно."
+    },
+    {
+      "type": "quiz",
+      "text": "Яка тварина символізує Карпати в фольклорі?",
+      "answers": [
+        "Ведмідь / вовк",
+        "Пінгвін",
+        "Кенгуру",
+        "Жираф"
+      ],
+      "correct": 0,
+      "explanation": "У горах живуть ведмеді, вовки, кози."
+    }
+  ]
+}

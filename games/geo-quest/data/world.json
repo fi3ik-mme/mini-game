@@ -4,6 +4,14 @@
   "maxStarsTotal": 30,
   "continents": [
     {
+      "id": "ukraine",
+      "title": "Україна",
+      "emoji": "🇺🇦",
+      "color": "#005bbb",
+      "file": "data/continents/ukraine.json",
+      "unlock": { "type": "free" }
+    },
+    {
       "id": "europe",
       "title": "Європа",
       "emoji": "🏰",

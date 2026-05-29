@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, viewport-fit=cover"/>
     <title>Гео Квест</title>
     <link rel="icon" type="image/svg+xml" href="../../icon.svg" />
+    <link rel="preload" href="data/world.json" as="fetch" crossorigin="anonymous" />
+    <link rel="preload" href="assets/earth-equirect.jpg" as="image" />
     <style>
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         html, body { overscroll-behavior: none; }
@@ -342,6 +344,153 @@
             box-shadow: inset 0 0 50px rgba(6, 42, 71, 0.5);
             background: #0b3d5c;
         }
+        .map-scroll.ocean-world,
+        .map-scroll.ukraine-map,
+        .map-scroll.europe-map {
+            overflow: hidden;
+            touch-action: none;
+            border-color: rgba(56, 189, 248, 0.35);
+            box-shadow: inset 0 0 40px rgba(6, 42, 71, 0.45);
+            background: #041f33;
+            position: relative;
+            cursor: grab;
+        }
+        .map-scroll.ocean-world.is-panning,
+        .map-scroll.ukraine-map.is-panning,
+        .map-scroll.europe-map.is-panning { cursor: grabbing; }
+        .map-scroll.ocean-world .map-svg {
+            width: 100%;
+            height: auto;
+            display: block;
+            aspect-ratio: 1200 / 620;
+            max-height: min(78vh, 680px);
+        }
+        .map-scroll.ukraine-map .map-svg {
+            width: 100%;
+            height: auto;
+            display: block;
+            aspect-ratio: 1000 / 780;
+            max-height: min(78vh, 680px);
+        }
+        .map-scroll.europe-map .map-svg {
+            width: 100%;
+            height: auto;
+            display: block;
+            aspect-ratio: 1000 / 780;
+            max-height: min(78vh, 680px);
+        }
+        .ocean-zoom-controls {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            z-index: 4;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 8px;
+            border-radius: 12px;
+            background: rgba(15, 23, 42, 0.82);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(6px);
+            pointer-events: auto;
+        }
+        .ocean-zoom-controls button {
+            width: 34px;
+            height: 34px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(56, 189, 248, 0.22);
+            color: #e0f2fe;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1;
+            cursor: pointer;
+        }
+        .ocean-zoom-controls button:active { transform: scale(0.96); }
+        .ocean-zoom-controls span {
+            min-width: 44px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 700;
+            color: #bae6fd;
+        }
+        .map-scroll.ocean-world .map-node--ocean .node-label,
+        .map-scroll.ukraine-map .map-node--geo .node-label,
+        .map-scroll.europe-map .map-node--geo .node-label {
+            font-size: 12px;
+            font-weight: 800;
+            fill: #fff;
+            stroke: rgba(15, 23, 42, 0.9);
+            stroke-width: 3px;
+            paint-order: stroke fill;
+        }
+        .map-scroll.ocean-world .map-node--ocean .node-stars,
+        .map-scroll.ukraine-map .map-node--geo .node-stars,
+        .map-scroll.europe-map .map-node--geo .node-stars {
+            font-size: 12px;
+            stroke: rgba(15, 23, 42, 0.75);
+            stroke-width: 2px;
+            paint-order: stroke fill;
+        }
+        .map-scroll.europe-map .map-geo.context {
+            fill: rgba(71, 85, 105, 0.42);
+            stroke: rgba(255, 255, 255, 0.28);
+        }
+        .map-scroll.europe-map .map-geo.playable {
+            fill: rgba(56, 189, 248, 0.38);
+            stroke: rgba(186, 230, 253, 0.7);
+        }
+        .map-scroll.europe-map .map-geo.playable.done {
+            fill: rgba(34, 197, 94, 0.44);
+        }
+        .map-neighbor-land {
+            fill: rgba(71, 85, 105, 0.48);
+            stroke: rgba(255, 255, 255, 0.32);
+            stroke-width: 1;
+            stroke-linejoin: round;
+            pointer-events: none;
+        }
+        .map-neighbor-label {
+            font-size: 11px;
+            font-weight: 800;
+            fill: rgba(226, 232, 240, 0.92);
+            stroke: rgba(15, 23, 42, 0.82);
+            stroke-width: 2.5px;
+            paint-order: stroke fill;
+            text-anchor: middle;
+            pointer-events: none;
+        }
+        .world-earth-base {
+            pointer-events: none;
+        }
+        .world-graticule {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.12);
+            stroke-width: 0.8;
+            pointer-events: none;
+        }
+        .world-landmark {
+            pointer-events: none;
+        }
+        .world-landmark-dot {
+            fill: rgba(253, 224, 71, 0.95);
+            stroke: rgba(15, 23, 42, 0.55);
+            stroke-width: 1;
+        }
+        .world-landmark-label {
+            font-size: 11px;
+            font-weight: 800;
+            fill: #fff;
+            stroke: rgba(15, 23, 42, 0.85);
+            stroke-width: 3px;
+            paint-order: stroke fill;
+            text-anchor: middle;
+            pointer-events: none;
+        }
+        .map-node--sm .node-bg { stroke-width: 2; }
+        .map-node--sm .node-emoji { font-size: 16px; }
+        .map-node--sm .node-label { font-size: 10px; }
+        .map-node--sm .node-stars { font-size: 10px; }
         .ocean-layer {
             stroke-linejoin: round;
             stroke-linecap: round;
@@ -377,6 +526,20 @@
         }
         .map-geo.playable.done {
             fill: rgba(34, 197, 94, 0.48);
+        }
+        .map-scroll.ukraine-map .map-ukraine-silhouette {
+            fill: rgba(255, 213, 0, 0.42);
+            stroke: #005bbb;
+            stroke-width: 2.4;
+        }
+        .map-river {
+            fill: none;
+            stroke: #7dd3fc;
+            stroke-width: 2.4;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            opacity: 0.92;
+            pointer-events: none;
         }
         .map-island {
             fill: #fde68a;
@@ -981,6 +1144,12 @@
         <div id="map-bonus-actions" class="map-bonus-actions" hidden></div>
         <div class="map-scroll" id="map-scroll">
             <svg id="map-svg" class="map-svg" viewBox="0 0 800 1200"></svg>
+            <div class="ocean-zoom-controls" id="ocean-zoom-controls" hidden>
+                <button type="button" id="ocean-zoom-out" aria-label="Зменшити">−</button>
+                <span id="ocean-zoom-label">100%</span>
+                <button type="button" id="ocean-zoom-in" aria-label="Збільшити">+</button>
+                <button type="button" id="ocean-zoom-reset" aria-label="Скинути масштаб">⟲</button>
+            </div>
         </div>
     </div>
 </section>
@@ -1033,6 +1202,7 @@
 
     /** Lat/lon bounds for picking continents on the globe (approximate). */
     const LAND_PICKERS = [
+        { id: "ukraine", test(lat, lon) { return lat >= 44 && lat <= 53 && lon >= 22 && lon <= 40; } },
         { id: "antarctica", test(lat, lon) { return lat < -60; } },
         { id: "oceania", test(lat, lon) { return lat >= -50 && lat <= 12 && lon >= 95 && lon <= 180; } },
         { id: "south-america", test(lat, lon) { return lat >= -56 && lat <= 15 && lon >= -82 && lon <= -34; } },
@@ -1095,6 +1265,11 @@
     const gameAnswers = document.getElementById("game-answers");
     const flashEl = document.getElementById("flash");
     const mapBonusActions = document.getElementById("map-bonus-actions");
+    const oceanZoomControls = document.getElementById("ocean-zoom-controls");
+    const oceanZoomLabel = document.getElementById("ocean-zoom-label");
+    const oceanZoomInBtn = document.getElementById("ocean-zoom-in");
+    const oceanZoomOutBtn = document.getElementById("ocean-zoom-out");
+    const oceanZoomResetBtn = document.getElementById("ocean-zoom-reset");
     const soundToggle = document.getElementById("sound-toggle");
     const voiceToggle = document.getElementById("voice-toggle");
 
@@ -1320,7 +1495,9 @@
     }
 
     let world = null;
+    let worldPromise = null;
     const continentCache = {};
+    const continentLoadPromises = {};
     const mapCache = {};
     const mapGeoCache = {};
 
@@ -1332,25 +1509,46 @@
 
     async function loadWorld() {
         if (world) return world;
-        world = await fetchJson("data/world.json");
-        return world;
+        if (!worldPromise) {
+            worldPromise = fetchJson("data/world.json").then((w) => {
+                world = w;
+                return w;
+            });
+        }
+        return worldPromise;
     }
 
     async function loadContinentData(meta) {
         const key = meta.id;
         if (continentCache[key]) return continentCache[key];
-        const data = await fetchJson(meta.file);
-        if (data.nodes) {
-            for (const node of data.nodes) {
-                if (node.roundsFile) {
+        if (continentLoadPromises[key]) return continentLoadPromises[key];
+        continentLoadPromises[key] = (async () => {
+            const data = await fetchJson(meta.file);
+            if (data.nodes) {
+                await Promise.all(data.nodes.map(async (node) => {
+                    if (!node.roundsFile) return;
                     const extra = await fetchJson(node.roundsFile);
                     const extraRounds = extra.rounds || extra;
                     node.rounds = [...(node.rounds || []), ...extraRounds];
-                }
+                }));
             }
-        }
-        continentCache[key] = data;
-        return data;
+            continentCache[key] = data;
+            delete continentLoadPromises[key];
+            return data;
+        })();
+        return continentLoadPromises[key];
+    }
+
+    function prefetchHubRegions() {
+        if (!world) return;
+        const metas = [
+            world.continents && world.continents.find((c) => c.id === "ukraine"),
+            world.continents && world.continents.find((c) => c.id === "europe"),
+            world.ocean,
+        ].filter(Boolean);
+        Promise.all(metas.map((m) => loadContinentData(m).catch((e) => {
+            console.warn("Prefetch region failed:", m.id, e);
+        })));
     }
 
     async function loadMap(mapId) {
@@ -1382,23 +1580,318 @@
 
     const MAP_MARKER_PAD = 58;
 
-    function clampMapPoint(x, y, w, h, pad) {
+    function clampMapPoint(x, y, w, h, pad, margin = 0, clearance = 0) {
+        const minX = pad + margin + clearance;
+        const maxX = w - pad - margin - clearance;
+        const minY = pad + margin + clearance;
+        const maxY = h - pad - margin - clearance;
+        let cx = Math.min(maxX, Math.max(minX, x));
+        let cy = Math.min(maxY, Math.max(minY, y));
+        const outOfBounds = x < minX || x > maxX || y < minY || y > maxY;
+        const atEdge = cx <= minX + 4 || cx >= maxX - 4 || cy <= minY + 4 || cy >= maxY - 4;
+        if (outOfBounds || atEdge) {
+            const mx = w / 2;
+            const my = h / 2;
+            cx += (mx - cx) * 0.22;
+            cy += (my - cy) * 0.22;
+            cx = Math.min(maxX, Math.max(minX, cx));
+            cy = Math.min(maxY, Math.max(minY, cy));
+        }
+        return { x: cx, y: cy };
+    }
+
+    function projectMapGeo(geo, lon, lat) {
+        const pr = geo.projection || {};
+        const pad = pr.pad ?? (geo.theme === "world-ocean" ? 6 : 28);
+        const mapW = pr.width || 1200;
+        const mapH = pr.height || 620;
+        const lonMin = pr.lonMin ?? -180;
+        const lonMax = pr.lonMax ?? 180;
+        const latMin = pr.latMin ?? -90;
+        const latMax = pr.latMax ?? 90;
+        const lonSpan = lonMax - lonMin || 360;
+        const latSpan = latMax - latMin || 180;
         return {
-            x: Math.min(w - pad, Math.max(pad, x)),
-            y: Math.min(h - pad, Math.max(pad, y)),
+            x: ((lon - lonMin) / lonSpan) * (mapW - pad * 2) + pad,
+            y: ((latMax - lat) / latSpan) * (mapH - pad * 2) + pad,
         };
+    }
+
+    function isGeoZoomMap(geo) {
+        return geo && (
+            geo.theme === "world-ocean" ||
+            geo.theme === "ukraine-travel" ||
+            geo.theme === "europe-countries"
+        );
+    }
+
+    function markerCmOffsetY(feature, geo) {
+        const cmUp = feature.nudgeUpCm ?? 0;
+        const cmDown = feature.nudgeDownCm ?? 0;
+        if (!cmUp && !cmDown) return 0;
+        const pr = geo?.projection;
+        const mapH = pr?.height || (geo?.viewBox ? +geo.viewBox.split(/\s+/)[3] : 0) || 780;
+        const pxPerCm = 96 / 2.54;
+        const rect = mapSvg.getBoundingClientRect();
+        const renderedH = rect.height || Math.min(window.innerHeight * 0.78, 680);
+        const svgPerPx = mapH / renderedH;
+        return (cmDown - cmUp) * pxPerCm * svgPerPx;
+    }
+
+    function getGeoFeaturePoint(geo, feature) {
+        if (!feature) return null;
+        const lon = feature.lon ?? feature.center?.lon ?? feature.marker?.lon;
+        const lat = feature.lat ?? feature.center?.lat ?? feature.marker?.lat;
+        const cmDy = markerCmOffsetY(feature, geo);
+        if (geo?.projection && lon != null && lat != null) {
+            const pt = projectMapGeo(geo, lon, lat);
+            const dy = (feature.markerOffsetY ?? 0) + cmDy;
+            const dx = feature.markerOffsetX ?? 0;
+            return { x: pt.x + dx, y: pt.y + dy };
+        }
+        const pt = feature.marker || feature.center;
+        if (!pt) return null;
+        const dy = (feature.markerOffsetY ?? 0) + cmDy;
+        const dx = feature.markerOffsetX ?? 0;
+        return { x: pt.x + dx, y: pt.y + dy };
     }
 
     function getNodeCenter(geo, node) {
         const f = findGeoFeature(geo, node);
-        const pt = (f && (f.marker || f.center)) || null;
+        const pt = getGeoFeaturePoint(geo, f);
         if (!pt) return null;
-        if (geo && geo.viewBox) {
+        if (geo && geo.viewBox && !isGeoZoomMap(geo)) {
             const vb = geo.viewBox.split(/\s+/).map(Number);
             const pad = geo.markerPadding ?? MAP_MARKER_PAD;
             return clampMapPoint(pt.x, pt.y, vb[2] || 1000, vb[3] || 780, pad);
         }
-        return { x: pt.x, y: pt.y };
+        return pt;
+    }
+
+    const oceanMapZoom = {
+        active: false,
+        w: 1200,
+        h: 620,
+        scale: 1,
+        cx: 600,
+        cy: 310,
+        min: 1,
+        max: 4,
+        panning: false,
+        pinchStart: false,
+        pinchData: null,
+        dragStart: null,
+        moved: false,
+        suppressClick: false,
+    };
+
+    function clampOceanCenter() {
+        const z = oceanMapZoom;
+        const vw = z.w / z.scale;
+        const vh = z.h / z.scale;
+        z.cx = Math.min(z.w - vw / 2, Math.max(vw / 2, z.cx));
+        z.cy = Math.min(z.h - vh / 2, Math.max(vh / 2, z.cy));
+    }
+
+    function applyOceanViewBox() {
+        const z = oceanMapZoom;
+        clampOceanCenter();
+        const vw = z.w / z.scale;
+        const vh = z.h / z.scale;
+        const vx = z.cx - vw / 2;
+        const vy = z.cy - vh / 2;
+        mapSvg.setAttribute("viewBox", vx + " " + vy + " " + vw + " " + vh);
+        if (oceanZoomLabel) oceanZoomLabel.textContent = Math.round(z.scale * 100) + "%";
+    }
+
+    function clientToOceanSvg(clientX, clientY) {
+        const vb = mapSvg.viewBox.baseVal;
+        const rect = mapSvg.getBoundingClientRect();
+        if (!rect.width || !rect.height) return { x: oceanMapZoom.cx, y: oceanMapZoom.cy };
+        return {
+            x: vb.x + ((clientX - rect.left) / rect.width) * vb.width,
+            y: vb.y + ((clientY - rect.top) / rect.height) * vb.height,
+        };
+    }
+
+    function zoomOceanAt(newScale, anchorX, anchorY) {
+        const z = oceanMapZoom;
+        const clamped = Math.min(z.max, Math.max(z.min, newScale));
+        if (clamped === z.scale) return;
+        const vw0 = z.w / z.scale;
+        const vh0 = z.h / z.scale;
+        const vx0 = z.cx - vw0 / 2;
+        const vy0 = z.cy - vh0 / 2;
+        const relX = (anchorX - vx0) / vw0;
+        const relY = (anchorY - vy0) / vh0;
+        z.scale = clamped;
+        const vw = z.w / z.scale;
+        const vh = z.h / z.scale;
+        z.cx = anchorX + (0.5 - relX) * vw;
+        z.cy = anchorY + (0.5 - relY) * vh;
+        applyOceanViewBox();
+    }
+
+    function panOceanBy(dxSvg, dySvg) {
+        const z = oceanMapZoom;
+        z.cx -= dxSvg;
+        z.cy -= dySvg;
+        applyOceanViewBox();
+    }
+
+    function focusOceanPoint(x, y, targetScale) {
+        const z = oceanMapZoom;
+        if (targetScale != null) z.scale = Math.min(z.max, Math.max(z.min, targetScale));
+        z.cx = x;
+        z.cy = y;
+        applyOceanViewBox();
+    }
+
+    function resetOceanMapZoom() {
+        const z = oceanMapZoom;
+        z.scale = 1;
+        z.cx = z.w / 2;
+        z.cy = z.h / 2;
+        applyOceanViewBox();
+    }
+
+    function teardownOceanMapZoom() {
+        oceanMapZoom.active = false;
+        oceanMapZoom.panning = false;
+        oceanMapZoom.pinchStart = false;
+        oceanMapZoom.pinchData = null;
+        oceanMapZoom.dragStart = null;
+        oceanMapZoom.suppressClick = false;
+        if (oceanZoomControls) oceanZoomControls.hidden = true;
+    }
+
+    function setupOceanMapZoom(w, h) {
+        const z = oceanMapZoom;
+        z.active = true;
+        z.w = w;
+        z.h = h;
+        z.scale = 1;
+        z.cx = w / 2;
+        z.cy = h / 2;
+        if (oceanZoomControls) oceanZoomControls.hidden = false;
+        applyOceanViewBox();
+    }
+
+    let oceanZoomHandlersBound = false;
+
+    function bindOceanMapZoomHandlers() {
+        if (oceanZoomHandlersBound) return;
+        oceanZoomHandlersBound = true;
+        const mapScroll = document.getElementById("map-scroll");
+
+        function onWheel(e) {
+            if (!oceanMapZoom.active) return;
+            e.preventDefault();
+            const pt = clientToOceanSvg(e.clientX, e.clientY);
+            const factor = e.deltaY > 0 ? 0.88 : 1.14;
+            zoomOceanAt(oceanMapZoom.scale * factor, pt.x, pt.y);
+        }
+
+        function onPointerDown(e) {
+            if (!oceanMapZoom.active || e.button > 0) return;
+            if (e.target.closest(".ocean-zoom-controls")) return;
+            if (e.target.closest(".map-node")) {
+                oceanMapZoom.suppressClick = false;
+                return;
+            }
+            oceanMapZoom.panning = true;
+            oceanMapZoom.moved = false;
+            oceanMapZoom.suppressClick = false;
+            oceanMapZoom.dragStart = {
+                x: e.clientX,
+                y: e.clientY,
+                cx: oceanMapZoom.cx,
+                cy: oceanMapZoom.cy,
+                vb: mapSvg.viewBox.baseVal,
+                rect: mapSvg.getBoundingClientRect(),
+            };
+            mapScroll.classList.add("is-panning");
+            if (mapScroll.setPointerCapture) mapScroll.setPointerCapture(e.pointerId);
+        }
+
+        function onPointerMove(e) {
+            const z = oceanMapZoom;
+            if (!z.active || !z.panning || !z.dragStart) return;
+            const d = z.dragStart;
+            const rect = d.rect;
+            if (!rect.width || !rect.height) return;
+            const dxPx = e.clientX - d.x;
+            const dyPx = e.clientY - d.y;
+            if (Math.hypot(dxPx, dyPx) > 4) z.moved = true;
+            const dxSvg = -(dxPx / rect.width) * d.vb.width;
+            const dySvg = -(dyPx / rect.height) * d.vb.height;
+            z.cx = d.cx + dxSvg;
+            z.cy = d.cy + dySvg;
+            applyOceanViewBox();
+        }
+
+        function onPointerUp(e) {
+            if (!oceanMapZoom.panning) return;
+            if (oceanMapZoom.moved) oceanMapZoom.suppressClick = true;
+            oceanMapZoom.panning = false;
+            oceanMapZoom.dragStart = null;
+            mapScroll.classList.remove("is-panning");
+            if (mapScroll.releasePointerCapture) {
+                try { mapScroll.releasePointerCapture(e.pointerId); } catch (_) { /* noop */ }
+            }
+        }
+
+        mapScroll.addEventListener("wheel", onWheel, { passive: false });
+
+        mapScroll.addEventListener("pointerdown", onPointerDown);
+        mapScroll.addEventListener("pointermove", onPointerMove);
+        mapScroll.addEventListener("pointerup", onPointerUp);
+        mapScroll.addEventListener("pointercancel", onPointerUp);
+
+        mapScroll.addEventListener("touchstart", (e) => {
+            if (!oceanMapZoom.active) return;
+            if (e.touches.length === 1 && e.target.closest(".map-node")) {
+                oceanMapZoom.suppressClick = false;
+                return;
+            }
+            if (e.touches.length !== 2) return;
+            oceanMapZoom.pinchStart = true;
+            const [a, b] = e.touches;
+            oceanMapZoom.pinchData = {
+                dist: Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY),
+                scale: oceanMapZoom.scale,
+                mid: clientToOceanSvg((a.clientX + b.clientX) / 2, (a.clientY + b.clientY) / 2),
+            };
+        }, { passive: true });
+
+        mapScroll.addEventListener("touchmove", (e) => {
+            const ps = oceanMapZoom.pinchData;
+            if (!oceanMapZoom.active || !oceanMapZoom.pinchStart || !ps || e.touches.length !== 2) return;
+            e.preventDefault();
+            const [a, b] = e.touches;
+            const dist = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+            if (!ps.dist) return;
+            zoomOceanAt(ps.scale * (dist / ps.dist), ps.mid.x, ps.mid.y);
+        }, { passive: false });
+
+        mapScroll.addEventListener("touchend", () => {
+            if (oceanMapZoom.pinchStart) oceanMapZoom.suppressClick = true;
+            oceanMapZoom.pinchStart = false;
+            oceanMapZoom.pinchData = null;
+        });
+
+        oceanZoomInBtn?.addEventListener("click", () => {
+            if (!oceanMapZoom.active) return;
+            zoomOceanAt(oceanMapZoom.scale * 1.25, oceanMapZoom.cx, oceanMapZoom.cy);
+        });
+        oceanZoomOutBtn?.addEventListener("click", () => {
+            if (!oceanMapZoom.active) return;
+            zoomOceanAt(oceanMapZoom.scale / 1.25, oceanMapZoom.cx, oceanMapZoom.cy);
+        });
+        oceanZoomResetBtn?.addEventListener("click", () => {
+            if (!oceanMapZoom.active) return;
+            resetOceanMapZoom();
+        });
     }
 
     function buildFlexibleTrail(positions) {
@@ -1422,25 +1915,43 @@
         return d;
     }
 
-    function renderMapNode(p, cls, stars, large) {
-        const r = large ? 36 : 30;
-        const hit = large ? 48 : 40;
+    function renderMapNode(p, cls, stars, size, opts) {
+        opts = opts || {};
+        const sz = size === "lg"
+            ? { r: 36, hit: 48, labelOff: 22, starOff: 14, cls: " map-node--lg" }
+            : size === "sm"
+                ? { r: 18, hit: 28, labelOff: 14, starOff: 8, cls: " map-node--sm" }
+                : { r: 30, hit: 40, labelOff: 22, starOff: 14, cls: "" };
         const node = p.node;
         const starTxt = stars > 0 ? "⭐".repeat(stars) : "";
         const label = node.title || "";
-        let g = '<g class="map-node' + (large ? " map-node--lg" : "") +
+        const mapW = opts.mapW || 0;
+        const mapH = opts.mapH || 0;
+        const readable = !!opts.readableLabels;
+        const geoCls = readable ? (opts.geoLabelClass || " map-node--ocean") : "";
+        let labelY = sz.r + sz.labelOff;
+        let starY = -(sz.r + sz.starOff);
+        if (p.labelBelow) {
+            labelY = sz.r + sz.labelOff;
+        } else if (p.labelAbove) {
+            labelY = -(sz.r + sz.labelOff);
+        } else if (readable && mapH) {
+            if (p.y > mapH * 0.72) labelY = -(sz.r + sz.labelOff);
+            if (p.y < mapH * 0.2) starY = sz.r + sz.starOff + 10;
+        }
+        let g = '<g class="map-node' + sz.cls + geoCls +
             (node.bonus ? " bonus-node" : "") + " " + cls +
             '" data-id="' + node.id + '" transform="translate(' + p.x + "," + p.y + ')" pointer-events="all">';
         g += '<g class="node-inner">';
-        g += '<circle class="node-bg" r="' + r + '" cx="0" cy="0"/>';
+        g += '<circle class="node-bg" r="' + sz.r + '" cx="0" cy="0"/>';
         g += '<text class="node-emoji" y="2">' + node.emoji + "</text>";
         if (label) {
-            g += '<text class="node-label" y="' + (r + 22) + '">' + label + "</text>";
+            g += '<text class="node-label" y="' + labelY + '">' + label + "</text>";
         }
         if (starTxt) {
-            g += '<text class="node-stars" y="' + (-r - 14) + '">' + starTxt + "</text>";
+            g += '<text class="node-stars" y="' + starY + '">' + starTxt + "</text>";
         }
-        g += '<circle class="node-hit" r="' + hit + '" cx="0" cy="0"/>';
+        g += '<circle class="node-hit" r="' + sz.hit + '" cx="0" cy="0"/>';
         g += "</g></g>";
         return g;
     }
@@ -1469,6 +1980,110 @@
         }
         if (geo.trailPath) {
             html += '<path class="ocean-trail-path" d="' + geo.trailPath + '"/>';
+        }
+        return html;
+    }
+
+    function renderRegionalEarthLayers(geo, w, h, patternId) {
+        const tex = geo.earthTexture || "assets/earth-equirect.jpg";
+        const pr = geo.projection || {};
+        const lonMin = pr.lonMin ?? -180;
+        const lonMax = pr.lonMax ?? 180;
+        const latMin = pr.latMin ?? -66;
+        const latMax = pr.latMax ?? 84;
+        const pad = pr.pad ?? (geo.theme === "world-ocean" ? 6 : 28);
+        const lonSpan = lonMax - lonMin || 360;
+        const latSpan = latMax - latMin || 180;
+        const innerW = w - pad * 2;
+        const innerH = h - pad * 2;
+        const earthW = innerW * (360 / lonSpan);
+        const earthH = innerH * (180 / latSpan);
+        const imgX = pad - ((lonMin + 180) / 360) * earthW;
+        const imgY = pad - ((90 - latMax) / 180) * earthH;
+        let html = "<defs>";
+        html += '<pattern id="' + patternId + '" patternUnits="userSpaceOnUse" width="' + w +
+            '" height="' + h + '">';
+        html += '<image href="' + tex + '" x="' + imgX.toFixed(2) + '" y="' + imgY.toFixed(2) +
+            '" width="' + earthW.toFixed(2) + '" height="' + earthH.toFixed(2) +
+            '" preserveAspectRatio="none"/>';
+        html += "</pattern>";
+        html += '<filter id="worldMapSoft"><feColorMatrix type="saturate" values="1.08"/>' +
+            '<feComponentTransfer><feFuncR type="linear" slope="1.05" intercept="-0.02"/>' +
+            '<feFuncG type="linear" slope="1.05" intercept="-0.02"/>' +
+            '<feFuncB type="linear" slope="1.08" intercept="-0.01"/></feComponentTransfer></filter>';
+        html += "</defs>";
+        html += '<rect class="world-earth-base" width="' + w + '" height="' + h +
+            '" fill="url(#' + patternId + ')" filter="url(#worldMapSoft)"/>';
+        html += '<rect width="' + w + '" height="' + h +
+            '" fill="rgba(6, 42, 71, 0.12)" pointer-events="none"/>';
+        if (geo.graticule) {
+            html += '<path class="world-graticule" d="' + geo.graticule + '"/>';
+        }
+        return html;
+    }
+
+    function renderWorldOceanMapLayers(geo, w, h) {
+        return renderRegionalEarthLayers(geo, w, h, "worldEarthTex");
+    }
+
+    function renderNeighborLabels(geo) {
+        let html = "";
+        for (const lb of geo.neighborLabels || []) {
+            let x = lb.x;
+            let y = lb.y;
+            if (lb.lon != null && lb.lat != null && geo.projection) {
+                const pt = projectMapGeo(geo, lb.lon, lb.lat);
+                x = pt.x;
+                y = pt.y;
+            }
+            if (x == null || y == null) continue;
+            html += '<text class="map-neighbor-label" x="' + x + '" y="' + y + '">' +
+                lb.title + "</text>";
+        }
+        return html;
+    }
+
+    function landmarkNudgeSvg(lm, mapH) {
+        let dy = lm.displayOffsetY ?? 0;
+        const cmUp = lm.nudgeUpCm ?? 0;
+        const cmDown = lm.nudgeDownCm ?? 0;
+        if (cmUp || cmDown) {
+            const pxPerCm = 96 / 2.54;
+            const rect = mapSvg.getBoundingClientRect();
+            const renderedH = rect.height || Math.min(window.innerHeight * 0.78, 680);
+            const svgPerPx = mapH / renderedH;
+            dy -= (cmUp - cmDown) * pxPerCm * svgPerPx;
+        }
+        return dy;
+    }
+
+    function renderWorldOceanLandmarks(geo, w, h) {
+        let html = "";
+        for (const lm of geo.landmarks || []) {
+            let x = lm.x;
+            let y = lm.y;
+            if (lm.lon != null && lm.lat != null) {
+                const pt = projectMapGeo(geo, lm.lon, lm.lat);
+                x = pt.x;
+                y = pt.y;
+            }
+            if (x == null || y == null) continue;
+            const dy = landmarkNudgeSvg(lm, h);
+            x += lm.displayOffsetX ?? 0;
+            y += dy;
+            let labelY;
+            if (lm.labelBelow) {
+                labelY = y + 14;
+            } else if (lm.labelAbove) {
+                labelY = y - 10;
+            } else {
+                labelY = y + (y < h * 0.12 ? 14 : -10);
+            }
+            html += '<g class="world-landmark">';
+            html += '<circle class="world-landmark-dot" cx="' + x + '" cy="' + y + '" r="3"/>';
+            html += '<text class="world-landmark-label" x="' + x + '" y="' + labelY + '">' +
+                lm.title + "</text>";
+            html += "</g>";
         }
         return html;
     }
@@ -1580,7 +2195,8 @@
     let answering = false;
 
     function regionMaxStars(meta) {
-        if (meta.id === "europe") return 21;
+        if (meta.id === "ukraine") return 18;
+        if (meta.id === "europe") return 15;
         if (meta.id === "ocean") return 12;
         return "—";
     }
@@ -1625,6 +2241,14 @@
         return { minX, minY, maxX, maxY, w: maxX - minX, h: maxY - minY };
     }
 
+    function viewBoxFromBBox(bb, pad) {
+        const p = pad == null ? 20 : pad;
+        return (
+            (bb.minX - p) + " " + (bb.minY - p) + " " +
+            (bb.w + p * 2) + " " + (bb.h + p * 2)
+        );
+    }
+
     function drawPuzzleCountry(ctx, country, colorIndex, sx, sy, ox, oy) {
         const p = new Path2D(country.path);
         ctx.save();
@@ -1659,9 +2283,22 @@
         ctx.fillStyle = seaGrad;
         ctx.fillRect(0, 0, cw, ch);
 
-        const countries = (mapData.countries || []).filter((c) => c.path && c.id !== "europe-puzzle");
+        const countries = (mapData.countries || mapData.regions || [])
+            .filter((c) => c.path && !/puzzle-marker$/.test(c.id));
         if (countryId) {
             const country = countries.find((c) => c.id === countryId);
+            if (country) {
+                const bbox = pathBBox(country.path);
+                if (bbox && bbox.w > 0 && bbox.h > 0) {
+                    const pad = 20;
+                    const scale = Math.min((cw - pad * 2) / bbox.w, (ch - pad * 2) / bbox.h);
+                    const ox = (cw - bbox.w * scale) / 2 - bbox.minX * scale;
+                    const oy = (ch - bbox.h * scale) / 2 - bbox.minY * scale;
+                    drawPuzzleCountry(ctx, country, 0, scale, scale, ox, oy);
+                }
+            }
+        } else if (mapData.mapFill) {
+            const country = countries.find((c) => c.id === mapData.mapFill);
             if (country) {
                 const bbox = pathBBox(country.path);
                 if (bbox && bbox.w > 0 && bbox.h > 0) {
@@ -1675,7 +2312,10 @@
         } else {
             const sx = cw / vw;
             const sy = ch / vh;
-            countries.forEach((c, i) => drawPuzzleCountry(ctx, c, i, sx, sy, 0, 0));
+            countries.forEach((c, i) => {
+                if (c.id === "europe-puzzle") return;
+                drawPuzzleCountry(ctx, c, i, sx, sy, 0, 0);
+            });
         }
         const url = canvas.toDataURL("image/png");
         puzzleImageCache[cacheKey] = url;
@@ -1766,6 +2406,28 @@
         { id: "ukraine", country: "Україна", flag: "🇺🇦", capital: "Київ", coat: "🛡️ Тризуб", alphabet: "ї, є, ґ", geo: "Дніпро", fact: "Найбільша за площею країна Європи.", dish: "Борщ", clothing: "👕 Вишиванка", hero: "Леся Українка" },
         { id: "united-kingdom", country: "Велика Британія", flag: "🇬🇧", capital: "Лондон", coat: "🛡️ Лев і єдиноріг", alphabet: "w, y", geo: "Темза", fact: "Склалася з чотирьох історичних країн.", dish: "Fish and chips", clothing: "🧥 Кілт", hero: "Вільям Шекспір" },
         { id: "vatican", country: "Ватикан", flag: "🇻🇦", capital: "Ватикан", coat: "🛡️ Ключі святого Петра", alphabet: "æ, œ", geo: "Собор Святого Петра", fact: "Найменша держава у світі.", dish: "Gnocchi", clothing: "⛪ Папська мантія", hero: "Папа Франциск" }
+    ];
+    const UKRAINE_MATCH_BANK = [
+        { id: "kyivska", region: "Київська", flag: "🏛️", capital: "Біла Церква", geo: "Дніпро", fact: "Київ — столиця з особливим статусом.", dish: "Київський торт", symbol: "Софійський собор", hero: "Тарас Шевченко" },
+        { id: "lvivska", region: "Львівська", flag: "🦁", capital: "Львів", geo: "Карпати", fact: "Львів — культурна столиця заходу.", dish: "Сирник", symbol: "Львівська ратуша", hero: "Іван Франко" },
+        { id: "odeska", region: "Одеська", flag: "⚓", capital: "Одеса", geo: "Чорне море", fact: "Найбільша область за площею.", dish: "Форшмак", symbol: "Потьомкінські сходи", hero: "Ілля Меєрник" },
+        { id: "kharkivska", region: "Харківська", flag: "🎓", capital: "Харків", geo: "Слобожанщина", fact: "Харків — великий студентський центр.", dish: "Харківський салат", symbol: "Дзеркальний струмок", hero: "Валентин Войтович" },
+        { id: "dnipropetrovska", region: "Дніпропетровська", flag: "🌊", capital: "Дніпро", geo: "Дніпровська ГЕС", fact: "Острів Хортиця — колишня Січ.", dish: "Кулеш", symbol: "Монумент «Слава»", hero: "Олександр Пол" },
+        { id: "zaporizka", region: "Запорізька", flag: "⚔️", capital: "Запоріжжя", geo: "Дніпро", fact: "Тут була Запорізька Січ.", dish: "Куліш", symbol: "Острів Хортиця", hero: "Богдан Хмельницький" },
+        { id: "zakarpatska", region: "Закарпатська", flag: "⛰️", capital: "Ужгород", geo: "Карпати", fact: "Єдиний регіон з виноградниками на заході.", dish: "Бограч", symbol: "Ужгородський замок", hero: "Августин Волошин" },
+        { id: "ivano-frankivska", region: "Івано-Франківська", flag: "🏔️", capital: "Івано-Франківськ", geo: "Говерла", fact: "Говерла — найвища вершина України.", dish: "Бануш", symbol: "Трембіта", hero: "Василь Стефаник" },
+        { id: "volyn", region: "Волинська", flag: "🌲", capital: "Луцьк", geo: "Озеро Свище", fact: "Луцький замок — пам'ятка князівської доби.", dish: "Поліська юшка", symbol: "Замок Любарта", hero: "Леся Українка" },
+        { id: "chernivetska", region: "Чернівецька", flag: "🎓", capital: "Чернівці", geo: "Прут", fact: "Чернівецький університет — перлина архітектури.", dish: "Вареники з вишнями", symbol: "Ратуша Чернівців", hero: "Ольга Кобилянська" },
+        { id: "poltavska", region: "Полтавська", flag: "🌾", capital: "Полтава", geo: "Ворскла", fact: "Полтавська битва 1709 року.", dish: "Галушки", symbol: "Сфера Полтави", hero: "Іван Котляревський" },
+        { id: "sumska", region: "Сумська", flag: "🍯", capital: "Суми", geo: "Псел", fact: "Суми славляться кондитерськими традиціями.", dish: "Сумські галушки", symbol: "Сумський кадетський корпус", hero: "Михайло Грушевський" },
+        { id: "cherkaska", region: "Черкаська", flag: "🦅", capital: "Черкаси", geo: "Дніпро", fact: "Чигирин — колишня столиця козацтва.", dish: "Черкаський борщ", symbol: "Дніпровські пороги", hero: "Богдан Хмельницький" },
+        { id: "khmelnytska", region: "Хмельницька", flag: "🏰", capital: "Хмельницький", geo: "Південний Буг", fact: "Кам'янець-Подільська фортеця — форпост.", dish: "Пампушки", symbol: "Староконстантинівський замок", hero: "Петро Сагайдачний" },
+        { id: "rivnenska", region: "Рівненська", flag: "🌲", capital: "Рівне", geo: "Полісся", fact: "Тут багато лісів та озер.", dish: "Картопля по-поліськи", symbol: "Острогський замок", hero: "Принцеса Ольга" },
+        { id: "zhytomyrska", region: "Житомирська", flag: "🚀", capital: "Житомир", geo: "Тетерів", fact: "Житомир — батьківщина Корольова.", dish: "Житомирський сирник", symbol: "Космічний музей", hero: "Сергій Корольов" },
+        { id: "vinnytska", region: "Вінницька", flag: "🌻", capital: "Вінниця", geo: "Південний Буг", fact: "Водяна вежа на Бульварі — символ міста.", dish: "Вінницькі вареники", symbol: "Вежа на воді", hero: "Микола Леонтович" },
+        { id: "ternopilska", region: "Тернопільська", flag: "🏰", capital: "Тернопіль", geo: "Серет", fact: "Замок на острові в Тернополі.", dish: "Тернопільський борщ", symbol: "Острівний замок", hero: "Іван Франко" },
+        { id: "mykolaivska", region: "Миколаївська", flag: "⚓", capital: "Миколаїв", geo: "Південний Буг", fact: "Місто корабелів на півдні.", dish: "Уха з риби", symbol: "Адміралтейство", hero: "Адмірал Нахімов" },
+        { id: "khersonska", region: "Херсонська", flag: "🍉", capital: "Херсон", geo: "Дніпро", fact: "Каховське водосховище — величезне.", dish: "Кавун у степу", symbol: "Асканія-Нова", hero: "Григорій Потьомкін" }
     ];
     const MATCH_LINE_COLORS = ["#22c55e", "#38bdf8", "#f59e0b", "#e879f9", "#f43f5e", "#14b8a6", "#facc15", "#60a5fa"];
     const GRAPHICAL_PAIR_KINDS = new Set(["flag", "coat", "clothing"]);
@@ -1892,24 +2554,34 @@
         }));
     }
 
+    function getMatchBank() {
+        return currentData && currentData.id === "ukraine" ? UKRAINE_MATCH_BANK : EUROPE_MATCH_BANK;
+    }
+
+    function getMatchLabelKey() {
+        return currentData && currentData.id === "ukraine" ? "region" : "country";
+    }
+
     function buildMatchRoundPairs(round) {
         const kind = round.pairKind;
         const count = Math.max(2, Math.min(10, round.count || 7));
-        const pool = EUROPE_MATCH_BANK.filter((c) => c.country && c[kind]);
-        const ukraine = pool.find((c) => c.id === "ukraine");
-        const rest = pool.filter((c) => c.id !== "ukraine");
+        const labelKey = getMatchLabelKey();
+        const pool = getMatchBank().filter((c) => c[labelKey] && c[kind]);
+        const priorityId = currentData && currentData.id === "ukraine" ? "kyivska" : "ukraine";
+        const priority = pool.find((c) => c.id === priorityId);
+        const rest = pool.filter((c) => c.id !== priorityId);
         const pickCount = Math.min(count, pool.length);
         let picked = [];
-        if (ukraine && pickCount > 0) {
-            picked.push(ukraine);
+        if (priority && pickCount > 0) {
+            picked.push(priority);
             picked = picked.concat(shuffleArray(rest).slice(0, pickCount - 1));
         } else {
             picked = shuffleArray(pool).slice(0, pickCount);
         }
         const left = shuffleArray(picked.map((c) => ({
             id: c.id,
-            text: c.country,
-            icon: kind === "flag" ? "🌍" : c.flag
+            text: c[labelKey],
+            icon: kind === "flag" ? "🌍" : (c.flag || "🗺️")
         })));
         const right = shuffleArray(picked.map((c) => {
             const value = c[kind];
@@ -1927,7 +2599,7 @@
                 const parsed = parseGraphicValue(value, "🛡️");
                 return {
                     id: c.id,
-                    text: parsed.text || c.country,
+                    text: parsed.text || c[labelKey],
                     icon: parsed.icon,
                     image: "",
                     fallbackImage: graphicImageUrl("coat", c.id, c.country, parsed.text),
@@ -1939,7 +2611,7 @@
                 const parsed = parseGraphicValue(value, "👘");
                 return {
                     id: c.id,
-                    text: parsed.text || c.country,
+                    text: parsed.text || c[labelKey],
                     icon: parsed.icon,
                     image: graphicImageUrl("clothing", c.id, c.country, parsed.text),
                     graphic: true,
@@ -1947,11 +2619,12 @@
                 };
             }
             if (kind === "geo") {
+                const isUkraineMap = currentData && currentData.id === "ukraine";
                 const geoMeta = GEO_TYPE_BY_COUNTRY[c.id] || { type: "географічний об'єкт", icon: "🗺️" };
                 return {
                     id: c.id,
-                    text: value + " — " + geoMeta.type,
-                    icon: geoMeta.icon,
+                    text: isUkraineMap ? value : value + " — " + geoMeta.type,
+                    icon: isUkraineMap ? "🗺️" : geoMeta.icon,
                     graphic: false
                 };
             }
@@ -1972,8 +2645,9 @@
         const prev = findPrevNode(node, data);
         const lockedEl = document.getElementById("locked-msg");
         if (node.bonus) {
+            const place = currentData && currentData.id === "ukraine" ? "точці подорожі" : "країні";
             lockedEl.textContent =
-                "Бонус відкриється, коли на кожній країні Європи буде щонайменше " +
+                "Бонус відкриється, коли на кожній " + place + " буде щонайменше " +
                 UNLOCK_MIN_STARS + " ⭐.";
         } else {
             lockedEl.textContent = prev
@@ -2059,6 +2733,7 @@
      * Кути камери (lon/tilt) обчислюються окремо, щоб центр екрана = ця точка.
      */
     const REGION_GEO_CENTERS = {
+        ukraine: { lat: 49.0, lon: 31.5 },
         europe: { lat: 54.5, lon: 17.5 },
         asia: { lat: 43.5, lon: 88.0 },
         africa: { lat: 5.5, lon: 22.5 },
@@ -2208,11 +2883,47 @@
             return viewToLatLon(nx, ny, nz);
         }
 
-        function draw() {
-            if (!ready || !texPixels) return;
+        function globeCanvasSize() {
             const dpr = Math.min(window.devicePixelRatio || 1, 2);
             const display = Math.min(globeCanvas.clientWidth, globeCanvas.clientHeight) || 220;
-            const size = Math.max(64, Math.floor(display * dpr));
+            return { dpr, size: Math.max(64, Math.floor(display * dpr)) };
+        }
+
+        function drawPlaceholder() {
+            const { size } = globeCanvasSize();
+            if (globeCanvas.width !== size || globeCanvas.height !== size) {
+                globeCanvas.width = size;
+                globeCanvas.height = size;
+            }
+            const ctx = globeCanvas.getContext("2d");
+            const cx = size / 2;
+            const cy = size / 2;
+            const R = size / 2 * 0.96;
+            const g = ctx.createRadialGradient(cx - R * 0.25, cy - R * 0.3, R * 0.05, cx, cy, R);
+            g.addColorStop(0, "#2563a8");
+            g.addColorStop(0.55, "#1e4d8c");
+            g.addColorStop(1, "#0f2847");
+            ctx.fillStyle = g;
+            ctx.beginPath();
+            ctx.arc(cx, cy, R, 0, Math.PI * 2);
+            ctx.fill();
+            const atmo = ctx.createRadialGradient(cx, cy, R * 0.55, cx, cy, R * 1.02);
+            atmo.addColorStop(0, "rgba(30, 100, 180, 0)");
+            atmo.addColorStop(1, "rgba(10, 40, 90, 0.35)");
+            ctx.fillStyle = atmo;
+            ctx.beginPath();
+            ctx.arc(cx, cy, R, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        function redrawGlobe() {
+            if (ready && texPixels) draw();
+            else drawPlaceholder();
+        }
+
+        function draw() {
+            if (!ready || !texPixels) return;
+            const { size } = globeCanvasSize();
             if (globeCanvas.width !== size || globeCanvas.height !== size) {
                 globeCanvas.width = size;
                 globeCanvas.height = size;
@@ -2258,16 +2969,25 @@
             ctx.globalCompositeOperation = "source-over";
         }
 
+        function ensureAnimLoop() {
+            if (!loopId) {
+                lastFrame = 0;
+                loopId = requestAnimationFrame(tick);
+            }
+        }
+
         function tick(now) {
             if (!lastFrame) lastFrame = now;
             const dt = Math.min(48, now - lastFrame);
             lastFrame = now;
-            if (ready && autoRotate && !dragging && !animating) {
+            if (autoRotate && !dragging && !animating) {
                 lon = normLon(lon + (AUTO_ROTATE_DEG_PER_SEC * dt) / 1000);
-                draw();
             }
+            redrawGlobe();
             loopId = requestAnimationFrame(tick);
         }
+
+        ensureAnimLoop();
 
         function loadTexture() {
             return new Promise((resolve, reject) => {
@@ -2283,8 +3003,8 @@
                     texH = c.height;
                     ready = true;
                     applyTransform();
-                    draw();
-                    if (!loopId) loopId = requestAnimationFrame(tick);
+                    redrawGlobe();
+                    ensureAnimLoop();
                     resolve();
                 };
                 img.onerror = () => reject(new Error("earth texture"));
@@ -2311,7 +3031,7 @@
             lastY = e.clientY;
             lon = normLon(lon + dx * 0.35);
             tilt = clampTilt(tilt - dy * 0.22);
-            draw();
+            redrawGlobe();
         }
 
         function onPointerUp(e) {
@@ -2400,7 +3120,7 @@
         globeCanvas.addEventListener("pointermove", onPointerMove);
         globeCanvas.addEventListener("pointerup", onPointerUp);
         globeCanvas.addEventListener("pointercancel", onPointerUp);
-        window.addEventListener("resize", () => { if (ready) draw(); });
+        window.addEventListener("resize", redrawGlobe);
 
         return {
             loadTexture,
@@ -2480,15 +3200,40 @@
         if (!currentData) return;
         mapTitle.textContent = currentData.title;
         const geo = await loadContinentGeo(currentData);
-        const vb = (geo && geo.viewBox) || currentData.map?.viewBox || "0 0 1000 780";
+        const isUkraineTravel = geo && geo.theme === "ukraine-travel";
+        const isEuropeMap = geo && geo.theme === "europe-countries";
+        const isUkraineMap = isUkraineTravel || (geo && (geo.mapFill === "ukraine" || currentData.id === "ukraine"));
+        const fillId = geo && geo.mapFill ? geo.mapFill : "ukraine";
+        const featuresEarly = geo ? (geo.countries || geo.regions || []) : [];
+        const ukraineShapeEarly = isUkraineMap
+            ? featuresEarly.find((f) => f.id === fillId && f.path)
+            : null;
+
+        let vb = (geo && geo.viewBox) || currentData.map?.viewBox || "0 0 1000 780";
+        if (ukraineShapeEarly && !isUkraineTravel) {
+            const bb = pathBBox(ukraineShapeEarly.path);
+            if (bb && bb.w > 0 && bb.h > 0) vb = viewBoxFromBBox(bb, 16);
+        }
         mapSvg.setAttribute("viewBox", vb);
+        const isZoomMap = isGeoZoomMap(geo);
+        mapSvg.setAttribute(
+            "preserveAspectRatio",
+            isZoomMap || isUkraineTravel || isEuropeMap ? "xMidYMid meet" : (isUkraineMap ? "xMidYMid slice" : "xMidYMid meet")
+        );
         const parts = vb.split(/\s+/).map(Number);
         const w = parts[2] || 1000;
         const h = parts[3] || 780;
 
         let html = "";
+        const isOceanWorld = geo && geo.theme === "world-ocean";
         const isOceanAdventure = geo && geo.theme === "adventure";
-        if (isOceanAdventure) {
+        if (isOceanWorld) {
+            html += renderWorldOceanMapLayers(geo, w, h);
+        } else if (isUkraineTravel) {
+            html += renderRegionalEarthLayers(geo, w, h, "ukraineEarthTex");
+        } else if (isEuropeMap) {
+            html += renderRegionalEarthLayers(geo, w, h, "europeEarthTex");
+        } else if (isOceanAdventure) {
             html += renderOceanMapLayers(geo, w, h);
         } else {
             html += '<rect width="' + w + '" height="' + h + '" fill="' +
@@ -2502,25 +3247,80 @@
             starsByNode[nodeGeoId(node)] = nodeStars(currentData.id, node.id);
         }
 
-        if (!isOceanAdventure) {
-            for (const f of features) {
-                const isPlayable = playableIds.has(f.id);
-                const stars = starsByNode[f.id] || 0;
-                let extra = "";
-                if (isPlayable && stars > 0) extra = " done";
-                html += '<path class="map-geo' + (isPlayable ? " playable" + extra : " context") +
-                    '" data-geo-id="' + f.id + '" d="' + f.path + '"/>';
+        const isOceanMap = isOceanWorld || isOceanAdventure;
+        if (!isOceanMap) {
+            if (isUkraineTravel) {
+                for (const nb of geo.neighbors || []) {
+                    if (!nb.path) continue;
+                    html += '<path class="map-neighbor-land" data-neighbor-id="' + nb.id +
+                        '" d="' + nb.path + '"/>';
+                }
+                html += renderNeighborLabels(geo);
+                if (ukraineShapeEarly) {
+                    html += '<path class="map-geo map-ukraine-silhouette" data-geo-id="ukraine" d="' +
+                        ukraineShapeEarly.path + '"/>';
+                }
+                for (const layer of geo.overlays || []) {
+                    if (!layer.path) continue;
+                    html += '<path class="map-river map-river-' + layer.id + '" data-overlay-id="' +
+                        layer.id + '" d="' + layer.path + '"/>';
+                }
+            } else if (isEuropeMap) {
+                for (const nb of geo.neighbors || []) {
+                    if (!nb.path) continue;
+                    html += '<path class="map-neighbor-land" data-neighbor-id="' + nb.id +
+                        '" d="' + nb.path + '"/>';
+                }
+                html += renderNeighborLabels(geo);
+                for (const f of features) {
+                    if (!f.path || f.id === "europe-puzzle") continue;
+                    const isPlayable = playableIds.has(f.id);
+                    const stars = starsByNode[f.id] || 0;
+                    let extra = "";
+                    if (isPlayable && stars > 0) extra = " done";
+                    html += '<path class="map-geo' + (isPlayable ? " playable" + extra : " context") +
+                        '" data-geo-id="' + f.id + '" d="' + f.path + '"/>';
+                }
+            } else if (isUkraineMap) {
+                if (ukraineShapeEarly) {
+                    html += '<path class="map-geo map-ukraine-silhouette" data-geo-id="ukraine" d="' +
+                        ukraineShapeEarly.path + '"/>';
+                }
+                for (const layer of geo.overlays || []) {
+                    if (!layer.path) continue;
+                    html += '<path class="map-river map-river-' + layer.id + '" data-overlay-id="' +
+                        layer.id + '" d="' + layer.path + '"/>';
+                }
+            } else {
+                for (const f of features) {
+                    if (!f.path) continue;
+                    const isPlayable = playableIds.has(f.id);
+                    const stars = starsByNode[f.id] || 0;
+                    let extra = "";
+                    if (isPlayable && stars > 0) extra = " done";
+                    html += '<path class="map-geo' + (isPlayable ? " playable" + extra : " context") +
+                        '" data-geo-id="' + f.id + '" d="' + f.path + '"/>';
+                }
             }
         }
 
-        if (isOceanAdventure) {
+        if (isOceanWorld) {
+            html += renderWorldOceanLandmarks(geo, w, h);
+        } else if (isOceanAdventure) {
             html += renderOceanDecorations(geo);
         }
 
         const mainNodes = currentData.nodes.filter(n => !n.bonus);
         const positions = mainNodes.map(node => {
+            const f = findGeoFeature(geo, node);
             const c = getNodeCenter(geo, node);
-            return { node, x: c ? c.x : w / 2, y: c ? c.y : h / 2 };
+            return {
+                node,
+                x: c ? c.x : w / 2,
+                y: c ? c.y : h / 2,
+                labelBelow: !!(f && f.labelBelow),
+                labelAbove: !!(f && f.labelAbove),
+            };
         });
 
         if (isOceanAdventure) {
@@ -2532,21 +3332,40 @@
             }
         }
 
-        const largeNodes = isOceanAdventure;
+        const nodeSize = isOceanAdventure ? "lg" : "md";
+        const nodeOpts = isOceanWorld
+            ? { mapW: w, mapH: h, readableLabels: true }
+            : isUkraineTravel || isEuropeMap
+                ? { mapW: w, mapH: h, readableLabels: true, geoLabelClass: " map-node--geo" }
+                : null;
         for (const p of positions) {
             const cls = nodeStatusClass(p.node, currentData);
             const stars = nodeStars(currentData.id, p.node.id);
-            html += renderMapNode(p, cls, stars, largeNodes);
+            html += renderMapNode(p, cls, stars, nodeSize, nodeOpts);
         }
         mapSvg.innerHTML = html;
         const mapScroll = document.getElementById("map-scroll");
         mapScroll.classList.toggle("ocean-adventure", !!isOceanAdventure);
+        mapScroll.classList.toggle("ocean-world", !!isOceanWorld);
+        mapScroll.classList.toggle("ukraine-map", !!isUkraineTravel);
+        mapScroll.classList.toggle("europe-map", !!isEuropeMap);
+        if (isZoomMap) {
+            if (isOceanWorld) mapSvg.setAttribute("preserveAspectRatio", "xMidYMid meet");
+            bindOceanMapZoomHandlers();
+            setupOceanMapZoom(w, h);
+        } else {
+            teardownOceanMapZoom();
+        }
         renderMapBonusButtons();
 
         mapSvg.querySelectorAll(".map-node").forEach(g => {
             const onTap = (e) => {
                 e.preventDefault();
                 e.stopPropagation();
+                if (oceanMapZoom.suppressClick) {
+                    oceanMapZoom.suppressClick = false;
+                    return;
+                }
                 const id = g.getAttribute("data-id");
                 const node = currentData.nodes.find(n => n.id === id);
                 if (!node) return;
@@ -2557,6 +3376,10 @@
                 }
                 startNode(node);
             };
+            g.addEventListener("pointerdown", (e) => {
+                e.stopPropagation();
+                oceanMapZoom.suppressClick = false;
+            });
             g.addEventListener("click", onTap);
         });
 
@@ -2564,7 +3387,11 @@
         if (current) {
             const c = getNodeCenter(geo, current);
             if (c) {
-                document.getElementById("map-scroll").scrollTop = Math.max(0, c.y - 120);
+                if (isZoomMap) {
+                    focusOceanPoint(c.x, c.y, Math.max(1.35, oceanMapZoom.scale));
+                } else {
+                    document.getElementById("map-scroll").scrollTop = Math.max(0, c.y - 120);
+                }
             }
         }
     }
@@ -2996,19 +3823,20 @@
             function onSolved() {
                 if (answering) return;
                 answering = true;
-                session.correct = 1;
-                session.wrong = session.puzzleHint || session.puzzleMoves > 55 ? 1 : 0;
-                session.combo = 1;
-                session.comboMax = 1;
+                session.correct++;
+                session.wrong += session.puzzleHint || session.puzzleMoves > 55 ? 1 : 0;
+                session.combo++;
+                session.comboMax = Math.max(session.comboMax, session.combo);
+                awardCoins(1, round);
                 audio.correct();
                 flash("correct");
                 confetti(30);
-                mentorBubble.textContent = "🧭 Карта Європи зібрана! Чудова робота!";
+                mentorBubble.textContent = "🧭 " + randomPick(PRAISE);
                 setTimeout(() => {
                     if (round.explainOnSuccess || round.explanation) {
                         showFeedbackModal(round, true);
                     } else {
-                        finishNode();
+                        advanceRound();
                     }
                 }, 600);
             }
@@ -3184,12 +4012,6 @@
 
     document.getElementById("feedback-next").addEventListener("click", () => {
         audio.tap();
-        const round = currentNode && currentNode.rounds[session.roundIndex];
-        if (round && round.type === "puzzle" && answering) {
-            document.getElementById("modal-feedback").classList.remove("active");
-            finishNode();
-            return;
-        }
         advanceRound();
     });
 
@@ -3277,8 +4099,8 @@
                 return;
             }
         }
-        const europe = getRegionList().find(r => r.id === "europe");
-        if (europe) beginRegionFlight(europe);
+        const ukraine = getRegionList().find(r => r.id === "ukraine");
+        if (ukraine) beginRegionFlight(ukraine);
     }
 
     document.getElementById("btn-resume").addEventListener("click", () => {
@@ -3288,24 +4110,26 @@
 
     async function init() {
         updateHud();
+        const texturePromise = globe.loadTexture().catch((e) => {
+            console.warn("Globe texture:", e);
+        });
         try {
             await loadWorld();
-            await Promise.all([
-                loadContinentData(world.continents.find(c => c.id === "europe")),
-                loadContinentData(world.ocean),
-                globe.loadTexture()
-            ]);
             renderOrbitRing();
+            prefetchHubRegions();
             if (save.lastPlayed?.continentId && REGION_GEO_CENTERS[save.lastPlayed.continentId]) {
                 const c = REGION_GEO_CENTERS[save.lastPlayed.continentId];
                 globe.setGeoCenter(c.lat, c.lon);
             }
+            await texturePromise;
         } catch (err) {
             console.error(err);
             toast("Не вдалося завантажити дані");
         }
     }
 
+    loadWorld();
+    globe.loadTexture().catch(() => {});
     init();
 
     if ("serviceWorker" in navigator) {
