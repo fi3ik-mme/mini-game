@@ -1058,9 +1058,9 @@
             font-size: 2rem;
             min-width: 0;
         }
-        .match-item.image-tile .txt {
-            font-size: 0.75rem;
-            line-height: 1.2;
+        .match-item.image-tile.coat-tile,
+        .match-item.image-tile.clothing-tile {
+            min-height: 132px;
         }
         .match-photo {
             width: 100%;
@@ -1072,11 +1072,26 @@
             background: rgba(15, 23, 42, 0.45);
             display: block;
         }
+        .match-photo.flag,
+        .match-photo.coat,
+        .match-photo.clothing {
+            height: auto;
+            min-height: 72px;
+            max-height: 112px;
+            object-fit: contain;
+            background: rgba(255,255,255,0.06);
+        }
         .match-photo.flag {
             max-width: 180px;
-            height: 96px;
-            object-fit: contain;
-            background: rgba(255,255,255,0.05);
+            max-height: 96px;
+        }
+        .match-photo.coat {
+            max-width: 168px;
+            max-height: 120px;
+        }
+        .match-photo.clothing {
+            max-width: 168px;
+            max-height: 128px;
         }
         .match-item.selected {
             border-color: #fbbf24;
@@ -1361,6 +1376,50 @@
 
     function randomPick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
 
+    const questionBankCache = {};
+
+    async function loadQuestionBank(file) {
+        if (questionBankCache[file]) return questionBankCache[file];
+        questionBankCache[file] = await fetchJson(file);
+        return questionBankCache[file];
+    }
+
+    function questionKey(q) {
+        return q.id || (q.type + "::" + (q.text || ""));
+    }
+
+    function pickQuestionFromPool(pool, usedKeys) {
+        const available = pool.filter((q) => !usedKeys.has(questionKey(q)));
+        const source = available.length ? available : pool;
+        const picked = randomPick(source);
+        usedKeys.add(questionKey(picked));
+        return picked;
+    }
+
+    async function materializeSessionRounds(node) {
+        const usedKeys = new Set();
+        const resolved = [];
+        for (const def of node.rounds || []) {
+            if (def.type === "categoryPick") {
+                const bank = await loadQuestionBank(def.bankFile);
+                const pool = bank.categories && bank.categories[def.category];
+                if (!pool || !pool.length) {
+                    console.warn("Empty question category:", def.category, def.bankFile);
+                    continue;
+                }
+                const q = pickQuestionFromPool(pool, usedKeys);
+                resolved.push({ ...q, boss: def.boss });
+            } else {
+                resolved.push(def);
+            }
+        }
+        return resolved;
+    }
+
+    function getSessionRounds() {
+        return (session && session.rounds) || (currentNode && currentNode.rounds) || [];
+    }
+
     function shuffleArray(arr) {
         const copy = arr.slice();
         for (let i = copy.length - 1; i > 0; i--) {
@@ -1526,6 +1585,19 @@
             const data = await fetchJson(meta.file);
             if (data.nodes) {
                 await Promise.all(data.nodes.map(async (node) => {
+                    const bankFiles = new Set();
+                    (node.rounds || []).forEach((r) => {
+                        if (r.type === "categoryPick" && r.bankFile) bankFiles.add(r.bankFile);
+                        if (r.type === "matchPairs" && r.pairKind === "clothing") {
+                            bankFiles.add("data/europe-clothing-images.json");
+                        }
+                    });
+                    await Promise.all([...bankFiles].map((f) => {
+                        if (f.endsWith("europe-clothing-images.json")) {
+                            return loadClothingImages().catch(() => {});
+                        }
+                        return loadQuestionBank(f).catch(() => {});
+                    }));
                     if (!node.roundsFile) return;
                     const extra = await fetchJson(node.roundsFile);
                     const extraRounds = extra.rounds || extra;
@@ -1615,6 +1687,59 @@
             x: ((lon - lonMin) / lonSpan) * (mapW - pad * 2) + pad,
             y: ((latMax - lat) / latSpan) * (mapH - pad * 2) + pad,
         };
+    }
+
+    function unprojectMapGeo(geo, x, y) {
+        const pr = geo.projection || {};
+        const pad = pr.pad ?? (geo.theme === "world-ocean" ? 6 : 28);
+        const mapW = pr.width || 1200;
+        const mapH = pr.height || 620;
+        const lonMin = pr.lonMin ?? -180;
+        const lonMax = pr.lonMax ?? 180;
+        const latMin = pr.latMin ?? -90;
+        const latMax = pr.latMax ?? 90;
+        const lonSpan = lonMax - lonMin || 360;
+        const latSpan = latMax - latMin || 180;
+        return {
+            lon: lonMin + ((x - pad) / (mapW - pad * 2)) * lonSpan,
+            lat: latMax - ((y - pad) / (mapH - pad * 2)) * latSpan,
+        };
+    }
+
+    function geoBoundsFromSvgRect(geo, rect) {
+        const nw = unprojectMapGeo(geo, rect.minX, rect.minY);
+        const se = unprojectMapGeo(geo, rect.maxX, rect.maxY);
+        return {
+            lonMin: Math.min(nw.lon, se.lon),
+            lonMax: Math.max(nw.lon, se.lon),
+            latMin: Math.min(nw.lat, se.lat),
+            latMax: Math.max(nw.lat, se.lat),
+        };
+    }
+
+    function puzzleCoverTransform(bbox, cw, ch) {
+        const scale = Math.max(cw / bbox.w, ch / bbox.h);
+        const visW = cw / scale;
+        const visH = ch / scale;
+        return {
+            scale,
+            ox: (cw - bbox.w * scale) / 2 - bbox.minX * scale,
+            oy: (ch - bbox.h * scale) / 2 - bbox.minY * scale,
+            visMinX: bbox.minX + (bbox.w - visW) / 2,
+            visMinY: bbox.minY + (bbox.h - visH) / 2,
+            visMaxX: bbox.minX + (bbox.w + visW) / 2,
+            visMaxY: bbox.minY + (bbox.h + visH) / 2,
+        };
+    }
+
+    function drawEarthEquirect(ctx, img, bounds, w, h) {
+        const lonSpan = bounds.lonMax - bounds.lonMin || 1;
+        const latSpan = bounds.latMax - bounds.latMin || 1;
+        const sx = img.naturalWidth * (bounds.lonMin + 180) / 360;
+        const sw = img.naturalWidth * lonSpan / 360;
+        const sy = img.naturalHeight * (90 - bounds.latMax) / 180;
+        const sh = img.naturalHeight * latSpan / 180;
+        ctx.drawImage(img, sx, sy, sw, sh, 0, 0, w, h);
     }
 
     function isGeoZoomMap(geo) {
@@ -2202,6 +2327,11 @@
     }
 
     const puzzleImageCache = {};
+    /** Pre-rendered satellite + physical-map puzzle art (720×960). */
+    const PREMIUM_PUZZLE_TEXTURES = {
+        ukraine: "assets/puzzles/ukraine-phys.jpg",
+        france: "assets/puzzles/france-phys.jpg",
+    };
     const PUZZLE_NATURAL_COLORS = [
         "#7aa874", "#8eb67a", "#c0b37a", "#b88d66", "#9fbf88", "#a7a07a",
         "#c6a874", "#89a68a", "#9cb47f", "#b39b72", "#93b08b", "#c7bb8f",
@@ -2266,50 +2396,73 @@
         const countryId = options && options.countryId;
         const cacheKey = (mapId || "europe-countries") + (countryId ? ":" + countryId : "");
         if (puzzleImageCache[cacheKey]) return puzzleImageCache[cacheKey];
+
+        const premiumTex = countryId && PREMIUM_PUZZLE_TEXTURES[countryId];
+        if (premiumTex) {
+            puzzleImageCache[cacheKey] = premiumTex;
+            return premiumTex;
+        }
+
         const mapData = await loadMap(mapId);
         const parts = (mapData.viewBox || "0 0 1000 780").split(/\s+/).map(Number);
         const vw = parts[2] || 1000;
         const vh = parts[3] || 780;
-        const cw = countryId ? 360 : 500;
-        const ch = countryId ? 480 : 400;
+        const targetCountryId = countryId || mapData.mapFill || null;
+        const cw = targetCountryId ? 360 : 500;
+        const ch = targetCountryId ? 480 : 400;
         const canvas = document.createElement("canvas");
         canvas.width = cw;
         canvas.height = ch;
         const ctx = canvas.getContext("2d");
-        const seaGrad = ctx.createLinearGradient(0, 0, 0, ch);
-        seaGrad.addColorStop(0, "#2563eb");
-        seaGrad.addColorStop(0.55, "#1d4ed8");
-        seaGrad.addColorStop(1, "#1e3a8a");
-        ctx.fillStyle = seaGrad;
-        ctx.fillRect(0, 0, cw, ch);
 
         const countries = (mapData.countries || mapData.regions || [])
             .filter((c) => c.path && !/puzzle-marker$/.test(c.id));
-        if (countryId) {
-            const country = countries.find((c) => c.id === countryId);
+
+        if (targetCountryId) {
+            const country = countries.find((c) => c.id === targetCountryId);
             if (country) {
                 const bbox = pathBBox(country.path);
                 if (bbox && bbox.w > 0 && bbox.h > 0) {
-                    const pad = 20;
-                    const scale = Math.min((cw - pad * 2) / bbox.w, (ch - pad * 2) / bbox.h);
-                    const ox = (cw - bbox.w * scale) / 2 - bbox.minX * scale;
-                    const oy = (ch - bbox.h * scale) / 2 - bbox.minY * scale;
-                    drawPuzzleCountry(ctx, country, 0, scale, scale, ox, oy);
-                }
-            }
-        } else if (mapData.mapFill) {
-            const country = countries.find((c) => c.id === mapData.mapFill);
-            if (country) {
-                const bbox = pathBBox(country.path);
-                if (bbox && bbox.w > 0 && bbox.h > 0) {
-                    const pad = 20;
-                    const scale = Math.min((cw - pad * 2) / bbox.w, (ch - pad * 2) / bbox.h);
-                    const ox = (cw - bbox.w * scale) / 2 - bbox.minX * scale;
-                    const oy = (ch - bbox.h * scale) / 2 - bbox.minY * scale;
-                    drawPuzzleCountry(ctx, country, 0, scale, scale, ox, oy);
+                    const xf = puzzleCoverTransform(bbox, cw, ch);
+                    const geoBounds = geoBoundsFromSvgRect(mapData, {
+                        minX: xf.visMinX,
+                        minY: xf.visMinY,
+                        maxX: xf.visMaxX,
+                        maxY: xf.visMaxY,
+                    });
+                    try {
+                        const earthImg = await loadImage(
+                            mapData.earthTexture || "assets/earth-equirect.jpg",
+                            "anonymous"
+                        );
+                        drawEarthEquirect(ctx, earthImg, geoBounds, cw, ch);
+                    } catch (_) {
+                        const seaGrad = ctx.createLinearGradient(0, 0, 0, ch);
+                        seaGrad.addColorStop(0, "#2563eb");
+                        seaGrad.addColorStop(0.55, "#1d4ed8");
+                        seaGrad.addColorStop(1, "#1e3a8a");
+                        ctx.fillStyle = seaGrad;
+                        ctx.fillRect(0, 0, cw, ch);
+                    }
+                    ctx.save();
+                    ctx.translate(xf.ox, xf.oy);
+                    ctx.scale(xf.scale, xf.scale);
+                    const p = new Path2D(country.path);
+                    ctx.fillStyle = "rgba(34, 197, 94, 0.18)";
+                    ctx.fill(p);
+                    ctx.strokeStyle = "rgba(250, 204, 21, 0.95)";
+                    ctx.lineWidth = Math.max(1.5, 2.2 / xf.scale);
+                    ctx.stroke(p);
+                    ctx.restore();
                 }
             }
         } else {
+            const seaGrad = ctx.createLinearGradient(0, 0, 0, ch);
+            seaGrad.addColorStop(0, "#2563eb");
+            seaGrad.addColorStop(0.55, "#1d4ed8");
+            seaGrad.addColorStop(1, "#1e3a8a");
+            ctx.fillStyle = seaGrad;
+            ctx.fillRect(0, 0, cw, ch);
             const sx = cw / vw;
             const sy = ch / vh;
             countries.forEach((c, i) => {
@@ -2380,7 +2533,7 @@
         { id: "hungary", country: "Угорщина", flag: "🇭🇺", capital: "Будапешт", coat: "🛡️ Корона святого Іштвана", alphabet: "á, é, ő, ű", geo: "Балатон", fact: "Одна з найбільших термальних систем Європи.", dish: "Гуляш", clothing: "🧥 Matyo", hero: "Шандор Петефі" },
         { id: "iceland", country: "Ісландія", flag: "🇮🇸", capital: "Рейк'явік", coat: "🛡️ Чотири духи", alphabet: "ð, þ", geo: "Гекла", fact: "Близько 100% електрики з ВДЕ.", dish: "Skyr", clothing: "🧶 Lopapeysa", hero: "Лейф Еріксон" },
         { id: "ireland", country: "Ірландія", flag: "🇮🇪", capital: "Дублін", coat: "🛡️ Золота арфа", alphabet: "á, é, í", geo: "Шаннон", fact: "Зелений острів відомий кельтською культурою.", dish: "Irish stew", clothing: "🧥 Кельтський плащ", hero: "Джеймс Джойс" },
-        { id: "italy", country: "Італія", flag: "🇮🇹", capital: "Рим", coat: "🛡️ Зірка Італії", alphabet: "à, è, ò", geo: "Етна", fact: "Має найбільшу кількість об'єктів ЮНЕСКО.", dish: "Піца Маргарита", clothing: "👗 Сардинський костюм", hero: "Леонардо да Вінчі" },
+        { id: "italy", country: "Італія", flag: "🇮🇹", capital: "Рим", coat: "🛡️ Зірка", alphabet: "à, è, ò", geo: "Етна", fact: "Має найбільшу кількість об'єктів ЮНЕСКО.", dish: "Піца Маргарита", clothing: "👗 Сардинський костюм", hero: "Леонардо да Вінчі" },
         { id: "kosovo", country: "Косово", flag: "🇽🇰", capital: "Приштина", coat: "🛡️ Контур і зірки", alphabet: "ç, ë", geo: "Шар-Планина", fact: "Одна з наймолодших держав Європи.", dish: "Flija", clothing: "🧥 Xhubleta", hero: "Ібрагім Ругова" },
         { id: "latvia", country: "Латвія", flag: "🇱🇻", capital: "Рига", coat: "🛡️ Сонце і лев", alphabet: "ā, ē, ģ", geo: "Гауя", fact: "Рига відома югендстилем.", dish: "Grey peas", clothing: "👗 Tautastērps", hero: "Райніс" },
         { id: "liechtenstein", country: "Ліхтенштейн", flag: "🇱🇮", capital: "Вадуц", coat: "🛡️ Княжа корона", alphabet: "ä, ö, ü", geo: "Рейнська долина", fact: "Одна з найменших держав Європи.", dish: "Kasknopfle", clothing: "🧥 Тірольський костюм", hero: "Князь Франц-Йосиф II" },
@@ -2429,7 +2582,79 @@
         { id: "mykolaivska", region: "Миколаївська", flag: "⚓", capital: "Миколаїв", geo: "Південний Буг", fact: "Місто корабелів на півдні.", dish: "Уха з риби", symbol: "Адміралтейство", hero: "Адмірал Нахімов" },
         { id: "khersonska", region: "Херсонська", flag: "🍉", capital: "Херсон", geo: "Дніпро", fact: "Каховське водосховище — величезне.", dish: "Кавун у степу", symbol: "Асканія-Нова", hero: "Григорій Потьомкін" }
     ];
-    const MATCH_LINE_COLORS = ["#22c55e", "#38bdf8", "#f59e0b", "#e879f9", "#f43f5e", "#14b8a6", "#facc15", "#60a5fa"];
+    const DISH_DESCRIPTIONS = {
+        albania: "запіканка з м'яса й рису в йогурті",
+        andorra: "капуста з картоплею та шкварками",
+        austria: "тонке м'ясо у хрусткій паніровці",
+        belarus: "картопляні млинці",
+        belgium: "хрусткі вафлі з карамеллю",
+        bosnia: "м'ясні ковбаски на грилі",
+        bulgaria: "листковий пиріг із сиром",
+        croatia: "тушковане м'ясо з овочами",
+        cyprus: "сир, що не плавиться на грилі",
+        czechia: "тушкована яловичина в соусі",
+        denmark: "відкритий бутерброд на хлібі",
+        estonia: "каша з картоплі й кукурудзи",
+        finland: "рисовий пиріжок у тісті",
+        france: "масляна випічка у формі півмісяця",
+        germany: "смажена свиняча ковбаска",
+        greece: "шаровий запіканка з баклажанів",
+        hungary: "густий м'ясний рагу-суп",
+        iceland: "густий кисломолочний сир",
+        ireland: "тушковане м'ясо з картоплею",
+        italy: "піца з томатами і моцарелою",
+        kosovo: "шаровий м'ясний пиріг на вогнищі",
+        latvia: "суп з сірих горохів і бекону",
+        liechtenstein: "локшина з сиром і цибулею",
+        lithuania: "картопляні кульки з начинкою",
+        luxembourg: "копчена свинина з квасолею",
+        malta: "пиріжки з начинкою",
+        moldova: "кукурудзяна каша",
+        monaco: "смажені пиріжки з шпинатом",
+        montenegro: "копчена свинина з гір",
+        netherlands: "вафлі з карамельною начинкою",
+        "north-macedonia": "тушкована квасоля з ковбаскою",
+        norway: "тушкована баранина з капустою",
+        poland: "вареники з начинкою",
+        portugal: "страви з сушеної тріски",
+        romania: "голубці з м'ясом і рисом",
+        "san-marino": "шоколадний торт з горіхами",
+        serbia: "велика м'ясна котлета на грилі",
+        slovakia: "картопляні кульки з овечим сиром",
+        slovenia: "сладкий рулет з горіхами",
+        spain: "рис з морепродуктами та шафраном",
+        sweden: "м'ясні кульки в вершковому соусі",
+        switzerland: "розплавлений сир для макання",
+        ukraine: "червоний овочевий суп з буряком",
+        "united-kingdom": "риба у клярі з картоплею фрі",
+        vatican: "картопляні кульки в соусі",
+        kyivska: "бісквітовий торт з вершковим кремом",
+        lvivska: "сирова запіканка або десерт",
+        odeska: "паста з оселедця та яєць",
+        kharkivska: "салат з овочів і м'яса",
+        dnipropetrovska: "гречана каша з м'ясом",
+        zaporizka: "козацький суп з крупою",
+        zakarpatska: "угорський м'ясний гуляш",
+        "ivano-frankivska": "карпатська кукурудзяна каша з бринзою",
+        volyn: "поліський овочевий суп",
+        chernivetska: "вареники з вишневою начинкою",
+        poltavska: "варені картопляні кульки",
+        sumska: "галушки з м'ясом або сметаною",
+        cherkaska: "борщ за черкаським рецептом",
+        khmelnytska: "часникові булочки до борщу",
+        rivnenska: "запечена картопля зі спеціями",
+        zhytomyrska: "сирова запіканка з родзинками",
+        vinnytska: "вареники з різними начинками",
+        ternopilska: "борщ за тернопільським рецептом",
+        mykolaivska: "рибний суп на відварі",
+        khersonska: "свіжий кавун — літній десерт"
+    };
+
+    function formatDishLabel(name, id) {
+        const desc = DISH_DESCRIPTIONS[id];
+        return desc ? name + " (" + desc + ")" : name;
+    }
+
     const GRAPHICAL_PAIR_KINDS = new Set(["flag", "coat", "clothing"]);
     const GEO_TYPE_BY_COUNTRY = {
         albania: { type: "озеро", icon: "🏞️" },
@@ -2489,6 +2714,35 @@
         switzerland: "ch", ukraine: "ua", "united-kingdom": "gb", vatican: "va"
     };
     const COAT_IMAGE_CACHE = {};
+    let clothingImagesCache = null;
+    let clothingImagesPromise = null;
+
+    function wikiCommonsImageUrl(filename, width = 320) {
+        if (!filename) return "";
+        return "https://commons.wikimedia.org/wiki/Special:FilePath/" +
+            encodeURIComponent(filename) + "?width=" + width;
+    }
+
+    async function loadClothingImages() {
+        if (clothingImagesCache) return clothingImagesCache;
+        if (clothingImagesPromise) return clothingImagesPromise;
+        clothingImagesPromise = fetchJson("data/europe-clothing-images.json")
+            .then((data) => {
+                clothingImagesCache = data.images || data;
+                return clothingImagesCache;
+            })
+            .catch((err) => {
+                console.warn("Clothing images bank failed:", err);
+                clothingImagesCache = {};
+                return clothingImagesCache;
+            });
+        return clothingImagesPromise;
+    }
+
+    function clothingImageForCountry(countryId) {
+        const file = clothingImagesCache && clothingImagesCache[countryId];
+        return file ? wikiCommonsImageUrl(file) : "";
+    }
 
     function parseGraphicValue(raw, fallbackIcon) {
         const text = String(raw || "");
@@ -2546,6 +2800,14 @@
         }
     }
 
+    async function hydrateClothingImages(items) {
+        await loadClothingImages();
+        items.forEach((item) => {
+            if (!item || item.imageKind !== "clothing") return;
+            item.image = clothingImageForCountry(item.id);
+        });
+    }
+
     async function hydrateCoatImages(items) {
         await Promise.all(items.map(async (item) => {
             if (!item || item.imageKind !== "coat") return;
@@ -2564,7 +2826,7 @@
 
     function buildMatchRoundPairs(round) {
         const kind = round.pairKind;
-        const count = Math.max(2, Math.min(10, round.count || 7));
+        const count = Math.max(2, Math.min(10, round.count || 5));
         const labelKey = getMatchLabelKey();
         const pool = getMatchBank().filter((c) => c[labelKey] && c[kind]);
         const priorityId = currentData && currentData.id === "ukraine" ? "kyivska" : "ukraine";
@@ -2613,7 +2875,7 @@
                     id: c.id,
                     text: parsed.text || c[labelKey],
                     icon: parsed.icon,
-                    image: graphicImageUrl("clothing", c.id, c.country, parsed.text),
+                    image: clothingImageForCountry(c.id),
                     graphic: true,
                     imageKind: "clothing"
                 };
@@ -2625,6 +2887,14 @@
                     id: c.id,
                     text: isUkraineMap ? value : value + " — " + geoMeta.type,
                     icon: isUkraineMap ? "🗺️" : geoMeta.icon,
+                    graphic: false
+                };
+            }
+            if (kind === "dish") {
+                return {
+                    id: c.id,
+                    text: formatDishLabel(value, c.id),
+                    icon: "🍽️",
                     graphic: false
                 };
             }
@@ -2733,7 +3003,7 @@
      * Кути камери (lon/tilt) обчислюються окремо, щоб центр екрана = ця точка.
      */
     const REGION_GEO_CENTERS = {
-        ukraine: { lat: 49.0, lon: 31.5 },
+        ukraine: { lat: 48.36, lon: 31.13 },
         europe: { lat: 54.5, lon: 17.5 },
         asia: { lat: 43.5, lon: 88.0 },
         africa: { lat: 5.5, lon: 22.5 },
@@ -3396,13 +3666,18 @@
         }
     }
 
-    function startNode(node) {
+    async function startNode(node) {
         audio.select();
         currentNode = node;
+        let rounds = node.rounds || [];
+        if (rounds.some((r) => r.type === "categoryPick")) {
+            rounds = await materializeSessionRounds(node);
+        }
         session = {
             correct: 0, wrong: 0, combo: 0, comboMax: 0, coinsEarned: 0, roundIndex: 0,
             puzzleMoves: 0, puzzleHint: false,
             roundCleanup: null,
+            rounds,
         };
         save.lastPlayed = { continentId: currentData.id, nodeId: node.id };
         saveSave();
@@ -3412,7 +3687,8 @@
 
     function renderRoundDots() {
         roundDots.innerHTML = "";
-        const total = currentNode.rounds.length;
+        const rounds = getSessionRounds();
+        const total = rounds.length;
         for (let i = 0; i < total; i++) {
             const d = document.createElement("span");
             d.className = "dot";
@@ -3420,7 +3696,7 @@
             if (i === session.roundIndex) d.classList.add("current");
             roundDots.appendChild(d);
         }
-        const round = currentNode.rounds[session.roundIndex];
+        const round = rounds[session.roundIndex];
         if (round && round.type === "puzzle") {
             gameLocation.textContent = currentNode.title + " · бонус";
         } else {
@@ -3533,7 +3809,7 @@
         imageQuiz(ctx, round) {
             gamePrompt.textContent = round.text;
             gameMedia.innerHTML = round.media || "";
-            const fitContain = round.imageFit === "contain";
+            const fitContain = round.imageFit !== "cover";
             gameAnswers.className = "answers image-grid" +
                 (fitContain ? " fit-contain" : "");
             gameAnswers.innerHTML = "";
@@ -3571,6 +3847,9 @@
             if (round.pairKind === "coat") {
                 await hydrateCoatImages(pairs.right);
             }
+            if (round.pairKind === "clothing") {
+                await hydrateClothingImages(pairs.right);
+            }
             const graphicalRound = GRAPHICAL_PAIR_KINDS.has(round.pairKind);
 
             const hint = document.createElement("p");
@@ -3602,10 +3881,18 @@
                 const btn = document.createElement("button");
                 btn.type = "button";
                 btn.className = "match-item " + side;
-                if (graphicalRound && side === "right") btn.classList.add("image-tile");
+                if (graphicalRound && side === "right") {
+                    btn.classList.add("image-tile");
+                    if (content.imageKind === "coat") btn.classList.add("coat-tile");
+                    if (content.imageKind === "clothing") btn.classList.add("clothing-tile");
+                }
                 if (content.image) {
                     const img = document.createElement("img");
-                    img.className = "match-photo" + (content.imageKind === "flag" ? " flag" : "");
+                    let photoClass = "match-photo";
+                    if (content.imageKind === "flag") photoClass += " flag";
+                    if (content.imageKind === "coat") photoClass += " coat";
+                    if (content.imageKind === "clothing") photoClass += " clothing";
+                    img.className = photoClass;
                     img.src = content.image;
                     img.alt = content.text || "зображення";
                     img.loading = "lazy";
@@ -3793,6 +4080,8 @@
             board.className = "puzzle-board";
             board.style.gridTemplateColumns = "repeat(" + cols + ", 1fr)";
             board.style.gridTemplateRows = "repeat(" + rows + ", 1fr)";
+            board.style.aspectRatio = cols + " / " + rows;
+            board.style.maxWidth = cols <= 3 ? "360px" : "500px";
 
             let order = [];
             for (let i = 0; i < total; i++) order.push(i);
@@ -3937,7 +4226,8 @@
             session.roundCleanup = null;
         }
         answering = false;
-        const round = currentNode.rounds[session.roundIndex];
+        const rounds = getSessionRounds();
+        const round = rounds[session.roundIndex];
         session.currentChoices = prepareRoundChoices(round);
         renderRoundDots();
         mentorBubble.textContent = "🧭 " + randomPick(PRAISE);
@@ -4003,7 +4293,7 @@
         }
         document.getElementById("modal-feedback").classList.remove("active");
         session.roundIndex++;
-        if (session.roundIndex >= currentNode.rounds.length) {
+        if (session.roundIndex >= getSessionRounds().length) {
             finishNode();
         } else {
             renderRound();
@@ -4020,7 +4310,7 @@
             try { session.roundCleanup(); } catch (_) {}
             session.roundCleanup = null;
         }
-        const total = currentNode.rounds.length;
+        const total = getSessionRounds().length;
         const stars = starsForSession(session.correct, total, session.wrong, session.comboMax);
         const cs = continentSave(currentData.id);
         const prev = cs.nodes[currentNode.id]?.stars || 0;

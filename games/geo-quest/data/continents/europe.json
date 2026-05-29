@@ -12,29 +12,14 @@
       "emoji": "🇺🇦",
       "countryId": "ukraine",
       "unlock": { "type": "free" },
-      "roundsFile": "data/rounds/ukraine-extra.json",
       "rounds": [
-        {
-          "type": "capital",
-          "text": "Столиця України:",
-          "country": "Україна",
-          "answers": ["Київ", "Львів", "Одеса", "Харків"],
-          "correct": 0,
-          "explanation": "Київ — столиця України з давніх часів."
-        },
-        {
-          "type": "quiz",
-          "text": "Яке море омиває південь України?",
-          "answers": ["Чорне", "Балтійське", "Середземне", "Північне"],
-          "correct": 0,
-          "explanation": "Південне узбережжя України — на Чорному морі."
-        },
-        {
-          "type": "yesno",
-          "text": "Дніпро — найдовша річка, що тече територією України.",
-          "correct": true,
-          "explanation": "Так. Дніпро перетинає Україну з півночі на південь."
-        }
+        { "type": "categoryPick", "category": "basics", "bankFile": "data/rounds/ukraine-europe-bank.json" },
+        { "type": "categoryPick", "category": "symbols", "bankFile": "data/rounds/ukraine-europe-bank.json" },
+        { "type": "categoryPick", "category": "people", "bankFile": "data/rounds/ukraine-europe-bank.json" },
+        { "type": "categoryPick", "category": "regions", "bankFile": "data/rounds/ukraine-europe-bank.json" },
+        { "type": "categoryPick", "category": "geography", "bankFile": "data/rounds/ukraine-europe-bank.json" },
+        { "type": "categoryPick", "category": "traditions", "bankFile": "data/rounds/ukraine-europe-bank.json" },
+        { "type": "categoryPick", "category": "cuisine-facts", "bankFile": "data/rounds/ukraine-europe-bank.json", "boss": true }
       ]
     },
     {
@@ -201,55 +186,55 @@
         {
           "type": "matchPairs",
           "pairKind": "capital",
-          "count": 7,
+          "count": 5,
           "text": "Співстав країни та їхні столиці."
         },
         {
           "type": "matchPairs",
           "pairKind": "flag",
-          "count": 7,
+          "count": 5,
           "text": "Співстав країни та їхні прапори."
         },
         {
           "type": "matchPairs",
           "pairKind": "coat",
-          "count": 7,
+          "count": 5,
           "text": "Співстав країни та символічні герби."
         },
         {
           "type": "matchPairs",
           "pairKind": "alphabet",
-          "count": 7,
+          "count": 5,
           "text": "Співстав країни та характерні літери їхніх алфавітів."
         },
         {
           "type": "matchPairs",
           "pairKind": "geo",
-          "count": 7,
+          "count": 5,
           "text": "Співстав країни та відомі географічні об'єкти."
         },
         {
           "type": "matchPairs",
           "pairKind": "fact",
-          "count": 7,
+          "count": 5,
           "text": "Співстав країни та цікаві факти про них."
         },
         {
           "type": "matchPairs",
           "pairKind": "dish",
-          "count": 7,
+          "count": 5,
           "text": "Співстав країни та національні страви."
         },
         {
           "type": "matchPairs",
           "pairKind": "clothing",
-          "count": 7,
+          "count": 5,
           "text": "Співстав країни та національний одяг."
         },
         {
           "type": "matchPairs",
           "pairKind": "hero",
-          "count": 7,
+          "count": 5,
           "text": "Співстав країни та відомих людей/національних героїв."
         }
       ]

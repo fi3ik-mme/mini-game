@@ -201,37 +201,37 @@
         {
           "type": "matchPairs",
           "pairKind": "capital",
-          "count": 7,
+          "count": 5,
           "text": "Співстав область та її обласний центр."
         },
         {
           "type": "matchPairs",
           "pairKind": "geo",
-          "count": 7,
+          "count": 5,
           "text": "Співстав область та відомий географічний об'єкт."
         },
         {
           "type": "matchPairs",
           "pairKind": "fact",
-          "count": 7,
+          "count": 5,
           "text": "Співстав область та цікавий факт."
         },
         {
           "type": "matchPairs",
           "pairKind": "dish",
-          "count": 7,
+          "count": 5,
           "text": "Співстав область та традиційну страву регіону."
         },
         {
           "type": "matchPairs",
           "pairKind": "hero",
-          "count": 7,
+          "count": 5,
           "text": "Співстав область та відому людину регіону."
         },
         {
           "type": "matchPairs",
           "pairKind": "symbol",
-          "count": 7,
+          "count": 5,
           "text": "Співстав область та символ або пам'ятку."
         }
       ]

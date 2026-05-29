@@ -1,4 +1,4 @@
-const CACHE_NAME = "mini-games-v36";
+const CACHE_NAME = "mini-games-v41";
 const IMAGE_CACHE_NAME = "mini-games-images-v2";
 const IMAGE_EXT_RE = /\.(png|jpe?g|webp|gif|svg|avif)(\?.*)?$/i;
 const IMAGE_WARMUP_CONCURRENCY = 2;
@@ -44,6 +44,8 @@ const PRECACHE = [
     "./games/geo-quest/data/continents/ukraine.json",
     "./games/geo-quest/data/continents/europe.json",
     "./games/geo-quest/data/rounds/ukraine-extra.json",
+    "./games/geo-quest/data/rounds/ukraine-europe-bank.json",
+    "./games/geo-quest/data/europe-clothing-images.json",
     "./games/geo-quest/data/rounds/ukraine-lviv-extra.json",
     "./games/geo-quest/data/rounds/ukraine-kyiv-extra.json",
     "./games/geo-quest/data/rounds/ukraine-odesa-extra.json",
@@ -56,7 +58,9 @@ const PRECACHE = [
     "./games/geo-quest/data/maps/europe-countries.json",
     "./games/geo-quest/data/maps/ocean-regions.json",
     "./games/geo-quest/assets/earth-equirect.jpg",
-    "./games/geo-quest/assets/europe-puzzle.svg"
+    "./games/geo-quest/assets/europe-puzzle.svg",
+    "./games/geo-quest/assets/puzzles/ukraine-phys.jpg",
+    "./games/geo-quest/assets/puzzles/france-phys.jpg"
 ];
 
 self.addEventListener("install", (event) => {

@@ -16,7 +16,10 @@ const VIEW_H = 780;
 const PAD = 28;
 const MARKER_PAD = 72;
 
-const PROJ = {
+/** Countries with game markers on the Europe map — projection fits their extent. */
+const PLAYABLE_MAP_IDS = ["ukraine", "poland", "france", "italy", "spain", "norway"];
+
+let PROJ = {
     lonMin: -18,
     lonMax: 48,
     latMin: 34,
@@ -156,6 +159,16 @@ const CAPITALS = {
     cyprus: [33.3823, 35.1856],
 };
 
+/** Metropolitan Europe bounds — excludes overseas territories when fitting the map. */
+const METRO_BOUNDS = {
+    ukraine: { lonMin: 22, lonMax: 40.5, latMin: 44, latMax: 52.5 },
+    poland: { lonMin: 14, lonMax: 24.5, latMin: 49, latMax: 55 },
+    france: { lonMin: -5.2, lonMax: 8.5, latMin: 41.3, latMax: 51.2 },
+    italy: { lonMin: 6.5, lonMax: 18.8, latMin: 36.5, latMax: 47.5 },
+    spain: { lonMin: -9.5, lonMax: 4.5, latMin: 36, latMax: 44.2 },
+    norway: { lonMin: 4.5, lonMax: 31.5, latMin: 57.8, latMax: 71.2 },
+};
+
 /** Non-European neighbors — land silhouettes. */
 const NEIGHBOR_ISO = ["MA", "DZ", "TN", "LY", "EG", "TR", "SY", "GE", "RU"];
 
@@ -170,6 +183,112 @@ const NEIGHBOR_LABELS = [
     { id: "georgia", title: "Грузія", lon: 44, lat: 42.5 },
     { id: "russia", title: "Росія", lon: 46, lat: 58 },
 ];
+
+function bboxOfRings(rings) {
+    let lonMin = Infinity;
+    let lonMax = -Infinity;
+    let latMin = Infinity;
+    let latMax = -Infinity;
+    for (const ring of rings) {
+        for (const [lon, lat] of ring) {
+            if (lon < lonMin) lonMin = lon;
+            if (lon > lonMax) lonMax = lon;
+            if (lat < latMin) latMin = lat;
+            if (lat > latMax) latMax = lat;
+        }
+    }
+    return { lonMin, lonMax, latMin, latMax };
+}
+
+function ringsInBounds(rings, bounds) {
+    return rings.filter((ring) => {
+        let lonSum = 0;
+        let latSum = 0;
+        let n = 0;
+        for (const [lon, lat] of ring) {
+            if (
+                lon >= bounds.lonMin &&
+                lon <= bounds.lonMax &&
+                lat >= bounds.latMin &&
+                lat <= bounds.latMax
+            ) {
+                lonSum += lon;
+                latSum += lat;
+                n++;
+            }
+        }
+        if (!n) return false;
+        const cLon = lonSum / n;
+        const cLat = latSum / n;
+        return (
+            cLon >= bounds.lonMin &&
+            cLon <= bounds.lonMax &&
+            cLat >= bounds.latMin &&
+            cLat <= bounds.latMax
+        );
+    });
+}
+
+function bboxOfRingsClipped(rings, bounds) {
+    let lonMin = Infinity;
+    let lonMax = -Infinity;
+    let latMin = Infinity;
+    let latMax = -Infinity;
+    for (const ring of rings) {
+        for (const [lon, lat] of ring) {
+            if (
+                lon >= bounds.lonMin &&
+                lon <= bounds.lonMax &&
+                lat >= bounds.latMin &&
+                lat <= bounds.latMax
+            ) {
+                if (lon < lonMin) lonMin = lon;
+                if (lon > lonMax) lonMax = lon;
+                if (lat < latMin) latMin = lat;
+                if (lat > latMax) latMax = lat;
+            }
+        }
+    }
+    return { lonMin, lonMax, latMin, latMax };
+}
+
+function mainlandRingsForCountry(id, rings) {
+    const bounds = METRO_BOUNDS[id];
+    if (!bounds) return rings;
+    const filtered = ringsInBounds(rings, bounds);
+    return filtered.length ? filtered : rings;
+}
+
+function computePlayableProjection(ne, crimea) {
+    let lonMin = Infinity;
+    let lonMax = -Infinity;
+    let latMin = Infinity;
+    let latMax = -Infinity;
+    for (const id of PLAYABLE_MAP_IDS) {
+        const iso = GAME_COUNTRIES[id];
+        const feat = findFeature(ne, iso);
+        if (!feat) continue;
+        let rings = ringsFromGeometry(feat.geometry);
+        if (id === "ukraine" && crimea && !ringsAlreadyIncludeCrimea(rings)) {
+            rings.push(crimea);
+        }
+        rings = mainlandRingsForCountry(id, rings);
+        const bounds = METRO_BOUNDS[id];
+        const bb = bounds ? bboxOfRingsClipped(rings, bounds) : bboxOfRings(rings);
+        if (bb.lonMin < lonMin) lonMin = bb.lonMin;
+        if (bb.lonMax > lonMax) lonMax = bb.lonMax;
+        if (bb.latMin < latMin) latMin = bb.latMin;
+        if (bb.latMax > latMax) latMax = bb.latMax;
+    }
+    return {
+        lonMin,
+        lonMax,
+        latMin,
+        latMax,
+        width: VIEW_W,
+        height: VIEW_H,
+    };
+}
 
 function project(lon, lat) {
     const { lonMin, lonMax, latMin, latMax } = PROJ;
@@ -248,8 +367,9 @@ function ringToPath(ring) {
 
 function ringIntersectsBbox(ring) {
     const { lonMin, lonMax, latMin, latMax } = PROJ;
+    const slack = 4;
     for (const [lon, lat] of ring) {
-        if (lon >= lonMin - 2 && lon <= lonMax + 2 && lat >= latMin - 2 && lat <= latMax + 2) {
+        if (lon >= lonMin - slack && lon <= lonMax + slack && lat >= latMin - slack && lat <= latMax + slack) {
             return true;
         }
     }
@@ -267,15 +387,18 @@ function geoPoint(lon, lat) {
 }
 
 function buildGraticule() {
+    const { lonMin, lonMax, latMin, latMax } = PROJ;
     let d = "";
-    for (let lon = -15; lon <= 45; lon += 5) {
-        const [x1, y1] = project(lon, PROJ.latMax);
-        const [x2, y2] = project(lon, PROJ.latMin);
+    const lonStep = Math.max(2, Math.round((lonMax - lonMin) / 7));
+    const latStep = Math.max(2, Math.round((latMax - latMin) / 7));
+    for (let lon = Math.ceil(lonMin / lonStep) * lonStep; lon <= lonMax; lon += lonStep) {
+        const [x1, y1] = project(lon, latMax);
+        const [x2, y2] = project(lon, latMin);
         d += `M${x1.toFixed(1)} ${y1.toFixed(1)} L${x2.toFixed(1)} ${y2.toFixed(1)} `;
     }
-    for (let lat = 35; lat <= 70; lat += 5) {
-        const [x1, y1] = project(PROJ.lonMin, lat);
-        const [x2, y2] = project(PROJ.lonMax, lat);
+    for (let lat = Math.ceil(latMin / latStep) * latStep; lat <= latMax; lat += latStep) {
+        const [x1, y1] = project(lonMin, lat);
+        const [x2, y2] = project(lonMax, lat);
         d += `M${x1.toFixed(1)} ${y1.toFixed(1)} L${x2.toFixed(1)} ${y2.toFixed(1)} `;
     }
     return d.trim();
@@ -302,8 +425,9 @@ function findFeature(geo, iso) {
     return feat;
 }
 
-function countryPathFromFeature(feat, extraRings = []) {
-    const rings = ringsFromGeometry(feat.geometry);
+function countryPathFromFeature(feat, extraRings = [], mainlandId = null) {
+    let rings = ringsFromGeometry(feat.geometry);
+    if (mainlandId) rings = mainlandRingsForCountry(mainlandId, rings);
     const all = [...rings, ...extraRings];
     const visible = all.filter(ringIntersectsBbox);
     if (!visible.length) return "";
@@ -315,6 +439,18 @@ async function main() {
     const ne = await loadGeoJson(localNe, NE_URL);
 
     const crimea = crimeaRingFromRussia(ne);
+    PROJ = computePlayableProjection(ne, crimea);
+    console.log(
+        "Playable bbox: lon",
+        PROJ.lonMin.toFixed(2),
+        "-",
+        PROJ.lonMax.toFixed(2),
+        "lat",
+        PROJ.latMin.toFixed(2),
+        "-",
+        PROJ.latMax.toFixed(2)
+    );
+
     const usedIso = new Set();
 
     const countries = [];
@@ -329,7 +465,11 @@ async function main() {
         if (id === "ukraine" && crimea && !ringsAlreadyIncludeCrimea(ringsFromGeometry(feat.geometry))) {
             extra.push(crimea);
         }
-        const path = countryPathFromFeature(feat, extra);
+        const path = countryPathFromFeature(
+            feat,
+            extra,
+            METRO_BOUNDS[id] ? id : null
+        );
         if (!path) continue;
         const cap = CAPITALS[id];
         const center = cap ? geoPoint(cap[0], cap[1]) : geoPoint(0, 0);
