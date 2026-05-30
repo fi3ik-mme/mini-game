@@ -249,15 +249,6 @@
       "rounds": [
         {
           "type": "puzzle",
-          "text": "Збери пазл 5×4 — уся карта Європи. Натисни дві плитки, щоб поміняти їх місцями.",
-          "cols": 5,
-          "rows": 4,
-          "mapId": "europe-countries",
-          "explanation": "Чудово! Ти склав карту Європи — усі країни на своїх місцях.",
-          "explainOnSuccess": true
-        },
-        {
-          "type": "puzzle",
           "text": "Пазл 3×4: Україна. Збери контур країни.",
           "cols": 3,
           "rows": 4,
@@ -299,7 +290,16 @@
           "rows": 4,
           "mapId": "europe-countries",
           "countryId": "germany",
-          "explanation": "Німеччина зібрана!",
+          "explanation": "Німеччина зібрана!"
+        },
+        {
+          "type": "puzzle",
+          "text": "Збери пазл 5×4 — уся карта Європи. Натисни дві плитки, щоб поміняти їх місцями.",
+          "cols": 5,
+          "rows": 4,
+          "mapId": "europe-countries",
+          "explanation": "Чудово! Ти склав карту Європи — усі країни на своїх місцях.",
+          "explainOnSuccess": true,
           "boss": true
         }
       ]

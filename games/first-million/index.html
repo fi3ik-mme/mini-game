@@ -918,6 +918,33 @@
         }
         .cheat-feedback.success { color: #86efac; }
         .cheat-feedback.error   { color: #fca5a5; }
+        .cheat-active-label {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin: 0 0 6px;
+            text-align: left;
+        }
+        .cheat-active-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 0 0 12px;
+            justify-content: flex-start;
+        }
+        .cheat-chip {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 5px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            color: #64748b;
+            background: rgba(255, 255, 255, 0.04);
+        }
+        .cheat-chip.on {
+            color: #fef3c7;
+            border-color: rgba(251, 191, 36, 0.55);
+            background: rgba(251, 191, 36, 0.18);
+        }
         .cheat-actions {
             display: flex;
             gap: 10px;
@@ -1543,6 +1570,8 @@
     <div class="modal">
         <div class="cheat-emoji" aria-hidden="true">🔑</div>
         <h3 id="cheat-title">Чіткод</h3>
+        <p class="cheat-active-label">Активні чіткоди:</p>
+        <div id="cheat-active-list" class="cheat-active-list"></div>
         <p class="cheat-hint">Введи секретне слово, щоб активувати бонус.</p>
         <input id="cheat-input" type="text" class="cheat-input"
                autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"
@@ -1811,6 +1840,10 @@
             isOn(name) { return !!load()[name]; },
             apply(effect) {
                 if (!effect || !effect.type) return;
+                if (effect.type === "resetAll") {
+                    save({});
+                    return;
+                }
                 const c = load();
                 if (effect.type === "unlockAll") c.unlockAll = true;
                 if (effect.type === "editor") c.editor = true;
@@ -2841,6 +2874,22 @@
 
     /* -------------------- Cheat modal -------------------- */
     let cheatCodes = []; // populated on first open from data/cheatcodes.json
+    let cheatCloseTimer = null;
+    const FM_CHEAT_DEFS = [
+        { key: "unlockAll", label: "Відкрий всі", icon: "🎉" },
+        { key: "editor", label: "Редактор", icon: "✏️" },
+    ];
+
+    function renderCheatsActiveList() {
+        const el = document.getElementById("cheat-active-list");
+        if (!el) return;
+        const active = cheats.get();
+        el.innerHTML = FM_CHEAT_DEFS.map((def) => {
+            const on = !!active[def.key];
+            return '<span class="cheat-chip' + (on ? " on" : "") + '">' +
+                def.icon + " " + def.label + (on ? " ✓" : "") + "</span>";
+        }).join("");
+    }
     async function loadCheatCodes() {
         if (cheatCodes.length) return cheatCodes;
         try {
@@ -2870,15 +2919,29 @@
 
     function openCheatModal() {
         loadCheatCodes(); // warm cache; not awaited so the dialog opens instantly
+        if (cheatCloseTimer) {
+            clearTimeout(cheatCloseTimer);
+            cheatCloseTimer = null;
+        }
         cheatInput.value = "";
         cheatInput.classList.remove("error");
         setCheatFeedback("", null);
+        renderCheatsActiveList();
         cheatModal.classList.add("active");
         // Focus on next tick so the focus actually lands inside the modal.
         setTimeout(() => cheatInput.focus(), 50);
     }
     function closeCheatModal() {
+        if (cheatCloseTimer) {
+            clearTimeout(cheatCloseTimer);
+            cheatCloseTimer = null;
+        }
         cheatModal.classList.remove("active");
+    }
+
+    function scheduleCloseCheatModal(ms) {
+        if (cheatCloseTimer) clearTimeout(cheatCloseTimer);
+        cheatCloseTimer = setTimeout(closeCheatModal, ms || 3000);
     }
 
     async function submitCheatCode() {
@@ -2906,10 +2969,10 @@
         audio.win();
         confetti(40);
         updateEditorLink();
+        renderCheatsActiveList();
         // Re-render subject list so newly-unlocked tiers light up immediately.
         loadSubjects();
-        // Auto-close after a short victory pause.
-        setTimeout(closeCheatModal, 1200);
+        scheduleCloseCheatModal(3000);
     }
 
     if (cheatToggle) {

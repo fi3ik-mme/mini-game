@@ -669,6 +669,23 @@
         .round-dots .dot.done { background: #22c55e; }
         .round-dots .dot.current { background: #fbbf24; transform: scale(1.2); }
 
+        .cheat-skip-btn {
+            display: block;
+            width: 100%;
+            max-width: 320px;
+            margin: 10px auto 0;
+            border: 2px solid rgba(251, 191, 36, 0.65);
+            border-radius: 14px;
+            background: linear-gradient(180deg, rgba(251, 191, 36, 0.28), rgba(217, 119, 6, 0.35));
+            color: #fef3c7;
+            font-size: 1rem;
+            font-weight: 700;
+            padding: 12px 18px;
+            cursor: pointer;
+        }
+        .cheat-skip-btn:active { transform: scale(0.98); }
+        .cheat-skip-btn[hidden] { display: none !important; }
+
         .mentor {
             width: 100%;
             padding: 10px 14px;
@@ -855,6 +872,63 @@
             color: white;
         }
         .modal-btn:active { opacity: 0.9; }
+        .cheat-input {
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: 10px;
+            background: rgba(15,23,42,0.85);
+            color: #f8fafc;
+            font-size: 1rem;
+            padding: 10px 12px;
+            margin-bottom: 10px;
+        }
+        .cheat-input:focus {
+            outline: 2px solid rgba(251,191,36,0.55);
+            outline-offset: 1px;
+        }
+        .cheat-msg {
+            min-height: 1.2em;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin: 0 0 12px;
+        }
+        .cheat-msg.ok { color: #86efac; }
+        .cheat-msg.err { color: #fca5a5; }
+        .cheat-active-label {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin: 0 0 6px;
+        }
+        .cheat-active-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 0 0 12px;
+        }
+        .cheat-chip {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 5px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            color: #64748b;
+            background: rgba(255, 255, 255, 0.04);
+        }
+        .cheat-chip.on {
+            color: #fef3c7;
+            border-color: rgba(251, 191, 36, 0.55);
+            background: rgba(251, 191, 36, 0.18);
+        }
+        .cheat-actions {
+            display: flex;
+            gap: 8px;
+        }
+        .cheat-actions .modal-btn { flex: 1; }
+        .modal-btn.secondary {
+            background: rgba(255,255,255,0.08);
+            color: #cbd5e1;
+        }
 
         .flash {
             pointer-events: none;
@@ -1121,6 +1195,7 @@
 <header class="top-bar">
     <a class="back-link" href="../../index.html">← Меню</a>
     <div class="top-controls">
+        <button id="cheats-toggle" class="icon-btn" type="button" aria-label="Чіткоди">🎮</button>
         <button id="sound-toggle" class="icon-btn" type="button" aria-label="Звук">🔊</button>
         <button id="voice-toggle" class="icon-btn" type="button" aria-label="Озвучка">🔇</button>
     </div>
@@ -1173,12 +1248,28 @@
     <div class="game-header">
         <div class="game-location" id="game-location">—</div>
         <div class="round-dots" id="round-dots"></div>
+        <button id="cheat-skip-btn" class="cheat-skip-btn" type="button" hidden>Далі →</button>
     </div>
     <div id="mentor-bubble" class="mentor">🧭 Капітан Компас: готовий до пригод?</div>
     <div id="game-prompt" class="prompt"></div>
     <div id="game-media" class="media"></div>
     <div id="game-answers" class="answers grid"></div>
 </section>
+
+<div id="modal-cheats" class="modal-backdrop" role="dialog">
+    <div class="modal">
+        <h3>🎮 Чіткоди</h3>
+        <p class="cheat-active-label">Активні чіткоди:</p>
+        <div id="cheat-active-list" class="cheat-active-list"></div>
+        <p>Введи секретний код:</p>
+        <input id="cheat-input" class="cheat-input" type="text" autocomplete="off" placeholder="код…">
+        <p id="cheat-msg" class="cheat-msg"></p>
+        <div class="cheat-actions">
+            <button id="cheat-submit" class="modal-btn" type="button">OK</button>
+            <button id="cheat-close-btn" class="modal-btn secondary" type="button">Закрити</button>
+        </div>
+    </div>
+</div>
 
 <div id="modal-locked" class="modal-backdrop" role="dialog">
     <div class="modal">
@@ -1256,8 +1347,21 @@
         voiceOn: false,
         lastPlayed: null,
         continents: {},
-        badges: []
+        badges: [],
+        cheats: { skipButton: false, unlockAll: false },
     };
+
+    const CHEAT_CODES = {
+        "кнопка далі": "skipButton",
+        "відкрити всі": "unlockAll",
+        "відкрий всі": "unlockAll",
+    };
+    const CHEAT_RESET_CODE = "чесно";
+    const CHEAT_DEFS = [
+        { key: "skipButton", label: "Кнопка «Далі»", icon: "⏭️" },
+        { key: "unlockAll", label: "Відкрити всі", icon: "🗺️" },
+    ];
+    let cheatCloseTimer = null;
 
     const hubScreen = document.getElementById("screen-hub");
     const mapScreen = document.getElementById("screen-map");
@@ -1287,6 +1391,10 @@
     const oceanZoomResetBtn = document.getElementById("ocean-zoom-reset");
     const soundToggle = document.getElementById("sound-toggle");
     const voiceToggle = document.getElementById("voice-toggle");
+    const cheatsToggle = document.getElementById("cheats-toggle");
+    const cheatInput = document.getElementById("cheat-input");
+    const cheatMsg = document.getElementById("cheat-msg");
+    const cheatSkipBtn = document.getElementById("cheat-skip-btn");
 
     const gameBase = (() => {
         const m = location.pathname.match(/^(.*\/games\/[^/]+)/);
@@ -1298,7 +1406,12 @@
         try {
             const raw = localStorage.getItem(STORAGE_KEY);
             if (!raw) return JSON.parse(JSON.stringify(DEFAULT_SAVE));
-            return { ...DEFAULT_SAVE, ...JSON.parse(raw) };
+            const parsed = JSON.parse(raw);
+            return {
+                ...DEFAULT_SAVE,
+                ...parsed,
+                cheats: { ...DEFAULT_SAVE.cheats, ...(parsed.cheats || {}) },
+            };
         } catch (_) {
             return JSON.parse(JSON.stringify(DEFAULT_SAVE));
         }
@@ -1431,6 +1544,26 @@
         return copy;
     }
 
+    /** Country puzzles first (shuffled); full-map puzzle always last. */
+    function preparePuzzleRounds(rounds) {
+        if (!rounds.some((r) => r.type === "puzzle")) return rounds;
+        const countryPuzzles = [];
+        const summaryPuzzles = [];
+        const other = [];
+        rounds.forEach((round) => {
+            if (round.type !== "puzzle") {
+                other.push(round);
+                return;
+            }
+            if (round.countryId) countryPuzzles.push(round);
+            else summaryPuzzles.push(round);
+        });
+        if (!countryPuzzles.length || !summaryPuzzles.length) return rounds;
+        const shuffledCountries = shuffleArray(countryPuzzles).map((round) => ({ ...round, boss: false }));
+        const finale = { ...summaryPuzzles[0], boss: true };
+        return other.concat(shuffledCountries, [finale], summaryPuzzles.slice(1));
+    }
+
     /** Shuffle answer options each time a round is shown (new order on replay). */
     function prepareRoundChoices(round) {
         if (!round) return null;
@@ -1551,7 +1684,162 @@
         voice.stop();
         screens.forEach(s => s.classList.toggle("active", s === el));
         window.scrollTo({ top: 0, behavior: "smooth" });
+        updateCheatSkipButton();
     }
+
+    function normalizeCheatInput(text) {
+        return (text || "").trim().toLowerCase().replace(/\s+/g, " ");
+    }
+
+    function ensureCheatsSave() {
+        if (!save.cheats) save.cheats = { ...DEFAULT_SAVE.cheats };
+    }
+
+    function updateCheatSkipButton() {
+        if (!cheatSkipBtn) return;
+        const rounds = session ? getSessionRounds() : [];
+        const hasMore = session && session.roundIndex < rounds.length;
+        const active = save.cheats?.skipButton && gameScreen.classList.contains("active") && hasMore;
+        cheatSkipBtn.hidden = !active;
+    }
+
+    function resetAllCheats() {
+        save.cheats = { ...DEFAULT_SAVE.cheats };
+        saveSave();
+        updateCheatSkipButton();
+    }
+
+    function cheatsAreActive() {
+        return save.cheats && Object.keys(save.cheats).some((k) => !!save.cheats[k]);
+    }
+
+    function activeCheatsSummary() {
+        return CHEAT_DEFS.filter((d) => save.cheats?.[d.key]).map((d) => d.label);
+    }
+
+    function renderCheatsActiveList() {
+        const el = document.getElementById("cheat-active-list");
+        if (!el) return;
+        ensureCheatsSave();
+        el.innerHTML = CHEAT_DEFS.map((def) => {
+            const on = !!save.cheats[def.key];
+            return '<span class="cheat-chip' + (on ? " on" : "") + '">' +
+                def.icon + " " + def.label + (on ? " ✓" : "") + "</span>";
+        }).join("");
+    }
+
+    function closeCheatsModal() {
+        if (cheatCloseTimer) {
+            clearTimeout(cheatCloseTimer);
+            cheatCloseTimer = null;
+        }
+        document.getElementById("modal-cheats").classList.remove("active");
+    }
+
+    function scheduleCloseCheatsModal(ms) {
+        if (cheatCloseTimer) clearTimeout(cheatCloseTimer);
+        cheatCloseTimer = setTimeout(closeCheatsModal, ms || 3000);
+    }
+
+    function applyCheatCode(code) {
+        ensureCheatsSave();
+        if (code === CHEAT_RESET_CODE) {
+            const hadAny = cheatsAreActive();
+            resetAllCheats();
+            return hadAny ? "reset" : "resetIdle";
+        }
+        const key = CHEAT_CODES[code];
+        if (!key) return false;
+        if (save.cheats[key]) return "already";
+        save.cheats[key] = true;
+        saveSave();
+        updateCheatSkipButton();
+        return key;
+    }
+
+    function skipRoundViaCheat() {
+        if (!save.cheats?.skipButton || !session) return;
+        audio.tap();
+        document.getElementById("modal-feedback").classList.remove("active");
+        answering = false;
+        advanceRound();
+    }
+
+    function openCheatsModal() {
+        audio.tap();
+        if (cheatCloseTimer) {
+            clearTimeout(cheatCloseTimer);
+            cheatCloseTimer = null;
+        }
+        if (cheatInput) {
+            cheatInput.value = "";
+            cheatInput.focus();
+        }
+        if (cheatMsg) {
+            cheatMsg.textContent = "";
+            cheatMsg.className = "cheat-msg";
+        }
+        renderCheatsActiveList();
+        document.getElementById("modal-cheats").classList.add("active");
+    }
+
+    function onCheatSubmitResult(result) {
+        renderCheatsActiveList();
+        if (result === false) return;
+        scheduleCloseCheatsModal(3000);
+    }
+
+    function submitCheatCode() {
+        const code = normalizeCheatInput(cheatInput && cheatInput.value);
+        if (!code) {
+            cheatMsg.textContent = "Введи код.";
+            cheatMsg.className = "cheat-msg err";
+            return;
+        }
+        const result = applyCheatCode(code);
+        if (result === "skipButton") {
+            cheatMsg.textContent = "✓ Код прийнято! Тепер у кожній міні-грі з'явиться кнопка «Далі».";
+            cheatMsg.className = "cheat-msg ok";
+            toast("Чіткод: кнопка «Далі»");
+            audio.win();
+        } else if (result === "unlockAll") {
+            cheatMsg.textContent = "✓ Усі локації та бонусні міні-ігри відкриті!";
+            cheatMsg.className = "cheat-msg ok";
+            toast("Чіткод: відкрити всі");
+            audio.win();
+            if (currentData && mapScreen.classList.contains("active")) {
+                renderMap().catch(console.error);
+            }
+        } else if (result === "reset") {
+            cheatMsg.textContent = "✓ Граємо чесно — усі чіткоди вимкнено.";
+            cheatMsg.className = "cheat-msg ok";
+            toast("Чіткод: чесна гра");
+            audio.tap();
+        } else if (result === "resetIdle") {
+            cheatMsg.textContent = "Чіткоди вже вимкнені.";
+            cheatMsg.className = "cheat-msg ok";
+        } else if (result === "already") {
+            cheatMsg.textContent = "Цей код уже активовано.";
+            cheatMsg.className = "cheat-msg ok";
+        } else {
+            cheatMsg.textContent = "Невідомий код.";
+            cheatMsg.className = "cheat-msg err";
+            audio.wrong();
+            return;
+        }
+        onCheatSubmitResult(result);
+    }
+
+    cheatsToggle.addEventListener("click", openCheatsModal);
+    document.getElementById("cheat-submit").addEventListener("click", submitCheatCode);
+    document.getElementById("cheat-close-btn")?.addEventListener("click", () => {
+        audio.tap();
+        closeCheatsModal();
+    });
+    cheatInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") submitCheatCode();
+    });
+    cheatSkipBtn.addEventListener("click", skipRoundViaCheat);
 
     let world = null;
     let worldPromise = null;
@@ -1717,18 +2005,30 @@
         };
     }
 
-    function puzzleCoverTransform(bbox, cw, ch) {
-        const scale = Math.max(cw / bbox.w, ch / bbox.h);
-        const visW = cw / scale;
-        const visH = ch / scale;
+    function puzzleCoverTransform(bbox, cw, ch, pad) {
+        const padding = pad || 1.06;
+        const aspect = cw / ch;
+        const geoAspect = bbox.w / Math.max(bbox.h, 0.01);
+        let visW;
+        let visH;
+        if (geoAspect > aspect) {
+            visW = bbox.w * padding;
+            visH = visW / aspect;
+        } else {
+            visH = bbox.h * padding;
+            visW = visH * aspect;
+        }
+        const scale = cw / visW;
+        const visMinX = bbox.minX + (bbox.w - visW) / 2;
+        const visMinY = bbox.minY + (bbox.h - visH) / 2;
         return {
             scale,
-            ox: (cw - bbox.w * scale) / 2 - bbox.minX * scale,
-            oy: (ch - bbox.h * scale) / 2 - bbox.minY * scale,
-            visMinX: bbox.minX + (bbox.w - visW) / 2,
-            visMinY: bbox.minY + (bbox.h - visH) / 2,
-            visMaxX: bbox.minX + (bbox.w + visW) / 2,
-            visMaxY: bbox.minY + (bbox.h + visH) / 2,
+            ox: -visMinX * scale,
+            oy: -visMinY * scale,
+            visMinX,
+            visMinY,
+            visMaxX: visMinX + visW,
+            visMaxY: visMinY + visH,
         };
     }
 
@@ -1761,6 +2061,55 @@
         const renderedH = rect.height || Math.min(window.innerHeight * 0.78, 680);
         const svgPerPx = mapH / renderedH;
         return (cmDown - cmUp) * pxPerCm * svgPerPx;
+    }
+
+    function svgUnitsPerCssCm(axis) {
+        const pxPerCm = 96 / 2.54;
+        const rect = mapSvg.getBoundingClientRect();
+        const vb = mapSvg.viewBox.baseVal;
+        if (axis === "x") {
+            const renderedW = rect.width || mapSvg.clientWidth || 360;
+            const mapW = vb.width || oceanMapZoom.w || 1000;
+            return (mapW / renderedW) * pxPerCm;
+        }
+        const renderedH = rect.height || mapSvg.clientHeight || 480;
+        const mapH = vb.height || oceanMapZoom.h || 780;
+        return (mapH / renderedH) * pxPerCm;
+    }
+
+    /**
+     * Zoom/pan so a country silhouette fits inside the viewport.
+     * Uses preferredScale (e.g. 1.35) when it fits; otherwise the largest scale that keeps all edges visible.
+     */
+    function fitSilhouetteMapView(silhouettePath, options) {
+        const bb = pathBBox(silhouettePath);
+        if (!bb || !bb.w || !bb.h || !oceanMapZoom.active) return;
+        const pad = (options && options.padding) != null ? options.padding : 16;
+        const cx0 = (bb.minX + bb.maxX) / 2;
+        const cy0 = (bb.minY + bb.maxY) / 2;
+        const halfW = Math.max(cx0 - bb.minX, bb.maxX - cx0) + pad;
+        const halfH = Math.max(cy0 - bb.minY, bb.maxY - cy0) + pad;
+        const z = oceanMapZoom;
+        const maxFit = Math.min(z.w / (halfW * 2), z.h / (halfH * 2), z.max);
+        const preferred = (options && options.preferredScale) != null ? options.preferredScale : 1.35;
+        const scale = Math.max(z.min, Math.min(preferred, maxFit));
+        const vw = z.w / scale;
+        const vh = z.h / scale;
+        const shiftCm = (options && options.centerShiftCmRight) || 0;
+        let cx = cx0 + shiftCm * svgUnitsPerCssCm("x");
+        let cy = cy0;
+        const minCx = bb.minX + vw / 2;
+        const maxCx = bb.maxX - vw / 2;
+        const minCy = bb.minY + vh / 2;
+        const maxCy = bb.maxY - vh / 2;
+        if (minCx <= maxCx) cx = Math.min(maxCx, Math.max(minCx, cx));
+        else cx = cx0;
+        if (minCy <= maxCy) cy = Math.min(maxCy, Math.max(minCy, cy));
+        else cy = cy0;
+        z.scale = scale;
+        z.cx = cx;
+        z.cy = cy;
+        applyOceanViewBox();
     }
 
     function getGeoFeaturePoint(geo, feature) {
@@ -2285,6 +2634,7 @@
     }
 
     function canUnlockNode(node, data) {
+        if (save.cheats?.unlockAll) return true;
         const u = node.unlock;
         if (u?.type === "bonus") {
             const need = u.minStars ?? UNLOCK_MIN_STARS;
@@ -2331,6 +2681,9 @@
     const PREMIUM_PUZZLE_TEXTURES = {
         ukraine: "assets/puzzles/ukraine-phys.jpg",
         france: "assets/puzzles/france-phys.jpg",
+        spain: "assets/puzzles/spain-phys.jpg",
+        sweden: "assets/puzzles/sweden-phys.jpg",
+        germany: "assets/puzzles/germany-phys.jpg",
     };
     const PUZZLE_NATURAL_COLORS = [
         "#7aa874", "#8eb67a", "#c0b37a", "#b88d66", "#9fbf88", "#a7a07a",
@@ -3623,6 +3976,15 @@
             if (isOceanWorld) mapSvg.setAttribute("preserveAspectRatio", "xMidYMid meet");
             bindOceanMapZoomHandlers();
             setupOceanMapZoom(w, h);
+            if (isUkraineTravel && ukraineShapeEarly && ukraineShapeEarly.path) {
+                requestAnimationFrame(() => {
+                    fitSilhouetteMapView(ukraineShapeEarly.path, {
+                        preferredScale: 1.35,
+                        centerShiftCmRight: 2,
+                        padding: 16,
+                    });
+                });
+            }
         } else {
             teardownOceanMapZoom();
         }
@@ -3653,14 +4015,16 @@
             g.addEventListener("click", onTap);
         });
 
-        const current = currentData.nodes.find(n => nodeStatusClass(n, currentData) === "current");
-        if (current) {
-            const c = getNodeCenter(geo, current);
-            if (c) {
-                if (isZoomMap) {
-                    focusOceanPoint(c.x, c.y, Math.max(1.35, oceanMapZoom.scale));
-                } else {
-                    document.getElementById("map-scroll").scrollTop = Math.max(0, c.y - 120);
+        if (!isUkraineTravel) {
+            const current = currentData.nodes.find(n => nodeStatusClass(n, currentData) === "current");
+            if (current) {
+                const c = getNodeCenter(geo, current);
+                if (c) {
+                    if (isZoomMap) {
+                        focusOceanPoint(c.x, c.y, Math.max(1.35, oceanMapZoom.scale));
+                    } else {
+                        document.getElementById("map-scroll").scrollTop = Math.max(0, c.y - 120);
+                    }
                 }
             }
         }
@@ -3673,6 +4037,7 @@
         if (rounds.some((r) => r.type === "categoryPick")) {
             rounds = await materializeSessionRounds(node);
         }
+        rounds = preparePuzzleRounds(rounds);
         session = {
             correct: 0, wrong: 0, combo: 0, comboMax: 0, coinsEarned: 0, roundIndex: 0,
             puzzleMoves: 0, puzzleHint: false,
@@ -4238,6 +4603,7 @@
             return;
         }
         Promise.resolve(fn(null, round)).catch(console.error);
+        updateCheatSkipButton();
     }
 
     function awardCoins(amount, round) {
@@ -4334,6 +4700,7 @@
         document.getElementById("result-stars").textContent = stars > 0 ? "⭐".repeat(stars) : "—";
         document.getElementById("result-coins").textContent = "+" + session.coinsEarned + " монет";
         document.getElementById("modal-result").classList.add("active");
+        updateCheatSkipButton();
         if (stars >= 2) {
             audio.win();
             confetti(stars === 3 ? 40 : 20);
@@ -4400,6 +4767,7 @@
 
     async function init() {
         updateHud();
+        updateCheatSkipButton();
         const texturePromise = globe.loadTexture().catch((e) => {
             console.warn("Globe texture:", e);
         });

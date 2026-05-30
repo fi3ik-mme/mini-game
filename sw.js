@@ -60,7 +60,10 @@ const PRECACHE = [
     "./games/geo-quest/assets/earth-equirect.jpg",
     "./games/geo-quest/assets/europe-puzzle.svg",
     "./games/geo-quest/assets/puzzles/ukraine-phys.jpg",
-    "./games/geo-quest/assets/puzzles/france-phys.jpg"
+    "./games/geo-quest/assets/puzzles/france-phys.jpg",
+    "./games/geo-quest/assets/puzzles/spain-phys.jpg",
+    "./games/geo-quest/assets/puzzles/sweden-phys.jpg",
+    "./games/geo-quest/assets/puzzles/germany-phys.jpg"
 ];
 
 self.addEventListener("install", (event) => {
