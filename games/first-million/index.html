@@ -2874,6 +2874,7 @@
 
     /* -------------------- Cheat modal -------------------- */
     let cheatCodes = []; // populated on first open from data/cheatcodes.json
+    const CHEAT_MODAL_AUTO_CLOSE_MS = 3000;
     let cheatCloseTimer = null;
     const FM_CHEAT_DEFS = [
         { key: "unlockAll", label: "Відкрий всі", icon: "🎉" },
@@ -2941,7 +2942,7 @@
 
     function scheduleCloseCheatModal(ms) {
         if (cheatCloseTimer) clearTimeout(cheatCloseTimer);
-        cheatCloseTimer = setTimeout(closeCheatModal, ms || 3000);
+        cheatCloseTimer = setTimeout(closeCheatModal, ms || CHEAT_MODAL_AUTO_CLOSE_MS);
     }
 
     async function submitCheatCode() {
@@ -2972,7 +2973,7 @@
         renderCheatsActiveList();
         // Re-render subject list so newly-unlocked tiers light up immediately.
         loadSubjects();
-        scheduleCloseCheatModal(3000);
+        scheduleCloseCheatModal();
     }
 
     if (cheatToggle) {

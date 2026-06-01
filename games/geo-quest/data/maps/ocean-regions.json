@@ -22,6 +22,8 @@
       "lon": -42,
       "lat": 8,
       "markerOffsetY": 60,
+      "nudgeRightCm": 1,
+      "nudgeDownCm": 1,
       "marker": {
         "lon": -42,
         "lat": 8,

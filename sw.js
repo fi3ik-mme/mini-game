@@ -1,4 +1,4 @@
-const CACHE_NAME = "mini-games-v41";
+const CACHE_NAME = "mini-games-v47";
 const IMAGE_CACHE_NAME = "mini-games-images-v2";
 const IMAGE_EXT_RE = /\.(png|jpe?g|webp|gif|svg|avif)(\?.*)?$/i;
 const IMAGE_WARMUP_CONCURRENCY = 2;
@@ -47,17 +47,19 @@ const PRECACHE = [
     "./games/geo-quest/data/rounds/ukraine-europe-bank.json",
     "./games/geo-quest/data/europe-clothing-images.json",
     "./games/geo-quest/data/rounds/ukraine-lviv-extra.json",
-    "./games/geo-quest/data/rounds/ukraine-kyiv-extra.json",
-    "./games/geo-quest/data/rounds/ukraine-odesa-extra.json",
-    "./games/geo-quest/data/rounds/ukraine-black-sea-extra.json",
-    "./games/geo-quest/data/rounds/ukraine-carpathians-extra.json",
-    "./games/geo-quest/data/rounds/ukraine-dnipro-extra.json",
+    "./games/geo-quest/data/rounds/ukraine-lviv-bank.json",
+    "./games/geo-quest/data/rounds/ukraine-kyiv-bank.json",
+    "./games/geo-quest/data/rounds/ukraine-odesa-bank.json",
+    "./games/geo-quest/data/rounds/ukraine-black-sea-bank.json",
+    "./games/geo-quest/data/rounds/ukraine-carpathians-bank.json",
+    "./games/geo-quest/data/rounds/ukraine-dnipro-bank.json",
     "./games/geo-quest/data/maps/ukraine-travel.json",
     "./games/geo-quest/data/continents/ocean.json",
     "./games/geo-quest/data/maps/europe-simple.json",
     "./games/geo-quest/data/maps/europe-countries.json",
     "./games/geo-quest/data/maps/ocean-regions.json",
     "./games/geo-quest/assets/earth-equirect.jpg",
+    "./games/geo-quest/assets/ukraine-terrain.jpg",
     "./games/geo-quest/assets/europe-puzzle.svg",
     "./games/geo-quest/assets/puzzles/ukraine-phys.jpg",
     "./games/geo-quest/assets/puzzles/france-phys.jpg",

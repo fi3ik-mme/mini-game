@@ -372,6 +372,10 @@
             aspect-ratio: 1000 / 780;
             max-height: min(78vh, 680px);
         }
+        .map-scroll.ukraine-map .ukraine-terrain-base {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+        }
         .map-scroll.europe-map .map-svg {
             width: 100%;
             height: auto;
@@ -528,9 +532,26 @@
             fill: rgba(34, 197, 94, 0.48);
         }
         .map-scroll.ukraine-map .map-ukraine-silhouette {
-            fill: rgba(255, 213, 0, 0.42);
-            stroke: #005bbb;
-            stroke-width: 2.4;
+            fill: rgba(255, 213, 0, 0.22);
+            stroke: #fde047;
+            stroke-width: 2.8;
+            paint-order: stroke fill;
+            filter: drop-shadow(0 0 2px rgba(0, 91, 187, 0.9));
+        }
+        .map-scroll.ukraine-map .map-river {
+            fill: none;
+            stroke: #bae6fd;
+            stroke-width: 2.2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            opacity: 0.95;
+            pointer-events: none;
+            filter: drop-shadow(0 0 1px rgba(8, 47, 73, 0.85));
+        }
+        .map-scroll.ukraine-map .map-river-dnipro {
+            stroke: #e0f2fe;
+            stroke-width: 3.2;
+            opacity: 1;
         }
         .map-river {
             fill: none;
@@ -1361,6 +1382,7 @@
         { key: "skipButton", label: "Кнопка «Далі»", icon: "⏭️" },
         { key: "unlockAll", label: "Відкрити всі", icon: "🗺️" },
     ];
+    const CHEAT_MODAL_AUTO_CLOSE_MS = 3000;
     let cheatCloseTimer = null;
 
     const hubScreen = document.getElementById("screen-hub");
@@ -1738,7 +1760,7 @@
 
     function scheduleCloseCheatsModal(ms) {
         if (cheatCloseTimer) clearTimeout(cheatCloseTimer);
-        cheatCloseTimer = setTimeout(closeCheatsModal, ms || 3000);
+        cheatCloseTimer = setTimeout(closeCheatsModal, ms || CHEAT_MODAL_AUTO_CLOSE_MS);
     }
 
     function applyCheatCode(code) {
@@ -1785,8 +1807,9 @@
 
     function onCheatSubmitResult(result) {
         renderCheatsActiveList();
-        if (result === false) return;
-        scheduleCloseCheatsModal(3000);
+        const activated = result === "skipButton" || result === "unlockAll" || result === "reset";
+        if (!activated) return;
+        scheduleCloseCheatsModal();
     }
 
     function submitCheatCode() {
@@ -1837,7 +1860,13 @@
         closeCheatsModal();
     });
     cheatInput.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") submitCheatCode();
+        if (e.key === "Enter") {
+            e.preventDefault();
+            submitCheatCode();
+        } else if (e.key === "Escape") {
+            e.preventDefault();
+            closeCheatsModal();
+        }
     });
     cheatSkipBtn.addEventListener("click", skipRoundViaCheat);
 
@@ -1960,6 +1989,16 @@
         return { x: cx, y: cy };
     }
 
+    function mapUsesWebMercator(geo) {
+        const pr = geo && geo.projection;
+        return !!(pr && (pr.type === "webMercator" || geo.theme === "ukraine-travel"));
+    }
+
+    function mercatorYDeg(lat) {
+        const latRad = lat * Math.PI / 180;
+        return Math.log(Math.tan(Math.PI / 4 + latRad / 2));
+    }
+
     function projectMapGeo(geo, lon, lat) {
         const pr = geo.projection || {};
         const pad = pr.pad ?? (geo.theme === "world-ocean" ? 6 : 28);
@@ -1970,10 +2009,20 @@
         const latMin = pr.latMin ?? -90;
         const latMax = pr.latMax ?? 90;
         const lonSpan = lonMax - lonMin || 360;
+        const innerW = mapW - pad * 2;
+        const innerH = mapH - pad * 2;
+        if (mapUsesWebMercator(geo)) {
+            const mercNorth = mercatorYDeg(latMax);
+            const mercSouth = mercatorYDeg(latMin);
+            return {
+                x: ((lon - lonMin) / lonSpan) * innerW + pad,
+                y: ((mercNorth - mercatorYDeg(lat)) / (mercNorth - mercSouth)) * innerH + pad,
+            };
+        }
         const latSpan = latMax - latMin || 180;
         return {
-            x: ((lon - lonMin) / lonSpan) * (mapW - pad * 2) + pad,
-            y: ((latMax - lat) / latSpan) * (mapH - pad * 2) + pad,
+            x: ((lon - lonMin) / lonSpan) * innerW + pad,
+            y: ((latMax - lat) / latSpan) * innerH + pad,
         };
     }
 
@@ -1987,10 +2036,20 @@
         const latMin = pr.latMin ?? -90;
         const latMax = pr.latMax ?? 90;
         const lonSpan = lonMax - lonMin || 360;
+        const innerW = mapW - pad * 2;
+        const innerH = mapH - pad * 2;
+        const lon = lonMin + ((x - pad) / innerW) * lonSpan;
+        if (mapUsesWebMercator(geo)) {
+            const mercNorth = mercatorYDeg(latMax);
+            const mercSouth = mercatorYDeg(latMin);
+            const merc = mercNorth - ((y - pad) / innerH) * (mercNorth - mercSouth);
+            const lat = (180 / Math.PI) * (2 * Math.atan(Math.exp(merc)) - Math.PI / 2);
+            return { lon, lat };
+        }
         const latSpan = latMax - latMin || 180;
         return {
-            lon: lonMin + ((x - pad) / (mapW - pad * 2)) * lonSpan,
-            lat: latMax - ((y - pad) / (mapH - pad * 2)) * latSpan,
+            lon,
+            lat: latMax - ((y - pad) / innerH) * latSpan,
         };
     }
 
@@ -2005,13 +2064,22 @@
         };
     }
 
-    function puzzleCoverTransform(bbox, cw, ch, pad) {
-        const padding = pad || 1.06;
+    function puzzleCoverTransform(bbox, cw, ch, pad, fit) {
+        const padding = pad == null ? 1.06 : pad;
+        const mode = fit || "contain";
         const aspect = cw / ch;
         const geoAspect = bbox.w / Math.max(bbox.h, 0.01);
         let visW;
         let visH;
-        if (geoAspect > aspect) {
+        if (mode === "cover") {
+            if (geoAspect > aspect) {
+                visH = bbox.h * padding;
+                visW = visH * aspect;
+            } else {
+                visW = bbox.w * padding;
+                visH = visW / aspect;
+            }
+        } else if (geoAspect > aspect) {
             visW = bbox.w * padding;
             visH = visW / aspect;
         } else {
@@ -2061,6 +2129,19 @@
         const renderedH = rect.height || Math.min(window.innerHeight * 0.78, 680);
         const svgPerPx = mapH / renderedH;
         return (cmDown - cmUp) * pxPerCm * svgPerPx;
+    }
+
+    function markerCmOffsetX(feature, geo) {
+        const cmRight = feature.nudgeRightCm ?? 0;
+        const cmLeft = feature.nudgeLeftCm ?? 0;
+        if (!cmRight && !cmLeft) return 0;
+        const pr = geo?.projection;
+        const mapW = pr?.width || (geo?.viewBox ? +geo.viewBox.split(/\s+/)[2] : 0) || 1000;
+        const pxPerCm = 96 / 2.54;
+        const rect = mapSvg.getBoundingClientRect();
+        const renderedW = rect.width || mapSvg.clientWidth || 360;
+        const svgPerPx = mapW / renderedW;
+        return (cmRight - cmLeft) * pxPerCm * svgPerPx;
     }
 
     function svgUnitsPerCssCm(axis) {
@@ -2117,16 +2198,17 @@
         const lon = feature.lon ?? feature.center?.lon ?? feature.marker?.lon;
         const lat = feature.lat ?? feature.center?.lat ?? feature.marker?.lat;
         const cmDy = markerCmOffsetY(feature, geo);
+        const cmDx = markerCmOffsetX(feature, geo);
         if (geo?.projection && lon != null && lat != null) {
             const pt = projectMapGeo(geo, lon, lat);
             const dy = (feature.markerOffsetY ?? 0) + cmDy;
-            const dx = feature.markerOffsetX ?? 0;
+            const dx = (feature.markerOffsetX ?? 0) + cmDx;
             return { x: pt.x + dx, y: pt.y + dy };
         }
         const pt = feature.marker || feature.center;
         if (!pt) return null;
         const dy = (feature.markerOffsetY ?? 0) + cmDy;
-        const dx = feature.markerOffsetX ?? 0;
+        const dx = (feature.markerOffsetX ?? 0) + cmDx;
         return { x: pt.x + dx, y: pt.y + dy };
     }
 
@@ -2458,6 +2540,32 @@
         return html;
     }
 
+    function renderUkraineTravelLayers(geo, w, h) {
+        const tex = geo.earthTexture || "assets/ukraine-terrain.jpg";
+        let html = "<defs>";
+        html += '<pattern id="ukraineEarthTex" patternUnits="userSpaceOnUse" width="' + w +
+            '" height="' + h + '">';
+        html += '<image class="ukraine-terrain-base" href="' + tex + '" x="0" y="0" width="' + w +
+            '" height="' + h + '" preserveAspectRatio="none"/>';
+        html += "</pattern>";
+        html += '<filter id="ukraineTerrainSharp" color-interpolation-filters="sRGB">' +
+            '<feColorMatrix type="saturate" values="1.12"/>' +
+            '<feComponentTransfer>' +
+            '<feFuncR type="linear" slope="1.08" intercept="-0.03"/>' +
+            '<feFuncG type="linear" slope="1.08" intercept="-0.03"/>' +
+            '<feFuncB type="linear" slope="1.1" intercept="-0.02"/>' +
+            "</feComponentTransfer></filter>";
+        html += "</defs>";
+        html += '<rect class="ukraine-terrain-base" width="' + w + '" height="' + h +
+            '" fill="url(#ukraineEarthTex)" filter="url(#ukraineTerrainSharp)"/>';
+        html += '<rect width="' + w + '" height="' + h +
+            '" fill="rgba(6, 42, 71, 0.06)" pointer-events="none"/>';
+        if (geo.graticule) {
+            html += '<path class="world-graticule" d="' + geo.graticule + '"/>';
+        }
+        return html;
+    }
+
     function renderRegionalEarthLayers(geo, w, h, patternId) {
         const tex = geo.earthTexture || "assets/earth-equirect.jpg";
         const pr = geo.projection || {};
@@ -2677,7 +2785,7 @@
     }
 
     const puzzleImageCache = {};
-    /** Pre-rendered satellite + physical-map puzzle art (720×960). */
+    /** Pre-rendered satellite + physical-map puzzle art (Ukraine 960×720, others 720×960). */
     const PREMIUM_PUZZLE_TEXTURES = {
         ukraine: "assets/puzzles/ukraine-phys.jpg",
         france: "assets/puzzles/france-phys.jpg",
@@ -2761,8 +2869,12 @@
         const vw = parts[2] || 1000;
         const vh = parts[3] || 780;
         const targetCountryId = countryId || mapData.mapFill || null;
-        const cw = targetCountryId ? 360 : 500;
-        const ch = targetCountryId ? 480 : 400;
+        const isUkrainePuzzle = mapId === "ukraine-travel" ||
+            targetCountryId === "ukraine" || countryId === "ukraine";
+        const cw = targetCountryId ? (isUkrainePuzzle ? 480 : 360) : 500;
+        const ch = targetCountryId ? (isUkrainePuzzle ? 360 : 480) : 400;
+        const puzzleFramePad = isUkrainePuzzle ? 1 : 1.06;
+        const puzzleFrameFit = isUkrainePuzzle ? "cover" : "contain";
         const canvas = document.createElement("canvas");
         canvas.width = cw;
         canvas.height = ch;
@@ -2776,7 +2888,7 @@
             if (country) {
                 const bbox = pathBBox(country.path);
                 if (bbox && bbox.w > 0 && bbox.h > 0) {
-                    const xf = puzzleCoverTransform(bbox, cw, ch);
+                    const xf = puzzleCoverTransform(bbox, cw, ch, puzzleFramePad, puzzleFrameFit);
                     const geoBounds = geoBoundsFromSvgRect(mapData, {
                         minX: xf.visMinX,
                         minY: xf.visMinY,
@@ -3355,6 +3467,10 @@
      * Геометричні центри регіонів (lat/lon на Землі).
      * Кути камери (lon/tilt) обчислюються окремо, щоб центр екрана = ця точка.
      */
+    /** Extra screen offset when flying from globe (cm right / down at max zoom). */
+    const REGION_GEO_FLIGHT_SHIFT_CM = {
+        ukraine: { right: 2 },
+    };
     const REGION_GEO_CENTERS = {
         ukraine: { lat: 48.36, lon: 31.13 },
         europe: { lat: 54.5, lon: 17.5 },
@@ -3682,8 +3798,38 @@
             }
         }
 
+        function geoAtScreenOffsetFromCenter(lat0, lon0, cmRight, cmDown, atZoom) {
+            const savedLon = lon;
+            const savedTilt = tilt;
+            const savedZoom = zoom;
+            zoom = atZoom || FLIGHT_MAX_ZOOM;
+            const aimed = anglesToCenterGeo(lat0, lon0);
+            lon = aimed.lon;
+            tilt = aimed.tilt;
+            applyTransform();
+            const { size } = globeCanvasSize();
+            const rect = globeCanvas.getBoundingClientRect();
+            const pxPerCm = 96 / 2.54;
+            const scale = rect.width ? globeCanvas.width / rect.width : 1;
+            const px = size / 2 + (cmRight || 0) * pxPerCm * scale;
+            const py = size / 2 + (cmDown || 0) * pxPerCm * scale;
+            const hit = canvasPixelToLatLon(px, py, size);
+            lon = savedLon;
+            tilt = savedTilt;
+            zoom = savedZoom;
+            applyTransform();
+            return hit || { lat: lat0, lon: normLon(lon0) };
+        }
+
         function flyTo(meta) {
-            const geo = REGION_GEO_CENTERS[meta.id] || { lat: 0, lon: 0 };
+            let geo = REGION_GEO_CENTERS[meta.id] || { lat: 0, lon: 0 };
+            const shift = REGION_GEO_FLIGHT_SHIFT_CM[meta.id];
+            if (shift && (shift.right || shift.down)) {
+                const hit = geoAtScreenOffsetFromCenter(
+                    geo.lat, geo.lon, shift.right || 0, shift.down || 0, FLIGHT_MAX_ZOOM
+                );
+                geo = { lat: hit.lat, lon: hit.lon };
+            }
             const aimed = anglesToCenterGeo(geo.lat, geo.lon);
             const targetLon = aimed.lon;
             const targetTilt = aimed.tilt;
@@ -3754,8 +3900,17 @@
                 tilt = clampTilt(tiltDeg || 0);
                 draw();
             },
-            setGeoCenter(latDeg, lonDeg) {
-                const a = anglesToCenterGeo(latDeg, lonDeg);
+            setGeoCenter(latDeg, lonDeg, shiftCm) {
+                let lat = latDeg;
+                let ln = lonDeg;
+                if (shiftCm && (shiftCm.right || shiftCm.down)) {
+                    const hit = geoAtScreenOffsetFromCenter(
+                        lat, ln, shiftCm.right || 0, shiftCm.down || 0, zoom
+                    );
+                    lat = hit.lat;
+                    ln = hit.lon;
+                }
+                const a = anglesToCenterGeo(lat, ln);
                 lon = a.lon;
                 tilt = a.tilt;
                 draw();
@@ -3853,7 +4008,7 @@
         if (isOceanWorld) {
             html += renderWorldOceanMapLayers(geo, w, h);
         } else if (isUkraineTravel) {
-            html += renderRegionalEarthLayers(geo, w, h, "ukraineEarthTex");
+            html += renderUkraineTravelLayers(geo, w, h);
         } else if (isEuropeMap) {
             html += renderRegionalEarthLayers(geo, w, h, "europeEarthTex");
         } else if (isOceanAdventure) {
@@ -3885,7 +4040,9 @@
                 }
                 for (const layer of geo.overlays || []) {
                     if (!layer.path) continue;
-                    html += '<path class="map-river map-river-' + layer.id + '" data-overlay-id="' +
+                    const riverCls = "map-river map-river-" + layer.id +
+                        (layer.id === "dnipro" ? " map-river-dnipro" : "");
+                    html += '<path class="' + riverCls + '" data-overlay-id="' +
                         layer.id + '" d="' + layer.path + '"/>';
                 }
             } else if (isEuropeMap) {
@@ -4446,7 +4603,7 @@
             board.style.gridTemplateColumns = "repeat(" + cols + ", 1fr)";
             board.style.gridTemplateRows = "repeat(" + rows + ", 1fr)";
             board.style.aspectRatio = cols + " / " + rows;
-            board.style.maxWidth = cols <= 3 ? "360px" : "500px";
+            board.style.maxWidth = cols <= 3 ? "360px" : (cols === 4 && rows === 3 ? "480px" : "500px");
 
             let order = [];
             for (let i = 0; i < total; i++) order.push(i);
@@ -4777,7 +4934,7 @@
             prefetchHubRegions();
             if (save.lastPlayed?.continentId && REGION_GEO_CENTERS[save.lastPlayed.continentId]) {
                 const c = REGION_GEO_CENTERS[save.lastPlayed.continentId];
-                globe.setGeoCenter(c.lat, c.lon);
+                globe.setGeoCenter(c.lat, c.lon, REGION_GEO_FLIGHT_SHIFT_CM[save.lastPlayed.continentId]);
             }
             await texturePromise;
         } catch (err) {

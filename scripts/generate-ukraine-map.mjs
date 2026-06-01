@@ -6,6 +6,14 @@
 import { readFileSync, writeFileSync, mkdirSync } from "fs";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
+import {
+    UKRAINE_PAD,
+    UKRAINE_PROJ,
+    UKRAINE_VIEW_H,
+    UKRAINE_VIEW_W,
+    ukraineGeoPoint,
+    ukraineProject,
+} from "./lib/ukraine-map-projection.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const NE_URL =
@@ -13,26 +21,14 @@ const NE_URL =
 const NE_RIVERS_URL =
     "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_rivers_lake_centerlines.geojson";
 
-const VIEW_W = 1000;
-const VIEW_H = 780;
-const PAD = 28;
+const VIEW_W = UKRAINE_VIEW_W;
+const VIEW_H = UKRAINE_VIEW_H;
+const PAD = UKRAINE_PAD;
 const MARKER_PAD = 72;
-
-/** Expanded view to show neighboring countries around Ukraine. */
-const PROJ = {
-    lonMin: 19,
-    lonMax: 42.5,
-    latMin: 43.5,
-    latMax: 54.5,
-    width: VIEW_W,
-    height: VIEW_H,
-};
+const PROJ = UKRAINE_PROJ;
 
 function project(lon, lat) {
-    const { lonMin, lonMax, latMin, latMax } = PROJ;
-    const x = ((lon - lonMin) / (lonMax - lonMin)) * (VIEW_W - PAD * 2) + PAD;
-    const y = ((latMax - lat) / (latMax - latMin)) * (VIEW_H - PAD * 2) + PAD;
-    return [x, y];
+    return ukraineProject(lon, lat);
 }
 
 function ringsFromGeometry(geom) {
@@ -121,17 +117,20 @@ function lineToPath(line) {
     return d;
 }
 
-function dniproPathsFromRivers(riversGeo) {
+const MAJOR_RIVER_RE =
+    /Dnieper|Dnipro|Dnepr|Dniester|Dnestr|Danube|Donets|Desna|Pripyat|Southern Bug|Inhul|Ingul/i;
+
+function riverPathsFromGeo(riversGeo, filterRe) {
     const parts = [];
     for (const feat of riversGeo.features || []) {
         const label = (feat.properties?.name || "") + (feat.properties?.name_en || "");
-        if (!/Dnieper|Dnipro|Dnepr/i.test(label)) continue;
+        if (filterRe && !filterRe.test(label)) continue;
         for (const line of linesFromGeometry(feat.geometry)) {
             const path = lineToPath(line);
             if (path) parts.push(path);
         }
     }
-    return parts.join(" ");
+    return parts;
 }
 
 function centerOfPath(pathStr) {
@@ -152,15 +151,7 @@ function centerOfPath(pathStr) {
     return { x: (minX + maxX) / 2, y: (minY + maxY) / 2 };
 }
 
-function geoPoint(lon, lat) {
-    const [x, y] = project(lon, lat);
-    return {
-        lon,
-        lat,
-        x: Math.round(x * 10) / 10,
-        y: Math.round(y * 10) / 10,
-    };
-}
+const geoPoint = ukraineGeoPoint;
 
 function buildGraticule() {
     let d = "";
@@ -258,7 +249,25 @@ async function main() {
         else console.warn("Warning: Crimea ring not found in Russia geometry");
     }
     const ukrainePath = rings.map((r) => ringToPath(r)).join(" ");
-    const dniproPath = dniproPathsFromRivers(riversGeo);
+    const riverOverlays = [];
+    const majorPaths = riverPathsFromGeo(riversGeo, MAJOR_RIVER_RE);
+    if (majorPaths.length) {
+        riverOverlays.push({
+            id: "rivers-major",
+            title: "Річки",
+            kind: "river",
+            path: majorPaths.join(" "),
+        });
+    }
+    const dniproParts = riverPathsFromGeo(riversGeo, /Dnieper|Dnipro|Dnepr/i);
+    if (dniproParts.length) {
+        riverOverlays.push({
+            id: "dnipro",
+            title: "Дніпро",
+            kind: "river",
+            path: dniproParts.join(" "),
+        });
+    }
 
     const neighbors = [];
     for (const iso of NEIGHBOR_ISO) {
@@ -332,14 +341,13 @@ async function main() {
         background: "#1a4a6e",
         markerPadding: MARKER_PAD,
         mapFill: "ukraine",
-        earthTexture: "assets/earth-equirect.jpg",
-        projection: { ...PROJ, pad: PAD },
+        earthTexture: "assets/ukraine-terrain.jpg",
+        earthTextureScale: 2,
+        projection: { ...PROJ, pad: PAD, type: "webMercator" },
         graticule: buildGraticule(),
         neighbors,
         neighborLabels,
-        overlays: dniproPath
-            ? [{ id: "dnipro", title: "Дніпро", kind: "river", path: dniproPath }]
-            : [],
+        overlays: riverOverlays,
         regions,
     };
 
@@ -348,7 +356,7 @@ async function main() {
     console.log("Wrote", outPath);
     console.log("Neighbors:", neighbors.length);
     console.log("Markers:", Object.keys(MARKERS).join(", "));
-    console.log("Dnipro path:", dniproPath ? "yes" : "missing");
+    console.log("River overlays:", riverOverlays.length);
 }
 
 main().catch((e) => {

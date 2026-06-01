@@ -44,6 +44,21 @@ test("wrong code shows an error and keeps subjects locked", async ({ page }) => 
     expect(cheats.unlockAll).toBeFalsy();
 });
 
+test("successful cheat auto-closes modal after ~3 seconds", async ({ page }) => {
+    await page.goto(URL);
+    await page.evaluate(() => localStorage.clear());
+    await page.reload();
+    await page.waitForSelector(".subject-btn");
+
+    await page.locator("#cheat-toggle").click();
+    await page.locator("#cheat-input").fill("відкрий всі");
+    await page.locator("#cheat-submit").click();
+
+    await expect(page.locator("#cheat-feedback.success")).toBeVisible();
+    await expect(page.locator("#cheat-modal.active")).toBeVisible();
+    await expect(page.locator("#cheat-modal.active")).toHaveCount(0, { timeout: 5000 });
+});
+
 test("'відкрий всі' unlocks every locked tier and persists across reloads", async ({ page }) => {
     await page.goto(URL);
     await page.evaluate(() => localStorage.clear());

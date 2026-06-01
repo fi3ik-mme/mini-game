@@ -249,9 +249,9 @@
       "rounds": [
         {
           "type": "puzzle",
-          "text": "Пазл 3×4: Україна. Збери контур країни.",
-          "cols": 3,
-          "rows": 4,
+          "text": "Пазл 4×3: Україна. Збери контур країни.",
+          "cols": 4,
+          "rows": 3,
           "mapId": "europe-countries",
           "countryId": "ukraine",
           "explanation": "Україна зібрана!"

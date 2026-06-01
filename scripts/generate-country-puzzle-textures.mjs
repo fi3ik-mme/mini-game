@@ -20,12 +20,20 @@ const NE_COUNTRIES = join(ROOT, "games/geo-quest/data/cache/ne_10m_countries.geo
 const NE_RIVERS = join(ROOT, "games/geo-quest/data/cache/ne_10m_rivers.geojson");
 const CRIMEA_RING_CACHE = join(ROOT, "games/geo-quest/data/cache/ukraine-crimea-ring.json");
 
-const OUT_W = 720;
-const OUT_H = 960;
+const DEFAULT_OUT_W = 720;
+const DEFAULT_OUT_H = 960;
 
 /** focusBounds: [lonMin, lonMax, latMin, latMax] — keep only mainland polygons. */
 const COUNTRIES = {
-    ukraine: { isoA2: "UA", adm0A3: "UKR", zoom: 8, pad: 1.1 },
+    ukraine: {
+        isoA2: "UA",
+        adm0A3: "UKR",
+        zoom: 8,
+        pad: 1,
+        fit: "cover",
+        outW: 960,
+        outH: 720,
+    },
     france: {
         isoA2: "FR",
         adm0A3: "FRA",
@@ -80,8 +88,8 @@ def fetch_tile(z, y, x):
     with urlopen(req, timeout=30) as r:
         return Image.open(io.BytesIO(r.read())).convert("RGB")
 
-def compute_cover_bounds(bounds, out_w, out_h, pad=1.08):
-    """Fit full country inside frame (contain), not crop edges (cover)."""
+def compute_cover_bounds(bounds, out_w, out_h, pad=1.08, fit="contain"):
+    """contain: whole country visible; cover: country fills frame (may crop margins)."""
     lon_min, lon_max, lat_min, lat_max = bounds
     cx = (lon_min + lon_max) / 2
     cy = (lat_min + lat_max) / 2
@@ -90,7 +98,14 @@ def compute_cover_bounds(bounds, out_w, out_h, pad=1.08):
     aspect = out_w / out_h
     cos_lat = max(math.cos(math.radians(cy)), 0.25)
     geo_aspect = span_lon / max(span_lat, 0.01) * cos_lat
-    if geo_aspect > aspect:
+    if fit == "cover":
+        if geo_aspect > aspect:
+            half_lat = span_lat / 2 * pad
+            half_lon = half_lat * aspect / cos_lat
+        else:
+            half_lon = span_lon / 2 * pad
+            half_lat = half_lon / aspect * cos_lat
+    elif geo_aspect > aspect:
         half_lon = span_lon / 2 * pad
         half_lat = half_lon / aspect * cos_lat
     else:
@@ -250,7 +265,8 @@ def draw_overlays(base, cfg):
     w, h = base.size
     stitch_bounds = cfg["bounds"]
     pad = cfg.get("pad", 1.08)
-    view_bounds = compute_cover_bounds(stitch_bounds, w, h, pad)
+    fit = cfg.get("fit", "contain")
+    view_bounds = compute_cover_bounds(stitch_bounds, w, h, pad, fit)
     overlay = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     draw = ImageDraw.Draw(overlay)
 
@@ -301,8 +317,9 @@ def main():
     cfg = json.loads(sys.argv[1])
     bounds = tuple(cfg["bounds"])
     pad = cfg.get("pad", 1.08)
+    fit = cfg.get("fit", "contain")
     out_w, out_h = cfg["out_w"], cfg["out_h"]
-    view_bounds = compute_cover_bounds(bounds, out_w, out_h, pad)
+    view_bounds = compute_cover_bounds(bounds, out_w, out_h, pad, fit)
     print(f"Stitching {cfg['id']} at z{cfg['zoom']}…")
     img, x0, y0, zoom = stitch(view_bounds, cfg["zoom"])
     print(f"  mosaic {img.size[0]}×{img.size[1]}")
@@ -480,10 +497,12 @@ function runPython(cfg) {
 }
 
 async function main() {
+    const only = process.argv[2] || null;
     await ensureGeoCache();
     const geojson = JSON.parse(readFileSync(NE_COUNTRIES, "utf8"));
 
     for (const [id, spec] of Object.entries(COUNTRIES)) {
+        if (only && id !== only) continue;
         const bounds = computeBoundsFromGeo(spec, geojson);
         let extraRings = null;
         if (spec.adm0A3 === "UKR") {
@@ -506,6 +525,7 @@ async function main() {
             adm0_a3: spec.adm0A3,
             zoom: spec.zoom,
             pad: spec.pad || 1.08,
+            fit: spec.fit || "contain",
             focus_bounds: spec.focusBounds || null,
             outline: spec.outline || null,
             extra_rings: extraRings,
@@ -513,8 +533,8 @@ async function main() {
             lon_max: bounds.lonMax,
             lat_min: bounds.latMin,
             lat_max: bounds.latMax,
-            out_w: OUT_W,
-            out_h: OUT_H,
+            out_w: spec.outW || DEFAULT_OUT_W,
+            out_h: spec.outH || DEFAULT_OUT_H,
             out: join(OUT_DIR, id + "-phys.jpg"),
             countries: NE_COUNTRIES,
             rivers: NE_RIVERS,

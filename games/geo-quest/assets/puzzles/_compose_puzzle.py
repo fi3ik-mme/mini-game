@@ -21,8 +21,8 @@ def fetch_tile(z, y, x):
     with urlopen(req, timeout=30) as r:
         return Image.open(io.BytesIO(r.read())).convert("RGB")
 
-def compute_cover_bounds(bounds, out_w, out_h, pad=1.08):
-    """Fit full country inside frame (contain), not crop edges (cover)."""
+def compute_cover_bounds(bounds, out_w, out_h, pad=1.08, fit="contain"):
+    """contain: whole country visible; cover: country fills frame (may crop margins)."""
     lon_min, lon_max, lat_min, lat_max = bounds
     cx = (lon_min + lon_max) / 2
     cy = (lat_min + lat_max) / 2
@@ -31,7 +31,14 @@ def compute_cover_bounds(bounds, out_w, out_h, pad=1.08):
     aspect = out_w / out_h
     cos_lat = max(math.cos(math.radians(cy)), 0.25)
     geo_aspect = span_lon / max(span_lat, 0.01) * cos_lat
-    if geo_aspect > aspect:
+    if fit == "cover":
+        if geo_aspect > aspect:
+            half_lat = span_lat / 2 * pad
+            half_lon = half_lat * aspect / cos_lat
+        else:
+            half_lon = span_lon / 2 * pad
+            half_lat = half_lon / aspect * cos_lat
+    elif geo_aspect > aspect:
         half_lon = span_lon / 2 * pad
         half_lat = half_lon / aspect * cos_lat
     else:
@@ -191,7 +198,8 @@ def draw_overlays(base, cfg):
     w, h = base.size
     stitch_bounds = cfg["bounds"]
     pad = cfg.get("pad", 1.08)
-    view_bounds = compute_cover_bounds(stitch_bounds, w, h, pad)
+    fit = cfg.get("fit", "contain")
+    view_bounds = compute_cover_bounds(stitch_bounds, w, h, pad, fit)
     overlay = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     draw = ImageDraw.Draw(overlay)
 
@@ -242,8 +250,9 @@ def main():
     cfg = json.loads(sys.argv[1])
     bounds = tuple(cfg["bounds"])
     pad = cfg.get("pad", 1.08)
+    fit = cfg.get("fit", "contain")
     out_w, out_h = cfg["out_w"], cfg["out_h"]
-    view_bounds = compute_cover_bounds(bounds, out_w, out_h, pad)
+    view_bounds = compute_cover_bounds(bounds, out_w, out_h, pad, fit)
     print(f"Stitching {cfg['id']} at z{cfg['zoom']}…")
     img, x0, y0, zoom = stitch(view_bounds, cfg["zoom"])
     print(f"  mosaic {img.size[0]}×{img.size[1]}")
