@@ -59,10 +59,10 @@ const KEY_PASS = process.env.BUBBLEWRAP_KEY_PASSWORD || "minigames";
  *   - release.json at the repo root, which the live site exposes so any
  *     installed APK can poll it and prompt the user to update.
  * --------------------------------------------------------------------------- */
-const APP_VERSION_CODE = 7;
-const APP_VERSION_NAME = "1.5.0";
+const APP_VERSION_CODE = 8;
+const APP_VERSION_NAME = "1.6.0";
 const RELEASE_NOTES =
-  "Geo Quest: реалістичні карти з зумом для України, Європи та Світового океану; квіз про Україну на карті Європи (7 категорій); Atlas «Зв'язків» — герби, національний одяг з фото, короткі описи страв; пазли України та Франції з деталізованими супутниковими картами; виправлено зум глобуса на Україну та підписи країн на карті.";
+  "Geo Quest: банки питань для міст і регіонів України; супутникова текстура карти; виправлено лінії зв'язків в Атласі Зв'язків; покращені фото у вікторинах.";
 
 const log = new ConsoleLog("build-android");
 

@@ -1,0 +1,547 @@
+{
+  "categories": {
+    "geography": [
+      {
+        "type": "imageQuiz",
+        "text": "Що омиває південь України? Обери морське узбережжя (Одеса):",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odesa%20Black%20Sea%20coast.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bukovel.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Coat%20of%20arms%20of%20Lviv.svg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Південне узбережжя України — на Чорному морі."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери дельфіна — мешканця Чорного моря:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tursiops%20truncatus.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bukovel.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Trembita.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Афаліни інколи плавають біля узбережжя."
+      },
+      {
+        "type": "quiz",
+        "text": "Чорне море з'єднане з Середземним через…",
+        "answers": [
+          "Босфор і Дарданели",
+          "Панамський канал",
+          "Суецький канал лише",
+          "Льодовик"
+        ],
+        "correct": 0,
+        "explanation": "Протоки в Туреччині з'єднують моря."
+      },
+      {
+        "type": "yesno",
+        "text": "Дніпро впадає в Чорне море.",
+        "correct": true,
+        "explanation": "Гирло — Дніпровсько-Бузький лиман."
+      },
+      {
+        "type": "quiz",
+        "text": "Українське узбережжя Чорного моря — на…",
+        "answers": [
+          "Півдні країни",
+          "Півночі",
+          "Заході в Карпатах",
+          "Сході в степу"
+        ],
+        "correct": 0,
+        "explanation": "Одеса, Миколаїв, Херсон — приморські міста."
+      },
+      {
+        "type": "quiz",
+        "text": "Чорне море омиває береги…",
+        "answers": [
+          "України, Туреччини, Болгарії",
+          "Лише Канади",
+          "Лише Японії",
+          "Лише Швеції"
+        ],
+        "correct": 0,
+        "explanation": "Море — внутрішнє між континентами."
+      }
+    ],
+    "nature": [
+      {
+        "type": "imageQuiz",
+        "text": "Обери оселедця — рибу Чорного моря:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Clupea%20harengus.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tursiops%20truncatus.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ukrainian%20borscht.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sunflower%20from%20Silesia2.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Оселедець — важлива промислова риба."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери дельфіна — його інколи бачать біля узбережжя:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tursiops%20truncatus.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Clupea%20harengus.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Trembita.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Афаліни плавають біля українських берегів."
+      },
+      {
+        "type": "yesno",
+        "text": "У Чорному морі водиться оселедець і камбала.",
+        "correct": true,
+        "explanation": "Це важливі промислові риби."
+      },
+      {
+        "type": "quiz",
+        "text": "Чому Чорне море майже не замерзає?",
+        "answers": [
+          "М'який клімат і солоність",
+          "Воно над горами",
+          "Там немає води",
+          "Воно під льодом"
+        ],
+        "correct": 0,
+        "explanation": "Зимою вода рідко опускається до нуля."
+      },
+      {
+        "type": "quiz",
+        "text": "Чорноморський біосферний заповідник — в…",
+        "answers": [
+          "Херсонській області",
+          "Львівській",
+          "Волинській",
+          "Чернігівській"
+        ],
+        "correct": 0,
+        "explanation": "Заповідник охороняє дельту та птахів."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери рибу для копчення — скумбрію або оселедця:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Clupea%20harengus.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Chocolate%20(blue%20background).jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ukrainian%20borscht.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sunflower%20from%20Silesia2.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Копчена риба — класика приморської кухні."
+      }
+    ],
+    "coast": [
+      {
+        "type": "imageQuiz",
+        "text": "Обери пляж на українському узбережжі Чорного моря:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odesa%20Black%20Sea%20coast.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bukovel.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Затока, Коблево, Скадовськ — популярні курорти."
+      },
+      {
+        "type": "yesno",
+        "text": "Літом на українських пляжах відпочивають сім'ї.",
+        "correct": true,
+        "explanation": "Море прогрівається до купання."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери порт біля моря — Потьомкінські сходи:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bukovel.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Trembita.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "На півдні — пляжі та порти."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Одеса — місто біля моря. Обери його оперний театр:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odessa%20Opera%20and%20Ballet%20Theater.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Opera%20House.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20Sophia%20Cathedral%20Kiev.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Одеса — головний порт України."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Пляж — це піщаний берег. Обери фото пляжу:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odesa%20Black%20Sea%20coast.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/DniproHES.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Trembita.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Coat%20of%20arms%20of%20Lviv.svg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Діти будують замки з піску."
+      },
+      {
+        "type": "quiz",
+        "text": "Морський бриз — це…",
+        "answers": [
+          "Вітер з моря",
+          "Сніг",
+          "Туман у горах",
+          "Пил"
+        ],
+        "correct": 0,
+        "explanation": "Вітер приносить прохолоду влітку."
+      }
+    ],
+    "rivers": [
+      {
+        "type": "imageQuiz",
+        "text": "Дніпро впадає в Чорне море. Обери греблю на Дніпрі:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/DniproHES.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Opera%20House.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Trembita.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Дніпровсько-Бузький лиман — гирло Дніпра."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Куди впадає Дніпро? Обери узбережжя (порт біля моря):",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bukovel.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Дніпро та інші річки несуть воду в море."
+      },
+      {
+        "type": "yesno",
+        "text": "Лиман — це затока, куди впадає річка.",
+        "correct": true,
+        "explanation": "Дніпровсько-Бузький лиман з'єднує Дніпро з морем."
+      },
+      {
+        "type": "quiz",
+        "text": "Дунай на заході України тече до…",
+        "answers": [
+          "Чорного моря",
+          "Балтики",
+          "Тихого океану",
+          "Атлантики"
+        ],
+        "correct": 0,
+        "explanation": "Дельта Дунаю — унікальна природа."
+      },
+      {
+        "type": "quiz",
+        "text": "Острів Зміїний у Чорному морі належить…",
+        "answers": [
+          "Україні",
+          "Канаді",
+          "Японії",
+          "Бразилії"
+        ],
+        "correct": 0,
+        "explanation": "Острів біля дельти Дунаю."
+      },
+      {
+        "type": "quiz",
+        "text": "Вода в лимані — …",
+        "answers": [
+          "Солонувата, змішується з морем",
+          "Завжди прісна як у крані",
+          "Відсутня",
+          "Кипляча"
+        ],
+        "correct": 0,
+        "explanation": "Лиман — перехід між річкою та морем."
+      }
+    ],
+    "climate": [
+      {
+        "type": "imageQuiz",
+        "text": "Літо на Чорному морі — купання на пляжі. Обери:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odesa%20Black%20Sea%20coast.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bukovel.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Літо тепле та сонячне — вода прогрівається."
+      },
+      {
+        "type": "yesno",
+        "text": "Дельфіни зустрічаються в українських водах Чорного моря.",
+        "correct": true,
+        "explanation": "Афаліни інколи плавають біля узбережжя."
+      },
+      {
+        "type": "quiz",
+        "text": "Чорне море менше за…",
+        "answers": [
+          "Атлантичний океан",
+          "Тихий океан",
+          "Всю Землю",
+          "Сонце"
+        ],
+        "correct": 0,
+        "explanation": "Це внутрішнє море, не океан."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери рибу Чорного моря:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Clupea%20harengus.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ukrainian%20borscht.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Chocolate%20(blue%20background).jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Оселедець ловлять сітками."
+      },
+      {
+        "type": "quiz",
+        "text": "Заповідник у дельті — охороняє…",
+        "answers": [
+          "Птахів і риби",
+          "Вулкани",
+          "Льодовики",
+          "Пустелі"
+        ],
+        "correct": 0,
+        "explanation": "Пелікани та чаплі живуть у дельті."
+      },
+      {
+        "type": "quiz",
+        "text": "Купальний сезон — це…",
+        "answers": [
+          "Час, коли можна купатися в морі",
+          "Зима в горах",
+          "Навчання в школі",
+          "Жнива пшениці"
+        ],
+        "correct": 0,
+        "explanation": "Зазвичай з червня по вересень."
+      }
+    ],
+    "travel": [
+      {
+        "type": "imageQuiz",
+        "text": "На море їдуть на пляж. Обери:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odesa%20Black%20Sea%20coast.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Trembita.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Coat%20of%20arms%20of%20Lviv.svg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Не забудь крем від сонця та капелюх."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери дельфіна:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tursiops%20truncatus.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Clupea%20harengus.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Beer%20in%20glass.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Дельфіни — розумні ссавці, живуть у морі."
+      },
+      {
+        "type": "yesno",
+        "text": "Кримський півострів омивається Чорним морем.",
+        "correct": true,
+        "explanation": "Півострів з трьох боків оточений морем."
+      },
+      {
+        "type": "quiz",
+        "text": "Маяк біля моря — це…",
+        "answers": [
+          "Вежа зі світлом для кораблів",
+          "Гора",
+          "Ринок",
+          "Собор"
+        ],
+        "correct": 0,
+        "explanation": "Світло попереджає про небезпеку."
+      },
+      {
+        "type": "quiz",
+        "text": "Човен у морі — для…",
+        "answers": [
+          "Рибальства та прогулянок",
+          "Польотів",
+          "Видобутку вугілля",
+          "Уроків математики"
+        ],
+        "correct": 0,
+        "explanation": "Рибалки виходять на світанку."
+      },
+      {
+        "type": "quiz",
+        "text": "Морські хвилі — це…",
+        "answers": [
+          "Рух води від вітру",
+          "Сніг",
+          "Пісок у пустелі",
+          "Трава"
+        ],
+        "correct": 0,
+        "explanation": "На березі чути шум хвиль."
+      }
+    ]
+  }
+}

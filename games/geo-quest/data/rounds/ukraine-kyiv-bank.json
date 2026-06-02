@@ -1,0 +1,554 @@
+{
+  "categories": {
+    "history": [
+      {
+        "type": "quiz",
+        "text": "Київ заснували в…",
+        "answers": [
+          "IX столітті",
+          "XX столітті",
+          "XVIII столітті",
+          "II столітті"
+        ],
+        "correct": 0,
+        "explanation": "За легендою — брати Кий, Щек і Хорив."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери Софійський собор у Києві (XI ст.):",
+        "imageFit": "contain",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20Sophia%20Cathedral%20Kiev.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Opera%20House.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Софія — пам'ятка ЮНЕСКО, золоті куполи.",
+        "explainOnSuccess": true
+      },
+      {
+        "type": "yesno",
+        "text": "Київ називають «матір міст руських».",
+        "correct": true,
+        "explanation": "З IX століття Київ — політичний і культурний центр."
+      },
+      {
+        "type": "quiz",
+        "text": "Ярослав Мудрий у Києві відомий…",
+        "answers": [
+          "«Руською правдою» та розбудовою",
+          "Винаходом телефону",
+          "Плаванням в океані",
+          "Відкриттям Америки"
+        ],
+        "correct": 0,
+        "explanation": "За Ярослава Київ був одним із найбільших міст Європи."
+      },
+      {
+        "type": "quiz",
+        "text": "Хто заснував Києво-Могилянську академію?",
+        "answers": [
+          "Петро Могила (XVII ст.)",
+          "Юлій Цезар",
+          "Наполеон",
+          "Колумб"
+        ],
+        "correct": 0,
+        "explanation": "Академія — одна з перших вищих шкіл у Східній Європі."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери Києво-Печерську лавру:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Kyiv%20Pechersk%20Lavra.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Opera%20House.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odessa%20Opera%20and%20Ballet%20Theater.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bukovel.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Лавра — духовний центр з печерами та соборами на пагорбах."
+      }
+    ],
+    "landmarks": [
+      {
+        "type": "imageQuiz",
+        "text": "Обери Софійський собор:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20Sophia%20Cathedral%20Kiev.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/St.%20George's%20Cathedral%2C%20Lviv.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Собор збудований у XI столітті."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери Києво-Печерську лавру — велику пам'ятку на пагорбі:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Kyiv%20Pechersk%20Lavra.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odessa%20Opera%20and%20Ballet%20Theater.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Trembita.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Лавра — духовний центр Києва над Дніпром."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери столицю України — Софійський собор у Києві:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20Sophia%20Cathedral%20Kiev.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Opera%20House.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odessa%20Opera%20and%20Ballet%20Theater.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Хрещатик і Софія — серце Києва."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери панораму Києва — лавра над Дніпром:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Kyiv%20Pechersk%20Lavra.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Deribasivska%20Street%20in%20snow%20-%201.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bukovel.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Від пагорбів видно Дніпро та місто."
+      },
+      {
+        "type": "quiz",
+        "text": "Обласний центр Київської області — це…",
+        "answers": [
+          "Біла Церква",
+          "Київ",
+          "Бориспіль",
+          "Чернігів"
+        ],
+        "correct": 0,
+        "explanation": "Київ — місто особливого статусу; обласний центр — Біла Церква."
+      },
+      {
+        "type": "quiz",
+        "text": "Де розташований Києво-Печерський заповідник?",
+        "answers": [
+          "У Києві над Дніпром",
+          "В Карпатах",
+          "На морі",
+          "В степу"
+        ],
+        "correct": 0,
+        "explanation": "Лавра — духовний центр з печерами."
+      }
+    ],
+    "river": [
+      {
+        "type": "quiz",
+        "text": "Яка річка ділить Київ на береги?",
+        "answers": [
+          "Дніпро",
+          "Десна",
+          "Дунай",
+          "Дністер"
+        ],
+        "correct": 0,
+        "explanation": "Дніпро тече через столицю з півночі на південь."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Що на фото — найдовша річка України?",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/DniproHES.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odesa%20Black%20Sea%20coast.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Coat%20of%20arms%20of%20Lviv.svg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Дніпро перетинає країну і впадає в Чорне море."
+      },
+      {
+        "type": "quiz",
+        "text": "Фуникулер у Києві з'єднує…",
+        "answers": [
+          "Верхнє місто та Поділ",
+          "Львів і Одесу",
+          "Море і гори",
+          "Два океани"
+        ],
+        "correct": 0,
+        "explanation": "Канатна дорога — атракція з панорамою на Дніпро."
+      },
+      {
+        "type": "yesno",
+        "text": "Київ стоїть на обох берегах Дніпра.",
+        "correct": true,
+        "explanation": "Правий і лівий берег з'єднують мости."
+      },
+      {
+        "type": "quiz",
+        "text": "Яке місто — столиця України?",
+        "answers": [
+          "Київ",
+          "Львів",
+          "Одеса",
+          "Харків"
+        ],
+        "correct": 0,
+        "explanation": "Київ — столиця з давніх часів."
+      },
+      {
+        "type": "quiz",
+        "text": "Парк «Відрадний» і Труханів острів — на…",
+        "answers": [
+          "Лівому березі Дніпра",
+          "Морі",
+          "У Карпатах",
+          "В пустелі"
+        ],
+        "correct": 0,
+        "explanation": "Острів — популярне місце для прогулянок."
+      }
+    ],
+    "culture": [
+      {
+        "type": "quiz",
+        "text": "Київ — найбільше місто України за…",
+        "answers": [
+          "Населенням",
+          "Висотою гор",
+          "Кількістю портів",
+          "Кількістю вулканів"
+        ],
+        "correct": 0,
+        "explanation": "Тут живе понад три мільйони людей."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери пам'ятку Києва — Софійський собор:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20Sophia%20Cathedral%20Kiev.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Opera%20House.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/68-104-9007%20Kamianets-Podilskyi%20Fortress%20RB%2018%202.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bukovel.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Софія — символ давнього Києва."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери Софійський собор — символ давнього Києва:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20Sophia%20Cathedral%20Kiev.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Поруч — головні площі сучасного Києва."
+      },
+      {
+        "type": "yesno",
+        "text": "У Києві працює метрополітен.",
+        "correct": true,
+        "explanation": "Метро — швидкий транспорт у великому місті."
+      },
+      {
+        "type": "quiz",
+        "text": "Печери Києво-Печерської лаври — це…",
+        "answers": [
+          "Підземні коридори з мощами",
+          "Морські рифи",
+          "Залізничні тунелі",
+          "Пустеля"
+        ],
+        "correct": 0,
+        "explanation": "У печерах спочатку жили монахи."
+      },
+      {
+        "type": "quiz",
+        "text": "Хто написав «Кобзар» — книгу, яку вивчають у школі?",
+        "answers": [
+          "Тарас Шевченко",
+          "Леонардо да Вінчі",
+          "Шекспір",
+          "Гомер"
+        ],
+        "correct": 0,
+        "explanation": "Шевченко — національний поет України."
+      }
+    ],
+    "facts": [
+      {
+        "type": "quiz",
+        "text": "Київ щороку святкує День міста…",
+        "answers": [
+          "Останніх вихідних травня",
+          "У січні в Антарктиді",
+          "Щодня вночі",
+          "Ніколи"
+        ],
+        "correct": 0,
+        "explanation": "На свято — концерти та феєрверки."
+      },
+      {
+        "type": "yesno",
+        "text": "Софійський собор у Києві — пам'ятка UNESCO.",
+        "correct": true,
+        "explanation": "Собор збудований у XI столітті."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Через Київ тече Дніпро. Обери греблю на річці:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/DniproHES.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Opera%20House.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Beer%20in%20glass.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Дніпро ділить місто на правий і лівий берег."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери Києво-Печерську лавру на пагорбі:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Kyiv%20Pechersk%20Lavra.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odessa%20Opera%20and%20Ballet%20Theater.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Лавра видно з Дніпра та мостів."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери Києво-Печерську лавру:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Kyiv%20Pechersk%20Lavra.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odessa%20Opera%20and%20Ballet%20Theater.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "На пагорбах над Дніпром — печери та собори."
+      },
+      {
+        "type": "quiz",
+        "text": "Київський метрополітен — це…",
+        "answers": [
+          "Підземні поїзди в місті",
+          "Трамвай у горах",
+          "Паром через океан",
+          "Літак"
+        ],
+        "correct": 0,
+        "explanation": "Станції прикрашені мозаїками та люстрами."
+      }
+    ],
+    "gastronomy": [
+      {
+        "type": "imageQuiz",
+        "text": "Обери київський торт — відомий десерт:",
+        "imageFit": "contain",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Chocolate%20(blue%20background).jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ukrainian%20borscht.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Clupea%20harengus.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Назву пов'язують із столицею України."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери український борщ:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ukrainian%20borscht.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Beer%20in%20glass.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bosnian%20cezves.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tursiops%20truncatus.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "У Києві борщ готують у ресторанах і вдома."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери сало — традиційний український продукт:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Salo.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Varenyky.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sunflower%20from%20Silesia2.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Сало їдять з хлібом, цибулею та борщем."
+      },
+      {
+        "type": "quiz",
+        "text": "Вареники в Києві — це…",
+        "answers": [
+          "Тістечка з начинкою у воді",
+          "Суп з риби",
+          "Салат",
+          "Хліб"
+        ],
+        "correct": 0,
+        "explanation": "Начинка — картопля, сир або вишні."
+      },
+      {
+        "type": "yesno",
+        "text": "На Хрещатику багато кафе та ресторанів.",
+        "correct": true,
+        "explanation": "Центр міста — популярне місце для прогулянок і їжі."
+      },
+      {
+        "type": "quiz",
+        "text": "Пампушки до борщу — це…",
+        "answers": [
+          "Маленькі булочки з часником",
+          "Морозиво",
+          "Сирники",
+          "Риба"
+        ],
+        "correct": 0,
+        "explanation": "Їх подають гарячими до борщу."
+      }
+    ]
+  }
+}

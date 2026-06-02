@@ -1,0 +1,538 @@
+{
+  "categories": {
+    "history": [
+      {
+        "type": "imageQuiz",
+        "text": "Одеса — морський порт. Обери Потьомкінські сходи:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20Sophia%20Cathedral%20Kiev.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "1794 року місто заснували як порт на Чорному морі."
+      },
+      {
+        "type": "quiz",
+        "text": "Перший градоначальник Одеси — …",
+        "answers": [
+          "Дюк де Рішельє",
+          "Тарас Шевченко",
+          "Ярослав Мудрий",
+          "Колумб"
+        ],
+        "correct": 0,
+        "explanation": "Йому поставили пам'ятник на Приморському бульварі."
+      },
+      {
+        "type": "yesno",
+        "text": "Одеса — найбільший морський порт України.",
+        "correct": true,
+        "explanation": "Місто — ворота до Чорного моря."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери пляж біля Одеси — Чорне море:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odesa%20Black%20Sea%20coast.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bukovel.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Одеса омивається Чорним морем."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери пам'ятник Дюку на Приморському бульварі (поруч море):",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odessa%20Opera%20and%20Ballet%20Theater.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Поруч — вид на порт і море."
+      },
+      {
+        "type": "quiz",
+        "text": "Яка область найбільша за площею?",
+        "answers": [
+          "Одеська",
+          "Львівська",
+          "Чернівецька",
+          "Рівненська"
+        ],
+        "correct": 0,
+        "explanation": "Одеська область — найбільша в Україні."
+      }
+    ],
+    "landmarks": [
+      {
+        "type": "imageQuiz",
+        "text": "Обери Потьомкінські сходи в Одесі:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20Sophia%20Cathedral%20Kiev.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/68-104-9007%20Kamianets-Podilskyi%20Fortress%20RB%2018%202.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Сходи з'єднують центр із портом."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери Одеський оперний театр:",
+        "imageFit": "contain",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odessa%20Opera%20and%20Ballet%20Theater.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Opera%20House.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Kyiv%20Pechersk%20Lavra.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Театр — архітектурна перлина XIX століття."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери Дерибасівську — «одеський Монмартр»:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Deribasivska%20Street%20in%20snow%20-%201.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/2019-07-13%20St.%20Andrew's%20Church%2C%20Kyiv%2C%20Ukraine%202.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Пішохідна вулиця з кафе та пам'ятниками."
+      },
+      {
+        "type": "quiz",
+        "text": "Пам'ятник Дюку стоїть на…",
+        "answers": [
+          "Приморському бульварі",
+          "В Карпатах",
+          "У степу",
+          "В лісі"
+        ],
+        "correct": 0,
+        "explanation": "Біля порту та моря."
+      },
+      {
+        "type": "yesno",
+        "text": "Одеський оперний театр — одна з головних візитівок міста.",
+        "correct": true,
+        "explanation": "Будівля в стилі неоренесансу та бароко."
+      },
+      {
+        "type": "quiz",
+        "text": "Порт Одеси — це…",
+        "answers": [
+          "Місце, куди приходять кораблі",
+          "Гора",
+          "Пустеля",
+          "Льодовик"
+        ],
+        "correct": 0,
+        "explanation": "Через порт вивозять і ввозять вантажі."
+      }
+    ],
+    "port": [
+      {
+        "type": "quiz",
+        "text": "Одеса славиться як…",
+        "answers": [
+          "Морське місто-порт",
+          "Гірськолижний курорт",
+          "Космодром",
+          "Пустеля"
+        ],
+        "correct": 0,
+        "explanation": "Кораблі заходять у гавань Чорного моря."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери Потьомкінські сходи — символ міста:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bukovel.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Coat%20of%20arms%20of%20Lviv.svg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "192 сходинки ведуть до гавані."
+      },
+      {
+        "type": "quiz",
+        "text": "Чорне море біля Одеси — це…",
+        "answers": [
+          "Тепле море для купання",
+          "Озеро в горах",
+          "Річка",
+          "Льодовик"
+        ],
+        "correct": 0,
+        "explanation": "Літом на пляжах відпочивають туристи."
+      },
+      {
+        "type": "yesno",
+        "text": "Одеса має пляжі та приморські курорти.",
+        "correct": true,
+        "explanation": "Аркадія та Ланжерон — відомі зони відпочинку."
+      },
+      {
+        "type": "quiz",
+        "text": "Морський вокзал Одеси — це…",
+        "answers": [
+          "Будівля біля порту для пасажирів",
+          "Замок у Карпатах",
+          "Собор",
+          "Стадіон"
+        ],
+        "correct": 0,
+        "explanation": "Звідси відправляються прогулянкові судна."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери морське місто — Одеський оперний театр:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odessa%20Opera%20and%20Ballet%20Theater.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20Sophia%20Cathedral%20Kiev.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/DniproHES.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Trembita.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Одеса — «перлина біля моря»."
+      }
+    ],
+    "culture": [
+      {
+        "type": "quiz",
+        "text": "Одеський гумор — це…",
+        "answers": [
+          "Жарти та особливий діалект",
+          "Вид спорту",
+          "Страва",
+          "Танець"
+        ],
+        "correct": 0,
+        "explanation": "Місто славиться веселими жартами."
+      },
+      {
+        "type": "quiz",
+        "text": "«Привоз» у Одесі — це…",
+        "answers": [
+          "Ринок з їжею та жартами",
+          "Гора",
+          "Річка",
+          "Замок"
+        ],
+        "correct": 0,
+        "explanation": "Колоритний ринок у центрі."
+      },
+      {
+        "type": "yesno",
+        "text": "В Одесі кажуть «Привіт, як справи?» з характерним гумором.",
+        "correct": true,
+        "explanation": "Одеський діалект — частина культури."
+      },
+      {
+        "type": "quiz",
+        "text": "Одеський оперний театр збудований у стилі…",
+        "answers": [
+          "Неоренесанс / бароко",
+          "Готика",
+          "Хай-тек",
+          "Японський"
+        ],
+        "correct": 0,
+        "explanation": "Театр прикрашений вазами та скульптурами."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери Одесу на фото — оперний театр:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odessa%20Opera%20and%20Ballet%20Theater.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Opera%20House.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odesa%20Black%20Sea%20coast.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Театр стоїть у центрі, поруч парк."
+      },
+      {
+        "type": "quiz",
+        "text": "Дерибасівська названа на честь…",
+        "answers": [
+          "Перших будівничих міста",
+          "Шевченка",
+          "Говерли",
+          "Дніпра"
+        ],
+        "correct": 0,
+        "explanation": "Жозеф де Рібас допомагав будувати Одесу."
+      }
+    ],
+    "gastronomy": [
+      {
+        "type": "imageQuiz",
+        "text": "Обери оселедця — рибу Чорного моря:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Clupea%20harengus.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tursiops%20truncatus.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ukrainian%20borscht.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Оселедець копчать і маринують на узбережжі."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "«Форшмак» — закуска з оселедця. Обери рибу:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Clupea%20harengus.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Chocolate%20(blue%20background).jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ukrainian%20borscht.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Страва з риби, яблука та яєць."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери борщ — його готують і в Одесі:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ukrainian%20borscht.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Beer%20in%20glass.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Chocolate%20(blue%20background).jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Одеський борщ інколи готують з рибою."
+      },
+      {
+        "type": "yesno",
+        "text": "На Привозі продають свіжі фрукти, рибу та сири.",
+        "correct": true,
+        "explanation": "Ринок — місце смаків і жартів."
+      },
+      {
+        "type": "quiz",
+        "text": "Морський коктейль у порту — це…",
+        "answers": [
+          "Страва з морепродуктів",
+          "Суп без риби",
+          "Чай",
+          "Хліб"
+        ],
+        "correct": 0,
+        "explanation": "Креветки, мідії та риба — свіжі з моря."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери копчену рибу — класика приморської кухні:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Clupea%20harengus.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Varenyky.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Syrniki.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Coat%20of%20arms%20of%20Lviv.svg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Рибу коптять біля порту та на ринках."
+      }
+    ],
+    "facts": [
+      {
+        "type": "quiz",
+        "text": "Одеса — місто на…",
+        "answers": [
+          "Чорному морі",
+          "Атлантиці",
+          "Тихому океані",
+          "Балтиці"
+        ],
+        "correct": 0,
+        "explanation": "Клімат м'який, багато сонця."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери Потьомкінські сходи:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bukovel.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odesa%20Black%20Sea%20coast.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Сходи знімали у відомих фільмах."
+      },
+      {
+        "type": "yesno",
+        "text": "Одеська область виходить до Чорного моря.",
+        "correct": true,
+        "explanation": "Узбережжя — популярне влітку."
+      },
+      {
+        "type": "quiz",
+        "text": "В Одесі багато двориків, як у…",
+        "answers": [
+          "Старому європейському місті",
+          "Пустелі",
+          "Тундрі",
+          "Джунглях"
+        ],
+        "correct": 0,
+        "explanation": "Дворики з арками — для прогулянок."
+      },
+      {
+        "type": "quiz",
+        "text": "Морський бриз у Одесі — це…",
+        "answers": [
+          "Свіжий вітер з моря",
+          "Сніг",
+          "Пісок пустелі",
+          "Дим заводу"
+        ],
+        "correct": 0,
+        "explanation": "Вітер приносить запах моря."
+      },
+      {
+        "type": "quiz",
+        "text": "Одеса заснована як…",
+        "answers": [
+          "Морський порт",
+          "Гірськолижний центр",
+          "Космодром",
+          "Шахта"
+        ],
+        "correct": 0,
+        "explanation": "Порт з'єднав Україну зі світом."
+      }
+    ]
+  }
+}

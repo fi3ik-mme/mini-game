@@ -1,0 +1,520 @@
+{
+  "categories": {
+    "river": [
+      {
+        "type": "imageQuiz",
+        "text": "Дніпро — найдовша річка України. Обери греблю:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/DniproHES.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Opera%20House.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Дніпро перетинає країну з півночі на південь."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери Дніпровську ГЕС — греблю на річці:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/DniproHES.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Opera%20House.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "ГЕС дає електроенергію містам."
+      },
+      {
+        "type": "yesno",
+        "text": "Дніпро впадає в Чорне море.",
+        "correct": true,
+        "explanation": "Гирло — Дніпровсько-Бузький лиман."
+      },
+      {
+        "type": "quiz",
+        "text": "Дніпро тече з … на південь",
+        "answers": [
+          "Півночі України",
+          "Моря",
+          "Гір Евересту",
+          "Пустелі"
+        ],
+        "correct": 0,
+        "explanation": "Беруть початок у Валдаї та несуть води через Україну."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери море, куди впадає Дніпро (узбережжя з портом):",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bukovel.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Trembita.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Дніпро несе воду в Чорне море."
+      },
+      {
+        "type": "quiz",
+        "text": "Каскад Дніпра — це…",
+        "answers": [
+          "Кілька водосховищ і ГЕС",
+          "Гори",
+          "Пустеля",
+          "Ліс без води"
+        ],
+        "correct": 0,
+        "explanation": "Греблі створили великі озера на річці."
+      }
+    ],
+    "history": [
+      {
+        "type": "imageQuiz",
+        "text": "Острів Хортиця — Запорізька Січ. Обери:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Khortytsia%20Island%20from%20space.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odessa%20Opera%20and%20Ballet%20Theater.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20Sophia%20Cathedral%20Kiev.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Хортиця — колишня столиця козаків."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери острів Хортицю з висоти:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Khortytsia%20Island%20from%20space.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odesa%20Black%20Sea%20coast.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Opera%20House.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "На острові — музей козацтва."
+      },
+      {
+        "type": "quiz",
+        "text": "Козаки на Дніпрі — це…",
+        "answers": [
+          "Вільні воїни та землероби",
+          "Морські пірати Атлантики",
+          "Космонавти",
+          "Альпіністи"
+        ],
+        "correct": 0,
+        "explanation": "Козаки захищали кордони й торгували."
+      },
+      {
+        "type": "yesno",
+        "text": "Місто Дніпро назване на честь річки.",
+        "correct": true,
+        "explanation": "Раніше називалося Дніпропетровськ."
+      },
+      {
+        "type": "quiz",
+        "text": "Запорізька Січ — це…",
+        "answers": [
+          "Козацька фортеця на острові",
+          "Оперний театр",
+          "Порт Одеси",
+          "Гора"
+        ],
+        "correct": 0,
+        "explanation": "Козаки збирали раду на Січі."
+      },
+      {
+        "type": "quiz",
+        "text": "Кам'янська Могила — пам'ятник біля…",
+        "answers": [
+          "Дніпра",
+          "Атлантики",
+          "Альп",
+          "Амазонки"
+        ],
+        "correct": 0,
+        "explanation": "На скелях — стародавні малюнки."
+      }
+    ],
+    "city": [
+      {
+        "type": "imageQuiz",
+        "text": "Місто на честь річки — Дніпро. Обери панораму міста:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sobornyi%20District%2C%20Dnipro%2C%20Dnipropetrovsk%20Oblast%2C%20Ukraine%20-%20panoramio%20(67).jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Дніпро — велике промислове місто на сході."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери монумент «Захисникам України» в Дніпрі:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Military%20vehicles%20monument%3B%20Dnipro%2C%20Ukraine%3B%2028.08.19%20(1).jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odessa%20Opera%20and%20Ballet%20Theater.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Пам'ятник — символ міста."
+      },
+      {
+        "type": "quiz",
+        "text": "Дніпровський метрополітен — в місті…",
+        "answers": [
+          "Дніпро",
+          "Ужгород",
+          "Трускавець",
+          "Чернівці"
+        ],
+        "correct": 0,
+        "explanation": "Метро — зручний транспорт."
+      },
+      {
+        "type": "yesno",
+        "text": "Дніпро — велике промислове місто.",
+        "correct": true,
+        "explanation": "Тут заводи та наукові центри."
+      },
+      {
+        "type": "quiz",
+        "text": "Набережна Дніпра в місті — для…",
+        "answers": [
+          "Прогулянок і виду на річку",
+          "Гірськолижного спорту",
+          "Серфінгу в океані",
+          "Польотів"
+        ],
+        "correct": 0,
+        "explanation": "Вечіром гуляють сім'ями."
+      },
+      {
+        "type": "quiz",
+        "text": "Обласний центр — …",
+        "answers": [
+          "Дніпро",
+          "Львів",
+          "Одеса",
+          "Київ"
+        ],
+        "correct": 0,
+        "explanation": "Центр Дніпропетровської області."
+      }
+    ],
+    "industry": [
+      {
+        "type": "imageQuiz",
+        "text": "Дніпровська ГЕС біля Запоріжжя. Обери:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/DniproHES.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Opera%20House.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odesa%20Black%20Sea%20coast.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Trembita.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Гребля — символ індустрії."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери гідроелектростанцію на Дніпрі:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/DniproHES.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Opera%20House.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bukovel.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Trembita.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Вода крутить турбіни — з'являється струм."
+      },
+      {
+        "type": "quiz",
+        "text": "ГЕС виробляє…",
+        "answers": [
+          "Електроенергію",
+          "Морозиво",
+          "Деревину",
+          "Пісок"
+        ],
+        "correct": 0,
+        "explanation": "Енергія йде в домівки та заводи."
+      },
+      {
+        "type": "yesno",
+        "text": "На Дніпрі побудували кілька великих гребель.",
+        "correct": true,
+        "explanation": "Утворилися водосховища."
+      },
+      {
+        "type": "quiz",
+        "text": "Судно на Дніпрі — …",
+        "answers": [
+          "Теплохід або баржа",
+          "Літак",
+          "Автобус",
+          "Санки"
+        ],
+        "correct": 0,
+        "explanation": "Теплоходи возять пасажирів."
+      },
+      {
+        "type": "quiz",
+        "text": "Водосховище — це…",
+        "answers": [
+          "Велике штучне озеро",
+          "Гора",
+          "Пустеля",
+          "Пляж"
+        ],
+        "correct": 0,
+        "explanation": "Вода накопичується за греблею."
+      }
+    ],
+    "geography": [
+      {
+        "type": "quiz",
+        "text": "Дніпро перетинає Україну з …",
+        "answers": [
+          "Півночі на південь",
+          "Заходу на схід",
+          "Півдня на північ",
+          "Сходу на захід"
+        ],
+        "correct": 0,
+        "explanation": "Річка ділить країну на частини."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери річку Дніпро (гребля на фото):",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/DniproHES.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odesa%20Black%20Sea%20coast.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Coat%20of%20arms%20of%20Lviv.svg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "На Дніпрі — найбільші гідроспоруди."
+      },
+      {
+        "type": "quiz",
+        "text": "Стеppи біля Дніпра — це…",
+        "answers": [
+          "Трав'яні рівнини",
+          "Гори зі снігом",
+          "Коралові рифи",
+          "Льодовик"
+        ],
+        "correct": 0,
+        "explanation": "Влітку росте пшениця та соняшник."
+      },
+      {
+        "type": "yesno",
+        "text": "Дніпро — важний водний шлях для транспорту.",
+        "correct": true,
+        "explanation": "Баржі везуть вантажі."
+      },
+      {
+        "type": "quiz",
+        "text": "Лиман біля моря — куди впадає…",
+        "answers": [
+          "Дніпро",
+          "Дунай у Карпатах",
+          "Волга",
+          "Рейн"
+        ],
+        "correct": 0,
+        "explanation": "Вода змішується з морем."
+      },
+      {
+        "type": "quiz",
+        "text": "Острів на річці — як Хортиця — …",
+        "answers": [
+          "Земля посеред води",
+          "Гора",
+          "Пустеля",
+          "Вулкан"
+        ],
+        "correct": 0,
+        "explanation": "Острів оточений течією."
+      }
+    ],
+    "nature": [
+      {
+        "type": "imageQuiz",
+        "text": "Біля Дніпра росте соняшник. Обери:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sunflower%20from%20Silesia2.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Clupea%20harengus.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Chapel%20of%20the%20Boim%20family.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "На степових берегах також верби та очерет."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери пейзаж Дніпра — водосховище:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/DniproHES.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odessa%20Opera%20and%20Ballet%20Theater.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Chapel%20of%20the%20Boim%20family.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Широка річка з великими греблями."
+      },
+      {
+        "type": "yesno",
+        "text": "На Хортиці є степи та ліси.",
+        "correct": true,
+        "explanation": "Острів — природний і історичний заповідник."
+      },
+      {
+        "type": "quiz",
+        "text": "Риба в Дніпрі — …",
+        "answers": [
+          "Короп, судак, щука",
+          "Пінгвін",
+          "Акула океану",
+          "Кит"
+        ],
+        "correct": 0,
+        "explanation": "Рибалки ловлять з човнів."
+      },
+      {
+        "type": "quiz",
+        "text": "Повінь на річці — це…",
+        "answers": [
+          "Підйом води після дощів",
+          "Сніг",
+          "Вулкан",
+          "Піски"
+        ],
+        "correct": 0,
+        "explanation": "Вода виходить з берегів — треба обережність."
+      },
+      {
+        "type": "quiz",
+        "text": "Соняшник біля Дніпра — …",
+        "answers": [
+          "Сільськогосподарська культура",
+          "Морська риба",
+          "Гірський сніг",
+          "Каміння"
+        ],
+        "correct": 0,
+        "explanation": "Соняшник дає олію."
+      }
+    ]
+  }
+}

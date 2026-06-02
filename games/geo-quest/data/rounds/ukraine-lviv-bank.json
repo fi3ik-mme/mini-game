@@ -1,0 +1,861 @@
+{
+  "categories": {
+    "history": [
+      {
+        "type": "quiz",
+        "text": "У якому столітті заснували Львів?",
+        "answers": [
+          "XIII столітті (1256 рік)",
+          "IX столітті",
+          "XVIII столітті",
+          "XX столітті"
+        ],
+        "correct": 0,
+        "explanation": "1256 рік — час князя Данила Галицького.",
+        "wikiUrl": "https://uk.wikipedia.org/wiki/Львів"
+      },
+      {
+        "type": "quiz",
+        "text": "Хто заснував Львів?",
+        "answers": [
+          "Князь Данило Галицький",
+          "Князь Ярослав Мудрий",
+          "Король Польщі Казимир",
+          "Імператор Австрії Франц Йосиф"
+        ],
+        "correct": 0,
+        "explanation": "Данило створив місто як опорний пункт Галицько-Волинської держави."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери герб Львова:",
+        "imageFit": "contain",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Coat%20of%20arms%20of%20Lviv.svg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lesser%20Coat%20of%20Arms%20of%20Ukraine.svg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Herb%20Polski.svg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/68-104-9007%20Kamianets-Podilskyi%20Fortress%20RB%2018%202.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "На гербі — золотий лев. Він нагадує про князя Льва.",
+        "explainOnSuccess": true
+      },
+      {
+        "type": "yesno",
+        "text": "Історичний центр Львова внесено до списку ЮНЕСКО.",
+        "correct": true,
+        "explanation": "Так, з 1998 року. Тут збереглися сотні кам'яниць.",
+        "wikiUrl": "https://uk.wikipedia.org/wiki/Львів",
+        "explainOnSuccess": true
+      },
+      {
+        "type": "quiz",
+        "text": "У середньовіччі Львів був важливим містом…",
+        "answers": [
+          "Галицько-Волинської держави",
+          "Римської імперії",
+          "Київської Русі під Києвом",
+          "Османської імперії"
+        ],
+        "correct": 0,
+        "explanation": "Місто контролювало торгові шляхи між Сходом і Заходом Європи."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери головну площу Львова — Ринок (ратуша в центрі):",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20Sophia%20Cathedral%20Kiev.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Площа Ринок — серце старого міста. Посередині — ратуша з вежею."
+      }
+    ],
+    "facts": [
+      {
+        "type": "quiz",
+        "text": "Львів часто називають…",
+        "answers": [
+          "Культурною столицею заходу України",
+          "Найбільшим портом на морі",
+          "Столицею України",
+          "Головним космодромом"
+        ],
+        "correct": 0,
+        "explanation": "Тут багато театрів, музеїв, фестивалів і кав'ярень."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери головний корпус Львівського університету:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Main%20building%20of%20Lviv%20University%2C%20Ukraine%20(by%20Pudelek).jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Opera%20House.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Kyiv%20Pechersk%20Lavra.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odessa%20Opera%20and%20Ballet%20Theater.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Університет — один із найстаріших в Україні. Тут навчаються тисячі студентів."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "«Світло Різдва» — ярмарок на площі. Обери Ринок:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bukovel.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odesa%20Black%20Sea%20coast.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "На площах — ярмарки, вертепи та ілюмінація."
+      },
+      {
+        "type": "yesno",
+        "text": "Річку Полтву в центрі Львова сховали під землю в колекторах.",
+        "correct": true,
+        "explanation": "Так. Полтва тече під старим містом."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери вид на Львівський оперний театр:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Opera%20House.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odessa%20Opera%20and%20Ballet%20Theater.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Kyiv%20Pechersk%20Lavra.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Театр на проспекті Свободи — одна з головних візитівок міста."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери собор святого Юра — видно з багатьох вулиць:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/St.%20George's%20Cathedral%2C%20Lviv.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20Sophia%20Cathedral%20Kiev.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Chapel%20of%20the%20Boim%20family.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odessa%20Opera%20and%20Ballet%20Theater.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Собор святого Юра — барокова домінанта на пагорбі."
+      }
+    ],
+    "inventions": [
+      {
+        "type": "quiz",
+        "text": "1853 року у Львові вперше в світі запалили…",
+        "answers": [
+          "Лампу на гасі (керосині)",
+          "Лазерний проектор",
+          "Світлодіодну гірлянду",
+          "Електричну лампу Едісона"
+        ],
+        "correct": 0,
+        "explanation": "Зег і Лукасiewicz показали лампу в аптесі.",
+        "wikiUrl": "https://uk.wikipedia.org/wiki/Нафта#Історія",
+        "explainOnSuccess": true
+      },
+      {
+        "type": "imageQuiz",
+        "text": "1661 року відкрили університет. Обери його будівлю:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Main%20building%20of%20Lviv%20University%2C%20Ukraine%20(by%20Pudelek).jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Opera%20House.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Спочатку єзуїтська академія, сьогодні — університет імені Івана Франка."
+      },
+      {
+        "type": "yesno",
+        "text": "Перший офіційний футбольний матч на території сучасної України відбувся у Львові 1894 року.",
+        "correct": true,
+        "explanation": "Так. Львів був спортивним центром Галичини."
+      },
+      {
+        "type": "quiz",
+        "text": "Львівські аптеки XIX століття відомі тим, що…",
+        "answers": [
+          "Тут досліджували нафту й робили ліки",
+          "Продавали лише морозиво",
+          "Не працювали взимку",
+          "Були лише в селі"
+        ],
+        "correct": 0,
+        "explanation": "Саме в аптесі показали освітлення на керосині."
+      },
+      {
+        "type": "quiz",
+        "text": "Трамвай у Львові з'явився…",
+        "answers": [
+          "Наприкінці XIX століття",
+          "У давній Римі",
+          "Лише в 2020 році",
+          "У XVII столітті"
+        ],
+        "correct": 0,
+        "explanation": "1894 року трамвай з'єднав центр із промисловими районами."
+      },
+      {
+        "type": "quiz",
+        "text": "Друкарство в Львові XVI–XVII століття…",
+        "answers": [
+          "Було розвиненим — друкували книги різними мовами",
+          "Було заборонене",
+          "Працювало одну ніч на рік",
+          "Існувало лише в Києві"
+        ],
+        "correct": 0,
+        "explanation": "Місто було центром книгодрукування."
+      }
+    ],
+    "urbanism": [
+      {
+        "type": "yesno",
+        "text": "Площа Ринок — головна площа історичного центру Львова.",
+        "correct": true,
+        "explanation": "Навколо неї — кам'яниці різних стилів."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери Львівську ратушу на Ринку:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Opera%20House.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/68-104-9007%20Kamianets-Podilskyi%20Fortress%20RB%2018%202.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "На вежі ратуші — оглядовий майданчик.",
+        "explainOnSuccess": true
+      },
+      {
+        "type": "quiz",
+        "text": "Проспект Свободи — це…",
+        "answers": [
+          "Головна вулиця міста з театром і парком",
+          "Підземна річка Полтва",
+          "Гора в Карпатах",
+          "Озеро на околиці"
+        ],
+        "correct": 0,
+        "explanation": "Проспект з'єднує центр із вокзалом."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери вузькі вулиці старого міста — кам'яниці біля Ринку:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20tram%202004%2012.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rue%20des%20Rosiers%2C%20Paris%2C%20France%2001.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Via%20Della%20Madonna%20Dei%20Monti%2C%20Rome%2C%202013.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Calle%20de%20la%20passion%20in%20Venice.JPG?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Львів: бруківка, трамвай, кам'яниці — а на Ринку вдалині видно ратушу та левів на фасадах."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери Львівський оперний театр на проспекті Свободи:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Opera%20House.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odessa%20Opera%20and%20Ballet%20Theater.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/St.%20George's%20Cathedral%2C%20Lviv.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Театр відкрили 1900 року — яскравий фасад із золотом."
+      },
+      {
+        "type": "quiz",
+        "text": "З вежі Львівської ратуші можна…",
+        "answers": [
+          "Оглянути панораму старого міста",
+          "Потрапити на морський берег",
+          "Потрапити в метро",
+          "Побачити снігові вершини Гімалаїв"
+        ],
+        "correct": 0,
+        "explanation": "Оглядовий майданчик відкритий для відвідувачів."
+      }
+    ],
+    "statistics": [
+      {
+        "type": "quiz",
+        "text": "У Львові проживає приблизно…",
+        "answers": [
+          "700 тисяч людей",
+          "50 тисяч",
+          "5 мільйонів",
+          "15 тисяч"
+        ],
+        "correct": 0,
+        "explanation": "Це одне з найбільших міст України."
+      },
+      {
+        "type": "quiz",
+        "text": "У історичному центрі збереглося понад…",
+        "answers": [
+          "2000 старовинних будинків",
+          "20 будинків",
+          "50 хмарочосів",
+          "Жодного старого будинку"
+        ],
+        "correct": 0,
+        "explanation": "Майже кожна вулиця — музей архітектури."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери бароковий собор святого Юра — один із сотень храмів міста:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/St.%20George's%20Cathedral%2C%20Lviv.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Chapel%20of%20the%20Boim%20family.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Opera%20House.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "У Львові понад сотню церков і каплиць різних конфесій."
+      },
+      {
+        "type": "yesno",
+        "text": "Львів — одне з найпопулярніших туристичних міст України.",
+        "correct": true,
+        "explanation": "Щороку місто відвідують мільйони гостей."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Яка площа на фото — головна площа Львова?",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bukovel.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odesa%20Black%20Sea%20coast.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/DniproHES.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Площа Ринок за формою близька до прямокутника."
+      },
+      {
+        "type": "quiz",
+        "text": "Висота пагорба Високий Замок — близько…",
+        "answers": [
+          "400 м над рівнем моря",
+          "4000 м",
+          "40 м",
+          "4 м"
+        ],
+        "correct": 0,
+        "explanation": "Це найвища точка в межах міста."
+      }
+    ],
+    "architecture": [
+      {
+        "type": "quiz",
+        "text": "Кам'яниці на Ринку часто збудовані в стилях…",
+        "answers": [
+          "Ренесансу та готики",
+          "Сучасного хай-теку",
+          "Класицизму XVIII ст.",
+          "Бароко без готики"
+        ],
+        "correct": 0,
+        "explanation": "Багато будинків — XVI–XVII століття."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери Львівський оперний театр (модерн, кінець XIX ст.):",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Opera%20House.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/St.%20George's%20Cathedral%2C%20Lviv.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20Sophia%20Cathedral%20Kiev.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Стиль модерн — витончені фасади та скульптури.",
+        "wikiUrl": "https://uk.wikipedia.org/wiki/Львівський_національний_оперний_театр",
+        "explainOnSuccess": true
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери каплицю Боїмів — кам'яний мавзолей із скульптурами:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Chapel%20of%20the%20Boim%20family.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Opera%20House.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Усередині — реалістичні статуї родини Боїмів."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери каплицю з різьбленим каменем (подібні оздоблення — у Вірменському кварталі):",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Chapel%20of%20the%20Boim%20family.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Opera%20House.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Clupea%20harengus.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Вірменський квартал славиться кам'яницями з орнаментом."
+      },
+      {
+        "type": "quiz",
+        "text": "Дахи старого Львова часто покривають…",
+        "answers": [
+          "Черепицею або міддю",
+          "Льодом цілий рік",
+          "Пластиковими панелями",
+          "Склом як хмарочос"
+        ],
+        "correct": 0,
+        "explanation": "Черепиця та мідь типові для австрійської епохи."
+      },
+      {
+        "type": "yesno",
+        "text": "На одній вулиці Львова можна побачити будинки різних епох.",
+        "correct": true,
+        "explanation": "Готика, бароко, класицизм і модерн часто стоять поруч."
+      }
+    ],
+    "landmarks": [
+      {
+        "type": "imageQuiz",
+        "text": "Обери Львівську ратушу:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20Sophia%20Cathedral%20Kiev.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odessa%20Opera%20and%20Ballet%20Theater.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/68-104-9007%20Kamianets-Podilskyi%20Fortress%20RB%2018%202.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Ратуша стоїть у центрі площі Ринок.",
+        "wikiUrl": "https://uk.wikipedia.org/wiki/Львівська_ратуша",
+        "explainOnSuccess": true
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери Львівський оперний театр:",
+        "imageFit": "contain",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Opera%20House.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/St.%20George's%20Cathedral%2C%20Lviv.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odessa%20Opera%20and%20Ballet%20Theater.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Театр на проспекті Свободи — візитівка міста."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери каплицю Боїмів:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Chapel%20of%20the%20Boim%20family.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Kyiv%20Pechersk%20Lavra.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Унікальна пам'ятка скульптури біля Галицького собору."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери бароковий собор у Львові (Домініканський / св. Юра):",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/St.%20George's%20Cathedral%2C%20Lviv.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bukovel.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Собори збудували в XVIII столітті з білим розписом всередині."
+      },
+      {
+        "type": "quiz",
+        "text": "Личаківський цвинтар — це…",
+        "answers": [
+          "Історичне місце поховань видатних людей",
+          "Торговий центр",
+          "Зоопарк",
+          "Басейн"
+        ],
+        "correct": 0,
+        "explanation": "Тут поховані письменники, вчені та політики."
+      },
+      {
+        "type": "quiz",
+        "text": "Палац Потоцьких сьогодні — це…",
+        "answers": [
+          "Художня галерея",
+          "Аеропорт",
+          "Стадіон",
+          "Метро"
+        ],
+        "correct": 0,
+        "explanation": "У палаці експонують картини."
+      },
+      {
+        "type": "yesno",
+        "text": "Площа Ринок оточена житловими кам'яницями з балконами та арками.",
+        "correct": true,
+        "explanation": "Кожен будинок має номер і історію.",
+        "explainOnSuccess": true
+      }
+    ],
+    "gastronomy": [
+      {
+        "type": "imageQuiz",
+        "text": "Обери український борщ — страву, яку часто подають у Львові:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ukrainian%20borscht.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Chocolate%20(blue%20background).jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Beer%20in%20glass.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bosnian%20cezves.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Борщ готують по-різному: зі сметаною, пампушками чи салом."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери вареники:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Varenyky.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ukrainian%20borscht.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sunflower%20from%20Silesia2.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Clupea%20harengus.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Начинка буває з картоплі, сиру, вишень або маку."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Чим зазвичай готують «каву по-львівськи»?",
+        "imageFit": "contain",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bosnian%20cezves.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Beer%20in%20glass.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ukrainian%20borscht.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Varenyky.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Міцна кава в турці на плиті — традиція кав'ярень."
+      },
+      {
+        "type": "yesno",
+        "text": "Львів часто називають містом кави через велику кількість кав'ярень.",
+        "correct": true,
+        "explanation": "У центрі майде на кожній вулиці є кав'ярня.",
+        "explainOnSuccess": true
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери шоколад — символ львівських солодощів:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Chocolate%20(blue%20background).jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Clupea%20harengus.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Шоколадний фестиваль і крамниці — причина приїхати в місто."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери сало — традиційний делікатес галицької кухні:",
+        "imageFit": "contain",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Salo.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Chocolate%20(blue%20background).jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tursiops%20truncatus.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Сало їдять з хлібом, цибулею та часто подають до борщу."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери пиво — напій крафтових пивоварень:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Beer%20in%20glass.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bosnian%20cezves.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ukrainian%20borscht.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tursiops%20truncatus.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "У Львові багато невеликих пивоварень із дегустаціями."
+      },
+      {
+        "type": "yesno",
+        "text": "У Львові проводять фестивалі сиру та вина.",
+        "correct": true,
+        "explanation": "На ярмарках дегустують сири, вина та галицькі страви."
+      },
+      {
+        "type": "quiz",
+        "text": "Де у Львові часто відкривають кафе й ресторани?",
+        "answers": [
+          "У підвалах і двориках старих кам'яниць",
+          "На вершині Говерли",
+          "На морському пляжі",
+          "У лісі без будівель"
+        ],
+        "correct": 0,
+        "explanation": "Старі кам'яниці мають підвали — їх перетворюють на затишні заклади."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери сирники — український сніданок або десерт:",
+        "imageFit": "contain",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Syrniki.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Varenyky.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Clupea%20harengus.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odesa%20Black%20Sea%20coast.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Сирники подають зі сметаною, варенням або ягодами."
+      },
+      {
+        "type": "quiz",
+        "text": "«Кавова міні» у Львові — це…",
+        "answers": [
+          "Атракція про історію кави",
+          "Шахта вугілля",
+          "Вокзал",
+          "Стадіон"
+        ],
+        "correct": 0,
+        "explanation": "Музей розповідає легенди про каву й показує турки."
+      }
+    ]
+  }
+}

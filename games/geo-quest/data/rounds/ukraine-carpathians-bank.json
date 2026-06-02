@@ -1,0 +1,557 @@
+{
+  "categories": {
+    "peaks": [
+      {
+        "type": "imageQuiz",
+        "text": "Найвища вершина України — Говерла. Обери:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odesa%20Black%20Sea%20coast.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Говерла (2061 м) — у Карпатах."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери Говерлу — найвищу вершину України:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odesa%20Black%20Sea%20coast.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "На Говерлу ходять туристами влітку."
+      },
+      {
+        "type": "yesno",
+        "text": "Говерла — найвища вершина України.",
+        "correct": true,
+        "explanation": "2061 метр над рівнем моря."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Карпати — це гори. Обери вершину:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odesa%20Black%20Sea%20coast.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odessa%20Opera%20and%20Ballet%20Theater.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Карпати тягнуться через кілька країн на заході України."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери карпатський пейзаж:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odessa%20Opera%20and%20Ballet%20Theater.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odesa%20Black%20Sea%20coast.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Ліси, полонини та вершини."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Взимку на Говерлі сніг. Обери гору:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odesa%20Black%20Sea%20coast.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tursiops%20truncatus.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Треба теплий одяг і взуття."
+      }
+    ],
+    "nature": [
+      {
+        "type": "yesno",
+        "text": "У Карпатах ростуть буки, ялини та смереки.",
+        "correct": true,
+        "explanation": "Ліси багаті на різні породи."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери гори — не море:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odesa%20Black%20Sea%20coast.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ukrainian%20borscht.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Карпати — хребет на заході України."
+      },
+      {
+        "type": "quiz",
+        "text": "Полонина — це…",
+        "answers": [
+          "Лука на горі без дерев",
+          "Порт",
+          "Річка",
+          "Місто"
+        ],
+        "correct": 0,
+        "explanation": "Влітку випасають овець."
+      },
+      {
+        "type": "quiz",
+        "text": "У карпатських лісах живуть…",
+        "answers": [
+          "Ведмеді, вовки, кози",
+          "Пінгвіни",
+          "Кенгуру",
+          "Жирафи"
+        ],
+        "correct": 0,
+        "explanation": "Тварини пристосовані до гір."
+      },
+      {
+        "type": "quiz",
+        "text": "Карпатський національний парк — для…",
+        "answers": [
+          "Охорони природи",
+          "Видобутку нафти в океані",
+          "Плавання",
+          "Космосу"
+        ],
+        "correct": 0,
+        "explanation": "Парк охороняє ліси та тварин."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери ліс у горах (Карпати):",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoverla.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odessa%20Opera%20and%20Ballet%20Theater.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Opera%20House.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tursiops%20truncatus.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Ліси покривають схили хребтів."
+      }
+    ],
+    "culture": [
+      {
+        "type": "imageQuiz",
+        "text": "Трембіта звучить у горах. Обери інструмент:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Trembita.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tursiops%20truncatus.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ukrainian%20borscht.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Довгий дерев'яний ріг — символ Гуцульщини."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери трембіту — карпатський інструмент:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Trembita.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tursiops%20truncatus.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ukrainian%20borscht.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Звук чути на кілька кілометрів.",
+        "explainOnSuccess": true
+      },
+      {
+        "type": "yesno",
+        "text": "Трембіта — традиційний інструмент Гуцульщини.",
+        "correct": true,
+        "explanation": "Дерев'яний ріг — символ Карпат."
+      },
+      {
+        "type": "quiz",
+        "text": "Гуцули — це…",
+        "answers": [
+          "Гірські українці Карпат",
+          "Моряки",
+          "Космонавти",
+          "Пустельники"
+        ],
+        "correct": 0,
+        "explanation": "Вони зберігають традиції, килими та страви."
+      },
+      {
+        "type": "quiz",
+        "text": "Коломийка — це…",
+        "answers": [
+          "Жвавий народний танець",
+          "Суп",
+          "Човен",
+          "Маяк"
+        ],
+        "correct": 0,
+        "explanation": "Танцюють у колі під музику."
+      },
+      {
+        "type": "quiz",
+        "text": "Вишиванка в Карпатах має…",
+        "answers": [
+          "Яскраві кольори та візерунки",
+          "Лише чорний колір",
+          "Немає орнаменту",
+          "Смуги як у зебри"
+        ],
+        "correct": 0,
+        "explanation": "Кожне село має свої мотиви."
+      }
+    ],
+    "tourism": [
+      {
+        "type": "imageQuiz",
+        "text": "Буковель — гірськолижний курорт. Обери:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bukovel.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odesa%20Black%20Sea%20coast.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Буковель у Прикарпатті — популярне місце відпочинку."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери гірськолижний курорт Буковель:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bukovel.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odesa%20Black%20Sea%20coast.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lviv%20Town%20Hall.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Взимку катаються на лижах і сноубордах."
+      },
+      {
+        "type": "yesno",
+        "text": "У Карпатах є канатні дороги та підйомники.",
+        "correct": true,
+        "explanation": "Так працюють курорти."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Санки та лижі — на Буковелі. Обери курорт:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bukovel.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odesa%20Black%20Sea%20coast.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Odessa%20Opera%20and%20Ballet%20Theater.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ukrainian%20borscht.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "На снігу ковзають вниз з гір."
+      },
+      {
+        "type": "quiz",
+        "text": "Туристичні стежки ведуть…",
+        "answers": [
+          "На вершини та полонини",
+          "Під воду",
+          "В космос",
+          "В пустелю"
+        ],
+        "correct": 0,
+        "explanation": "Стежки позначені знаками."
+      },
+      {
+        "type": "quiz",
+        "text": "Ужгород — місто біля…",
+        "answers": [
+          "Карпат на Закарпатті",
+          "Океану",
+          "Пустелі",
+          "Антарктиди"
+        ],
+        "correct": 0,
+        "explanation": "«Ворота» до українських Карпат."
+      }
+    ],
+    "food": [
+      {
+        "type": "imageQuiz",
+        "text": "Банош — страва гір. Обери:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ukrainian%20borscht.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ukrainian%20borscht.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Clupea%20harengus.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Beer%20in%20glass.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Банош готують з кукурудзяного борошна та сиру."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери галицьку страву в горах (банош — кукурудзяна каша, схожа на густий борщ):",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ukrainian%20borscht.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Varenyky.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Clupea%20harengus.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Їдять гарячою з бринзою та шкварками."
+      },
+      {
+        "type": "quiz",
+        "text": "Бринза — це…",
+        "answers": [
+          "Гірський сир",
+          "Риба",
+          "Хліб",
+          "Суп"
+        ],
+        "correct": 0,
+        "explanation": "Солоний сир з овечого молока."
+      },
+      {
+        "type": "quiz",
+        "text": "Грибна юшка в Карпатах — …",
+        "answers": [
+          "Суп із лісових грибів",
+          "Морозиво",
+          "Сік",
+          "Торт"
+        ],
+        "correct": 0,
+        "explanation": "Гриби збирають у лісі."
+      },
+      {
+        "type": "yesno",
+        "text": "Чай з карпатських трав п'ють для зігрівання.",
+        "correct": true,
+        "explanation": "М'ята, чебрець та липа ростуть у горах."
+      },
+      {
+        "type": "quiz",
+        "text": "Вареники в горах часто з…",
+        "answers": [
+          "Картоплею та сиром",
+          "Рибою з океану",
+          "Кактусом",
+          "Шоколадом"
+        ],
+        "correct": 0,
+        "explanation": "Ситна страва після прогулянки."
+      }
+    ],
+    "wildlife": [
+      {
+        "type": "imageQuiz",
+        "text": "У карпатських лісах живе ведмідь. Обери:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Eurasian%20brown%20bear%20(Ursus%20arctos%20arctos)%20female%201.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tursiops%20truncatus.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Clupea%20harengus.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Також живуть вовки та кози."
+      },
+      {
+        "type": "imageQuiz",
+        "text": "Обери ведмедя — тварину карпатських лісів:",
+        "imageFit": "cover",
+        "answers": [
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Eurasian%20brown%20bear%20(Ursus%20arctos%20arctos)%20female%201.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tursiops%20truncatus.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Clupea%20harengus.jpg?width=330"
+          },
+          {
+            "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Potemkin%20Stairs.jpg?width=330"
+          }
+        ],
+        "correct": 0,
+        "explanation": "Ведмеді живуть у лісах, рідко зустрічають людей."
+      },
+      {
+        "type": "quiz",
+        "text": "Коза на полонині — …",
+        "answers": [
+          "Випасається влітку",
+          "Плаває в морі",
+          "Літає",
+          "Живе в місті"
+        ],
+        "correct": 0,
+        "explanation": "Кози дають молоко для сиру."
+      },
+      {
+        "type": "quiz",
+        "text": "Закарпаття славиться…",
+        "answers": [
+          "Термальними водами та вином",
+          "Кораловими рифами",
+          "Саванами",
+          "Вулканами"
+        ],
+        "correct": 0,
+        "explanation": "Регіон має унікальну культуру."
+      },
+      {
+        "type": "yesno",
+        "text": "У Карпатах багато чистих струмків і водоспадів.",
+        "correct": true,
+        "explanation": "Вода з гор — холодна та прозора."
+      },
+      {
+        "type": "quiz",
+        "text": "Птахи в горах — …",
+        "answers": [
+          "Орли, сови, дятли",
+          "Пінгвіни",
+          "Попугаї джунглів",
+          "Страуси"
+        ],
+        "correct": 0,
+        "explanation": "Орел — символ волі."
+      }
+    ]
+  }
+}
