@@ -1,4 +1,4 @@
-const CACHE_NAME = "mini-games-v48";
+const CACHE_NAME = "mini-games-v49";
 const IMAGE_CACHE_NAME = "mini-games-images-v2";
 const IMAGE_EXT_RE = /\.(png|jpe?g|webp|gif|svg|avif)(\?.*)?$/i;
 const IMAGE_WARMUP_CONCURRENCY = 2;
@@ -62,6 +62,8 @@ const PRECACHE = [
     "./games/geo-quest/assets/ukraine-terrain.jpg",
     "./games/geo-quest/assets/europe-puzzle.svg",
     "./games/geo-quest/assets/puzzles/ukraine-phys.jpg",
+    "./games/geo-quest/assets/puzzles/ukraine-black-sea-phys.jpg",
+    "./games/geo-quest/assets/puzzles/ukraine-goverla.jpg",
     "./games/geo-quest/assets/puzzles/france-phys.jpg",
     "./games/geo-quest/assets/puzzles/spain-phys.jpg",
     "./games/geo-quest/assets/puzzles/sweden-phys.jpg",

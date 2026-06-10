@@ -173,7 +173,7 @@ const MARKERS = {
     lviv: { lon: 24.0297, lat: 49.8397, title: "Львів" },
     kyiv: { lon: 30.5234, lat: 50.4501, title: "Київ" },
     odesa: { lon: 30.7233, lat: 46.4825, title: "Одеса" },
-    "black-sea": { lon: 31.8, lat: 44.8, title: "Чорне море", nudgeDownCm: 1, labelBelow: true },
+    "black-sea": { lon: 31.8, lat: 44.8, title: "Чорне море", nudgeUpCm: 1, labelBelow: true },
     carpathians: { lon: 24.5, lat: 48.16, title: "Карпати" },
     dnipro: { lon: 35.0462, lat: 48.4647, title: "Дніпро" },
 };

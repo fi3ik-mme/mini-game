@@ -1584,7 +1584,9 @@
         return shuffleArray(regular).concat(bosses);
     }
 
-    /** Country puzzles first (shuffled); full-map puzzle always last. */
+    const PUZZLE_COUNTRY_ROUNDS = 3;
+
+    /** Three random country puzzles, then full-map puzzle always last. */
     function preparePuzzleRounds(rounds) {
         if (!rounds.some((r) => r.type === "puzzle")) return rounds;
         const countryPuzzles = [];
@@ -1599,7 +1601,10 @@
             else summaryPuzzles.push(round);
         });
         if (!countryPuzzles.length || !summaryPuzzles.length) return rounds;
-        const shuffledCountries = shuffleArray(countryPuzzles).map((round) => ({ ...round, boss: false }));
+        const pickCount = Math.min(PUZZLE_COUNTRY_ROUNDS, countryPuzzles.length);
+        const shuffledCountries = shuffleArray(countryPuzzles)
+            .slice(0, pickCount)
+            .map((round) => ({ ...round, boss: false }));
         const finale = { ...summaryPuzzles[0], boss: true };
         return other.concat(shuffledCountries, [finale], summaryPuzzles.slice(1));
     }
@@ -2869,6 +2874,62 @@
         ctx.lineWidth = 2;
         ctx.stroke(p);
         ctx.restore();
+    }
+
+    function drawPuzzlePathOutline(ctx, pathStr, sx, sy) {
+        const p = new Path2D(pathStr);
+        const strokeW = Math.max(1.8, 2.6 / Math.min(sx, sy));
+        ctx.save();
+        ctx.scale(sx, sy);
+        ctx.fillStyle = "rgba(34, 197, 94, 0.14)";
+        ctx.fill(p);
+        ctx.strokeStyle = "rgba(250, 204, 21, 0.95)";
+        ctx.lineWidth = strokeW;
+        ctx.lineJoin = "round";
+        ctx.stroke(p);
+        ctx.restore();
+    }
+
+    async function buildTexturedPuzzleImage(textureUrl, outlineConfig, size) {
+        const cw = (size && size.width) || 960;
+        const ch = (size && size.height) || 720;
+        const cacheKey = textureUrl + ":outlines:" + JSON.stringify(outlineConfig) + ":" + cw + "x" + ch;
+        if (puzzleImageCache[cacheKey]) return puzzleImageCache[cacheKey];
+
+        const img = await loadImage(textureUrl, false);
+        const canvas = document.createElement("canvas");
+        canvas.width = cw;
+        canvas.height = ch;
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0, cw, ch);
+
+        if (outlineConfig && outlineConfig.mapId && outlineConfig.ids) {
+            const mapData = await loadMap(outlineConfig.mapId);
+            const parts = (mapData.viewBox || "0 0 1000 780").split(/\s+/).map(Number);
+            const vw = parts[2] || 1000;
+            const vh = parts[3] || 780;
+            const sx = cw / vw;
+            const sy = ch / vh;
+            const regions = (mapData.regions || mapData.countries || []);
+            for (const id of outlineConfig.ids) {
+                const region = regions.find((r) => r.id === id);
+                if (region && region.path) drawPuzzlePathOutline(ctx, region.path, sx, sy);
+            }
+        }
+
+        const url = canvas.toDataURL("image/jpeg", 0.9);
+        puzzleImageCache[cacheKey] = url;
+        return url;
+    }
+
+    async function buildPuzzleImage(round) {
+        if (round.puzzleOutlines && round.imageUrl) {
+            return buildTexturedPuzzleImage(round.imageUrl, round.puzzleOutlines);
+        }
+        if (round.imageUrl) return round.imageUrl;
+        return buildEuropePuzzleImage(round.mapId || "europe-countries", {
+            countryId: round.countryId || null,
+        });
     }
 
     async function buildEuropePuzzleImage(mapId, options) {
@@ -4596,9 +4657,7 @@
             let imageUrl;
             let pieceSignatures;
             try {
-                imageUrl = await buildEuropePuzzleImage(round.mapId || "europe-countries", {
-                    countryId: round.countryId || null,
-                });
+                imageUrl = await buildPuzzleImage(round);
                 pieceSignatures = await buildPieceSignatures(imageUrl, cols, rows);
             } catch (e) {
                 console.error(e);

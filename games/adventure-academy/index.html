@@ -201,6 +201,31 @@
             z-index: 5;
             transition: transform 0.15s ease;
         }
+        .zone:not(.locked)::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: calc(100% + 18px);
+            height: calc(100% + 18px);
+            transform: translate(-50%, -50%);
+            border-radius: 24px;
+            border: 2.5px solid rgba(253, 224, 71, 0.75);
+            pointer-events: none;
+            z-index: 0;
+            animation: zone-tap-ring 2.2s ease-in-out infinite;
+        }
+        .zone .zone-inner { position: relative; z-index: 1; }
+        @keyframes zone-tap-ring {
+            0%, 100% {
+                box-shadow: 0 0 0 2px rgba(253, 224, 71, 0.35), 0 0 14px rgba(253, 224, 71, 0.3);
+                opacity: 0.8;
+            }
+            50% {
+                box-shadow: 0 0 0 6px rgba(253, 224, 71, 0.15), 0 0 24px rgba(253, 224, 71, 0.5);
+                opacity: 1;
+            }
+        }
         .zone:active { transform: translate(-50%, -50%) scale(0.95); }
         .zone-egypt { left: 76%; top: 80%; }
         .zone-lab   { left: 24%; top: 78%; }
@@ -613,7 +638,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 32px 24px;
-            padding: 12px 8px;
+            padding: 22px 8px 12px;
         }
         .map-path::before {
             content: "";
@@ -631,13 +656,13 @@
             position: relative;
             cursor: pointer;
             background: rgba(255,255,255,0.06);
-            border: 2px solid rgba(255,255,255,0.18);
+            border: 2px solid rgba(255,255,255,0.22);
             border-radius: 18px;
             padding: 16px 12px;
             color: #f8fafc;
             text-align: center;
             font-family: inherit;
-            transition: transform 0.18s, border-color 0.2s, background 0.2s;
+            transition: transform 0.18s, border-color 0.2s, background 0.2s, box-shadow 0.2s;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -666,14 +691,45 @@
         .location-node:active { transform: scale(0.96); }
 
         .location-node.current {
-            border-color: rgba(253, 224, 71, 0.7);
-            background: rgba(253, 224, 71, 0.12);
-            box-shadow: 0 0 0 4px rgba(253, 224, 71, 0.15);
-            animation: pulse 1.6s infinite;
+            border: 3px solid #fde047;
+            background: rgba(253, 224, 71, 0.16);
+            box-shadow:
+                0 0 0 3px rgba(253, 224, 71, 0.35),
+                0 0 20px rgba(253, 224, 71, 0.4);
+            animation: location-pulse 1.4s ease-in-out infinite;
         }
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 0 4px rgba(253, 224, 71, 0.15); }
-            50% { box-shadow: 0 0 0 10px rgba(253, 224, 71, 0.02); }
+        .location-node.current::before {
+            content: "👆 Тапни!";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #fde047 0%, #fbbf24 100%);
+            color: #1e1b4b;
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 99px;
+            white-space: nowrap;
+            box-shadow: 0 2px 12px rgba(253, 224, 71, 0.55);
+            z-index: 2;
+            animation: tap-badge-bob 1.1s ease-in-out infinite;
+        }
+        @keyframes location-pulse {
+            0%, 100% {
+                box-shadow:
+                    0 0 0 3px rgba(253, 224, 71, 0.4),
+                    0 0 18px rgba(253, 224, 71, 0.35);
+            }
+            50% {
+                box-shadow:
+                    0 0 0 8px rgba(253, 224, 71, 0.12),
+                    0 0 28px rgba(253, 224, 71, 0.55);
+            }
+        }
+        @keyframes tap-badge-bob {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50%      { transform: translateX(-50%) translateY(-3px); }
         }
 
         .location-node.done {
@@ -705,6 +761,22 @@
             text-align: center;
             color: #94a3b8;
             font-size: 0.85rem;
+            margin: 0;
+            padding: 8px 14px;
+            border-radius: 12px;
+            transition: color 0.2s, background 0.2s, border-color 0.2s;
+        }
+        .map-tip.highlight {
+            color: #fde68a;
+            font-weight: 700;
+            background: rgba(253, 224, 71, 0.1);
+            border: 1.5px solid rgba(253, 224, 71, 0.45);
+            box-shadow: 0 0 16px rgba(253, 224, 71, 0.15);
+            animation: tip-glow 2s ease-in-out infinite;
+        }
+        @keyframes tip-glow {
+            0%, 100% { box-shadow: 0 0 12px rgba(253, 224, 71, 0.12); }
+            50%      { box-shadow: 0 0 20px rgba(253, 224, 71, 0.28); }
         }
 
         /* ---------- Question view ---------- */
@@ -1438,7 +1510,7 @@
         <div class="character" id="character"></div>
     </div>
 
-    <p class="map-tip" id="picker-tip">Тапни локацію — герой піде туди стежкою.</p>
+    <p class="map-tip highlight" id="picker-tip">👆 Тапни на локацію — герой піде туди стежкою.</p>
 </section>
 
 <!-- ============ SCREEN: MAP ============ -->
@@ -1449,7 +1521,7 @@
         <p class="page-sub" id="theme-intro"></p>
     </div>
     <div class="map-path" id="map-path"></div>
-    <p class="map-tip" id="map-tip">Тапни на локацію, щоб почати.</p>
+    <p class="map-tip highlight" id="map-tip">👆 Тапни на локацію, щоб почати.</p>
     <button id="map-back" class="big-btn secondary" type="button">← До тем</button>
 </section>
 
@@ -1528,6 +1600,7 @@
     const themeTitleEl = document.getElementById("theme-title");
     const themeIntroEl = document.getElementById("theme-intro");
     const mapPathEl    = document.getElementById("map-path");
+    const mapTipEl     = document.getElementById("map-tip");
     const mapBackBtn   = document.getElementById("map-back");
 
     const progressDots  = document.getElementById("progress-dots");
@@ -1972,6 +2045,22 @@
             });
             mapPathEl.appendChild(node);
         });
+
+        const nextLoc = currentThemeData.locations.find(loc => {
+            const unlocked = ts.unlocked.includes(loc.id);
+            const done = ts.completed.includes(loc.id);
+            return unlocked && !done;
+        });
+        if (nextLoc) {
+            mapTipEl.textContent = `👆 Тапни на «${nextLoc.title}», щоб почати!`;
+            mapTipEl.classList.add("highlight");
+        } else if (currentThemeData.locations.every(l => ts.completed.includes(l.id))) {
+            mapTipEl.textContent = "Усі локації пройдено! 🎉";
+            mapTipEl.classList.remove("highlight");
+        } else {
+            mapTipEl.textContent = "Тапни на локацію, щоб почати.";
+            mapTipEl.classList.remove("highlight");
+        }
     }
 
     /* -------------------- Question runner -------------------- */

@@ -1,10 +1,10 @@
 {
-  "versionCode": 8,
-  "versionName": "1.6.0",
+  "versionCode": 9,
+  "versionName": "1.7.0",
   "downloadUrl": "./download/mini-games.apk",
   "sizeBytes": 1250068,
-  "notes": "Geo Quest: банки питань для міст і регіонів України; супутникова текстура карти; виправлено лінії зв'язків в Атласі Зв'язків; покращені фото у вікторинах.",
-  "publishedAt": "2026-06-02T14:29:02.558Z",
+  "notes": "Geo Quest: нові пазли України (карта, Чорне море, Говерла); контури на пазлах; 3 випадкові країни + пазл Європи; зсув маркера Чорного моря.",
+  "publishedAt": "2026-06-10T16:25:30.231Z",
   "packageId": "io.github.fi3ikmme.minigames",
   "minSdkVersion": 21
 }

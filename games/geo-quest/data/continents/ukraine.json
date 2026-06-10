@@ -154,40 +154,32 @@
       "rounds": [
         {
           "type": "puzzle",
-          "text": "Пазл 4×3: Львівська область.",
+          "text": "Пазл 4×3: збери карту України.",
           "cols": 4,
           "rows": 3,
-          "mapId": "ukraine-travel",
-          "countryId": "lviv-oblast",
-          "explanation": "Львівщина зібрана!"
+          "imageUrl": "assets/ukraine-terrain.jpg",
+          "puzzleOutlines": {
+            "mapId": "ukraine-travel",
+            "ids": ["ukraine"]
+          },
+          "explanation": "Україна зібрана! Це та сама карта, що й фон локації подорожі."
         },
         {
           "type": "puzzle",
-          "text": "Пазл 4×3: Київська область.",
+          "text": "Пазл 4×3: фізична карта Чорного моря з рельєфом.",
           "cols": 4,
           "rows": 3,
-          "mapId": "ukraine-travel",
-          "countryId": "kyiv-oblast",
-          "explanation": "Київщина зібрана!"
+          "imageUrl": "assets/puzzles/ukraine-black-sea-phys.jpg",
+          "explanation": "Чорне море — найбільше внутрішнє море Європи. На карті видно глибину басейну та прибережні гори."
         },
         {
           "type": "puzzle",
-          "text": "Пазл 4×3: Чорноморське узбережжя.",
+          "text": "Пазл 4×3: Чорногірський хребет і Говерла.",
           "cols": 4,
           "rows": 3,
-          "mapId": "ukraine-travel",
-          "countryId": "black-sea-coast",
-          "explanation": "Узбережжя зібране!"
-        },
-        {
-          "type": "puzzle",
-          "text": "Збери пазл 4×3 — уся карта України.",
-          "cols": 4,
-          "rows": 3,
-          "mapId": "ukraine-travel",
-          "explanation": "Чудово! Ти склав карту України!",
-          "explainOnSuccess": true,
-          "boss": true
+          "imageUrl": "assets/puzzles/ukraine-goverla.jpg",
+          "explanation": "Говерла (2061 м) — найвища вершина України. Вона в масиві Чорногори в Українських Карпатах.",
+          "explainOnSuccess": true
         }
       ]
     }
