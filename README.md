@@ -142,3 +142,6 @@ npx playwright install chromium
 npm test              # local (starts serve on :3456)
 npm run test:live     # against GitHub Pages after deploy
 ```
+
+Info slide idea
+https://www.instagram.com/p/DZF-VA-kV4C/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==
