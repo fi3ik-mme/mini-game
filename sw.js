@@ -1,4 +1,4 @@
-const CACHE_NAME = "mini-games-v49";
+const CACHE_NAME = "mini-games-v51";
 const IMAGE_CACHE_NAME = "mini-games-images-v2";
 const IMAGE_EXT_RE = /\.(png|jpe?g|webp|gif|svg|avif)(\?.*)?$/i;
 const IMAGE_WARMUP_CONCURRENCY = 2;
@@ -13,6 +13,18 @@ const PRECACHE = [
     "./index.html",
     "./manifest.webmanifest",
     "./icon.svg",
+    "./assets/shared-theme.css",
+    "./assets/backgrounds/menu.jpg",
+    "./assets/backgrounds/vyshyvanka.jpg",
+    "./assets/backgrounds/mova-kraina.jpg",
+    "./assets/backgrounds/sunflower.jpg",
+    "./assets/backgrounds/motanka.jpg",
+    "./assets/backgrounds/kyiv.jpg",
+    "./assets/backgrounds/forest.jpg",
+    "./assets/backgrounds/hoverla.jpg",
+    "./assets/backgrounds/kalyna.jpg",
+    "./assets/backgrounds/wheat.jpg",
+    "./assets/backgrounds/bandura.jpg",
     "./games/maze/",
     "./games/maze/index.html",
     "./games/first-million/",
@@ -67,7 +79,31 @@ const PRECACHE = [
     "./games/geo-quest/assets/puzzles/france-phys.jpg",
     "./games/geo-quest/assets/puzzles/spain-phys.jpg",
     "./games/geo-quest/assets/puzzles/sweden-phys.jpg",
-    "./games/geo-quest/assets/puzzles/germany-phys.jpg"
+    "./games/geo-quest/assets/puzzles/germany-phys.jpg",
+    "./games/mova-kraina/",
+    "./games/mova-kraina/index.html",
+    "./games/mova-kraina/data/rounds-index.json",
+    "./games/mova-kraina/data/quiz-grammar.json",
+    "./games/mova-kraina/data/quiz-vocabulary.json",
+    "./games/mova-kraina/data/quiz-spelling.json",
+    "./games/mova-kraina/data/multi-parts-of-speech.json",
+    "./games/mova-kraina/data/multi-phonetics.json",
+    "./games/mova-kraina/data/multi-punctuation.json",
+    "./games/mova-kraina/data/odd-grammar.json",
+    "./games/mova-kraina/data/odd-vocabulary.json",
+    "./games/mova-kraina/data/odd-sounds.json",
+    "./games/mova-kraina/data/fill-carpathians.json",
+    "./games/mova-kraina/data/fill-kyiv.json",
+    "./games/mova-kraina/data/fill-heroes.json",
+    "./games/mova-kraina/data/match-antonyms.json",
+    "./games/mova-kraina/data/match-definitions.json",
+    "./games/mova-kraina/data/match-grammar.json",
+    "./games/mova-kraina/data/wordparts-nouns.json",
+    "./games/mova-kraina/data/wordparts-verbs.json",
+    "./games/mova-kraina/data/wordparts-adjectives.json",
+    "./games/mova-kraina/data/sentence-simple.json",
+    "./games/mova-kraina/data/sentence-attributes.json",
+    "./games/mova-kraina/data/sentence-circumstances.json"
 ];
 
 self.addEventListener("install", (event) => {

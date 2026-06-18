@@ -13,6 +13,8 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <link rel="icon" type="image/svg+xml" href="../../icon.svg" />
     <link rel="apple-touch-icon" href="../../icon.svg" />
+    <link rel="preload" href="../../assets/backgrounds/forest.jpg" as="image" />
+    <link rel="stylesheet" href="../../assets/shared-theme.css" />
 
     <style>
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -23,9 +25,9 @@
             margin: 0;
             min-height: 100vh;
             min-height: 100dvh;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            --page-bg: url("../../assets/backgrounds/forest.jpg");
+            font-family: var(--font-body, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif);
             color: white;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -465,7 +467,7 @@
     </style>
 </head>
 
-<body>
+<body class="has-photo-bg">
 
 <div class="top-bar">
     <a class="back-link" href="../../index.html" data-i18n="backMenu">← Меню</a>

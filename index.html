@@ -15,6 +15,8 @@
     <link rel="icon" type="image/svg+xml" href="./icon.svg" />
     <link rel="apple-touch-icon" href="./icon.svg" />
     <meta name="description" content="Колекція міні-ігор українською мовою. Працює офлайн на телефоні." />
+    <link rel="preload" href="./assets/backgrounds/menu.jpg" as="image" />
+    <link rel="stylesheet" href="./assets/shared-theme.css" />
 
     <style>
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -25,12 +27,12 @@
             margin: 0;
             min-height: 100vh;
             min-height: 100dvh;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            --page-bg: url("./assets/backgrounds/menu.jpg");
+            font-family: var(--font-body, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
             color: white;
             padding: 20px;
             padding-bottom: max(20px, env(safe-area-inset-bottom));
@@ -39,13 +41,8 @@
         }
 
         h1 {
-            font-size: 2.2rem;
             margin: 0 0 22px;
             text-align: center;
-            background: linear-gradient(180deg, #fde68a 0%, #fbbf24 60%, #d97706 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
         }
 
         .menu {
@@ -466,7 +463,7 @@
         .apk-update-actions button:active { transform: scale(0.96); }
     </style>
 </head>
-<body>
+<body class="has-photo-bg">
 
 <aside id="apk-update" class="apk-update" hidden>
     <h3>🚀 <span>Доступна нова версія додатка</span></h3>
@@ -503,6 +500,12 @@
         <div class="icon">🌀</div>
         <h2>Лабіринт</h2>
         <p>Знайди вихід зі стін. Чим швидше — тим краще!</p>
+    </a>
+
+    <a class="game-card" href="games/mova-kraina/index.html">
+        <div class="icon">🇺🇦</div>
+        <h2>Мова Край</h2>
+        <p>Вивчай українську: тести, пари, частини слова, члени речення. 4 клас.</p>
     </a>
 </nav>
 

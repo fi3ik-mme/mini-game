@@ -1,0 +1,78 @@
+/* Shared UI: display font + photographic page backgrounds */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Unbounded:wght@600;700;800&display=swap");
+
+:root {
+    --font-display: "Unbounded", system-ui, -apple-system, sans-serif;
+    --font-body: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    --bg-overlay-top: rgba(6, 12, 24, 0.45);
+    --bg-overlay-mid: rgba(6, 12, 24, 0.68);
+    --bg-overlay-bottom: rgba(4, 8, 18, 0.82);
+}
+
+html.has-photo-bg,
+body.has-photo-bg {
+    background-color: #0a1628;
+    background-image: var(--page-bg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body.has-photo-bg::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(
+        180deg,
+        var(--bg-overlay-top) 0%,
+        var(--bg-overlay-mid) 42%,
+        var(--bg-overlay-bottom) 100%
+    );
+}
+
+body.has-photo-bg > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Main game / menu titles — large, readable Cyrillic */
+.display-title,
+body > h1,
+h1.page-title,
+h1.title,
+.hero-title h1 {
+    font-family: var(--font-display) !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    color: #ffe566 !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    -webkit-text-fill-color: #ffe566 !important;
+    text-shadow:
+        0 2px 0 rgba(80, 40, 0, 0.55),
+        0 4px 18px rgba(0, 0, 0, 0.65),
+        0 0 40px rgba(255, 200, 0, 0.28);
+}
+
+body > h1,
+h1.page-title,
+h1.title {
+    font-size: clamp(2rem, 8.5vw, 2.85rem) !important;
+}
+
+body.has-photo-bg .game-card,
+body.has-photo-bg .mode-card,
+body.has-photo-bg .set-card {
+    background: rgba(10, 18, 36, 0.72);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+body.has-photo-bg .modal {
+    background: linear-gradient(180deg, rgba(14, 28, 58, 0.96) 0%, rgba(8, 14, 30, 0.98) 100%);
+}

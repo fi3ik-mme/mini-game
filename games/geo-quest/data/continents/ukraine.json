@@ -108,12 +108,6 @@
       "rounds": [
         {
           "type": "matchPairs",
-          "pairKind": "capital",
-          "count": 5,
-          "text": "Співстав область та її обласний центр."
-        },
-        {
-          "type": "matchPairs",
           "pairKind": "geo",
           "count": 5,
           "text": "Співстав область та відомий географічний об'єкт."
