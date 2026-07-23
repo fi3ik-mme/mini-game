@@ -2431,14 +2431,20 @@
     }
 
     function showExplanation(isCorrect, q, onContinue) {
+        // Correct answer: skip the «Правильно» modal and go to the next question.
+        if (isCorrect) {
+            setTimeout(onContinue, 450);
+            return;
+        }
+
         const hasExtra = q && (q.explanation || q.media);
         if (!hasExtra) {
             setTimeout(onContinue, 900);
             return;
         }
 
-        modalTitle.textContent = isCorrect ? "✓ Правильно!" : "✗ Неправильно";
-        modalTitle.className = isCorrect ? "correct" : "wrong";
+        modalTitle.textContent = "✗ Неправильно";
+        modalTitle.className = "wrong";
 
         modalMedia.innerHTML = q.media ? q.media : "";
 
@@ -2453,9 +2459,8 @@
         explanationModal.classList.add("active");
 
         if (voice.isOn()) {
-            const verdict = isCorrect ? "Правильно!" : "Неправильно.";
             const parts = [
-                verdict,
+                "Неправильно.",
                 "Правильна відповідь: " + correctAnswer + ".",
                 q.explanation || ""
             ].filter(Boolean);
