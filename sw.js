@@ -1,4 +1,4 @@
-const CACHE_NAME = "mini-games-v51";
+const CACHE_NAME = "mini-games-v53";
 const IMAGE_CACHE_NAME = "mini-games-images-v2";
 const IMAGE_EXT_RE = /\.(png|jpe?g|webp|gif|svg|avif)(\?.*)?$/i;
 const IMAGE_WARMUP_CONCURRENCY = 2;
@@ -16,7 +16,7 @@ const PRECACHE = [
     "./assets/shared-theme.css",
     "./assets/backgrounds/menu.jpg",
     "./assets/backgrounds/vyshyvanka.jpg",
-    "./assets/backgrounds/mova-kraina.jpg",
+    "./assets/backgrounds/petrykivka.jpg",
     "./assets/backgrounds/sunflower.jpg",
     "./assets/backgrounds/motanka.jpg",
     "./assets/backgrounds/kyiv.jpg",
@@ -38,6 +38,7 @@ const PRECACHE = [
     "./games/first-million/data/mystetstvo-4-klas.json",
     "./games/first-million/data/steam-4-klas.json",
     "./games/first-million/data/ukrayinska-mova-4-klas.json",
+    "./games/first-million/data/ukrayinska-mova-dieslova-chasy-4-klas.json",
     "./games/first-million/data/ya-doslidzhuyu-svit-4-klas.json",
     "./games/first-million/data/memolohiya-100.json",
     "./games/first-million/data/cheatcodes.json",

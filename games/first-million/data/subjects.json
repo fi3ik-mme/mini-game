@@ -18,6 +18,16 @@
     "unlock": { "type": "free" }
   },
   {
+    "id": "ukrayinska-mova-dieslova-chasy",
+    "title": "Дієслова: часи",
+    "description": "Українська мова, 4 клас — 85 запитань про часи дієслів",
+    "icon": "⏰",
+    "file": "data/ukrayinska-mova-dieslova-chasy-4-klas.json",
+    "tier": 0,
+    "unlock": { "type": "free" }
+  },
+
+  {
     "id": "ya-doslidzhuyu-svit",
     "title": "Я досліджую світ",
     "description": "3–4 клас (НУШ), 100+ запитань",
