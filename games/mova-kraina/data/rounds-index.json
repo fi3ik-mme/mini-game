@@ -1,6 +1,6 @@
 {
-  "title": "Мова Край",
-  "subtitle": "Українська мова · 4 клас",
+  "title": "Мова",
+  "subtitle": "Грай і вчи мову · 4 клас",
   "grade": "4 клас (НУШ)",
   "modes": [
     {
@@ -91,9 +91,9 @@
   "badges": [
     { "id": "cossack", "title": "Козак мови", "icon": "⚔️", "need": 3 },
     { "id": "kalyna", "title": "Гілка калини", "icon": "🌿", "need": 7 },
-    { "id": "vyshyvanka", "title": "Майстер вишиванки", "icon": "👕", "need": 14 },
+    { "id": "vyshyvanka", "title": "Хранителька роду", "icon": "🪆", "need": 14 },
     { "id": "bandura", "title": "Бард бандури", "icon": "🎵", "need": 21 },
-    { "id": "patron", "title": "Друг Патрона", "icon": "🐕", "need": 28 },
-    { "id": "trident", "title": "Знавець герба", "icon": "🛡️", "need": 35 }
+    { "id": "patron", "title": "Очі неба", "icon": "🛸", "need": 28 },
+    { "id": "trident", "title": "Щит землі", "icon": "🛡️", "need": 35 }
   ]
 }

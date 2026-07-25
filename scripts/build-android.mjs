@@ -59,17 +59,21 @@ const KEY_PASS = process.env.BUBBLEWRAP_KEY_PASSWORD || "minigames";
  *   - release.json at the repo root, which the live site exposes so any
  *     installed APK can poll it and prompt the user to update.
  * --------------------------------------------------------------------------- */
-const APP_VERSION_CODE = 9;
-const APP_VERSION_NAME = "1.7.0";
+const APP_VERSION_CODE = 10;
+const APP_VERSION_NAME = "1.8.0";
 const RELEASE_NOTES =
-  "Geo Quest: нові пазли України (карта, Чорне море, Говерла); контури на пазлах; 3 випадкові країни + пазл Європи; зсув маркера Чорного моря.";
+  "Нова гра «Мова» (4 клас); Перший мільйон — раунд часів дієслів; фікси пазлів Geo Quest.";
 
 const log = new ConsoleLog("build-android");
 
 function detectJdkHome() {
   // Bubblewrap appends `/Contents/Home/` on macOS, so we pass the `.jdk` bundle
   // root (not the inner Contents/Home directory).
+  // On Windows, Bubblewrap shells out to java without quoting JAVA_HOME, so
+  // prefer a path without spaces (e.g. C:\jdk-21 junction) when available.
+  const noSpaceCandidates = ["C:\\jdk-21", "C:\\jdk-17"];
   if (process.env.BUBBLEWRAP_JDK_PATH) return process.env.BUBBLEWRAP_JDK_PATH;
+  for (const c of noSpaceCandidates) if (existsSync(c)) return c;
   if (process.env.JAVA_HOME) {
     return process.platform === "darwin" &&
       process.env.JAVA_HOME.endsWith("/Contents/Home")
@@ -93,6 +97,7 @@ function detectAndroidHome() {
   const candidates = [
     path.join(os.homedir(), "Android/sdk"),
     path.join(os.homedir(), "Library/Android/sdk"),
+    path.join(os.homedir(), "AppData/Local/Android/Sdk"),
   ];
   for (const c of candidates) if (existsSync(c)) return c;
   throw new Error(

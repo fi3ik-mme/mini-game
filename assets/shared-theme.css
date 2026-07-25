@@ -42,6 +42,7 @@ body.has-photo-bg > * {
 .display-title,
 body > h1,
 h1.page-title,
+h2.page-title,
 h1.title,
 .hero-title h1 {
     font-family: var(--font-display) !important;
@@ -63,6 +64,27 @@ body > h1,
 h1.page-title,
 h1.title {
     font-size: clamp(2rem, 8.5vw, 2.85rem) !important;
+}
+
+h2.page-title {
+    font-size: clamp(1.45rem, 6vw, 2rem) !important;
+}
+
+/* Button cards keep browser default text color unless reset */
+body.has-photo-bg .mode-card,
+body.has-photo-bg .set-card {
+    color: #f8fafc;
+    font-family: var(--font-body);
+}
+
+body.has-photo-bg .mode-card h3,
+body.has-photo-bg .set-card h3,
+body.has-photo-bg .game-card h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55);
 }
 
 body.has-photo-bg .game-card,
